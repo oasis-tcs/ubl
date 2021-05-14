@@ -9,11 +9,11 @@
 <div>
 <h3>Description</h3>
 
-<p>The purpose of this repository is to support committee-member collaborative activity in developing the raw materials for inclusion in formal UBL committee work products.  The initial Maintainer is UBL TC Chair <a href="mailto:gkholman@CraneSoftwrights.com">G. Ken Holman</a> (GitHub: <a href="https://github.com/gkholman">gkholman</a>) of <a href="http://www.cranesoftwrights.com/">Crane Softwrights Ltd.</a>.</p>
+<p>The purpose of this repository is to support committee-member collaborative activity in developing releases of the UBL committee's flagship work product, the UBL OASIS Standard.  The initial Maintainer is <a href="mailto:gkholman@CraneSoftwrights.com">G. Ken Holman</a> (GitHub: <a href="https://github.com/gkholman">gkholman</a>) of <a href="http://www.cranesoftwrights.com/">Crane Softwrights Ltd.</a>. Until further notice, questions regarding this repository may be directed to Ken.</p>
 
 <p>The Universal Business Language (UBL) is an open library of standard electronic XML business documents for procurement and transportation such as purchase orders, invoices, transport logistics and waybills.</p>
 
-<p>In <a href="http://docs.oasis-open.org/ubl/cs01-UBL-2.2/UBL-2.2.html#S-OVERVIEW">detail</a>: UBL defines "a generic XML interchange format for business documents that can be restricted or extended to meet the requirements of particular industries. Specifically, UBL provides the following:</p>
+<p>UBL defines "a generic XML interchange format for business documents that can be restricted or extended to meet the requirements of particular industries. Specifically, UBL provides the following:</p>
 <ul>
 <li>A suite of structured business objects and their associated semantics expressed as reusable data components and common business documents</li>
 <li>A library of XML schemas for reusable data components such as "Address", "Item", and "Payment" &mdash; the common data elements of everyday business documents</li>
@@ -37,7 +37,7 @@
 <div>
 <h3>Further Description of this Repository</h3>
 
-<p>These directories are for the raw materials for work products.</p>
+<p>Soon to be added...</p>
 </div>
 
 <div>
