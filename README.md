@@ -53,11 +53,13 @@ Maintainers can use any XML editing tool to make their changes to the specificat
 
 Other files and directories can change however needed by the maintainer.
 
-The act of checking a committed branch to GitHub automatically triggers the publishing of the authored XML into OASIS layout PDF, OASIS layout HTML, and ISO Directives Part 2 layout PDF. See "[Published results](#Published-results)" below.
+Become a maintainer by sending your GitHub account name and associated email address to the committee chair(s) requesting that OASIS TC Admin grant you the required privileges in the repository.
+
+
 
 ## Detailed steps
 
-The build process in this repository creates the suite of artefacts and documentation in the creation of the UBL specification deliveries. The build process is triggered on every commit. The results of the build are found in the [Actions tab](https://github.com/oasis-tcs/ubl/actions) on GitHub. _Note that the results are automatically deleted from GitHub after 90 days._
+The act of checking a committed branch to GitHub automatically triggers the generation of all artefacts and the publishing of the authored XML into OASIS layout PDF, OASIS layout HTML, and ISO Directives Part 2 layout PDF. See "[Published results](#Published-results)" below. The results of the build are found in the [Actions tab](https://github.com/oasis-tcs/ubl/actions) on GitHub. _Note that the results are automatically deleted from GitHub after 90 days._
 
 This is the relationship between the `main`, `review`, and all other branches:
 
@@ -95,12 +97,12 @@ Two examples of the use of temporary files in a DOS script are:
 - `del trigger.txt` - deletes the temporary file
 
 To determine if the files are ready for sending to the project editors, look in the results in the `archive-only` directory for these files summarizing any problems with the submission:
-- `build.exitcode.{label}.txt` - exit code from the execution of the Ant build script
-- `build.console.{label}.txt` - console log of the execution of the Ant build script
+- `build.exitcode.{timestamp}.txt` - exit code from the execution of the Ant build script
+- `build.console.{timestamp}.txt` - console log of the execution of the Ant build script
 - `check-ubl-version-stage-ubl-version-pstage.html` - e.g. `check-ubl-2.3-csd05-ubl-2.3-cs01.html` - report of differences between the current version/stage and the previous version/stage
 - `check-ubl-version-stage-ubl-peversion.html` - e.g. `check-ubl-2.3-csd05-ubl-2.2` - report of differences between the current version/stage and the previous version.
 
-There should be no "`.txt`" files in the returned base directory. Various "`.txt`" files are possible to report problems with the build. The problems should be explained in the file itself or correlated in the `build.console.{label}.txt` file:
+There should be no "`.txt`" files in the returned base directory. Various "`.txt`" files are possible to report problems with the build. The problems should be explained in the file itself or correlated in the `build.console.{timestamp}.txt` file:
  - `ATTENTION-new-entities.txt` indicates that in the `archive-only/` subdirectory has a `new-entities/` directory with new entity files that were created by your changes to the document, schema summary, and party XML files; if there are any new entity files, you must replace your local copies with those new entities in order for the validation in your XML editor to match the validation results on the server; if the `new-entities` directory does not exist, then there is no need to update your local entity files.
  - `INTEGRITY-PROBLEMS.txt` - there are files referenced in the hub document that do not exist, or there are files that exist and are not referenced in the hub document
  - `LIST-OF-PROBLEM-CODE-LISTS.txt` - genericode files in the `cl/` directory that are not genericode-schema valid
@@ -111,11 +113,9 @@ There should be no "`.txt`" files in the returned base directory. Various "`.txt
  - `UNEXPECTED-TEST-RESULT-WARNING.txt` - the `val/test.sh` script did not end cleanly
  - `UNEXPECTED-TEST-SAMPLES-RESULT-WARNING.txt` - at least one invocation in the `val/testsamples.sh` did not validate 
 
+When editors create their final edits, the results from the `git push` should be ready to be published without any modifications. If there are errant or unexpected files in the directory, the build process needs to address the discrepancies.
 
-Note at the very end of the `build.console.{label}.txt` file if there are multiple rows of exclamation marks surrounding error messages, then the integrity checker has found inconsistencies between the UBL hub document and the suite of artefacts. Such a package is not ready to be distributed.
-
-
-## Configuration
+## Configuring the artefacts
 
 The [`build.sh`](build.sh) invocation points to the particular set of parameters to use to create the artefacts. The editors maintain this file for the technical committee version of the UBL package. Alternative configurations for subcommittees can create branches of this repository, but once created, they are not to be merged into the `main`, `results`, or `ubl-version-stage` branches. As is true for other maintainers, changes are submitted as a pull request to `review`. The subcommittee `build.sh` is not used by the technical committee.
 
@@ -170,10 +170,6 @@ Before the process runs, the spreadsheets on Google should reflect the new stage
 - UBL 2.3 Library Elements Spreadsheet - CS01 master
 - UBL 2.3 Document Elements Spreadsheet - CS01 master
 
-Every `git push` to the repository triggers the GitHub Action execution of [`build-github.sh`](build-github.sh) to invoke whichever set of results is needed. The action takes about 30 minutes of processing on GitHub to create all of the artefacts.
-
-## Preparing revision information
-
 Each revision is described by the following configuration files for the artefacts:
 - target identification when converting ODS to genericode
   - [`ident-UBL.xml`]( ident-UBL.xml ) 
@@ -197,9 +193,44 @@ Each revision is described by the following configuration files for the artefact
 - documentary ODS template skeleton for generating spreadsheet results
   - [`skeletonDisplayEditSubset.ods`]( skeletonDisplayEditSubset.ods )
 
+Every `git push` to the repository triggers the GitHub Action execution of [`build-github.sh`](build-github.sh) to invoke whichever set of results is needed. The action takes about 25 minutes of processing on GitHub to create all of the artefacts. The resulting ZIP is about 160Mb and when unzipped provides the two archive and distribution ZIP files with the results. Editors post these results as-is to Kavi. OASIS TC Administration posts the distribution package to the https://docs.oasis-open.org/ubl  OASIS web site.
+
+# Configuring the hub document
+
+All references in the hub document `UBL.xml` to version, revision, and date information must be maintained in a set of general entities maintained in the internal document type subset along the lines of the following for CSD05 that followed CS01:
+
+```
+	<!ENTITY name "UBL">
+	<!ENTITY pversion "2.2">
+	<!ENTITY version  "2.3">
+	<!ENTITY pstage   "cs01">
+	<!ENTITY PSTAGE   "CS01">
+	<!ENTITY stage    "csd05">
+	<!ENTITY STAGE    "CSD05">
+	<!ENTITY isostage "WD">
+	<!ENTITY standard "Committee Specification Draft 05">
+	<!ENTITY stagetext "Committee Specification Draft 05">
+	<!ENTITY standard "Committee Specification 01xxxxxx">
+	<!ENTITY stagetext "Committee Specification 01xxxxxx">
+	<!ENTITY standard "Committee Specification Draft 04 / Working Draft 03xxxxx">
+	<!ENTITY stagetext "Committee Specification Draft 04 Working Draft 03xxxxx">
+	<!ENTITY this-loc "https://docs.oasis-open.org/ubl/&stage;-UBL-2.3">
+	<!ENTITY previous-loc "https://docs.oasis-open.org/ubl/&pstage;-UBL-2.3">
+	<!ENTITY latest-loc "https://docs.oasis-open.org/ubl">
+	<!ENTITY pubdate "12 May 2021">
+	<!--remove time from pub date-->
+	<!ENTITY pubyear "2021">
+	<!ENTITY pubdate-iso "ccyy-mm-dd">
+	<!ENTITY reldate-iso "ccyy-mm">
+```
+
+Recall that only the first declaration of a given general entity is respected. This allows prototypical declarations to be maintained after the active declaration is specified in the file.
+
+There are a number of SYSTEM general entities whose content is not edited by hand. Rather, they are generated from the inputs of other configuration files `UBL-{version}-Party-summary-information.xml` and `UBL-{version}-Schema-summary-information.xml` that are the responsibility of the maintainer to make consistent with their expectations of the hub document.
+
 Source files, processing stylesheets, and resulting entities generated in the building of the hub document:
 - `UBL.xml` is the raw main hub document that gets massaged, assembled, and processed in the final `UBL-{version}.xml`
-- `UBL-{prevVersion}-modified.xml` is the hub document from the previous version of UBL modified not to include entity references; this is processed by `hub2processSummary.xsl`:
+- `UBL-{prevVersion}-modified.xml` is the final `UBL-{prevVersion}.xml` hub document from the previous version of UBL possibly modified from the original; this is processed by `hub2processSummary.xsl`:
   - `summary-processes-ent.xml`
 - `UBL-{version}-Party-summary-information.xml` processed by `partydoc2db.xsl`:
   - `summary-parties-ent.xml`
@@ -247,41 +278,35 @@ Image creation using the http://draw.io tool:
   - copy the high-res PNG file into the [`htmlart`]( htmlart ) directory
   - using [ GIMP ]( https://www.gimp.org/ ) or some other pixel image manipulation tool, scale the [`htmlart`]( htmlart ) copy to be a maximum of 750 pixels (or proportionally smaller) and 96 DPI
 
-## Online GitHub use for development purposes by committee members
+## Preview results
 
-It is easy for committee members to contribute to the improvement of the hub document following these steps:
+Intermediate edits saved to the local `UBL.xml` file can be previewed instantly in a browser on your computer. It is recommended that one do this to establish their edits are satisfactory before checking in to GitHub to trigger the published results. The preview does not regenerate the SYSTEM general entities, so it may be necessary to push your intermediate work to your branch in order to obtain replacement entity files for your repository from the published results.
 
-1. Fork this repository to be one of your own private repositories.
-1. Enable the running of workflows: click on 'Actions' tab at the top and press button "I understand my workflows, go ahead and run them"
-1. From the repository home page click the green "clone or download" button for the repository name of your private repository to clone to your local machine: `git clone {repository}`
-1. Modify locally any of the input XML files above
-1. Add any new images at least to the [`image`]( image ) and [`art`]( art ) directories (if you have the tools to create the image for the [`htmlart`]( htmlart ), all the better)
-1. Review the list of changed files: `git status`
-1. Stage your changes: `git add .`
-1. Review the list of staged files: `git status`
-1. Commit your changes: `git commit -m "Description of your change"`
-1. Submit your changes: `git push`
-1. The push triggers a "GitHub action" on the GitHub server: at the top of the GitHub screen, go to the "Actions" tab and you will see a workflow whose title is the same as the description you used for the commit message; click on the bold-face title string (it is a hyperlink); from the "Artifacts" box download the ZIP file to view your results when they are completed (the box remains empty while the job is being run and may need to be refreshed after )
-1. In the downloaded ZIP the presence of the file `ATTENTION-new-entities.txt` indicates that in the `archive-only-not-in-final-distribution/` subdirectory has a `new-entities/` directory with new entity files that were created by your changes to the schema and party XML files; if there are any new entity files, you must replace your local copies with those new entities in order for the validation in your XML editor to match the validation results on the server; if the `new-entities` directory does not exist, then there is no need to update your local entity files
-1. Repeat from step 4 until your submission is ready and the `ATTENTION-new-entities.txt` does not exist
-1. From the repository home page press the "New pull request" button to generate a request for the editors to pull your work into the main repository
-1. On the "Comparing changes" page that comes up, review the work that is being submitted
-1. Press the "Create pull request" button
-1. Title the pull request (default is your last commit message) and outline the changes made in the description
-1. Press the "Crane pull request" below and to the right of the description
-1. The pull request now is in the hands of the editors for action
+Note that the preview HTML presents the high-resolution PDF images, not the low-resolution HTML images and so the images are dramatically oversized in the browser window. This is not the case for the published HTML returned from GitHub.
 
-## 6. Results
+Once the XML has been opened in the browser, it is necessary only to refresh the browser window after each save of the XML edits. It is not necessary to go through again the drag-and-drop or open requests.
+
+Opening the XML in Windows:
+- drag and drop the XML source onto Internet Explorer, or "right-click, Open with..., Internet Explorer"
+- use Ctrl-R or F5 to refresh the browser after editing the file
+- this does not work with Firefox, Chrome, or Edge browsers
+
+Opening the XML in Mac OSX:
+- drag and drop the XML source onto Safari, or "right-click, Open With, Safari"
+- use Cmd-R to refresh the browser after editing the file
+- this does not work with Firefox or Chrome browsers
+
+## Results
 
 The build result (after about 30 minutes on GitHub) in the target directory:
-- `UBL-2.x-{stage}-{label}/` - distribution artefacts
-- `UBL-2.x-{stage}-{label}/archive-only/` - archive artefacts
+- `UBL-2.x-{stage}-{timestamp}/` - distribution artefacts
+- `UBL-2.x-{stage}-{timestamp}/archive-only/` - archive artefacts
 
 Note that in the archive directory are the files:
-- `build.console.{label}.txt` - console log of the execution of the Ant build script
-- `build.exitcode.{label}.txt` - exit code from the execution of the Ant build script
+- `build.console.{timestamp}.txt` - console log of the execution of the Ant build script
+- `build.exitcode.{timestamp}.txt` - exit code from the execution of the Ant build script
 
-## 7. Housekeeping
+## Housekeeping
 
 The return ZIP file is doubly-zipped, once on the web site to reduce storage costs, and once by GitHub to return the two ZIP artefacts from the server. When finished and the file is not for public access, please delete the download artefact off of GitHub to reduce storage costs.
 
