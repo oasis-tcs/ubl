@@ -1,0 +1,48 @@
+<cva:ContextValueAssociation 
+  xmlns:cva=
+          "http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/"
+  xmlns:cbc="urn:oasis:names:draft:ubl:schema:xsd:CommonBasicComponents-2"
+  xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+  id="urn:x-include-example"
+  version="$Id: order-combined.cva,v 1.7 2010/01/18 22:44:50 gkholman Exp $"
+  name="extended-rules">
+
+  <Annotation>
+    <Description>
+      This illustrates inclusion, custom metadata and test constraints.
+    </Description>
+  </Annotation>
+
+  <Title>
+    Illustration of value tests
+  </Title>
+
+  <Include uri="order-constraints-doc.cva">
+    <Annotation>
+      <Description>
+        Pull in other tests.
+      </Description>
+    </Annotation>
+  </Include>
+
+  <ValueTests>
+    <ValueTest xml:id="max-amount" test=". &lt;= 10000">
+      <Annotation>
+        <Description>
+          A limiting value for an amount.
+        </Description>
+      </Annotation>
+    </ValueTest>
+  </ValueTests>
+
+  <Contexts>
+    <Context address="cbc:ToBePaidAmount" values="max-amount">
+      <Annotation>
+        <Description>
+          Limit the amount to be paid.
+        </Description>
+      </Annotation>
+      <Message>Total amount '<sch:value-of select="."/>' cannot be $10,000 or more</Message>
+    </Context>
+  </Contexts>
+</cva:ContextValueAssociation>

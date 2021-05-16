@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GoodsCertificate xmlns="urn:oasis:names:specification:ubl:schema:xsd:GoodsCertificate-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	<cbc:ID>ExampleID</cbc:ID>
+	<cbc:UUID>ExampleUUID</cbc:UUID>
+	<cbc:IssueDate>2020-06-23</cbc:IssueDate>
+	<cbc:TypeCode>ChinaFish</cbc:TypeCode>
+	<cac:ConsignorParty>
+		<cac:PartyIdentification>
+			<cbc:ID>1234</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>ConsignorExample</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>ExampleStreet</cbc:StreetName>
+			<cbc:CityName>Example City</cbc:CityName>
+			<cbc:PostalZone>1234</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				<cbc:Name>Denmark</cbc:Name>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:PartyLegalEntity>
+			<cbc:CompanyID>DK12345678</cbc:CompanyID>
+		</cac:PartyLegalEntity>
+		<cac:Contact>
+			<cbc:ID>8447</cbc:ID>
+			<cbc:Name>Document Robot</cbc:Name>
+		</cac:Contact>
+	</cac:ConsignorParty>
+	<cac:FreightForwarderParty>
+		<cac:PartyIdentification>
+			<cbc:ID>13234212</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>Example Shipping</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Street</cbc:StreetName>
+			<cbc:CityName>City</cbc:CityName>
+			<cbc:PostalZone>Post</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:PartyLegalEntity>
+			<cbc:CompanyID>1323421212</cbc:CompanyID>
+		</cac:PartyLegalEntity>
+		<cac:Contact>
+			<cbc:ID>11</cbc:ID>
+		</cac:Contact>
+	</cac:FreightForwarderParty>
+	<cac:IssuerParty>
+		<cac:PartyName>
+			<cbc:Name>ConsignorExample</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>ExampleStreet</cbc:StreetName>
+			<cbc:CityName>Example City</cbc:CityName>
+			<cbc:PostalZone>1234</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				<cbc:Name>Denmark</cbc:Name>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:PartyLegalEntity>
+			<cbc:CompanyID>DK12345678</cbc:CompanyID>
+		</cac:PartyLegalEntity>
+		<cac:Contact>
+			<cbc:ID>8447</cbc:ID>
+			<cbc:Name>Document Robot</cbc:Name>
+		</cac:Contact>
+	</cac:IssuerParty>
+	<cac:Shipment>
+		<cbc:ID>381944545</cbc:ID>
+		<cac:Consignment>
+			<cbc:ID>2076084807</cbc:ID>
+			<cbc:GrossWeightMeasure unitCode="KG">774.14400</cbc:GrossWeightMeasure>
+			<cbc:NetWeightMeasure unitCode="KG">604.80000</cbc:NetWeightMeasure>
+			<cbc:SequenceID>203</cbc:SequenceID>
+			<cbc:DeliveryInstructions>El Dorado</cbc:DeliveryInstructions>
+			<cac:RequestedPickupTransportEvent>
+				<cac:Contact>
+					<cbc:Name>ExampleName</cbc:Name>
+				</cac:Contact>
+				<cac:Location>
+					<cbc:ID schemeID="AuthorisationNumber">M165</cbc:ID>
+					<cac:Address>
+						<cbc:StreetName>ExampleStreet 1</cbc:StreetName>
+						<cbc:CityName>Videbæk</cbc:CityName>
+						<cbc:PostalZone>6920</cbc:PostalZone>
+						<cac:AddressLine>
+							<cbc:Line>ExampleStreet 1, DK-6920 Videbæk</cbc:Line>
+						</cac:AddressLine>
+						<cac:Country>
+							<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+							<cbc:Name>Denmark</cbc:Name>
+						</cac:Country>
+					</cac:Address>
+				</cac:Location>
+				<cac:Period>
+					<cbc:StartDate>2020-06-02</cbc:StartDate>
+					<cbc:EndDate>2020-06-02</cbc:EndDate>
+				</cac:Period>
+			</cac:RequestedPickupTransportEvent>
+			<cac:RequestedDeliveryTransportEvent>
+				<cac:Location>
+					<cac:Address>
+						<cbc:StreetName>StreetName Example</cbc:StreetName>
+						<cbc:CityName>El Dorado</cbc:CityName>
+						<cac:Country>
+							<cbc:IdentificationCode>PA</cbc:IdentificationCode>
+							<cbc:Name>Panama</cbc:Name>
+						</cac:Country>
+					</cac:Address>
+				</cac:Location>
+				<cac:Period>
+					<cbc:StartDate>2020-07-01</cbc:StartDate>
+					<cbc:EndDate>2020-07-01</cbc:EndDate>
+				</cac:Period>
+			</cac:RequestedDeliveryTransportEvent>
+			<cac:ConsigneeParty>
+				<cac:PartyIdentification>
+					<cbc:ID>0004424005</cbc:ID>
+				</cac:PartyIdentification>
+				<cac:PartyName>
+					<cbc:Name>ConsigneeExample</cbc:Name>
+				</cac:PartyName>
+				<cac:PostalAddress>
+					<cbc:StreetName>StreetName Example</cbc:StreetName>
+					<cbc:AdditionalStreetName>AdditionalStreet Example</cbc:AdditionalStreetName>
+					<cbc:CityName>El Dorado</cbc:CityName>
+					<cac:Country>
+						<cbc:IdentificationCode>PA</cbc:IdentificationCode>
+						<cbc:Name>Panama</cbc:Name>
+					</cac:Country>
+				</cac:PostalAddress>
+			</cac:ConsigneeParty>
+			<cac:ConsignorParty>
+				<cac:PartyIdentification>
+					<cbc:ID>1080</cbc:ID>
+				</cac:PartyIdentification>
+				<cac:PartyName>
+					<cbc:Name>ExampleName</cbc:Name>
+				</cac:PartyName>
+				<cac:PostalAddress>
+					<cbc:StreetName>ExampleStreet</cbc:StreetName>
+					<cbc:CityName>Viby J</cbc:CityName>
+					<cbc:PostalZone>8260</cbc:PostalZone>
+					<cac:Country>
+						<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+						<cbc:Name>Denmark</cbc:Name>
+					</cac:Country>
+				</cac:PostalAddress>
+			</cac:ConsignorParty>
+			<cac:OriginalDepartureCountry>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				<cbc:Name>Denmark</cbc:Name>
+			</cac:OriginalDepartureCountry>
+			<cac:DeliveryTerms>
+				<cbc:ID>CIP</cbc:ID>
+				<cac:DeliveryLocation>
+					<cbc:Name>Balboa Port</cbc:Name>
+				</cac:DeliveryLocation>
+			</cac:DeliveryTerms>
+			<cac:FreightAllowanceCharge>
+				<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+				<cbc:Amount currencyID="DKK">0.00</cbc:Amount>
+			</cac:FreightAllowanceCharge>
+			<cac:MainCarriageShipmentStage>
+				<cbc:TransportModeCode name="Sea">1</cbc:TransportModeCode>
+				<cac:LoadingPortLocation>
+					<cbc:ID>Aarhus</cbc:ID>
+				</cac:LoadingPortLocation>
+				<cac:UnloadingPortLocation>
+					<cbc:ID>Balboa Port</cbc:ID>
+				</cac:UnloadingPortLocation>
+			</cac:MainCarriageShipmentStage>
+			<cac:TransportHandlingUnit>
+				<cbc:ID>USRM3656679</cbc:ID>
+				<cbc:TotalPackageQuantity unitCode="EA">1</cbc:TotalPackageQuantity>
+				<cac:TransportEquipment>
+					<cac:TransportEquipmentSeal>
+						<cbc:ID>7654321</cbc:ID>
+					</cac:TransportEquipmentSeal>
+				</cac:TransportEquipment>
+				<cac:MaximumTemperature>
+					<cbc:AttributeID>TC</cbc:AttributeID>
+					<cbc:Measure unitCode="CEL">3.00</cbc:Measure>
+					<cbc:Description>Chilled</cbc:Description>
+				</cac:MaximumTemperature>
+				<cac:Package>
+					<cbc:ID>2076084807</cbc:ID>
+					<cbc:Quantity unitCode="EA">1</cbc:Quantity>
+					<cbc:PackagingTypeCode>CT</cbc:PackagingTypeCode>
+					<cac:GoodsItem>
+						<cbc:ID>000010</cbc:ID>
+						<cbc:GrossWeightMeasure unitCode="KG">774.14400</cbc:GrossWeightMeasure>
+						<cbc:NetWeightMeasure unitCode="KG">604.80000</cbc:NetWeightMeasure>
+						<cbc:Quantity unitCode="CT">63.000</cbc:Quantity>
+						<cac:Item>
+							<cbc:Description>ItemExample</cbc:Description>
+							<cbc:PackQuantity unitCode="EA">63</cbc:PackQuantity>
+							<cbc:Name>Dairy Products</cbc:Name>
+							<cac:SellersItemIdentification>
+								<cbc:ID>123456</cbc:ID>
+							</cac:SellersItemIdentification>
+							<cac:OriginCountry>
+								<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+								<cbc:Name>Denmark</cbc:Name>
+							</cac:OriginCountry>
+							<cac:CommodityClassification>
+								<cbc:CommodityCode>19011000</cbc:CommodityCode>
+							</cac:CommodityClassification>
+							<cac:AdditionalItemProperty>
+								<cbc:Name>AnimalSpecies</cbc:Name>
+								<cbc:Value>Bovine</cbc:Value>
+							</cac:AdditionalItemProperty>
+							<cac:ManufacturerParty>
+								<cbc:IndustryClassificationCode>Dairy</cbc:IndustryClassificationCode>
+								<cac:PartyIdentification>
+									<cbc:ID schemeID="AuthorisationNumber">M165</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name>ExampleName</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>ExampleStreet 1</cbc:StreetName>
+									<cbc:CityName>Videbæk</cbc:CityName>
+									<cbc:PostalZone>6920</cbc:PostalZone>
+									<cac:AddressLine>
+										<cbc:Line>ExampleStreet 1, DK-6920 Videbæk</cbc:Line>
+									</cac:AddressLine>
+									<cac:Country>
+										<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+										<cbc:Name>Denmark</cbc:Name>
+									</cac:Country>
+								</cac:PostalAddress>
+							</cac:ManufacturerParty>
+							<cac:ItemInstance>
+								<cbc:ManufactureDate>2019-12-08</cbc:ManufactureDate>
+								<cbc:BestBeforeDate>2022-12-08</cbc:BestBeforeDate>
+								<cac:AdditionalItemProperty>
+									<cbc:Name>LineNetWeight</cbc:Name>
+									<cbc:ValueQuantity unitCode="KG">604.8</cbc:ValueQuantity>
+								</cac:AdditionalItemProperty>
+								<cac:AdditionalItemProperty>
+									<cbc:Name>LineGrossWeight</cbc:Name>
+									<cbc:ValueQuantity unitCode="KG">774.144</cbc:ValueQuantity>
+								</cac:AdditionalItemProperty>
+								<cac:AdditionalItemProperty>
+									<cbc:Name>Quantity</cbc:Name>
+									<cbc:ValueQuantity unitCode="CT">63.000</cbc:ValueQuantity>
+								</cac:AdditionalItemProperty>
+								<cac:LotIdentification>
+									<cbc:LotNumberID>9390000757</cbc:LotNumberID>
+								</cac:LotIdentification>
+							</cac:ItemInstance>
+							<cac:Dimension>
+								<cbc:AttributeID>NetWeight</cbc:AttributeID>
+								<cbc:Measure unitCode="KG">9.6</cbc:Measure>
+							</cac:Dimension>
+							<cac:Dimension>
+								<cbc:AttributeID>LineNetWeight</cbc:AttributeID>
+								<cbc:Measure unitCode="KG">604.8</cbc:Measure>
+							</cac:Dimension>
+							<cac:Dimension>
+								<cbc:AttributeID>GrossWeight</cbc:AttributeID>
+								<cbc:Measure unitCode="KG">12.288</cbc:Measure>
+							</cac:Dimension>
+							<cac:Dimension>
+								<cbc:AttributeID>LineGrossWeight</cbc:AttributeID>
+								<cbc:Measure unitCode="KG">774.144</cbc:Measure>
+							</cac:Dimension>
+						</cac:Item>
+						<cac:Despatch>
+							<cbc:ID>000010</cbc:ID>
+						</cac:Despatch>
+						<cac:MaximumTemperature>
+							<cbc:AttributeID>TC</cbc:AttributeID>
+							<cbc:Measure unitCode="CEL">3.00</cbc:Measure>
+							<cbc:Description>Chilled</cbc:Description>
+						</cac:MaximumTemperature>
+					</cac:GoodsItem>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>GrossWeight</cbc:AttributeID>
+						<cbc:Measure unitCode="KG">774.14400</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>NetWeight</cbc:AttributeID>
+						<cbc:Measure unitCode="KG">604.80000</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:Package>
+			</cac:TransportHandlingUnit>
+		</cac:Consignment>
+	</cac:Shipment>
+	<cac:Attestation>
+		<cbc:ID>1</cbc:ID>
+  	<cbc:AcceptanceIndicator>true</cbc:AcceptanceIndicator>
+	  <cac:IssuerParty>
+	    <cac:PartyIdentification>
+	      <cbc:ID>1</cbc:ID>
+	    </cac:PartyIdentification>
+	  </cac:IssuerParty>
+		<cac:AttestationLine>
+			<cbc:Description languageID="EN">
+						fish or aquatic invertebrates caught in the country or region’s domestic sea or in the open sea or farming aquatic animals
+					</cbc:Description>
+			<cbc:Description languageID="DK">
+						fisk eller havdyr, der ikke er pattedyr, som er fanget enten i landets eller regionens egne have eller i det åbne hav eller som stammer
+						fra opdræt på åbent hav
+					</cbc:Description>
+			<cbc:Description languageID="CN">
+						本国海域或公海捕捞的鱼类或水生无脊椎动物或养殖水生动物
+					</cbc:Description>
+		</cac:AttestationLine>
+	</cac:Attestation>
+	<cac:Attestation>
+		<cbc:ID>2</cbc:ID>
+  	<cbc:AcceptanceIndicator>false</cbc:AcceptanceIndicator>
+	  <cac:IssuerParty>
+	    <cac:PartyIdentification>
+	      <cbc:ID>1</cbc:ID>
+	    </cac:PartyIdentification>
+	  </cac:IssuerParty>
+		<cac:AttestationLine>
+			<cbc:Description languageID="EN">
+						from offal from plants, which are approved by the competent authority in Denmark for manufacture of aquatic products
+						for human consumption.
+					</cbc:Description>
+			<cbc:Description languageID="DK">
+						fra afskær fra virksomheder, som er godkendt af den kompetente myndighed i Danmark til produktion
+						af fiskeprodukter til human konsum
+					</cbc:Description>
+			<cbc:Description languageID="CN">
+						经丹麦主管机构批准的供人类消费水产品加工厂的副产品
+					</cbc:Description>
+		</cac:AttestationLine>
+	</cac:Attestation>
+	<cac:Attestation>
+		<cbc:ID>3</cbc:ID>
+  	<cbc:AcceptanceIndicator>false</cbc:AcceptanceIndicator>
+	  <cac:IssuerParty>
+	    <cac:PartyIdentification>
+	      <cbc:ID>1</cbc:ID>
+	    </cac:PartyIdentification>
+	  </cac:IssuerParty>
+		<cac:AttestationLine>
+			<cbc:Description languageID="EN">
+						fish meal or fish oil from countries other than Denmark from establishments approved the AQSIQ. The fish meal or fish oil
+						in question ____________________________________________(indicate name of product) is approved for export from said
+						country to China and were only produced at ____________________________________________(indicate name and address
+						of the producer as identified in the approval of AQSIQ) and were only exported to Denmark from 
+						____________________________________________ (indicate name and address of the producer/exporter as identified in the
+						import permit)
+					</cbc:Description>
+			<cbc:Description languageID="DK">
+						fiskemel eller fiskeolie fra andre lande, fra virksomheder, der er godkendt af AQSIQ. Det pågældende produkt
+						(fiskemel eller fiskeolie)____________________________________________ (angiv produktets navn) er godkendt til eksport fra
+						det pågældende land til Kina og er udelukkende forarbejdet på ____________________________________________(angiv navn
+						og adresse på producenten/eksportøren, således som denne er angivet i godkendelsen fra AQSIQ) og er udelukkende eksporteret til
+						Danmark fra ____________________________________________ (angiv navn og adresse på eksportøren, således som denne er
+						angivet i godkendelsen fra AQSIQ ) 
+					</cbc:Description>
+			<cbc:Description languageID="CN">
+						经中国国家质量监督检验检疫总局批准的，丹麦以外其他国家的企业生产的鱼粉或鱼
+						油。该鱼粉或鱼油____________________________________________（标明产品名称）已被准予从上述国家向中国出口
+						且仅在____________________________________________（标明AQSIQ注册批准的生产商名称与地址）生产并仅从
+						____________________________________________（标明进口许可中认定的生产商/出口商名称与地址）向丹麦出口。
+					</cbc:Description>
+		</cac:AttestationLine>
+	</cac:Attestation>
+</GoodsCertificate>

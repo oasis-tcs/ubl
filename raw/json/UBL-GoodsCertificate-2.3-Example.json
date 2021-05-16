@@ -1,0 +1,314 @@
+{"_D":"",
+ "_A":"urn:X-test:UBL:TSC:CommonAggregate",
+ "_B":"urn:X-test:UBL:TSC:CommonBasic",
+ "TradeCertificate":[{
+ "ID":[{"_":"Thc8035476"}],
+ "IssueDate":[{"_":"2019-03-12"}],
+ "TypeCode":[{"_":"708"}],
+ "Description":[{"_":"Shipping"}],
+ "ExporterParty":[{
+  "PartyIdentification":[{
+   "ID":[{"_":"2142564564",
+    "schemeID":"FST.dk",
+    "schemeName":"Authorization"}]
+  }],
+  "PartyName":[{
+   "Name":[{"_":"Jensens slaughterhouse Ltd"}]
+  }],
+  "PostalAddress":[{
+   "StreetName":[{"_":"Hollandsvej"}],
+   "BuildingNumber":[{"_":"13"}],
+   "CityName":[{"_":"Odense"}],
+   "PostalZone":[{"_":"6000"}],
+   "Country":[{
+    "IdentificationCode":[{"_":"DK"}],
+    "Name":[{"_":"Denmark"}]
+   }]
+  }],
+  "PartyLegalEntity":[{
+   "CompanyID":[{"_":"DK123451"}]
+  }],
+  "Contact":[{
+   "Telephone":[{"_":"38183838"}],
+   "Telefax":[{"_":"1303913"}],
+   "ElectronicMail":[{"_":"something@mail.com"}]
+  }],
+  "PartyAuthorization":[{
+   "ID":[{"_":"214213423"}],
+   "PurposeCode":[{"_":"3455s"}],
+   "Purpose":[{"_":"Vetenarian Authorization"}],
+   "ValidityPeriod":[{
+    "EndDate":[{"_":"2020-09-12"}]
+   }],
+   "Certificate":[{
+    "ID":[{"_":"234245556997654",
+     "schemeID":"fst.dk"}],
+    "IssuerParty":[{
+     "PartyIdentification":[{
+      "Id":[{"_":"56755332"}]
+     }],
+     "PartyName":[{
+      "Name":[{"_":"Fødevarestyrelsen"}]
+     }],
+     "PostalAddress":[{
+      "StreetName":[{"_":"Stationsparken 31-33"}],
+      "CityName":[{"_":"Glostrup"}],
+      "PostalZone":[{"_":"2600"}],
+      "Country":[{
+       "IdentificationCode":[{"_":"DK"}],
+       "Name":[{"_":"Denmark"}]
+      }]
+     }]
+    }]
+   }]
+  }]
+ }],
+ "ConsignorParty":[{
+  "PartyIdentification":[{
+   "ID":[{"_":"M/a7590"}]
+  }],
+  "PartyName":[{
+   "Name":[{"_":"Jensens slaughterhouse Ltd"}]
+  }],
+  "PostalAddress":[{
+   "StreetName":[{"_":"Hollandsvej"}],
+   "BuildingNumber":[{"_":"13"}],
+   "CityName":[{"_":"Odense"}],
+   "PostalZone":[{"_":"6000"}],
+   "Country":[{
+    "IdentificationCode":[{"_":"DK"}],
+    "Name":[{"_":"Denmark"}]
+   }]
+  }]
+ }],
+ "ConsigneeParty":[{
+  "PartyName":[{
+   "Name":[{"_":"Beijing Tianfuxing Trade Co,. Ltd"}]
+  }],
+  "PostalAddress":[{
+   "StreetName":[{"_":"93,3th West Ring Middle Road"}],
+   "AdditionalStreetName":[{"_":"Room16J07, DaCheng International City"}],
+   "CityName":[{"_":"Chaoyang district,Beijing"}],
+   "PostalZone":[{"_":"100124"}],
+   "Country":[{
+    "IdentificationCode":[{"_":"CN"}],
+    "Name":[{"_":"China"}]
+   }]
+  }]
+ }],
+ "Shipment":[{
+  "ID":[{"_":"2345332"}],
+  "GrossWeightMeasure":[{"_":16881.10000,
+   "unitCode":"KGM"}],
+  "NetWeightMeasure":[{"_":11494.05000,
+   "unitCode":"KGM"}],
+  "TotalGoodsItemQuantity":[{"_":2109,
+   "unitCode":"CS"}],
+  "Consignment":[{
+   "ID":[{"_":"1"}],
+   "ConsigneeParty":[{
+    "PartyName":[{
+     "Name":[{"_":"Beijing Tianfuxing Trade Co,. Ltd"}]
+    }],
+    "PostalAddress":[{
+     "StreetName":[{"_":"Room16J07, DaCheng International City"}],
+     "AdditionalStreetName":[{"_":"93,3th West Ring Middle Road"}],
+     "CityName":[{"_":"Chaoyang district,Beijing"}],
+     "PostalZone":[{"_":"100124"}],
+     "Country":[{
+      "IdentificationCode":[{"_":"CN"}],
+      "Name":[{"_":"China"}]
+     }]
+    }]
+   }],
+   "ConsignorParty":[{
+    "PartyIdentification":[{
+     "ID":[{"_":"M/a7590"}]
+    }],
+    "PartyName":[{
+     "Name":[{"_":"Jensens slaughterhouse Ltd"}]
+    }],
+    "PostalAddress":[{
+     "StreetName":[{"_":"Hollandsvej"}],
+     "BuildingNumber":[{"_":"13"}],
+     "CityName":[{"_":"Odense"}],
+     "PostalZone":[{"_":"6000"}],
+     "Country":[{
+      "IdentificationCode":[{"_":"DK"}],
+      "Name":[{"_":"Denmark"}]
+     }]
+    }]
+   }],
+   "OriginalDespatchParty":[{
+    "PartyName":[{
+     "Name":[{"_":"Jensens Bakery Ltd"}]
+    }],
+    "PostalAddress":[{
+     "StreetName":[{"_":"Hollandsvej"}],
+     "BuildingNumber":[{"_":"13"}],
+     "CityName":[{"_":"Odense"}],
+     "PostalZone":[{"_":"6000"}],
+     "Country":[{
+      "IdentificationCode":[{"_":"DK"}],
+      "Name":[{"_":"Denmark"}]
+     }]
+    }]
+   }],
+   "OriginalDepartureCountry":[{
+    "IdentificationCode":[{"_":"DK"}],
+    "Name":[{"_":"Denmark"}]
+   }],
+   "FinalDestinationCountry":[{
+    "IdentificationCode":[{"_":"CN"}],
+    "Name":[{"_":"China"}]
+   }],
+   "DeliveryTerms":[{
+    "ID":[{"_":"40 HC"}]
+   }],
+   "TransportHandlingUnit":[{
+    "TransportEquipment":[{
+     "ID":[{"_":"BSIU 982.395-9"}],
+     "TransportEquipmentSeal":[{
+      "ID":[{"_":"MD115263"}]
+     }]
+    }]
+   }]
+  }],
+  "GoodsItem":[{
+   "Description":[{"_":"Hams in tin"}],
+   "GrossWeightMeasure":[{"_":16881.10000,
+    "unitCode":"KGM"}],
+   "NetWeightMeasure":[{"_":11494.05000,
+    "unitCode":"KGM"}],
+   "Quantity":[{"_":2109,
+    "unitCode":"CS"}]
+  }]
+ }],
+ "Attestation":[{
+  "ID":[{"_":"ExclusivelyFromPigs"}],
+  "Description":[{"_":" \t\t\t\t\t\n\t\t\tThat the above described meat, meat products or edible offal is derived exclusively from pigs,\n\t\t\twhich originate from areas (country/region) that are officially free from notifiable, infectious diseases according to OIE\n\t\t\tlists to which swine are susceptible.\n\t\t\t"}],
+  "AcceptanceIndicator":[{"_":true}],
+  "OrdinalReference":[{
+   "Section":[{"_":"1"}]
+  }]
+ },{
+  "ID":[{"_":"GovernmentSupervision"}],
+  "Description":[{"_":" \t\t\t\t\t\n\t\t\tThe swine have been slaughtered under government supervision in an approved\n\t\t\tslaughterhouse authorized within the EU and with continuous veterinary supervision, and been subjected to veterinary\n\t\t\texamination immediately before and after the slaughtering and found sound and free from contagious diseases\n\t\t\t"}],
+  "AcceptanceIndicator":[{"_":true}],
+  "OrdinalReference":[{
+   "Section":[{"_":"2"}]
+  }]
+ },{
+  "ID":[{"_":"FitForHumanConsumption"}],
+  "Description":[{"_":" \t\t\t\t\t\n\t\t\tThat the commodity at the dispatch is found sound and unconditionally fit for human consumption.\n\t\t\t"}],
+  "AcceptanceIndicator":[{"_":true}],
+  "OrdinalReference":[{
+   "Section":[{"_":"3"}]
+  }]
+ },{
+  "ID":[{"_":"VeterinarySupervision"}],
+  "Description":[{"_":" \t\t\t\t\t\n\t\t\t That the commodity has been dealt with, produced and packed under sanitary conditions and under veterinary supervision.\n\t\t\t"}],
+  "AcceptanceIndicator":[{"_":true}],
+  "OrdinalReference":[{
+   "Section":[{"_":"4"}]
+  }]
+ },{
+  "ID":[{"_":"ProgramForControlOfBiologicalRemnants"}],
+  "Description":[{"_":" \t\t\t\t\t\n\t\t\t The animals from which the meat, meat products or edible offal originate come from establishments inserted in the Program for Control of Biological\n\t\t\tRemnants, and do not contain remnants of veterinary medicine, pesticides nor environmental contaminants in values\n\t\t\twhich exceed those authorized in the EU.\n\t\t\t"}],
+  "AcceptanceIndicator":[{"_":true}],
+  "OrdinalReference":[{
+   "Section":[{"_":"5"}]
+  }]
+ },{
+  "ID":[{"_":"ImmediatelyVeterinaryExamination"}],
+  "Description":[{"_":"\t\t\t\t\t\n\t\t\t For white offal(6) it is further certified that the above described consignment of white offal is derived\n\t\t\tfrom animals, which has undergone veterinary examination immediately before and after the slaughtering and found\n\t\t\tsound and free from contagious diseases. It is certified that the same animals do not contain remnants of veterinary\n\t\t\tmedicine, pesticides or environmental contaminants in values which exceed those authorized in the EU. The commodity\n\t\t\tis at the dispatch found sound and unconditionally fit for human consumption.\n\t\t\t"}],
+  "AcceptanceIndicator":[{"_":true}],
+  "OrdinalReference":[{
+   "Section":[{"_":"7"}]
+  }]
+ },{
+  "ID":[{"_":"ProgramForControlOfBiologicalRemnants"}],
+  "Description":[{"_":" \t\t\t\t\t\n\t\t\t The animals from which the meat, meat products or edible offal originate come from establishments inserted in the Program for Control of Biological\n\t\t\tRemnants, and do not contain remnants of veterinary medicine, pesticides nor environmental contaminants in values\n\t\t\twhich exceed those authorized in the EU.\n\t\t\t"}],
+  "AcceptanceIndicator":[{"_":true}],
+  "OrdinalReference":[{
+   "Section":[{"_":"7"}]
+  }]
+ }],
+ "Processing":[{
+  "ID":[{"_":"1"}],
+  "TypeCode":[{"_":"SH"}],
+  "Description":[{"_":"SlaughterHouse"}],
+  "ProcessingParty":[{
+   "PartyName":[{
+    "Name":[{"_":"Henriks Slagteri  A/S"}]
+   }],
+   "PostalAddress":[{
+    "StreetName":[{"_":"Nilanvej 19"}],
+    "CityName":[{"_":"Herning"}],
+    "PostalZone":[{"_":"7429"}],
+    "Country":[{
+     "IdentificationCode":[{"_":"DK"}],
+     "Name":[{"_":"Denmark"}]
+    }]
+   }]
+  }]
+ },{
+  "ID":[{"_":"2"}],
+  "Description":[{"_":"Processing Plant"}],
+  "AuthenticatedParty":[{
+   "AuthenticationID":[{"_":"242343453"}],
+   "Party":[{
+    "PartyName":[{
+     "Name":[{"_":"Claus Sørensen"}]
+    }],
+    "PostalAddress":[{
+     "StreetName":[{"_":"Ålekistevej 12"}],
+     "CityName":[{"_":"Vanløse"}],
+     "PostalZone":[{"_":"2720"}],
+     "Country":[{
+      "IdentificationCode":[{"_":"DK"}],
+      "Name":[{"_":"Denmark"}]
+     }]
+    }]
+   }]
+  }]
+ },{
+  "ID":[{"_":"3"}],
+  "Description":[{"_":"Cutting Plant"}],
+  "AuthenticatedParty":[{
+   "Party":[{
+    "PartyName":[{
+     "Name":[{"_":"CutPlant"}]
+    }],
+    "PostalAddress":[{
+     "StreetName":[{"_":"Nilanvej 131"}],
+     "CityName":[{"_":"Herning"}],
+     "PostalZone":[{"_":"7429"}],
+     "Country":[{
+      "IdentificationCode":[{"_":"DK"}],
+      "Name":[{"_":"Denmark"}]
+     }]
+    }]
+   }]
+  }]
+ },{
+  "ID":[{"_":""}],
+  "Description":[{"_":"Manufacturing Plant"}],
+  "AuthenticatedParty":[{
+   "Party":[{
+    "PartyName":[{
+     "Name":[{"_":"Claus Sørensen"}]
+    }],
+    "PostalAddress":[{
+     "StreetName":[{"_":"Nilanvej 203"}],
+     "CityName":[{"_":"Herning"}],
+     "PostalZone":[{"_":"7429"}],
+     "Country":[{
+      "IdentificationCode":[{"_":"DK"}],
+      "Name":[{"_":"Denmark"}]
+     }]
+    }]
+   }]
+  }]
+ }]
+}]}

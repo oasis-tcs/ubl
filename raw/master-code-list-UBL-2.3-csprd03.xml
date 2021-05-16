@@ -1,0 +1,254 @@
+<lists>
+  <!--
+    Master code list for UBL distributions
+    
+    Note 1: Five lists come from one ZIP:
+            http://www.unece.org/cefact/xml_schemas/index
+            - download ZIP to confirm root directory filename for alternate
+              format location - was: D19B.zip!/uncefact/...
+            - repeat for all occurrences of version (9 - search ".zip")
+              and date (5 - search for ddMMMyy as above - first five lists)
+              - note that the XSD version may differ from the ZIP version
+                but that usually isn't determined until the process is run
+                and errors are reported; if you wish, you could check first
+                by downloading the ZIP and checking each of the 5 by doing
+                a "find all" of the string "uncefact/codelist/standard"
+    Note 2: Use the reviewuri= (11) for eyeball check for the latest revision
+            that may necessitate a change to the AlternateFormatLocationUri
+            and possibly even the transformation requirement
+    Note 3: Remember to hand-edit all <Version> elements to update the values
+            (where $VERSION will be replaced by the transformations)
+    Note 4: Update http://www.unece.org/trade/untdid/d18a/tred/tred3055.htm
+            (9 times) if newer version is available by hunt and peck
+  -->
+
+<!--
+    These five lists are from one ZIP file
+-->
+
+  <list outuri="AllowanceChargeReasonCode-2.3.gc" method="XSD"
+        inuri="AllowanceChargeReasonCode-2.3.xsd"
+        reviewuri="http://www.unece.org/cefact/xml_schemas/index">
+   <Identification>
+      <ShortName>AllowanceChargeReasonCode</ShortName>
+      <LongName xml:lang="en">Allowance Charge Reason Code</LongName>
+      <LongName Identifier="listID">UN/EDIFACT EDED 5189</LongName>
+      <Version>18B</Version>
+      <CanonicalUri>urn:oasis:names:specification:ubl:codelist:gc:AllowanceChargeReasonCode</CanonicalUri>
+      <CanonicalVersionUri>urn:oasis:names:specification:ubl:codelist:gc:AllowanceChargeReasonCode:2.3</CanonicalVersionUri>
+      <LocationUri>http://docs.oasis-open.org/ubl/os-UBL-2.3/cl/gc/default/AllowanceChargeReasonCode-2.3.gc</LocationUri>
+      <AlternateFormatLocationUri MimeType="text/xml">jar:http://www.unece.org/fileadmin/DAM/uncefact/xml_schemas/D19B.zip!/uncefact/codelist/standard/UNECE_AllowanceChargeReasonCode_D19A.xsd</AlternateFormatLocationUri>
+      <Agency>
+         <LongName xml:lang="en">United Nations Economic Commission for Europe</LongName>
+         <Identifier Identifier="http://www.unece.org/trade/untdid/d18a/tred/tred3055.htm">6</Identifier>
+      </Agency>
+   </Identification>
+  </list>
+  <list outuri="ChannelCode-2.3.gc" method="XSD"
+        inuri="ChannelCode-2.3.xsd"
+        reviewuri="http://www.unece.org/cefact/xml_schemas/index">
+   <Identification>
+      <ShortName>ChannelCode</ShortName>
+      <LongName xml:lang="en">Channel Code</LongName>
+      <LongName Identifier="listID">UN/EDIFACT EDED 3155</LongName>
+      <Version>18B</Version>
+      <CanonicalUri>urn:oasis:names:specification:ubl:codelist:gc:ChannelCode</CanonicalUri>
+      <CanonicalVersionUri>urn:oasis:names:specification:ubl:codelist:gc:ChannelCode:2.3</CanonicalVersionUri>
+      <LocationUri>http://docs.oasis-open.org/ubl/os-UBL-2.3/cl/gc/default/ChannelCode-2.3.gc</LocationUri>
+      <AlternateFormatLocationUri MimeType="text/xml">jar:http://www.unece.org/fileadmin/DAM/uncefact/xml_schemas/D19B.zip!/uncefact/codelist/standard/UNECE_CommunicationMeansTypeCode_D19A.xsd</AlternateFormatLocationUri>
+      <Agency>
+         <LongName xml:lang="en">United Nations Economic Commission for Europe</LongName>
+         <Identifier Identifier="http://www.unece.org/trade/untdid/d18a/tred/tred3055.htm">6</Identifier>
+      </Agency>
+   </Identification>
+  </list>
+  <list outuri="PaymentMeansCode-2.3.gc" method="XSD"
+        inuri="PaymentMeansCode-2.3.xsd"
+        reviewuri="http://www.unece.org/cefact/xml_schemas/index">
+    <!--this should have been addressed by "Note 1" at the top-->
+   <Identification>
+      <ShortName>PaymentMeansCode</ShortName>
+      <LongName xml:lang="en">Payment Means Code</LongName>
+      <LongName Identifier="listID">UN/EDIFACT EDED 4461</LongName>
+      <Version>18B</Version>
+      <CanonicalUri>urn:oasis:names:specification:ubl:codelist:gc:PaymentMeansCode</CanonicalUri>
+      <CanonicalVersionUri>urn:oasis:names:specification:ubl:codelist:gc:PaymentMeansCode:2.3</CanonicalVersionUri>
+      <LocationUri>http://docs.oasis-open.org/ubl/os-UBL-2.3/cl/gc/default/PaymentMeansCode-2.3.gc</LocationUri>
+      <AlternateFormatLocationUri MimeType="text/xml">jar:http://www.unece.org/fileadmin/DAM/uncefact/xml_schemas/D19B.zip!/uncefact/codelist/standard/UNECE_PaymentMeansCode_D19A.xsd</AlternateFormatLocationUri>
+      <Agency>
+         <LongName xml:lang="en">United Nations Economic Commission for Europe</LongName>
+         <Identifier Identifier="http://www.unece.org/trade/untdid/d18a/tred/tred3055.htm">6</Identifier>
+      </Agency>
+   </Identification>
+  </list>
+  <list outuri="TransportEquipmentTypeCode-2.3.gc" method="XSD"
+        inuri="TransportEquipmentTypeCode-2.3.xsd"
+        reviewuri="http://www.unece.org/cefact/xml_schemas/index">
+    <!--this should have been addressed by "Note 1" at the top-->
+   <Identification>
+      <ShortName>TransportEquipmentTypeCode</ShortName>
+      <LongName xml:lang="en">Transport Equipment Type Code</LongName>
+      <LongName Identifier="listID">UN/EDIFACT EDED 8053</LongName>
+      <Version>18B</Version>
+      <CanonicalUri>urn:oasis:names:specification:ubl:codelist:gc:TransportEquipmentTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:oasis:names:specification:ubl:codelist:gc:TransportEquipmentTypeCode:2.3</CanonicalVersionUri>
+      <LocationUri>http://docs.oasis-open.org/ubl/os-UBL-2.3/cl/gc/default/TransportEquipmentTypeCode-2.3.gc</LocationUri>
+      <AlternateFormatLocationUri MimeType="text/xml">jar:http://www.unece.org/fileadmin/DAM/uncefact/xml_schemas/D19B.zip!/uncefact/codelist/standard/UNECE_TransportEquipmentCategoryCode_D19A.xsd</AlternateFormatLocationUri>
+      <Agency>
+         <LongName xml:lang="en">United Nations Economic Commission for Europe</LongName>
+         <Identifier Identifier="http://www.unece.org/trade/untdid/d18a/tred/tred3055.htm">6</Identifier>
+      </Agency>
+   </Identification>
+  </list>
+  <list outuri="TransportModeCode-2.3.gc" method="XSD"
+        inuri="TransportModeCode-2.3.xsd"
+        reviewuri="http://www.unece.org/cefact/xml_schemas/index">
+    <!--this should have been addressed by "Note 1" at the top-->
+   <Identification>
+      <ShortName>TransportModeCode</ShortName>
+      <LongName xml:lang="en">Transport Mode Code</LongName>
+      <LongName Identifier="listID">UNECE Recommendation 19 - Codes for Modes of Transport</LongName>
+      <Version>18B</Version>
+      <CanonicalUri>urn:oasis:names:specification:ubl:codelist:gc:TransportModeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:oasis:names:specification:ubl:codelist:gc:TransportModeCode:2.3</CanonicalVersionUri>
+      <LocationUri>http://docs.oasis-open.org/ubl/os-UBL-2.3/cl/gc/default/TransportModeCode-2.3.gc</LocationUri>
+      <AlternateFormatLocationUri MimeType="text/xml">jar:http://www.unece.org/fileadmin/DAM/uncefact/xml_schemas/D19B.zip!/uncefact/codelist/standard/UNECE_TransportModeCode_2.xsd</AlternateFormatLocationUri>
+      <Agency>
+         <LongName xml:lang="en">United Nations Economic Commission for Europe</LongName>
+         <Identifier Identifier="http://www.unece.org/trade/untdid/d18a/tred/tred3055.htm">6</Identifier>
+      </Agency>
+   </Identification>
+  </list>
+
+<!--
+    These six lists need to be individually checked for the most up-to-date
+-->
+
+  <list outuri="BinaryObjectMimeCode-2.3-incl-deprecated.gc" method="Mime"
+        filteruri="BinaryObjectMimeCode-2.3.gc" 
+        inuri="mime-codes.xml"
+        reviewuri="http://www.iana.org/assignments/media-types/">
+    <!--
+      Ant script transforms alternate format using Crane-mimetype2gc.xsl
+    -->
+   <Identification>
+      <ShortName>BinaryObjectMimeCode</ShortName>
+      <LongName xml:lang="en">Binary Object Mime Code</LongName>
+      <LongName Identifier="listID">IANA Media Types</LongName>
+      <Version>$VERSION</Version>
+      <CanonicalUri>urn:oasis:names:specification:ubl:codelist:gc:BinaryObjectMimeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:oasis:names:specification:ubl:codelist:gc:BinaryObjectMimeCode:2.3</CanonicalVersionUri>
+      <LocationUri>http://www.iana.org/assignments/media-types/media-types.xml</LocationUri>
+      <AlternateFormatLocationUri MimeType="text/xml">http://www.iana.org/assignments/media-types/media-types.xml</AlternateFormatLocationUri>
+      <Agency>
+         <LongName xml:lang="en">Internet Assigned Numbers Authority</LongName>
+         <Identifier Identifier="http://www.unece.org/trade/untdid/d18a/tred/tred3055.htm">379</Identifier>
+      </Agency>
+   </Identification>
+  </list>
+  <list outuri="CountryIdentificationCode-2.3.gc" method="Country"
+        inuri="country-codes.html"
+        reviewuri="https://www.iso.org/obp/ui/#search/code/">
+    <!--
+    Visit alternate format location, set 300 results per page (only one page)
+    Order by the English name (note this recently moved Côte d'Ivoire to end
+      of "C" and others due to the sorting of accented letters now being wrong
+    Using Firefox save "Web Page, HTML only" country-codes.html to raw dir
+    -->
+   <Identification>
+      <ShortName>CountryIdentificationCode</ShortName>
+      <LongName xml:lang="en">Country Identification Code</LongName>
+      <LongName Identifier="listID">ISO 3166</LongName>
+      <Version>$VERSION</Version>
+      <CanonicalUri>urn:iso:std:iso:3166</CanonicalUri>
+      <CanonicalVersionUri>urn:iso:std:iso:3166:$VERSION</CanonicalVersionUri>
+      <LocationUri>http://docs.oasis-open.org/ubl/os-UBL-2.3/cl/gc/default/CountryIdentificationCode-2.3.gc</LocationUri>
+      <AlternateFormatLocationUri MimeType="text/html">https://www.iso.org/obp/ui/#search/code/</AlternateFormatLocationUri>
+      <Agency>
+         <LongName xml:lang="en">International Organization for Standardization</LongName>
+         <Identifier Identifier="http://www.unece.org/trade/untdid/d18a/tred/tred3055.htm">5</Identifier>
+      </Agency>
+   </Identification>
+  </list>
+  <list outuri="CurrencyCode-2.3.gc" method="Currency"
+        inuri="currency-codes.xml"
+        reviewuri="http://www.currency-iso.org/dam/downloads/lists/list_one.xml">
+        <!--yes, the XML is the review file, not http://www.currency-iso.org -->
+   <Identification>
+      <ShortName>CurrencyCode</ShortName>
+      <LongName xml:lang="en">Currency Code</LongName>
+      <LongName Identifier="listID">ISO 4217 Alpha</LongName>
+      <Version>$VERSION</Version>
+      <CanonicalUri>urn:iso:std:iso:4217</CanonicalUri>
+      <CanonicalVersionUri>urn:iso:std:iso:4217:$VERSION</CanonicalVersionUri>
+      <LocationUri>http://docs.oasis-open.org/ubl/os-UBL-2.1/cl/gc/default/CurrencyCode-2.1.gc</LocationUri>
+      <AlternateFormatLocationUri MimeType="text/xml">http://www.currency-iso.org/dam/downloads/lists/list_one.xml</AlternateFormatLocationUri>
+      <Agency>
+         <LongName xml:lang="en">International Organization for Standardization</LongName>
+         <Identifier Identifier="http://www.unece.org/trade/untdid/d18a/tred/tred3055.htm">5</Identifier>
+      </Agency>
+   </Identification>
+  </list>
+  <list outuri="LanguageCode-2.3.gc" method="Language"
+        inuri="language-codes.xml"
+        reviewuri="http://www.loc.gov/standards/iso639-2/php/code_list.php">
+        <!--yes, the PHP is the review URI-->
+   <Identification>
+      <ShortName>LanguageCode</ShortName>
+      <LongName xml:lang="en">Language Code</LongName>
+      <LongName Identifier="listID">ISO 639</LongName>
+      <Version>$VERSION</Version>
+      <CanonicalUri>urn:iso:std:iso:639</CanonicalUri>
+      <CanonicalVersionUri>urn:iso:std:iso:639:$VERSION</CanonicalVersionUri>
+      <LocationUri>http://docs.oasis-open.org/ubl/os-UBL-2.3/cl/gc/default/LanguageCode-2.3.gc</LocationUri>
+      <AlternateFormatLocationUri MimeType="text/html">http://www.loc.gov/standards/iso639-2/php/code_list.php</AlternateFormatLocationUri>
+      <Agency>
+         <LongName xml:lang="en">International Organization for Standardization</LongName>
+         <Identifier Identifier="http://www.unece.org/trade/untdid/d18a/tred/tred3055.htm">5</Identifier>
+      </Agency>
+   </Identification>
+  </list>
+  <list outuri="PackagingTypeCode-2.3-incl-deleted.gc" method="Packaging"
+        filteruri="PackagingTypeCode-2.3.gc"
+        inuri="rec21_Rev9e_2012.xml"
+        reviewuri="https://www.unece.org/uncefact/codelistrecs.html">
+    <!--download https://www.unece.org/fileadmin/DAM/cefact/recommendations/rec21/rec21.zip
+        and confrm name of xls file in attribute above and text below-->
+   <Identification>
+      <ShortName>PackagingTypeCode</ShortName>
+      <LongName xml:lang="en">Packaging Type Code</LongName>
+      <LongName Identifier="listID">UNECE Recommendation 21 - Codes for Passengers, Types of Cargo,
+      Packages and Packaging Materials (with Complementary Codes for Package Names)</LongName>
+      <Version>10e_2019</Version>
+      <CanonicalUri>urn:oasis:names:specification:ubl:codelist:gc:PackagingTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:oasis:names:specification:ubl:codelist:gc:PackagingTypeCode:2.3</CanonicalVersionUri>
+      <LocationUri>http://docs.oasis-open.org/ubl/os-UBL-2.3/cl/gc/default/PackagingTypeCode-2.3.gc</LocationUri>
+      <AlternateFormatLocationUri MimeType="application/vnd.ms-excel">jar:https://www.unece.org/fileadmin/DAM/cefact/recommendations/rec21/rec21.zip!/rec21_Rev9e_2012.xls</AlternateFormatLocationUri>
+      <Agency>
+         <LongName xml:lang="en">United Nations Economic Commission for Europe</LongName>
+         <Identifier Identifier="http://www.unece.org/trade/untdid/d18a/tred/tred3055.htm">6</Identifier>
+      </Agency>
+   </Identification>
+  </list>
+  <list outuri="UnitOfMeasureCode-2.3-incl-deleted.gc" method="Unit"
+        filteruri="UnitOfMeasureCode-2.3.gc"
+        inuri="rec20_Rev13e_2017.xml"
+        reviewuri="https://www.unece.org/uncefact/codelistrecs.html">
+    <!--download https://www.unece.org/fileadmin/DAM/cefact/recommendations/rec20/rec20.zip
+        and confirm name of xls file in attribute above and text below-->
+   <Identification>
+      <ShortName>UnitOfMeasureCode</ShortName>
+      <LongName xml:lang="en">Unit Of Measure Code</LongName>
+      <LongName Identifier="listID">UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade</LongName>
+      <Version>12e_2016</Version>
+      <CanonicalUri>urn:oasis:names:specification:ubl:codelist:gc:UnitOfMeasureCode</CanonicalUri>
+      <CanonicalVersionUri>urn:oasis:names:specification:ubl:codelist:gc:UnitOfMeasureCode:2.3</CanonicalVersionUri>
+      <LocationUri>http://docs.oasis-open.org/ubl/os-UBL-2.3/cl/gc/default/UnitOfMeasureCode-2.3.gc</LocationUri>
+      <AlternateFormatLocationUri MimeType="application/vnd.ms-excel">jar:https://www.unece.org/fileadmin/DAM/cefact/recommendations/rec20/rec20.zip!/rec20/rec20_Rev13e_2017.xls</AlternateFormatLocationUri>
+      <Agency>
+         <LongName xml:lang="en">United Nations Economic Commission for Europe</LongName>
+         <Identifier Identifier="http://www.unece.org/trade/untdid/d18a/tred/tred3055.htm">6</Identifier>
+      </Agency>
+   </Identification>
+  </list>
+</lists>

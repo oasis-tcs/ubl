@@ -1,0 +1,6 @@
+<parameters>
+  <graphic-uri-prefix><ps:input-file-name
+    xmlns:ps="https://www.realtaonline.com/ns/parameter-substitution"
+    regex="^(.+?).xml$" replace="$1"/>.sts.graphics/</graphic-uri-prefix>
+  <graphic-uri-suffix>.png</graphic-uri-suffix>
+</parameters>

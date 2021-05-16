@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+[
+<!ENTITY versionDisplay          "1.1 CSD01">
+<!ENTITY versionDirectory   "bdx-bde/v1.1/csd01">
+<!ENTITY versionDate        "02 August 2015">
+<!--change the date on all xsdraw/ files except CCTS_CCT, remember to review
+  Library:           OASIS Business Document Envelope (BDE) 1.1 CSD01
+                     http://docs.oasis-open.org/bdxr/bdx-bde/v1.1/csd01/
+  Release Date:      25 November 2015
+ -->
+]>
+<configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <ndr>
+  <!--
+    This is the configuration of the base schema fragments for BDE 1.1
+  -->
+  <name-abbreviations>
+    <abbreviation short="ID">Identifier</abbreviation>
+    <abbreviation short="URI">Uniform Resource Identifier</abbreviation>
+    <abbreviation short="BDE">Business Document Envelope</abbreviation>
+  </name-abbreviations>
+  <den-abbreviations>
+    <abbreviation short="URI">Uniform Resource Identifier</abbreviation>
+    <abbreviation short="BDE">Business Document Envelope</abbreviation>
+  </den-abbreviations>
+  <equivalences>
+    <equivalence>
+      <primary-noun>URI</primary-noun>
+      <representation-term>Identifier</representation-term>
+    </equivalence>
+    <equivalence>
+      <primary-noun>UUID</primary-noun>
+      <representation-term>Identifier</representation-term>
+    </equivalence>
+  </equivalences>
+  <fields-allowing-excess-space>
+    <field-name>Definition</field-name>
+  </fields-allowing-excess-space>
+  <expected-maindoc-BIEs/>
+  <types>
+    <type>Amount</type>
+    <type>Binary Object</type>
+    <type>Code</type>
+    <type>Date Time</type>
+    <type>Date</type>
+    <type>Graphic</type>
+    <type>Identifier</type>
+    <type>Indicator</type>
+    <type>Measure</type>
+    <type>Name</type>
+    <type>Numeric</type>
+    <type>Percent</type>
+    <type>Picture</type>
+    <type>Quantity</type>
+    <type>Rate</type>
+    <type>Sound</type>
+    <type>Text</type>
+    <type>Time</type>
+    <type>Value</type>
+    <type>Video</type>
+  </types>
+ </ndr>
+  <schema version="1.1">
+<comment>
+  Library:           OASIS Business Document Envelope (BDE) &versionDisplay;
+                     http://docs.oasis-open.org/bdxr/&versionDirectory;/
+  Release Date:      &versionDate;
+  Module:            %f
+  Generated on:      %z
+  Copyright (c) OASIS Open 2015. All Rights Reserved.
+</comment>
+    <copyright position="end">
+  OASIS takes no position regarding the validity or scope of any 
+  intellectual property or other rights that might be claimed to pertain 
+  to the implementation or use of the technology described in this 
+  document or the extent to which any license under such rights 
+  might or might not be available; neither does it represent that it has 
+  made any effort to identify any such rights. Information on OASIS's 
+  procedures with respect to rights in OASIS specifications can be 
+  found at the OASIS website. Copies of claims of rights made 
+  available for publication and any assurances of licenses to be made 
+  available, or the result of an attempt made to obtain a general 
+  license or permission for the use of such proprietary rights by 
+  implementors or users of this specification, can be obtained from 
+  the OASIS Executive Director.
+
+  OASIS invites any interested party to bring to its attention any 
+  copyrights, patents or patent applications, or other proprietary 
+  rights which may cover technology that may be required to 
+  implement this specification. Please address the information to the 
+  OASIS Executive Director.
+  
+  This document and translations of it may be copied and furnished to 
+  others, and derivative works that comment on or otherwise explain 
+  it or assist in its implementation may be prepared, copied, 
+  published and distributed, in whole or in part, without restriction of 
+  any kind, provided that the above copyright notice and this 
+  paragraph are included on all such copies and derivative works. 
+  However, this document itself may not be modified in any way, 
+  such as by removing the copyright notice or references to OASIS, 
+  except as needed for the purpose of developing OASIS 
+  specifications, in which case the procedures for copyrights defined 
+  in the OASIS Intellectual Property Rights document must be 
+  followed, or as required to translate it into languages other than 
+  English. 
+
+  The limited permissions granted above are perpetual and will not be 
+  revoked by OASIS or its successors or assigns. 
+
+  This document and the information contained herein is provided on 
+  an "AS IS" basis and OASIS DISCLAIMS ALL WARRANTIES, 
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY 
+  WARRANTY THAT THE USE OF THE INFORMATION HEREIN 
+  WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED 
+  WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A 
+  PARTICULAR PURPOSE.    
+</copyright>
+    <type-documentation>
+      <ccts:Component xmlns:ccts="urn:un:unece:uncefact:documentation:2">
+         <ccts:ComponentType>ComponentType</ccts:ComponentType>
+         <ccts:DictionaryEntryName>DictionaryEntryName</ccts:DictionaryEntryName>
+         <ccts:Version>Version</ccts:Version>
+         <ccts:Definition>Definition</ccts:Definition>
+         <ccts:Cardinality>Cardinality</ccts:Cardinality>
+         <ccts:ObjectClassQualifier>ObjectClassQualifier</ccts:ObjectClassQualifier>
+         <ccts:ObjectClass>ObjectClass</ccts:ObjectClass>
+         <ccts:PropertyTermQualifier>PropertyTermQualifier</ccts:PropertyTermQualifier>
+         <ccts:PropertyTerm>PropertyTerm</ccts:PropertyTerm>
+         <ccts:AssociatedObjectClass>AssociatedObjectClass</ccts:AssociatedObjectClass>
+         <ccts:RepresentationTerm>RepresentationTerm</ccts:RepresentationTerm>
+         <ccts:DataTypeQualifier>DataTypeQualifier</ccts:DataTypeQualifier>
+         <ccts:DataType>DataType</ccts:DataType>
+         <ccts:AlternativeBusinessTerms>AlternativeBusinessTerms</ccts:AlternativeBusinessTerms>
+         <ccts:Examples>Examples</ccts:Examples>
+      </ccts:Component>
+    </type-documentation>
+    <dir name="xsd" runtime-name="xsdrt">
+     <dir name="common">
+      <file type="CABIE" name="BDE-CommonAggregateComponents-1.1.xsd"
+            prefix="eac"
+namespace="http://docs.oasis-open.org/bdxr/ns/bde/1.0/AggregateComponents">
+        <imports>
+    <!-- ==== Incorporate any desired constraints on the payload -->
+    <xsd:include schemaLocation="BDE-PayloadContentDataType-1.1.xsd"/>
+        </imports>
+        <elements abie="Payload">
+         <xsd:element name="PayloadContent" minOccurs="0" maxOccurs="1"
+                      type="PayloadContentType">
+           <xsd:annotation>
+             <xsd:documentation>The content of the payload when it is included in the envelope.</xsd:documentation>
+           </xsd:annotation>
+         </xsd:element>
+        </elements>
+      </file>
+      <file type="CBBIE" name="BDE-CommonBasicComponents-1.1.xsd"
+            prefix="cbc"
+namespace="http://docs.oasis-open.org/bdxr/ns/bde/1.0/BasicComponents"/>
+      <file type="QDT" name="BDE-QualifiedDataTypes-1.1.xsd"
+            prefix="qdt"
+namespace="http://docs.oasis-open.org/bdxr/ns/bde/1.0/QualifiedDataTypes"/>
+      <file type="UDT" name="BDE-UnqualifiedDataTypes-1.1.xsd"
+            prefix="udt"
+namespace="http://docs.oasis-open.org/bdxr/ns/bde/1.0/UnqualifiedDataTypes"/>
+      <file type="EXT" name="BDE-CommonExtensionComponents-1.1.xsd"
+            prefix="ext"
+    namespace="http://docs.oasis-open.org/bdxr/ns/bde/1.0/ExtensionComponents">
+        <elements>
+         <xsd:element ref="ext:BDEExtensions" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>A container for all extensions present in the document.</xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+        </elements>
+      </file>
+     </dir>
+    <files type="DABIE" name="BDE-Envelope-1.1.xsd"
+           namespace="http://docs.oasis-open.org/bdxr/ns/bde/1.0/Envelope">
+      <element-documentation>This element MUST be conveyed as the root element in any instance document based on this Schema expression</element-documentation>
+          <imports>
+
+   <!-- ===== Incorporate W3C signature specification-->
+   <xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" 
+               schemaLocation="common/BDE-xmldsig1-schema-1.1.xsd"/>
+
+   <!-- ===== Incorporate ETSI signature specifications-->
+   <xsd:import namespace="http://uri.etsi.org/01903/v1.3.2#" 
+               schemaLocation="common/BDE-XAdESv132-1.1.xsd"/>
+   <xsd:import namespace="http://uri.etsi.org/01903/v1.4.1#"
+               schemaLocation="common/BDE-XAdESv141-1.1.xsd"/>
+          </imports>
+          <elements xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+                    abie="Envelope">
+         <xsd:element ref="ds:Signature" minOccurs="0" maxOccurs="unbounded">
+           <xsd:annotation>
+             <xsd:documentation>This is an optional set of digital signatures as defined by the W3C specification.</xsd:documentation>
+           </xsd:annotation>
+         </xsd:element>
+          </elements>
+    </files>
+    </dir>
+  </schema>
+</configuration>

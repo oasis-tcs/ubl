@@ -1,0 +1,304 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Note Title Version X.X</title><link rel="stylesheet" type="text/css" href="https://docs.oasis-open.org/templates/DocBook/spec-0.8/css/oasis-note.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><meta name="description" content="{This specification defines...}"><meta name="cvsinfo" content="Id: note-docbook-template-0.8-wd08.xml,v 1.3 2020/04/05 19:08:28 admin Exp "><script xmlns:mml="http://www.w3.org/1998/Math/MathML">
+      /*
+       *  /MathJax/latest.js
+       *
+       *  Copyright (c) 2009-2018 The MathJax Consortium
+       *
+       *  Licensed under the Apache License, Version 2.0 (the "License");
+       *  you may not use this file except in compliance with the License.
+       *  You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       *  Unless required by applicable law or agreed to in writing, software
+       *  distributed under the License is distributed on an "AS IS" BASIS,
+       *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       *  See the License for the specific language governing permissions and
+       *  limitations under the License.
+       */
+      
+      (function () {
+        var h = {
+          "cdnjs.cloudflare.com": {
+            api: "https://api.cdnjs.com/libraries/mathjax?fields=version", version: "version", mathjax: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/"
+          },
+          "cdn.rawgit.com": {
+            api: "https://api.github.com/repos/mathjax/mathjax/releases/latest", version: "tag_name", mathjax: "https://cdn.rawgit.com/mathjax/MathJax/"
+          },
+          "cdn.jsdelivr.net": {
+            api: "https://api.jsdelivr.com/v1/jsdelivr/libraries?name=mathjax&lastversion=*", version: "lastversion", mathjax: "https://cdn.jsdelivr.net/mathjax/"
+          }
+        };
+        function g(q) {
+          if (console && console.log) {
+            console.log(q)
+          }
+        }
+        function e() {
+          if (document.currentScript) {
+            return document.currentScript
+          }
+          var r = document.getElementsByTagName("script");
+          for (var v = 0, q = r.length; v &lt; q; v++) {
+            var t = r[v]; for (var s in h) {
+              if (h.hasOwnProperty(s)) {
+                var u = h[s].mathjax; if (t.src && t.src.substr(0, u.length) === u) {
+                  return t
+                }
+              }
+            }
+          }
+        }
+        function a(r) {
+          if (! r) {
+            return
+          }
+          var q = r.src.replace(/https:\/\//, "").replace(/[\/\?].*/, "");
+          return h[q]
+        }
+        var l = /(?:^|;\s*)mjx\.latest=([^;]*)(?:;|$)/; function d() {
+          var q; try {
+            q = l.exec(document.cookie)
+          }
+          catch (r) {
+          }
+          if (q && q[1] !== "") {
+            return q[1]
+          }
+        }
+        function c(q) {
+          cookie = "mjx.latest=" + q; var s = new Date();
+          s.setDate(s.getDate() + 7);
+          cookie += "; expires=" + s.toGMTString();
+          cookie += "; path=/"; try {
+            document.cookie = cookie
+          }
+          catch (r) {
+          }
+        }
+        function j() {
+          if (window.XMLHttpRequest) {
+            return new XMLHttpRequest()
+          }
+          if (window.ActiveXObject) {
+            try {
+              return new ActiveXObject("Msxml2.XMLHTTP")
+            }
+            catch (q) {
+            }
+            try {
+              return new ActiveXObject("Microsoft.XMLHTTP")
+            }
+            catch (q) {
+            }
+          }
+        }
+        function o(r) {
+          var q = document.createElement("script");
+          q.type = "text/javascript"; q. async = true; q.src = r; var s = document.head || document.getElementsByTagName("head")[0] || document.body; if (s) {
+            s.appendChild(q)
+          } else {
+            g("Can't find the document &lt;head&gt; element")
+          }
+        }
+        function i() {
+          var q = e();
+          if (q) {
+            o(q.src.replace(/\/latest\.js/, "/MathJax.js"))
+          } else {
+            g("Can't determine the URL for loading MathJax")
+          }
+        }
+        function m(q, r, s) {
+          var t = j();
+          if (t) {
+            t.onreadystatechange = function () {
+              if (t.readyState === 4) {
+                if (t.status === 200) {
+                  var v = JSON.parse(t.responseText);
+                  if (v instanceof Array) {
+                    v = v[0]
+                  }
+                  var u = v[q.version]; if (u.substr(0, 2) === "2.") {
+                    c(u);
+                    o(q.mathjax + v[q.version] + s + "/MathJax.js" + r);
+                    return
+                  }
+                } else {
+                  g("Problem acquiring MathJax version: status = " + t.status)
+                }
+                i()
+              }
+            };
+            t.open("GET", q.api, true);
+            t.send(null)
+          } else {
+            g("Can't create XMLHttpRequest object");
+            i()
+          }
+        }
+        var n = e();
+        var p = a(n);
+        if (p) {
+          var b = n.src.replace(/.*?(\?|$)/, "$1");
+          b +=(b ? "&": "?") + "latest"; var f =(n.src.match(/\/unpacked\/latest\.js/) ? "/unpacked": "");
+          var k = d();
+          if (k) {
+            o(p.mathjax + k + f + "/MathJax.js" + b)
+          } else {
+            m(p, b, f)
+          }
+        } else {
+          i()
+        }
+      })();
+  </script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article"><div class="titlepage"><div><p class="logo"><a href="https://www.oasis-open.org/"><img src="https://docs.oasis-open.org/templates/DocBook/spec-0.8/OASISLogo.png" alt="OASIS" border="0" width="290pt"></a></p><div><div style="font-size:200%;font-weight:bold;color:#7f7f7f;margin-top:0pt">OASIS Committee Note</div><hr style="margin-bottom:0pt"><h1>Note Title Version X.X</h1></div><div><h2>Stage and revision /<br> Alternate stage and revision</h2><h2>05 April 2020</h2></div><div></div><div><!--  $Id: note-docbook-template-0.8-wd08.xml,v 1.3 2020/04/05 19:08:28 admin Exp $  --></div><div><dl><dt><span class="loc-heading">This stage:</span></dt><dd><a href="https://docs.oasis-open.org/templates/DocBook/spec-0.8/template/note-docbook-template-wd08.html">https://docs.oasis-open.org/templates/DocBook/spec-0.8/template/note-docbook-template-wd08.html</a>
+                  (Authoritative)
+                <br><a href="https://docs.oasis-open.org/templates/DocBook/spec-0.8/template/note-docbook-template-wd08.pdf">https://docs.oasis-open.org/templates/DocBook/spec-0.8/template/note-docbook-template-wd08.pdf</a><br><a href="https://docs.oasis-open.org/templates/DocBook/spec-0.8/template/note-docbook-template-wd08.xml">https://docs.oasis-open.org/templates/DocBook/spec-0.8/template/note-docbook-template-wd08.xml</a><br></dd></dl><dl><dt><span class="loc-heading">Previous stage:</span></dt><dd><a href="http://docs.oasis-open.org/templates/DocBook/spec-0.7/template/note-docbook-template.html">http://docs.oasis-open.org/templates/DocBook/spec-0.7/template/note-docbook-template.html</a>
+                  (Authoritative)
+                <br><a href="http://docs.oasis-open.org/templates/DocBook/spec-0.7/template/note-docbook-template.pdf">http://docs.oasis-open.org/templates/DocBook/spec-0.7/template/note-docbook-template.pdf</a><br><a href="http://docs.oasis-open.org/templates/DocBook/spec-0.7/template/note-docbook-template.xml">http://docs.oasis-open.org/templates/DocBook/spec-0.7/template/note-docbook-template.xml</a><br></dd></dl><dl><dt><span class="loc-heading">Latest stage:</span></dt><dd><a href="https://docs.oasis-open.org/templates/DocBook/oasis-specification/template/note-docbook-template.html">https://docs.oasis-open.org/templates/DocBook/oasis-specification/template/note-docbook-template.html</a>
+                  (Authoritative)
+                <br><a href="https://docs.oasis-open.org/templates/DocBook/oasis-specification/template/note-docbook-template.pdf">https://docs.oasis-open.org/templates/DocBook/oasis-specification/template/note-docbook-template.pdf</a><br><a href="https://docs.oasis-open.org/templates/DocBook/oasis-specification/template/note-docbook-template.xml">https://docs.oasis-open.org/templates/DocBook/oasis-specification/template/note-docbook-template.xml</a><br></dd></dl></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div><dl><dt><span class="loc-heading">Technical Committee:</span></dt><dd><a class="ulink" href="https://www.oasis-open.org/committees/{tc-shortname}" target="_top">OASIS
+        {official name of technical committee} TC</a></dd></dl></div><div><dl><dt><span class="contrib-heading">Chairs:</span></dt><dd><span class="firstname">Mary</span> <span class="surname">Baker</span> (<a href="mailto:mary.baker@example.com">mary.baker@example.com</a>), Another Corporation<br><span class="firstname">James</span> <span class="surname">Butcher</span> (<a href="mailto:james.butcher@example.com">james.butcher@example.com</a>), Associate Member</dd></dl><dl><dt><span class="editor-heading">Editor:</span></dt><dd><span class="firstname">Jane</span> <span class="surname">Doe</span> (<a href="mailto:jane.doe@example.com">jane.doe@example.com</a>), <a class="ulink" href="www.example.com" target="_top">Example
+            Corporation</a></dd></dl></div><div><dl><dt><a name="d0e105"></a><span class="status-heading">Additional artifacts:</span></dt><dd><p>This prose specification is one component of a Work Product which also includes:</p><div class="itemizedlist"><ul class="itemizedlist compact" style="list-style-type: disc; "><li class="listitem"><p>{XML schemas}</p></li><li class="listitem"><p>{Other parts}</p></li></ul></div></dd></dl></div><div><dl><dt><a name="d0e118"></a><span class="status-heading">Related work:</span></dt><dd><p>This specification replaces or supersedes:</p><div class="itemizedlist"><ul class="itemizedlist compact" style="list-style-type: disc; "><li class="listitem"><p>{specification replaced by this standard}</p></li><li class="listitem"><p>{specification replaced by this standard} </p></li></ul></div><p>This specification is related to:</p><div class="itemizedlist"><ul class="itemizedlist compact" style="list-style-type: disc; "><li class="listitem"><p>{related specifications}</p></li><li class="listitem"><p>{related specifications}</p></li></ul></div></dd></dl></div><div><dl><dt><a name="d0e140"></a><span class="status-heading">Declared XML namespaces:</span></dt><dd><p><a class="ulink" href="https://docs.oasis-open.org/ns/{tc-shortname}/xxxx" target="_top">https://docs.oasis-open.org/ns/{tc-shortname}/xxxx</a></p></dd></dl></div><div><dl><dt><a name="d0e147"></a><span class="abstract-heading">Abstract:</span></dt><dd><p>{This specification defines...}</p></dd></dl></div><div><dl><dt><a name="d0e151"></a><span class="status-heading">Status:</span></dt><dd><p><span class="emphasis"><em>(Use the following for a working draft; please check with TC Administration
+          for any revisions to this content as the guidelines change from time to
+        time)</em></span></p><p>This <a class="ulink" href="https://www.oasis-open.org/policies-guidelines/tc-process#dWorkingDraft" target="_top">Working Draft</a> (WD) has been produced by one or more TC Members;
+        it has not yet been voted on by the TC or <a class="ulink" href="https://www.oasis-open.org/policies-guidelines/tc-process#committeeDraft" target="_top">approved</a> as a Committee Draft (Committee Specification Draft or
+        a Committee Note Draft). The OASIS document <a class="ulink" href="https://www.oasis-open.org/policies-guidelines/tc-process#standApprovProcess" target="_top">Approval Process</a> begins officially with a TC vote to approve a
+        WD as a Committee Draft. A TC may approve a Working Draft, revise it, and re-approve it any
+        number of times as a Committee Draft.</p><p><span class="emphasis"><em>(Use the following for approved documents; please check with TC Administration
+          for any revisions to this content as the guidelines change from time to
+        time)</em></span></p><p>This document was last revised or approved by the {TC name | membership of OASIS} on the
+        above date. The level of approval is also listed above. Check the &#8220;Latest
+        version&#8221; location noted above for possible later revisions of this document. Any
+        other numbered Versions and other technical work produced by the Technical Committee (TC)
+        are listed at <a class="ulink" href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev={tc-shortname}#technical" target="_top">https://www.oasis-open.org/committees/tc_home.php?wg_abbrev={tc-shortname}#technical</a>.</p><p>Technical Committee members should send comments on this specification to the Technical
+        Committee&#8217;s email list. Others should send comments to the Technical Committee by
+        using the &#8220;<a class="ulink" href="https://www.oasis-open.org/committees/comments/index.php?wg_abbrev={tc-shortname}" target="_top">Send A Comment</a>&#8221; button on the Technical
+        Committee&#8217;s web page at <a class="ulink" href="https://www.oasis-open.org/committees/{tc-shortname}/" target="_top">https://www.oasis-open.org/committees/{tc-shortname}/</a>.</p><p>For information on whether any patents have been disclosed that may be essential to
+        implementing this specification, and any offers of patent licensing terms, please refer to
+        the Intellectual Property Rights section of the Technical Committee web page (<a class="ulink" href="https://www.oasis-open.org/committees/{tc-shortname}/ipr.php" target="_top">https://www.oasis-open.org/committees/{tc-shortname}/ipr.php</a>).</p><p>The errata page for this specification is located at <a class="ulink" href="https://docs.oasis-open.org/templates/DocBook/oasis-specification/template/note-docbook-template-errata.html" target="_top">https://docs.oasis-open.org/templates/DocBook/oasis-specification/template/note-docbook-template-errata.html</a>.</p></dd></dl></div><div><dl><dt><a name="d0e195"></a><span class="status-heading">Citation format:</span></dt><dd><p>When referencing this specification the following citation format should be used:</p><div class="bibliomixed"><a name="d0e202"></a><p class="bibliomixed">[<b><abbr class="abbrev">note-docbook-template</abbr></b>] 
+          
+          <span class="citetitle"><em class="citetitle">Note Title Version X.X. </em></span>
+          <span class="date">05 April 2020.</span>
+          <span class="releaseinfo">OASIS Committee Note Draft wd08.</span>
+          <span class="bibliomisc"><a class="ulink" href="https://docs.oasis-open.org/templates/DocBook/spec-0.8/template/note-docbook-template.html" target="_top">https://docs.oasis-open.org/templates/DocBook/spec-0.8/template/note-docbook-template.html</a>.</span>
+        </p></div></dd></dl></div><div><hr><h2 class="notices-heading">Notices</h2><p><span class="emphasis"><em>(Please check with TC Administration for any revisions to this content as the
+          guidelines change from time to time)</em></span></p><p>Copyright &copy; OASIS Open 2019. All Rights Reserved. </p><p>All capitalized terms in the following text have the meanings assigned to them in the
+        OASIS Intellectual Property Rights Policy (the &#8220;OASIS IPR Policy&#8221;). The full
+          <a class="ulink" href="http://www.oasis-open.org/policies-guidelines/ipr" target="_top">Policy</a> may be found at the OASIS website.</p><p>This document and translations of it may be copied and furnished to others, and
+        derivative works that comment on or otherwise explain it or assist in its implementation may
+        be prepared, copied, published, and distributed, in whole or in part, without restriction of
+        any kind, provided that the above copyright notice and this section are included on all such
+        copies and derivative works. However, this document itself may not be modified in any way,
+        including by removing the copyright notice or references to OASIS, except as needed for the
+        purpose of developing any document or deliverable produced by an OASIS Technical Committee
+        (in which case the rules applicable to copyrights, as set forth in the OASIS IPR Policy,
+        must be followed) or as required to translate it into languages other than English.</p><p>The limited permissions granted above are perpetual and will not be revoked by OASIS or
+        its successors or assigns.</p><p>This document and the information contained herein is provided on an &#8220;AS IS&#8221;
+        basis and OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+        ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS
+        OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.</p></div></div><hr></div><div class="toc"><h2>Table of Contents</h2><dl><dt><span class="section"><a href="#S-INTRODUCTION">1 Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="#S-OVERVIEW">1.1 Overview</a></span></dt><dt><span class="section"><a href="#S-ANOTHER-SECTION">1.2 Another section</a></span></dt><dt><span class="section"><a href="#S-TERMINOLOGY">1.3 Terminology</a></span></dt><dd><dl><dt><span class="section"><a href="#S-KEY-WORDS">1.3.1  Key words</a></span></dt><dt><span class="section"><a href="#S-DEFINITIONS">1.3.2  Definitions</a></span></dt><dt><span class="section"><a href="#S-KEY-CONCEPTS">1.3.3  Key concepts</a></span></dt></dl></dd><dt><span class="section"><a href="#S-REFERENCES">1.4 References</a></span></dt></dl></dd><dt><span class="section"><a href="#S-SECTION-TITLE">2 Section Title</a></span></dt><dd><dl><dt><span class="section"><a href="#S-SUB-SECTION-TITLE">2.1 Sub-section Title</a></span></dt><dd><dl><dt><span class="section"><a href="#S-SUB-SUB-SECTION-TITLE">2.1.1 Sub-sub-section Title</a></span></dt></dl></dd></dl></dd></dl><h3>Appendixes</h3><dl><dt><span class="appendix"><a href="#A-AN-ANNEX">A An Annex</a></span></dt><dt><span class="appendix"><a href="#A-A-NORMATIVE-ANNEX">B A Normative Annex (Normative)</a></span></dt><dt><span class="appendix"><a href="#A-A-NON-NORMATIVE-ANNEX">C A Non-normative Annex (Non-Normative)</a></span></dt><dt><span class="appendix"><a href="#A-AN-INFORMATIVE-ANNEX">D An Informative Annex (Informative)</a></span></dt><dt><span class="appendix"><a href="#A-AN-ISO-NORMATIVE-ANNEX">E (normative) An ISO-normative Annex</a></span></dt><dt><span class="appendix"><a href="#A-AN-ISO-INFORMATIVE-ANNEX">F (informative) An ISO-informative Annex</a></span></dt><dt><span class="appendix"><a href="#A-ACKNOWLEDGEMENTS">G Acknowledgements (Non-Normative)</a></span></dt><dt><span class="appendix"><a href="#A-REVISION-HISTORY">H Revision History</a></span></dt></dl></div><hr><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="S-INTRODUCTION"></a>1 Introduction</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-OVERVIEW"></a>1.1 Overview</h3></div></div></div><p>This is a pro-forma XML instance of the DocBook <a class="xref" href="#docbook">[<b><abbr class="abbrev">DocBook</abbr></b>]</a> vocabulary
+        illustrating the components of an OASIS standards-related document. This XML file also
+        includes the use of XML stylesheet association <a class="xref" href="#xml-assoc" title="Associating Style Sheets with XML documents Version 1.0.">[<b><abbr class="abbrev">xml-assoc</abbr></b>]</a>.</p><p>The markup is suitable for publishing according to OASIS conventions by using the
+        available OASIS Specification Publishing in DocBook XML stylesheets <a class="xref" href="#oasis-spec">[<b><abbr class="abbrev">oasis-spec</abbr></b>]</a>. Please review the publishing information for details on the
+        environment and this template.</p><p>What follows is some Lorem text in order to force a page break.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam justo. Mauris eleifend,
+        pede at congue porttitor, magna tellus consectetuer odio, et dapibus quam velit quis lectus.
+        Curabitur vestibulum mattis leo. Vestibulum eget massa. Etiam a ligula sed massa placerat
+        interdum. In hac habitasse platea dictumst. Curabitur augue sapien, tincidunt non, varius
+        et, tincidunt non, augue. Proin urna. In diam dolor, pulvinar quis, euismod vitae, rhoncus
+        sed, odio. Vestibulum pellentesque feugiat turpis. Sed viverra, est ut consequat mattis,
+        neque libero porta metus, sit amet aliquam magna tellus vitae erat. Etiam quam arcu, euismod
+        vel, elementum vitae, gravida sed, eros. In sagittis justo ut orci. Nulla neque urna,
+        porttitor ut, lobortis vel, mollis vel, ipsum. Curabitur lacinia. Ut dui. Donec sapien
+        lorem, molestie ac, vestibulum eu, posuere vel, leo. Nam hendrerit molestie enim.
+        Suspendisse potenti. Etiam dapibus nulla id ligula. Ut a arcu. Sed at nulla. Proin viverra
+        odio sed velit. Praesent leo. Nulla scelerisque, mauris volutpat ultricies fringilla, nunc
+        lectus elementum ligula, non ultricies metus ligula hendrerit ante. Pellentesque posuere
+        ullamcorper enim. Mauris viverra elit vitae justo. Suspendisse potenti. Curabitur ultrices
+        commodo sapien. Cras convallis scelerisque neque. Nullam sit amet tortor. Sed posuere libero
+        ut justo. Donec dignissim elementum quam. Donec egestas sem eu elit. Duis sed ipsum. In
+        pretium ultrices magna.</p><p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque
+        laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi
+        architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas
+        sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione
+        voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit,
+        amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut
+        labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+        exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+        consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam
+        nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?
+        [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium
+        voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati
+        cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id
+        est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam
+        libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id,
+        quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet,
+        ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic
+        tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
+        perferendis doloribus asperiores repellat.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-ANOTHER-SECTION"></a>1.2 Another section</h3></div></div></div><p>This document includes the following important equation::</p><div class="equation"><a name="d0e270"></a><p class="title"><i>Equation 1. Test of MathML standalone</i></p><div class="equation-contents"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block" id="mml_m174" overflow="scroll">
+  <mrow>
+    <msub>
+      <mi>C</mi>
+      <mtext>t</mtext>
+    </msub>
+    <mo>=</mo>
+    <mfrac>
+      <mi>M</mi>
+      <mi>F</mi>
+    </mfrac>
+  </mrow>
+</math></div></div><br class="equation-break"><p>This is another paragraph.</p><p>In this paragraph is an inline equation
+      <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" id="mml_m174b" overflow="scroll">
+  <mrow>
+    <msub>
+      <mi>C</mi>
+      <mtext>t</mtext>
+    </msub>
+    <mo>=</mo>
+    <mfrac>
+      <mi>M</mi>
+      <mi>F</mi>
+    </mfrac>
+  </mrow>
+</math>
+      that should be displayed.
+    </p><p>This is another paragraph.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-TERMINOLOGY"></a>1.3 Terminology</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="S-KEY-WORDS"></a>1.3.1  Key words</h4></div></div></div><p>The key words <em class="glossterm">must</em>, <em class="glossterm">must not</em>,
+            <em class="glossterm">required</em>, <em class="glossterm">shall</em>, <em class="glossterm">shall
+            not</em>, <em class="glossterm">should</em>, <em class="glossterm">should not</em>,
+            <em class="glossterm">recommended</em>, <em class="glossterm">may</em>, and
+            <em class="glossterm">optional</em> are to be interpreted as described in <a class="xref" href="#rfc2119">[<b><abbr class="abbrev">RFC 2119</abbr></b>]</a>. Note that for reasons of style, these words are not capitalized in
+          this document.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="S-DEFINITIONS"></a>1.3.2  Definitions</h4></div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term"> term</span></dt><dd><p>Definition</p></dd><dt><span class="term"> term</span></dt><dd><p>Definition</p></dd></dl></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="S-KEY-CONCEPTS"></a>1.3.3  Key concepts</h4></div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term"> concept</span></dt><dd><p>Definition</p></dd><dt><span class="term"> concept</span></dt><dd><p>Definition</p></dd><dt><span class="term"> concept</span></dt><dd><p>Definition</p></dd></dl></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-REFERENCES"></a>1.4 References</h3></div></div></div><div class="bibliomixed"><a name="docbook"></a><p class="bibliomixed">[<b><abbr class="abbrev">DocBook</abbr></b>] 
+          
+          <span class="citetitle"><em class="citetitle">DocBook 4.5 </em></span>
+          <span class="date">17 January 2005. </span>
+          <span class="releaseinfo">OASIS Committee Draft 4.5. </span>
+          <span class="bibliomisc"><a class="ulink" href="http://www.docbook.org/specs/docbook-4.5-spec.html" target="_top">http://www.docbook.org/specs/docbook-4.5-spec.html</a>.</span>
+        </p></div><div class="bibliomixed"><a name="rfc2119"></a><p class="bibliomixed">[<b><abbr class="abbrev">RFC 2119</abbr></b>] 
+          <span class="citetitle"><em class="citetitle">Key words for use in RFCs to Indicate Requirement Levels</em></span>,
+            <span class="date">March 1997. </span>
+          <span class="author"><span class="firstname">S. </span> <span class="surname">Bradner</span></span>. <span class="releaseinfo">IETF (Internet Engineering Task Force) RFC 2119, </span>
+          <span class="bibliomisc"><a class="ulink" href="http://www.ietf.org/rfc/rfc2119.txt" target="_top">http://www.ietf.org/rfc/rfc2119.txt</a>.</span>
+        </p></div><div class="bibliomixed"><a name="oasis-spec"></a><p class="bibliomixed">[<b><abbr class="abbrev">oasis-spec</abbr></b>] 
+          
+          <span class="citetitle"><em class="citetitle">OASIS Specification Publishing in DocBook XML Version 0.8. </em></span>
+          <span class="date">05 April 2020. </span>
+          <span class="releaseinfo">OASIS Working Draft. </span>
+          <span class="bibliomisc"><a class="ulink" href="https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.html" target="_top">https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.html</a>.</span>
+        </p></div><div class="bibliomixed"><a name="xml-assoc"></a><p class="bibliomixed">[<b><abbr class="abbrev">xml-assoc</abbr></b>] 
+          <i>Associating Style Sheets with XML documents Version 1.0. </i>
+          <span class="date">29 June 1999. </span>
+          <span class="author"><span class="firstname">James </span> <span class="surname">Clark</span></span>. <span class="releaseinfo">W3C Recommendation. </span>
+          <span class="bibliomisc"><a class="ulink" href="http://www.w3.org/1999/06/REC-xml-stylesheet-19990629" target="_top">http://www.w3.org/1999/06/REC-xml-stylesheet-19990629</a></span>
+        </p></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="S-SECTION-TITLE"></a>2 Section Title</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-SUB-SECTION-TITLE"></a>2.1 Sub-section Title</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="S-SUB-SUB-SECTION-TITLE"></a>2.1.1 Sub-sub-section Title</h4></div></div></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a name="S-SUB-SUB-SUB-SECTION-TITLE"></a>2.1.1.1 Sub-sub-sub-section Title</h5></div></div></div><div class="section"><div class="titlepage"><div><div><h6 class="title"><a name="S-SUB-SUB-SUB-SECTION-INTRODUCTION"></a>2.1.1.1.1 Sub-sub-sub-section Introduction</h6></div></div></div><p>The parent level, this level and other deeper levels do not go into the table of
+              contents.</p></div><div class="section"><div class="titlepage"><div><div><h6 class="title"><a name="S-SUB-SUB-SUB-SUB-SECTION-TITLE"></a>2.1.1.1.2 Sub-sub-sub-sub-section Title</h6></div></div></div><p>The parent level, this level and other deeper levels do not go into the table of
+              contents.</p></div></div></div></div></div><div class="appendix"><h2 class="title" style="clear: both"><a name="A-AN-ANNEX"></a>Appendix A An Annex</h2><p>Appendices are distinguished from sections.</p></div><div class="appendix"><h2 class="title" style="clear: both"><a name="A-A-NORMATIVE-ANNEX"></a>Appendix B A Normative Annex (Normative)</h2><p>An annex or section with <code class="literal">role="normative"</code>.</p></div><div class="appendix"><h2 class="title" style="clear: both"><a name="A-A-NON-NORMATIVE-ANNEX"></a>Appendix C A Non-normative Annex (Non-Normative)</h2><p>An annex or section with <code class="literal">role="non-normative"</code>.</p></div><div class="appendix"><h2 class="title" style="clear: both"><a name="A-AN-INFORMATIVE-ANNEX"></a>Appendix D An Informative Annex (Informative)</h2><p>An annex or section with <code class="literal">role="informative"</code>.</p></div><div class="appendix"><h2 class="title" style="clear: both"><a name="A-AN-ISO-NORMATIVE-ANNEX"></a>Appendix E (normative) An ISO-normative Annex</h2><p>An annex or section with <code class="literal">role="iso-normative"</code>.</p></div><div class="appendix"><h2 class="title" style="clear: both"><a name="A-AN-ISO-INFORMATIVE-ANNEX"></a>Appendix F (informative) An ISO-informative Annex</h2><p>An annex or section with <code class="literal">role="iso-informative"</code>.</p></div><div class="appendix"><h2 class="title" style="clear: both"><a name="A-ACKNOWLEDGEMENTS"></a>Appendix G Acknowledgements (Non-Normative)</h2><p>In a typical OASIS work product one might wish to list committee participants in a
+      non-normative annex (markup shown above in the normative annex example) using wording along
+      the line of &#8220;The following individuals have participated in the creation of this
+      specification and are gratefully acknowledged:&#8221;</p><div class="itemizedlist"><ul class="itemizedlist compact" style="list-style-type: disc; "><li class="listitem"><p>Mary Baker, Associate Member</p></li><li class="listitem"><p>Jane Doe, Example Corporation Member</p></li><li class="listitem"><p>John Able, Other Example Corporation Member</p></li></ul></div><p>Note that the itemized list uses <code class="literal">spacing="compact"</code> to remove the space
+      between list items in the printed result, not the HTML result.</p></div><div class="appendix"><h2 class="title" style="clear: both"><a name="A-REVISION-HISTORY"></a>Appendix H Revision History</h2><p>Typically the revision history is removed from a finalized specification or note.</p><p>
+      </p><div class="revhistory"><table border="1" width="100%" summary="Revision history"><tr><td align="left">Revision X.Y</td><td align="left">DD Mmmmmm YYYY</td><td align="left">abc</td></tr><tr><td align="left" colspan="3">Details of the revision</td></tr><tr><td align="left">Revision X.Y</td><td align="left">DD Mmmmmm YYYY</td><td align="left">abc</td></tr><tr><td align="left" colspan="3">Details of the revision</td></tr></table></div><p>
+    </p></div></div><table style="font-size:80%" width="100%"><tr><td>note-docbook-template-0.8-wd08<br>Non-Standards Track</td><td style="text-align:center"><br>Copyright &copy; OASIS Open 2019. All Rights Reserved.</td><td style="text-align:right">05 April 2020</td></tr></table></body></html>

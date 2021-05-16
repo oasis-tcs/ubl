@@ -1,0 +1,780 @@
+<!--
+To get an updated version of this entity file, please run the build process
+and obtain a copy from the archive-only-not-in-final-distribution/new-entities
+directory.
+--><table role="font-size-70%" id="T-PARTY-ROLES">
+   <title>Party Roles</title>
+   <tgroup cols="7">
+      <colspec colwidth="1.08*"/>
+      <colspec colwidth="1.08*"/>
+      <colspec colwidth="2.07*"/>
+      <colspec colwidth="1.53*"/>
+      <colspec colwidth="1*"/>
+      <colspec colwidth="1.15*"/>
+      <colspec colwidth="1.08*"/>
+      <thead>
+         <row valign="middle">
+            <entry align="left">
+               <para>
+                  <emphasis role="bold">Actor</emphasis>
+               </para>
+            </entry>
+            <entry align="left">
+               <para>
+                  <emphasis role="bold">Role</emphasis>
+               </para>
+            </entry>
+            <entry align="left">
+               <para>
+                  <emphasis role="bold">Description</emphasis>
+               </para>
+            </entry>
+            <entry align="left">
+               <para>
+                  <emphasis role="bold">Example</emphasis>
+               </para>
+            </entry>
+            <entry align="left">
+               <para>
+                  <emphasis role="bold">Synonyms</emphasis>
+               </para>
+            </entry>
+            <entry align="left">
+               <para>
+                  <emphasis role="bold">Sends</emphasis>
+               </para>
+            </entry>
+            <entry align="left">
+               <para>
+                  <emphasis role="bold">Receives</emphasis>
+               </para>
+            </entry>
+         </row>
+      </thead>
+      <tbody>
+         <row>
+            <entry align="left">Customer Party</entry>
+            <entry align="left">Originator</entry>
+            <entry align="left">The party that had the original demand for the goods and/or services and therefore initiated the procurement transaction. The Originator participates in pre-ordering activity either through <link linkend="S-REQUEST-FOR-QUOTATION-SCHEMA">Request for Quotation</link> and <link linkend="S-QUOTATION-SCHEMA">Quotation</link> or by receiving a Quotation as a response to a punch-out transaction on a marketplace or Seller’s website. If the Originator subsequently places an <link linkend="S-ORDER-SCHEMA">Order</link>, the Originator adopts the role of Buyer. The Originator is typically the contact point for queries regarding the original requirement and may be referred to in an <link linkend="S-ORDER-CHANGE-SCHEMA">Order Change</link>, <link linkend="S-ORDER-CANCELLATION-SCHEMA">Order Cancellation</link>, or <link linkend="S-ORDER-RESPONSE-SCHEMA">Order Response</link>.</entry>
+            <entry align="left">If an employee requests a computer, the employing company may become the Buyer, but the employee is the Originator. They need to receive information about the order.</entry>
+            <entry align="left"/>
+            <entry align="left">
+               <link linkend="S-REQUEST-FOR-QUOTATION-SCHEMA">Request for Quotation</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-QUOTATION-SCHEMA">Quotation</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Customer Party</entry>
+            <entry align="left">Buyer</entry>
+            <entry align="left">The party that purchases the goods or services on behalf of the Originator. The Buyer may be referred to in <link linkend="S-ORDER-RESPONSE-SCHEMA">Order Response</link>, <link linkend="S-DESPATCH-ADVICE-SCHEMA">Despatch Advice</link>, <link linkend="S-FULFILMENT-CANCELLATION-SCHEMA">Fulfilment Cancellation</link>, <link linkend="S-INVOICE-SCHEMA">Invoice</link>, <link linkend="S-SELF-BILLED-INVOICE-SCHEMA">Self Billed Invoice</link>, <link linkend="S-CREDIT-NOTE-SCHEMA">Credit Note</link>, and <link linkend="S-STATEMENT-SCHEMA">Statement</link>.</entry>
+            <entry align="left">A company may delegate the task of purchasing to a specialized group to consolidate orders and gain greater discounts.</entry>
+            <entry align="left">Order Point</entry>
+            <entry align="left">
+               <link linkend="S-ORDER-SCHEMA">Order</link>, <link linkend="S-ORDER-CHANGE-SCHEMA">Order Change</link>, <link linkend="S-ORDER-CANCELLATION-SCHEMA">Order Cancellation</link>, <link linkend="S-FULFILMENT-CANCELLATION-SCHEMA">Fulfilment Cancellation</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-ORDER-RESPONSE-SCHEMA">Order Response</link>, <link linkend="S-FULFILMENT-CANCELLATION-SCHEMA">Fulfilment Cancellation</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Customer Party</entry>
+            <entry align="left">Delivery</entry>
+            <entry align="left">The party to whom goods should be delivered. The Delivery Party may be the same as the Originator. The Delivery Party must be referred to at line item level in <link linkend="S-REQUEST-FOR-QUOTATION-SCHEMA">Request for Quotation</link>, <link linkend="S-QUOTATION-SCHEMA">Quotation</link>, <link linkend="S-ORDER-SCHEMA">Order</link>, <link linkend="S-ORDER-CHANGE-SCHEMA">Order Change</link>, <link linkend="S-ORDER-CANCELLATION-SCHEMA">Order Cancellation</link>, and <link linkend="S-ORDER-RESPONSE-SCHEMA">Order Response</link>. The Delivery Party may be referred to at line level in <link linkend="S-INVOICE-SCHEMA">Invoice</link>, <link linkend="S-SELF-BILLED-INVOICE-SCHEMA">Self Billed Invoice</link>, <link linkend="S-CREDIT-NOTE-SCHEMA">Credit Note</link>, and <link linkend="S-DEBIT-NOTE-SCHEMA">Debit Note</link>. The Delivery Party may be stipulated in a transport contract.</entry>
+            <entry align="left">If a municipality buys a wheelchair for a citizen, the wheelchair must be delivered to the citizen (the Delivery Party). In such cases the citizen may be notified before delivery of the wheelchair.</entry>
+            <entry align="left">Delivery Point, Destination Party, Receiver, Recipient</entry>
+            <entry align="left">
+               <link linkend="S-RECEIPT-ADVICE-SCHEMA">Receipt Advice</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-DESPATCH-ADVICE-SCHEMA">Despatch Advice</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Customer Party</entry>
+            <entry align="left">Accounting Customer</entry>
+            <entry align="left">The party responsible for making settlement relating to a purchase and resolving billing issues using a <link linkend="S-DEBIT-NOTE-SCHEMA">Debit Note</link>. The Accounting Customer must be referred to in an <link linkend="S-ORDER-SCHEMA">Order</link> and may be referred to in an <link linkend="S-ORDER-RESPONSE-SCHEMA">Order Response</link>. In a Self Billing scenario, the Accounting Customer is responsible for calculating and issuing tax invoices.</entry>
+            <entry align="left">If a kindergarten buys some toys they may be the Originator, Buyer, and Delivery Party, but the municipality may play the role of Accounting Customer—they are going to pay for it.</entry>
+            <entry align="left">Invoice, Accounts Payable, Debtor</entry>
+            <entry align="left">In a traditional Billing scenario: <link linkend="S-DEBIT-NOTE-SCHEMA">Debit Note</link>, <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>, and <link linkend="S-REMITTANCE-ADVICE-SCHEMA">Remittance Advice</link> In a Self Billing scenario: <link linkend="S-SELF-BILLED-INVOICE-SCHEMA">Self Billed Invoice</link>, <link linkend="S-SELF-BILLED-CREDIT-NOTE-SCHEMA">Self Billed Credit Note</link>, and <link linkend="S-REMITTANCE-ADVICE-SCHEMA">Remittance Advice</link>
+            </entry>
+            <entry align="left">In a traditional Billing scenario: <link linkend="S-INVOICE-SCHEMA">Invoice</link>, <link linkend="S-CREDIT-NOTE-SCHEMA">Credit Note</link>, and <link linkend="S-STATEMENT-SCHEMA">Statement</link>; in a Self Billing scenario: <link linkend="S-CREDIT-NOTE-SCHEMA">Credit Note</link>, <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>, and <link linkend="S-STATEMENT-SCHEMA">Statement</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Supplier Party</entry>
+            <entry align="left">Seller</entry>
+            <entry align="left">The party responsible for handling Originator and Buyer services. The Seller party is legally responsible for providing the goods to the Buyer. The Seller party receives and quotes against <link linkend="S-REQUEST-FOR-QUOTATION-SCHEMA">Request for Quotation</link> documents and may provide information to the Buyer’s requisitioning process through <link linkend="S-CATALOGUE-SCHEMA">Catalogue</link>s and <link linkend="S-QUOTATION-SCHEMA">Quotation</link>s.</entry>
+            <entry align="left">The organization that sells wheelchairs to municipalities.</entry>
+            <entry align="left">Sales Point, Provider, Customer Manager</entry>
+            <entry align="left">
+               <link linkend="S-QUOTATION-SCHEMA">Quotation</link>, <link linkend="S-ORDER-RESPONSE-SCHEMA">Order Response</link>, <link linkend="S-ORDER-RESPONSE-SIMPLE-SCHEMA">Order Response Simple</link>, <link linkend="S-CATALOGUE-SCHEMA">Catalogue</link>, <link linkend="S-CATALOGUE-DELETION-SCHEMA">Catalogue Deletion</link>, <link linkend="S-CATALOGUE-ITEM-SPECIFICATION-UPDATE-SCHEMA">Catalogue Item Specification Update</link>, <link linkend="S-CATALOGUE-PRICING-UPDATE-SCHEMA">Catalogue Pricing Update</link>, <link linkend="S-FULFILMENT-CANCELLATION-SCHEMA">Fulfilment Cancellation</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-REQUEST-FOR-QUOTATION-SCHEMA">Request for Quotation</link>, <link linkend="S-ORDER-SCHEMA">Order</link>, <link linkend="S-ORDER-CHANGE-SCHEMA">Order Change</link>, <link linkend="S-ORDER-CANCELLATION-SCHEMA">Order Cancellation</link>, <link linkend="S-CATALOGUE-REQUEST-SCHEMA">Catalogue Request</link>, <link linkend="S-FULFILMENT-CANCELLATION-SCHEMA">Fulfilment Cancellation</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Supplier Party</entry>
+            <entry align="left">Despatch</entry>
+            <entry align="left">The party where goods are to be collected from. The Despatch Party may be stipulated in a transport contract.</entry>
+            <entry align="left">The wheelchair Supplier may store chairs at a local warehouse. The warehouse will actually despatch the chair to the Delivery Party. The local warehouse is then the Despatch Party.</entry>
+            <entry align="left">Despatch Point, Shipper, Sender</entry>
+            <entry align="left">
+               <link linkend="S-DESPATCH-ADVICE-SCHEMA">Despatch Advice</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-RECEIPT-ADVICE-SCHEMA">Receipt Advice</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Supplier Party</entry>
+            <entry align="left">Accounting Supplier</entry>
+            <entry align="left">The party who claims the payment and is responsible for resolving billing issues and arranging settlement.</entry>
+            <entry align="left">There are cases where the Accounting Supplier is not the Seller party. For example, factoring, where the invoicing is outsourced to another company.</entry>
+            <entry align="left">Accounts Receivable, Invoice Issuer, Creditor</entry>
+            <entry align="left">In a traditional Billing scenario: <link linkend="S-INVOICE-SCHEMA">Invoice</link>, <link linkend="S-CREDIT-NOTE-SCHEMA">Credit Note</link>, and <link linkend="S-STATEMENT-SCHEMA">Statement</link>; in a Self Billing scenario: <link linkend="S-CREDIT-NOTE-SCHEMA">Credit Note</link>, <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>, and <link linkend="S-STATEMENT-SCHEMA">Statement</link>
+            </entry>
+            <entry align="left">In a traditional Billing scenario: <link linkend="S-DEBIT-NOTE-SCHEMA">Debit Note</link>, Account Response, and <link linkend="S-REMITTANCE-ADVICE-SCHEMA">Remittance Advice</link> In a Self Billing scenario: <link linkend="S-SELF-BILLED-INVOICE-SCHEMA">Self Billed Invoice</link>, <link linkend="S-SELF-BILLED-CREDIT-NOTE-SCHEMA">Self Billed Credit Note</link>, and <link linkend="S-REMITTANCE-ADVICE-SCHEMA">Remittance Advice</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Supplier Party</entry>
+            <entry align="left">Payee</entry>
+            <entry align="left">The party to whom the <link linkend="S-INVOICE-SCHEMA">Invoice</link> is paid.</entry>
+            <entry align="left">The Accounting Supplier may not be the party to be paid due to changes in the organization, e.g., a company merger.</entry>
+            <entry align="left">Accounts Receivable, Creditor</entry>
+            <entry align="left"/>
+            <entry align="left">
+               <link linkend="S-REMITTANCE-ADVICE-SCHEMA">Remittance Advice</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Customer Party</entry>
+            <entry align="left">Contractor</entry>
+            <entry align="left">The party responsible for the contract to which the Catalogue relates.</entry>
+            <entry align="left">An organization has a central office for maintaining catalogues of approved items for purchase.</entry>
+            <entry align="left">Central Catalogue Party, Purchasing Manager</entry>
+            <entry align="left">
+               <link linkend="S-CATALOGUE-REQUEST-SCHEMA">Catalogue Request</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-CATALOGUE-SCHEMA">Catalogue</link>, <link linkend="S-CATALOGUE-DELETION-SCHEMA">Catalogue Deletion</link>, <link linkend="S-CATALOGUE-ITEM-SPECIFICATION-UPDATE-SCHEMA">Catalogue Item Specification Update</link>, <link linkend="S-CATALOGUE-PRICING-UPDATE-SCHEMA">Catalogue Pricing Update</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Provider</entry>
+            <entry align="left">The party responsible for the integrity of the information provided about an item.</entry>
+            <entry align="left">The manufacturer may publish and maintain the data sheets about a product.</entry>
+            <entry align="left"/>
+            <entry align="left">
+               <link linkend="S-CATALOGUE-SCHEMA">Catalogue</link>, <link linkend="S-CATALOGUE-DELETION-SCHEMA">Catalogue Deletion</link>, <link linkend="S-CATALOGUE-ITEM-SPECIFICATION-UPDATE-SCHEMA">Catalogue Item Specification Update</link>, <link linkend="S-CATALOGUE-PRICING-UPDATE-SCHEMA">Catalogue Pricing Update</link>
+            </entry>
+            <entry align="left"/>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Receiver</entry>
+            <entry align="left">A general role, describing the receiver of a document. For a catalogue, this can be the customer, a potential customer, or a third party exposing the document, for instance, an interim broker.</entry>
+            <entry align="left">A marketplace may receive an <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>.</entry>
+            <entry align="left"/>
+            <entry align="left"/>
+            <entry align="left">
+               <link linkend="S-CATALOGUE-SCHEMA">Catalogue</link>, <link linkend="S-CATALOGUE-DELETION-SCHEMA">Catalogue Deletion</link>, <link linkend="S-CATALOGUE-ITEM-SPECIFICATION-UPDATE-SCHEMA">Catalogue Item Specification Update</link>, <link linkend="S-CATALOGUE-PRICING-UPDATE-SCHEMA">Catalogue Pricing Update</link>, <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Sender</entry>
+            <entry align="left">The party sending a document.</entry>
+            <entry align="left">A marketplace may send an <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>.</entry>
+            <entry align="left"/>
+            <entry align="left">
+               <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+            </entry>
+            <entry align="left"/>
+         </row>
+         <row>
+            <entry align="left">Customer Party</entry>
+            <entry align="left">Contracting Authority</entry>
+            <entry align="left">The party responsible for making the contract relating to a tender ending up with a purchase.</entry>
+            <entry align="left">If a kindergarten buys a lot of toys they may be a Contracting Authority in a Public Tender.</entry>
+            <entry align="left">Customer, Debtor</entry>
+            <entry align="left">
+               <link linkend="S-EXPRESSION-OF-INTEREST-RESPONSE-SCHEMA">Expression Of Interest Response</link>, <link linkend="S-QUALIFICATION-APPLICATION-REQUEST-SCHEMA">Qualification Application Request</link>, <link linkend="S-TENDER-CONTRACT-SCHEMA">Tender Contract</link>, <link linkend="S-TENDER-STATUS-SCHEMA">Tender Status</link>, <link linkend="S-UNSUBSCRIBE-FROM-PROCEDURE-RESPONSE-SCHEMA">Unsubscribe From Procedure Response</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-EXPRESSION-OF-INTEREST-REQUEST-SCHEMA">Expression Of Interest Request</link>, <link linkend="S-QUALIFICATION-APPLICATION-RESPONSE-SCHEMA">Qualification Application Response</link>, and <link linkend="S-TENDER-STATUS-REQUEST-SCHEMA">Tender Status Request</link>, <link linkend="S-TENDER-WITHDRAWAL-SCHEMA">Tender Withdrawal</link>, <link linkend="S-UNSUBSCRIBE-FROM-PROCEDURE-REQUEST-SCHEMA">Unsubscribe From Procedure Request</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Supplier Party</entry>
+            <entry align="left">Tenderer</entry>
+            <entry align="left">The party responsible for handling Originator and Buyer services. The Tenderer party is legally responsible for providing the goods to the Contracting Authority. The Tenderer party receives the <link linkend="S-EXPRESSION-OF-INTEREST-RESPONSE-SCHEMA">Expression Of Interest Response</link>.</entry>
+            <entry align="left">The organization that sells wheelchairs to municipalities.</entry>
+            <entry align="left">Seller, Provider, Economic Operator</entry>
+            <entry align="left">
+               <link linkend="S-EXPRESSION-OF-INTEREST-REQUEST-SCHEMA">Expression Of Interest Request</link>, <link linkend="S-QUALIFICATION-APPLICATION-RESPONSE-SCHEMA">Qualification Application Response</link>, <link linkend="S-TENDER-STATUS-REQUEST-SCHEMA">Tender Status Request</link>, <link linkend="S-TENDER-WITHDRAWAL-SCHEMA">Tender Withdrawal</link>, <link linkend="S-UNSUBSCRIBE-FROM-PROCEDURE-REQUEST-SCHEMA">Unsubscribe From Procedure Request</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-EXPRESSION-OF-INTEREST-RESPONSE-SCHEMA">Expression Of Interest Response</link>, <link linkend="S-QUALIFICATION-APPLICATION-REQUEST-SCHEMA">Qualification Application Request</link>, <link linkend="S-TENDER-CONTRACT-SCHEMA">Tender Contract</link>, <link linkend="S-TENDER-STATUS-SCHEMA">Tender Status</link>, <link linkend="S-UNSUBSCRIBE-FROM-PROCEDURE-RESPONSE-SCHEMA">Unsubscribe From Procedure Response</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Consignor</entry>
+            <entry align="left">The party consigning the goods as stipulated in the transport contract. A Buyer, Delivery, Seller, or Despatcher Party may also play the role of Consignor. Also known as the Transport User. The Consignor may be stipulated in a transport contract.</entry>
+            <entry align="left">The wheelchair Supplier may source from a local warehouse. The Freight Forwarder will collect the chair from the local warehouse, which is thus the Consignor. In this case, the warehouse also plays the role of Despatch Party to the Freight Forwarder.</entry>
+            <entry align="left">Despatch Point, Shipper, Sender, Transport User</entry>
+            <entry align="left">
+               <link linkend="S-FORWARDING-INSTRUCTIONS-SCHEMA">Forwarding Instructions</link>, <link linkend="S-PACKING-LIST-SCHEMA">Packing List</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-BILL-OF-LADING-SCHEMA">Bill of Lading</link>, <link linkend="S-WAYBILL-SCHEMA">Waybill</link>, <link linkend="S-FREIGHT-INVOICE-SCHEMA">Freight Invoice</link>, <link linkend="S-TRANSPORTATION-STATUS-SCHEMA">Transportation Status</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Consignee</entry>
+            <entry align="left">The party receiving a consignment of goods as stipulated in the transport contract.</entry>
+            <entry align="left">The party taking responsibility for the receipt of the consignment covering the wheelchair.</entry>
+            <entry align="left">Delivery Point, Transport Service Buyer</entry>
+            <entry align="left">
+               <link linkend="S-FORWARDING-INSTRUCTIONS-SCHEMA">Forwarding Instructions</link>, <link linkend="S-FREIGHT-INVOICE-SCHEMA">Freight Invoice</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-BILL-OF-LADING-SCHEMA">Bill of Lading</link>, <link linkend="S-WAYBILL-SCHEMA">Waybill</link>, <link linkend="S-FREIGHT-INVOICE-SCHEMA">Freight Invoice</link>, <link linkend="S-TRANSPORTATION-STATUS-SCHEMA">Transportation Status</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Freight Forwarder</entry>
+            <entry align="left">The party arranging the carriage of goods, including connected services and/or associated formalities, on behalf of a Consignor or Consignee. Also known as the Transport Service Provider. The Freight Forwarder may also be the Carrier. The Freight Forwarder may create an <link linkend="S-INVOICE-SCHEMA">Invoice</link> and bill to the Transport Service Buyer for the transportation service provided.</entry>
+            <entry align="left">The Consignor may have a contract with this Freight Forwarder, which is a Transport Services Provider, to arrange all their transport needs.</entry>
+            <entry align="left">Shipping Agent, Broker, Courier, Transport Service Provider</entry>
+            <entry align="left">
+               <link linkend="S-FORWARDING-INSTRUCTIONS-SCHEMA">Forwarding Instructions</link>, <link linkend="S-FREIGHT-INVOICE-SCHEMA">Freight Invoice</link>, <link linkend="S-TRANSPORTATION-STATUS-SCHEMA">Transportation Status</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-BILL-OF-LADING-SCHEMA">Bill of Lading</link>, <link linkend="S-WAYBILL-SCHEMA">Waybill</link>, <link linkend="S-PACKING-LIST-SCHEMA">Packing List</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Carrier</entry>
+            <entry align="left">The party providing physical transport services.</entry>
+            <entry align="left">The Freight Forwarder may engage an airline company to deliver the wheelchair. The airline is then the Carrier and delivers the chair to the Delivery Party.</entry>
+            <entry align="left">Freight Haulier, Shipper, Ships Agent, Shipping Company, Airline, Rail Operator, Road Haulier</entry>
+            <entry align="left">
+               <link linkend="S-BILL-OF-LADING-SCHEMA">Bill of Lading</link>, <link linkend="S-WAYBILL-SCHEMA">Waybill</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-FORWARDING-INSTRUCTIONS-SCHEMA">Forwarding Instructions</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Exporter</entry>
+            <entry align="left">The party who makes regulatory export declarations, or on whose behalf regulatory export declarations are made, and who is the owner of the goods or has similar right of disposal over them at the time when the declaration is accepted.</entry>
+            <entry align="left">The wheelchair Supplier has to apply for a <link linkend="S-CERTIFICATE-OF-ORIGIN-SCHEMA">Certificate of Origin</link> in order to sell the chairs overseas.</entry>
+            <entry align="left">Seller, Consignor</entry>
+            <entry align="left">
+               <link linkend="S-CERTIFICATE-OF-ORIGIN-SCHEMA">Certificate of Origin</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Endorser</entry>
+            <entry align="left">The party appointed by the Government of a country who has the right to certify a <link linkend="S-CERTIFICATE-OF-ORIGIN-SCHEMA">Certificate of Origin</link>. This endorsement restricts goods imported from certain countries for political or other reasons.</entry>
+            <entry align="left">The Government agency validates all the information provided by Exporter for <link linkend="S-CERTIFICATE-OF-ORIGIN-SCHEMA">Certificate of Origin</link> approval.</entry>
+            <entry align="left">Authorized Organization, Embassy</entry>
+            <entry align="left">
+               <link linkend="S-CERTIFICATE-OF-ORIGIN-SCHEMA">Certificate of Origin</link>, <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-CERTIFICATE-OF-ORIGIN-SCHEMA">Certificate of Origin</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Importer</entry>
+            <entry align="left">The party who makes, or on whose behalf an agent or other authorized person makes, an import declaration. This may include a person who has possession of the goods or to whom the goods are consigned.</entry>
+            <entry align="left">A specialized group in a company consolidates the purchase request and handles the receiving of goods.</entry>
+            <entry align="left">Order Point, Delivery Party, Buyer, Customer, Consignee</entry>
+            <entry align="left">
+			            <link linkend="S-IMPORT-CUSTOMS-DECLARATION-SCHEMA">Import Customs Declaration</link>
+		          </entry>
+            <entry align="left">
+               <link linkend="S-CERTIFICATE-OF-ORIGIN-SCHEMA">Certificate of Origin</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Transport User</entry>
+            <entry align="left">The Transport User is the role representing anyone who has a demand for transport services, books transport services, and follows up the execution of such services.</entry>
+            <entry align="left">The manufacturer has to order transport of products from a carrier or freight forwarder (Transport Service Provider).</entry>
+            <entry align="left">Transport Buyer, Logistics Service Client</entry>
+            <entry align="left">
+               <link linkend="S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA">Transport Execution Plan Request</link>, <link linkend="S-TRANSPORTATION-STATUS-REQUEST-SCHEMA">Transportation Status Request</link>, <link linkend="S-TRANSPORT-SERVICE-DESCRIPTION-REQUEST-SCHEMA">Transport Service Description Request</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-TRANSPORT-EXECUTION-PLAN-SCHEMA">Transport Execution Plan</link>, <link linkend="S-TRANSPORTATION-STATUS-SCHEMA">Transportation Status</link>, <link linkend="S-TRANSPORT-SERVICE-DESCRIPTION-SCHEMA">Transport Service Description</link>, <link linkend="S-GOODS-ITEM-ITINERARY-SCHEMA">Goods Item Itinerary</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Transport Service Provider</entry>
+            <entry align="left">The Transport Service Provider is the role that plans, markets and performs transport services.</entry>
+            <entry align="left">The carrier or freight forwarder who arranges for transport services on behalf of a manufacturer (Transport User)</entry>
+            <entry align="left">Transport Provider, Transport Seller, Logistics Service Provider</entry>
+            <entry align="left">
+               <link linkend="S-TRANSPORT-EXECUTION-PLAN-SCHEMA">Transport Execution Plan</link>, <link linkend="S-TRANSPORTATION-STATUS-SCHEMA">Transportation Status</link>, <link linkend="S-TRANSPORT-SERVICE-DESCRIPTION-SCHEMA">Transport Service Description</link>, <link linkend="S-TRANSPORT-PROGRESS-STATUS-REQUEST-SCHEMA">Transport Progress Status Request</link>, <link linkend="S-GOODS-ITEM-ITINERARY-SCHEMA">Goods Item Itinerary</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA">Transport Execution Plan Request</link>, <link linkend="S-TRANSPORTATION-STATUS-REQUEST-SCHEMA">Transportation Status Request</link>, <link linkend="S-TRANSPORT-SERVICE-DESCRIPTION-REQUEST-SCHEMA">Transport Service Description Request</link>, <link linkend="S-TRANSPORT-PROGRESS-STATUS-SCHEMA">Transport Progress Status</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Transportation Network Manager</entry>
+            <entry align="left">The Transportation Network Manager is the role that extracts all information available regarding the infrastructure (static/dynamic) related to planning and executing transport and makes this information available to the Transport Service Provider. During a transport service, or even during a single leg, the Transport Service Provider may rely on information from several Transportation Network Managers.</entry>
+            <entry align="left">The Traffic Information Centre (TIC) issuing information related to road work and/or traffic conditions as a service to a Transport Service Provider</entry>
+            <entry align="left">Road Administration, Traffic Information Centre, Coastal Administration, Harbor Master, Railway Administration, Infrastructure Manager</entry>
+            <entry align="left">
+               <link linkend="S-TRANSPORT-PROGRESS-STATUS-SCHEMA">Transport Progress Status</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-TRANSPORT-PROGRESS-STATUS-REQUEST-SCHEMA">Transport Progress Status Request</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Governor</entry>
+            <entry align="left">The Governor is the role that governs an agreement or contract.</entry>
+            <entry align="left">A legal entity who creates and maintain an agreement.</entry>
+            <entry align="left"/>
+            <entry align="left"/>
+            <entry align="left"/>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Participant</entry>
+            <entry align="left">The Participant is the role agreeing on a set of digital processes, terms and conditions to ensure interoperability within a business network. A Buyer, Seller, Accounting Customer, Accounting Supplier, Service Provider Party may also play the role of Participant. A Participant in the role of a Business Party communicates its digital capabilities using a <link linkend="S-DIGITAL-CAPABILITY-SCHEMA">Digital Capability</link> document.</entry>
+            <entry align="left">A Service Provider agreeing on multi-lateral trading partner agreement governed by an e-Procurement network.</entry>
+            <entry align="left"/>
+            <entry align="left">
+               <link linkend="S-DIGITAL-AGREEMENT-SCHEMA">Digital Agreement</link>, <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-DIGITAL-AGREEMENT-SCHEMA">Digital Agreement</link>, <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Business</entry>
+            <entry align="left">The Business Party is a general role that may be played by any other Party doing business according to a set of business and digital capabilities. A Business Party communicates its business information and capabilities to other parties using a <link linkend="S-BUSINESS-CARD-SCHEMA">Business Card</link>. A Business Party communicates its digital capabilities to other parties using a <link linkend="S-DIGITAL-CAPABILITY-SCHEMA">Digital Capability</link> document.</entry>
+            <entry align="left">A Business Party supports the procurement business process according to a specific profile governed by an UBL user group.</entry>
+            <entry align="left">Trading Partner, Service Provider, Economic Operator, Contracting Authority, Participant</entry>
+            <entry align="left">
+               <link linkend="S-BUSINESS-CARD-SCHEMA">Business Card</link>, <link linkend="S-DIGITAL-CAPABILITY-SCHEMA">Digital Capability</link>, <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-BUSINESS-CARD-SCHEMA">Business Card</link>, <link linkend="S-DIGITAL-CAPABILITY-SCHEMA">Digital Capability</link>, <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Weighing</entry>
+            <entry align="left">The Weighing Party is a role played by weighing stations, shippers, terminal operators and possibly other parties executing a weight measurement including verified gross mass measurements.</entry>
+            <entry align="left">A Business Party supports the procurement business process according to a specific profile governed by an UBL user group.</entry>
+            <entry align="left">Weighing Station, Weighing Provider</entry>
+            <entry align="left">
+               <link linkend="S-WEIGHT-STATEMENT-SCHEMA">Weight Statement</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Responsible</entry>
+            <entry align="left">The party responsible for signing the VGM on behalf of the Shipper.</entry>
+            <entry align="left">A Weighing Party playing the role of a Responsible who signs a VGM.</entry>
+            <entry align="left"/>
+            <entry align="left"/>
+            <entry align="left"/>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Exporter</entry>
+            <entry align="left">The party who initiates the export of goods and is authorized to perform the export. The exporter is often the owner of the goods being exported.</entry>
+            <entry align="left">A slaughterhouse is the owner of the goods being exported, but not necessarily the party who presents the Goods Certificate for exportation.</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-GOODS-CERTIFICATE-SCHEMA">Goods Certificate</link>
+			            <link linkend="S-EXPORT-CUSTOMS-DECLARATION-SCHEMA">Export Customs Declaration</link>
+		          </entry>
+            <entry align="left"/>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Importer</entry>
+            <entry align="left">The party who initiates the import of goods and is authorized to perform the import. </entry>
+            <entry align="left">A grocery store importing meat</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-GOODS-CERTIFICATE-SCHEMA">Goods Certificate</link>			
+		          </entry>
+            <entry align="left">
+				           <link linkend="S-GOODS-CERTIFICATE-SCHEMA">Goods Certificate</link>
+				           <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Preparation</entry>
+            <entry align="left">An authenticated party who performs the import or export in service to the importer or exporter. This is often a terminal operator who stores the goods before it is being exported or imported.</entry>
+            <entry align="left">A cold store that is keeping the meat before export.</entry>
+            <entry align="left">Terminal Operator</entry>
+            <entry align="left">
+			            <link linkend="S-GOODS-CERTIFICATE-SCHEMA">Goods Certificate</link>
+			            <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>			
+		          </entry>
+            <entry align="left">
+				           <link linkend="S-GOODS-CERTIFICATE-SCHEMA">Goods Certificate</link>
+				           <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Certification</entry>
+            <entry align="left">A legal authority who certifies the goods being imported or exported and signs the Goods Certificate.</entry>
+            <entry align="left">A food standards agency</entry>
+            <entry align="left"/>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-GOODS-CERTIFICATE-SCHEMA">Goods Certificate</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Issuer</entry>
+            <entry align="left">The organisation authorized by the legal authority party to issue the <link linkend="S-GOODS-ITEM-PASSPORT-SCHEMA">Goods Item Passport</link>.</entry>
+            <entry align="left">A chamber of commerce</entry>
+            <entry align="left"/>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-GOODS-ITEM-PASSPORT-SCHEMA">Goods Item Passport</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Importing Guarantor</entry>
+            <entry align="left">The party fiscal responsible for customs of the goods that has been temporary imported.</entry>
+            <entry align="left">A chamber of commerce, member of the ICC</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-PROOF-OF-REEXPORTATION-REQUEST-SCHEMA">Proof Of Reexportation Request</link>
+		          </entry>
+            <entry align="left">
+			            <link linkend="S-PROOF-OF-REEXPORTATION-SCHEMA">Proof Of Reexportation</link>
+			            <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Exporting Guarantor</entry>
+            <entry align="left">The party fiscal responsible for customs of the goods that has been temporary exported.</entry>
+            <entry align="left">A chamber of commerce, member of the ICC</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-PROOF-OF-REEXPORTATION-SCHEMA">Proof Of Reexportation</link>
+			            <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+		          </entry>
+            <entry align="left">
+			            <link linkend="S-PROOF-OF-REEXPORTATION-REQUEST-SCHEMA">Proof Of Reexportation Request</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Holder</entry>
+            <entry align="left">The holder of the <link linkend="S-GOODS-ITEM-PASSPORT-SCHEMA">Goods Item Passport</link>, often the temporary exporter of the goods and the one the Goods Item Passport is applied to. </entry>
+            <entry align="left">A manufacturer who wants to present some goods at an exhibition and brings them in on a temporary basis.</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-GOODS-ITEM-PASSPORT-SCHEMA">Goods Item Passport</link>	
+		          </entry>
+            <entry align="left">
+			            <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Accompanying</entry>
+            <entry align="left">The party accompanying the goods during the exportation and importation.</entry>
+            <entry align="left">A representative for the holder who wants to go to an exhibition with commercial goods not for sale.</entry>
+            <entry align="left">Representing party</entry>
+            <entry align="left">
+			            <link linkend="S-GOODS-ITEM-PASSPORT-SCHEMA">Goods Item Passport</link>	
+		          </entry>
+            <entry align="left">
+			            <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Exporting Customs</entry>
+            <entry align="left">The party legal responsible for the export of the goods.</entry>
+            <entry align="left">A chamber of commerce</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-GOODS-ITEM-PASSPORT-SCHEMA">Goods Item Passport</link>
+			            <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>	
+			            <link linkend="S-EXPORT-CUSTOMS-DECLARATION-SCHEMA">Export Customs Declaration</link>
+		          </entry>
+            <entry align="left">
+			            <link linkend="S-GOODS-ITEM-PASSPORT-SCHEMA">Goods Item Passport</link>
+			            <link linkend="S-EXPORT-CUSTOMS-DECLARATION-SCHEMA">Export Customs Declaration</link>
+			            <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>	
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Importing Customs</entry>
+            <entry align="left">The party legal responsible for the import of the goods. The original requester for the <link linkend="S-PROOF-OF-REEXPORTATION-REQUEST-SCHEMA">Proof Of Reexportation Request</link>.</entry>
+            <entry align="left">A chamber of commerce</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-GOODS-ITEM-PASSPORT-SCHEMA">Goods Item Passport</link>
+			            <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>	
+		          </entry>
+            <entry align="left">
+			            <link linkend="S-GOODS-ITEM-PASSPORT-SCHEMA">Goods Item Passport</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Authenticated Party</entry>
+            <entry align="left">Exporter</entry>
+            <entry align="left">The party who initiates the export and holds an authentication to perform the export. The exporter is often the owner of the goods being exported</entry>
+            <entry align="left">A slaughterhouse are the owner of the goods being exported, but not necessarily the party who presents the Goods Certificate for exportation</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-GOODS-CERTIFICATE-SCHEMA">Goods Certificate</link>
+		          </entry>
+            <entry align="left"/>
+         </row>
+         <row>
+            <entry align="left">Authenticated Party</entry>
+            <entry align="left">Importer</entry>
+            <entry align="left">The party who initiates the import and holds an authentication to perform the import. </entry>
+            <entry align="left">A grocery store importing meet</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-GOODS-CERTIFICATE-SCHEMA">Goods Certificate</link>
+		          </entry>
+            <entry align="left"/>
+         </row>
+         <row>
+            <entry align="left">Authenticated Party</entry>
+            <entry align="left">Representative</entry>
+            <entry align="left">A authenticated party who perform the import or export on behalf of the importer or exporter. This is often a terminal operator who stores the goods before it is being exported or imported.</entry>
+            <entry align="left">A cold store that are keeping the meet before export.</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-GOODS-CERTIFICATE-SCHEMA">Goods Certificate</link>
+		          </entry>
+            <entry align="left"/>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Legal Authority</entry>
+            <entry align="left">A legal authority who validates the goods being imported or exported and signs the Goods Certificate</entry>
+            <entry align="left">A food standard agency</entry>
+            <entry align="left"/>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-GOODS-CERTIFICATE-SCHEMA">Goods Certificate</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Issuer</entry>
+            <entry align="left">The organisation authorized by the legal authority party to issue the certificate.</entry>
+            <entry align="left">A chamber of commerce</entry>
+            <entry align="left"/>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-GOODS-CERTIFICATE-SCHEMA">Goods Certificate</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Importing Guarantor</entry>
+            <entry align="left">The party fiscal responsible for customs of the goods that has been temporary imported</entry>
+            <entry align="left">A chamber of commerce, member of the ICC</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-PROOF-OF-REEXPORTATION-REQUEST-SCHEMA">Proof Of Reexportation Request</link>
+		          </entry>
+            <entry align="left">
+			            <link linkend="S-PROOF-OF-REEXPORTATION-SCHEMA">Proof Of Reexportation</link>
+			            <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Exporting Guarantor</entry>
+            <entry align="left">The party fiscal responsible for customs of the goods that has been temporary exported</entry>
+            <entry align="left">A chamber of commerce, member of the ICC</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-PROOF-OF-REEXPORTATION-REQUEST-SCHEMA">Proof Of Reexportation Request</link>
+		          </entry>
+            <entry align="left">
+			            <link linkend="S-PROOF-OF-REEXPORTATION-SCHEMA">Proof Of Reexportation</link>
+			            <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Exporting Guarantor</entry>
+            <entry align="left">The party fiscal responsible for customs of the goods that has been temporary exported</entry>
+            <entry align="left">A chamber of commerce, member of the ICC</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-PROOF-OF-REEXPORTATION-SCHEMA">Proof Of Reexportation</link>
+			            <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+		          </entry>
+            <entry align="left">
+			            <link linkend="S-PROOF-OF-REEXPORTATION-REQUEST-SCHEMA">Proof Of Reexportation Request</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Holder</entry>
+            <entry align="left">The holder of the Goods Item passport, often the temporary exporter of the goods and the one the Goods Item Passport is applied to. </entry>
+            <entry align="left">A exporter who wants presents some goods at an exhibition and bring in some goods temporary</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-GOODS-ITEM-PASSPORT-SCHEMA">Goods Item Passport</link>	
+		          </entry>
+            <entry align="left">
+			            <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Representative</entry>
+            <entry align="left">The party accompanying the goods during the importation.</entry>
+            <entry align="left">A representative for the holder who wants to go for an exhibition</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-GOODS-ITEM-PASSPORT-SCHEMA">Goods Item Passport</link>	
+		          </entry>
+            <entry align="left">
+			            <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Guarantor</entry>
+            <entry align="left">The party (often chambers) that provides the fiscal guarantee of the Goods Item passport.</entry>
+            <entry align="left">A chamber of commerce member of the ICC</entry>
+            <entry align="left"/>
+            <entry align="left"/>
+            <entry align="left"/>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Issuer</entry>
+            <entry align="left">The organisation authorized by the guarantor party to issue the Goods Item Passport</entry>
+            <entry align="left">A chamber of commerce</entry>
+            <entry align="left"/>
+            <entry align="left">
+			            <link linkend="S-GOODS-ITEM-PASSPORT-SCHEMA">Goods Item Passport</link>
+			            <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>	
+		          </entry>
+            <entry align="left">
+			            <link linkend="S-GOODS-ITEM-PASSPORT-SCHEMA">Goods Item Passport</link>
+		          </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Transit Exporter</entry>
+            <entry align="left">The party who makes regulatory export declarations, or on whose behalf regulatory transit customs declarations are made, and who is the owner of the goods or has similar right of disposal over them at the time when the declaration is accepted.</entry>
+            <entry align="left">A Norwegian exporter may have to do a <link linkend="S-TRANSIT-CUSTOMS-DECLARATION-SCHEMA">Transit Customs Declaration</link> in order to export to Russia</entry>
+            <entry align="left">Seller, Consignor</entry>
+            <entry align="left">
+               <link linkend="S-TRANSIT-CUSTOMS-DECLARATION-SCHEMA">Transit Customs Declaration</link>
+            </entry>
+            <entry align="left">
+               <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Receiving Logistic Operator</entry>
+            <entry align="left">The party who in the role of a logistic operator is receiving a <link linkend="S-MANIFEST-SCHEMA">Manifest</link>
+            </entry>
+            <entry align="left">A ground handling in an airport receives a <link linkend="S-MANIFEST-SCHEMA">Manifest</link> from a logistic operator.</entry>
+            <entry align="left"/>
+            <entry align="left"/>
+            <entry align="left">
+               <link linkend="S-MANIFEST-SCHEMA">Manifest</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Sending Logistic Operator</entry>
+            <entry align="left">The party who in the role of a logistic operator is sending a <link linkend="S-MANIFEST-SCHEMA">Manifest</link>
+            </entry>
+            <entry align="left">A logistic operator consolidates some goods in a terminal and ships it along with a <link linkend="S-MANIFEST-SCHEMA">Manifest</link> to a ground handler in an Airport</entry>
+            <entry align="left">Freight Forwarder</entry>
+            <entry align="left">
+               <link linkend="S-MANIFEST-SCHEMA">Manifest</link>
+            </entry>
+            <entry align="left"/>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Customs</entry>
+            <entry align="left">The party who is receiving a Customs Declaration</entry>
+            <entry align="left">A Customs Party receives a <link linkend="S-EXPORT-CUSTOMS-DECLARATION-SCHEMA">Export Customs Declaration</link> from a Exporter Party</entry>
+            <entry align="left"/>
+            <entry align="left">
+               <link linkend="S-EXPORT-CUSTOMS-DECLARATION-SCHEMA">Export Customs Declaration</link>
+            </entry>
+            <entry align="left"/>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Authority</entry>
+            <entry align="left">The party who is receiving a <link linkend="S-COMMON-TRANSPORTATION-REPORT-SCHEMA">Common Transportation Report</link>
+            </entry>
+            <entry align="left">An Authority party receives a <link linkend="S-COMMON-TRANSPORTATION-REPORT-SCHEMA">Common Transportation Report</link> from a Logistics operator as reporter</entry>
+            <entry align="left"/>
+            <entry align="left"/>
+            <entry align="left">
+               <link linkend="S-COMMON-TRANSPORTATION-REPORT-SCHEMA">Common Transportation Report</link>
+            </entry>
+         </row>
+         <row>
+            <entry align="left">Party</entry>
+            <entry align="left">Reporter</entry>
+            <entry align="left">The party who is sending a <link linkend="S-COMMON-TRANSPORTATION-REPORT-SCHEMA">Common Transportation Report</link>
+            </entry>
+            <entry align="left">A Logistic operator sends a <link linkend="S-COMMON-TRANSPORTATION-REPORT-SCHEMA">Common Transportation Report</link> to a harbour</entry>
+            <entry align="left">Logistics Operator</entry>
+            <entry align="left">
+               <link linkend="S-COMMON-TRANSPORTATION-REPORT-SCHEMA">Common Transportation Report</link>
+            </entry>
+            <entry align="left"/>
+         </row>
+      </tbody>
+   </tgroup>
+</table>

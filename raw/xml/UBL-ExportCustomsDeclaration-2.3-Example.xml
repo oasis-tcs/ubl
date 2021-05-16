@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExportCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:ExportCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" >
+	<cbc:ID>exi000073</cbc:ID>
+	<cbc:IssueDate>2019-03-18</cbc:IssueDate>
+	<cbc:ExportTypeCode>20</cbc:ExportTypeCode>
+	<cbc:ExportReasonCode>EXA</cbc:ExportReasonCode>
+	<cac:ExporterParty>
+		<cac:PartyIdentification>
+			<cbc:ID>8596</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>Gedevang Mejeri</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Stribevangen</cbc:StreetName>
+			<cbc:BuildingNumber>89</cbc:BuildingNumber>
+			<cbc:CityName>Gedser</cbc:CityName>
+			<cbc:PostalZone>4874</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:PartyLegalEntity>
+			<cbc:CompanyID>45789034</cbc:CompanyID>
+		</cac:PartyLegalEntity>
+		<cac:AgentParty>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="Skat.dk">DK10035643</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Told Service A/S</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Vesterbrogade</cbc:StreetName>
+				<cbc:BuildingNumber>78</cbc:BuildingNumber>
+				<cbc:CityName>København K</cbc:CityName>
+				<cbc:PostalZone>1258</cbc:PostalZone>
+			</cac:PostalAddress>
+		</cac:AgentParty>
+	</cac:ExporterParty>
+	<cac:CustomsDeclaration>
+		<cbc:ID>exi000073</cbc:ID>
+		<cac:ValidityPeriod>
+			<cbc:StartDate>2019-03-18</cbc:StartDate>
+			<cbc:EndDate>2019-03-18</cbc:EndDate>
+		</cac:ValidityPeriod>
+		<cac:Shipment>
+			<cbc:ID>ffi000861</cbc:ID>
+			<cbc:SpecialInstructions>Test</cbc:SpecialInstructions>
+			<cac:Consignment>
+				<cbc:ID>1</cbc:ID>
+				<cbc:SummaryDescription>1 other</cbc:SummaryDescription>
+				<cbc:TotalInvoiceAmount currencyID="EUR">10500.00</cbc:TotalInvoiceAmount>
+				<cbc:GrossWeightMeasure unitCode="KGM">88.00</cbc:GrossWeightMeasure>
+				<cbc:NetWeightMeasure unitCode="KGM">76.00</cbc:NetWeightMeasure>
+				<cbc:GrossVolumeMeasure unitCode="MTQ">0.336</cbc:GrossVolumeMeasure>
+				<cbc:NetVolumeMeasure unitCode="MTQ">0.336000</cbc:NetVolumeMeasure>
+				<cbc:LoadingLengthMeasure unitCode="MTR">0</cbc:LoadingLengthMeasure>
+				<cbc:SequenceID>204</cbc:SequenceID>
+				<cbc:TotalGoodsItemQuantity unitCode="EA">2</cbc:TotalGoodsItemQuantity>
+				<cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1</cbc:TotalTransportHandlingUnitQuantity>
+				<cbc:DeliveryInstructions>Test</cbc:DeliveryInstructions>
+				<cac:RequestedPickupTransportEvent>
+					<cac:Location>
+						<cac:Address>
+							<cbc:StreetName>Stribevangen</cbc:StreetName>
+							<cbc:BuildingNumber>89</cbc:BuildingNumber>
+							<cbc:CityName>Gedser</cbc:CityName>
+							<cbc:PostalZone>4874</cbc:PostalZone>
+							<cac:Country>
+								<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+							</cac:Country>
+						</cac:Address>
+					</cac:Location>
+					<cac:Period>
+						<cbc:StartDate>2016-08-02</cbc:StartDate>
+						<cbc:StartTime>07:00:00</cbc:StartTime>
+						<cbc:EndDate>2016-08-02</cbc:EndDate>
+						<cbc:EndTime>15:30:00</cbc:EndTime>
+					</cac:Period>
+				</cac:RequestedPickupTransportEvent>
+				<cac:RequestedDeliveryTransportEvent>
+					<cac:Location>
+						<cac:Address>
+							<cbc:StreetName>Marken</cbc:StreetName>
+							<cbc:BuildingNumber>13</cbc:BuildingNumber>
+							<cbc:CityName>Bergen</cbc:CityName>
+							<cbc:PostalZone>5017</cbc:PostalZone>
+							<cac:Country>
+								<cbc:IdentificationCode>NO</cbc:IdentificationCode>
+							</cac:Country>
+						</cac:Address>
+					</cac:Location>
+					<cac:Period>
+						<cbc:StartDate>2017-03-30</cbc:StartDate>
+					</cac:Period>
+				</cac:RequestedDeliveryTransportEvent>
+				<cac:OriginalDepartureCountry>
+					<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				</cac:OriginalDepartureCountry>
+				<cac:DeliveryTerms>
+					<cbc:ID>FCA</cbc:ID>
+					<cac:DeliveryLocation>
+						<cbc:Name>9000</cbc:Name>
+					</cac:DeliveryLocation>
+				</cac:DeliveryTerms>
+				<cac:MainCarriageShipmentStage>
+					<cbc:TransportModeCode>3</cbc:TransportModeCode>
+				</cac:MainCarriageShipmentStage>
+				<cac:TransportHandlingUnit>
+					<cbc:TotalPackageQuantity unitCode="EA">1</cbc:TotalPackageQuantity>
+					<cac:TransportEquipment>
+						<cbc:TransportEquipmentTypeCode>AD</cbc:TransportEquipmentTypeCode>
+						<cbc:FullnessIndicationCode>FTL</cbc:FullnessIndicationCode>
+					</cac:TransportEquipment>
+					<cac:Package>
+						<cbc:ID>FLGS339241</cbc:ID>
+						<cbc:Quantity unitCode="EA">1</cbc:Quantity>
+						<cbc:PackageLevelCode>NoStacking</cbc:PackageLevelCode>
+						<cbc:PackingMaterial>other</cbc:PackingMaterial>
+						<cbc:TraceID>STD14037</cbc:TraceID>
+						<cac:GoodsItem>
+							<cbc:ID>636257218904553192</cbc:ID>
+							<cbc:Description>Kløver Økologis gedeost 15%</cbc:Description>
+							<cbc:DeclaredCustomsValueAmount currencyID="EUR">0.00</cbc:DeclaredCustomsValueAmount>
+							<cbc:DeclaredStatisticsValueAmount currencyID="DKK">10050.00</cbc:DeclaredStatisticsValueAmount>
+							<cbc:ValueAmount currencyID="DKK">10500.00</cbc:ValueAmount>
+							<cbc:Quantity unitCode="KGM">150.00</cbc:Quantity>
+							<cbc:TraceID>STD14037</cbc:TraceID>
+							<cac:Item>
+								<cbc:Description>Kløver Økologisk gedeost 15%</cbc:Description>
+								<cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
+								<cbc:Name>Gedesby Øko-ost</cbc:Name>
+								<cac:SellersItemIdentification>
+									<cbc:ID>100700011021</cbc:ID>
+								</cac:SellersItemIdentification>
+								<cac:OriginCountry>
+									<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+								</cac:OriginCountry>
+								<cac:CommodityClassification>
+									<cbc:CommodityCode>84195000</cbc:CommodityCode>
+								</cac:CommodityClassification>
+							</cac:Item>
+							<cac:Despatch>
+								<cbc:ID>FLGS339241</cbc:ID>
+							</cac:Despatch>
+						</cac:GoodsItem>
+						<cac:MeasurementDimension>
+							<cbc:AttributeID>OuterHeight</cbc:AttributeID>
+							<cbc:Measure unitCode="CMT">70</cbc:Measure>
+						</cac:MeasurementDimension>
+						<cac:MeasurementDimension>
+							<cbc:AttributeID>OuterWidth</cbc:AttributeID>
+							<cbc:Measure unitCode="CMT">60</cbc:Measure>
+						</cac:MeasurementDimension>
+						<cac:MeasurementDimension>
+							<cbc:AttributeID>OuterDepth</cbc:AttributeID>
+							<cbc:Measure unitCode="CMT">80</cbc:Measure>
+						</cac:MeasurementDimension>
+						<cac:MeasurementDimension>
+							<cbc:AttributeID>GrossVolumen</cbc:AttributeID>
+							<cbc:Measure unitCode="MTQ">0.336</cbc:Measure>
+						</cac:MeasurementDimension>
+						<cac:MeasurementDimension>
+							<cbc:AttributeID>GrossWeight</cbc:AttributeID>
+							<cbc:Measure unitCode="KGM">88</cbc:Measure>
+						</cac:MeasurementDimension>
+						<cac:Pickup>
+							<cbc:LatestPickupDate>2016-08-02</cbc:LatestPickupDate>
+						</cac:Pickup>
+						<cac:Despatch>
+							<cbc:ID>28833-2661-144</cbc:ID>
+						</cac:Despatch>
+					</cac:Package>
+				</cac:TransportHandlingUnit>
+			</cac:Consignment>
+		</cac:Shipment>
+		<cac:CustomsExitOfficeLocation>
+			<cbc:ID schemeID="locode">DK003102</cbc:ID>
+			<cac:Address>
+				<cbc:StreetName>Dalsagervej</cbc:StreetName>
+				<cbc:BuildingNumber>7</cbc:BuildingNumber>
+				<cbc:CityName>Hirtshals</cbc:CityName>
+				<cbc:PostalZone>9850 </cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:CustomsExitOfficeLocation>
+		<cac:ConsignorParty>
+			<cac:PartyIdentification>
+				<cbc:ID>8596</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Gedevang Mejeri</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Stribevangen</cbc:StreetName>
+				<cbc:BuildingNumber>89</cbc:BuildingNumber>
+				<cbc:CityName>Gedser</cbc:CityName>
+				<cbc:PostalZone>4874</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:CompanyID>45789034</cbc:CompanyID>
+				<cbc:RegistrationDate>1957-08-13</cbc:RegistrationDate>
+			</cac:PartyLegalEntity>
+		</cac:ConsignorParty>
+		<cac:ConsigneeParty>
+			<cac:PartyIdentification>
+				<cbc:ID>STD14037</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Coop Extra Bergen</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Marken</cbc:StreetName>
+				<cbc:BuildingNumber>13</cbc:BuildingNumber>
+				<cbc:CityName>Bergen</cbc:CityName>
+				<cbc:PostalZone>5017</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>NO</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:CompanyID>945030345</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:ID>1928</cbc:ID>
+				<cbc:Name>*ULLA GJERSTRUP</cbc:Name>
+			</cac:Contact>
+		</cac:ConsigneeParty>
+		<cac:CustomsParty>
+			<cac:PartyIdentification>
+				<cbc:ID>DK003102</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Toldstyrelsen</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Slet Parkvej</cbc:StreetName>
+				<cbc:BuildingNumber>1</cbc:BuildingNumber>
+				<cbc:CityName>Nørre Alslev</cbc:CityName>
+				<cbc:PostalZone>4840 </cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+		</cac:CustomsParty>
+		<cac:AdditionalDocumentReference>
+			<cbc:ID>34564645</cbc:ID>
+		</cac:AdditionalDocumentReference>
+	</cac:CustomsDeclaration>
+	<cac:Signature>
+		<cbc:ID>234664</cbc:ID>
+		<cac:SignatoryParty>
+			<cac:PartyIdentification>
+				<cbc:ID>8596</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Gedevang Mejeri</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Stribevangen</cbc:StreetName>
+				<cbc:BuildingNumber>89</cbc:BuildingNumber>
+				<cbc:CityName>Gedser</cbc:CityName>
+				<cbc:PostalZone>4874</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:CompanyID>45789034</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+		</cac:SignatoryParty>
+	</cac:Signature>
+</ExportCustomsDeclaration>

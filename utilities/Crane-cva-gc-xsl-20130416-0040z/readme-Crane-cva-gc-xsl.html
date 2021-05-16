@@ -1,0 +1,415 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Crane stylesheets for rendering genericode files and context/value association files</title><meta name="generator" content="DocBook XSL Stylesheets V1.69.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="d0e2"></a>Crane stylesheets for rendering genericode files and context/value association files</h2></div><div><p class="copyright">Copyright &copy; 2013 Crane Softwrights Ltd.</p></div><div><p class="pubdate">$Date: 2013/04/16 00:40:23 $(UTC)</p></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d0e18">1. Introduction</a></span></dt><dt><span class="section"><a href="#d0e61">2. 
+Embedded documentation in context/association files</a></span></dt><dt><span class="section"><a href="#d0e87">3. 
+Browser viewing of the renderings</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e121">3.1. 
+Browser display of files when using Microsoft Windows</a></span></dt></dl></dd><dt><span class="section"><a href="#standalone">4.  Standalone HTML creation</a></span></dt><dt><span class="section"><a href="#d0e189">5. 
+Overriding the built-in messages</a></span></dt><dt><span class="section"><a href="#d0e219">6. Augmenting the HTML header</a></span></dt><dt><span class="section"><a href="#d0e253">7. 
+Sample files</a></span></dt><dt><span class="section"><a href="#d0e418">8. 
+Future work</a></span></dt><dt><span class="section"><a href="#d0e423">9. Change log</a></span></dt><dt><span class="bibliography"><a href="#d0e753">Bibliography</a></span></dt></dl></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e18"></a>1.&nbsp;Introduction</h2></div></div></div><p>
+The OASIS Code List Representation Technical Committee [<a href="#b_clrtc" title="[CLRTC]"><span class="abbrev">CLRTC</span></a>] has created the Context/value association (CVA) file format [<a href="#b_cva" title="[CVA]"><span class="abbrev">CVA</span></a>] where partners in information interchange can associate the values found in genericode [<a href="#b_genericode" title="[genericode]"><span class="abbrev">genericode</span></a>] files with information items found in XML documents of any vocabulary.  For example,  the Universal Business Language [<a href="#b_ubl20" title="[UBL 2.0]"><span class="abbrev">UBL 2.0</span></a>] defines a vocabulary for business documents and a two-phase validation process in which the structural and lexical validation is achieved using W3C Schema [<a href="#b_w3cschema" title="[W3C Schema]"><span class="abbrev">W3C Schema</span></a>], and value validation using a methodology based on CVA files using  XSLT 1.0 [<a href="#b_xslt10" title="[XSLT 1.0]"><span class="abbrev">XSLT 1.0</span></a>].  </p><p> Crane Softwrights Ltd. has developed the following three XSLT 1.0
+      stylesheets used for the rendering of either standalone genericode files
+      or context/value association files that reference genericode files.
+      These stylesheets recognize elements in the XHTML namespace
+        ("<code class="literal">http://www.w3.org/1999/xhtml</code>") or HTML 4 namespace
+        ("<code class="literal">http://www.w3.org/TR/REC-html40</code>") and produce a
+      report with constructs in the XHTML namespace.</p><p>
+The stylesheet to render a genericode file is named "<code class="literal">Crane-gc2html.xsl</code>".</p><p> The simplified stylesheet to render a context/value association file is
+      named "<code class="literal">Crane-cva2html.xsl</code>" (does not include instance
+      metadata summaries for each referenced list).  A more detailed stylesheet
+      to render a context/value association file is named
+        <code class="literal">Crane-cva2htmlXSLT.xsl</code>  (includes instance metadata
+      summaries for each referenced list) and requires a more detailed process
+      to render the results than that of the simplified stylesheet.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>It is not necessary for any referenced genericode files to be processed with a stylesheet
+when using a stylesheet to view a context/value association file.  It is only necessary to use a stylesheet with a genericode file when wanting to view the genericode file in isolation.
+</p></div><p>
+The renderings are simplified presentations of the information found in these files.  Where it makes sense there are hyperlinks pointing elsewhere in the document to definitions of the information referenced.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e61"></a>2.&nbsp;
+Embedded documentation in context/association files</h2></div></div></div><p>
+The specification and document constraints for context/association files allow for embedded use of elements from a foreign namespace, in addition to text documentation.  The stylesheet in this package assumes that the embedded documentation is wrapped in HTML constructs using the <code class="literal">http://www.w3.org/TR/REC-html40</code> namespace.</p><p>
+The documentation for the value validation methodology includes the file <code class="literal">order-constraints.cva</code>.  This stylesheet package includes a modified version of that file, named <code class="literal">order-constraints-doc.cva</code>, in which the documentation constructs are wrapped in HTML vocabulary:</p><pre class="programlisting">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="Crane-cva2html.xsl"?&gt;
+&lt;cva:ContextValueAssociation 
+  xmlns:cva=
+         "http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/"
+  xmlns:cbc="urn:oasis:names:draft:ubl:schema:xsd:CommonBasicComponents-2"
+  xmlns:cac="urn:oasis:names:draft:ubl:schema:xsd:CommonAggregateComponents-2"
+  xmlns:x="http://www.w3.org/TR/REC-html40"
+  xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+  id="urn:x-illustration"
+  name="code-list-rules"
+  version=
+"$Id: readme-Crane-cva-gc-xsl.xml,v 1.47 2013/04/16 00:40:23 admin Exp $"&gt;
+  &lt;Annotation&gt;
+    &lt;Description&gt;
+      &lt;x:p&gt;
+        This is an illustrative example of all of the features of specifying
+        the context/value constraints that one can express for XML documents.
+      &lt;/x:p&gt;
+      &lt;x:p&gt;
+        The validation requirements for this contrived scenario are as follows:
+        &lt;x:ul&gt;
+          &lt;x:li&gt;the UN/CEFACT currency code list is restricted to be
+          only Canadian and US dollars:&lt;/x:li&gt;
+          &lt;x:li&gt;the seller must be in the US&lt;/x:li&gt;
+          &lt;x:li&gt;the buyer may be in either Canada or the US&lt;/x:li&gt;
+          &lt;x:li&gt;the definition for Payment Means is extended to include
+          both UBL definitions and additional definitions&lt;/x:li&gt;
+        &lt;/x:ul&gt;
+      &lt;/x:p&gt;
+    &lt;/Description&gt;
+  &lt;/Annotation&gt;
+
+  &lt;Title&gt;
+    Illustration of code list constraints - 
+    &lt;x:samp&gt;order-constraints.cva&lt;/x:samp&gt;
+  &lt;/Title&gt;
+
+  &lt;!--list all test expressions--&gt;
+  &lt;ValueTests&gt;
+    &lt;ValueTest xml:id="length-35" test="string-length(.)&amp;lt;=35"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;Certain fields are restricted to 35 characters in length.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/ValueTest&gt;
+  &lt;/ValueTests&gt;
+
+  &lt;!--list all of the genericode expressions of agreed-upon code list
+      value enumerations--&gt;
+  &lt;ValueLists&gt;
+    &lt;ValueList xml:id="currency" uri="CAUS_CurrencyCode.gc"
+               masqueradeUri="UBL_CurrencyCode-2.0.gc"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;Restricted to only Canadian and US dollars.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;Identification&gt;
+        &lt;LongName&gt;ISO Currency List&lt;/LongName&gt;
+      &lt;/Identification&gt;
+    &lt;/ValueList&gt;
+    &lt;ValueList xml:id="states" uri="US_CountrySubentityCode.gc"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;List of US states.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/ValueList&gt;
+    &lt;ValueList xml:id="provinces" uri="CA_CountrySubentityCode.gc"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;List of Canadian provinces&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/ValueList&gt;
+    &lt;ValueList xml:id="tax-ids" uri="TaxIdentifier.gc" key="codeKey"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;List of tax type identifiers&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/ValueList&gt;
+    &lt;ValueList xml:id="payments" uri="UBL_PaymentMeansCode-2.0.gc"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;
+            Copied from the UBL 2.0 suite:
+            &lt;x:a href="http://docs.oasis-open.org/ubl/cs-UBL-2.0/"&gt;
+              &lt;x:samp&gt;http://docs.oasis-open.org/ubl/cs-UBL-2.0/&lt;/x:samp&gt;
+            &lt;/x:a&gt;
+          &lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/ValueList&gt;
+    &lt;ValueList xml:id="additional_payments" 
+               uri="Additional_PaymentMeansCode.gc"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;An extra set of possible payment means.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/ValueList&gt;
+  &lt;/ValueLists&gt;
+  &lt;!--list all of the instance-level metadata components associated with
+      genericode &lt;Identification&gt; components--&gt;
+  &lt;InstanceMetadataSets&gt;
+    &lt;Annotation&gt;
+      &lt;Description&gt;
+        &lt;x:p&gt;UN/CEFACT CCTS V2.01 supplementary components to genericode&lt;/x:p&gt;
+      &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;InstanceMetadataSet xml:id="cctsV2.01-amount"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;CCTS 2.01 AmountType instance metadata&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;InstanceMetadata address="../@currencyCodeListVersionID"
+                        identification="Version"/&gt;
+    &lt;/InstanceMetadataSet&gt;
+    &lt;InstanceMetadataSet xml:id="cctsV2.01-measure"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;CCTS 2.01 MeasureType instance metadata&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;InstanceMetadata address="../@unitCodeListVersionID"
+                        identification="Version"/&gt;
+    &lt;/InstanceMetadataSet&gt;
+    &lt;InstanceMetadataSet xml:id="cctsV2.01-quantity"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;CCTS 2.01 QuantityType instance metadata&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;InstanceMetadata address="../@unitCodeListID"
+                        identification="Version"/&gt;
+      &lt;InstanceMetadata address="../@unitCodeListAgencyName"
+                        identification="Agency/LongName"/&gt;
+      &lt;InstanceMetadata address="../@unitCodeListAgencyID"
+                        identification="Agency/Identifier"/&gt;
+    &lt;/InstanceMetadataSet&gt;
+    &lt;InstanceMetadataSet xml:id="cctsV2.01-code"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;CCTS 2.01 CodeType instance metadata&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;InstanceMetadata address="@listName"
+                        identification="LongName[not(@Identifier='listID')]"/&gt;
+      &lt;InstanceMetadata address="@listID"
+                        identification="LongName[@Identifier='listID']"/&gt;
+      &lt;InstanceMetadata address="@listVersionID"
+                        identification="Version"/&gt;
+      &lt;InstanceMetadata address="@listSchemeURI"
+                        identification="CanonicalUri"/&gt;
+      &lt;InstanceMetadata address="@listURI"
+                        identification="LocationUri"/&gt;
+      &lt;InstanceMetadata address="@listAgencyName"
+                        identification="Agency/LongName"/&gt;
+      &lt;InstanceMetadata address="@listAgencyID"
+                        identification="Agency/Identifier"/&gt;
+    &lt;/InstanceMetadataSet&gt;
+    &lt;InstanceMetadataSet xml:id="cctsV2.01-identifier"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;CCTS 2.01 IdentifierType instance metadata&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;InstanceMetadata address="@schemeName"
+                        identification="LongName[not(@Identifier='listID')]"/&gt;
+      &lt;InstanceMetadata address="@schemeID"
+                        identification="LongName[@Identifier='listID']"/&gt;
+      &lt;InstanceMetadata address="@schemeVersionID"
+                        identification="Version"/&gt;
+      &lt;InstanceMetadata address="@schemeURI"
+                        identification="CanonicalUri"/&gt;
+      &lt;InstanceMetadata address="@schemeDataURI"
+                        identification="LocationUri"/&gt;
+      &lt;InstanceMetadata address="@schemeAgencyName"
+                        identification="Agency/LongName"/&gt;
+      &lt;InstanceMetadata address="@schemeAgencyID"
+                        identification="Agency/Identifier"/&gt;
+    &lt;/InstanceMetadataSet&gt;
+  &lt;/InstanceMetadataSets&gt;
+
+  &lt;!--list all of the contexts in which the value enumerations are used;
+      where two or more contexts might match a given node in the input,
+      list them here in order of most-important to least important match--&gt;
+  &lt;Contexts&gt;
+    &lt;Context address="@currencyID" values="currency" mark="money"
+             metadata="cctsV2.01-amount"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+      &lt;x:p&gt;All currencies are restricted to only Canadian and US dollars.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/Context&gt;
+    &lt;Context address="cac:BuyerCustomerParty//cbc:CountrySubentityCode"
+             values="provinces states"
+             metadata="cctsV2.01-code"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;The buyer can be in either Canada or the US.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;Message&gt;Invalid province or state '&lt;sch:value-of select="."/&gt;' for buyer "&lt;sch:value-of select="ancestor::cac:BuyerCustomerParty/cac:Party/cac:PartyName/cbc:Name"/&gt;"&lt;/Message&gt;
+    &lt;/Context&gt;
+    &lt;Context address="cac:SellerSupplierParty//cbc:CountrySubentityCode"
+             values="states"
+             metadata="cctsV2.01-code"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;The seller can only be in the US.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;Message&gt;Invalid state '&lt;sch:value-of select="."/&gt;' for seller "&lt;sch:value-of select="ancestor::cac:SellerSupplierParty/cac:Party/cac:PartyName/cbc:Name"/&gt;"&lt;/Message&gt;
+    &lt;/Context&gt;
+    &lt;Context address="cac:TaxCategory/cbc:ID"
+             values="tax-ids" mark="money"
+             metadata="cctsV2.01-identifier"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;Limit the recognized tax identifiers&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/Context&gt;
+    &lt;Context address="cbc:PaymentMeansCode" mark="money"
+             values="payments additional_payments"
+             metadata="cctsV2.01-code"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+      &lt;x:p&gt;The payments can be by either standard or supplemental means.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/Context&gt;
+    &lt;Context address="cbc:Name" values="length-35"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;Names are not allowed to be too long.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/Context&gt;
+    &lt;Context address="cbc:StreetName" values="length-35"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;Addresses are not allowed to be too long.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/Context&gt;
+  &lt;/Contexts&gt;
+&lt;/cva:ContextValueAssociation&gt;
+</pre><p>
+Note throughout the embedded documentation the use of a namespace prefix (in this example "<code class="literal">x</code>") to reference the HTML vocabulary ("<code class="literal">http://www.w3.org/TR/REC-html40</code>").</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e87"></a>3.&nbsp;
+Browser viewing of the renderings</h2></div></div></div><p>
+It is possible to view either a genericode file or a context/value association file directly in a browser by embedding a stylesheet association [<a href="#b_assoc" title="[Assoc]"><span class="abbrev">Assoc</span></a>] processing instruction.  If the stylesheet is in the same directory as the genericode file, then the following would be added to the genericode file, immediately after the XML declaration at the top of the file (as in the <code class="literal">testRender.gc</code> sample file):</p><pre class="programlisting">  &lt;?xml-stylesheet type="text/xsl" href="Crane-gc2html.xsl"?&gt;
+</pre><p>
+Similarly for a context/value association file, the following processing instruction would be used (as in the <code class="literal">order-constraints-doc.cva</code> sample file):</p><pre class="programlisting">  &lt;?xml-stylesheet type="text/xsl" href="Crane-cva2html.xsl"?&gt;
+</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>The <code class="literal">Crane-cva2htmlXSLT.xsl</code> stylesheet cannot be
+        used in the browser with standalone stylesheet association.  See <a href="#standalone" title="4.&nbsp; Standalone HTML creation">Section&nbsp;4, &#8220; Standalone HTML creation&#8221;</a> for details.</p></div><p>
+Of course if the stylesheets are in a different directory than the files using them, the <code class="literal">href=</code> attribute needs to point to the correct path to the stylesheet.</p><p>When embedding references to stylesheets in a CVA file it is not necessary to also add them to the referenced genericode files as the CVA stylesheet will trigger the genericode stylesheet for each genericode reference it finds.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e121"></a>3.1.&nbsp;
+Browser display of files when using Microsoft Windows</h3></div></div></div><p>When in a Windows interface, drag the genericode file from the Windows
+Explorer to Mozilla Firefox or Internet Explorer to engage the stylesheet
+presentation.
+</p><p>For operation in Internet Explorer it is necessary in Windows XP to
+        indicate that "<code class="literal">.gc</code>" files are XML documents. This is
+        done in Windows Explorer under the
+          <code class="literal">Tools/FolderOptions...</code> menu, under the File Types
+        tab, clicking the "<code class="literal">New</code>" button, setting the File
+        Extension to "<code class="literal">gc</code>", then clicking the
+          "<code class="literal">Advanced</code>" button to set the Associated File Type
+        to "<code class="literal">XML Document</code>". Using the
+          "<code class="literal">Change</code>" button next to the "<code class="literal">Opens
+          with:</code>" herald, one can then set the recommended program to
+        be Internet Explorer.  For Windows 7 go to the Control Panel and in the
+        "Default Programs" section associate a program for the file
+        type.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p> When using earlier versions of Internet Explorer to directly view either
+          a genericode or a context/value association XML file, the back button
+          incorrectly refreshes the screen and positions the active point at
+          the top of the file.  This appears not to be a problem with later
+          versions.</p></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="standalone"></a>4.&nbsp; Standalone HTML creation</h2></div></div></div><p>When creating standalone HTML from the XML of a genericode file, two
+      examples of using Saxon [<a href="#b_saxon" title="[Saxon]"><span class="abbrev">Saxon</span></a>] are as follows, the
+      first explicitly referencing the stylesheet and the second looking for
+      the embedded stylesheet association: </p><pre class="programlisting">  java -jar saxon.jar -o file.html file.gc Crane-gc2html.xsl</pre><p>and</p><pre class="programlisting">
+  java -jar saxon.jar -o file.html -a file.gc
+</pre><p>When creating standalone HTML from the XML of a context/value
+      association file with the simplified CVA stylesheet, two examples of
+      using Saxon are as follows, the first explicitly referencing the
+      stylesheet and the second looking for the embedded stylesheet
+      association: </p><pre class="programlisting">  java -jar saxon.jar -o file.html file.cva Crane-cva2html.xsl</pre><p>and</p><pre class="programlisting">
+  java -jar saxon.jar -o file.html -a file.cva
+</pre><p>When creating standalone HTML from the XML of a context/value
+      association file with the more detailed CVA stylesheet
+        <code class="literal">Crane-cva2htmlXSLT.xsl</code>, the following two steps must
+      be taken, in order, to produce the result: </p><pre class="programlisting">  java -jar saxon.jar -o intermediateFileAnywhere.xsl file.cva Crane-cva2htmlXSLT.xsl
+  java -jar saxon.jar -o file.html intermediateFileAnywhere.xsl intermediateFileAnywhere.xsl
+</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>This two-step processing model required for
+          <code class="literal">Crane-cva2htmlXSLT.xsl</code> prevents its operation in a
+        web browser, as browsers only support the single application of one
+        XSLT stylesheet against an input XML file.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e189"></a>5.&nbsp;
+Overriding the built-in messages</h2></div></div></div><p>
+The stylesheets are structured such that the built-in textual messages can be overridden with a importing stylesheet.  The included stylesheet <code class="literal">Crane-alternate-cva2html.xsl</code> illustrates how this overriding can be done, and would be invoked in the following manner, the first explicitly referencing the stylesheet and the second looking for the embedded stylesheet association:</p><pre class="programlisting">  java -jar saxon.jar -o file.html file.cva Crane-alternate-cva2html.xsl</pre><p>or</p><pre class="programlisting">
+  java -jar saxon.jar -o file.html -a file.cva
+</pre><p>
+Both <code class="literal">Crane-cva2html.xsl</code> and <code class="literal">Crane-gc2html.xsl</code> have all built-in messages written in English and can have these messages overridden using the method illustrated in <code class="literal">Crane-alternate-cva2html.xsl</code>.  When declaring the overriding variables and template, be sure to use the corresponding namespace qualification on the name of the top-level construct.</p><p>To utilize the overriding stylesheet with the more detailed CVA
+      reporting process, copy <code class="literal">Crane-cva2htmlXSLT.xsl</code> and
+      modify the copy to import the overriding stylesheet.  The two-step
+      process is identical, only using the newly-created stylesheet in the
+      first step.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e219"></a>6.&nbsp;Augmenting the HTML header</h2></div></div></div><p>The stylesheets are structured such that a wrapper stylesheet can
+      define content for the HTML header element that is output.  This is
+      particularly handy to add embedded CSS styles in the HTML header.</p><p>The two example wrapper stylesheets
+        <code class="literal">Crane-head-gc2html.xsl</code> and
+        <code class="literal">Crane-head-cva2html.xsl</code> illustrate this technique.
+      These stylesheets colour the background, respectively, green and
+      blue.</p><p>Invoking the stylesheet for a genericode  file is done along the
+      lines of one of the following:</p><pre class="programlisting">  java -jar saxon.jar -o file.html file.gc Crane-head-gc2html.xsl</pre><p>or</p><pre class="programlisting">
+  java -jar saxon.jar -o file.html -a file.gc
+</pre><p>Invoking the stylesheet for a CVA file is done along the lines of the
+      following:</p><pre class="programlisting">  java -jar saxon.jar -o file.html file.cva Crane-head-cva2html.xsl</pre><p>or</p><pre class="programlisting">
+  java -jar saxon.jar -o file.html -a file.cva
+</pre><p>To utilize the augmenting stylesheet with the more detailed CVA
+      reporting process, copy <code class="literal">Crane-cva2htmlXSLT.xsl</code> and
+      modify the copy to import the augmenting stylesheet.  The two-step
+      process is identical, only using the newly-created stylesheet in the
+      first step.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e253"></a>7.&nbsp;
+Sample files</h2></div></div></div><p>
+The following sample files included in the ZIP package in which this documentation is obtained:</p><div class="itemizedlist"><ul type="disc"><li><p>
+<code class="literal">Additional_PaymentMeansCode.gc</code></p><div class="itemizedlist"><ul type="circle"><li><p>
+an example file extracted from the validation demonstration scenario</p></li></ul></div></li><li><p>
+<code class="literal">CAUS_CurrencyCode.gc</code></p><div class="itemizedlist"><ul type="circle"><li><p>
+an example file extracted from the validation demonstration scenario</p></li></ul></div></li><li><p>
+<code class="literal">CA_CountrySubentityCode.gc</code></p><div class="itemizedlist"><ul type="circle"><li><p>
+an example file extracted from the validation demonstration scenario</p></li></ul></div></li><li><p>
+<code class="literal">Crane-alternate-cva2html.xsl</code></p><div class="itemizedlist"><ul type="circle"><li><p>
+an illustration of importing the stylesheet for a context/value association file where some of the built-in messages are overridden</p></li></ul></div></li><li><p>
+          <code class="literal">Crane-cva2html.xsl</code></p><div class="itemizedlist"><ul type="circle"><li><p> the stylesheet used to render a context/value association
+              file in HTML with the simplified presentation (no instance
+              metadata summaries for each referenced list)</p></li><li><p> this stylesheet makes reference to the
+                <code class="literal">Crane-gc2html.xsl</code> stylesheet</p></li></ul></div></li><li><p>
+          <code class="literal">Crane-cva2htmlXSLT.xsl</code></p><div class="itemizedlist"><ul type="circle"><li><p> the stylesheet used to render a context/value association
+              file in HTML with the detailed presentation including instance
+              metadata summaries for each referenced list</p></li><li><p> this stylesheet makes reference to the
+                <code class="literal">Crane-cva2html.xsl</code> stylesheet</p></li></ul></div></li><li><p>
+<code class="literal">Crane-gc2html.xsl</code></p><div class="itemizedlist"><ul type="circle"><li><p>
+the stylesheet used to render a genericode file in HTML</p></li></ul></div></li><li><p>
+          <code class="literal">Crane-head-cva2html.xsl</code></p><div class="itemizedlist"><ul type="circle"><li><p> an illustration of importing the stylesheet for a
+              context/value association file where the output HTML head element
+              is augmented with style information</p></li></ul></div></li><li><p>
+          <code class="literal">Crane-head-gc2html.xsl</code></p><div class="itemizedlist"><ul type="circle"><li><p> an illustration of importing the stylesheet for a
+              context/value association file where the output HTML head element
+              is augmented with style information</p></li></ul></div></li><li><p>
+          <code class="literal">order-constraints-doc.cva</code></p><div class="itemizedlist"><ul type="circle"><li><p> a modified version of the example
+                <code class="literal">order-constraints.cva</code> example file in the
+              validation demonstration scenario</p></li><li><p> all that has been changed is that the documentation
+              previously found in clear text is now wrapped in HTML markup, and
+              there is a stylesheet association processing instruction near the
+              top of the file</p></li><li><p> note that because of the stylesheet association this file
+              can be dragged into a browser to trigger the presentation
+              automatically</p></li></ul></div></li><li><p>
+<code class="literal">TaxIdentifier.gc</code></p><div class="itemizedlist"><ul type="circle"><li><p>
+an example file extracted from the validation demonstration scenario</p></li></ul></div></li><li><p>
+<code class="literal">testRender.gc</code></p><div class="itemizedlist"><ul type="circle"><li><p>
+an example of the standalone rendering of a genericode file in which a stylesheet association has been placed</p></li><li><p>
+note that because of the stylesheet association this file can be dragged into a browser to trigger the presentation automatically</p></li></ul></div></li><li><p>
+          <code class="literal">UBL_CurrencyCode-2.0.gc</code></p><div class="itemizedlist"><ul type="circle"><li><p> an example file extracted from the validation demonstration
+              scenario</p></li></ul></div></li><li><p>
+          <code class="literal">UBL_PaymentMeansCode-2.0.gc</code></p><div class="itemizedlist"><ul type="circle"><li><p> an example file extracted from the validation demonstration
+              scenario</p></li></ul></div></li><li><p>
+<code class="literal">US_CountrySubentityCode.gc</code></p><div class="itemizedlist"><ul type="circle"><li><p>
+an example file extracted from the validation demonstration scenario</p></li></ul></div></li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e418"></a>8.&nbsp;
+Future work</h2></div></div></div><p>
+At this time the rendering of a context/value association file that includes other context/value association files will result in the duplicate rendering of a given genericode that is referenced from more than one context/value association file.  This does not happen often, and it is not an error, but the end result will have as many renderings of a given genericode file as there are value list declarations for that file in the complete "include set" of context/association files.  A future version of these stylesheets could detect the redundant renderings of a given genericode file.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e423"></a>9.&nbsp;Change log</h2></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>2013-04-16 - <code class="literal">Crane-cva2html.xsl</code> revision 1.32;
+            <code class="literal">Crane-cva2htmlXSLT.xsl</code> revision 1.2;
+            <code class="literal">Crane-gc2html.xsl</code> revision 1.17</p><div class="itemizedlist"><ul type="circle"><li><p>add the detailed presentation stylesheet <code class="literal">Crane-cva2htmlXSLT.xsl</code></p></li></ul></div></li><li><p>2011-11-13 - <code class="literal">Crane-cva2html.xsl</code> revision 1.30;
+            <code class="literal">Crane-gc2html.xsl</code> revision 1.17</p><div class="itemizedlist"><ul type="circle"><li><p>add rudimentary support for code list sets in genericode
+              files</p></li><li><p>make location URIs hot links</p></li><li><p>add list long name to title when genericode stylesheet
+              invoked standalone</p></li></ul></div></li><li><p>2010-04-14 - <code class="literal">Crane-cva2html.xsl</code> revision 1.30;
+            <code class="literal">Crane-gc2html.xsl</code> revision 1.16</p><div class="itemizedlist"><ul type="circle"><li><p>repair detection of HTML/XHTML</p></li><li><p>output in XHTML</p></li><li><p>support augmented HTML headers for styling</p></li></ul></div></li><li><p>2010-03-10 - <code class="literal">Crane-cva2html.xsl</code> revision 1.29;
+            <code class="literal">Crane-gc2html.xsl</code> revision 1.15</p><div class="itemizedlist"><ul type="circle"><li><p>expose the existence of overriding metadata when pointing to
+              a value list</p></li></ul></div></li><li><p>2010-01-31 - <code class="literal">Crane-cva2html.xsl</code> revision 1.28; <code class="literal">Crane-gc2html.xsl</code> revision 1.15</p><div class="itemizedlist"><ul type="circle"><li><p>documentation bibliography only; no code changes</p></li></ul></div></li><li><p>2010-01-20 - <code class="literal">Crane-cva2html.xsl</code> revision 1.28; <code class="literal">Crane-gc2html.xsl</code> revision 1.15</p><div class="itemizedlist"><ul type="circle"><li><p>change in the document element name for CVA files</p></li><li><p>change in the documentation bibliography</p></li></ul></div></li><li><p>2009-10-08 - <code class="literal">Crane-cva2html.xsl</code> revision 1.26; <code class="literal">Crane-gc2html.xsl</code> revision 1.15</p><div class="itemizedlist"><ul type="circle"><li><p>documentation bibliography only; no code changes</p></li></ul></div></li><li><p>2009-09-13 - <code class="literal">Crane-cva2html.xsl</code> revision 1.26; <code class="literal">Crane-gc2html.xsl</code> revision 1.15</p><div class="itemizedlist"><ul type="circle"><li><p>namespace </p></li></ul></div></li><li><p>2009-08-26 - <code class="literal">Crane-cva2html.xsl</code> revision 1.24; <code class="literal">Crane-gc2html.xsl</code> revision 1.15</p><div class="itemizedlist"><ul type="circle"><li><p>handle absent columns in rows</p></li><li><p>handle unlabeled columns in rows</p></li></ul></div></li><li><p>2009-07-21 - <code class="literal">Crane-cva2html.xsl</code> revision 1.24; <code class="literal">Crane-gc2html.xsl</code> revision 1.13</p><div class="itemizedlist"><ul type="circle"><li><p>left-align genericode columns and parameterize for those who like otherwise</p></li></ul></div></li><li><p>2009-07-17 - <code class="literal">Crane-cva2html.xsl</code> revision 1.24; <code class="literal">Crane-gc2html.xsl</code> revision 1.12</p><div class="itemizedlist"><ul type="circle"><li><p>add a table of contents</p></li><li><p>support two namespaces for incoming HTML vocabularies ("<code class="literal">http://www.w3.org/TR/REC-html40</code>" and
+"<code class="literal">http://www.w3.org/1999/xhtml</code>")</p></li><li><p>add shortcut hyperlink to value list detail in the context reporting</p></li></ul></div></li><li><p>2009-07-12 - <code class="literal">Crane-cva2html.xsl</code> revision 1.23; <code class="literal">Crane-gc2html.xsl</code> revision 1.12</p><div class="itemizedlist"><ul type="circle"><li><p>support CVA 0.7 Draft 2 in CVA files</p></li></ul></div></li><li><p>2009-07-07 - <code class="literal">Crane-cva2html.xsl</code> revision 1.22; <code class="literal">Crane-gc2html.xsl</code> revision 1.11</p><div class="itemizedlist"><ul type="circle"><li><p>support CVA 0.7 Draft 1 in CVA files</p></li></ul></div></li><li><p>2009-05-23 - <code class="literal">Crane-cva2html.xsl</code> revision 1.20; <code class="literal">Crane-gc2html.xsl</code> revision 1.11</p><div class="itemizedlist"><ul type="circle"><li><p>support CVA 0.6 Draft 1 in CVA files</p></li><li><p>repair reporting of genericode files from included CVA files</p></li><li><p>rename stylesheets with shorter names</p></li></ul></div></li><li><p>2008-11-11 - <code class="literal">Crane-assoc2html.xsl</code> revision 1.16; <code class="literal">Crane-genericode2html.xsl</code> revision 1.10</p><div class="itemizedlist"><ul type="circle"><li><p>support <code class="literal">mark=</code> in CVA files</p></li></ul></div></li><li><p>2008-03-06 - <code class="literal">Crane-assoc2html.xsl</code> revision 1.15; <code class="literal">Crane-genericode2html.xsl</code> revision 1.10</p><div class="itemizedlist"><ul type="circle"><li><p>support annotation documentation in genericode files</p></li></ul></div></li><li><p>2008-03-04 - <code class="literal">Crane-assoc2html.xsl</code> revision 1.15; <code class="literal">Crane-genericode2html.xsl</code> revision 1.9</p><div class="itemizedlist"><ul type="circle"><li><p>changed item names according to CVA 0.3 Draft 1</p></li></ul></div></li><li><p>2007-11-21 - <code class="literal">Crane-assoc2html.xsl</code> revision 1.14; <code class="literal">Crane-genericode2html.xsl</code> revision 1.9</p><div class="itemizedlist"><ul type="circle"><li><p>changed association namespace URI to draft status per CLRTC meeting</p></li></ul></div></li><li><p>2007-10-28 - <code class="literal">Crane-assoc2html.xsl</code> revision 1.13; <code class="literal">Crane-genericode2html.xsl</code> revision 1.9</p><div class="itemizedlist"><ul type="circle"><li><p>citations of revised OASIS specifications</p></li><li><p>report nested masquerading meta data</p></li></ul></div></li><li><p>2007-07-28 - <code class="literal">Crane-assoc2html.xsl</code> revision 1.12; <code class="literal">Crane-genericode2html.xsl</code> revision 1.8</p><div class="itemizedlist"><ul type="circle"><li><p>new namespaces for genericode and context/value association files</p></li><li><p>changed citations in bibliography</p></li></ul></div></li><li><p>2007-04-22 - <code class="literal">Crane-assoc2html.xsl</code> revision 1.11; <code class="literal">Crane-genericode2html.xsl</code> revision 1.7</p><div class="itemizedlist"><ul type="circle"><li><p>repair wording of "value list" in list of document contexts</p></li><li><p>reflect stylesheet version in report meta data at the end of the report</p></li></ul></div></li></ul></div></div><div class="bibliography"><div class="titlepage"><div><div><h2 class="title"><a name="d0e753"></a>Bibliography</h2></div></div></div><div class="bibliomixed"><a name="b_assoc"></a><p class="bibliomixed">[<span class="abbrev">Assoc</span>] James Clark <span class="title"><a href="http://www.w3.org/1999/06/REC-xml-stylesheet-19990629" target="_top">Associating Style Sheets with XML documents
+Version 1.0</a></span> 1999-06-29</p></div><div class="bibliomixed"><a name="b_clrtc"></a><p class="bibliomixed">[<span class="abbrev">CLRTC</span>] <span class="title"><a href="http://www.oasis-open.org/committees/codelist" target="_top">OASIS Code List Representation Technical Committee</a></span></p></div><div class="bibliomixed"><a name="b_cva"></a><p class="bibliomixed">[<span class="abbrev">CVA</span>] <span class="title"><a href="http://docs.oasis-open.org/codelist/ContextValueAssociation" target="_top">OASIS Context/Value Association 1.0</a></span></p></div><div class="bibliomixed"><a name="b_genericode"></a><p class="bibliomixed">[<span class="abbrev">genericode</span>] <span class="title"><a href="http://docs.oasis-open.org/codelist/genericode" target="_top">OASIS Genericode 1.0</a></span></p></div><div class="bibliomixed"><a name="b_saxon"></a><p class="bibliomixed">[<span class="abbrev">Saxon</span>] Michael Kay <span class="title"><a href="http://saxon.sf.net/" target="_top">Saxon</a></span></p></div><div class="bibliomixed"><a name="b_ubl20"></a><p class="bibliomixed">[<span class="abbrev">UBL 2.0</span>] Jon Bosak, Tim McGrath, G. Ken Holman <span class="title"><a href="http://docs.oasis-open.org/ubl/os-ubl-2.0/" target="_top">Universal Business Language (UBL) Version 2.0</a></span>,
+<span class="title"><a href="http://www.oasis-open.org/committees/ubl/" target="_top">
+OASIS UBL Technical Committee</a></span> 2006
+</p></div><div class="bibliomixed"><a name="b_w3cschema"></a><p class="bibliomixed">[<span class="abbrev">W3C Schema</span>] <span class="title"><a href="http://www.w3.org/TR/xmlschema-0/" target="_top">XML Schema Part 0: Primer</a></span>, <span class="title"><a href="http://www.w3.org/TR/xmlschema-1/" target="_top">XML Schema Part 1: Structures</a></span>, <span class="title"><a href="http://www.w3.org/TR/xmlschema-2/" target="_top">XML Schema Part 2: Datatypes</a></span> 2004-10-28</p></div><div class="bibliomixed"><a name="b_xslt10"></a><p class="bibliomixed">[<span class="abbrev">XSLT 1.0</span>] James Clark <span class="title"><a href="http://www.w3.org/TR/1999/REC-xslt-19991116" target="_top">XSL Transformations (XSLT) Version 1.0</a></span> 1999-11-16</p></div></div></div></body></html>

@@ -1,0 +1,1137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--$Id: UBL-2.3-Schema-summary-information.xml,v 1.11 2020/01/28 20:51:18 admin Exp $-->
+<!--
+  Instructions: Add new document types to the end of this document
+  
+  (see hub document XML comments for instructions)
+-->
+<!DOCTYPE schemadocs [
+	<!ELEMENT schemadocs (schema+)>
+	<!ELEMENT schema (name, description, processes, submitterRole, receiverRole, examples)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT description (#PCDATA | link)*>
+	<!ELEMENT process (#PCDATA)>
+	<!ELEMENT link (#PCDATA)>
+	<!ATTLIST link
+		schema CDATA #IMPLIED
+	>
+	<!ATTLIST link
+		figure CDATA #IMPLIED
+	>
+	<!ELEMENT example (#PCDATA)>
+	<!ELEMENT submitterRole (#PCDATA)>
+	<!ELEMENT receiverRole (#PCDATA)>
+	<!ELEMENT processes (process*)>
+	<!ELEMENT examples (example*)>
+]>
+<schemadocs>
+	<schema>
+		<name>Application Response</name>
+		<description>A document to indicate the application’s response to a transaction. This may be a
+          business response and/or a technical response, sent automatically by an application or
+          initiated by a user.</description>
+		<processes/>
+		<submitterRole>Sender</submitterRole>
+		<receiverRole>Receiver</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Attached Document</name>
+		<description>A UBL wrapper that allows a document of any kind to be packaged with the UBL
+          document that references it.</description>
+		<processes/>
+		<submitterRole>Sender</submitterRole>
+		<receiverRole>Receiver</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Awarded Notification</name>
+		<description>The document used to communicate a contract award to the winner.</description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Contracting Authority</submitterRole>
+		<receiverRole>Tenderer</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Bill Of Lading</name>
+		<description>A document that conveys information about an instance of a transportation service
+          and may under some circumstances serve as a contractual document For the service. See
+            <link>Bill of Lading</link> and compare with <link>Waybill</link>.</description>
+		<processes>
+			<process>Transport</process>
+		</processes>
+		<submitterRole>Freight Forwarder, Carrier</submitterRole>
+		<receiverRole>Consignor (or Consignee), Freight Forwarder</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Call For Tenders</name>
+		<description>A document used by a Contracting Party to define a procurement project to buy
+          goods, services, or works during a specified period.</description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Contracting Authority</submitterRole>
+		<receiverRole>Tenderer</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Catalogue</name>
+		<description>A document that describes items, prices, and price validity. See
+            <link>Catalogue</link>.</description>
+		<processes>
+			<process>Catalogue</process>
+			<process>Create Catalogue</process>
+			<process>Delete Catalogue</process>
+			<process>Update Catalogue Item Specification</process>
+			<process>Update Catalogue Pricing</process>
+			<process>Initial Stocking of the Area by Producer</process>
+			<process>Permanent Replenishment</process>
+			<process>Price Adjustments</process>
+			<process>Transfer of Base Item Catalogue</process>
+			<process>Changes to the Item Catalogue</process>
+			<process>Changes to the Article Catalogue</process>
+		</processes>
+		<submitterRole>Seller</submitterRole>
+		<receiverRole>Contracting Party</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Catalogue Deletion</name>
+		<description>A document used to cancel an entire <link schema="">Catalogue</link>.</description>
+		<processes>
+			<process>Catalogue</process>
+		</processes>
+		<submitterRole>Seller</submitterRole>
+		<receiverRole>Contracting Party</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Catalogue Item Specification Update</name>
+		<description>A document used to update information (e.g., technical descriptions and properties)
+          about Items in an existing <link schema="">Catalogue</link>.</description>
+		<processes>
+			<process>Catalogue</process>
+		</processes>
+		<submitterRole>Seller</submitterRole>
+		<receiverRole>Contracting Party</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Catalogue Pricing Update</name>
+		<description>A document used to update information about prices in an existing
+            <link schema="">Catalogue</link>.</description>
+		<processes>
+			<process>Catalogue</process>
+		</processes>
+		<submitterRole>Seller</submitterRole>
+		<receiverRole>Contracting Party</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Catalogue Request</name>
+		<description>A document used to request a <link schema="">Catalogue</link>.</description>
+		<processes>
+			<process>Catalogue</process>
+		</processes>
+		<submitterRole>Contracting Party</submitterRole>
+		<receiverRole>Seller</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Certificate Of Origin</name>
+		<description>A document that describes the Certificate of Origin.</description>
+		<processes>
+			<process>Certification of Origin of Goods</process>
+		</processes>
+		<submitterRole>Exporter, Issuer</submitterRole>
+		<receiverRole>Issuer, Importer</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Contract Award Notice</name>
+		<description>A document published by a Contracting Party to announce the awarding of a
+          procurement project.</description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Contracting Authority</submitterRole>
+		<receiverRole>Tenderer</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Contract Notice</name>
+		<description>A document used by a Contracting Party to announce a project to buy goods, services
+          or works.</description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Contracting Authority</submitterRole>
+		<receiverRole>Tenderer</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Credit Note</name>
+		<description>A document used to specify credits due to the Debtor from the
+          Creditor.</description>
+		<processes>
+			<process>Billing</process>
+		</processes>
+		<submitterRole>Supplier Accounting Party</submitterRole>
+		<receiverRole>Customer Accounting Party</receiverRole>
+		<examples>
+			<example>UBL-CreditNote-2.0-Example.xml</example>
+			<example>UBL-CreditNote-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Debit Note</name>
+		<description>A document used to specify debts incurred by the Debtor.</description>
+		<processes>
+			<process>Billing</process>
+		</processes>
+		<submitterRole>Customer Accounting Party</submitterRole>
+		<receiverRole>Supplier Accounting Party</receiverRole>
+		<examples>
+			<example>UBL-DebitNote-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Despatch Advice</name>
+		<description>A document used to describe the despatch or delivery of goods and
+          services.</description>
+		<processes>
+			<process>Logistics</process>
+		</processes>
+		<submitterRole>Despatch</submitterRole>
+		<receiverRole>Delivery</receiverRole>
+		<examples>
+			<example>UBL-DespatchAdvice-2.0-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Document Status</name>
+		<description>A document used to provide information about document status.</description>
+		<processes/>
+		<submitterRole>Party currently controlling Status of the collaboration</submitterRole>
+		<receiverRole>Party requesting Status on collaboration</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Document Status Request</name>
+		<description>A document used to request the status of another document.</description>
+		<processes/>
+		<submitterRole>Party requesting Status on collaboration</submitterRole>
+		<receiverRole>Party currently controlling Status of the collaboration</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Exception Criteria</name>
+		<description>A document used to specify the thresholds for forecast variance, product activity,
+          and performance history beyond which exceptions should be triggered.</description>
+		<processes>
+			<process>Collaborative Planning, Forecasting, and Replenishment</process>
+		</processes>
+		<submitterRole>Buyer, Seller</submitterRole>
+		<receiverRole>Buyer, Seller</receiverRole>
+		<examples>
+			<example>UBL-ExceptionCriteria-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Exception Notification</name>
+		<description>A document used to notify an exception in forecast variance, product activity, or
+          performance history.</description>
+		<processes>
+			<process>Collaborative Planning, Forecasting, and Replenishment</process>
+		</processes>
+		<submitterRole>Buyer, Seller</submitterRole>
+		<receiverRole>Buyer, Seller</receiverRole>
+		<examples>
+			<example>UBL-ExceptionNotification-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Forecast</name>
+		<description>A document used to forecast sales or orders.</description>
+		<processes>
+			<process>Collaborative Planning, Forecasting, and Replenishment</process>
+		</processes>
+		<submitterRole>Buyer, Seller</submitterRole>
+		<receiverRole>Buyer, Seller</receiverRole>
+		<examples>
+			<example>UBL-Forecast-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Forecast Revision</name>
+		<description>A document used to revise a <link schema="">Forecast</link>.</description>
+		<processes>
+			<process>Collaborative Planning, Forecasting, and Replenishment</process>
+		</processes>
+		<submitterRole>Buyer, Seller</submitterRole>
+		<receiverRole>Buyer, Seller</receiverRole>
+		<examples>
+			<example>UBL-ForecastRevision-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Forwarding Instructions</name>
+		<description>A document issued to a forwarder, giving instructions regarding the action to be
+          taken for the forwarding of goods described therein. See <link>Forwarding
+          Instructions</link>.</description>
+		<processes>
+			<process>Transport</process>
+		</processes>
+		<submitterRole>Consignor (or Consignee), Freight Forwarder</submitterRole>
+		<receiverRole>Freight Forwarder, Carrier</receiverRole>
+		<examples>
+			<example>UBL-ForwardingInstructions-2.0-Example-International.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Freight Invoice</name>
+		<description>A document stating the charges incurred for a logistics service.</description>
+		<processes>
+			<process>Freight Billing</process>
+		</processes>
+		<submitterRole>Freight Forwarder</submitterRole>
+		<receiverRole>Consignor or Consignee</receiverRole>
+		<examples>
+			<example>UBL-FreightInvoice-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Fulfilment Cancellation</name>
+		<description>A document used to cancel an entire <link schema="">Despatch Advice</link> or <link schema="">Receipt
+            Advice</link>.</description>
+		<processes>
+			<process>Logistics</process>
+		</processes>
+		<submitterRole>Buyer or Seller</submitterRole>
+		<receiverRole>Seller or Buyer</receiverRole>
+		<examples>
+			<example>UBL-FulfilmentCancellation-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Goods Item Itinerary</name>
+		<description>A document providing details relating to a transport service, such as transport
+          movement, identification of equipment and goods, subcontracted service providers,
+          etc.</description>
+		<processes>
+			<process>Intermodal Freight Management</process>
+		</processes>
+		<submitterRole>Transport Service Provider</submitterRole>
+		<receiverRole>Transport User</receiverRole>
+		<examples>
+			<example>UBL-GoodsItemItinerary-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Guarantee Certificate</name>
+		<description>A document to notify the deposit of a bid bond guarantee.</description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Tenderer</submitterRole>
+		<receiverRole>Contracting Authority</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Instruction For Returns</name>
+		<description>A document used to initiate a return of goods. The producer is requesting the
+          return of products that are not selling well, either to use in other places or to free up rack
+          or shelf space.</description>
+		<processes>
+			<process>Cyclic Replenishment Program (CRP)</process>
+		</processes>
+		<submitterRole>Seller</submitterRole>
+		<receiverRole>Buyer</receiverRole>
+		<examples>
+			<example>UBL-InstructionForReturns-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Inventory Report</name>
+		<description>A report on the quantities of each item that are, or will be, in stock. This
+          document is sent by a Buyer (for example a retailer) to a Seller (for example a
+          producer).</description>
+		<processes>
+			<process>Cyclic Replenishment Program (CRP)</process>
+		</processes>
+		<submitterRole>Buyer</submitterRole>
+		<receiverRole>Seller</receiverRole>
+		<examples>
+			<example>UBL-InventoryReport-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Invoice</name>
+		<description>A document used to request payment.</description>
+		<processes>
+			<process>Billing</process>
+		</processes>
+		<submitterRole>Supplier Accounting Party</submitterRole>
+		<receiverRole>Customer Accounting Party</receiverRole>
+		<examples>
+			<example>UBL-Invoice-2.0-Example.xml</example>
+			<example>UBL-Invoice-2.1-Example.xml</example>
+			<example>UBL-Invoice-2.1-Example-Trivial.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Item Information Request</name>
+		<description>A document used to request product activity, forecast, or performance
+          data.</description>
+		<processes>
+			<process>Collaborative Planning, Forecasting, and Replenishment</process>
+		</processes>
+		<submitterRole>Buyer, Seller</submitterRole>
+		<receiverRole>Buyer, Seller</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Order</name>
+		<description>A document used to order goods and services.</description>
+		<processes>
+			<process>Ordering (post-award)</process>
+		</processes>
+		<submitterRole>Buyer</submitterRole>
+		<receiverRole>Seller</receiverRole>
+		<examples>
+			<example>UBL-Order-2.0-Example.xml</example>
+			<example>UBL-Order-2.1-Example.xml</example>
+			<example>UBL-Order-2.0-Example-International.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Order Cancellation</name>
+		<description>A document used to cancel an entire <link schema="">Order</link>.</description>
+		<processes>
+			<process>Ordering (post-award)</process>
+			<process>Logistics</process>
+		</processes>
+		<submitterRole>Buyer</submitterRole>
+		<receiverRole>Seller</receiverRole>
+		<examples>
+			<example>UBL-OrderCancellation-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Order Change</name>
+		<description>A document used to specify changes to an existing <link schema="">Order</link>.</description>
+		<processes>
+			<process>Ordering (post-award)</process>
+			<process>Logistics</process>
+		</processes>
+		<submitterRole>Buyer</submitterRole>
+		<receiverRole>Seller</receiverRole>
+		<examples>
+			<example>UBL-OrderChange-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Order Response</name>
+		<description>A document used to indicate detailed acceptance or rejection of an
+            <link schema="">Order</link> or to make a counter-offer.</description>
+		<processes>
+			<process>Ordering (post-award)</process>
+		</processes>
+		<submitterRole>Seller</submitterRole>
+		<receiverRole>Buyer</receiverRole>
+		<examples>
+			<example>UBL-OrderResponse-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Order Response Simple</name>
+		<description>A document used to indicate simple acceptance or rejection of an entire
+            <link schema="">Order</link>.</description>
+		<processes>
+			<process>Ordering (post-award)</process>
+		</processes>
+		<submitterRole>Seller</submitterRole>
+		<receiverRole>Buyer</receiverRole>
+		<examples>
+			<example>UBL-OrderResponseSimple-2.0-Example.xml</example>
+			<example>UBL-OrderResponseSimple-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Packing List</name>
+		<description>A document describing how goods are packed.</description>
+		<processes>
+			<process>Transport</process>
+		</processes>
+		<submitterRole>Consignor</submitterRole>
+		<receiverRole>Freight Forwarder</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Prior Information Notice</name>
+		<description>A document used by a contracting party to declare the intention to buy goods,
+          services, or works during a specified period.</description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Contracting Authority</submitterRole>
+		<receiverRole>Tenderer</receiverRole>
+		<examples>
+			<example>UBL-PriorInformationNotice-2.2-Example-Embedded.xml</example>
+			<example>UBL-PriorInformationNotice-2.2-Example-External.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Product Activity</name>
+		<description>A document reporting the movement of goods at specified retail locations for
+          inventory tracking purposes.</description>
+		<processes>
+			<process>Collaborative Planning, Forecasting, and Replenishment</process>
+			<process>Vendor Managed Inventory</process>
+		</processes>
+		<submitterRole>Buyer</submitterRole>
+		<receiverRole>Seller</receiverRole>
+		<examples>
+			<example>UBL-ProductActivity-2.1-Example-1.xml</example>
+			<example>UBL-ProductActivity-2.1-Example-2.xml</example>
+			<example>UBL-ProductActivity-2.1-Example-3.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Quotation</name>
+		<description>A document used to quote for the provision of goods and services.</description>
+		<processes>
+			<process>Quotation</process>
+		</processes>
+		<submitterRole>Seller</submitterRole>
+		<receiverRole>Originator</receiverRole>
+		<examples>
+			<example>UBL-Quotation-2.0-Example.xml</example>
+			<example>UBL-Quotation-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Receipt Advice</name>
+		<description>A document used to describe the receipt of goods and services.</description>
+		<processes>
+			<process>Logistics</process>
+		</processes>
+		<submitterRole>Delivery</submitterRole>
+		<receiverRole>Despatch</receiverRole>
+		<examples>
+			<example>UBL-ReceiptAdvice-2.0-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Reminder</name>
+		<description>A document used to remind a customer of payments overdue.</description>
+		<processes>
+			<process>Billing</process>
+		</processes>
+		<submitterRole>Supplier Accounting Party and/or Payee</submitterRole>
+		<receiverRole>Customer Accounting Party and/or Payee</receiverRole>
+		<examples>
+			<example>UBL-Reminder-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Remittance Advice</name>
+		<description>A document that specifies details of an actual payment.</description>
+		<processes>
+			<process>Payment Notification</process>
+		</processes>
+		<submitterRole>Supplier Accounting Party and/or Payee</submitterRole>
+		<receiverRole>Customer Accounting Party and/or Payee</receiverRole>
+		<examples>
+			<example>UBL-RemittanceAdvice-2.0-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Request For Quotation</name>
+		<description>A document used to request a <link schema="">Quotation</link> for goods and services from a
+          seller.</description>
+		<processes>
+			<process>Quotation</process>
+		</processes>
+		<submitterRole>Originator</submitterRole>
+		<receiverRole>Seller</receiverRole>
+		<examples>
+			<example>UBL-RequestForQuotation-2.0-Example.xml</example>
+			<example>UBL-RequestForQuotation-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Retail Event</name>
+		<description>A document used to specify basic information about retail events (such as
+          promotions, product introductions, and community or environmental events) that affect supply
+          or demand.</description>
+		<processes>
+			<process>Cyclic Replenishment Program (CRP)</process>
+		</processes>
+		<submitterRole>Buyer, Seller</submitterRole>
+		<receiverRole>Buyer, Seller</receiverRole>
+		<examples>
+			<example>UBL-RetailEvent-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Self Billed Credit Note</name>
+		<description>A credit note created by the debtor in a self billing arrangement with a creditor;
+          Self Billed Credit Note replaces <link schema="">Debit Note</link> in such arrangements.</description>
+		<processes>
+			<process>Billing</process>
+		</processes>
+		<submitterRole>Customer Accounting Party</submitterRole>
+		<receiverRole>Supplier Accounting Party</receiverRole>
+		<examples>
+			<example>UBL-SelfBilledCreditNote-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Self Billed Invoice</name>
+		<description>An invoice document created by the customer (rather than the supplier) in a Self
+          Billing relationship.</description>
+		<processes>
+			<process>Billing</process>
+		</processes>
+		<submitterRole>Customer Accounting Party</submitterRole>
+		<receiverRole>Supplier Accounting Party</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Statement</name>
+		<description>A document used to report the status of orders, billing, and payment. This document
+          is a statement of account, not a summary invoice.</description>
+		<processes>
+			<process>Billing</process>
+		</processes>
+		<submitterRole>Supplier Accounting Party</submitterRole>
+		<receiverRole>Customer Accounting Party</receiverRole>
+		<examples>
+			<example>UBL-Statement-2.0-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Stock Availability Report</name>
+		<description>A report on the quantities of each item that are, or will be, in stock. This
+          document is sent by a Seller (for example a producer) to a Buyer (for example a
+          retailer).</description>
+		<processes>
+			<process>Cyclic Replenishment Program (CRP)</process>
+		</processes>
+		<submitterRole>Seller (Producer)</submitterRole>
+		<receiverRole>Buyer (Retailer)</receiverRole>
+		<examples>
+			<example>UBL-StockAvailabilityReport-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Tender</name>
+		<description>A document whereby an economic operator (the tenderer) makes a formal offer (the
+          tender) to a contracting authority to execute an order for the supply or purchase of goods, or
+          for the execution of work, according to the terms of a proposed contract.</description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Tenderer</submitterRole>
+		<receiverRole>Contracting Authority</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Tender Receipt</name>
+		<description>A document sent by a contracting party to an economic operator acknowledging
+          receipt of a Tender.</description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Contracting Authority</submitterRole>
+		<receiverRole>Tenderer</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Tenderer Qualification</name>
+		<description>A document declaring the qualifications of a tenderer.</description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Tenderer</submitterRole>
+		<receiverRole>Contracting Authority</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Tenderer Qualification Response</name>
+		<description>A document issued by a procurement organization to notify an economic operator
+          whether it has been admitted to or excluded from the tendering process.</description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Contracting Authority</submitterRole>
+		<receiverRole>Tenderer</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Trade Item Location Profile</name>
+		<description>A document specifying trade item attributes relating to replenishment
+          policies.</description>
+		<processes>
+			<process>Collaborative Planning, Forecasting, and Replenishment</process>
+		</processes>
+		<submitterRole>Buyer, Seller</submitterRole>
+		<receiverRole>Buyer, Seller</receiverRole>
+		<examples>
+			<example>UBL-TradeItemLocationProfile-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Transport Execution Plan</name>
+		<description>A document used in the negotiation of a transport service between a transport user
+          and a transport service provider.</description>
+		<processes>
+			<process>Intermodal Freight Management</process>
+		</processes>
+		<submitterRole>Transport Service Provider, Transport User</submitterRole>
+		<receiverRole>Transport User, Transport Service Provider</receiverRole>
+		<examples>
+			<example>UBL-TransportExecutionPlan-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Transport Execution Plan Request</name>
+		<description>A document sent by a transport user to request a transport service from a transport
+          service provider.</description>
+		<processes>
+			<process>Intermodal Freight Management</process>
+		</processes>
+		<submitterRole>Transport User</submitterRole>
+		<receiverRole>Transport Service Provider</receiverRole>
+		<examples>
+			<example>UBL-TransportExecutionPlanRequest-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Transport Progress Status</name>
+		<description>A document sent from a transportation network manager to a transport service
+          provider giving the status of the whereabouts and schedule of the transport means involved in
+          a transport service.</description>
+		<processes>
+			<process>Intermodal Freight Management</process>
+		</processes>
+		<submitterRole>Transportation Network Manager</submitterRole>
+		<receiverRole>Transport Service Provider</receiverRole>
+		<examples>
+			<example>UBL-TransportProgressStatus-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Transport Progress Status Request</name>
+		<description>A document sent from a transport service provider to a transportation network
+          manager requesting a <link schema="">Transport Progress Status</link>.</description>
+		<processes>
+			<process>Intermodal Freight Management</process>
+		</processes>
+		<submitterRole>Transport Service Provider</submitterRole>
+		<receiverRole>Transportation Network Manager</receiverRole>
+		<examples>
+			<example>UBL-TransportProgressStatusRequest-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Transport Service Description</name>
+		<description>A document sent by a transport service provider to announce the availability of a
+          transport service.</description>
+		<processes>
+			<process>Intermodal Freight Management</process>
+		</processes>
+		<submitterRole>Transport Service Provider</submitterRole>
+		<receiverRole>Transport User</receiverRole>
+		<examples>
+			<example>UBL-TransportServiceDescription-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Transport Service Description Request</name>
+		<description>A document requesting a <link schema="">Transport Service Description</link>, sent from a
+          party with a transport demand (transport user) to a party providing transport services
+          (transport service provider).</description>
+		<processes>
+			<process>Intermodal Freight Management</process>
+		</processes>
+		<submitterRole>Transport User</submitterRole>
+		<receiverRole>Transport Service Provider</receiverRole>
+		<examples>
+			<example>UBL-TransportServiceDescriptionRequest-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Transportation Status</name>
+		<description>A document to circulate reports of transportation status or changes in status
+          (events) among a group of participants.</description>
+		<processes>
+			<process>Freight Status Reporting</process>
+		</processes>
+		<submitterRole>Transport Service Provider</submitterRole>
+		<receiverRole>Transport User</receiverRole>
+		<examples>
+			<example>UBL-TransportationStatus-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Transportation Status Request</name>
+		<description>A document requesting a <link schema="">Transportation Status</link> report.</description>
+		<processes>
+			<process>Freight Status Reporting</process>
+		</processes>
+		<submitterRole>Transport User</submitterRole>
+		<receiverRole>Transport Service Provider</receiverRole>
+		<examples>
+			<example>UBL-TransportationStatusRequest-2.1-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Unawarded Notification</name>
+		<description>A document communicating to a tenderer that the contract has been awarded to
+          different tenderer.</description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Contracting Authority</submitterRole>
+		<receiverRole>Tenderer</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Utility Statement</name>
+		<description>A supplement to an <link schema="">Invoice</link> or <link schema="">Credit Note</link>, containing
+          information on the consumption of services provided by utility suppliers to private and public
+          customers, including electricity, gas, water, and telephone services.</description>
+		<processes>
+			<process>Utility Billing</process>
+		</processes>
+		<submitterRole>Supplier Accounting Party</submitterRole>
+		<receiverRole>Customer Accounting Party</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Waybill</name>
+		<description>A transport document describing a shipment. It is issued by the party who
+          undertakes to provide transportation services, or undertakes to arrange for their provision,
+          to the party who gives instructions for the transportation services (shipper, consignor,
+          etc.). It states the instructions for the beneficiary and may contain the details of the
+          transportation, charges, and terms and conditions under which the transportation service is
+          provided. See <link>Waybill</link> and compare with <link>Bill of Lading</link>.</description>
+		<processes>
+			<process>Transport</process>
+		</processes>
+		<submitterRole>Freight Forwarder, Carrier</submitterRole>
+		<receiverRole>Consignor (or Consignee), Freight Forwarder</receiverRole>
+		<examples>
+			<example>UBL-Waybill-2.0-Example-International.xml</example>
+		</examples>
+	</schema>
+	<!-- 2.2 pre-award documents-->
+	<schema>
+		<name>Expression Of Interest Response</name>
+		<description>A document whereby a Contracting Authority accepts receiving an Expression Of
+          Interest from an Economic Operator (the tenderer) </description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Contracting Authority</submitterRole>
+		<receiverRole>Tenderer (Economic Operator)</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Expression Of Interest Request</name>
+		<description>A document whereby an Economic Operator (the tenderer) makes an Expression Of
+          Interest in a Call For Tenders to a Contracting Authority </description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Tenderer (Economic Operator)</submitterRole>
+		<receiverRole>Contracting Authority</receiverRole>
+		<examples>
+			<example>UBL-ExpressionOfInterestRequest-2.2-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Qualification Application Request</name>
+		<description>A document whereby a Contracting Authority makes a description of the required
+          qualification Application (In Europe: ESPD Request) to an Economic Operator (the tenderer) </description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Contracting Authority</submitterRole>
+		<receiverRole>Tenderer (Economic Operator)</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Qualification Application Response</name>
+		<description>A document whereby an Economic Operator (the tenderer) makes a description of the
+          required qualification Application (In Europe: ESPD Response) to an Contracting Authority </description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Tenderer (Economic Operator)</submitterRole>
+		<receiverRole>Contracting Authority</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Tender Contract</name>
+		<description>A document whereby a Contracting Authority sends information to the Economic
+          Operator describing the final contract after a tendering procedure.</description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Contracting Authority</submitterRole>
+		<receiverRole>Tenderer (Economic Operator)</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Tender Status Request</name>
+		<description>A document whereby an Economic Operator (the tenderer) asking about the details and
+          status of a tendering procedure </description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Tenderer (Economic Operator)</submitterRole>
+		<receiverRole>Contracting Authority</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Tender Status</name>
+		<description>A document whereby a Contracting Authority sends information to the Economic
+          Operator describing the status of a tendering procedure.</description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Contracting Authority</submitterRole>
+		<receiverRole>Tenderer (Economic Operator)</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Tender Withdrawal</name>
+		<description>A document whereby an Economic Operator (the tenderer) makes a Tender Withdrawal to
+          a Contracting Authority </description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Tenderer (Economic Operator)</submitterRole>
+		<receiverRole>Contracting Authority</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Unsubscribe From Procedure Response</name>
+		<description>A document whereby a Contracting Authority accepts receiving an Unsubscribe From
+          Procedure from an Economic Operator (the tenderer) and sends a confirmation</description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Contracting Authority</submitterRole>
+		<receiverRole>Tenderer (Economic Operator)</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Unsubscribe From Procedure Request</name>
+		<description>A document whereby an Economic Operator (the tenderer) wants to Unsubscribe From
+          Procedure and sends it to Contracting Authority </description>
+		<processes>
+			<process>Pre-award</process>
+		</processes>
+		<submitterRole>Tenderer (Economic Operator)</submitterRole>
+		<receiverRole>Contracting Authority</receiverRole>
+		<examples/>
+	</schema>
+	<!-- 2.2 party information exchange documents-->
+	<schema>
+		<name>Business Card</name>
+		<description>A document used to provide information about a business party and its business capabilities. </description>
+		<processes>
+			<process>Business Directory and Agreements</process>
+		</processes>
+		<submitterRole>Sender</submitterRole>
+		<receiverRole>Receiver</receiverRole>
+		<examples>
+			<example>UBL-BusinessCard-2.2-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Digital Capability</name>
+		<description>A document used to provide information about a business party and its digital capabilities. </description>
+		<processes>
+			<process>Business Directory and Agreements</process>
+		</processes>
+		<submitterRole>Sender</submitterRole>
+		<receiverRole>Receiver</receiverRole>
+		<examples>
+			<example>UBL-DigitalCapability-2.2-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Digital Agreement</name>
+		<description>A document used to support business parties agreeing on a set of digital processes, terms and conditions to ensure interoperability.</description>
+		<processes>
+			<process>Business Directory and Agreements</process>
+		</processes>
+		<submitterRole>Agreement Participant</submitterRole>
+		<receiverRole>Agreement Participant</receiverRole>
+		<examples>
+			<example>UBL-DigitalAgreement-2.2-Example.xml</example>
+			<example>UBL-DigitalAgreement-2.2-Example-Multilateral.xml</example>
+		</examples>
+	</schema>
+	<!-- 2.2 transport documents-->
+	<schema>
+		<name>Weight Statement</name>
+		<description>A document used to report weight or verified mass measurements in the transport chain. </description>
+		<processes>
+			<process>Transport</process>
+		</processes>
+		<submitterRole>Sender</submitterRole>
+		<receiverRole>Receiver</receiverRole>
+		<examples>
+			<example>UBL-WeightStatement-2.2-Example.xml</example>
+		</examples>
+	</schema>
+	<!-- 2.2 miscellaneous documents-->
+	<schema>
+		<name>Enquiry</name>
+		<description>A document sent by a requestor to a responder requesting information about a particular business process.
+</description>
+		<processes/>
+		<submitterRole>Requestor</submitterRole>
+		<receiverRole>Responder</receiverRole>
+		<examples/>
+	</schema>
+	<schema>
+		<name>Enquiry Response</name>
+		<description>A document sent by a responder to a requester answering a particular enquiry.</description>
+		<processes/>
+		<submitterRole>Responder</submitterRole>
+		<receiverRole>Requestor</receiverRole>
+		<examples/>
+	</schema>
+	<!-- 2.3 transportation documents-->
+	<schema>
+		<name>Export Customs Declaration</name>
+		<description>A document used to declare goods for exportation</description>
+		<processes>
+			<process>Export Customs Declaration</process>
+		</processes>
+		<submitterRole>Exporter Party</submitterRole>
+		<receiverRole>Customs Party</receiverRole>
+		<examples>
+			<example>UBL-ExportCustomsDeclaration-2.3-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Import Customs Declaration</name>
+		<description>A document used to declare goods for import</description>
+		<processes>
+			<process>Import Customs Declaration</process>
+		</processes>
+		<submitterRole>Importer Party</submitterRole>
+		<receiverRole>Customs Party</receiverRole>
+		<examples>
+			<example>UBL-ImportCustomsDeclaration-2.3-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Transit Customs Declaration</name>
+		<description>A document used to declare goods for transit</description>
+		<processes>
+			<process>Transit Customs Declaration</process>
+		</processes>
+		<submitterRole>Transit Customs Party</submitterRole>
+		<receiverRole>Customs Party</receiverRole>
+		<examples>
+			<example>UBL-TransitCustomsDeclaration-2.3-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Goods Certificate</name>
+		<description>A document used to prove one or more requirements about goods under transport</description>
+		<processes>
+			<process>Export Goods Certificate</process>
+		</processes>
+		<submitterRole>Exporter party</submitterRole>
+		<receiverRole>Legal Authority Party</receiverRole>
+		<examples>
+			<example>UBL-GoodsCertificate-2.3-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Goods Item Passport</name>
+		<description>A document used to declare goods for temporary exportation</description>
+		<processes>
+			<process>Goods Item Passport (Carnet)</process>
+		</processes>
+		<submitterRole>HolderParty</submitterRole>
+		<receiverRole>IssuerParty</receiverRole>
+		<examples>
+			<example>UBL-GoodsItemPassport-2.3-Example-Issued.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Proof Of Reexportation</name>
+		<description>A document used to prove reexportation of goods</description>
+		<processes>
+			<process>Goods Item Passport Proof of Re-exportation</process>
+		</processes>
+		<submitterRole>Exporting Guarantor party</submitterRole>
+		<receiverRole>Importing Guarantor party</receiverRole>
+		<examples>
+			<example>UBL-ProofOfReexportation-2.3-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Proof Of Reexportation Reminder</name>
+		<description>A reminder that a requested Proof of Reexportation is pending</description>
+		<processes>
+			<process>Goods Item Passport Proof of Re-exportation</process>
+		</processes>
+		<submitterRole>Customs Party</submitterRole>
+		<receiverRole>Exporting Guarantor party</receiverRole>
+		<examples>
+			<example>UBL-ProofOfReexportationReminder-2.3-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Proof Of Reexportation Request</name>
+		<description>A document used request a proof of reexportation</description>
+		<processes>
+			<process>Goods Item Passport Proof of Re-exportation</process>
+		</processes>
+		<submitterRole>Customs Party</submitterRole>
+		<receiverRole>Exporting Guarantor party</receiverRole>
+		<examples>
+			<example>UBL-ProofOfReexportationRequest-2.3-Example.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Manifest</name>
+		<description>A document used to specify the quantity and nature of cargo and personel for a single shipment stage often expressed as a set of consignments.</description>
+		<processes>
+			<process>Manifest</process>
+		</processes>
+		<submitterRole>Sending Logistic Operator party</submitterRole>
+		<receiverRole>Receiving Logistic Operator party</receiverRole>
+		<examples>
+			<example>UBL-Manifest-2.3-Example-Reference-Only.xml</example>
+			<example>UBL-Manifest-2.3-Example-Shipment.xml</example>
+		</examples>
+	</schema>
+	<schema>
+		<name>Common Transportation Report</name>
+		<description>A document used report transportation events to an authority.</description>
+		<processes>
+			<process>Common Transportation Report</process>
+		</processes>
+		<submitterRole>Reporter party</submitterRole>
+		<receiverRole>Authority party</receiverRole>
+		<examples>
+			<example>UBL-CommonTransportationReport-2.3-Example.xml</example>
+		</examples>
+	</schema>
+</schemadocs>

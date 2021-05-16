@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommonTransportationReport
+	xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonTransportationReport-2"
+	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+	<cbc:CustomizationID>Common Framework</cbc:CustomizationID>
+	<cbc:ProfileID>ENS</cbc:ProfileID>
+	<cbc:ID>224087496582335</cbc:ID>
+	<!-- Submitter's reference number -->
+	<cbc:IssueDate>2013-05-08</cbc:IssueDate>
+	<cbc:IssueTime>10:15:00+02:00</cbc:IssueTime>
+	<cbc:DocumentStatusCode>NotConfirmed</cbc:DocumentStatusCode>
+	<cbc:VersionID>1</cbc:VersionID>
+	<cac:ReporterParty>
+		<cac:PartyIdentification>
+			<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058673827641</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>D2D GmbH</cbc:Name>
+		</cac:PartyName>
+		<cac:Contact>
+			<cbc:Name>SomeName</cbc:Name>
+			<cbc:Telephone>+49450557000</cbc:Telephone>
+			<cbc:ElectronicMail>SomeName@d2d.de</cbc:ElectronicMail>
+		</cac:Contact>
+	</cac:ReporterParty>
+	<cac:SenderParty>
+		<cac:PartyName>
+			<cbc:Name>Declarant Inc</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Declarant Street</cbc:StreetName>
+			<cbc:CityName>Declarant City</cbc:CityName>
+			<cbc:PostalZone>Declarant Post Code</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:Contact>
+			<cbc:Name>SomeName</cbc:Name>
+			<cbc:Telephone>+49450557000</cbc:Telephone>
+			<cbc:ElectronicMail>SomeName@d2d.de</cbc:ElectronicMail>
+		</cac:Contact>
+	</cac:SenderParty>
+	<cac:ReceiverParty>
+		<cac:PartyIdentification>
+			<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058675698641</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>Lisboa Harbour</cbc:Name>
+		</cac:PartyName>
+	</cac:ReceiverParty>
+	<cac:ReportingLocation>
+		<cac:Address>
+			<cbc:StreetName>Declarant Street</cbc:StreetName>
+			<cbc:CityName>Declarant City</cbc:CityName>
+			<cbc:PostalZone>Declarant Post Code</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:Address>
+	</cac:ReportingLocation>
+	<cac:Shipment>
+		<cac:Consignment>
+			<cbc:ID schemeAgencyName="GS1" schemeName="GINC">7365566156191234567</cbc:ID>
+			<cbc:GrossWeightMeasure unitCode="KGM">600</cbc:GrossWeightMeasure>
+			<cbc:TotalGoodsItemQuantity>1500</cbc:TotalGoodsItemQuantity>
+			<cbc:TotalTransportHandlingUnitQuantity>2</cbc:TotalTransportHandlingUnitQuantity>
+			<cac:PlannedPickupTransportEvent>
+				<cac:Location>
+					<cbc:ID schemeAgencyName="UN" schemeName="LOCODE">MAPTM</cbc:ID>
+					<cac:Address>
+						<cbc:CityName>Tanger</cbc:CityName>
+						<cac:Country>
+							<cbc:IdentificationCode>MA</cbc:IdentificationCode>
+						</cac:Country>
+					</cac:Address>
+				</cac:Location>
+			</cac:PlannedPickupTransportEvent>
+			<cac:PlannedDeliveryTransportEvent>
+				<cac:Location>
+					<cbc:ID schemeAgencyName="UN" schemeName="LOCODE">ITGOA</cbc:ID>
+					<cac:Address>
+						<cac:Country>
+							<cbc:IdentificationCode>IT</cbc:IdentificationCode>
+						</cac:Country>
+					</cac:Address>
+				</cac:Location>
+			</cac:PlannedDeliveryTransportEvent>
+			<!-- Consignee and Consignor -->
+			<cac:ConsigneeParty>
+				<cac:PartyName>
+					<cbc:Name>Consignee W</cbc:Name>
+				</cac:PartyName>
+				<cac:PostalAddress>
+					<cbc:StreetName>Consignee W Street</cbc:StreetName>
+					<cbc:CityName>Munich</cbc:CityName>
+					<cbc:PostalZone>231</cbc:PostalZone>
+					<cac:Country>
+						<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:PostalAddress>
+			</cac:ConsigneeParty>
+			<cac:ConsignorParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058673827000</cbc:ID>
+				</cac:PartyIdentification>
+				<cac:PartyName>
+					<cbc:Name>Disfruta</cbc:Name>
+				</cac:PartyName>
+				<cac:Contact>
+					<cbc:Name>SomeName</cbc:Name>
+					<cbc:Telephone>+212687878763</cbc:Telephone>
+					<cbc:ElectronicMail>SomeName@disfruta.ma</cbc:ElectronicMail>
+				</cac:Contact>
+			</cac:ConsignorParty>
+			<!-- Orgin and Destination Countries -->
+			<cac:OriginalDepartureCountry>
+				<cbc:IdentificationCode>MA</cbc:IdentificationCode>
+			</cac:OriginalDepartureCountry>
+			<cac:FinalDestinationCountry>
+				<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+			</cac:FinalDestinationCountry>
+			<!-- 0..n Transit Countries can be listed to cover all countries of routing -->
+			<cac:TransitCountry>
+				<cbc:IdentificationCode>IT</cbc:IdentificationCode>
+			</cac:TransitCountry>
+			<cac:TransitCountry>
+				<cbc:IdentificationCode>AT</cbc:IdentificationCode>
+			</cac:TransitCountry>
+
+
+
+			<!-- Details of the transport leg/shipment stage which brings the cargo into the EU -->
+			<cac:MainCarriageShipmentStage>
+				<!-- = Maritime -->
+				<cbc:ShipmentStageTypeCode>1</cbc:ShipmentStageTypeCode>
+				<cbc:TransportModeCode>1</cbc:TransportModeCode>
+				<cac:TransportMeans>
+					<cbc:JourneyID>00344</cbc:JourneyID>
+					<cbc:RegistrationNationalityID>IT</cbc:RegistrationNationalityID>
+					<cac:MaritimeTransport>
+						<cbc:VesselID>3852664</cbc:VesselID>
+						<cbc:VesselName>Vessel Name</cbc:VesselName>
+					</cac:MaritimeTransport>
+				</cac:TransportMeans>
+
+				<cac:EstimatedArrivalTransportEvent>
+					<cbc:OccurrenceDate>2013-05-25</cbc:OccurrenceDate>
+					<cbc:OccurrenceTime>18:00:00+01:00</cbc:OccurrenceTime>
+					<cac:Location>
+						<cbc:ID schemeName="UNLOCODE">ITGOA</cbc:ID>
+						<!-- 24 = "Port of entry" -->
+						<cbc:LocationTypeCode>24</cbc:LocationTypeCode>
+						<cac:Address>
+							<cac:Country>
+								<cbc:IdentificationCode>IT</cbc:IdentificationCode>
+							</cac:Country>
+						</cac:Address>
+					</cac:Location>
+				</cac:EstimatedArrivalTransportEvent>
+
+
+			</cac:MainCarriageShipmentStage>
+			<cac:TransportHandlingUnit>
+				<cbc:ID>CON_THU_1</cbc:ID>
+				<!--4 is containerized cargo-->
+				<cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
+				<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+				<cbc:ShippingMarks>Agricultural products</cbc:ShippingMarks>
+				<!--The container-->
+				<cac:TransportEquipment>
+					<cbc:ID schemeName="bic">BFCU4040001</cbc:ID>
+					<cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+					<!--1 is full load-->
+					<cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
+					<cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+					<cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
+					<cbc:Description>Should have a temperature between 2-4 degrees celcius</cbc:Description>
+					<cbc:GrossWeightMeasure unitCode="KGM">25000</cbc:GrossWeightMeasure>
+					<cbc:GrossVolumeMeasure unitCode="MTQ">39</cbc:GrossVolumeMeasure>
+					<cbc:PowerIndicator>true</cbc:PowerIndicator>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>Length</cbc:AttributeID>
+						<cbc:Measure unitCode="MTR">6.1</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>Height</cbc:AttributeID>
+						<cbc:Measure unitCode="MTR">2.6</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>Width</cbc:AttributeID>
+						<cbc:Measure unitCode="MTR">2.44</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:GoodsItem>
+						<cac:Item>
+							<cac:CommodityClassification>
+								<!--14 is Temperature controlled cargo-->
+								<cbc:CargoTypeCode>14</cbc:CargoTypeCode>
+								<!--8 is Edible fruit and nuts; peel of citrus fruit or melons.-->
+								<cbc:CommodityCode>8</cbc:CommodityCode>
+							</cac:CommodityClassification>
+						</cac:Item>
+					</cac:GoodsItem>
+				</cac:TransportEquipment>
+			</cac:TransportHandlingUnit>
+			<cac:TransportHandlingUnit>
+				<cbc:ID>CON_THU_2</cbc:ID>
+				<!--4 is containerized cargo-->
+				<cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
+				<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+				<cbc:ShippingMarks>Agricultural products</cbc:ShippingMarks>
+				<!--The container-->
+				<cac:TransportEquipment>
+					<cbc:ID schemeName="bic">BFCU4040002</cbc:ID>
+					<cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
+					<!--1 is full load-->
+					<cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
+					<cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
+					<cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
+					<cbc:Description>Should have a temperature between 2-4 degrees celcius</cbc:Description>
+					<cbc:GrossWeightMeasure unitCode="KGM">25000</cbc:GrossWeightMeasure>
+					<cbc:GrossVolumeMeasure unitCode="MTQ">39</cbc:GrossVolumeMeasure>
+					<cbc:PowerIndicator>true</cbc:PowerIndicator>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>Length</cbc:AttributeID>
+						<cbc:Measure unitCode="MTR">6.1</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>Height</cbc:AttributeID>
+						<cbc:Measure unitCode="MTR">2.6</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>Width</cbc:AttributeID>
+						<cbc:Measure unitCode="MTR">2.44</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:GoodsItem>
+						<cac:Item>
+							<cac:CommodityClassification>
+								<!--14 is Temperature controlled cargo-->
+								<cbc:CargoTypeCode>14</cbc:CargoTypeCode>
+								<!--8 is Edible fruit and nuts; peel of citrus fruit or melons.-->
+								<cbc:CommodityCode>8</cbc:CommodityCode>
+							</cac:CommodityClassification>
+						</cac:Item>
+					</cac:GoodsItem>
+				</cac:TransportEquipment>
+			</cac:TransportHandlingUnit>
+			<!-- First Port of Arrival into Community -->
+			<cac:FirstArrivalPortLocation>
+				<cbc:ID schemeName="UNLOCODE">ITGOA</cbc:ID>
+				<!-- 41 = "Consignment entry customs office location -->
+				<cbc:LocationTypeCode>41</cbc:LocationTypeCode>
+				<cac:Address>
+					<cac:Country>
+						<cbc:IdentificationCode>IT</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:FirstArrivalPortLocation>
+			<!-- Customs Office of Subsequent Entry -->
+			<cac:OfficeOfEntryLocation>
+				<cbc:ID>DE000396</cbc:ID>
+				<!-- 41 = "Consignment entry customs office location -->
+				<cbc:LocationTypeCode>41</cbc:LocationTypeCode>
+				<cac:Address>
+					<cac:Country>
+						<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:OfficeOfEntryLocation>
+		</cac:Consignment>
+	</cac:Shipment>
+	<cac:DocumentReference>
+		<!-- MBL number / reference number -->
+		<cbc:ID>224087496582335</cbc:ID>
+		<!-- 704 = Master Bill of Lading -->
+		<cbc:DocumentTypeCode>704</cbc:DocumentTypeCode>
+	</cac:DocumentReference>
+</CommonTransportationReport>

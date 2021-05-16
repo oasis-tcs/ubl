@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ $Id: ContextValueAssociation.xsd,v 1.28 2010/01/18 22:50:06 gkholman Exp $
+
+Code List Representation Technical Committee - OASIS
+
+Copyright (C) OASIS Open (2009). All Rights Reserved.
+
+This document and translations of it may be copied and furnished to others, and
+derivative works that comment on or otherwise explain it or assist in its
+implementation may be prepared, copied, published and distributed, in whole or
+in part, without restriction of any kind, provided that the above copyright
+notice and this paragraph are included on all such copies and derivative works.
+However, this document itself may not be modified in any way, such as by
+removing the copyright notice or references to OASIS, except as needed for the
+purpose of developing OASIS specifications, in which case the procedures for
+copyrights defined in the OASIS Intellectual Property Rights document must be
+followed, or as required to translate it into languages other than English.
+
+The limited permissions granted above are perpetual and will not be revoked by
+OASIS or its successors or assigns.
+
+This document and the information contained herein is provided on an "AS IS"
+basis and OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT
+INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR
+A PARTICULAR PURPOSE.
+-->
+<xsd:schema xmlns:cva=
+          "http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/"
+            targetNamespace=
+          "http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/"
+            xmlns:rule="http://docs.oasis-open.org/codelist/ns/rule/1.0/"
+	    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<!-- xml:id per http://www.w3.org/TR/2005/REC-xml-id-20050909/ -->
+<!-- xml:base per http://www.w3.org/TR/2009/REC-xmlbase-20090128/ -->
+<xsd:import schemaLocation="xml.xsd" 
+	    namespace="http://www.w3.org/XML/1998/namespace"/>
+
+<xsd:annotation>
+ <xsd:documentation xml:lang="en">
+   A document model of the association of document contexts with XPath
+   expressions and the URIs of expressions of enumerations of values.
+ </xsd:documentation>
+</xsd:annotation>
+
+<!--The entire set is an expression of context/value constraints-->
+<xsd:element name="ContextValueAssociation" type="cva:ContextValueAssociation">
+  <xsd:annotation>
+    <xsd:documentation>
+      <rule:text id="D1" category="document"
+                 summary="vocabulary constraints">
+A context/value association file must not violate the W3C Schema XSD 
+constraints expressed in the <literal>ContextValueAssociation.xsd</literal>
+associated with this version of the XML vocabulary.
+      </rule:text>
+      <rule:text id="A1" category="application"
+                 summary="document-level constraints">
+An application must report violations of document-level constraints.        
+      </rule:text>
+    </xsd:documentation>
+  </xsd:annotation>
+</xsd:element>
+<xsd:complexType name="ContextValueAssociation">
+  <xsd:sequence>
+    <xsd:element name="Annotation" type="cva:Annotation" 
+                 minOccurs="0"/>
+    <xsd:element name="Title" type="cva:Title" 
+                 minOccurs="0"/>
+    <xsd:element name="Include" type="cva:Include" 
+                 minOccurs="0" maxOccurs="unbounded"/>
+    <xsd:element name="ValueTests" type="cva:ValueTests"
+                 minOccurs="0"/>
+    <xsd:element name="ValueLists" type="cva:ValueLists"
+                 minOccurs="0"/>
+    <xsd:element name="InstanceMetadataSets" type="cva:InstanceMetadataSets"
+                 minOccurs="0"/>
+    <xsd:element name="Contexts" type="cva:Contexts"
+                 minOccurs="0"/>
+  </xsd:sequence>
+  <xsd:attribute name="id" type="xsd:string" use="optional"/>
+  <xsd:attribute name="name" type="cva:NameToken" use="required"/>
+  <xsd:attribute name="version" type="xsd:string" use="optional"/>
+  <xsd:attribute name="queryBinding" type="cva:NameToken" use="optional">
+    <xsd:annotation>
+      <xsd:documentation>
+        <rule:text id="A2" category="application"
+                   summary="query binding syntax interpretation">
+This identifies the governing query syntax used for addresses and expressions
+in the document.  Absent this attribute an application is free to interpret
+the syntax in any manner.
+        </rule:text>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute ref="xml:base" use="optional"/>
+</xsd:complexType>
+
+<!--A short title used for the human reader-->
+<xsd:complexType name="Title" mixed="true">
+  <xsd:sequence>
+    <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded"
+             processContents="skip"/>
+  </xsd:sequence>
+</xsd:complexType>
+
+<!--A directive to include the rules from another association file-->
+<xsd:complexType name="Include">
+  <xsd:sequence>
+    <xsd:element name="Annotation" type="cva:Annotation" 
+                 minOccurs="0"/>
+  </xsd:sequence>
+  <xsd:attribute ref="xml:base" use="optional"/>
+  <xsd:attribute name="uri" type="cva:anyURI" use="required">
+    <xsd:annotation>
+      <xsd:documentation>
+        <rule:text id="D2" category="document"
+                   summary="include file URI resolution">
+The document element of the document pointed to by this attribute must be
+<literal>&lt;ContextValueAssociation></literal> in the same namespace as the
+pointing document.
+        </rule:text>
+        <rule:text id="A3" category="application"
+                   summary="include file context priority">
+The document contexts described in an including CVA file have higher detection
+priority than those found in an included CVA file. The document contexts 
+described in an included CVA file have higher detection priority than those 
+found in a previously-included CVA file. Expressed another way, the document 
+contexts in the first included CVA file have the lowest detection priority.
+        </rule:text>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+</xsd:complexType>
+
+<!--========================================================================-->
+<!--The set of singleton value tests, each declared once for re-use-->
+<xsd:complexType name="ValueTests">
+  <xsd:sequence>
+    <xsd:element name="Annotation" type="cva:Annotation" 
+                 minOccurs="0"/>
+    <xsd:element name="ValueTest" type="cva:ValueTest" 
+                 minOccurs="0" maxOccurs="unbounded"/>
+  </xsd:sequence>
+</xsd:complexType>
+
+<!--A singleton test with a unique identifier for reference in contexts-->
+<xsd:complexType name="ValueTest">
+  <xsd:sequence>
+    <xsd:element name="Annotation" type="cva:Annotation" 
+                 minOccurs="0"/>
+  </xsd:sequence>
+  <xsd:attribute ref="xml:id" use="required"/>
+  <xsd:attribute name="test" type="cva:QueryBooleanExpression" use="required"/>
+</xsd:complexType>
+
+<!--========================================================================-->
+<!--The set of lists of values, each declared once for re-use-->
+<xsd:complexType name="ValueLists">
+  <xsd:sequence>
+    <xsd:element name="Annotation" type="cva:Annotation" 
+                 minOccurs="0"/>
+    <xsd:element name="ValueList" type="cva:ValueList"
+                 minOccurs="0" maxOccurs="unbounded"/>
+  </xsd:sequence>
+  <xsd:attribute ref="xml:base" use="optional"/>
+</xsd:complexType>
+
+<!--A list of values with a unique identifier for reference in contexts-->
+<xsd:complexType name="ValueList">
+  <xsd:sequence>
+    <xsd:element name="Annotation" type="cva:Annotation" 
+                 minOccurs="0"/>
+    <xsd:element name="Identification" type="cva:Identification"
+                 minOccurs="0">
+      <xsd:annotation>
+        <xsd:documentation>
+          <rule:text id="A4" category="application"
+                     summary="identification element masquerade precedence">
+Any element found in a CVA file's <literal>&lt;Identification></literal> 
+element has precedence over any like-named element that may or may not be 
+present in the maquerading genericode file's or referenced genericode file's 
+<literal>&lt;Identification></literal> element.
+          </rule:text>
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:element>
+  </xsd:sequence>
+  <xsd:attribute ref="xml:id" use="required"/>
+  <xsd:attribute ref="xml:base" use="optional"/>
+  <xsd:attribute name="uri" type="cva:anyCodeListUri" use="required"/>
+  <xsd:attribute name="masqueradeUri" type="cva:anyCodeListUri" 
+                 use="optional">
+    <xsd:annotation>
+      <xsd:documentation>
+        <rule:text id="A5" category="application"
+                   summary="masquerading file masquerade precedence">
+Any element found in a masquerading genericode file's 
+<literal>&lt;Identification></literal> element has precedence over any 
+like-named element that may or may not be present in the referenced genericode
+file's <literal>&lt;Identification></literal> element, but lower precedence
+than any specified like-name element in the CVA file's
+<literal>&lt;Identification></literal> element.
+        </rule:text>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="key" type="cva:NameToken" use="optional">
+    <xsd:annotation>
+      <xsd:documentation>
+        <rule:text id="D3" category="document"
+                   summary="key specification requirement">
+The <literal>key=</literal> attribute is required when the code list
+referenced by <literal>uri=</literal> has more than one key.
+        </rule:text>
+        <rule:text id="D4" category="document"
+                   summary="key specification value">
+The <literal>key=</literal> attribute, when specified, must be the value of
+a key identifier in the genericode file referenced by <literal>uri=</literal>.
+        </rule:text>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+</xsd:complexType>
+
+<!--========================================================================-->
+<!--The set of sets of instance metadata associated with document contexts-->
+<xsd:complexType name="InstanceMetadataSets">
+  <xsd:sequence>
+    <xsd:element name="Annotation" type="cva:Annotation" 
+                 minOccurs="0"/>
+    <xsd:element name="InstanceMetadataSet" type="cva:InstanceMetadataSet"
+                 minOccurs="0" maxOccurs="unbounded"/>
+  </xsd:sequence>
+</xsd:complexType>
+
+<!--A set of instance metadata declares which document information items
+    contain which genericode <Identification> information items-->
+<xsd:complexType name="InstanceMetadataSet">
+  <xsd:sequence>
+    <xsd:element name="Annotation" type="cva:Annotation" 
+                 minOccurs="0"/>
+    <xsd:element name="InstanceMetadata" type="cva:InstanceMetadata" 
+                 minOccurs="0" maxOccurs="unbounded"/>
+  </xsd:sequence>
+  <xsd:attribute ref="xml:id" use="required"/>
+</xsd:complexType>
+
+<!--An instance metadata declaration states which document information item
+    contains which genericode <Identification> information item-->
+<xsd:complexType name="InstanceMetadata">
+  <xsd:sequence>
+    <xsd:element name="Annotation" type="cva:Annotation" 
+                 minOccurs="0"/>
+  </xsd:sequence>
+  <xsd:attribute name="address" type="cva:QueryAddress" use="required">
+    <xsd:annotation>
+      <xsd:documentation>
+        <rule:text id="D5" category="document"
+                   summary="instance-level metadata item addressing">
+This query binding syntax address points to an instance-level metadata item
+from the perspective of the addressed context item.
+        </rule:text>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="identification" type="cva:QueryAddress" use="required">
+    <xsd:annotation>
+      <xsd:documentation>
+        <rule:text id="D6" category="document"
+                   summary="identification component addressing">
+This query binding syntax address points to a descendant of
+<literal>&lt;Identification></literal> from the perspective of the
+<literal>&lt;Identification></literal> element.
+        </rule:text>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+</xsd:complexType>
+
+<!--========================================================================-->
+<!--The set of document contexts with which values are associated-->
+<xsd:complexType name="Contexts">
+  <xsd:sequence>
+    <xsd:element name="Annotation" type="cva:Annotation" 
+                 minOccurs="0"/>
+    <xsd:element name="Context" type="cva:Context"
+                 minOccurs="0" maxOccurs="unbounded">
+      <xsd:annotation>
+        <xsd:documentation>
+          <rule:text id="A6" category="application"
+                     summary="context specification precedence">
+The contexts of a given CVA file are processed in descending priority based 
+on order declared, such that an earlier described context has higher 
+detection priority than those described after it (that is, the following 
+sibling <literal>&lt;Context></literal> elements). Expressed another way, 
+the document contexts within a given CVA file are processed in descending 
+priority order of being declared.
+          </rule:text>
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:element>
+  </xsd:sequence>
+</xsd:complexType>
+
+<!--A given information item, optionally expressed in a complete address
+    expression or a simple descendents context scope, pointing to the sets of
+    values; possibly attributed with a mark to distinguish this contextual
+    test from other contextual tests in the resulting reports-->
+<xsd:complexType name="Context">
+  <xsd:annotation>
+    <xsd:documentation>
+      <rule:text id="A7" category="application"
+                 summary="context constraint evaluation">
+For a context's constraints to be considered fully satisfied, all of the 
+referenced <literal>&lt;ValueTest></literal> expressions must evaluate to 
+logical TRUE.  At the same time the value must be present in any of 
+the referenced <literal>&lt;ValueList></literal> value lists that have 
+values and that qualify to be used in the presence of the given 
+instance-level metadata described by any referenced 
+<literal>&lt;InstanceMetadataSet></literal> sets. Referencing a 
+<literal>&lt;ValueList></literal> that points to a value list without any 
+values imposes no constraint on the context.
+      </rule:text>
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:sequence>
+    <xsd:element name="Annotation" type="cva:Annotation" 
+                 minOccurs="0"/>
+    <xsd:element name="Message" type="cva:Message" 
+                 minOccurs="0" maxOccurs="unbounded">
+      <xsd:annotation>
+        <xsd:documentation>
+          <rule:text id="A8" category="application"
+                     summary="message use identification">
+An implementation that does not recognize any of the message use attributes
+shall use the first message element for value constraint violation reporting.
+An implementation that does recognize any of the message use attributes can
+choose any recognized message element for value constraint violation reporting.
+When there are no messages of any kind, or the selected message is empty, the
+application can use any wording in value constraint violation reporting.
+          </rule:text>
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:element>
+  </xsd:sequence>
+  <xsd:attribute name="metadata" type="xsd:IDREF" use="optional">
+    <xsd:annotation>
+      <xsd:documentation>
+        <rule:text id="D7" category="document"
+                   summary="instance metadata set reference constraint">
+The token in the <literal>metadata=</literal> attribute points to an 
+<literal>&lt;InstanceMetadataSet></literal> element.
+        </rule:text>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="address" type="cva:QueryAddress" use="required"/>
+  <xsd:attribute name="values" type="xsd:IDREFS" use="required">
+    <xsd:annotation>
+      <xsd:documentation>
+        <rule:text id="D8" category="document"
+                   summary="value reference constraint">
+Each token in the <literal>values=</literal> attribute points to either a
+<literal>&lt;ValueTest></literal> element or a 
+<literal>&lt;ValueList></literal> element.
+        </rule:text>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="mark" type="cva:NameToken" use="optional"/>
+</xsd:complexType>
+
+<!--A replacement message used in place of the built-in message that reports 
+    a violation of a context/value constraint, optionally characterized by
+    a URI string recognized by downstream processes-->
+<xsd:complexType name="Message" mixed="true">
+  <xsd:sequence>
+    <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded"
+             processContents="skip"/>
+  </xsd:sequence>
+  <xsd:attribute name="useUri" type="cva:absoluteURI" use="optional">
+    <xsd:annotation>
+      <xsd:documentation>
+        <rule:text id="A9" category="application"
+                   summary="message use identification">
+A message use URI standardized in the CVA specification (if any) shall, if 
+recognized by an implementation, only represent the semantics described by 
+the specification and not any custom semantics chosen by an application.
+          </rule:text>
+        </xsd:documentation>
+      </xsd:annotation>
+  </xsd:attribute>
+</xsd:complexType>
+
+<!--========================================================================-->
+<!--An embedded annotation for extrinsic information-->
+<xsd:complexType name="Annotation">
+  <xsd:sequence>
+    <!--annotations meant for human consumption:  similar to XSD 
+        "documentation", the following is named "Description" to be 
+        the same as used in genericode-->
+    <xsd:element name="Description" minOccurs="0" maxOccurs="unbounded">
+      <xsd:complexType mixed="true">
+        <xsd:sequence>
+          <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded"
+                   processContents="skip"/>
+        </xsd:sequence>
+        <xsd:attribute ref="xml:lang" use="optional"/>
+      </xsd:complexType>
+    </xsd:element>
+    <!--annotations not meant for human consumption, but for application
+        consumption-->
+    <xsd:element name="AppInfo" minOccurs="0">
+      <xsd:complexType mixed="true">
+        <xsd:sequence>
+          <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded"
+                   processContents="skip"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:sequence>
+</xsd:complexType>
+
+<!--========================================================================-->
+<!--A mimic of genericode <Identification> where everything is optional-->
+<xsd:complexType name="Identification">
+  <xsd:sequence>
+    <xsd:element name="Annotation" type="cva:Annotation" 
+                 minOccurs="0"/>
+    <xsd:element name="ShortName" type="cva:ShortName" 
+                 minOccurs="0"/>
+    <xsd:element name="LongName" type="cva:LongName"
+                 minOccurs="0" maxOccurs="unbounded"/>
+    <xsd:element name="Version" type="xsd:token" 
+                 minOccurs="0"/>
+    <xsd:element name="CanonicalUri" type="cva:absoluteURI" 
+                 minOccurs="0"/>
+    <xsd:element name="CanonicalVersionUri" type="cva:absoluteURI" 
+                 minOccurs="0"/>
+    <xsd:element name="LocationUri" type="cva:locationURI" 
+                 minOccurs="0" maxOccurs="unbounded"/>
+    <xsd:element name="AlternateFormatLocationUri" type="cva:locationURI"
+                 minOccurs="0" maxOccurs="unbounded"/>
+    <xsd:element name="Agency" minOccurs="0">
+      <xsd:complexType>
+        <xsd:sequence>
+          <xsd:element name="ShortName" type="cva:ShortName"
+                       minOccurs="0"/>
+          <xsd:element name="LongName" type="cva:LongName"
+                       minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element name="Identifier" type="cva:Identifier"
+                       minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:sequence>
+</xsd:complexType>
+
+<!--the short name for the item or agency-->
+<xsd:complexType name="ShortName">
+  <xsd:simpleContent>
+    <xsd:extension base="xsd:token">
+      <xsd:attribute ref="xml:lang" use="optional"/>
+    </xsd:extension>
+  </xsd:simpleContent>
+</xsd:complexType>
+
+<!--A long name for the item or agency-->
+<xsd:complexType name="LongName">
+  <xsd:simpleContent>
+    <xsd:extension base="xsd:normalizedString">
+      <xsd:attribute ref="xml:lang" use="optional"/>
+      <xsd:attribute name="Identifier" type="xsd:normalizedString"
+                     use="optional"/>
+    </xsd:extension>
+  </xsd:simpleContent>
+</xsd:complexType>
+
+<!--An identifier for agencies-->
+<xsd:complexType name="Identifier">
+  <xsd:simpleContent>
+    <xsd:extension base="xsd:normalizedString">
+      <xsd:attribute ref="xml:lang" use="optional"/>
+      <xsd:attribute name="Identifier" type="xsd:normalizedString"
+                     use="optional"/>
+    </xsd:extension>
+  </xsd:simpleContent>
+</xsd:complexType>
+
+<!--========================================================================-->
+<!--Simple types shared across various elements-->
+
+<!--A URI value with a shared conformance constraint-->
+<xsd:simpleType name="anyURI">
+  <xsd:annotation>
+    <xsd:documentation>
+      <rule:text id="A10" category="application"
+                 summary="relative URI resolution">
+All relative URI values in <literal>uri=</literal> attributes are resolved to
+the base URI of the <literal>uri=</literal> attribute, which is influenced by
+any ancestral <literal>xml:base=</literal> attributes that are present.
+      </rule:text>
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:restriction base="xsd:anyURI"/>
+</xsd:simpleType>
+
+<!--A URI value pointing to an XML instance of code list information-->
+<xsd:simpleType name="anyCodeListUri">
+  <xsd:annotation>
+    <xsd:documentation>
+      <rule:text id="D9" category="document"
+                 summary="code list URI resolution">
+The document element of the document pointed to by this attribute must be
+<literal>&lt;CodeList></literal> in an OASIS genericode namespace.
+      </rule:text>
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:restriction base="xsd:anyURI"/>
+</xsd:simpleType>
+
+<!--A URI that can be resolved without consideration of the current location-->
+<xsd:simpleType name="absoluteURI">
+  <xsd:annotation>
+    <xsd:documentation>
+      <rule:text id="D10" category="document"
+                 summary="absolute URI specification">
+All absolute URI attributes shall not have a relative URI value.
+      </rule:text>
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:restriction base="xsd:anyURI"/>
+</xsd:simpleType>
+
+<!--a URI that specifies a location but not in a way that can be compared
+    with other URI locations-->
+<xsd:simpleType name="locationURI">
+  <xsd:annotation>
+    <xsd:documentation>
+      <rule:text id="D11" category="document"
+                 summary="location URI irrelevance">
+Any measure of equivalence for a location URI is determined between users of 
+this specification as this specification does not confer any identification
+semantics for these elements.
+      </rule:text>
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:restriction base="xsd:anyURI"/>
+</xsd:simpleType>
+
+<!--The syntax of a query address is based on the query language being used-->
+<xsd:simpleType name="QueryAddress">
+  <xsd:annotation>
+    <xsd:documentation>
+      <rule:text id="D12" category="document"
+                 summary="addressing">
+A query address shall use an expression of the query binding syntax to address
+or query elements or attributes.
+The query binding syntax is implied by the
+<literal>queryBinding=</literal> attribute on 
+<literal>&lt;ContextValueAssociation></literal>.  Absent this attribute, there
+is no representation that the expression is in any particular syntax.
+      </rule:text>
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:restriction base="xsd:string"/>
+</xsd:simpleType>
+
+<!--An arbitrary boolean expression in the query language being used-->
+<xsd:simpleType name="QueryBooleanExpression">
+  <xsd:annotation>
+    <xsd:documentation>
+      <rule:text id="D13" category="document"
+                 summary="expression evaluation">
+A query boolean expression shall use an expression of the query binding syntax
+that returns a boolean value of true or false.
+The query binding syntax is implied by the
+<literal>queryBinding=</literal> attribute on 
+<literal>&lt;ContextValueAssociation></literal>.  Absent this attribute, there
+is no representation that the expression is in any particular syntax.
+      </rule:text>
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:restriction base="xsd:string"/>
+</xsd:simpleType>
+
+<!--a name token is more constrained than xs:NMTOKEN-->
+<xsd:simpleType name="NameToken">
+  <xsd:annotation>
+    <xsd:documentation>
+      <rule:text id="D14" category="document"
+                 summary="XML name lexical constraint">
+A name token must lexically validate as would an un-prefixed element or 
+attribute name.
+      </rule:text>
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:restriction base="xsd:NMTOKEN"/>
+</xsd:simpleType>
+
+</xsd:schema>

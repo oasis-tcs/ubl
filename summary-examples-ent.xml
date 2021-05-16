@@ -1,0 +1,349 @@
+<!--
+To get an updated version of this entity file, please run the build process
+and obtain a copy from the archive-only-not-in-final-distribution/new-entities
+directory.
+-->
+<blockquote role="summaryExamples">
+   <simplelist>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-BusinessCard-2.2-Example.xml">xml/UBL-BusinessCard-2.2-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-CommonTransportationReport-2.3-Example.xml">xml/UBL-CommonTransportationReport-2.3-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-CreditNote-2.0-Example.xml">xml/UBL-CreditNote-2.0-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-CreditNote-2.1-Example.xml">xml/UBL-CreditNote-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-DebitNote-2.1-Example.xml">xml/UBL-DebitNote-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-DespatchAdvice-2.0-Example.xml">xml/UBL-DespatchAdvice-2.0-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-DigitalAgreement-2.2-Example.xml">xml/UBL-DigitalAgreement-2.2-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-DigitalAgreement-2.2-Example-Multilateral.xml">xml/UBL-DigitalAgreement-2.2-Example-Multilateral.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-DigitalCapability-2.2-Example.xml">xml/UBL-DigitalCapability-2.2-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-ExceptionCriteria-2.1-Example.xml">xml/UBL-ExceptionCriteria-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-ExceptionNotification-2.1-Example.xml">xml/UBL-ExceptionNotification-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-ExportCustomsDeclaration-2.3-Example.xml">xml/UBL-ExportCustomsDeclaration-2.3-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-ExpressionOfInterestRequest-2.2-Example.xml">xml/UBL-ExpressionOfInterestRequest-2.2-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-Forecast-2.1-Example.xml">xml/UBL-Forecast-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-ForecastRevision-2.1-Example.xml">xml/UBL-ForecastRevision-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-ForwardingInstructions-2.0-Example-International.xml">xml/UBL-ForwardingInstructions-2.0-Example-International.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-FreightInvoice-2.1-Example.xml">xml/UBL-FreightInvoice-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-FulfilmentCancellation-2.1-Example.xml">xml/UBL-FulfilmentCancellation-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-GoodsCertificate-2.3-Example.xml">xml/UBL-GoodsCertificate-2.3-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-GoodsItemItinerary-2.1-Example.xml">xml/UBL-GoodsItemItinerary-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-GoodsItemPassport-2.3-Example-Issued.xml">xml/UBL-GoodsItemPassport-2.3-Example-Issued.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-ImportCustomsDeclaration-2.3-Example.xml">xml/UBL-ImportCustomsDeclaration-2.3-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-InstructionForReturns-2.1-Example.xml">xml/UBL-InstructionForReturns-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-InventoryReport-2.1-Example.xml">xml/UBL-InventoryReport-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-Invoice-2.0-Example.xml">xml/UBL-Invoice-2.0-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-Invoice-2.1-Example.xml">xml/UBL-Invoice-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-Invoice-2.1-Example-Trivial.xml">xml/UBL-Invoice-2.1-Example-Trivial.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-Manifest-2.3-Example-Reference-Only.xml">xml/UBL-Manifest-2.3-Example-Reference-Only.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-Manifest-2.3-Example-Shipment.xml">xml/UBL-Manifest-2.3-Example-Shipment.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-Order-2.0-Example.xml">xml/UBL-Order-2.0-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-Order-2.0-Example-International.xml">xml/UBL-Order-2.0-Example-International.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-Order-2.1-Example.xml">xml/UBL-Order-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-OrderCancellation-2.1-Example.xml">xml/UBL-OrderCancellation-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-OrderChange-2.1-Example.xml">xml/UBL-OrderChange-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-OrderResponse-2.1-Example.xml">xml/UBL-OrderResponse-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-OrderResponseSimple-2.0-Example.xml">xml/UBL-OrderResponseSimple-2.0-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-OrderResponseSimple-2.1-Example.xml">xml/UBL-OrderResponseSimple-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-PriorInformationNotice-2.2-Example-Embedded.xml">xml/UBL-PriorInformationNotice-2.2-Example-Embedded.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-PriorInformationNotice-2.2-Example-External.xml">xml/UBL-PriorInformationNotice-2.2-Example-External.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-ProductActivity-2.1-Example-1.xml">xml/UBL-ProductActivity-2.1-Example-1.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-ProductActivity-2.1-Example-2.xml">xml/UBL-ProductActivity-2.1-Example-2.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-ProductActivity-2.1-Example-3.xml">xml/UBL-ProductActivity-2.1-Example-3.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-ProofOfReexportation-2.3-Example.xml">xml/UBL-ProofOfReexportation-2.3-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-ProofOfReexportationReminder-2.3-Example.xml">xml/UBL-ProofOfReexportationReminder-2.3-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-ProofOfReexportationRequest-2.3-Example.xml">xml/UBL-ProofOfReexportationRequest-2.3-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-Quotation-2.0-Example.xml">xml/UBL-Quotation-2.0-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-Quotation-2.1-Example.xml">xml/UBL-Quotation-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-ReceiptAdvice-2.0-Example.xml">xml/UBL-ReceiptAdvice-2.0-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-Reminder-2.1-Example.xml">xml/UBL-Reminder-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-RemittanceAdvice-2.0-Example.xml">xml/UBL-RemittanceAdvice-2.0-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-RequestForQuotation-2.0-Example.xml">xml/UBL-RequestForQuotation-2.0-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-RequestForQuotation-2.1-Example.xml">xml/UBL-RequestForQuotation-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-RetailEvent-2.1-Example.xml">xml/UBL-RetailEvent-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-SelfBilledCreditNote-2.1-Example.xml">xml/UBL-SelfBilledCreditNote-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-Statement-2.0-Example.xml">xml/UBL-Statement-2.0-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-StockAvailabilityReport-2.1-Example.xml">xml/UBL-StockAvailabilityReport-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-TradeItemLocationProfile-2.1-Example.xml">xml/UBL-TradeItemLocationProfile-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-TransitCustomsDeclaration-2.3-Example.xml">xml/UBL-TransitCustomsDeclaration-2.3-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-TransportationStatus-2.1-Example.xml">xml/UBL-TransportationStatus-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-TransportationStatusRequest-2.1-Example.xml">xml/UBL-TransportationStatusRequest-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-TransportExecutionPlan-2.1-Example.xml">xml/UBL-TransportExecutionPlan-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-TransportExecutionPlanRequest-2.1-Example.xml">xml/UBL-TransportExecutionPlanRequest-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-TransportProgressStatus-2.1-Example.xml">xml/UBL-TransportProgressStatus-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-TransportProgressStatusRequest-2.1-Example.xml">xml/UBL-TransportProgressStatusRequest-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-TransportServiceDescription-2.1-Example.xml">xml/UBL-TransportServiceDescription-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-TransportServiceDescriptionRequest-2.1-Example.xml">xml/UBL-TransportServiceDescriptionRequest-2.1-Example.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-Waybill-2.0-Example-International.xml">xml/UBL-Waybill-2.0-Example-International.xml</ulink>
+         </literal>
+      </member>
+      <member>
+         <literal>
+            <ulink url="xml/UBL-WeightStatement-2.2-Example.xml">xml/UBL-WeightStatement-2.2-Example.xml</ulink>
+         </literal>
+      </member>
+   </simplelist>
+</blockquote>

@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--$Id: UBL-2.3-Party-summary-information.xml,v 1.6 2020/01/28 02:14:37 admin Exp $-->
+<!DOCTYPE roletable
+[
+<!ELEMENT roletable ( entry+ )>
+<!ELEMENT entry ( actor, role, description,example,synonyms,sends,receives )>
+<!ELEMENT actor ( #PCDATA | schema )*>
+<!ELEMENT role ( #PCDATA | schema )*>
+<!ELEMENT description ( #PCDATA | schema )*>
+<!ELEMENT example ( #PCDATA | schema )*>
+<!ELEMENT synonyms ( #PCDATA | schema )*>
+<!ELEMENT sends ( #PCDATA | schema )*>
+<!ELEMENT receives ( #PCDATA | schema )*>
+<!ELEMENT schema ( #PCDATA )>
+<!--Ref: http://docs.oasis-open.org/ubl/os-UBL-2.1/UBL-2.1.html#d0e3616 -->
+]>
+<roletable>
+   <entry>
+          <actor>Customer Party</actor>
+          <role>Originator</role>
+          <description>The party that had the original demand for the goods and/or services and therefore initiated the procurement transaction. The Originator participates in pre-ordering activity either through <schema>Request for Quotation</schema> and <schema>Quotation</schema> or by receiving a Quotation as a response to a punch-out transaction on a marketplace or Seller’s website. If the Originator subsequently places an <schema>Order</schema>, the Originator adopts the role of Buyer. The Originator is typically the contact point for queries regarding the original requirement and may be referred to in an <schema>Order Change</schema>, <schema>Order Cancellation</schema>, or <schema>Order Response</schema>.</description>
+          <example>If an employee requests a computer, the employing company may become the Buyer, but the employee is the Originator. They need to receive information about the order.</example>
+          <synonyms/>
+          <sends><schema>Request for Quotation</schema></sends>
+          <receives><schema>Quotation</schema></receives>
+   </entry>
+   <entry>
+          <actor>Customer Party</actor>
+          <role>Buyer</role>
+          <description>The party that purchases the goods or services on behalf of the Originator. The Buyer may be referred to in <schema>Order Response</schema>, <schema>Despatch Advice</schema>, <schema>Fulfilment Cancellation</schema>, <schema>Invoice</schema>, <schema>Self Billed Invoice</schema>, <schema>Credit Note</schema>, and <schema>Statement</schema>.</description>
+          <example>A company may delegate the task of purchasing to a specialized group to consolidate orders and gain greater discounts.</example>
+          <synonyms>Order Point</synonyms>
+          <sends><schema>Order</schema>, <schema>Order Change</schema>, <schema>Order Cancellation</schema>, <schema>Fulfilment Cancellation</schema></sends>
+          <receives><schema>Order Response</schema>, <schema>Fulfilment Cancellation</schema></receives>
+   </entry>
+   <entry>
+          <actor>Customer Party</actor>
+          <role>Delivery</role>
+          <description>The party to whom goods should be delivered. The Delivery Party may be the same as the Originator. The Delivery Party must be referred to at line item level in <schema>Request for Quotation</schema>, <schema>Quotation</schema>, <schema>Order</schema>, <schema>Order Change</schema>, <schema>Order Cancellation</schema>, and <schema>Order Response</schema>. The Delivery Party may be referred to at line level in <schema>Invoice</schema>, <schema>Self Billed Invoice</schema>, <schema>Credit Note</schema>, and <schema>Debit Note</schema>. The Delivery Party may be stipulated in a transport contract.</description>
+          <example>If a municipality buys a wheelchair for a citizen, the wheelchair must be delivered to the citizen (the Delivery Party). In such cases the citizen may be notified before delivery of the wheelchair.</example>
+          <synonyms>Delivery Point, Destination Party, Receiver, Recipient</synonyms>
+          <sends><schema>Receipt Advice</schema></sends>
+          <receives><schema>Despatch Advice</schema></receives>
+   </entry>
+   <entry>
+          <actor>Customer Party</actor>
+          <role>Accounting Customer</role>
+          <description>The party responsible for making settlement relating to a purchase and resolving billing issues using a <schema>Debit Note</schema>. The Accounting Customer must be referred to in an <schema>Order</schema> and may be referred to in an <schema>Order Response</schema>. In a Self Billing scenario, the Accounting Customer is responsible for calculating and issuing tax invoices.</description>
+          <example>If a kindergarten buys some toys they may be the Originator, Buyer, and Delivery Party, but the municipality may play the role of Accounting Customer—they are going to pay for it.</example>
+          <synonyms>Invoice, Accounts Payable, Debtor</synonyms>
+          <sends>In a traditional Billing scenario: <schema>Debit Note</schema>, <schema>Application Response</schema>, and <schema>Remittance Advice</schema> In a Self Billing scenario: <schema>Self Billed Invoice</schema>, <schema>Self Billed Credit Note</schema>, and <schema>Remittance Advice</schema></sends>
+          <receives>In a traditional Billing scenario: <schema>Invoice</schema>, <schema>Credit Note</schema>, and <schema>Statement</schema>; in a Self Billing scenario: <schema>Credit Note</schema>, <schema>Application Response</schema>, and <schema>Statement</schema></receives>
+   </entry>
+   <entry>
+          <actor>Supplier Party</actor>
+          <role>Seller</role>
+          <description>The party responsible for handling Originator and Buyer services. The Seller party is legally responsible for providing the goods to the Buyer. The Seller party receives and quotes against <schema>Request for Quotation</schema> documents and may provide information to the Buyer’s requisitioning process through <schema>Catalogue</schema>s and <schema>Quotation</schema>s.</description>
+          <example>The organization that sells wheelchairs to municipalities.</example>
+          <synonyms>Sales Point, Provider, Customer Manager</synonyms>
+          <sends><schema>Quotation</schema>, <schema>Order Response</schema>, <schema>Order Response Simple</schema>, <schema>Catalogue</schema>, <schema>Catalogue Deletion</schema>, <schema>Catalogue Item Specification Update</schema>, <schema>Catalogue Pricing Update</schema>, <schema>Fulfilment Cancellation</schema></sends>
+          <receives><schema>Request for Quotation</schema>, <schema>Order</schema>, <schema>Order Change</schema>, <schema>Order Cancellation</schema>, <schema>Catalogue Request</schema>, <schema>Fulfilment Cancellation</schema></receives>
+   </entry>
+   <entry>
+          <actor>Supplier Party</actor>
+          <role>Despatch</role>
+          <description>The party where goods are to be collected from. The Despatch Party may be stipulated in a transport contract.</description>
+          <example>The wheelchair Supplier may store chairs at a local warehouse. The warehouse will actually despatch the chair to the Delivery Party. The local warehouse is then the Despatch Party.</example>
+          <synonyms>Despatch Point, Shipper, Sender</synonyms>
+          <sends><schema>Despatch Advice</schema></sends>
+          <receives><schema>Receipt Advice</schema></receives>
+   </entry>
+   <entry>
+          <actor>Supplier Party</actor>
+          <role>Accounting Supplier</role>
+          <description>The party who claims the payment and is responsible for resolving billing issues and arranging settlement.</description>
+          <example>There are cases where the Accounting Supplier is not the Seller party. For example, factoring, where the invoicing is outsourced to another company.</example>
+          <synonyms>Accounts Receivable, Invoice Issuer, Creditor</synonyms>
+          <sends>In a traditional Billing scenario: <schema>Invoice</schema>, <schema>Credit Note</schema>, and <schema>Statement</schema>; in a Self Billing scenario: <schema>Credit Note</schema>, <schema>Application Response</schema>, and <schema>Statement</schema></sends>
+          <receives>In a traditional Billing scenario: <schema>Debit Note</schema>, Account Response, and <schema>Remittance Advice</schema> In a Self Billing scenario: <schema>Self Billed Invoice</schema>, <schema>Self Billed Credit Note</schema>, and <schema>Remittance Advice</schema></receives>
+   </entry>
+   <entry>
+          <actor>Supplier Party</actor>
+          <role>Payee</role>
+          <description>The party to whom the <schema>Invoice</schema> is paid.</description>
+          <example>The Accounting Supplier may not be the party to be paid due to changes in the organization, e.g., a company merger.</example>
+          <synonyms>Accounts Receivable, Creditor</synonyms>
+          <sends/>
+          <receives><schema>Remittance Advice</schema></receives>
+   </entry>
+   <entry>
+          <actor>Customer Party</actor>
+          <role>Contractor</role>
+          <description>The party responsible for the contract to which the Catalogue relates.</description>
+          <example>An organization has a central office for maintaining catalogues of approved items for purchase.</example>
+          <synonyms>Central Catalogue Party, Purchasing Manager</synonyms>
+          <sends><schema>Catalogue Request</schema></sends>
+          <receives><schema>Catalogue</schema>, <schema>Catalogue Deletion</schema>, <schema>Catalogue Item Specification Update</schema>, <schema>Catalogue Pricing Update</schema></receives>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Provider</role>
+          <description>The party responsible for the integrity of the information provided about an item.</description>
+          <example>The manufacturer may publish and maintain the data sheets about a product.</example>
+          <synonyms/>
+          <sends><schema>Catalogue</schema>, <schema>Catalogue Deletion</schema>, <schema>Catalogue Item Specification Update</schema>, <schema>Catalogue Pricing Update</schema></sends>
+          <receives/>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Receiver</role>
+          <description>A general role, describing the receiver of a document. For a catalogue, this can be the customer, a potential customer, or a third party exposing the document, for instance, an interim broker.</description>
+          <example>A marketplace may receive an <schema>Application Response</schema>.</example>
+          <synonyms/>
+          <sends/>
+          <receives><schema>Catalogue</schema>, <schema>Catalogue Deletion</schema>, <schema>Catalogue Item Specification Update</schema>, <schema>Catalogue Pricing Update</schema>, <schema>Application Response</schema></receives>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Sender</role>
+          <description>The party sending a document.</description>
+          <example>A marketplace may send an <schema>Application Response</schema>.</example>
+          <synonyms/>
+          <sends><schema>Application Response</schema></sends>
+          <receives/>
+   </entry>
+<entry>
+         <actor>Customer Party</actor>
+         <role>Contracting Authority</role>
+         <description>The party responsible for making the contract relating to a tender ending up with a purchase.</description>
+         <example>If a kindergarten buys a lot of toys they may be a Contracting Authority in a Public Tender.</example>
+         <synonyms>Customer, Debtor</synonyms>
+         <sends><schema>Expression Of Interest Response</schema>, <schema>Qualification Application Request</schema>, <schema>Tender Contract</schema>, <schema>Tender Status</schema>, <schema>Unsubscribe From Procedure Response</schema></sends>
+         <receives><schema>Expression Of Interest Request</schema>, <schema>Qualification Application Response</schema>, and <schema>Tender Status Request</schema>, <schema>Tender Withdrawal</schema>, <schema>Unsubscribe From Procedure Request</schema></receives>
+  </entry>
+  <entry>
+         <actor>Supplier Party</actor>
+         <role>Tenderer</role>
+         <description>The party responsible for handling Originator and Buyer services. The Tenderer party is legally responsible for providing the goods to the Contracting Authority. The Tenderer party receives the <schema>Expression Of Interest Response</schema>.</description>
+         <example>The organization that sells wheelchairs to municipalities.</example>
+         <synonyms>Seller, Provider, Economic Operator</synonyms>
+         <sends><schema>Expression Of Interest Request</schema>, <schema>Qualification Application Response</schema>, <schema>Tender Status Request</schema>, <schema>Tender Withdrawal</schema>, <schema>Unsubscribe From Procedure Request</schema></sends>
+         <receives><schema>Expression Of Interest Response</schema>, <schema>Qualification Application Request</schema>, <schema>Tender Contract</schema>, <schema>Tender Status</schema>, <schema>Unsubscribe From Procedure Response</schema></receives>
+  </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Consignor</role>
+          <description>The party consigning the goods as stipulated in the transport contract. A Buyer, Delivery, Seller, or Despatcher Party may also play the role of Consignor. Also known as the Transport User. The Consignor may be stipulated in a transport contract.</description>
+          <example>The wheelchair Supplier may source from a local warehouse. The Freight Forwarder will collect the chair from the local warehouse, which is thus the Consignor. In this case, the warehouse also plays the role of Despatch Party to the Freight Forwarder.</example>
+          <synonyms>Despatch Point, Shipper, Sender, Transport User</synonyms>
+          <sends><schema>Forwarding Instructions</schema>, <schema>Packing List</schema></sends>
+          <receives><schema>Bill of Lading</schema>, <schema>Waybill</schema>, <schema>Freight Invoice</schema>, <schema>Transportation Status</schema></receives>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Consignee</role>
+          <description>The party receiving a consignment of goods as stipulated in the transport contract.</description>
+          <example>The party taking responsibility for the receipt of the consignment covering the wheelchair.</example>
+          <synonyms>Delivery Point, Transport Service Buyer</synonyms>
+          <sends><schema>Forwarding Instructions</schema>, <schema>Freight Invoice</schema></sends>
+          <receives><schema>Bill of Lading</schema>, <schema>Waybill</schema>, <schema>Freight Invoice</schema>, <schema>Transportation Status</schema></receives>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Freight Forwarder</role>
+          <description>The party arranging the carriage of goods, including connected services and/or associated formalities, on behalf of a Consignor or Consignee. Also known as the Transport Service Provider. The Freight Forwarder may also be the Carrier. The Freight Forwarder may create an <schema>Invoice</schema> and bill to the Transport Service Buyer for the transportation service provided.</description>
+          <example>The Consignor may have a contract with this Freight Forwarder, which is a Transport Services Provider, to arrange all their transport needs.</example>
+          <synonyms>Shipping Agent, Broker, Courier, Transport Service Provider</synonyms>
+          <sends><schema>Forwarding Instructions</schema>, <schema>Freight Invoice</schema>, <schema>Transportation Status</schema></sends>
+          <receives><schema>Bill of Lading</schema>, <schema>Waybill</schema>, <schema>Packing List</schema></receives>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Carrier</role>
+          <description>The party providing physical transport services.</description>
+          <example>The Freight Forwarder may engage an airline company to deliver the wheelchair. The airline is then the Carrier and delivers the chair to the Delivery Party.</example>
+          <synonyms>Freight Haulier, Shipper, Ships Agent, Shipping Company, Airline, Rail Operator, Road Haulier</synonyms>
+          <sends><schema>Bill of Lading</schema>, <schema>Waybill</schema></sends>
+          <receives><schema>Forwarding Instructions</schema></receives>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Exporter</role>
+          <description>The party who makes regulatory export declarations, or on whose behalf regulatory export declarations are made, and who is the owner of the goods or has similar right of disposal over them at the time when the declaration is accepted.</description>
+          <example>The wheelchair Supplier has to apply for a <schema>Certificate of Origin</schema> in order to sell the chairs overseas.</example>
+          <synonyms>Seller, Consignor</synonyms>
+          <sends><schema>Certificate of Origin</schema></sends>
+          <receives><schema>Application Response</schema></receives>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Endorser</role>
+          <description>The party appointed by the Government of a country who has the right to certify a <schema>Certificate of Origin</schema>. This endorsement restricts goods imported from certain countries for political or other reasons.</description>
+          <example>The Government agency validates all the information provided by Exporter for <schema>Certificate of Origin</schema> approval.</example>
+          <synonyms>Authorized Organization, Embassy</synonyms>
+          <sends><schema>Certificate of Origin</schema>, <schema>Application Response</schema></sends>
+          <receives><schema>Certificate of Origin</schema></receives>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Importer</role>
+          <description>The party who makes, or on whose behalf an agent or other authorized person makes, an import declaration. This may include a person who has possession of the goods or to whom the goods are consigned.</description>
+          <example>A specialized group in a company consolidates the purchase request and handles the receiving of goods.</example>
+          <synonyms>Order Point, Delivery Party, Buyer, Customer, Consignee</synonyms>
+          <sends>
+			  <schema>Import Customs Declaration</schema>
+		</sends>
+          <receives><schema>Certificate of Origin</schema></receives>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Transport User</role>
+          <description>The Transport User is the role representing anyone who has a demand for transport services, books transport services, and follows up the execution of such services.</description>
+          <example>The manufacturer has to order transport of products from a carrier or freight forwarder (Transport Service Provider).</example>
+          <synonyms>Transport Buyer, Logistics Service Client</synonyms>
+          <sends><schema>Transport Execution Plan Request</schema>, <schema>Transportation Status Request</schema>, <schema>Transport Service Description Request</schema></sends>
+          <receives><schema>Transport Execution Plan</schema>, <schema>Transportation Status</schema>, <schema>Transport Service Description</schema>, <schema>Goods Item Itinerary</schema></receives>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Transport Service Provider</role>
+          <description>The Transport Service Provider is the role that plans, markets and performs transport services.</description>
+          <example>The carrier or freight forwarder who arranges for transport services on behalf of a manufacturer (Transport User)</example>
+          <synonyms>Transport Provider, Transport Seller, Logistics Service Provider</synonyms>
+          <sends><schema>Transport Execution Plan</schema>, <schema>Transportation Status</schema>, <schema>Transport Service Description</schema>, <schema>Transport Progress Status Request</schema>, <schema>Goods Item Itinerary</schema></sends>
+          <receives><schema>Transport Execution Plan Request</schema>, <schema>Transportation Status Request</schema>, <schema>Transport Service Description Request</schema>, <schema>Transport Progress Status</schema></receives>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Transportation Network Manager</role>
+          <description>The Transportation Network Manager is the role that extracts all information available regarding the infrastructure (static/dynamic) related to planning and executing transport and makes this information available to the Transport Service Provider. During a transport service, or even during a single leg, the Transport Service Provider may rely on information from several Transportation Network Managers.</description>
+          <example>The Traffic Information Centre (TIC) issuing information related to road work and/or traffic conditions as a service to a Transport Service Provider</example>
+          <synonyms>Road Administration, Traffic Information Centre, Coastal Administration, Harbor Master, Railway Administration, Infrastructure Manager</synonyms>
+          <sends><schema>Transport Progress Status</schema></sends>
+          <receives><schema>Transport Progress Status Request</schema></receives>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Governor</role>
+          <description>The Governor is the role that governs an agreement or contract.</description>
+          <example>A legal entity who creates and maintain an agreement.</example>
+          <synonyms/>
+          <sends/>
+          <receives/>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Participant</role>
+          <description>The Participant is the role agreeing on a set of digital processes, terms and conditions to ensure interoperability within a business network. A Buyer, Seller, Accounting Customer, Accounting Supplier, Service Provider Party may also play the role of Participant. A Participant in the role of a Business Party communicates its digital capabilities using a <schema>Digital Capability</schema> document.</description>
+          <example>A Service Provider agreeing on multi-lateral trading partner agreement governed by an e-Procurement network.</example>
+          <synonyms/>
+          <sends><schema>Digital Agreement</schema>, <schema>Application Response</schema></sends>
+          <receives><schema>Digital Agreement</schema>, <schema>Application Response</schema></receives>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Business</role>
+          <description>The Business Party is a general role that may be played by any other Party doing business according to a set of business and digital capabilities. A Business Party communicates its business information and capabilities to other parties using a <schema>Business Card</schema>. A Business Party communicates its digital capabilities to other parties using a <schema>Digital Capability</schema> document.</description>
+          <example>A Business Party supports the procurement business process according to a specific profile governed by an UBL user group.</example>
+          <synonyms>Trading Partner, Service Provider, Economic Operator, Contracting Authority, Participant</synonyms>
+          <sends><schema>Business Card</schema>, <schema>Digital Capability</schema>, <schema>Application Response</schema></sends>
+          <receives><schema>Business Card</schema>, <schema>Digital Capability</schema>, <schema>Application Response</schema></receives>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Weighing</role>
+          <description>The Weighing Party is a role played by weighing stations, shippers, terminal operators and possibly other parties executing a weight measurement including verified gross mass measurements.</description>
+          <example>A Business Party supports the procurement business process according to a specific profile governed by an UBL user group.</example>
+          <synonyms>Weighing Station, Weighing Provider</synonyms>
+          <sends><schema>Weight Statement</schema></sends>
+          <receives><schema>Application Response</schema></receives>
+   </entry>
+   <entry>
+          <actor>Party</actor>
+          <role>Responsible</role>
+          <description>The party responsible for signing the VGM on behalf of the Shipper.</description>
+          <example>A Weighing Party playing the role of a Responsible who signs a VGM.</example>
+          <synonyms/>
+          <sends/>
+          <receives/>
+   </entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Exporter</role>
+		<description>The party who initiates the export of goods and is authorized to perform the export. The exporter is often the owner of the goods being exported.</description>
+		<example>A slaughterhouse is the owner of the goods being exported, but not necessarily the party who presents the Goods Certificate for exportation.</example>
+		<synonyms/>
+		<sends>
+			<schema>Goods Certificate</schema>
+			<schema>Export Customs Declaration</schema>
+		</sends>	
+		<receives/>	
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Importer</role>
+		<description>The party who initiates the import of goods and is authorized to perform the import. </description>
+		<example>A grocery store importing meat</example>
+		<synonyms/>
+		<sends>
+			<schema>Goods Certificate</schema>			
+		</sends>
+		<receives>
+				<schema>Goods Certificate</schema>
+				<schema>Application Response</schema>
+		</receives>
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Preparation</role>
+		<description>An authenticated party who performs the import or export in service to the importer or exporter. This is often a terminal operator who stores the goods before it is being exported or imported.</description>
+		<example>A cold store that is keeping the meat before export.</example>		
+		<synonyms>Terminal Operator</synonyms>
+		<sends>
+			<schema>Goods Certificate</schema>
+			<schema>Application Response</schema>			
+		</sends>
+		<receives>
+				<schema>Goods Certificate</schema>
+				<schema>Application Response</schema>
+		</receives>
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Certification</role>
+		<description>A legal authority who certifies the goods being imported or exported and signs the Goods Certificate.</description>
+		<example>A food standards agency</example>
+		<synonyms/>
+		<sends/>
+		<receives>
+			<schema>Goods Certificate</schema>
+		</receives>							
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Issuer</role>
+		<description>The organisation authorized by the legal authority party to issue the <schema>Goods Item Passport</schema>.</description>
+		<example>A chamber of commerce</example>
+		<synonyms/>
+		<sends/>
+		<receives>
+			<schema>Goods Item Passport</schema>
+		</receives>							
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Importing Guarantor</role>
+		<description>The party fiscal responsible for customs of the goods that has been temporary imported.</description>
+		<example>A chamber of commerce, member of the ICC</example>
+		<synonyms/>
+		<sends>
+			<schema>Proof Of Reexportation Request</schema>
+		</sends>
+		<receives>
+			<schema>Proof Of Reexportation</schema>
+			<schema>Application Response</schema>
+		</receives>							
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Exporting Guarantor</role>
+		<description>The party fiscal responsible for customs of the goods that has been temporary exported.</description>
+		<example>A chamber of commerce, member of the ICC</example>
+		<synonyms/>		
+		<sends>
+			<schema>Proof Of Reexportation</schema>
+			<schema>Application Response</schema>
+		</sends>
+		<receives>
+			<schema>Proof Of Reexportation Request</schema>
+		</receives>							
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Holder</role>
+		<description>The holder of the <schema>Goods Item Passport</schema>, often the temporary exporter of the goods and the one the Goods Item Passport is applied to. </description>
+		<example>A manufacturer who wants to present some goods at an exhibition and brings them in on a temporary basis.</example>
+		<synonyms/>		
+		<sends>
+			<schema>Goods Item Passport</schema>	
+		</sends>
+		<receives>
+			<schema>Application Response</schema>
+		</receives>							
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Accompanying</role>
+		<description>The party accompanying the goods during the exportation and importation.</description>
+		<example>A representative for the holder who wants to go to an exhibition with commercial goods not for sale.</example>
+		<synonyms>Representing party</synonyms>		
+		<sends>
+			<schema>Goods Item Passport</schema>	
+		</sends>
+		<receives>
+			<schema>Application Response</schema>
+		</receives>							
+	</entry>	
+	<entry>
+		<actor>Party</actor>
+		<role>Exporting Customs</role>
+		<description>The party legal responsible for the export of the goods.</description>
+		<example>A chamber of commerce</example>
+		<synonyms/>
+		<sends>
+			<schema>Goods Item Passport</schema>
+			<schema>Application Response</schema>	
+			<schema>Export Customs Declaration</schema>
+		</sends>	
+		<receives>
+			<schema>Goods Item Passport</schema>
+			<schema>Export Customs Declaration</schema>
+			<schema>Application Response</schema>	
+		</receives>				
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Importing Customs</role>
+		<description>The party legal responsible for the import of the goods. The original requester for the <schema>Proof Of Reexportation Request</schema>.</description>
+		<example>A chamber of commerce</example>
+		<synonyms/>
+		<sends>
+			<schema>Goods Item Passport</schema>
+			<schema>Application Response</schema>	
+		</sends>	
+		<receives>
+			<schema>Goods Item Passport</schema>
+		</receives>				
+	</entry>
+  
+  <!--UBL 2.3 TSC-->
+	<entry>
+		<actor>Authenticated Party</actor>
+		<role>Exporter</role>
+		<description>The party who initiates the export and holds an authentication to perform the export. The exporter is often the owner of the goods being exported</description>
+		<example>A slaughterhouse are the owner of the goods being exported, but not necessarily the party who presents the Goods Certificate for exportation</example>
+		<synonyms/>
+		<sends>
+			<schema>Goods Certificate</schema>
+		</sends>		
+	  <receives></receives>
+	</entry>
+	<entry>
+		<actor>Authenticated Party</actor>
+		<role>Importer</role>
+		<description>The party who initiates the import and holds an authentication to perform the import. </description>
+		<example>A grocery store importing meet</example>
+		<synonyms/>
+		<sends>
+			<schema>Goods Certificate</schema>
+		</sends>		
+	  <receives></receives>
+	</entry>
+	<entry>
+		<actor>Authenticated Party</actor>
+		<role>Representative</role>
+		<description>A authenticated party who perform the import or export on behalf of the importer or exporter. This is often a terminal operator who stores the goods before it is being exported or imported.</description>
+		<example>A cold store that are keeping the meet before export.</example>
+		<synonyms/>
+		<sends>
+			<schema>Goods Certificate</schema>
+		</sends>		
+	  <receives></receives>
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Legal Authority</role>
+		<description>A legal authority who validates the goods being imported or exported and signs the Goods Certificate</description>
+		<example>A food standard agency</example>
+		<synonyms/>
+		<sends/>
+		<receives>
+			<schema>Goods Certificate</schema>
+		</receives>							
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Issuer</role>
+		<description>The organisation authorized by the legal authority party to issue the certificate.</description>
+		<example>A chamber of commerce</example>
+		<synonyms/>
+		<sends/>
+		<receives>
+			<schema>Goods Certificate</schema>
+		</receives>							
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Importing Guarantor</role>
+		<description>The party fiscal responsible for customs of the goods that has been temporary imported</description>
+		<example>A chamber of commerce, member of the ICC</example>
+		<synonyms/>
+		<sends>
+			<schema>Proof Of Reexportation Request</schema>
+		</sends>
+		<receives>
+			<schema>Proof Of Reexportation</schema>
+			<schema>Application Response</schema>
+		</receives>							
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Exporting Guarantor</role>
+		<description>The party fiscal responsible for customs of the goods that has been temporary exported</description>
+		<example>A chamber of commerce, member of the ICC</example>
+		<synonyms/>
+		<sends>
+			<schema>Proof Of Reexportation Request</schema>
+		</sends>
+		<receives>
+			<schema>Proof Of Reexportation</schema>
+			<schema>Application Response</schema>
+		</receives>							
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Exporting Guarantor</role>
+		<description>The party fiscal responsible for customs of the goods that has been temporary exported</description>
+		<example>A chamber of commerce, member of the ICC</example>
+		<synonyms/>		
+		<sends>
+			<schema>Proof Of Reexportation</schema>
+			<schema>Application Response</schema>
+		</sends>
+		<receives>
+			<schema>Proof Of Reexportation Request</schema>
+		</receives>							
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Holder</role>
+		<description>The holder of the Goods Item passport, often the temporary exporter of the goods and the one the Goods Item Passport is applied to. </description>
+		<example>A exporter who wants presents some goods at an exhibition and bring in some goods temporary</example>
+		<synonyms/>		
+		<sends>
+			<schema>Goods Item Passport</schema>	
+		</sends>
+		<receives>
+			<schema>Application Response</schema>
+		</receives>							
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Representative</role>
+		<description>The party accompanying the goods during the importation.</description>
+		<example>A representative for the holder who wants to go for an exhibition</example>
+		<synonyms/>		
+		<sends>
+			<schema>Goods Item Passport</schema>	
+		</sends>
+		<receives>
+			<schema>Application Response</schema>
+		</receives>							
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Guarantor</role>
+		<description>The party (often chambers) that provides the fiscal guarantee of the Goods Item passport.</description>
+		<example>A chamber of commerce member of the ICC</example>
+		<synonyms/>		
+		<sends></sends>
+	  <receives></receives>
+	</entry>
+	<entry>
+		<actor>Party</actor>
+		<role>Issuer</role>
+		<description>The organisation authorized by the guarantor party to issue the Goods Item Passport</description>
+		<example>A chamber of commerce</example>
+		<synonyms/>
+		<sends>
+			<schema>Goods Item Passport</schema>
+			<schema>Application Response</schema>	
+		</sends>	
+		<receives>
+			<schema>Goods Item Passport</schema>
+		</receives>				
+	</entry>
+ <entry>
+          <actor>Party</actor>
+          <role>Transit Exporter</role>
+          <description>The party who makes regulatory export declarations, or on whose behalf regulatory transit customs declarations are made, and who is the owner of the goods or has similar right of disposal over them at the time when the declaration is accepted.</description>
+          <example>A Norwegian exporter may have to do a <schema>Transit Customs Declaration</schema> in order to export to Russia</example>
+          <synonyms>Seller, Consignor</synonyms>
+          <sends><schema>Transit Customs Declaration</schema></sends>
+          <receives><schema>Application Response</schema></receives>
+   </entry>  
+
+   <entry>
+          <actor>Party</actor>
+          <role>Receiving Logistic Operator</role>
+          <description>The party who in the role of a logistic operator is receiving a <schema>Manifest</schema></description>
+          <example>A ground handling in an airport receives a <schema>Manifest</schema> from a logistic operator.</example>
+          <synonyms/>
+          <sends/>
+          <receives><schema>Manifest</schema></receives>
+   </entry>  
+   
+   <entry>
+          <actor>Party</actor>
+          <role>Sending Logistic Operator</role>
+          <description>The party who in the role of a logistic operator is sending a <schema>Manifest</schema></description>
+          <example>A logistic operator consolidates some goods in a terminal and ships it along with a <schema>Manifest</schema> to a ground handler in an Airport</example>
+          <synonyms>Freight Forwarder</synonyms>
+          <sends><schema>Manifest</schema></sends>
+          <receives/>
+   </entry>
+
+ <entry>
+          <actor>Party</actor>
+          <role>Customs</role>
+          <description>The party who is receiving a Customs Declaration</description>
+          <example>A Customs Party receives a <schema>Export Customs Declaration</schema> from a Exporter Party</example>
+          <synonyms/>
+          <sends><schema>Export Customs Declaration</schema></sends>
+          <receives/>
+   </entry>  
+
+<entry>
+          <actor>Party</actor>
+          <role>Authority</role>
+          <description>The party who is receiving a <schema>Common Transportation Report</schema></description>
+          <example>An Authority party receives a <schema>Common Transportation Report</schema> from a Logistics operator as reporter</example>
+          <synonyms/>
+          <sends/>
+          <receives><schema>Common Transportation Report</schema></receives>
+   </entry>     
+   
+    <entry>
+          <actor>Party</actor>
+          <role>Reporter</role>
+          <description>The party who is sending a <schema>Common Transportation Report</schema></description>
+          <example>A Logistic operator sends a <schema>Common Transportation Report</schema> to a harbour</example>
+          <synonyms>Logistics Operator</synonyms>
+          <sends><schema>Common Transportation Report</schema></sends>
+          <receives/>
+   </entry>  
+
+</roletable>

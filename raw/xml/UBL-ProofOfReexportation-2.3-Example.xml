@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProofOfReexportation xmlns="urn:oasis:names:specification:ubl:schema:xsd:ProofOfReexportation-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+	<cbc:ID>23424244</cbc:ID>
+	<cbc:IssueDate>2019-05-08</cbc:IssueDate>
+	<cac:ImportingGuarantorParty>
+		<cac:PartyName>
+			<cbc:Name>Deutscher Industrie- und Handelskammertag e.V.</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Breite Straße</cbc:StreetName>
+			<cbc:BuildingNumber>29</cbc:BuildingNumber>
+			<cbc:CityName>Berlin</cbc:CityName>
+			<cbc:PostalZone>10178</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:PartyLegalEntity>
+			<cbc:CompanyID>DE122125278</cbc:CompanyID>
+		</cac:PartyLegalEntity>
+	</cac:ImportingGuarantorParty>
+	<cac:ExportingGuarantorParty>
+		<cac:PartyName>
+			<cbc:Name>Dansk Erhverv</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Slotsholmsgade</cbc:StreetName>
+			<cbc:BuildingNumber>1</cbc:BuildingNumber>
+			<cbc:CityName>København K</cbc:CityName>
+			<cbc:PostalZone>1216</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:PartyLegalEntity>
+			<cbc:CompanyID>DK43232010</cbc:CompanyID>
+		</cac:PartyLegalEntity>
+	</cac:ExportingGuarantorParty>
+	<cac:GoodsItemPassportCounterfoil>
+		<cbc:ID>645634567</cbc:ID>
+		<cbc:GoodsItemPassportID>ata01661</cbc:GoodsItemPassportID>
+		<cac:CustomsOfficeLocation>
+			<cbc:Name>Heiligenhafen</cbc:Name>
+		</cac:CustomsOfficeLocation>
+		<cac:VoucherDocumentReference>
+			<cbc:ID>5234533222</cbc:ID>
+		</cac:VoucherDocumentReference>
+	</cac:GoodsItemPassportCounterfoil>
+	<cac:GoodsItemPassportCounterfoil>
+		<cbc:ID>634563324</cbc:ID>
+		<cbc:GoodsItemPassportID>ata01661</cbc:GoodsItemPassportID>
+		<cac:CustomsOfficeLocation>
+			<cbc:Name>Bietingen</cbc:Name>
+		</cac:CustomsOfficeLocation>
+		<cac:VoucherDocumentReference>
+			<cbc:ID>52345423423</cbc:ID>
+		</cac:VoucherDocumentReference>
+	</cac:GoodsItemPassportCounterfoil>
+	<cac:ReexportationEvidence>
+			<cbc:EvidenceTypeCode>mail</cbc:EvidenceTypeCode>
+			<cbc:Description>Received mail from Frau Gerlung</cbc:Description>
+			<cac:DocumentReference>
+				<cbc:ID>34563456</cbc:ID>
+				<cbc:DocumentType>ATA carnet, paper</cbc:DocumentType>
+			</cac:DocumentReference>
+	</cac:ReexportationEvidence>
+</ProofOfReexportation>

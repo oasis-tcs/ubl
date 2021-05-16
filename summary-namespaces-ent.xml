@@ -1,0 +1,124 @@
+<!--
+To get an updated version of this entity file, please run the build process
+and obtain a copy from the archive-only-not-in-final-distribution/new-entities
+directory.
+
+
+-->
+<!--a total of 91 document types-->
+<legalnotice role="namespaces">
+   <title>Declared XML Namespaces</title>
+   <simplelist lang="none">
+      <member>
+        urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2 </member>
+      <member>
+        urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2 </member>
+      <member>
+        urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2 </member>
+      <member>
+        urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2 </member>
+      <member>
+        urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2 </member>
+      <member>
+        urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2 </member>
+      <member>
+        urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2 </member>
+      <member>
+        urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2
+      </member>
+   </simplelist>
+   <para conformance="skip"/>
+   <simplelist lang="none">
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:AttachedDocument-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:AwardedNotification-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:BillOfLading-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:BusinessCard-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:CallForTenders-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:CatalogueDeletion-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:CatalogueItemSpecificationUpdate-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:CataloguePricingUpdate-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:CatalogueRequest-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:CertificateOfOrigin-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:CommonTransportationReport-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:DebitNote-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:DigitalAgreement-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:DigitalCapability-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:DocumentStatus-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:DocumentStatusRequest-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:Enquiry-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:EnquiryResponse-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ExceptionCriteria-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ExceptionNotification-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ExportCustomsDeclaration-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ExpressionOfInterestRequest-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ExpressionOfInterestResponse-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:Forecast-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ForecastRevision-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ForwardingInstructions-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:FreightInvoice-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:FulfilmentCancellation-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:GoodsCertificate-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:GoodsItemItinerary-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:GoodsItemPassport-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:GuaranteeCertificate-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ImportCustomsDeclaration-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:InstructionForReturns-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:InventoryReport-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:Invoice-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ItemInformationRequest-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:Manifest-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:Order-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:OrderCancellation-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:OrderChange-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:OrderResponseSimple-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:PackingList-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:PriorInformationNotice-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ProductActivity-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ProofOfReexportation-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ProofOfReexportationReminder-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ProofOfReexportationRequest-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:QualificationApplicationRequest-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:QualificationApplicationResponse-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:Quotation-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:Reminder-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:RequestForQuotation-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:RetailEvent-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:SelfBilledCreditNote-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:SelfBilledInvoice-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:Statement-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:StockAvailabilityReport-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:Tender-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TenderContract-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TenderReceipt-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TenderStatus-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TenderStatusRequest-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TenderWithdrawal-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TendererQualification-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TendererQualificationResponse-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TradeItemLocationProfile-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TransitCustomsDeclaration-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TransportProgressStatus-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TransportProgressStatusRequest-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TransportServiceDescription-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TransportServiceDescriptionRequest-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:TransportationStatusRequest-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:UnawardedNotification-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:UnsubscribeFromProcedureRequest-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:UnsubscribeFromProcedureResponse-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:UtilityStatement-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:Waybill-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:WeightStatement-2</member>
+   </simplelist>
+</legalnotice>

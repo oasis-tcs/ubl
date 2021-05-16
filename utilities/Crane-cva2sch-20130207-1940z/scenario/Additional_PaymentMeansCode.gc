@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>AdditionalPaymentMeansCode</ShortName>
+      <LongName>Additional Payment Means</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:x-company:PaymentMeansCode</CanonicalUri>
+      <CanonicalVersionUri>urn:x-company:PaymentMeansCode-1.0</CanonicalVersionUri>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString"/>
+      </Column>
+      <Column Id="name" Use="optional">
+         <ShortName>Name</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SHP</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Exchange of Sheep</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

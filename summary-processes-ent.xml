@@ -1,0 +1,759 @@
+<!--
+To get an updated version of this entity file, please run the build process
+and obtain a copy from the archive-only-not-in-final-distribution/new-entities
+directory.
+-->
+<itemizedlist spacing="compact" mark="none" role="processLinkSummary">
+   <listitem>
+      <para>
+         <xref linkend="S-PLAN"/>
+      </para>
+      <itemizedlist spacing="compact" mark="none">
+         <listitem>
+            <para>
+               <xref linkend="S-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT"/>
+            </para>
+            <itemizedlist spacing="compact" mark="none">
+               <listitem>
+                  <para>
+                     <xref linkend="S-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT-INTRODUCTION"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-COLLABORATION-AGREEMENT-AND-JOINT-BUSINESS-PLANNING"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-SALES-FORECAST-GENERATION-AND-EXCEPTION-HANDLING"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-ORDER-FORECAST-GENERATION-AND-EXCEPTION-HANDLING"/>
+                  </para>
+               </listitem>
+            </itemizedlist>
+         </listitem>
+      </itemizedlist>
+   </listitem>
+   <listitem>
+      <para>
+         <emphasis>
+            <emphasis role="bold">
+               <xref linkend="S-PROCUREMENT"/>
+            </emphasis>
+         </emphasis>
+      </para>
+      <itemizedlist spacing="compact" mark="none">
+         <listitem>
+            <para>
+               <emphasis>
+                  <emphasis role="bold">
+                     <xref linkend="S-PRE-AWARD"/>
+                  </emphasis>
+               </emphasis>
+            </para>
+            <itemizedlist spacing="compact" mark="none">
+               <listitem>
+                  <para>
+                     <emphasis>
+                        <emphasis role="bold">
+                           <xref linkend="S-PRE-AWARD-INTRODUCTION"/>
+                        </emphasis>
+                     </emphasis>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-CONTRACT-INFORMATION-PREPARATION"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-CONTRACT-INFORMATION-NOTIFICATION"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-INVITATION-TO-TENDER"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-EXPRESSION-OF-INTEREST"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-UNSUBSCRIBE-FROM-PROCEDURE"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-SUBMISSION-OF-QUALIFICATION-INFORMATION"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-QUALIFICATION-APPLICATION"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-ENQUIRY"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-SUBMISSION-OF-TENDERS"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-TENDER-STATUS"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-TENDER-WITHDRAWAL"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-AWARDING-OF-TENDERS"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <emphasis>
+                        <emphasis role="bold">
+                           <xref linkend="S-CONTRACT"/>
+                        </emphasis>
+                     </emphasis>
+                  </para>
+               </listitem>
+            </itemizedlist>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-CATALOGUE"/>
+            </para>
+            <itemizedlist spacing="compact" mark="none">
+               <listitem>
+                  <para>
+                     <xref linkend="S-CATALOGUE-INTRODUCTION"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-CATALOGUE-BUSINESS-RULES"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-CATALOGUE-PROVISION"/>
+                  </para>
+                  <itemizedlist spacing="compact" mark="none">
+                     <listitem>
+                        <para>
+                           <xref linkend="S-CATALOGUE-PROVISION-INTRODUCTION"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-CREATE-CATALOGUE"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-UPDATE-CATALOGUE-ITEM-SPECIFICATION"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-UPDATE-CATALOGUE-PRICING"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-DELETE-CATALOGUE"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-PUNCHOUT"/>
+                        </para>
+                     </listitem>
+                  </itemizedlist>
+               </listitem>
+            </itemizedlist>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-QUOTATION"/>
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-ORDERING-POST-AWARD"/>
+            </para>
+            <itemizedlist spacing="compact" mark="none">
+               <listitem>
+                  <para>
+                     <xref linkend="S-ORDERING-INTRODUCTION"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-ORDERING-BUSINESS-RULES"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-ORDER-RESPONSE-SIMPLE"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-ORDER-RESPONSE"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-ORDER-CHANGE"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-ORDER-CANCELLATION"/>
+                  </para>
+               </listitem>
+            </itemizedlist>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-VENDOR-MANAGED-INVENTORY"/>
+            </para>
+            <itemizedlist spacing="compact" mark="none">
+               <listitem>
+                  <para>
+                     <xref linkend="S-VENDOR-MANAGED-INVENTORY-INTRODUCTION"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-BASIC-VENDOR-MANAGED-INVENTORY"/>
+                  </para>
+                  <itemizedlist spacing="compact" mark="none">
+                     <listitem>
+                        <para>
+                           <xref linkend="S-BASIC-VENDOR-MANAGED-INVENTORY-INTRODUCTION"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-INITIAL-STOCKING-OF-THE-AREA-BY-PRODUCER"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-REPORT-OF-SALES-AND-INVENTORY-MOVEMENT"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-PERMANENT-REPLENISHMENT"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-INVOICING-FOR-VENDOR-MANAGED-INVENTORY"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-RETURNS-INITIATED-BY-THE-PRODUCER"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-PRICE-ADJUSTMENTS"/>
+                        </para>
+                     </listitem>
+                  </itemizedlist>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-CYCLIC-REPLENISHMENT-PROGRAM-CRP"/>
+                  </para>
+                  <itemizedlist spacing="compact" mark="none">
+                     <listitem>
+                        <para>
+                           <xref linkend="S-CYCLIC-REPLENISHMENT-PROGRAM-CRP-INTRODUCTION"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-TRANSFER-OF-BASE-ITEM-CATALOGUE"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-INITIAL-STOCKING-OF-THE-AREA-BY-RETAILER"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-PERIODIC-WEEKLY-REPLENISHMENT"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-REPORT-OF-SALES-AND-INVENTORY-MOVEMENTS"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-CYCLIC-REPLENISHMENT-PROGRAM-INVOICING"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-SYNCHRONIZING-OF-STOCK-INFORMATION"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-CHANGES-TO-THE-ITEM-CATALOGUE"/>
+                        </para>
+                     </listitem>
+                  </itemizedlist>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-REPLENISHMENT-ON-CUSTOMER-DEMAND"/>
+                  </para>
+                  <itemizedlist spacing="compact" mark="none">
+                     <listitem>
+                        <para>
+                           <xref linkend="S-REPLENISHMENT-ON-CUSTOMER-DEMAND-INTRODUCTION"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-TRANSFER-OF-BASE-ARTICLE-CATALOGUE"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-PERIODIC-TRANSFER-OF-ARTICLE-AVAILABILITY-INFORMATION"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-INITIAL-STOCKING-OF-THE-AREA-BY-PRODUCER-AND-RETAILER"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-PERIODIC-REPLENISHMENT"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-REPORT-OF-SALES-AND-INVENTORY-MOVEMENT-ON-CUSTOMER-DEMAND"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-INVOICING-FOR-REPLENISHMENT-ON-CUSTOMER-DEMAND"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-SYNCHRONIZING-STOCK-INFORMATION"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-CHANGES-TO-THE-ARTICLE-CATALOGUE"/>
+                        </para>
+                     </listitem>
+                  </itemizedlist>
+               </listitem>
+            </itemizedlist>
+         </listitem>
+      </itemizedlist>
+   </listitem>
+   <listitem>
+      <para>
+         <xref linkend="S-MAKE"/>
+      </para>
+   </listitem>
+   <listitem>
+      <para>
+         <xref linkend="S-DELIVER"/>
+      </para>
+      <itemizedlist spacing="compact" mark="none">
+         <listitem>
+            <para>
+               <xref linkend="S-LOGISTICS"/>
+            </para>
+            <itemizedlist spacing="compact" mark="none">
+               <listitem>
+                  <para>
+                     <xref linkend="S-FULFILMENT-INTRODUCTION"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-DESPATCH-ADVICE-BUSINESS-RULES"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-RECEIPT-ADVICE-BUSINESS-RULES"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-FULFILMENT-CANCELLATION-BUSINESS-RULES"/>
+                  </para>
+               </listitem>
+            </itemizedlist>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-TRANSPORT"/>
+            </para>
+            <itemizedlist spacing="compact" mark="none">
+               <listitem>
+                  <para>
+                     <xref linkend="S-INTERNATIONAL-FREIGHT-MANAGEMENT-INTRODUCTION"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-FORWARDING-INSTRUCTIONS"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-PACKING-LIST"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-BILL-OF-LADING"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-WAYBILL"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-WEIGHT-STATEMENT"/>
+                  </para>
+               </listitem>
+            </itemizedlist>
+         </listitem>
+         <listitem>
+            <para>
+               <emphasis>
+                  <emphasis role="bold">
+                     <xref linkend="S-MANIFEST"/>
+                  </emphasis>
+               </emphasis>
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-FREIGHT-STATUS-REPORTING"/>
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-CERTIFICATION-OF-ORIGIN-OF-GOODS"/>
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-CROSS-BORDER-REGULATORY-REPORTING"/>
+            </para>
+            <itemizedlist spacing="compact" mark="none">
+               <listitem>
+                  <para>
+                     <emphasis>
+                        <emphasis role="bold">
+                           <xref linkend="S-CROSS-BORDER-REGULATORY-REPORTING-INTRODUCTION"/>
+                        </emphasis>
+                     </emphasis>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <emphasis>
+                        <emphasis role="bold">
+                           <xref linkend="S-EXPORT-CUSTOMS-DECLARATION"/>
+                        </emphasis>
+                     </emphasis>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <emphasis>
+                        <emphasis role="bold">
+                           <xref linkend="S-TRANSIT-CUSTOMS-DECLARATION"/>
+                        </emphasis>
+                     </emphasis>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <emphasis>
+                        <emphasis role="bold">
+                           <xref linkend="S-IMPORT-CUSTOMS-DECLARATION"/>
+                        </emphasis>
+                     </emphasis>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <emphasis>
+                        <emphasis role="bold">
+                           <xref linkend="S-EXPORT-GOODS-CERTIFICATE"/>
+                        </emphasis>
+                     </emphasis>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <emphasis>
+                        <emphasis role="bold">
+                           <xref linkend="S-GOODS-ITEM-PASSPORT-CARNET"/>
+                        </emphasis>
+                     </emphasis>
+                  </para>
+                  <itemizedlist spacing="compact" mark="none">
+                     <listitem>
+                        <para>
+                           <emphasis>
+                              <emphasis role="bold">
+                                 <xref linkend="S-GOODS-ITEM-PASSPORT-INTRODUCTION"/>
+                              </emphasis>
+                           </emphasis>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <emphasis>
+                              <emphasis role="bold">
+                                 <xref linkend="S-GOODS-ITEM-PASSPORT-APPROVAL"/>
+                              </emphasis>
+                           </emphasis>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <emphasis>
+                              <emphasis role="bold">
+                                 <xref linkend="S-GOODS-ITEM-PASSPORT-PRESENTATION"/>
+                              </emphasis>
+                           </emphasis>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <emphasis>
+                              <emphasis role="bold">
+                                 <xref linkend="S-GOODS-ITEM-PASSPORT-RETURN"/>
+                              </emphasis>
+                           </emphasis>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <emphasis>
+                              <emphasis role="bold">
+                                 <xref linkend="S-GOODS-ITEM-PASSPORT-PROOF-OF-RE-EXPORTATION"/>
+                              </emphasis>
+                           </emphasis>
+                        </para>
+                     </listitem>
+                  </itemizedlist>
+               </listitem>
+            </itemizedlist>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-INTERMODAL-FREIGHT-MANAGEMENT"/>
+            </para>
+            <itemizedlist spacing="compact" mark="none">
+               <listitem>
+                  <para>
+                     <xref linkend="S-INTERMODAL-FREIGHT-MANAGEMENT-INTRODUCTION"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-ANNOUNCING-INTERMODAL-TRANSPORT-SERVICES"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-ESTABLISHING-A-TRANSPORT-EXECUTION-PLAN"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-PROVIDING-AN-ITINERARY-FOR-A-TRANSPORT-SERVICE"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-REPORTING-TRANSPORT-MEANS-PROGRESS-STATUS"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <emphasis>
+                        <emphasis role="bold">
+                           <xref linkend="S-COMMON-TRANSPORTATION-REPORT"/>
+                        </emphasis>
+                     </emphasis>
+                  </para>
+               </listitem>
+            </itemizedlist>
+         </listitem>
+      </itemizedlist>
+   </listitem>
+   <listitem>
+      <para>
+         <xref linkend="S-RETURN"/>
+      </para>
+   </listitem>
+   <listitem>
+      <para>
+         <xref linkend="S-PAY"/>
+      </para>
+      <itemizedlist spacing="compact" mark="none">
+         <listitem>
+            <para>
+               <xref linkend="S-BILLING"/>
+            </para>
+            <itemizedlist spacing="compact" mark="none">
+               <listitem>
+                  <para>
+                     <xref linkend="S-BILLING-INTRODUCTION"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-BILLING-BUSINESS-RULES"/>
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-TRADITIONAL-BILLING"/>
+                  </para>
+                  <itemizedlist spacing="compact" mark="none">
+                     <listitem>
+                        <para>
+                           <xref linkend="S-TRADITIONAL-BILLING-INTRODUCTION"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-BILLING-USING-CREDIT-NOTES"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-BILLING-USING-DEBIT-NOTES"/>
+                        </para>
+                     </listitem>
+                  </itemizedlist>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-SELF-BILLING"/>
+                  </para>
+                  <itemizedlist spacing="compact" mark="none">
+                     <listitem>
+                        <para>
+                           <xref linkend="S-SELF-BILLING-INTRODUCTION"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-SELF-BILLING-USING-CREDIT-NOTES"/>
+                        </para>
+                     </listitem>
+                     <listitem>
+                        <para>
+                           <xref linkend="S-SELF-BILLING-USING-SELF-BILLED-CREDIT-NOTES"/>
+                        </para>
+                     </listitem>
+                  </itemizedlist>
+               </listitem>
+               <listitem>
+                  <para>
+                     <xref linkend="S-REMINDER-FOR-PAYMENT"/>
+                  </para>
+               </listitem>
+            </itemizedlist>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-FREIGHT-BILLING"/>
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-UTILITY-BILLING"/>
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-PAYMENT-NOTIFICATION"/>
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-REPORT-STATE-OF-ACCOUNTS"/>
+            </para>
+         </listitem>
+      </itemizedlist>
+   </listitem>
+   <listitem>
+      <para>
+         <xref linkend="S-BUSINESS-DIRECTORY-AND-AGREEMENTS"/>
+      </para>
+      <itemizedlist spacing="compact" mark="none">
+         <listitem>
+            <para>
+               <xref linkend="S-DIRECTORY-INTRODUCTION"/>
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-BUSINESS-CARD"/>
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-DIGITAL-CAPABILITY"/>
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-DIGITAL-AGREEMENT"/>
+            </para>
+         </listitem>
+      </itemizedlist>
+   </listitem>
+</itemizedlist>

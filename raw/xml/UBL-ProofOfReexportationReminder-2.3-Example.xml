@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProofOfReexportationReminder xmlns="urn:oasis:names:specification:ubl:schema:xsd:ProofOfReexportationReminder-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" >
+	<cbc:ID>A2344</cbc:ID>
+	<cbc:IssueDate>2019-06-21</cbc:IssueDate>
+	<cbc:ProcedureCode>A-letter</cbc:ProcedureCode>
+	<cac:ProofOfReexportationRequestDocumentReference>
+		<cbc:ID>A2344</cbc:ID>
+	</cac:ProofOfReexportationRequestDocumentReference>
+	<cac:ImportingGuarantorParty>
+		<cac:PartyName>
+			<cbc:Name>Deutscher Industrie- und Handelskammertag e.V.</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Breite Straße</cbc:StreetName>
+			<cbc:BuildingNumber>29</cbc:BuildingNumber>
+			<cbc:CityName>Berlin</cbc:CityName>
+			<cbc:PostalZone>10178</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:PartyLegalEntity>
+			<cbc:CompanyID>DE122125278</cbc:CompanyID>
+		</cac:PartyLegalEntity>
+	</cac:ImportingGuarantorParty>
+	<cac:ExportingGuarantorParty>
+		<cac:PartyName>
+			<cbc:Name>Dansk Erhverv</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Slotsholmsgade</cbc:StreetName>
+			<cbc:BuildingNumber>1</cbc:BuildingNumber>
+			<cbc:CityName>København K</cbc:CityName>
+			<cbc:PostalZone>1216</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:PartyLegalEntity>
+			<cbc:CompanyID>DK43232010</cbc:CompanyID>
+		</cac:PartyLegalEntity>
+	</cac:ExportingGuarantorParty>
+	<cac:ImportingCustomsParty>
+		<cac:PartyName>
+			<cbc:Name>Zollamt</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Tollbrettkoppel</cbc:StreetName>
+			<cbc:BuildingNumber>8</cbc:BuildingNumber>
+			<cbc:CityName>Heiligenhafen</cbc:CityName>
+			<cbc:PostalZone>23774</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+	</cac:ImportingCustomsParty>
+	<cac:GoodsItemPassportCounterfoil>
+		<cbc:ID>645634567</cbc:ID>
+		<cbc:GoodsItemPassportID>ata01661</cbc:GoodsItemPassportID>
+		<cac:VoucherDocumentReference>
+			<cbc:ID>23445567</cbc:ID>
+		</cac:VoucherDocumentReference>
+	</cac:GoodsItemPassportCounterfoil>
+</ProofOfReexportationReminder>

@@ -1,0 +1,16 @@
+<!DOCTYPE Identification [
+<!ENTITY short "CSD05">
+<!ENTITY dir   "csd05">
+]>
+<Identification>
+  <ShortName>UBL-2.3-Sig-&short;</ShortName>
+  <LongName>UBL 2.3 &short; Signature Entity Summary</LongName>
+  <Version>2.3</Version>
+  <CanonicalUri>urn:oasis:names:specification:ubl:signature:BIE</CanonicalUri>
+  <CanonicalVersionUri>urn:oasis:names:specification:ubl:signature:BIE:2.3</CanonicalVersionUri>
+  <LocationUri>http://docs.oasis-open.org/ubl/&dir;-UBL-2.3/mod/UBL-Signature-Entities-2.3.gc</LocationUri>
+  <Agency>
+     <LongName xml:lang="en">OASIS Universal Business Language</LongName>
+     <Identifier>UBL</Identifier>
+  </Agency>
+</Identification>

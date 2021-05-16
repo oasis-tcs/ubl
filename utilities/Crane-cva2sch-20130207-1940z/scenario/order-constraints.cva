@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cva:ContextValueAssociation 
+  xmlns:cva=
+         "http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/"
+  xmlns:cbc="urn:oasis:names:draft:ubl:schema:xsd:CommonBasicComponents-2"
+  xmlns:cac="urn:oasis:names:draft:ubl:schema:xsd:CommonAggregateComponents-2"
+  xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+  id="urn:x-illustration"
+  name="code-list-rules"
+  version="$Id: order-constraints.cva,v 1.18 2012/04/18 21:57:51 admin Exp $">
+  <Annotation>
+    <Description>
+      This is an illustrative example of all of the features of specifying the
+      context/value constraints that one can express for XML documents.
+  
+      The validation requirements for this contrived scenario are as follows:
+       - all names and address lines are restricted to 35 characters in length
+       - the UN/CEFACT currency code list is restricted to be
+         only Canadian and US dollars
+       - the seller must be in the US
+       - the buyer may be in either Canada or the US
+       - the definition for Payment Means is extended to include
+         both UBL definitions and additional definitions
+    </Description>
+  </Annotation>
+
+  <Title>
+    Illustration of value constraints - order-constraints.cva
+  </Title>
+
+  <!--list all test expressions-->
+  <ValueTests>
+    <ValueTest xml:id="length-35" test="string-length(.)&lt;=35">
+      <Annotation>
+        <Description>
+          Certain fields are restricted to 35 characters in length.
+        </Description>
+      </Annotation>
+    </ValueTest>
+  </ValueTests>
+
+  <!--list all of the genericode expressions of agreed-upon code list
+      value enumerations-->
+  <ValueLists>
+    <ValueList xml:id="currency" uri="CAUS_CurrencyCode.gc"
+               masqueradeUri="UBL_CurrencyCode-2.0.gc">
+      <Annotation>
+        <Description>
+          Restricted to only Canadian and US dollars.
+        </Description>
+      </Annotation>
+      <Identification>
+        <LongName>ISO Currency List</LongName>
+      </Identification>
+    </ValueList>
+    <ValueList xml:id="states" uri="US_CountrySubentityCode.gc">
+      <Annotation>
+        <Description>
+          List of US states
+        </Description>
+      </Annotation>
+    </ValueList>
+    <ValueList xml:id="provinces" uri="CA_CountrySubentityCode.gc">
+      <Annotation>
+        <Description>
+          List of Canadian provinces
+        </Description>
+      </Annotation>
+    </ValueList>
+    <ValueList xml:id="tax-ids" uri="TaxIdentifier.gc" key="codeKey">
+      <Annotation>
+        <Description>
+          List of tax type identifiers
+        </Description>
+      </Annotation>
+    </ValueList>
+    <ValueList xml:id="payments" uri="UBL_PaymentMeansCode-2.0.gc">
+      <Annotation>
+        <Description>
+          Copied from the UBL 2.0 suite:
+          http://docs.oasis-open.org/ubl/cs-UBL-2.0/
+        </Description>
+      </Annotation>
+    </ValueList>
+    <ValueList xml:id="additional_payments" 
+               uri="Additional_PaymentMeansCode.gc">
+      <Annotation>
+        <Description>
+          An extra set of possible payment means.
+        </Description>
+      </Annotation>
+    </ValueList>
+  </ValueLists>
+
+  <!--list all of the instance-level metadata associations-->
+  <InstanceMetadataSets>
+    <!--UN/CEFACT CCTS V2.01 supplementary components to genericode-->
+    <InstanceMetadataSet xml:id="cctsV2.01-amount">
+      <InstanceMetadata address="../@currencyCodeListVersionID"
+                        identification="Version"/>
+    </InstanceMetadataSet>
+    <InstanceMetadataSet xml:id="cctsV2.01-measure">
+      <InstanceMetadata address="../@unitCodeListVersionID"
+                        identification="Version"/>
+    </InstanceMetadataSet>
+    <InstanceMetadataSet xml:id="cctsV2.01-quantity">
+      <InstanceMetadata address="../@unitCodeListID"
+                        identification="Version"/>
+      <InstanceMetadata address="../@unitCodeListAgencyName"
+                        identification="Agency/LongName"/>
+      <InstanceMetadata address="../@unitCodeListAgencyID"
+                        identification="Agency/Identifier"/>
+    </InstanceMetadataSet>
+    <InstanceMetadataSet xml:id="cctsV2.01-code">
+      <InstanceMetadata address="@listName"
+                        identification="LongName[not(@Identifier='listID')]"/>
+      <InstanceMetadata address="@listID"
+                        identification="LongName[@Identifier='listID']"/>
+      <InstanceMetadata address="@listVersionID"
+                        identification="Version"/>
+      <InstanceMetadata address="@listSchemeURI"
+                        identification="CanonicalUri"/>
+      <InstanceMetadata address="@listURI"
+                        identification="LocationUri"/>
+      <InstanceMetadata address="@listAgencyName"
+                        identification="Agency/LongName"/>
+      <InstanceMetadata address="@listAgencyID"
+                        identification="Agency/Identifier"/>
+    </InstanceMetadataSet>
+    <InstanceMetadataSet xml:id="cctsV2.01-identifier">
+      <InstanceMetadata address="@schemeName"
+                        identification="LongName[not(@Identifier='listID')]"/>
+      <InstanceMetadata address="@schemeID"
+                        identification="LongName[@Identifier='listID']"/>
+      <InstanceMetadata address="@schemeVersionID"
+                        identification="Version"/>
+      <InstanceMetadata address="@schemeURI"
+                        identification="CanonicalUri"/>
+      <InstanceMetadata address="@schemeDataURI"
+                        identification="LocationUri"/>
+      <InstanceMetadata address="@schemeAgencyName"
+                        identification="Agency/LongName"/>
+      <InstanceMetadata address="@schemeAgencyID"
+                        identification="Agency/Identifier"/>
+ </InstanceMetadataSet>
+  </InstanceMetadataSets>
+
+  <!--list all of the contexts in which the value enumerations are used;
+      where two or more contexts might match a given node in the input,
+      list them here in order of most-important to least important match-->
+  <Contexts>
+    <Context address="@currencyID" values="currency" mark="money"
+             metadata="cctsV2.01-amount">
+      <Annotation>
+        <Description>
+          All currencies are restricted to only Canadian and US dollars.
+        </Description>
+      </Annotation>
+    </Context>
+    <Context address="cac:BuyerCustomerParty//cbc:CountrySubentityCode"
+             values="provinces states"
+             metadata="cctsV2.01-code">
+      <Annotation>
+        <Description>
+          The buyer can be in either Canada or the US.
+        </Description>
+      </Annotation>
+      <Message>Invalid province or state '<sch:value-of select="."/>' for buyer "<sch:value-of select="ancestor::cac:BuyerCustomerParty/cac:Party/cac:PartyName/cbc:Name"/>"</Message>
+    </Context>
+    <Context address="cac:SellerSupplierParty//cbc:CountrySubentityCode"
+             values="states"
+             metadata="cctsV2.01-code">
+      <Annotation>
+        <Description>
+          The seller can only be in the US.
+        </Description>
+      </Annotation>
+      <Message>Invalid state '<sch:value-of select="."/>' for seller "<sch:value-of select="ancestor::cac:SellerSupplierParty/cac:Party/cac:PartyName/cbc:Name"/>"</Message>
+    </Context>
+    <Context address="cac:TaxCategory/cbc:ID"
+             values="tax-ids"
+             metadata="cctsV2.01-identifier">
+      <Annotation>
+        <Description>
+          Limit the recognized tax identifiers
+        </Description>
+      </Annotation>
+    </Context>
+    <Context address="cbc:PaymentMeansCode" mark="money"
+             values="payments additional_payments"
+             metadata="cctsV2.01-code">
+      <Annotation>
+        <Description>
+          The payments can be by either standard or supplemental means.
+        </Description>
+      </Annotation>
+    </Context>
+    <Context address="cbc:Name" values="length-35">
+      <Annotation>
+        <Description>
+          Names are not allowed to be too long.
+        </Description>
+      </Annotation>
+    </Context>
+    <Context address="cbc:StreetName" values="length-35">
+      <Annotation>
+        <Description>
+          Addresses are not allowed to be too long.
+        </Description>
+      </Annotation>
+    </Context>
+  </Contexts>
+</cva:ContextValueAssociation>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReturnAuthorizationResponse
+  xmlns="urn:X-MyCompany:xsd:MyReturnAuthorizationResponse"
+  xmlns:rsa="urn:X-MyCompany:xsd:MyRARequestResponse:AggregateComponents"
+  xmlns:rsb="urn:X-MyCompany:xsd:MyRARequestResponse:BasicComponents"
+  xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+  xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:ResponseDate>2011-11-15</cbc:ResponseDate>
+  <rsb:ReturnGrantedIndicator>true</rsb:ReturnGrantedIndicator>
+  <rsa:AuthorizingParty>
+    <cac:PartyIdentification>
+      <cbc:ID>EMP0987</cbc:ID>
+    </cac:PartyIdentification>
+  </rsa:AuthorizingParty>
+  <rsa:RequestDocumentReference>
+    <cbc:ID>17134</cbc:ID>
+  </rsa:RequestDocumentReference>
+  <rsa:ReturnGranted>
+    <rsb:GrantedQuantityx>2</rsb:GrantedQuantityx>
+    <rsa:ReturnRequested>
+      <rsb:RequestedQuantity>3</rsb:RequestedQuantity>
+      <cac:OrderLineReference>
+        <cbc:LineID>1</cbc:LineID>
+        <cac:OrderReference>
+          <cbc:ID>20111110-0112</cbc:ID>
+        </cac:OrderReference>
+      </cac:OrderLineReference>
+    </rsa:ReturnRequested>
+  </rsa:ReturnGranted>
+</ReturnAuthorizationResponse>

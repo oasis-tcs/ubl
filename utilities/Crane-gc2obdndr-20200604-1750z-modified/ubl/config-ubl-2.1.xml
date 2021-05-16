@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+[
+<!ENTITY versionDisplay "2.1 OS">
+<!ENTITY versionDirectory   "os-UBL-2.1">
+<!ENTITY versionDate        "04 November 2013">
+]>
+<configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--
+    This is the configuration of the base schema fragments for UBL 2.1
+  -->
+ <ndr>
+  <name-abbreviations>
+    <abbreviation short="CV2">Card Verification Value</abbreviation>
+    <abbreviation short="ID">Identifier</abbreviation>
+    <abbreviation short="URI">Uniform Resource Identifier</abbreviation>
+    <abbreviation short="UNDG">United Nations Development Group</abbreviation>
+    <abbreviation short="UBL">Universal Business Language</abbreviation>
+    <abbreviation short="UUID">Universally Unique Identifier</abbreviation>
+    <abbreviation short="XPath">XML Path Language</abbreviation>
+  </name-abbreviations>
+  <den-abbreviations>
+    <abbreviation short="CV2">Card Verification Value</abbreviation>
+    <abbreviation short="URI">Uniform Resource Identifier</abbreviation>
+    <abbreviation short="UNDG">United Nations Development Group</abbreviation>
+    <abbreviation short="UBL">Universal Business Language</abbreviation>
+    <abbreviation short="UUID">Universally Unique Identifier</abbreviation>
+    <abbreviation short="XPath">XML Path Language</abbreviation>
+  </den-abbreviations>
+  <equivalences>
+    <equivalence>
+      <primary-noun>URI</primary-noun>
+      <representation-term>Identifier</representation-term>
+    </equivalence>
+    <equivalence>
+      <primary-noun>UUID</primary-noun>
+      <representation-term>Identifier</representation-term>
+    </equivalence>
+  </equivalences>
+  <expected-maindoc-BIEs>
+    <property-term type="BBIE" cardinality="0..1" order="1"
+                                  >UBL Version Identifier</property-term>
+    <property-term type="BBIE" cardinality="0..1" order="2"
+                                  >Customization Identifier</property-term>
+    <property-term type="BBIE" cardinality="0..1" order="3"
+                                  >Profile Identifier</property-term>
+    <property-term type="BBIE" cardinality="0..1" order="4"
+                                  >Profile Execution Identifier</property-term>
+    <property-term type="ASBIE" cardinality="0..n"
+                                  >Signature</property-term>
+  </expected-maindoc-BIEs>
+  <types>
+    <type>Amount</type>
+    <type>Binary Object</type>
+    <type>Code</type>
+    <type>Date Time</type>
+    <type>Date</type>
+    <type>Graphic</type>
+    <type>Identifier</type>
+    <type>Indicator</type>
+    <type>Measure</type>
+    <type>Name</type>
+    <type>Numeric</type>
+    <type>Percent</type>
+    <type>Picture</type>
+    <type>Quantity</type>
+    <type>Rate</type>
+    <type>Sound</type>
+    <type>Text</type>
+    <type>Time</type>
+    <type>Value</type>
+    <type>Video</type>
+  </types>
+ </ndr>
+ <schema version="2.1">
+  <comment>
+  Library:           OASIS Universal Business Language (UBL) &versionDisplay;
+                     http://docs.oasis-open.org/ubl/&versionDirectory;/
+  Release Date:      &versionDate;
+  Module:            %f
+  Generated on:      %z
+  Copyright (c) OASIS Open 2016. All Rights Reserved.
+</comment>
+    <copyright position="end">
+  OASIS takes no position regarding the validity or scope of any 
+  intellectual property or other rights that might be claimed to pertain 
+  to the implementation or use of the technology described in this 
+  document or the extent to which any license under such rights 
+  might or might not be available; neither does it represent that it has 
+  made any effort to identify any such rights. Information on OASIS's 
+  procedures with respect to rights in OASIS specifications can be 
+  found at the OASIS website. Copies of claims of rights made 
+  available for publication and any assurances of licenses to be made 
+  available, or the result of an attempt made to obtain a general 
+  license or permission for the use of such proprietary rights by 
+  implementors or users of this specification, can be obtained from 
+  the OASIS Executive Director.
+
+  OASIS invites any interested party to bring to its attention any 
+  copyrights, patents or patent applications, or other proprietary 
+  rights which may cover technology that may be required to 
+  implement this specification. Please address the information to the 
+  OASIS Executive Director.
+  
+  This document and translations of it may be copied and furnished to 
+  others, and derivative works that comment on or otherwise explain 
+  it or assist in its implementation may be prepared, copied, 
+  published and distributed, in whole or in part, without restriction of 
+  any kind, provided that the above copyright notice and this 
+  paragraph are included on all such copies and derivative works. 
+  However, this document itself may not be modified in any way, 
+  such as by removing the copyright notice or references to OASIS, 
+  except as needed for the purpose of developing OASIS 
+  specifications, in which case the procedures for copyrights defined 
+  in the OASIS Intellectual Property Rights document must be 
+  followed, or as required to translate it into languages other than 
+  English. 
+
+  The limited permissions granted above are perpetual and will not be 
+  revoked by OASIS or its successors or assigns. 
+
+  This document and the information contained herein is provided on 
+  an "AS IS" basis and OASIS DISCLAIMS ALL WARRANTIES, 
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY 
+  WARRANTY THAT THE USE OF THE INFORMATION HEREIN 
+  WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED 
+  WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A 
+  PARTICULAR PURPOSE.    
+</copyright>
+  <type-documentation>
+    <ccts:Component xmlns:ccts="urn:un:unece:uncefact:documentation:2">
+       <ccts:ComponentType>ComponentType</ccts:ComponentType>
+       <ccts:DictionaryEntryName>DictionaryEntryName</ccts:DictionaryEntryName>
+       <ccts:Version>Version</ccts:Version>
+       <ccts:Definition>Definition</ccts:Definition>
+       <ccts:Cardinality>Cardinality</ccts:Cardinality>
+       <ccts:ObjectClassQualifier>ObjectClassQualifier</ccts:ObjectClassQualifier>
+       <ccts:ObjectClass>ObjectClass</ccts:ObjectClass>
+       <ccts:PropertyTermQualifier>PropertyTermQualifier</ccts:PropertyTermQualifier>
+       <ccts:PropertyTerm>PropertyTerm</ccts:PropertyTerm>
+       <ccts:AssociatedObjectClass>AssociatedObjectClass</ccts:AssociatedObjectClass>
+       <ccts:RepresentationTerm>RepresentationTerm</ccts:RepresentationTerm>
+       <ccts:DataTypeQualifier>DataTypeQualifier</ccts:DataTypeQualifier>
+       <ccts:DataType>DataType</ccts:DataType>
+       <ccts:AlternativeBusinessTerms>AlternativeBusinessTerms</ccts:AlternativeBusinessTerms>
+       <ccts:Examples>Examples</ccts:Examples>
+    </ccts:Component>
+  </type-documentation>
+  <dir name="cva">
+    <file type="CVA" name="UBL-DefaultDTQ-2.1.cva"
+          skeleton-uri="UBL-2.1-CVA-Skeleton.cva"/>
+  </dir>
+  <dir name="xsd" runtime-name="xsdrt">
+    <dir name="common">
+      <file type="CABIE" name="UBL-CommonAggregateComponents-2.1.xsd"
+            prefix="cac"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"/>
+      <file type="CBBIE" name="UBL-CommonBasicComponents-2.1.xsd"
+            prefix="cbc"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/>
+      <file type="QDT" name="UBL-QualifiedDataTypes-2.1.xsd"
+            prefix="qdt"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"/>
+      <file type="UDT" name="UBL-UnqualifiedDataTypes-2.1.xsd"
+            prefix="udt"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"/>
+      <file type="EXT" name="UBL-CommonExtensionComponents-2.1.xsd"
+            prefix="ext"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+        <elements>
+         <xsd:element ref="ext:UBLExtensions" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation>A container for all extensions present in the document.</xsd:documentation>
+            </xsd:annotation>
+         </xsd:element>
+        </elements>
+      </file>
+    </dir>
+    <dir name="maindoc">
+      <files type="DABIE" name="UBL-%n-2.1.xsd"
+             namespace="urn:oasis:names:specification:ubl:schema:xsd:%n-2">
+        <element-documentation>This element MUST be conveyed as the root element in any instance document based on this Schema expression</element-documentation>
+      </files>
+    </dir>
+  </dir>
+   <dir name="json-schema">
+    <dir name="common">
+      <file type="CABIE" name="UBL-CommonAggregateComponents-2.1.json"
+            syntax="JSON"/>
+      <file type="CBBIE" name="UBL-CommonBasicComponents-2.1.json"
+            syntax="JSON"/>
+      <file type="QDT" name="UBL-QualifiedDataTypes-2.1.json"
+            syntax="JSON"/>
+      <file type="UDT" name="UBL-UnqualifiedDataTypes-2.1.json"
+            syntax="JSON"/>
+      <file type="EXT" name="UBL-CommonExtensionComponents-2.1.json"
+            syntax="JSON">
+        <declaration>
+        "UBLExtensions": {
+          "title": "UBLExtensions",
+          "description": "An optional set of extensions to the committee model",
+          "items": { 
+            "$ref": "../common/UBL-CommonExtensionComponents-2.1.json#/definitions/UBLExtensions" },
+          "maxItems": 1,
+          "minItems": 1,
+          "additionalProperties": false,
+          "type": "array"
+          },
+
+</declaration>
+      </file>
+    </dir>
+     <dir name="maindoc">
+       <files type="DABIE" name="UBL-%n-2.1.json"
+              syntax="JSON"/>
+    </dir>
+   </dir>
+ </schema>
+</configuration>

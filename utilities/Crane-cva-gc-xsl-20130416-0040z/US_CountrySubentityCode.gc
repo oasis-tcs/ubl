@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Example enumeration of code list values for US States.  
+
+     This is part of the test/demonstration environment for the
+     UBL Code List Value Validation Methodology.
+
+     $Id: US_CountrySubentityCode.gc,v 1.3 2007/07/28 19:55:16 G. Ken Holman Exp $
+-->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>states</ShortName>
+      <LongName>US States</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:x-example:US-States</CanonicalUri>
+      <CanonicalVersionUri>urn:x-example:US-States-1</CanonicalVersionUri>
+      <AlternateFormatLocationUri MimeType="text/html">http://www.usps.com/ncsc/lookups/usps_abbreviations.html</AlternateFormatLocationUri>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="xsd:normalizedString"/>
+      </Column>
+      <Column Id="name" Use="optional">
+         <ShortName>Name</ShortName>
+         <Data Type="xsd:string"/>
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ALABAMA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ALASKA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>AMERICAN SAMOA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AZ</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ARIZONA </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ARKANSAS</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CALIFORNIA </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CO</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>COLORADO </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>CONNECTICUT</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>DELAWARE</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>DISTRICT OF COLUMBIA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FM</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>FEDERATED STATES OF MICRONESIA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>FL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>FLORIDA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>GA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>GEORGIA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>GU</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>GUAM </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>HI</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>HAWAII</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ID</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>IDAHO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>IL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ILLINOIS</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>IN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>INDIANA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>IA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>IOWA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>KS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>KANSAS</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>KY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>KENTUCKY</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>LA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>LOUISIANA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ME</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>MAINE</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MH</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>MARSHALL ISLANDS</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>MARYLAND</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>MASSACHUSETTS</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MI</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>MICHIGAN</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>MINNESOTA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>MISSISSIPPI</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MO</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>MISSOURI</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>MONTANA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>NEBRASKA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NV</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>NEVADA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NH</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>NEW HAMPSHIRE</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NJ</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>NEW JERSEY</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NM</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>NEW MEXICO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>NEW YORK</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>NORTH CAROLINA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ND</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>NORTH DAKOTA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MP</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>NORTHERN MARIANA ISLANDS</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>OH</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>OHIO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>OK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>OKLAHOMA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>OR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>OREGON</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PW</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>PALAU</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>PENNSYLVANIA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PR</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>PUERTO RICO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>RI</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>RHODE ISLAND</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>SOUTH CAROLINA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SD</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>SOUTH DAKOTA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TN</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>TENNESSEE</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>TX</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>TEXAS</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>UT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>UTAH</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>VT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>VERMONT</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>VI</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>VIRGIN ISLANDS</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>VA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>VIRGINIA </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WA</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>WASHINGTON</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WV</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>WEST VIRGINIA</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WI</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>WISCONSIN</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>WY</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>WYOMING</SimpleValue>
+         </Value>
+      </Row>
+    </SimpleCodeList>
+  </gc:CodeList>

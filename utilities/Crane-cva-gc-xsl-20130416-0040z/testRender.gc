@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Crane-gc2html.xsl"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+<!--
+This genericode file is derived from data made available from the Internet.
+
+The following disclaimer is on the http://www.smdg.org/jsp/documents.jsp page:
+
+Disclaimer:
+SMDG makes this documentation available free of charge as a service to the shipping community. SMDG publishes these documents without engagement. Use at your own risk. SMDG does not guarantee the correctness of the documents, nor the completence or correctness of the message descriptions. SMDG does not accept any resposibility for any damages resulting from the use of the messages or the documentation published below.
+-->
+   <Identification>
+      <ShortName>ContainerSizeTypeCode</ShortName>
+      <LongName xml:lang="en">Container Size Type</LongName>
+      <LongName Identifier="listID">ISO 668</LongName>
+      <Version>1995</Version>
+      <CanonicalUri>urn:oasis:names:specification:ubl:codelist:gc:ContainerSizeTypeCode</CanonicalUri>
+      <CanonicalVersionUri>urn:oasis:names:specification:ubl:codelist:gc:ContainerSizeTypeCode-2.0</CanonicalVersionUri>
+      <LocationUri>http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/special-purpose/ContainerSizeTypeCode-2.0.gc</LocationUri>
+      <Agency>
+         <LongName xml:lang="en">ISO</LongName>
+         <Identifier>5</Identifier>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="normalizedString" xml:lang="en"/>
+      </Column>
+      <Column Id="name" Use="optional">
+         <ShortName>Name</ShortName>
+         <Data Type="string" xml:lang="en"/>
+      </Column>
+      <Column Id="lengthmm" Use="optional">
+         <ShortName>Length Millimeters</ShortName>
+         <Data Type="string" xml:lang="en"/>
+      </Column>
+      <Column Id="lengthimperial" Use="optional">
+         <ShortName>Length Imperial</ShortName>
+         <Data Type="string" xml:lang="en"/>
+      </Column>
+      <Column Id="widthmm" Use="optional">
+         <ShortName>Width Millimeters</ShortName>
+         <Data Type="string" xml:lang="en"/>
+      </Column>
+      <Column Id="widthimperial" Use="optional">
+         <ShortName>Width Imperial</ShortName>
+         <Data Type="string" xml:lang="en"/>
+      </Column>
+      <Column Id="heightmm" Use="optional">
+         <ShortName>Height Millimeters</ShortName>
+         <Data Type="string" xml:lang="en"/>
+      </Column>
+      <Column Id="heightimperial" Use="optional">
+         <ShortName>Height Imperial</ShortName>
+         <Data Type="string" xml:lang="en"/>
+      </Column>
+      <Column Id="type" Use="optional">
+         <ShortName>Container Type</ShortName>
+         <Data Type="string" xml:lang="en"/>
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>10GP</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Unventilated general purpose container: 2991mm (10') x 2438mm (8') x 2 438mm (8'0")</SimpleValue>
+         </Value>
+         <Value ColumnRef="lengthmm">
+            <SimpleValue>2991</SimpleValue>
+         </Value>
+         <Value ColumnRef="lengthimperial">
+            <SimpleValue>10'</SimpleValue>
+         </Value>
+         <Value ColumnRef="widthmm">
+            <SimpleValue>2438</SimpleValue>
+         </Value>
+         <Value ColumnRef="widthimperial">
+            <SimpleValue>8'</SimpleValue>
+         </Value>
+         <Value ColumnRef="heightmm">
+            <SimpleValue>2 438</SimpleValue>
+         </Value>
+         <Value ColumnRef="heightimperial">
+            <SimpleValue>8'0"</SimpleValue>
+         </Value>
+         <Value ColumnRef="type">
+            <SimpleValue>Unventilated general purpose container</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>10G0</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Unventilated general purpose container - Openings at one or both ends: 2991mm (10') x 2438mm (8') x 2 438mm (8'0")</SimpleValue>
+         </Value>
+         <Value ColumnRef="lengthmm">
+            <SimpleValue>2991</SimpleValue>
+         </Value>
+         <Value ColumnRef="lengthimperial">
+            <SimpleValue>10'</SimpleValue>
+         </Value>
+         <Value ColumnRef="widthmm">
+            <SimpleValue>2438</SimpleValue>
+         </Value>
+         <Value ColumnRef="widthimperial">
+            <SimpleValue>8'</SimpleValue>
+         </Value>
+         <Value ColumnRef="heightmm">
+            <SimpleValue>2 438</SimpleValue>
+         </Value>
+         <Value ColumnRef="heightimperial">
+            <SimpleValue>8'0"</SimpleValue>
+         </Value>
+         <Value ColumnRef="type">
+            <SimpleValue>Unventilated general purpose container - Openings at one or both ends</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>10G1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Unventilated general purpose container - Vents in upper part of cargo space: 2991mm (10') x 2438mm (8') x 2 438mm (8'0")</SimpleValue>
+         </Value>
+         <Value ColumnRef="lengthmm">
+            <SimpleValue>2991</SimpleValue>
+         </Value>
+         <Value ColumnRef="lengthimperial">
+            <SimpleValue>10'</SimpleValue>
+         </Value>
+         <Value ColumnRef="widthmm">
+            <SimpleValue>2438</SimpleValue>
+         </Value>
+         <Value ColumnRef="widthimperial">
+            <SimpleValue>8'</SimpleValue>
+         </Value>
+         <Value ColumnRef="heightmm">
+            <SimpleValue>2 438</SimpleValue>
+         </Value>
+         <Value ColumnRef="heightimperial">
+            <SimpleValue>8'0"</SimpleValue>
+         </Value>
+         <Value ColumnRef="type">
+            <SimpleValue>Unventilated general purpose container - Vents in upper part of cargo space</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>10G2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Unventilated general purpose container - Openings at one or both end(s), plus "full" openings at one or both sides: 2991mm (10') x 2438mm (8') x 2 438mm (8'0")</SimpleValue>
+         </Value>
+         <Value ColumnRef="lengthmm">
+            <SimpleValue>2991</SimpleValue>
+         </Value>
+         <Value ColumnRef="lengthimperial">
+            <SimpleValue>10'</SimpleValue>
+         </Value>
+         <Value ColumnRef="widthmm">
+            <SimpleValue>2438</SimpleValue>
+         </Value>
+         <Value ColumnRef="widthimperial">
+            <SimpleValue>8'</SimpleValue>
+         </Value>
+         <Value ColumnRef="heightmm">
+            <SimpleValue>2 438</SimpleValue>
+         </Value>
+         <Value ColumnRef="heightimperial">
+            <SimpleValue>8'0"</SimpleValue>
+         </Value>
+         <Value ColumnRef="type">
+            <SimpleValue>Unventilated general purpose container - Openings at one or both end(s), plus "full" openings at one or both sides</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>10G3</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Unventilated general purpose container - Openings at one or both end(s), plus "partial" openings at one or both sides: 2991mm (10') x 2438mm (8') x 2 438mm (8'0")</SimpleValue>
+         </Value>
+         <Value ColumnRef="lengthmm">
+            <SimpleValue>2991</SimpleValue>
+         </Value>
+         <Value ColumnRef="lengthimperial">
+            <SimpleValue>10'</SimpleValue>
+         </Value>
+         <Value ColumnRef="widthmm">
+            <SimpleValue>2438</SimpleValue>
+         </Value>
+         <Value ColumnRef="widthimperial">
+            <SimpleValue>8'</SimpleValue>
+         </Value>
+         <Value ColumnRef="heightmm">
+            <SimpleValue>2 438</SimpleValue>
+         </Value>
+         <Value ColumnRef="heightimperial">
+            <SimpleValue>8'0"</SimpleValue>
+         </Value>
+         <Value ColumnRef="type">
+            <SimpleValue>Unventilated general purpose container - Openings at one or both end(s), plus "partial" openings at one or both sides</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>10G4</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Unventilated general purpose container - Spare: 2991mm (10') x 2438mm (8') x 2 438mm (8'0")</SimpleValue>
+         </Value>
+         <Value ColumnRef="lengthmm">
+            <SimpleValue>2991</SimpleValue>
+         </Value>
+         <Value ColumnRef="lengthimperial">
+            <SimpleValue>10'</SimpleValue>
+         </Value>
+         <Value ColumnRef="widthmm">
+            <SimpleValue>2438</SimpleValue>
+         </Value>
+         <Value ColumnRef="widthimperial">
+            <SimpleValue>8'</SimpleValue>
+         </Value>
+         <Value ColumnRef="heightmm">
+            <SimpleValue>2 438</SimpleValue>
+         </Value>
+         <Value ColumnRef="heightimperial">
+            <SimpleValue>8'0"</SimpleValue>
+         </Value>
+         <Value ColumnRef="type">
+            <SimpleValue>Unventilated general purpose container - Spare</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>10G5</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Unventilated general purpose container - Spare: 2991mm (10') x 2438mm (8') x 2 438mm (8'0")</SimpleValue>
+         </Value>
+         <Value ColumnRef="lengthmm">
+            <SimpleValue>2991</SimpleValue>
+         </Value>
+         <Value ColumnRef="lengthimperial">
+            <SimpleValue>10'</SimpleValue>
+         </Value>
+         <Value ColumnRef="widthmm">
+            <SimpleValue>2438</SimpleValue>
+         </Value>
+         <Value ColumnRef="widthimperial">
+            <SimpleValue>8'</SimpleValue>
+         </Value>
+         <Value ColumnRef="heightmm">
+            <SimpleValue>2 438</SimpleValue>
+         </Value>
+         <Value ColumnRef="heightimperial">
+            <SimpleValue>8'0"</SimpleValue>
+         </Value>
+         <Value ColumnRef="type">
+            <SimpleValue>Unventilated general purpose container - Spare</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

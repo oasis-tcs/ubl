@@ -1,0 +1,31 @@
+#!/bin/sh
+
+####
+# Find execution dir - pinched from Ant startup script
+####
+
+## resolve links - $0 may be a link to ant's home
+PRG="$0"
+progname=`basename "$0"`
+
+# need this for relative symlinks
+while [ -h "$PRG" ] ; do
+  ls=`ls -ld "$PRG"`
+  link=`expr "$ls" : '.*-> \(.*\)$'`
+  if expr "$link" : '/.*' > /dev/null; then
+  PRG="$link"
+  else
+  PRG=`dirname "$PRG"`"/$link"
+  fi
+done
+
+XML_DIR_LISTING_HOME=`dirname "$PRG"`/..
+
+# make it fully qualified
+XML_DIR_LISTING_HOME=`cd "$XML_DIR_LISTING_HOME" && pwd`
+
+####
+# Shell script to call directory listing java class
+####
+
+java -classpath $XML_DIR_LISTING_HOME/lib/xercesImpl.jar:$XML_DIR_LISTING_HOME/lib/xml-dir-listing.0.2.jar:$XML_DIR_LISTING_HOME/lib/commons-cli-1.1.jar:$XML_DIR_LISTING_HOME/lib/jakarta-regexp-1.5.jar:$XML_DIR_LISTING_HOME/lib/log4j-1.2.14.jar net.matthaynes.xml.dirlist.DirectoryListing "$@"

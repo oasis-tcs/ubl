@@ -1,0 +1,21 @@
+<!--Summary changes to Library Elements UBL 2.3--><tgroup cols="3"><!--Library UBL 2.3-->
+   <colspec colwidth="35*"/>
+   <colspec colwidth="35*"/>
+   <colspec colwidth="30*"/>
+   <thead>
+      <row>
+         <entry>Aggregate BIE</entry>
+         <entry>Basic or Association BIE</entry>
+         <entry>Changes for UBL</entry>
+      </row>
+   </thead>
+   <tbody>
+      <row>
+         <entry>
+           No changes detected.
+         </entry>
+         <entry/>
+         <entry/>
+      </row>
+   </tbody>
+</tgroup>

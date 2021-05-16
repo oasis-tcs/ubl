@@ -1,0 +1,563 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>OASIS Specification Publishing in DocBook XML Version 0.8</title><link rel="stylesheet" type="text/css" href="htmlruntime/spec-0.8/css/oasis-note.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><meta name="description" content="Abstract This working draft describes an environment for writing and publishing an OASIS specification or an OASIS note using DocBook XML."><meta name="cvsinfo" content="Id: oasis-specification-0.8-wd08.xml,v 1.9 2020/04/05 23:30:56 admin Exp "><script xmlns:mml="http://www.w3.org/1998/Math/MathML">
+      /*
+       *  /MathJax/latest.js
+       *
+       *  Copyright (c) 2009-2018 The MathJax Consortium
+       *
+       *  Licensed under the Apache License, Version 2.0 (the "License");
+       *  you may not use this file except in compliance with the License.
+       *  You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       *  Unless required by applicable law or agreed to in writing, software
+       *  distributed under the License is distributed on an "AS IS" BASIS,
+       *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       *  See the License for the specific language governing permissions and
+       *  limitations under the License.
+       */
+      
+      (function () {
+        var h = {
+          "cdnjs.cloudflare.com": {
+            api: "https://api.cdnjs.com/libraries/mathjax?fields=version", version: "version", mathjax: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/"
+          },
+          "cdn.rawgit.com": {
+            api: "https://api.github.com/repos/mathjax/mathjax/releases/latest", version: "tag_name", mathjax: "https://cdn.rawgit.com/mathjax/MathJax/"
+          },
+          "cdn.jsdelivr.net": {
+            api: "https://api.jsdelivr.com/v1/jsdelivr/libraries?name=mathjax&lastversion=*", version: "lastversion", mathjax: "https://cdn.jsdelivr.net/mathjax/"
+          }
+        };
+        function g(q) {
+          if (console && console.log) {
+            console.log(q)
+          }
+        }
+        function e() {
+          if (document.currentScript) {
+            return document.currentScript
+          }
+          var r = document.getElementsByTagName("script");
+          for (var v = 0, q = r.length; v &lt; q; v++) {
+            var t = r[v]; for (var s in h) {
+              if (h.hasOwnProperty(s)) {
+                var u = h[s].mathjax; if (t.src && t.src.substr(0, u.length) === u) {
+                  return t
+                }
+              }
+            }
+          }
+        }
+        function a(r) {
+          if (! r) {
+            return
+          }
+          var q = r.src.replace(/https:\/\//, "").replace(/[\/\?].*/, "");
+          return h[q]
+        }
+        var l = /(?:^|;\s*)mjx\.latest=([^;]*)(?:;|$)/; function d() {
+          var q; try {
+            q = l.exec(document.cookie)
+          }
+          catch (r) {
+          }
+          if (q && q[1] !== "") {
+            return q[1]
+          }
+        }
+        function c(q) {
+          cookie = "mjx.latest=" + q; var s = new Date();
+          s.setDate(s.getDate() + 7);
+          cookie += "; expires=" + s.toGMTString();
+          cookie += "; path=/"; try {
+            document.cookie = cookie
+          }
+          catch (r) {
+          }
+        }
+        function j() {
+          if (window.XMLHttpRequest) {
+            return new XMLHttpRequest()
+          }
+          if (window.ActiveXObject) {
+            try {
+              return new ActiveXObject("Msxml2.XMLHTTP")
+            }
+            catch (q) {
+            }
+            try {
+              return new ActiveXObject("Microsoft.XMLHTTP")
+            }
+            catch (q) {
+            }
+          }
+        }
+        function o(r) {
+          var q = document.createElement("script");
+          q.type = "text/javascript"; q. async = true; q.src = r; var s = document.head || document.getElementsByTagName("head")[0] || document.body; if (s) {
+            s.appendChild(q)
+          } else {
+            g("Can't find the document &lt;head&gt; element")
+          }
+        }
+        function i() {
+          var q = e();
+          if (q) {
+            o(q.src.replace(/\/latest\.js/, "/MathJax.js"))
+          } else {
+            g("Can't determine the URL for loading MathJax")
+          }
+        }
+        function m(q, r, s) {
+          var t = j();
+          if (t) {
+            t.onreadystatechange = function () {
+              if (t.readyState === 4) {
+                if (t.status === 200) {
+                  var v = JSON.parse(t.responseText);
+                  if (v instanceof Array) {
+                    v = v[0]
+                  }
+                  var u = v[q.version]; if (u.substr(0, 2) === "2.") {
+                    c(u);
+                    o(q.mathjax + v[q.version] + s + "/MathJax.js" + r);
+                    return
+                  }
+                } else {
+                  g("Problem acquiring MathJax version: status = " + t.status)
+                }
+                i()
+              }
+            };
+            t.open("GET", q.api, true);
+            t.send(null)
+          } else {
+            g("Can't create XMLHttpRequest object");
+            i()
+          }
+        }
+        var n = e();
+        var p = a(n);
+        if (p) {
+          var b = n.src.replace(/.*?(\?|$)/, "$1");
+          b +=(b ? "&": "?") + "latest"; var f =(n.src.match(/\/unpacked\/latest\.js/) ? "/unpacked": "");
+          var k = d();
+          if (k) {
+            o(p.mathjax + k + f + "/MathJax.js" + b)
+          } else {
+            m(p, b, f)
+          }
+        } else {
+          i()
+        }
+      })();
+  </script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article"><div class="titlepage"><div><p class="logo"><a href="https://www.oasis-open.org/"><img src="htmlruntime/spec-0.8/OASISLogo.png" alt="OASIS" border="0" width="290pt"></a></p><div><div style="font-size:200%;font-weight:bold;color:#7f7f7f;margin-top:0pt">OASIS Committee Note</div><hr style="margin-bottom:0pt"><h1>OASIS Specification Publishing in DocBook XML Version 0.8</h1></div><div><h2>Working Draft 08</h2><h2>05 April 2020</h2></div><div></div><div><!--  $Id: oasis-specification-0.8-wd08.xml,v 1.9 2020/04/05 23:30:56 admin Exp $  --></div><div><dl><dt><span class="loc-heading">This stage:</span></dt><dd><a href="https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.html">https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.html</a>
+                  (Authoritative)
+                <br><a href="https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.pdf">https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.pdf</a><br><a href="https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.xml">https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.xml</a><br></dd></dl><dl><dt><span class="loc-heading">Previous stage:</span></dt><dd>
+          N/A
+        </dd></dl><dl><dt><span class="loc-heading">Latest stage:</span></dt><dd>
+          N/A
+        </dd></dl></div><div></div><div></div><div><dl><dt><span class="loc-heading">Technical Committee:</span></dt><dd><a class="ulink" href="https://www.oasis-open.org/" target="_top">OASIS
+        TC Administration</a></dd></dl></div><div><dl><dt><span class="editor-heading">Editor:</span></dt><dd><span class="firstname">G. Ken</span> <span class="surname">Holman</span> (<a href="mailto:gkholman@CraneSoftwrights.com">gkholman@CraneSoftwrights.com</a>), <a class="ulink" href="http://www.CraneSoftwrights.com" target="_top">Crane Softwrights Ltd.</a></dd></dl></div><div><dl><dt><a name="d0e55"></a><span class="status-heading">Additional artifacts:</span></dt><dd><p>This prose specification is one component of a Work Product which also includes:</p><div class="itemizedlist"><ul class="itemizedlist compact" style="list-style-type: disc; "><li class="listitem"><p>publishing materials: <a class="ulink" href="https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.zip" target="_top">https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.zip</a></p></li></ul></div></dd></dl></div><div><dl><dt><a name="d0e67"></a><span class="status-heading">Related work:</span></dt><dd><p>This methodology supersedes guidelines for the DocBook XML-based authoring and publishing of OASIS specifications described in <a class="ulink" href="https://docs.oasis-open.org/templates/DocBook/spec-0.5/oasis-specification-0.5.html" target="_top">https://docs.oasis-open.org/templates/DocBook/spec-0.5/oasis-specification.html</a>.</p></dd></dl></div><div><dl><dt><a name="d0e76"></a><span class="abstract-heading">Abstract:</span></dt><dd><p>This working draft describes an environment for writing and publishing an OASIS specification or an OASIS note using DocBook XML.</p></dd></dl></div><div><dl><dt><a name="d0e82"></a><span class="status-heading">Status:</span></dt><dd><p>This is a work in progress contributed to the OASIS TC administration and does not at this time represent the consensus of any particular OASIS Technical Committee. There are no plans to make this a formal Committee Specification as it is merely an internal document made available to
+        committee members to support the publishing process.</p></dd></dl></div><div><dl><dt><a name="d0e88"></a><span class="status-heading">Citation format:</span></dt><dd><p>When referencing this specification the following citation format should be used:</p><div class="bibliomixed"><a name="d0e95"></a><p class="bibliomixed">[<b><abbr class="abbrev">OASIS-DOCBOOK-TEMPLATE-V0.8</abbr></b>] 
+          
+          <span class="citetitle"><em class="citetitle">OASIS DocBook Template V0.8. </em></span>
+          <span class="date">05 April 2020. </span>
+          <span class="releaseinfo">OASIS Working Draft 08. </span>
+          <span class="bibliomisc">
+            <a class="ulink" href="https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.html" target="_top">https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.html</a>. </span>
+        </p></div></dd></dl></div><div><hr><h2 class="notices-heading">Notices</h2><p>Copyright &copy; OASIS Open 2019. All Rights Reserved. </p><p>All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the &#8220;OASIS IPR Policy&#8221;). The full <a class="ulink" href="https://www.oasis-open.org/policies-guidelines/ipr" target="_top">Policy</a> may be found at
+        the OASIS website.</p><p>This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published, and distributed, in whole or in part, without restriction of any kind, provided
+        that the above copyright notice and this section are included on all such copies and derivative works. However, this document itself may not be modified in any way, including by removing the copyright notice or references to OASIS, except as needed for the purpose of developing any document
+        or deliverable produced by an OASIS Technical Committee (in which case the rules applicable to copyrights, as set forth in the OASIS IPR Policy, must be followed) or as required to translate it into languages other than English.</p><p>The limited permissions granted above are perpetual and will not be revoked by OASIS or its successors or assigns.</p><p>This document and the information contained herein is provided on an &#8220;AS IS&#8221; basis and OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS OR ANY IMPLIED
+        WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.</p><p>Additional notice: The stylesheets incorporate the MathJax library supporting the presentation of MathML in web browsers, and included in the resulting HTML files is the associated notice.</p></div></div><hr></div><div class="toc"><h2>Table of Contents</h2><dl><dt><span class="section"><a href="#S-INTRODUCTION">1 Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="#S-OVERVIEW">1.1 Overview</a></span></dt><dt><span class="section"><a href="#S-TERMINOLOGY">1.2 Terminology</a></span></dt><dd><dl><dt><span class="section"><a href="#S-KEY-WORDS">1.2.1  Key words</a></span></dt></dl></dd><dt><span class="section"><a href="#S-REFERENCES">1.3 References</a></span></dt></dl></dd><dt><span class="section"><a href="#S-INSTALLATION-AND-USE">2 Installation and use</a></span></dt><dd><dl><dt><span class="section"><a href="#S-INSTALLATION-OVERVIEW">2.1 Installation overview</a></span></dt><dt><span class="section"><a href="#S-PACKAGE-CONTENTS">2.2 Package contents</a></span></dt><dd><dl><dt><span class="section"><a href="#S-PACKAGE-DIRECTORIES">2.2.1 Package directories</a></span></dt><dt><span class="section"><a href="#S-RUNTIME-PACKAGE-CONTENTS">2.2.2 Runtime package contents</a></span></dt></dl></dd><dt><span class="section"><a href="#S-ENGAGING-THE-DOCBOOK-DTD">2.3 Engaging the DocBook DTD</a></span></dt><dt><span class="section"><a href="#S-THE-OASIS-HTML-STYLESHEETS">2.4 The OASIS HTML stylesheets</a></span></dt><dt><span class="section"><a href="#S-THE-OASIS-SPECIFICATION-XSL-FO-STYLESHEET">2.5 The OASIS specification XSL-FO stylesheet</a></span></dt><dt><span class="section"><a href="#S-STYLESHEET-INVOCATION-PARAMETERS">2.6 Stylesheet invocation parameters</a></span></dt></dl></dd><dt><span class="section"><a href="#S-AUTHORING-IN-XML">3  Authoring in XML</a></span></dt><dd><dl><dt><span class="section"><a href="#S-STRUCTURED-EDITING">3.1 Structured editing</a></span></dt><dt><span class="section"><a href="#S-DOCBOOK-VOCABULARY">3.2  DocBook vocabulary</a></span></dt><dt><span class="section"><a href="#S-DOCBOOK-CONTENT-FILTERING">3.3 DocBook content filtering</a></span></dt><dt><span class="section"><a href="#S-DOCBOOK-AUGMENTATIONS-FOR-OASIS-SPECIFICATIONS">3.4 DocBook augmentations for OASIS specifications</a></span></dt><dt><span class="section"><a href="#S-PRO-FORMA-TEMPLATES">3.5  Pro forma templates</a></span></dt><dt><span class="section"><a href="#S-REAL-WORLD-EXAMPLES">3.6 Real-world examples</a></span></dt><dt><span class="section"><a href="#S-STYLESHEET-ASSOCIATION">3.7  Stylesheet association</a></span></dt><dt><span class="section"><a href="#S-DOCUMENT-WRITING-RULES">3.8 Document writing rules</a></span></dt><dt><span class="section"><a href="#S-MATHML">3.9 MathML</a></span></dt></dl></dd><dt><span class="section"><a href="#S-VALIDATION">4 Validation</a></span></dt><dt><span class="section"><a href="#S-VENDOR-PRINT-EXTENSIONS">5 Vendor print extensions</a></span></dt></dl><h3>Appendixes</h3><dl><dt><span class="appendix"><a href="#A-ACKNOWLEDGMENTS">A Acknowledgments (Non-Normative)</a></span></dt><dt><span class="appendix"><a href="#A-SAMPLE-SPECIFICATION-TEMPLATE">B Sample specification template</a></span></dt><dt><span class="appendix"><a href="#A-PUBLISHING-CHOREOGRAPHY-AND-ORCHESTRATION">C Publishing choreography and orchestration (Non-Normative)</a></span></dt><dd><dl><dt><span class="section"><a href="#S-AUTOMATED-PROCESSING">C.1 Automated processing</a></span></dt><dt><span class="section"><a href="#S-LINUX-SHELL-SCRIPT-PREPARATION">C.2  Linux shell script preparation</a></span></dt><dt><span class="section"><a href="#S-SAMPLE-INVOCATIONS">C.3  Sample invocations</a></span></dt></dl></dd><dt><span class="appendix"><a href="#A-REVISION-HISTORY">D Revision History (Non-Normative)</a></span></dt></dl></div><hr><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="S-INTRODUCTION"></a>1 Introduction</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-OVERVIEW"></a>1.1 Overview</h3></div></div></div><p>This document details an environment <a class="xref" href="#spec-ZIP" title="OASIS Specification Publishing in DocBook XML Version 0.8. ZIP package.">[<b><abbr class="abbrev">Spec-0.8-ZIP</abbr></b>]</a> and methodology for writing an OASIS specification or an OASIS note document using DocBook XML markup, and publishing the resulting document to HTML and PDF results conforming to OASIS layout conventions.</p><p>These stylesheets use XSLT <a class="xref" href="#xslt" title="XSL Transformations (XSLT) Version 1.0.">[<b><abbr class="abbrev">XSLT</abbr></b>]</a> as the transformation expression language to produce the final HTML result. XSLT is also used to produce the intermediate XSL-FO <a class="xref" href="#xsl-fo" title="Extensible Stylesheet Language (XSL) Version 1.1.">[<b><abbr class="abbrev">XSL-FO</abbr></b>]</a> pagination semantics, which in turn are available to be processed to produce
+        printable results as a PDF file using an appropriate processor (not included).</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-TERMINOLOGY"></a>1.2 Terminology</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="S-KEY-WORDS"></a>1.2.1  Key words</h4></div></div></div><p>The key words <em class="glossterm">must</em>, <em class="glossterm">must not</em>, <em class="glossterm">required</em>, <em class="glossterm">shall</em>, <em class="glossterm">shall not</em>, <em class="glossterm">should</em>, <em class="glossterm">should not</em>, <em class="glossterm">recommended</em>,
+            <em class="glossterm">may</em>, and <em class="glossterm">optional</em> are to be interpreted as described in <a class="xref" href="#rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">[<b><abbr class="abbrev">RFC 2119</abbr></b>]</a>. Note that for reasons of style, these words are not capitalized in this document.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-REFERENCES"></a>1.3 References</h3></div></div></div><div class="bibliomixed"><a name="ant"></a><p class="bibliomixed">[<b><abbr class="abbrev">ant</abbr></b>] Apache Software Foundation <i><a class="ulink" href="http://ant.apache.org" target="_top">Ant Java-based Build Tool</a></i> (Another Neat Tool).</p></div><div class="bibliomixed"><a name="docbook"></a><p class="bibliomixed">[<b><abbr class="abbrev">DocBook</abbr></b>] 
+          OASIS Committee Draft 4.5 <i><a class="ulink" href="https://www.docbook.org/specs/docbook-4.5-spec.pdf" target="_top">The DocBook 4.5 Document type</a></i>, OASIS 01 October 2006, <span class="citetitle"><em class="citetitle"><a class="ulink" href="https://www.docbook.org/specs/docbook-4.5-spec.html" target="_top">OASIS DocBook 4.5 Document Type 01 October 2006 HTML</a>, </em></span>, <span class="citetitle"><em class="citetitle"><a class="ulink" href="https://www.docbook.org/xml/4.5/docbook-xml-4.5.zip" target="_top">DocBook 4.5 XML DTD</a>, </em></span>,
+              <span class="citetitle"><em class="citetitle"><a class="ulink" href="https://sourceforge.net/projects/docbook/files/docbook-xsl/1.79.1/" target="_top">DocBook Stylesheets Version 1.79.1</a></em></span>. </p></div><div class="bibliomixed"><a name="fop"></a><p class="bibliomixed">[<b><abbr class="abbrev">FOP</abbr></b>] Apache Software Foundation <i><a class="ulink" href="http://xmlgraphics.apache.org/fop" target="_top">Formatting Objects Processor</a></i>.</p></div><div class="bibliomixed"><a name="ibex-ss"></a><p class="bibliomixed">[<b><abbr class="abbrev">Ibex Signature Edition</abbr></b>]  Visual Programming Limited. <i><a class="ulink" href="http://www.xmlpdf.com/ibex-downloads-signed.html" target="_top">Ibex XSL-FO Processor</a></i>.</p></div><div class="bibliomixed"><a name="mathML"></a><p class="bibliomixed">[<b><abbr class="abbrev">MathML</abbr></b>] W3C <i><a class="ulink" href="https://www.w3.org/Math/DTD/Overview.html" target="_top">MathML DTD</a></i>.</p></div><div class="bibliomixed"><a name="saxon"></a><p class="bibliomixed">[<b><abbr class="abbrev">Saxon</abbr></b>] Michael Kay <i><a class="ulink" href="http://saxon.sourceforge.net/saxon6.5.5/index.html" target="_top">Saxon 6.5.5 XSLT 1.0 Processor</a></i>.</p></div><div class="bibliomixed"><a name="spec-ZIP"></a><p class="bibliomixed">[<b><abbr class="abbrev">Spec-0.8-ZIP</abbr></b>] 
+          
+          <i>OASIS Specification Publishing in DocBook XML Version 0.8. ZIP package. </i>
+          <span class="date">05 April 2020. </span>
+          <span class="citetitle"><em class="citetitle"><a class="ulink" href="https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.zip" target="_top">https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.zip</a></em></span>
+        </p></div><div class="bibliomixed"><a name="rfc2119"></a><p class="bibliomixed">[<b><abbr class="abbrev">RFC 2119</abbr></b>] 
+          
+          <i>Key words for use in RFCs to Indicate Requirement Levels</i>, <span class="date">March 1997. </span>
+          <span class="author"><span class="firstname">S. </span> <span class="surname">Bradner</span></span>. <span class="releaseinfo">IETF (Internet Engineering Task Force) RFC
+            2119, </span>
+          <span class="citetitle"><em class="citetitle"><a class="ulink" href="http://www.ietf.org/rfc/rfc2119.txt" target="_top">http://www.ietf.org/rfc/rfc2119.txt</a></em></span>
+        </p></div><div class="bibliomixed"><a name="xjparse"></a><p class="bibliomixed">[<b><abbr class="abbrev">xjparse</abbr></b>] Norm Walsh <i><a class="ulink" href="http://nwalsh.com/java/xjparse" target="_top">xjparse XML validation invocation</a></i>.</p></div><div class="bibliomixed"><a name="xml-assoc"></a><p class="bibliomixed">[<b><abbr class="abbrev">xml-assoc</abbr></b>] 
+          
+          <i>Associating Style Sheets with XML documents Version 1.0. </i>
+          <span class="date">29 June 1999. </span>
+          <span class="author"><span class="firstname">James </span> <span class="surname">Clark</span></span>. <span class="releaseinfo">W3C Recommendation. </span>
+          <span class="citetitle"><em class="citetitle"><a class="ulink" href="http://www.w3.org/1999/06/REC-xml-stylesheet-19990629" target="_top">http://www.w3.org/1999/06/REC-xml-stylesheet-19990629</a></em></span>
+        </p></div><div class="bibliomixed"><a name="xsl-fo"></a><p class="bibliomixed">[<b><abbr class="abbrev">XSL-FO</abbr></b>] 
+          
+          <i>Extensible Stylesheet Language (XSL) Version 1.1. </i>
+          <span class="date"> 5 December 2006. </span>
+          <span class="author"><span class="firstname">Anders </span> <span class="surname">Berglund</span></span>. <span class="releaseinfo">W3C Recommendation. </span>
+          <span class="citetitle"><em class="citetitle"><a class="ulink" href="http://www.w3.org/TR/2001/REC-xsl-20011015/" target="_top">http://www.w3.org/TR/2001/REC-xsl-20011015/</a></em></span>
+        </p></div><div class="bibliomixed"><a name="xslt"></a><p class="bibliomixed">[<b><abbr class="abbrev">XSLT</abbr></b>] 
+          
+          <i>XSL Transformations (XSLT) Version 1.0. </i>
+          <span class="date">16 November 1999. </span>
+          <span class="author"><span class="firstname">James </span> <span class="surname">Clark</span></span>. <span class="releaseinfo">W3C Recommendation. </span>
+          <span class="citetitle"><em class="citetitle"><a class="ulink" href="http://www.w3.org/TR/1999/REC-xslt-19991116" target="_top">http://www.w3.org/TR/1999/REC-xslt-19991116</a></em></span>
+        </p></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="S-INSTALLATION-AND-USE"></a>2 Installation and use</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-INSTALLATION-OVERVIEW"></a>2.1 Installation overview</h3></div></div></div><p>These stylesheets are zipped <a class="xref" href="#spec-ZIP" title="OASIS Specification Publishing in DocBook XML Version 0.8. ZIP package.">[<b><abbr class="abbrev">Spec-0.8-ZIP</abbr></b>]</a> in a turnkey environment ready to unpack for offline use. The environment is used to validate DocBook XML, render HTML and create XSL-FO suitable for processing with an XSL-FO engine (which is not included). Of course one is not
+        obliged to use the processors referenced as one can use any XML DTD validation tool and any XSLT processor.</p><p>The package can be downloaded from <a class="ulink" href="https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.zip" target="_top">https://docs.oasis-open.org/templates/DocBook/spec-0.8/oasis-specification-0.8-wd08.zip</a> and is expected to be unzipped into a local directory for offline use. The examples in this documentation assume the package is unzipped in a Windows
+        environment into the <code class="literal">c:\</code> directory, and in a Linux environment in one&#8217;s home directory. For example purposes, it is assumed that the ZIP file contents (all files starting with <code class="literal">spec-0.8/</code>) are installed in the <code class="literal">c:\oasis\spec-0.8\</code>
+        directory or <code class="literal">~/oasis/spec-0.8/</code>.</p><p>See <a class="xref" href="#A-PUBLISHING-CHOREOGRAPHY-AND-ORCHESTRATION" title="Appendix C Publishing choreography and orchestration (Non-Normative)">Appendix C, <i>Publishing choreography and orchestration (Non-Normative)</i></a> for details on a set of invocations for validating OASIS specification documents and producing an HTML rendering suitable for web browsers and an XSL-FO result suitable for an XSL-FO engine. Neither a browser nor an XSL-FO
+        engine are themselves included in the package.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-PACKAGE-CONTENTS"></a>2.2 Package contents</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="S-PACKAGE-DIRECTORIES"></a>2.2.1 Package directories</h4></div></div></div><p>The significant directories of the package are as follows, shown for a Windows environment but identical in a Linux environment:</p><pre class="programlisting">c:\oasis\  <span class="emphasis"><em>- base directory for complete installation</em></span>
+   \spec-0.8                  <span class="emphasis"><em>- base directory for rendering</em></span>
+   \spec-0.8\css              <span class="emphasis"><em>- HTML appearance</em></span>
+   \spec-0.8\stylesheets      <span class="emphasis"><em>- HTML and XSL-FO production stylesheets</em></span>
+   \spec-0.8\template         <span class="emphasis"><em>- example specification and example note in XML</em></span>
+   \spec-0.8\docbook          <span class="emphasis"><em>- base directory for DocBook DTD</em></span>
+   \spec-0.8\docbook\xsl      <span class="emphasis"><em>- base directory for stylesheet library</em></span>
+   \spec-0.8\docbook\xsl\fo   <span class="emphasis"><em>- base directory for XSL-FO library</em></span>
+   \spec-0.8\docbook\xsl\html <span class="emphasis"><em>- base directory for HTML library</em></span>
+   \spec-0.8\htmlruntime      <span class="emphasis"><em>- embedded installation in a distribution</em></span>
+   \spec-0.8\mathml2          <span class="emphasis"><em>- base directory for MathML2 DTD</em></span>
+   \spec-0.8\mathml3          <span class="emphasis"><em>- base directory for MathML3 DTD</em></span>
+   \spec-0.8\validation       <span class="emphasis"><em>- example validation processes</em></span></pre><p>The DocBook DTD components in the <code class="literal">docbook/</code> directory were obtained from <a class="ulink" href="http://www.docbook.org/xml/4.5/docbook-xml-4.5.zip" target="_top">http://www.docbook.org/xml/4.5/docbook-xml-4.5.zip</a>.</p><p>The DocBook XSL components in the <code class="literal">docbook/xsl/</code> directory were obtained from <a class="ulink" href="http://sourceforge.net/projects/docbook/files/docbook-xsl-doc/docbook-xsl-1.69.1.zip" target="_top">http://sourceforge.net/projects/docbook/files/docbook-xsl-doc/docbook-xsl-1.69.1.zip</a>,
+          where the base directory of the unzipped package is renamed &#8220;<code class="literal">xsl/</code>&#8221;. This allows one to obtain another release of the DocBook stylesheets, unzip them into a directory, rename the base directory and replace the <code class="literal">xsl/</code> installation directory
+          (though this is not necessary as the distributed version satisfies the requirements set out by OASIS TC Administration). The <code class="literal">xsl/fo/</code> and <code class="literal">xsl/html/</code> directories should be in place when the unpacking, renaming and replacing is completed. Note that three
+          installation files <code class="literal">install.sh</code>, <code class="literal">.CatalogManager.properties.example</code>, and <code class="literal">.urilist</code> have been removed from the 1.69.1 directories per the instructions in the <code class="literal">INSTALL</code> file, as two of them violate OASIS file naming
+          guidelines.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="S-RUNTIME-PACKAGE-CONTENTS"></a>2.2.2 Runtime package contents</h4></div></div></div><p>The <code class="literal">htmlruntime/</code> directory is a suitable subset of the other directories for use when distributing the HTML subset of this publishing environment embedded in your specification distribution for runtime rendering of XML documents in HTML. The directory name
+            &#8220;<code class="literal">htmlruntime</code>&#8221; can be renamed as desired to be anything at all. The XML of the specification uses stylesheet association (see <a class="xref" href="#S-STYLESHEET-ASSOCIATION" title="3.7 Stylesheet association">Section 3.7, &#8220; Stylesheet association&#8221;</a>) to point to the HTML stylesheet in the runtime package directory distributed with the
+          XML.</p><p>An example of the use of this runtime configuration is in <a class="ulink" href="http://docs.oasis-open.org/ubl/os-UBL-2.2/" target="_top">http://docs.oasis-open.org/ubl/os-UBL-2.2/</a> where the file <code class="literal">UBL-2.2.xml</code> includes a stylesheet association directive to engage
+          the HTML stylesheets in the &#8220;<code class="literal">db/</code>&#8221; directory (having renamed it from &#8220;<code class="literal">htmlruntime/</code>&#8221;).</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>This <code class="literal">UBL-2.2.xml</code> also illustrates a number of features including the use of the <code class="literal">condition=</code> attribute documented in <a class="xref" href="#S-DOCBOOK-CONTENT-FILTERING" title="3.3 DocBook content filtering">Section 3.3, &#8220;DocBook content filtering&#8221;</a></p></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-ENGAGING-THE-DOCBOOK-DTD"></a>2.3 Engaging the DocBook DTD</h3></div></div></div><p>The DocBook Document Type Definition (DTD) expresses the constraints of using elements and attributes, but not necessarily the conventions imposed by the OASIS TC Administration. Just having your specification validate with the DTD does not guarantee that you&#8217;ve used the correct
+        or appropriate DocBook constructs to produce the required output. This package includes <a class="xref" href="#S-PRO-FORMA-TEMPLATES" title="3.5 Pro forma templates">Section 3.5, &#8220; Pro forma templates&#8221;</a> illustrating the conventional use of the DocBook constructs.</p><p>The <a class="ulink" href="catalog.xml" target="_top">catalog.xml</a> OASIS Catalog will resolve DocBook and MathML DTD public identifiers to the appropriate DTD fragments.</p><p>To assert in the online OASIS environment that your XML document satisfies the constraints of DocBook, point to the posted copy of the DTD:</p><pre class="programlisting">&lt;!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+         "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"</pre><p>To assert in an embedded environment that your XML document satisfies the constraints of DocBook, point to the embedded copy of the DTD:</p><pre class="programlisting">&lt;!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" 
+         "htmlruntime/spec-0.8/docbook/docbookx.dtd"</pre><p>To assert in an offline local environment that your XML document satisfies the constraints of DocBook, point to the installation copy of the DTD:</p><pre class="programlisting">&lt;!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+         "file:///c:/oasis/spec-0.8/docbook/docbookx.dtd"</pre><p>or</p><pre class="programlisting">&lt;!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+         "file:///Users/admin/z/oasis/spec-0.8/docbook/docbookx.dtd"</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-THE-OASIS-HTML-STYLESHEETS"></a>2.4 The OASIS HTML stylesheets</h3></div></div></div><p>There are four HTML stylesheets in the package:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">oasis-specification-html-offline.xsl</code></p></li><li class="listitem"><p><code class="literal">oasis-specification-html.xsl</code></p></li><li class="listitem"><p><code class="literal">oasis-note-html-offline.xsl</code></p></li><li class="listitem"><p><code class="literal">oasis-note-html.xsl</code></p></li></ul></div><p>For each type of OASIS document (specification and note) there are two stylesheets you must choose from in order to create one of two versions of the rendering based on how that rendering will be used: online or offline.</p><p>The online stylesheets (without a suffix) are used to create final online versions to send to OASIS TC Administration (this will use embedded references to online CSS stylesheets and the online base URI in accordance with OASIS TC Administration requirements). Please review the results
+        with TC Administration in case any rules or procedures have changed.</p><p>The offline stylesheets are used for creating artefacts that work self-contained within the publishing environment, without making any references to the OASIS web site. By default, these self-contained results will use absolute URI references to the CSS stylesheet and the OASIS logo,
+        which work fine in the publishing environment but are not portable offline to other environments that do not support the absolute URI values.</p><p>To ensure portability across all environments, a top-level processing instruction is added to the specification that directs the creation of relative URI references to the CSS stylesheet and OASIS logo (and must be adjusted to accommodate the target deployment environment):</p><pre class="programlisting">&lt;?oasis-spec-base-uri htmlruntime/spec-0.8/?&gt;</pre><p>For an OASIS specification, use this stylesheet during development and local review to create a local instance (this will use the local base URI, either absolute or relative based on the presence of the processing instruction):</p><pre class="programlisting">c:\oasis\spec-0.8\stylesheets\oasis-specification-html-offline.xsl</pre><p>For an OASIS specification, use this stylesheet in the offline environment to create the final online version to send to OASIS TC Administration (this will use embedded references to online CSS stylesheets and the online base URI in accordance with OASIS TC Administration
+        requirements):</p><pre class="programlisting">c:\oasis\spec-0.8\stylesheets\oasis-specification-html.xsl</pre><p>For an OASIS note, use this stylesheet during development and local review to create a local instance (this will use the local base URI, either absolute or relative based on the presence of the processing instruction):</p><pre class="programlisting">c:\oasis\spec-0.8\stylesheets\oasis-note-html-offline.xsl</pre><p>For an OASIS note, use this stylesheet in the offline environment to create the final online version:</p><pre class="programlisting">c:\oasis\spec-0.8\stylesheets\oasis-note-html.xsl</pre><p>In each case the resulting file should be suitable for viewing in a web browser.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-THE-OASIS-SPECIFICATION-XSL-FO-STYLESHEET"></a>2.5 The OASIS specification XSL-FO stylesheet</h3></div></div></div><p>There are four XSL-FO stylesheets for PDF creation in the package:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">oasis-specification-fo-a4.xsl</code></p></li><li class="listitem"><p><code class="literal">oasis-specification-fo-us.xsl</code></p></li><li class="listitem"><p><code class="literal">oasis-note-fo-a4.xsl</code></p></li><li class="listitem"><p><code class="literal">oasis-note-fo-us.xsl</code></p></li></ul></div><p>To convert a DocBook instance following the conventions used in this specification into an instance of XSL-FO assuming A4 page dimensions or US-letter page dimensions, use one of these stylesheets:</p><pre class="programlisting">c:\oasis\spec-0.8\stylesheets\oasis-specification-fo-a4.xsl
+c:\oasis\spec-0.8\stylesheets\oasis-specification-fo-us.xsl
+c:\oasis\spec-0.8\stylesheets\oasis-note-fo-a4.xsl
+c:\oasis\spec-0.8\stylesheets\oasis-note-fo-us.xsl
+</pre><p>The resulting file should be suitable for an XSL-FO engine to render into a printed format such as a PDF file.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Some XSL-FO engines will automatically translate relative URI strings in links to absolute URI strings as part of the formatting process. This will leave absolute references to your local file system in the generated PDF, rather than the desired relative URI strings needed. Usually the
+          resulting PDF, when not encrypted or locked, can be hacked to manually translate the absolute URI strings to the required relative URI strings.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-STYLESHEET-INVOCATION-PARAMETERS"></a>2.6 Stylesheet invocation parameters</h3></div></div></div><p>There are four typical invocation parameters with defaults:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">automatic-output-filename=<strong class="userinput"><code>yes-or-no</code></strong></code></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>when set to &#8220;<code class="literal">no</code>&#8221; (the default) the stylesheet processor invocation output target is not ignored</p></li><li class="listitem"><p>when set to &#8220;<code class="literal">yes</code>&#8221; the stylesheets will ignore the invocation output target and will automatically produce the output file named using the content of two child elements of <code class="literal">&lt;article-info&gt;</code> as follows:</p><div class="blockquote"><blockquote class="blockquote"><p><code class="literal">&lt;productname&gt;-&lt;productnumber&gt;</code></p></blockquote></div></li></ul></div></li><li class="listitem"><p><code class="literal">oasis-base=<strong class="userinput"><code>yes-or-no</code></strong></code> (HTML only)</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>when set to &#8220;<code class="literal">no</code>&#8221; (the default) there is no addition of a <code class="literal">&lt;base&gt;</code> metadata element in the HTML result</p></li><li class="listitem"><p>when set to &#8220;<code class="literal">yes</code>&#8221; the stylesheets will create an HTML <code class="literal">&lt;base&gt;</code> metadata element extracting the URI from the first <code class="literal">&lt;articleinfo&gt;&lt;release-info&gt;</code> element where the <code class="literal">role=</code> attribute contains
+                the reserved partial string &#8220;<code class="literal">OASIS-specification-this</code>&#8221; and the URI contains the string &#8220;<code class="literal">.htm</code>&#8221;</p></li></ul></div></li><li class="listitem"><p><code class="literal">html.stylesheet=<strong class="userinput"><code>URI-string-to-OASIS-CSS-file</code></strong></code> (HTML only)</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>use this to inject a relative URI or other URI to your placement of the OASIS CSS file usually found in the publishing environment at &#8220;<code class="literal">css/oasis-spec.css</code>&#8221;</p></li><li class="listitem"><p>when not specified the URI that is used is hardwired to either your local publishing environment (when using the offline HTML stylesheet) or hardwired to the OASIS server publishing environment (when using the online HTML stylesheet)</p></li></ul></div></li><li class="listitem"><p><code class="literal">oasis.logo=<strong class="userinput"><code>URI-string-to-OASIS-logo-png</code></strong></code> (HTML only)</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>use this to inject a relative URI or other URI to your placement of the OASIS logo file usually found in the publishing environment base directory at &#8220;<code class="literal">OASISLogo.png</code>&#8221;</p></li><li class="listitem"><p>when not specified the URI that is used is hardwired to either your local publishing environment (when using the offline HTML stylesheet) or hardwired to the OASIS server publishing environment (when using the online HTML stylesheet)</p></li></ul></div></li></ul></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="S-AUTHORING-IN-XML"></a>3  Authoring in XML</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-STRUCTURED-EDITING"></a>3.1 Structured editing</h3></div></div></div><p>An important objective of using XML markup when writing content is to separate what you are writing from how it is formatted and presented. Moreover, describing the individual components of your writing uniquely can allow machine processing of your content. Such machine processing can
+        identify constructs and process them individually as required for the processed result.</p><p>The vocabulary of XML markup is the level of granularity used to identify constituent information items, and the collection of element and attribute labels applied to the granules.</p><p>Applying styling to documents is an example of machine processing. The processed result is a formatted representation of your document. When many authors use the same vocabulary, or a given author creates many documents with the same vocabulary, a single set of processes will produce
+        consistently formatted results across the document set.</p><p>This process is analogous to using styles found in most desktop publishing applications, however by removing from the author the ability to inject arbitrary formatting of information items in their content, two benefits are realized: (a) the author no longer needs to think about
+        formatting, only about appropriately labeling the information items in the content; and (b) authors cannot inadvertently format components of a document with incorrect or inconsistent results.</p><p>Many writers do, however, prefer the use of their favorite desktop publishing applications and OASIS has posted at <a class="ulink" href="https://docs.oasis-open.org/templates/" target="_top">https://docs.oasis-open.org/templates/</a> a number of templates for widely-adopted word processing programs to be
+        used in the creation of OASIS specifications. Users must be diligent in the use of styles in order to ensure their work conforms to the presentation conventions requested of OASIS. There is an obligation incumbent on the writer to verify their work has not violated the requested conventions,
+        and there are no automated tools with which to validate the constraints have been respected.</p><p>When creating OASIS specifications using XML the burden of formatting is placed on the stylesheets, not on the writer. The obligation of the writer is only to be conformant to the DocBook document model for which the included stylesheets have been designed, and there are automated
+        validation tools with which the writer can validate the constraints have not been violated. The writer is also obligated to follow conventions that reflect the requirements of the OASIS TC Administration for specification documents, though these are not validated by the DocBook document
+        models. The conventions are, however, reflected in a template included in this package.</p><p>Any resulting violations to the formatting conventions can usually be ascribed to the stylesheets and, when repaired, the authored content usually does not need to change (barring any need to distinguish in the XML an ambiguity that is then being distinguished in the stylesheets).</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-DOCBOOK-VOCABULARY"></a>3.2  DocBook vocabulary</h3></div></div></div><p>This environment and methodology is based on using the <code class="sgmltag-element">&lt;article&gt;</code> document type of the DocBook 4.5 <a class="xref" href="#docbook" title="The DocBook 4.5 Document type">[<b><abbr class="abbrev">DocBook</abbr></b>]</a> vocabulary for authoring the content in XML markup. These explanatory documents do not attempt to teach the DocBook vocabulary, as there are
+        many online and printed references and manuals on the use of DocBook.</p><p>The DocBook Document Type Definition (DTD) expresses the constraints of using elements and attributes, but not necessarily the conventions imposed by the OASIS TC Administration. Just having your specification validate with the DTD does not guarantee that you&#8217;ve used the correct
+        or appropriate DocBook constructs to produce the required output. This package includes <a class="xref" href="#S-PRO-FORMA-TEMPLATES" title="3.5 Pro forma templates">Section 3.5, &#8220; Pro forma templates&#8221;</a> illustrating the conventional use of the DocBook constructs.</p><p>The <a class="ulink" href="catalog.xml" target="_top">catalog.xml</a> OASIS Catalog will resolve DocBook and MathML DTD public identifiers to the appropriate DTD fragments.</p><p>To assert in the online OASIS environment that your XML document satisfies the constraints of DocBook, point to the posted copy of the DTD:</p><pre class="programlisting">&lt;!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+         "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"</pre><p>To assert in an embedded environment that your XML document satisfies the constraints of DocBook, point to the embedded copy of the DTD:</p><pre class="programlisting">&lt;!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" 
+         "htmlruntime/spec-0.8/docbook/docbookx.dtd"</pre><p>To assert in an offline local environment that your XML document satisfies the constraints of DocBook, point to the installation copy of the DTD:</p><pre class="programlisting">&lt;!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+         "file:///c:/oasis/spec-0.8/docbook/docbookx.dtd"</pre><p>or</p><pre class="programlisting">&lt;!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+         "file:///Users/admin/z/oasis/spec-0.8/docbook/docbookx.dtd"</pre><p>Note that there is a layer of additional constraints imposed on top of the DocBook metadata constructs in order to appropriately identify the constituent metadata components of the OASIS requirements for specifications. No validation constraints for this additional metadata layer are
+        included in this environment, so it is the responsibility of the writer to visually confirm these needs have been satisfied in the rendered results. Missing components are typically the result of the writer not having correctly used the metadata indicators within the standard DocBook
+        constructs.</p><p>The additional constraints are illustrated and documented in <a class="xref" href="#S-PRO-FORMA-TEMPLATES" title="3.5 Pro forma templates">Section 3.5, &#8220; Pro forma templates&#8221;</a> and included with these materials.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-DOCBOOK-CONTENT-FILTERING"></a>3.3 DocBook content filtering</h3></div></div></div><p>It is possible to have body content that is specific to the OASIS rendering while not being applicable to another rendering of the XML. This is signaled using:</p><div class="blockquote"><blockquote class="blockquote"><p><code class="literal">condition="oasis"</code></p></blockquote></div><p>If a <code class="literal">condition=</code> attribute exists and the content does not include the case-sensitive five-character string &#8220;<code class="literal">oasis</code>&#8221;, then the content is not rendered using these stylesheets. An example of this is the content destined for the ISO ITTF
+        rendering only, which has <code class="literal">condition="isosts"</code> and so is ignored by these stylesheets.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-DOCBOOK-AUGMENTATIONS-FOR-OASIS-SPECIFICATIONS"></a>3.4 DocBook augmentations for OASIS specifications</h3></div></div></div><p>These OASIS specification stylesheets recognize the following additional facilities or interpretations when using the DocBook vocabulary:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">&lt;articleinfo&gt;&lt;productname&gt;</code> (see <a class="xref" href="#S-STYLESHEET-INVOCATION-PARAMETERS" title="2.6 Stylesheet invocation parameters">Section 2.6, &#8220;Stylesheet invocation parameters&#8221;</a>)</p></li><li class="listitem"><p><code class="literal">&lt;articleinfo&gt;&lt;productnumber&gt;</code> (see <a class="xref" href="#S-STYLESHEET-INVOCATION-PARAMETERS" title="2.6 Stylesheet invocation parameters">Section 2.6, &#8220;Stylesheet invocation parameters&#8221;</a>)</p></li><li class="listitem"><p><code class="literal">&lt;articleinfo&gt;&lt;releaseinfo role="OASIS-specification-this"&gt;</code><span class="emphasis"><em><code class="literal">{uri}</code></em></span></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>reserved role identifying a URI belonging under the &#8220;This Version&#8221; heading</p></li></ul></div></li><li class="listitem"><p><code class="literal">&lt;articleinfo&gt;&lt;releaseinfo role="OASIS-specification-previous"&gt;</code><span class="emphasis"><em><code class="literal">{uri}</code></em></span></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>reserved role identifying a URI belonging under the &#8220;Previous Version&#8221; heading</p></li></ul></div></li><li class="listitem"><p><code class="literal">&lt;articleinfo&gt;&lt;releaseinfo role="OASIS-specification-latest"&gt;</code><span class="emphasis"><em><code class="literal">{uri}</code></em></span></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>reserved role identifying a URI belonging under the &#8220;Latest Version&#8221; heading</p></li></ul></div></li><li class="listitem"><p>release information role suffix &#8220;<code class="literal">-draft</code>&#8221;</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>the &#8220;<span class="emphasis"><em><code class="literal">{uri}</code></em></span>&#8221; content is not interpreted as a URI but only simply as DocBook content</p></li></ul></div></li><li class="listitem"><p>release information role suffix &#8220;<code class="literal">-authoritative</code>&#8221;</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>the entry is suffixed with the string &#8220;(Authoritative)&#8221; as is required by OASIS conventions for one of the renditions</p></li></ul></div></li><li class="listitem"><p><code class="literal">&lt;articleinfo&gt;&lt;releaseinfo role="committee"&gt;</code><span class="emphasis"><em><code class="literal">{text}</code></em></span></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>identifying the technical committee section</p></li></ul></div></li><li class="listitem"><p><code class="literal">&lt;articleinfo&gt;&lt;legalnotice role="related"&gt;</code><span class="emphasis"><em><code class="literal">{content}</code></em></span></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>identifying the related work section</p></li></ul></div></li><li class="listitem"><p><code class="literal">&lt;articleinfo&gt;&lt;legalnotice role="namespaces"&gt;</code><span class="emphasis"><em><code class="literal">{content}</code></em></span></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>identifying the namespaces section</p></li></ul></div></li><li class="listitem"><p><code class="literal">&lt;articleinfo&gt;&lt;legalnotice role="status"&gt;</code><span class="emphasis"><em><code class="literal">{content}</code></em></span></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>identifying the status section</p></li></ul></div></li><li class="listitem"><p><code class="literal">&lt;articleinfo&gt;&lt;legalnotice role="notices"&gt;</code><span class="emphasis"><em><code class="literal">{content}</code></em></span></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>identifying the notices section</p></li></ul></div></li><li class="listitem"><p><code class="literal">&lt;phrase role="keyword"&gt;</code><span class="emphasis"><em><code class="literal">{text}</code></em></span>&lt;/phrase&gt;</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>uppercase the text assuming the text is in English</p></li></ul></div></li><li class="listitem"><p><code class="literal">&lt;table role="font-size-XX"&gt;</code></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>use a text font of XX for the content of cells in a table, as in <code class="literal">&lt;table role="font-size-90%"&gt;</code>:</p><div class="table"><a name="T-TABLE-WITH-FONT-SIZE-OF-90"></a><p class="title"><i>Table 1. Table with font size of 90%</i></p><div class="table-contents"><table class="table" summary="Table with font size of 90%" border="1"><colgroup><col><col></colgroup><tbody><tr><td><span style="font-size:90%">row 1, column 1</span></td><td><span style="font-size:90%">row 1, column 2</span></td></tr><tr><td><span style="font-size:90%">row 2, column 1</span></td><td><span style="font-size:90%">row 2, column 2</span></td></tr></tbody></table></div></div><br class="table-break"><p>or as in <code class="literal">&lt;table role="font-size-50%"&gt;</code>:</p><div class="table"><a name="T-TABLE-WITH-FONT-SIZE-OF-50"></a><p class="title"><i>Table 2. Table with font size of 50%</i></p><div class="table-contents"><table class="table" summary="Table with font size of 50%" border="1"><colgroup><col><col></colgroup><tbody><tr><td><span style="font-size:50%">row 1, column 1</span></td><td><span style="font-size:50%">row 1, column 2</span></td></tr><tr><td><span style="font-size:50%">row 2, column 1</span></td><td><span style="font-size:50%">row 2, column 2</span></td></tr></tbody></table></div></div><br class="table-break"><p>... rather than using the body font size:</p><div class="table"><a name="T-TABLE-WITH-NO-USE-OF-FONT-SIZE-ROLE-ATTRIBUTE"></a><p class="title"><i>Table 3. Table with no use of font size role attribute</i></p><div class="table-contents"><table class="table" summary="Table with no use of font size role attribute" border="1"><colgroup><col><col></colgroup><tbody><tr><td>row 1, column 1</td><td>row 1, column 2</td></tr><tr><td>row 2, column 1</td><td>row 2, column 2</td></tr></tbody></table></div></div><br class="table-break"></li><li class="listitem"><p>note that the font actually rendered is up to the user agent and so any given size may end up being rendered using a built-in size (e.g. 90% interpreted as 100%)</p></li></ul></div></li><li class="listitem"><p><code class="literal">&lt;programlisting role="font-size-XX"&gt;</code></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>use a text font of XX for the content of text in a program listing, as in <code class="literal">&lt;programlisting role="font-size-80%"&gt;</code>:</p><pre class="programlisting"><span style="font-size:80%">This is the text of a program listing where
+newlines are reflected in the output and spacing &#8220;     &#8221; is preserved.
+</span></pre><p>or as in <code class="literal">&lt;programlisting role="font-size-50%"&gt;</code>:</p><pre class="programlisting"><span style="font-size:50%">This is the text of a program listing where
+newlines are reflected in the output and spacing &#8220;     &#8221; is preserved.
+</span></pre><p>... rather than using the body font size:</p><pre class="programlisting">This is the text of a program listing where
+newlines are reflected in the output and spacing &#8220;     &#8221; is preserved.
+</pre></li><li class="listitem"><p>note that the font actually rendered is up to the user agent and so any given size may end up being rendered using a built-in size (e.g. 90% interpreted as 100%)</p></li></ul></div></li><li class="listitem"><p><code class="literal">&lt;?pb?&gt;</code></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>inject a page break (PDF only)</p></li></ul></div></li><li class="listitem"><p><code class="literal">&lt;?lb?&gt;</code></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>inject a line break</p></li></ul></div></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-PRO-FORMA-TEMPLATES"></a>3.5  Pro forma templates</h3></div></div></div><p>This environment includes pro forma templates of a DocBook XML instance for each of a specification and a note. These have placeholders for all the OASIS specification metadata found in the word processing templates. Each XML template has one of every item of metadata and can be used as
+        a guideline when creating the metadata for a new document. The prose of the document includes a detailed narrative of the declaration and use of each of the metadata components.</p><p>The template also includes some limited guidelines to the use of the DocBook vocabulary that have been carried over from previous versions of the documentation. With time it is hoped to embellish more in this section for the benefit of the reader.</p><p>The pro forma secification ptemplate is included as part of the package of this environment and if the document you are reading is part of a completely installed collection then it can be found at <a class="ulink" href="template/spec-docbook-template-0.8-wd08.xml" target="_top">template/spec-docbook-template-0.8-wd08.xml</a> and rendered at <a class="ulink" href="template/spec-docbook-template-0.8-wd08.html" target="_top">template/spec-docbook-template-0.8-wd08.html</a>. Please see <a class="xref" href="#A-SAMPLE-SPECIFICATION-TEMPLATE" title="Appendix B Sample specification template">Appendix B, <i>Sample specification template</i></a> for an analysis of
+        the XML document.</p><p>Likewise, the pro forma note template also is included and it can be found at <a class="ulink" href="template/note-docbook-template-0.8-wd08.xml" target="_top">template/note-docbook-template-0.8-wd08.xml</a> and rendered at <a class="ulink" href="template/note-docbook-template-0.8-wd08.html" target="_top">template/note-docbook-template-0.8-wd08.html</a>.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-REAL-WORLD-EXAMPLES"></a>3.6 Real-world examples</h3></div></div></div><p>An example of an OASIS Committee Specification that uses this DocBook XML environment is found at <a class="ulink" href="http://docs.oasis-open.org/ubl/os-UBL-2.2/" target="_top"><code class="literal">http://docs.oasis-open.org/ubl/os-UBL-2.2/</code></a>.</p><p>An example of an OASIS Committee Note that uses this DocBook XML environment is found at <a class="ulink" href="http://docs.oasis-open.org/ubl/UBL-2.1-ASN.1/v1.0/cn01/" target="_top"><code class="literal">http://docs.oasis-open.org/ubl/UBL-2.1-ASN.1/v1.0/cn01/</code></a>.</p><p>In both examples the <code class="literal">htmlruntime/</code> subdirectory is part of the document&#8217;s distribution, with the name of that directory changed to be <code class="literal">db/</code>.</p><p>In both examples the XML version of the document is the authoritative version of the document. At this time of writing, the &#8220;latest version&#8221; of the XML document is not supported on the OASIS server; navigate to the latest version of the HTML document and use the &#8220;this
+        version&#8221; of the XML from that page.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-STYLESHEET-ASSOCIATION"></a>3.7  Stylesheet association</h3></div></div></div><p>Not included in the final published XML source of OASIS specifications are the stylesheet association <a class="xref" href="#xml-assoc" title="Associating Style Sheets with XML documents Version 1.0.">[<b><abbr class="abbrev">xml-assoc</abbr></b>]</a> processing instructions that are very handy conveniences to use during the authoring process. This methodology mandates their removal from the final published
+        documents, but encourages their use when writing in order to streamline the writer&#8217;s review of the formatted content.</p><p>Stylesheet association is not widely employed in the general XML community, typically due to (a) limited awareness by writers of their benefit; and (b) limited conforming support in web browsers.</p><p>An XSLT stylesheet association processing instruction is structured with two pseudo attributes as follows, indicating the type of the stylesheet being engaged and the location of the stylesheet file producing the HTML rendition:</p><pre class="programlisting">&lt;?xml-stylesheet type="text/xsl" href="place-URL-here"?&gt;
+</pre><p>The benefits of having embedded a stylesheet association processing instruction at the top of one&#8217;s XML document are realized by opening the XML document being written in a web browser that (a) is aware of the processing instruction; (b) has a conforming XML processor with which to
+        process the stylesheet files; and (c) has a conforming XSLT processor with which to engage the stylesheet files. The act of opening the XML document in the browser engages the HTML stylesheet against the XML content producing the HTML rendition on the browser canvas. At any time during the
+        writing process, merely refreshing the web browser canvas re-engages the stylesheet producing the rendition of the revised content. This removes the necessity to engage the standalone invocation of the stylesheet environment to produce a reviewable rendition.</p><p>For example, this document was authored in an environment where the locally-installed offline version of the publishing environment is available in the local directory <code class="literal">../spec-0.8/</code>, thus allowing the following stylesheet association processing instruction placed
+        at the top of the XML file before the document type declaration to render the document in an XSLT-aware web browser:</p><pre class="programlisting">&lt;?xml-stylesheet type="text/xsl" href="file:///Users/admin/z/oasis/
+spec-0.8/stylesheets/oasis-specification-html.xsl"?&gt;
+</pre><p>When a document is being authored in an environment where a copy of this publishing environment is embedded with the document directories, the following stylesheet association processing instruction would point to the embedded copy of the stylesheet fragment:</p><pre class="programlisting"><span style="font-size:85%">&lt;?xml-stylesheet type="text/xsl" 
+                 href="htmlruntime/spec-0.8/stylesheets/oasis-specification-html.xsl"?&gt;
+</span></pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>When embedding this stylesheet environment in a document&#8217;s distribution environment, it is important to prune the stylesheet directories to retain only that which is required for HTML rendering. The only directories needed in the spec-0.8/docbook/xsl directory are:
+          xsl/common, xsl/html and xsl/lib. All other directories should be removed.</p></div><p>When a document is being authored in an environment where the remotely-installed online version of the publishing environment is to be used, the following stylesheet association processing instruction would work (modulo the latency aspects of accessing resources over the
+        Internet):</p><pre class="programlisting">&lt;?xml-stylesheet type="text/xsl" href="http://docs.oasis-open.org/
+templates/DocBook/spec-0.8/stylesheets/oasis-specification-html.xsl"?&gt;
+</pre><p>Many people believe that stylesheet association is a transient property of an XML document and should not be included in any &#8220;official&#8221; normative XML content. This methodology, therefore, mandates that any such processing instruction that might be used by the author during
+        the writing phase be removed from the final published XML instance.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-DOCUMENT-WRITING-RULES"></a>3.8 Document writing rules</h3></div></div></div><p>Included in the package is the Schematron file <a class="ulink" href="oasis-spec-note.sch" target="_top">oasis-spec-note.sch</a> and sample implementation <a class="ulink" href="oasis-spec-note.xsl" target="_top">oasis-spec-note.xsl</a>, with the set of writing integrity and style rules for OASIS documents used by the UBL TC in the creation of the UBL hub document using the
+        oXygenXML editing tool. Engaged while writing the document, these rules highlight problem areas that need to be addressed, while providing Schematron Quick Fixes for some of them to help automate the edits required.</p><p>Some of the integrity rules are employed for consistency checks. Other such rules enforce content structuring required by the OASIS Technical Advisory Board. Yet other rules promote quicker transformation to ISO format for ITTF publishing of International Standards.</p><p>At the time of writing the integrity rules include:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>sections and appendixes cannot have hanging content, that is, each must contain only subsections or no subsections, but not a mixture of subsections and other content</p></li><li class="listitem"><p>paragraphs cannot have leading white space or be empty or contain lists or block quotes</p></li><li class="listitem"><p><code class="literal">&lt;ulink&gt;</code> must have the same content value as the <code class="literal">url=</code> value (unless the element has the attribute <code class="literal">conformance="skip"</code>)</p></li><li class="listitem"><p>text content cannot contain the BOM (<code class="literal">&amp;#xfffe;</code>) character</p></li><li class="listitem"><p>a paragraph cannot contain a itemized list, ordered list or block quote as these are considered block-level constructs that are peers to paragraphs </p></li><li class="listitem"><p>bibliographic entries must have an identifier and must be referenced from somewhere or it will be flagged as an error &#8230; use <code class="literal">&lt;bibliomixed conformance="skip"</code> to allow the entry to be unreferenced</p></li></ul></div><p>The content and style rules are not engaged by default. The <code class="literal">&lt;article&gt;</code> document element can have a <code class="literal">conformance=</code> attribute with name tokens indicating various style rules to employ. For example:</p><pre class="programlisting">&lt;article conformance="quotes <span lang="none" class="phrase">eBuzzwords</span> ids"&gt;</pre><p>At the time of writing the style rules include those engaged with the following case insensitive name tokens:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">eBuzzwords</code></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>in all text an <span lang="none" class="phrase">eBuzzword</span> (e.g. &#8220;<span lang="none" class="phrase">eCommerce</span>&#8221;) must be indicated to be a phrase with no language as in <code class="literal">&lt;phrase lang="none"&gt;eCommerce&lt;/phrase&gt;</code> so as not to interfere with
+                spell-checking</p></li></ul></div></li><li class="listitem"><p><code class="literal">ids</code></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>every section, appendix, table and figure must have an <code class="literal">id=</code> whose value is its title, converted to upper case, stripped to only word characters and digits, spaces and slashes converted to hyphens, and prefixed with &#8220;<code class="literal">S-</code>&#8221;,
+                  &#8220;<code class="literal">A-</code>&#8221;, &#8220;<code class="literal">T-</code>&#8221; or &#8220;<code class="literal">F-</code>&#8221; as required (unless the section has the attribute <code class="literal">conformance="skip"</code>)</p></li></ul></div></li><li class="listitem"><p><code class="literal">quotes</code></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>an ASCII single quote in non-literal text is flagged that it should be the <code class="literal">&amp;#x2019;</code> entity; if you really need the ASCII <span class="phrase">'</span> character then mark an ancestral element to skip conformance as in: <code class="literal">&lt;para
+                  conformance="skip"&gt;...'...&lt;/para&gt;</code></p></li><li class="listitem"><p>an ASCII double quotes in non-literal text are flagged that they should be the <code class="literal">&amp;#x201c;</code> and <code class="literal">&amp;#x201d;</code> entities; if you really need the ASCII <span class="phrase">"</span> character then mark an ancestral element to skip
+                conformance as in: <code class="literal">&lt;para conformance="skip"&gt;...'...&lt;/para&gt;</code></p></li></ul></div></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-MATHML"></a>3.9 MathML</h3></div></div></div><p>Following the guidance from <a class="ulink" href="http://www.sagehill.net/docbookxsl/MathML.html" target="_top">http://www.sagehill.net/docbookxsl/MathML.html</a> the DOCTYPE declaration of the document must redefine the content entities for equations as follows to support MathML, changing the prefix as required for your MathML<a class="xref" href="#mathML" title="MathML DTD">[<b><abbr class="abbrev">MathML</abbr></b>]</a>
+        content.</p><p>When the OASIS HTML runtime directory is available in your environment, you can point to it:</p><pre class="programlisting">&lt;!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "db/spec-0.8/docbook/docbookx.dtd"
+[
+&lt;!ENTITY % MATHML.prefixed "INCLUDE"&gt;
+&lt;!ENTITY % MATHML.prefix "mml"&gt;
+&lt;!ENTITY % equation.content "(alt?, (graphic+|mediaobject+|mml:math))"&gt;
+&lt;!ENTITY % inlineequation.content 
+                "(alt?, (inlinegraphic+|inlinemediaobject+|mml:math))"&gt;
+&lt;!ENTITY % mathml PUBLIC "-//W3C//DTD MathML 2.0//EN"
+        "htmlruntime/spec-0.8/mathml2/mathml2.dtd"&gt;
+%mathml;
+]&gt;</pre><p>When the OASIS HTML runtime directory is not available in your environment, you can point to the online DTD, noting that it will take the time to parse by going online to fetch the DTD:</p><pre class="programlisting">&lt;!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "db/spec-0.8/docbook/docbookx.dtd"
+[
+&lt;!ENTITY % MATHML.prefixed "INCLUDE"&gt;
+&lt;!ENTITY % MATHML.prefix "mml"&gt;
+&lt;!ENTITY % equation.content "(alt?, (graphic+|mediaobject+|mml:math))"&gt;
+&lt;!ENTITY % inlineequation.content 
+                "(alt?, (inlinegraphic+|inlinemediaobject+|mml:math))"&gt;
+&lt;!ENTITY % mathml PUBLIC "-//W3C//DTD MathML 2.0//EN"
+        "http://www.w3.org/Math/DTD/mathml2/mathml2.dtd"&gt;
+%mathml;
+]&gt;</pre><p>There is stylesheet support for both block-level equations:</p><div class="equation"><a name="d0e1333"></a><p class="title"><i>Equation 1. Test of MathML standalone</i></p><div class="equation-contents"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block" id="mml_m174" overflow="scroll">
+          <mrow>
+            <msub>
+              <mi>C</mi>
+              <mtext>t</mtext>
+            </msub>
+            <mo>=</mo>
+            <mfrac>
+              <mi>M</mi>
+              <mi>F</mi>
+            </mfrac>
+          </mrow>
+        </math></div></div><br class="equation-break"><p>&#8230; and inline equations <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" id="mml_m174b" overflow="scroll">
+            <mrow>
+              <msub>
+                <mi>C</mi>
+                <mtext>t</mtext>
+              </msub>
+              <mo>=</mo>
+              <mfrac>
+                <mi>M</mi>
+                <mi>F</mi>
+              </mfrac>
+            </mrow>
+          </math> included, but the XSL-FO processor must support MathML to render to PDF. Note that the free invocations in <a class="xref" href="#S-SAMPLE-INVOCATIONS" title="C.3 Sample invocations">Section C.3, &#8220; Sample invocations&#8221;</a> do not support MathML in PDF.</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="S-VALIDATION"></a>4 Validation</h2></div></div></div><p>For an XML document to be properly published into the target results, it must pass both <a class="xref" href="#S-DOCBOOK-VOCABULARY" title="3.2 DocBook vocabulary">Section 3.2, &#8220; DocBook vocabulary&#8221;</a> and <a class="xref" href="#S-DOCUMENT-WRITING-RULES" title="3.8 Document writing rules">Section 3.8, &#8220;Document writing rules&#8221;</a> constraints.</p><p>In the &#8220;<code class="literal">validation/</code>&#8221; subdirectory is the <code class="literal">test.bat</code> example of calling <code class="literal">validate.bat</code> for a candidate OASIS DocBook file:</p><pre class="programlisting">spec-0.8\validate&gt;test
+
+spec-0.8\validate&gt;call validate.bat ..\oasis-specification-0.8-wd08.xml
+
+############################################################
+Validating "..\oasis-specification-0.8-wd08.xml"
+############################################################
+============== Phase 1: DTD validation ==============
+No DTD validation errors.
+============ Phase 2: Writing rules validation ============
+No writing rule validation errors.
+
+spec-0.8\validate&gt;</pre><p>Similarly, the <code class="literal">test.sh</code> example calls <code class="literal">validate.sh</code> for a candidate OASIS DocBook file:</p><pre class="programlisting">spec-0.8/validate $ sh test.sh 
+sh validate.sh ../oasis-specification-0.8-wd08.xml
+
+############################################################
+Validating ../oasis-specification-0.8-wd08.xml
+############################################################
+============== Phase 1: DTD validation ==============
+No DTD validation errors.
+============ Phase 2: Writing rules validation ============
+No writing rule validation errors.
+spec-0.8/validate $ </pre></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="S-VENDOR-PRINT-EXTENSIONS"></a>5 Vendor print extensions</h2></div></div></div><p>The XSL-FO generated by these print stylesheets automatically engage the document metadata extensions supported by both Antenna House and RenderX. Other document-wide extensions can be specified by the user by using processing instructions as children of the document element. </p><p>For example, turning on simple line numbering using the Antenna House extension can be done using:</p><pre class="programlisting">&lt;article status="Committee Specification Draft 01"&gt;
+  &lt;?axf line-number show?&gt;
+  &lt;articleinfo&gt;
+...</pre><p>Many line-numbering features can finesse the presentation of the line numbers as described at <a class="ulink" href="http://www.antennahouse.com/product/ahf60/docs/ahf-ext.html#line-number" target="_top">http://www.antennahouse.com/product/ahf60/docs/ahf-ext.html#line-number</a>, for example:</p><pre class="programlisting">&lt;article status="Committee Specification Draft 01"&gt;
+  &lt;?axf line-number show?&gt;
+  &lt;?axf line-number-position end?&gt;
+  &lt;?axf line-number-offset 2mm?&gt;
+  &lt;?axf line-number-width 20pt?&gt;
+  &lt;?axf line-number-text-align start?&gt;
+  &lt;?axf line-number-font-family serif?&gt;
+  &lt;?axf line-number-font-size 10pt?&gt;
+  &lt;?axf line-number-font-weight normal?&gt;
+  &lt;?axf line-number-font-style italic?&gt;
+  &lt;?axf line-number-initial 1?&gt;
+  &lt;?axf line-number-start 5?&gt;
+  &lt;?axf line-number-interval 5?&gt;
+  &lt;?axf line-number-reset page?&gt;
+  &lt;articleinfo&gt;
+...</pre><p>Other document-wide attribute extensions for Antenna House can be specified using the processing instruction:</p><pre class="programlisting">&lt;?axf {attribute-name} {attribute-value}?&gt;</pre><p>Document-wide attribute extensions for RenderX can be specified using the processing instruction:</p><pre class="programlisting">&lt;?rx {attribute-name} {attribute-value}?&gt;</pre><p>Document-wide attribute extensions for other XSL-FO engines can be specified using the processing instruction:</p><pre class="programlisting">&lt;?ext {extension-namespace-URI} {attribute-name} {attribute-value}?&gt;</pre><p>Note in all cases any white-space sequences in the attribute value are collapsed to single spaces before the attribute is added to the <code class="literal">&lt;fo:page-sequence&gt;</code> element of the XSL-FO result for the content. No quotes are used for the attribute value, even if the value
+      includes spaces, as the attribute begins with the first character after the white-space characters after the attribute name, and ends with the last character before the &#8220;<code class="literal">?&gt;</code>&#8221; sequence.</p><p>Line numbers are turned off for tables when rendering with Antenna House.</p></div><div class="appendix"><h2 class="title" style="clear: both"><a name="A-ACKNOWLEDGMENTS"></a>Appendix A Acknowledgments (Non-Normative)</h2><p>This specification environment was written with the generous and appreciated assistance of Paul Knight, Chet Ensign, Mary McRae, Will Norris and Jon Bosak.</p></div><div class="appendix"><h2 class="title" style="clear: both"><a name="A-SAMPLE-SPECIFICATION-TEMPLATE"></a>Appendix B Sample specification template</h2><p>This section describes the instance structure and metadata of the DocBook XML instance <a class="ulink" href="template/spec-docbook-template-0.8-wd08.xml" target="_top">template/spec-docbook-template-0.8-wd08.xml</a>, a template geared for use with the specification stylesheets. The
+      summarized markup copied from the instance is split into successive <code class="sgmltag-element">programlisting</code> fragments interspersed with a narrative regarding how to use the markup in the fragment. Braces &#8220;<code class="literal">{}</code>&#8221; are used to indicate replaceable information and the braces
+      should not be in the final document. There is no obligation to use the techniques used below, though what is below is successfully producing the result you are reading.</p><p>For the purposes of example in the code below, the locally-installed copy of the OASIS publishing environment is in the directory <code class="literal">c:/oasis/spec-0.8/</code>.</p><p>The XML Declaration uses <code class="literal">ISO-8859-1</code> instead of <code class="literal">UTF-8</code> as the content is being typed and remembering the two-byte codes of <code class="literal">UTF-8</code> is sometimes awkward. Alternatively, using <code class="literal">US-ASCII</code> limits the typing entirely to 7-bit
+      ASCII characters, requiring accented and other high-bit characters to be entered with entities.</p><pre class="programlisting">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+</pre><p>The following is an editing convenience keeping in an XML comment the PUBLIC and SYSTEM identifiers for the document type declaration for each of the online publishing environment, the embedded publishing environment and the local publishing environment. Note how the actual identifiers in
+      this snippet are for the local publishing environment while in the instance you will find the online publishing environment set being used in the document type declaration. When switching back and forth it is a convenience to have a few lines handy for copy/paste, and these are provided at the
+      top of this file (note the URIs for the embedded environment need to be adjusted according to where the directory is located; this snippet is appropriate for this specification document but not for the template location):</p><pre class="programlisting"><span style="font-size:70%">&lt;!-- 
+For use when a committee document points at the OASIS web site for publishing:
+&lt;?xml-stylesheet type="text/xsl" 
+href="http://docs.oasis-open.org/templates/DocBook/spec-0.8/stylesheets/oasis-specification-html.xsl"?&gt;
+&lt;!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+         "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" 
+
+For use when a committee document points to an embedded installation of DocBook
+(note the instructions for embedding DocBook requires pruning some directories
+and adjusting the stylesheet and DocBook directories in these declarations):
+&lt;?xml-stylesheet type="text/xsl" 
+      href="../htmlruntime/spec-0.8/stylesheets/oasis-specification-html.xsl"?&gt;
+&lt;?oasis-spec-base-uri ../htmlruntime/spec-0.8/?&gt;
+&lt;!DOCTYPE article
+ PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" 
+        "../htmlruntime/spec-0.8/docbook/docbookx.dtd" 
+
+For use when a committee document is published in a local environment only
+(note the instructions for local publishing require adjusting the stylesheet
+ and DocBook directories in these declarations):
+&lt;?xml-stylesheet type="text/xsl" 
+href="file:///Users/admin/z/oasis/spec-0.8/stylesheets/oasis-specification-html-offline.xsl"?&gt;
+&lt;!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+         "file:///Users/admin/z/oasis/spec-0.8/docbook/docbookx.dtd" 
+--&gt;
+&lt;?xml-stylesheet type="text/xsl" 
+href="http://docs.oasis-open.org/templates/DocBook/spec-0.8/stylesheets/oasis-specification-html.xsl"?&gt;
+&lt;!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+         "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" 
+[
+</span></pre><p>In the above the XML Stylesheet Association <a class="xref" href="#xml-assoc" title="Associating Style Sheets with XML documents Version 1.0.">[<b><abbr class="abbrev">xml-assoc</abbr></b>]</a> processing instruction is used to render the XML as HTML for the reader. This is also useful during the authoring process as a convenience for reviewing the rendered version of the authored XML markup when the XML
+      document is open in a conforming browser supporting the association of XSLT stylesheets. After saving any edits to the XML document it is only necessary to refresh the browser to view the rendered results, without requiring any intervening XSLT process.</p><p>The internal declaration subset uses general entities in order to ensure consistent use of strings throughout the document. The <code class="literal">&amp;name;</code> entity has the base name of the document. The <code class="literal">&amp;version;</code> entity has the version of the document. The
+        <code class="literal">&amp;standard;</code> has the document status which is used in meta data and is often referenced in the prose along the lines of &#8220;<code class="literal">This &amp;standard; includes the ...</code>&#8221;.</p><pre class="programlisting"><span style="font-size:75%">[&lt;!--the document properties--&gt;
+&lt;!ENTITY name "spec-docbook-template"&gt;
+&lt;!ENTITY pversion "0.7"&gt;
+&lt;!ENTITY version "0.8"&gt;
+&lt;!ENTITY stage "wd07"&gt;
+&lt;!ENTITY stagetext "Stage and revision"&gt;
+&lt;!ENTITY standard "Stage and revision / Alternate stage and revision"&gt;
+&lt;!ENTITY this-loc   "https://docs.oasis-open.org/templates/DocBook/spec-&amp;version;/template"&gt;
+&lt;!ENTITY previous-loc "http://docs.oasis-open.org/templates/DocBook/spec-&amp;pversion;/template"&gt;
+&lt;!ENTITY latest-loc   "https://docs.oasis-open.org/templates/DocBook/oasis-specification/template"&gt;
+&lt;!ENTITY pubdate "13 November 2019"&gt;
+</span></pre><p>The document element for OASIS standards is always <code class="sgmltag-element">article</code>. The status, which can have different simultaneous status values separated by &#8220;/&#8221;, is reflected in an attribute:</p><pre class="programlisting">&lt;article status="&amp;standard;"&gt;
+</pre><p>The metadata is kept in the DocBook <code class="sgmltag-element">articleinfo</code> element, starting with the source code control, the name and the version of the document. The stylesheets can use the these information items in the synthesis of filenames (see <a class="xref" href="#S-STYLESHEET-INVOCATION-PARAMETERS" title="2.6 Stylesheet invocation parameters">Section 2.6, &#8220;Stylesheet invocation parameters&#8221;</a>). Note the use of the entity references for consistency.</p><pre class="programlisting"><span style="font-size:90%">    &lt;articleinfo&gt;
+    &lt;title&gt;Specification Title Version X.X&lt;/title&gt;
+    &lt;releaseinfo role="cvs"&gt; $Id: spec-docbook-template-0.8-wd08.xml,v 1.3 
+    2020/04/05 19:08:28 admin Exp $ &lt;/releaseinfo&gt;
+    &lt;productname&gt;&amp;name;&lt;/productname&gt;
+    &lt;productnumber&gt;&amp;version;-&amp;stage;&lt;/productnumber&gt;
+</span></pre><p>The links to the various instantiations of the document and supporting materials are summarized using <code class="literal">releaseinfo</code> elements with the reserved roles (see <a class="xref" href="#S-DOCBOOK-AUGMENTATIONS-FOR-OASIS-SPECIFICATIONS" title="3.4 DocBook augmentations for OASIS specifications">Section 3.4, &#8220;DocBook augmentations for OASIS specifications&#8221;</a>) for as many files as you have. OASIS rules require
+      the identification of the authoritative publication. Note again the use of the entity references for consistency.</p><pre class="programlisting">&lt;releaseinfo role="OASIS-specification-this-authoritative"
+  &gt;&amp;this-loc;/&amp;name;-&amp;stage;.html&lt;/releaseinfo&gt;
+&lt;releaseinfo role="OASIS-specification-this"
+  &gt;&amp;this-loc;/&amp;name;-&amp;stage;.pdf&lt;/releaseinfo&gt;
+&lt;releaseinfo role="OASIS-specification-this"
+  &gt;&amp;this-loc;/&amp;name;-&amp;stage;.xml&lt;/releaseinfo&gt;
+
+&lt;releaseinfo role="OASIS-specification-previous-authoritative"
+  &gt;&amp;previous-loc;/&amp;name;.html&lt;/releaseinfo&gt;
+&lt;releaseinfo role="OASIS-specification-previous"
+  &gt;&amp;previous-loc;/&amp;name;.pdf&lt;/releaseinfo&gt;
+&lt;releaseinfo role="OASIS-specification-previous"
+  &gt;&amp;previous-loc;/&amp;name;.xml&lt;/releaseinfo&gt;
+
+&lt;releaseinfo role="OASIS-specification-latest-authoritative"
+  &gt;&amp;latest-loc;/&amp;name;.html&lt;/releaseinfo&gt;
+&lt;releaseinfo role="OASIS-specification-latest"
+  &gt;&amp;latest-loc;/&amp;name;.pdf&lt;/releaseinfo&gt;
+&lt;releaseinfo role="OASIS-specification-latest"
+  &gt;&amp;latest-loc;/&amp;name;.xml&lt;/releaseinfo&gt;
+
+</pre><p>The committee is indicated using <code class="literal">role="committee"</code>.</p><pre class="programlisting">&lt;releaseinfo role="committee"&gt;&lt;ulink url="https://www.oasis-open.org/
+committees/"&gt;OASIS {official name of technical committee} TC&lt;/ulink&gt;
+&lt;/releaseinfo&gt;
+</pre><p>The various people sited in the document are in the <code class="sgmltag-element">authorgroup</code> element, using <code class="sgmltag-element">editor</code> and <code class="sgmltag-element">author</code> for their respective players, and the <code class="sgmltag-element">othercredit</code> element for the committee chairs.</p><pre class="programlisting"><span style="font-size:80%">&lt;authorgroup&gt;
+  &lt;editor&gt;
+    &lt;firstname&gt;Jane&lt;/firstname&gt;
+    &lt;surname&gt;Doe&lt;/surname&gt;
+    &lt;affiliation&gt;
+      &lt;orgname&gt;&lt;ulink url="www.example.com"&gt;Example
+        Corporation&lt;/ulink&gt;&lt;/orgname&gt;
+    &lt;/affiliation&gt;
+    &lt;email&gt;jane.doe@example.com&lt;/email&gt;
+  &lt;/editor&gt;
+  &lt;othercredit&gt;
+    &lt;firstname&gt;Mary&lt;/firstname&gt;
+    &lt;surname&gt;Baker&lt;/surname&gt;
+    &lt;affiliation&gt;
+      &lt;orgname&gt;Another Corporation&lt;/orgname&gt;
+    &lt;/affiliation&gt;
+    &lt;email&gt;mary.baker@example.com&lt;/email&gt;
+  &lt;/othercredit&gt;
+  &lt;othercredit&gt;
+    &lt;firstname&gt;James&lt;/firstname&gt;
+    &lt;surname&gt;Butcher&lt;/surname&gt;
+    &lt;affiliation&gt;
+      &lt;orgname&gt;Associate Member&lt;/orgname&gt;
+    &lt;/affiliation&gt;
+    &lt;email&gt;james.butcher@example.com&lt;/email&gt;
+  &lt;/othercredit&gt;
+&lt;/authorgroup&gt;
+</span></pre><p>The publishing date is constrained by OASIS conventions to the following format:</p><pre class="programlisting">&lt;pubdate&gt;&amp;pubdate;&lt;/pubdate&gt;
+</pre><p>The copyright information is embedded using the <code class="sgmltag-element">copyright</code> element, but note that this information has to be entered as well in the text of the notices.</p><pre class="programlisting">&lt;copyright&gt;
+  &lt;year&gt;YYYY&lt;/year&gt;
+  &lt;holder&gt;OASIS Open, Inc. All Rights Reserved.&lt;/holder&gt;
+&lt;/copyright&gt;
+</pre><p>When you want to relate this document to additional or related works use <code class="sgmltag-element">legalnotice</code> with <code class="literal">role="additional"</code> or <code class="literal">role="related"</code>.</p><pre class="programlisting"><span style="font-size:80%">&lt;legalnotice role="additional"&gt;&lt;title&gt;Additional Work Product artifacts&lt;/title&gt;
+&lt;para&gt;This prose specification is one component of a Work Product which also includes:&lt;/para&gt;
+...
+&lt;/legalnotice&gt;
+
+&lt;legalnotice role="related"&gt;&lt;title&gt;Related Work&lt;/title&gt;
+&lt;para&gt;This specification replaces or supersedes:&lt;/para&gt;
+...
+&lt;/legalnotice&gt;
+</span></pre><p>When you want to document the namespaces use <code class="sgmltag-element">legalnotice</code> with <code class="literal">role="namespaces"</code>.</p><pre class="programlisting">&lt;legalnotice role="namespaces"&gt;
+  &lt;title&gt;Declared XML namespaces&lt;/title&gt;
+  &lt;para&gt;&lt;ulink url="http://docs.oasis-open.org/ns/{tc-shortname}/xxxx"
+      &gt;http://docs.oasis-open.org/ns/{tc-shortname}/xxxx&lt;/ulink&gt;&lt;/para&gt;
+&lt;/legalnotice&gt;
+</pre><p>The abstract has its own DocBook element.</p><pre class="programlisting">&lt;abstract&gt;
+  &lt;para&gt;{This specification defines...}&lt;/para&gt;
+&lt;/abstract&gt;
+</pre><p>For the status use <code class="sgmltag-element">legalnotice</code> with <code class="literal">role="status"</code>.</p><pre class="programlisting">&lt;legalnotice role="status"&gt;&lt;title&gt;Status&lt;/title&gt;
+  &lt;para&gt;{Describe the status and stability ...}&lt;/para&gt;
+  ...
+&lt;/legalnotice&gt;
+</pre><p>For the citation use <code class="sgmltag-element">legalnotice</code> with <code class="literal">role="citation"</code> and take advantage of the entities.</p><pre class="programlisting">&lt;legalnotice role="citation"&gt;
+&lt;title&gt;Citation format&lt;/title&gt;
+&lt;para&gt;When referencing this specification the following citation format
+  should be used:&lt;/para&gt;
+&lt;bibliolist&gt;
+  &lt;bibliomixed&gt;
+    &lt;abbrev&gt;&amp;name;&lt;/abbrev&gt;
+    &lt;citetitle&gt;Specification Title Version X.X.&lt;/citetitle&gt;
+    &lt;date&gt;&amp;pubdate;. &lt;/date&gt;
+    &lt;releaseinfo&gt;OASIS Committee Specification Draft &amp;stage;. &lt;/releaseinfo&gt;
+    &lt;bibliomisc&gt;&lt;ulink url="&amp;this-loc;/&amp;name;.html"
+        &gt;&amp;this-loc;/&amp;name;.html&lt;/ulink&gt;.&lt;/bibliomisc&gt;
+  &lt;/bibliomixed&gt;
+&lt;/bibliolist&gt;
+&lt;/legalnotice&gt;
+</pre><p>For the notices use <code class="sgmltag-element">legalnotice</code> with <code class="literal">role="notices"</code> ensuring you use the appropriate version of the legal notices from the markup in this instance.</p><pre class="programlisting">&lt;legalnotice role="notices"&gt;&lt;title&gt;Notices&lt;/title&gt;
+  &lt;para&gt;Copyright &copy; OASIS Open 20??. All Rights Reserved.&lt;/para&gt;
+  ...
+&lt;/legalnotice&gt;
+</pre><p>Thus ends the document metadata. The sections and annexes follow.</p><pre class="programlisting">&lt;/articleinfo&gt;
+&lt;section id="s.introduction"&gt;
+...
+&lt;appendix&gt;
+...
+</pre></div><div class="appendix"><h2 class="title" style="clear: both"><a name="A-PUBLISHING-CHOREOGRAPHY-AND-ORCHESTRATION"></a>Appendix C Publishing choreography and orchestration (Non-Normative)</h2><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-AUTOMATED-PROCESSING"></a>C.1 Automated processing</h3></div></div></div><p>There is no obligation to automate the publishing process by choreographing the invocation of validation and production processes, however this methodology offers example orchestrations of these. Note that but for not having a core Ant <a class="xref" href="#ant" title="Ant Java-based Build Tool">[<b><abbr class="abbrev">ant</abbr></b>]</a> task for the invocation of an
+        XSL-FO processor, these guidelines would include such an example using that cross-platform Java-based build tool. It that absence, therefore, this section describes both a Windows command prompt and a Linux shell prompt that you may wish to configure for your own use.</p><p>The sample choreography invokes three separate processes in turn to produce the results. These processes are made available by Windows batch files and Linux shell scripts that are not included.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-LINUX-SHELL-SCRIPT-PREPARATION"></a>C.2  Linux shell script preparation</h3></div></div></div><p>The example Linux shell script choreography in <a class="ulink" href="template/spec-docbook-template.sh" target="_top">template/spec-docbook-template.sh</a> assumes the presence of three support shell scripts summarized as follows which are not supplied but see <a class="xref" href="#S-VALIDATION" title="4 Validation">Section 4, &#8220;Validation&#8221;</a> for examples for
+        DTD validation and XSLT transformation:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><pre class="programlisting"> sh xmldtd.sh  input-XML-file
+</pre></li><li class="listitem"><pre class="programlisting"> sh xslt.sh  input-XML-file  stylesheet-XSL-file  output-file
+</pre></li><li class="listitem"><pre class="programlisting"> sh xslfo-pdf.sh  input-FO-file  output-PDF-file
+</pre></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="S-SAMPLE-INVOCATIONS"></a>C.3  Sample invocations</h3></div></div></div><p>The stylesheets have been tested with Saxon for XSLT and Antenna House, Ibex and RenderX for XSL-FO.</p><p>While any conforming XML, XSLT and XSL-FO engine can be used in a given environment, the following Java-based applications and their respective invocations are suitable. There is no obligation, however, to use these as any conforming implementations of validation, transformation and
+        pagination can be used. Note these guidelines leave it up to the reader to download the required support and to appropriately set the required CLASSPATH environments for the following invocations to work.</p><p>To validate that an XML instance conforms to the constraints of a formal DTD expression, xjparse <a class="xref" href="#xjparse" title="xjparse XML validation invocation">[<b><abbr class="abbrev">xjparse</abbr></b>]</a> can be used to satisfy the <code class="literal">xmldtd</code> script as follows:</p><pre class="programlisting">java -jar xjparse.jar -v %1
+</pre><p>To transform and XML instance using and XSLT expression, Saxon <a class="xref" href="#saxon" title="Saxon 6.5.5 XSLT 1.0 Processor">[<b><abbr class="abbrev">Saxon</abbr></b>]</a> can be used to satisfy the <code class="literal">xslt</code> script as follows:</p><pre class="programlisting">java -jar saxon.jar -o %3 %1 %2
+</pre><p>To transform an XSL-FO instance into a PDF file, FOP <a class="xref" href="#fop" title="Formatting Objects Processor">[<b><abbr class="abbrev">FOP</abbr></b>]</a> can be used to satisfy the <code class="literal">xslfo-pdf</code> script as follows (though note that there may be some conformance challenges with FOP that might present some problems):</p><pre class="programlisting">java org.apache.fop.apps.Fop -fo %1 -pdf %2
+</pre><p>To transform an XML instance without MathML into PDF in a single step, there are the <code class="literal">stylesheets/xslfo-spec-pdf.bat</code> and <code class="literal">stylesheets/xslfo-note-pdf.bat</code> example invocation files in the package. These invocation take three arguments (in order): the XML
+        input instance, &#8220;<code class="literal">us</code>&#8221; or &#8220;<code class="literal">a4</code>&#8221; (no quotes) to indicate the page size, and the name of the PDF output file. This requires the <code class="literal">saxon.jar</code> XSLT 1.0 executable<a class="xref" href="#saxon" title="Saxon 6.5.5 XSLT 1.0 Processor">[<b><abbr class="abbrev">Saxon</abbr></b>]</a> and the Ibex Signature Edition
+        created for stylesheets from Crane Softwrights<a class="xref" href="#ibex-ss" title="Ibex XSL-FO Processor">[<b><abbr class="abbrev">Ibex Signature Edition</abbr></b>]</a> (renamed as <code class="literal">ibex-crane-ss.jar</code>). The digital signature manifest <code class="literal">oasis-specification-fo-manifest.xml</code> is tied to the stylesheets as published, thus the processor will not work with
+        these stylesheets if they are modified in any way. The support file <code class="literal">ibexconfig.xml</code> is used to configure font information. The version of Ibex available through Crane does not support MathML.</p></div></div><div class="appendix"><h2 class="title" style="clear: both"><a name="A-REVISION-HISTORY"></a>Appendix D Revision History (Non-Normative)</h2><p>
+      </p><div class="revhistory"><table border="1" width="100%" summary="Revision history"><tr><td align="left">Revision 0.8 wd08</td><td align="left">05 April 2020</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Updates to HTML generation supporting MathML; add validation</td></tr><tr><td align="left">Revision 0.8 wd07</td><td align="left">13 November 2019</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Updates to Schematron writing rules for editing; clean up HTML titles; minor doc fixes</td></tr><tr><td align="left">Revision 0.8 wd06</td><td align="left">03 May 2019</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Update to DocBook stylesheet library version 1.79.1; separate Schematron writing rules between those for integrity and those for style </td></tr><tr><td align="left">Revision 0.8 wd05</td><td align="left">25 February 2019</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Support processing instruction for relative location of HTML support files</td></tr><tr><td align="left">Revision 0.8 wd04</td><td align="left">04 January 2019</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Tweak HTML CSS for images</td></tr><tr><td align="left">Revision 0.8 wd03</td><td align="left">02 December 2018</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">New note layout from TC Administration</td></tr><tr><td align="left">Revision 0.8 wd02</td><td align="left">22 September 2018</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Repaired line numbering for note cover page</td></tr><tr><td align="left">Revision 0.8 wd01</td><td align="left">08 September 2018</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">New logo and colours from OASIS</td></tr><tr><td align="left">Revision 0.7 wd05</td><td align="left">13 September 2017</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Line numbering. Latest TCAdmin tweaks. Latest SQF actions. New status text in templates.</td></tr><tr><td align="left">Revision 0.7 wd04</td><td align="left">24 January 2017</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Latest Ibex manifest. Latest SQF actions. New status text in templates.</td></tr><tr><td align="left">Revision 0.7 wd03</td><td align="left">19 December 2016</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Tweak URI writing for OASIS logo graphic for non-relative resolution for print stylesheets; latest Ibex manifest</td></tr><tr><td align="left">Revision 0.7 wd02</td><td align="left">03 December 2016</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Add vendor print extensions (e.g. line numbering); updated writing rules</td></tr><tr><td align="left">Revision 0.7 wd01</td><td align="left">08 November 2016</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Add (and follow) document writing rules and reference external package for ISO Directives Part 2 conversion.</td></tr><tr><td align="left">Revision 0.6 wd12</td><td align="left">10 December 2015</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Fix case in &#8220;Non-normative&#8221; and add display of &#8220;Normative&#8221;.</td></tr><tr><td align="left">Revision 0.6 wd11</td><td align="left">7 May 2015</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Accommodate OASIS server redirect. Suppress PDF ulink exposition.</td></tr><tr><td align="left">Revision 0.6 wd10</td><td align="left">17 April 2014</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Repair packaging for notes. Rewrite footers to support long project names.</td></tr><tr><td align="left">Revision 0.6 wd09</td><td align="left">17 July 2013</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Package update to include stylesheets for notes. Tweak footer column widths to fit copyright in A4 rendition.</td></tr><tr><td align="left">Revision 0.6 wd08</td><td align="left">17 February 2013</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Repaired copyright holder logic and boilerplate</td></tr><tr><td align="left">Revision 0.6</td><td align="left">14 June 2012</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">Latest TC process revisions and TC Admin review</td></tr><tr><td align="left">Revision 0.5</td><td align="left">8 July 2010</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">New template structure and filename conventions; mimic latest XHTML template</td></tr><tr><td align="left">Revision 0.4</td><td align="left">03 Feb 2006</td><td align="left">gkh</td></tr><tr><td align="left" colspan="3">New IPR and use of revised 0.4 specification publishing environment; mimic latest Word and Open Office templates</td></tr><tr><td align="left">Revision 03</td><td align="left">15 Aug 2002</td><td align="left">ndw</td></tr><tr><td align="left" colspan="3">Changed copyright holder.</td></tr><tr><td align="left">Revision 02</td><td align="left">28 May 2002</td><td align="left">ndw</td></tr><tr><td align="left" colspan="3">Added IPR section.</td></tr><tr><td align="left">Revision 01</td><td align="left">26 Apr 2002</td><td align="left">ndw</td></tr><tr><td align="left" colspan="3">Reworked after conversations with Eve.</td></tr><tr><td align="left">Revision 00</td><td align="left">25 Apr 2002</td><td align="left">ndw</td></tr><tr><td align="left" colspan="3">First draft.</td></tr></table></div><p>
+    </p></div></div><table style="font-size:80%" width="100%"><tr><td>oasis-specification-0.8-wd08<br>Non-Standards Track</td><td style="text-align:center"><br>Copyright &copy; OASIS Open 2019. All Rights Reserved.</td><td style="text-align:right">05 April 2020</td></tr></table></body></html>

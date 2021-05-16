@@ -1,0 +1,304 @@
+<project default="-realta" xmlns:if="ant:if" xmlns:unless="ant:unless">
+
+<!--
+  2021-01-27 16:40z
+  
+  This Ant project interacts with the Realta Server API using curl.
+  
+  **This script will change soon with the switch over to new server addresses**
+  
+  Prerequisite: Ant library lib/ant-contrib-1.0b3.jar
+  Prerequisite: curl utility avaialble on the command path
+  
+  Parameters:
+  ${entrypoint} = API entry point
+  ${fileupload} = XML or ZIP file to publish (result in {name}.realta.zip)
+  ${realtauser} = server username
+  ${realtapass} = server password
+
+  Optional parameters for remote API submission:
+  ${servername} = server name (default "api.realtaonline.com/v2")
+  ${dateprefix} = identifier for the job (automatically suffixed with date)
+  ${skipunpack} = set this to "true" to keep results zipped and not unpacked
+  
+  These steps never signal an Ant fail as this inhibits its use in GitHub
+  actions that will not return intermediate results when a script fails.
+  
+  Note that the former API Version 1 no longer is supported by this script.
+-->
+
+<taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+
+<target name="-realta">
+  <property name="servername" value="api.realtaonline.com/v2"/>
+  <property name="dateprefix" value=""/>
+  
+  <echo message="Realta server access initiated"/>
+  <echo message="Invoking API version 2 - ${servername}"/>
+  <antcallback target="-realta-authenticate-v2" return="got-token, token"/>
+  <sequential if:set="got-token">
+    <antcallback target="-realta-submit-v2" return="got-job-id, jobid"/>
+    <sequential if:set="got-job-id">
+      <antcallback target="-realta-retrieve-v2" return="fetch-okay"/>
+      <sequential if:set="fetch-okay">
+        <antcallback target="-realta-unpack-v2"/>
+        <antcallback target="-realta-cleanup-v2" return="no-problems"/>
+      </sequential>
+    </sequential>
+  </sequential>
+  <antcallback target="-realta-complete-v2"/>
+</target>
+
+<!--========================================================================-->
+<!--version 2 on https://api.realtaonline.com/v2-->
+
+<target name="-realta-complete-v2">
+  <echo if:set="no-problems" message="Realta server access ended without error"/>
+  <echo unless:set="no-problems" message="Realta server access ended with error"/>
+</target>
+
+<target name="-realta-authenticate-v2">
+  <echo message="Authenticating..."/>
+  <condition property="onWindows">
+    <os family="windows"/>
+  </condition>
+  <exec executable="curl" errorproperty="errAuthenticate" 
+        resultproperty="returnAuthenticate"
+        outputproperty="tokenReturn" unless:set="onWindows">
+    <arg value="--request"/><arg value="POST"/>
+    <arg value="--url"/><arg value="https://${servername}/authenticate"/>
+    <arg value="--location"/>
+    <arg value="--header"/><arg value="content-type: application/json"/>
+    <arg value="--output"/><arg value="-"/>
+    <arg value="--data"/>
+    <arg value='{"username":"${realtauser}","password":"${realtapass}"}'/>
+  </exec>
+  <exec executable="curl" errorproperty="errAuthenticate" 
+        resultproperty="returnAuthenticate"
+        outputproperty="tokenReturn" if:set="onWindows">
+    <arg value="--request"/><arg value="POST"/>
+    <arg value="--url"/><arg value="https://${servername}/authenticate"/>
+    <arg value="--location"/>
+    <arg value="--header"/><arg value="content-type: application/json"/>
+    <arg value="--output"/><arg value="-"/>
+    <arg value="--data"/>
+    <arg value='{\"username\":\"${realtauser}\",\"password\":\"${realtapass}\"}'/>
+  </exec>
+  <propertyregex property="token" input="${tokenReturn}"
+                 regexp='"token"[^:]*:[^"]*"([^"]*)"' select="\1"/>
+  <condition property="got-token">
+    <and>
+      <equals arg1="${returnAuthenticate}" arg2="0"/>
+      <isset property="token"/>
+      <not>
+        <equals arg1="${token}" arg2=""/>
+      </not>
+    </and>
+  </condition>
+  <!--<echo if:set="got-token" message="Returned token: ${token}"/>-->
+  <echo if:set="got-token"
+        message="Token successfully returned from server: ${token}"/>
+  <echo unless:set="got-token"
+        message="Token was not returned from server: ${tokenReturn} ${returnAuthenticate}"/>
+</target>
+
+<target name="-realta-submit-v2">
+  <tstamp>
+    <format property="submitTime" timezone="GMT"
+            pattern="YYYY-MM-dd HH:mm:ssZ"/>
+  </tstamp>
+  <echo message='Submitting "${dateprefix} ${submitTime}" to "${entrypoint}" ...'/>
+<!--  <echo message='
+
+    '/>-->
+  <exec executable="curl" errorproperty="errSubmit"
+        resultproperty="returnSubmit"
+        outputproperty="jobidReturn">
+    <arg value="--request"/><arg value="POST"/>
+    <arg value="--url"/><arg value="https://${servername}/jobs"/>
+    <arg value="--location"/>
+    <arg value="--output"/><arg value="-"/>
+    <arg value="--header"/><arg value="authorization: Bearer ${token}"/>
+    <arg value="--header"/><arg value="accept: application/json"/>
+    <arg value="--form"/><arg value="files=@${fileupload};type=application/zip"/>
+    <arg value="--form"/><arg value="note=${dateprefix} ${submitTime}"/>
+    <arg value="--form"/><arg value="entrypoint=${entrypoint}"/>
+    <arg value="--verbose"/>
+  </exec>
+  <propertyregex property="jobid" input="${jobidReturn}"
+                 regexp='.*"id"[^:]*:[^0-9]*([0-9]+).*' select="\1"/>
+  <condition property="got-job-id">
+    <and>
+      <equals arg1="${returnSubmit}" arg2="0"/>
+      <isset property="jobid"/>
+      <not>
+        <equals arg1="${jobid}" arg2=""/>
+      </not>
+    </and>
+  </condition>
+  <condition property="upload-file-not-found">
+    <equals arg1="${returnSubmit}" arg2="26"/>
+  </condition>
+  <echo if:set="upload-file-not-found" message="Upload file not found: ${fileupload}"/>
+  <echo unless:set="got-job-id" message="Job ID was not returned from server: ${jobidReturn}"/>
+  <echo if:set="got-job-id" message="Returned job ID: ${jobid}"/>
+</target>
+
+<target name="-realta-fetch-v2">
+  <echo message="Sleeping for 10 seconds..."/>
+  <sleep seconds="10"/>
+  <echo message="Checking job status..."/>
+  <exec executable="curl" errorproperty="errStatus"
+        resultproperty="returnStatus"
+        outputproperty="statusReturn">
+    <arg value="--request"/><arg value="GET"/>
+    <arg value="--url"/><arg value="https://${servername}/jobs/${jobid}"/>
+    <arg value="--location"/>
+    <arg value="--header"/><arg value="authorization: Bearer ${token}"/>
+  </exec>
+  <propertyregex property="status" input="${statusReturn}"
+                 regexp='.*"status"[^:]*:[^"]*"([^"]*)".*' select="\1"/>
+  <condition property="job-done">
+    <and>
+      <not>
+        <equals arg1="${status}" arg2="QUEUED"/>
+      </not>
+      <not>
+        <equals arg1="${status}" arg2="RUNNING"/>
+      </not>
+    </and>
+  </condition>
+  <echo message="Status: ${status}"/>
+  <sequential if:set="job-done">
+    <condition property="job-ready">
+      <equals arg1="${status}" arg2="FINISHED"/>
+    </condition>
+    <sequential if:set="job-ready">
+      <echo message="Fetching file ${fileupload}.realta.zip"/>
+      <exec executable="curl" errorproperty="errReturn"
+            resultproperty="returnFetch"
+            output="${fileupload}.realta.zip">
+       <arg value="--request"/><arg value="GET"/>
+       <arg value="--url"/>
+       <arg value="https://${servername}/jobs/${jobid}/archive"/>
+       <arg value="--location"/>
+       <arg value="--header"/><arg value="authorization: Bearer ${token}"/>
+      </exec>
+    </sequential>
+    <sequential unless:set="job-ready">
+      <echo message="Unexpected status: ${statusReturn}"/>
+    </sequential>
+  </sequential>
+  <condition property="fetch-okay">
+    <or>
+      <isset property="job-done"/>
+      <and>
+        <isset property="errReturn"/>
+        <equals arg1="${errReturn}" arg2="0"/>
+        <available file="${fileupload}.realta.zip"/>
+      </and>
+    </or>
+  </condition>
+</target>
+
+<target name="-realta-unpack-v2" unless="skipunpack">
+  <echo message="Unzipping ${fileupload}.realta.zip PDF/HTML results..."/>
+  <dirname property="targetdir" file="${fileupload}"/>
+  <unzip src="${fileupload}.realta.zip" dest="${targetdir}"/>
+  <echo message="Disposing of temporary ${fileupload}.realta.zip results..."/>
+  <delete file="${fileupload}.realta.zip"/>
+</target>
+  
+<target name="-realta-cleanup-v2">
+  <echo message="Deleting job from server..."/>
+  <exec executable="curl" errorproperty="errStatus"
+        resultproperty="returnDelete"
+        outputproperty="deleteReturn">
+    <arg value="--request"/><arg value="DELETE"/>
+    <arg value="--url"/><arg value="https://${servername}/jobs/${jobid}"/>
+    <arg value="--location"/>
+    <arg value="--header"/><arg value="authorization: Bearer ${token}"/>
+  </exec>
+  <condition property="no-problems">
+    <equals arg1="${returnDelete}" arg2="0"/>
+  </condition>
+  <echo unless:set="no-problems" message="Problem deleting the job ${jobid}"/>
+</target>
+
+<target name="-realta-retrieve-v2">
+  <!--
+    note this is particularly long in case the job gets queued before running
+  -->
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  
+  <sequential unless:set="fetch-okay">
+    <echo message="Giving up on the fetch; checking job status..."/>
+    <exec executable="curl" errorproperty="errStatus"
+          resultproperty="returnStatus"
+          outputproperty="statusReturn">
+      <arg value="--request"/><arg value="GET"/>
+      <arg value="--url"/><arg value="https://${servername}/jobs/${jobid}"/>
+      <arg value="--location"/>
+      <arg value="--header"/><arg value="authorization: Bearer ${token}"/>
+    </exec>
+    <echo message="${statusReturn}"/>
+  </sequential>
+</target>
+
+</project>

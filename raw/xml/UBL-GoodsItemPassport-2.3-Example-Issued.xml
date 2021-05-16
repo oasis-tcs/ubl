@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GoodsItemPassport xmlns="urn:oasis:names:specification:ubl:schema:xsd:GoodsItemPassport-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" >
+	<cbc:CustomizationID>UBL-2.3</cbc:CustomizationID>
+	<cbc:ID>ata01661</cbc:ID>
+	<cbc:IssueDate>2019-02-21</cbc:IssueDate>
+	<cbc:StatusCode>ISSUED</cbc:StatusCode>
+	<cac:ValidityPeriod>
+		<cbc:StartDate>2019-02-21</cbc:StartDate>
+		<cbc:EndDate>2020-02-20</cbc:EndDate>
+	</cac:ValidityPeriod>
+	<cac:IssuerParty>
+		<cac:PartyName>
+			<cbc:Name>Dansk Industri</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:ID>6916</cbc:ID>
+			<cbc:StreetName>Vesterbrogade 1L, 1.sal</cbc:StreetName>
+			<cbc:CityName>København V.</cbc:CityName>
+			<cbc:PostalZone>1620</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				<cbc:Name>Denmark</cbc:Name>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:PartyLegalEntity>
+			<cbc:CompanyID>16077593</cbc:CompanyID>
+		</cac:PartyLegalEntity>
+	</cac:IssuerParty>
+	<cac:HolderParty>
+		<cac:PartyName>
+			<cbc:Name>STEFCO A/S</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Industrivej 3</cbc:StreetName>
+			<cbc:CityName>Ørum Djurs</cbc:CityName>
+			<cbc:PostalZone>8586</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				<cbc:Name>Denmark</cbc:Name>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:PartyLegalEntity>
+			<cbc:CompanyID>DK89343487</cbc:CompanyID>
+		</cac:PartyLegalEntity>
+		<cac:Contact>
+			<cbc:Name>Andreas Andersen</cbc:Name>
+		</cac:Contact>
+	</cac:HolderParty>
+	<cac:RepresentativeParty>
+		<cac:PartyName>
+			<cbc:Name>Grenå Tools</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Højdevej 18</cbc:StreetName>
+			<cbc:CityName>Grenå</cbc:CityName>
+			<cbc:PostalZone>8500</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				<cbc:Name>Denmark</cbc:Name>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:Person>
+			<cbc:FirstName>Kirsten</cbc:FirstName>
+			<cbc:FamilyName>Jensen</cbc:FamilyName>
+			<cac:IdentityDocumentReference>
+				<cbc:ID schemeID="Passport">325334535</cbc:ID>
+			</cac:IdentityDocumentReference>
+		</cac:Person>
+	</cac:RepresentativeParty>
+	<cac:ExportingGuarantorParty>
+		<cac:PartyName>
+			<cbc:Name>Dansk Erhverv</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Slotsholmsgade</cbc:StreetName>
+			<cbc:BuildingNumber>1</cbc:BuildingNumber>
+			<cbc:CityName>København K</cbc:CityName>
+			<cbc:PostalZone>1216</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:PartyLegalEntity>
+			<cbc:CompanyID>43232010</cbc:CompanyID>
+		</cac:PartyLegalEntity>
+	</cac:ExportingGuarantorParty>
+	<cac:Shipment>
+		<cbc:ID>32453</cbc:ID>
+		<cbc:DeclaredStatisticsValueAmount currencyID="DKK">34800.00</cbc:DeclaredStatisticsValueAmount>
+		<cac:Consignment>
+			<cbc:ID>1</cbc:ID>
+			<cbc:TotalInvoiceAmount currencyID="DKK">44250.00</cbc:TotalInvoiceAmount>
+			<cbc:GrossWeightMeasure unitCode="KGM">230.80</cbc:GrossWeightMeasure>
+			<cbc:Information>Professional equipment</cbc:Information>
+			<cbc:TotalGoodsItemQuantity>23</cbc:TotalGoodsItemQuantity>
+			<cac:FinalDestinationCountry>
+				<cbc:IdentificationCode>CH</cbc:IdentificationCode>
+			</cac:FinalDestinationCountry>
+			<cac:TransitCountry>
+				<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+			</cac:TransitCountry>
+			<cac:FirstArrivalPortLocation>
+				<cbc:Name>Padborg</cbc:Name>
+			</cac:FirstArrivalPortLocation>
+			<cac:LastExitPortLocation>
+				<cbc:Name>Bietingen</cbc:Name>
+			</cac:LastExitPortLocation>
+		</cac:Consignment>
+		<cac:GoodsItem>
+			<cbc:ID>1</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">0.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">4500.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">2</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>HILTI TE2 + TE35 Boremaskiner</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+				</cac:OriginCountry>
+				<cac:AdditionalItemProperty>
+					<cbc:Name>AlcoholPercentage</cbc:Name>
+					<cbc:Value>0</cbc:Value>
+				</cac:AdditionalItemProperty>
+				<cac:AdditionalItemProperty>
+					<cbc:Name>DegreeOfPlato</cbc:Name>
+					<cbc:Value>0</cbc:Value>
+				</cac:AdditionalItemProperty>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>2</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">0.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">500.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>BACHO S910, Topnøglesæt</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>3</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">0.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">1500.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>DEWALT DC822, Boltspænder</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>US</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>4</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">1500.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">1500.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>DEWALT DC542, Fugepistol</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>US</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>5</cbc:ID>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">1000.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>METABO GE700, Pinolsliber</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>6</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">1000.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">1000.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>METABO SBE 1010, Boremaskine</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>7</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">2500.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">2500.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>KAMA AD 105S, Båndsav</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>US</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>8</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">2500.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">2500.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>LIFTKET 021/51, Talje</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>9</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">500.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">500.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>KING TONY 6316, Topnøglesæt</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>US</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>10</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">1000.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">1000.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">2</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>STAHL WILLE 730/02, Momentnøgle</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>11</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">500.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">500.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>HADEF 750kg, Talje</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>12</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">750.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">750.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">2</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>HADEF 250kg, Talje</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>13</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">1500.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">1500.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>DURA PRO 2000kg, Dunkraft</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>14</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">2000.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">2000.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>BY45A, Donkraft</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>15</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">1500.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">1500.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>MILWAUKEE HD18PD, Akkuboremaskine</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>US</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>16</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">1500.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">1500.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>ESMOLADARA KH3105, Bænksliber</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>IT</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>17</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">2000.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">2000.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>SCANTOOL 20AT, Søjleboremaskine</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>18</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">10000.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">10000.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>KEMPPI MASTER 2200, Tigsvejser</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>FI</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>19</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">5000.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">5000.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>VÆRKTØJSKASSE m/div. håndværktøj</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:GoodsItem>
+			<cbc:ID>20</cbc:ID>
+			<cbc:DeclaredCustomsValueAmount currencyID="DKK">3000.00</cbc:DeclaredCustomsValueAmount>
+			<cbc:DeclaredStatisticsValueAmount currencyID="DKK">3000.00</cbc:DeclaredStatisticsValueAmount>
+			<cbc:Quantity unitCode="H87">1</cbc:Quantity>
+			<cac:Item>
+				<cbc:Description>BOSCH GLL 3-80P Lasernivilering</cbc:Description>
+				<cac:OriginCountry>
+					<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+				</cac:OriginCountry>
+			</cac:Item>
+		</cac:GoodsItem>
+		<cac:ShipmentStage>
+			<cac:UnloadingPortLocation>
+				<cac:Address>
+					<cac:Country>
+						<cbc:IdentificationCode>CH</cbc:IdentificationCode>
+						<cbc:Name>Swiss</cbc:Name>
+					</cac:Country>
+				</cac:Address>
+			</cac:UnloadingPortLocation>
+		</cac:ShipmentStage>
+		<cac:OriginAddress>
+			<cac:Country>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				<cbc:Name>Denmark</cbc:Name>
+			</cac:Country>
+		</cac:OriginAddress>
+		<cac:FirstArrivalPortLocation>
+			<cbc:Name>Padborg</cbc:Name>
+		</cac:FirstArrivalPortLocation>
+		<cac:LastExitPortLocation>
+			<cbc:Description>ART INTERNATIONAL ZURICH 2019</cbc:Description>
+		<cac:Address>
+			<cbc:StreetName>Giessereistrasse</cbc:StreetName>
+			<cbc:BuildingNumber>18</cbc:BuildingNumber>
+			<cbc:CityName>Zürich</cbc:CityName>
+			<cbc:PostalZone>CH-8005</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>CH</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:Address>
+		</cac:LastExitPortLocation>
+	</cac:Shipment>
+
+<cac:GoodsItemPassportCounterfoil>
+		<cbc:ID>645634567</cbc:ID>
+		<cbc:GoodsItemPassportID>ata01661</cbc:GoodsItemPassportID>
+		<cac:CustomsOfficeLocation>
+			<cbc:Name>Padborg</cbc:Name>
+		</cac:CustomsOfficeLocation>
+		<cac:VoucherDocumentReference>
+			<cbc:ID>5234533222</cbc:ID>
+		</cac:VoucherDocumentReference>
+	</cac:GoodsItemPassportCounterfoil>
+	<cac:GoodsItemPassportCounterfoil>
+		<cbc:ID>634563324</cbc:ID>
+		<cbc:GoodsItemPassportID>ata01661</cbc:GoodsItemPassportID>
+		<cac:CustomsOfficeLocation>
+			<cbc:Name>Bietingen</cbc:Name>
+		</cac:CustomsOfficeLocation>
+		<cac:VoucherDocumentReference>
+			<cbc:ID>52345423423</cbc:ID>
+		</cac:VoucherDocumentReference>
+	</cac:GoodsItemPassportCounterfoil>	
+	
+	<cac:IssuerEndorsement>
+		<cbc:DocumentID>33006</cbc:DocumentID>
+		<cbc:ApprovalStatus>Issued</cbc:ApprovalStatus>
+		<cac:EndorserParty>
+			<cbc:RoleCode>Champer</cbc:RoleCode>
+			<cbc:SequenceNumeric>1</cbc:SequenceNumeric>
+			<cac:Party>
+				<cac:PartyName>
+					<cbc:Name>Dansk Industri</cbc:Name>
+				</cac:PartyName>
+				<cac:PostalAddress>
+					<cbc:ID>6916</cbc:ID>
+					<cbc:StreetName>Vesterbrogade 1L, 1.sal</cbc:StreetName>
+					<cbc:CityName>København V.</cbc:CityName>
+					<cbc:PostalZone>1620</cbc:PostalZone>
+					<cac:Country>
+						<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+						<cbc:Name>Denmark</cbc:Name>
+					</cac:Country>
+				</cac:PostalAddress>
+				<cac:PartyLegalEntity>
+					<cbc:CompanyID>16077593</cbc:CompanyID>
+				</cac:PartyLegalEntity>
+			</cac:Party>
+			<cac:SignatoryContact>
+				<cbc:ID>ML</cbc:ID>
+				<cbc:Name>Mette Lind</cbc:Name>
+			</cac:SignatoryContact>
+		</cac:EndorserParty>
+	</cac:IssuerEndorsement>
+
+	
+</GoodsItemPassport>

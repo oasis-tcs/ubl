@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  $Id: massageModelName-2.3.xml,v 1.1 2018/10/27 19:59:17 admin Exp $
+  
+  Use this file to express the regular expressions that shorten model
+  names in document order and lengthen model names in reverse document order.
+
+  Use this expression in the mod/maindoc directory to establish which names
+  need shortening to 31 characters or less:
+
+ls *.ods | sed s/UBL-// | sed s/-2.3.ods// | sed -E "s/(.{1,31})(.*)/\1    \2/"
+
+-->
+<!DOCTYPE modelNameMassage
+[
+<!ELEMENT modelNameMassage ( pass+ )>
+<!ELEMENT pass ( shorten, lengthen )>
+<!ELEMENT shorten EMPTY>
+<!ELEMENT lengthen EMPTY>
+<!ATTLIST shorten find CDATA #REQUIRED replace CDATA #REQUIRED>
+<!ATTLIST lengthen find CDATA #REQUIRED replace CDATA #REQUIRED>
+]>
+<modelNameMassage>
+  <pass>
+    <shorten find="UBL-(.+)-2.3" replace="$1"/>
+    <lengthen find="(.+)" replace="UBL-$1-2.3"/>
+  </pass>
+  <pass>
+    <shorten find="Catalogue" replace="Ctlg"/>
+    <lengthen find="Ctlg" replace="Catalogue"/>
+  </pass>
+  <pass>
+    <shorten find="Qualification" replace="Qlfctn"/>
+    <lengthen find="Qlfctn" replace="Qualification"/>
+  </pass>
+  <pass>
+    <shorten find="Transport([^a])" replace="Txp$1"/>
+    <lengthen find="Txp" replace="Transport"/>
+  </pass>
+  <pass>
+    <shorten find="Signature" replace="Sgnt"/>
+    <lengthen find="Sgnt" replace="Signature"/>
+  </pass>
+  <pass>
+    <shorten find="Procedure" replace="Prcd"/>
+    <lengthen find="Prcd" replace="Procedure"/>
+  </pass>
+</modelNameMassage>

@@ -1,0 +1,47 @@
+{"_D":"urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2",
+ "_A":"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2",
+ "_B":"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2",
+ "_E":"urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2",
+ "TransportationStatus":[{
+ "UBLExtensions":[{
+  "UBLExtension":[{
+   "ExtensionContent":[{
+    "Additional":[{
+     "QualificationLevel":[{
+      "ID":[{"_": "L1"}],
+      "Description":[{"_": "Level 1"}],
+      "LevelPrerequisite":[{"_": "Level0"}]
+     }],
+     "ThirdPartyBilling":[{
+      "Party":[{
+       "PartyName":[{
+        "Name":[{"_": "Jane Doe"}]
+       }]
+      }]
+     }]
+    }]
+   }]
+  }]
+ }],
+ "UBLVersionID":[{"_":"2.1"}],
+ "CustomizationID":[{"_":"urn:X-demo:TransportShipments"}],
+ "ProfileID":[{"_":"urn:X-demo:CoreElement"}],
+ "ID":[{"_":"1234"}],
+ "IssueDate":[{"_":"2010-08-13"}],
+ "IssueTime":[{"_":"15:30:00.0Z"}],
+ "Description":[{"_":"En route"}],
+ "Consignment":[{
+  "ID":[{"_":"XYZ987"}],
+  "SummaryDescription":[{"_":"Electronic components"}]
+ }],
+ "TransportEvent":[{
+  "CurrentStatus":[{
+   "ConditionCode":[{"_":"31"}],
+   "Description":[{"_":"En route"}]
+  }],
+  "Contact":[{
+   "Name":[{"_":"John Smith"}],
+   "ElectronicMail":[{"_":"jsmith@example.com"}]
+  }]
+ }]
+}]}

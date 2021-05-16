@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReturnAuthorizationRequest
+  xmlns="urn:X-MyCompany:xsd:MyReturnAuthorizationRequest"
+  xmlns:rqa="urn:X-MyCompany:xsd:MyRARequestResponse:AggregateComponents"
+  xmlns:rqb="urn:X-MyCompany:xsd:MyRARequestResponse:BasicComponents"
+  xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+  xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <rqb:RequestDate>2011-11-15</rqb:RequestDate>
+  <rqa:RequestingParty>
+    <cac:Contact>
+      <cbc:ElectronicMail>joeBloggs@example.com</cbc:ElectronicMail>
+    </cac:Contact>
+  </rqa:RequestingParty>
+  <rqa:ReturnRequested>
+    <rqb:RequestedQuantityx>3</rqb:RequestedQuantityx>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+      <cac:OrderReference>
+        <cbc:ID>20111110-0112</cbc:ID>
+      </cac:OrderReference>
+    </cac:OrderLineReference>
+  </rqa:ReturnRequested>
+</ReturnAuthorizationRequest>

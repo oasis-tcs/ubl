@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+ <!ELEMENT directory (directory|file)*>
+ <!ATTLIST directory
+    name         CDATA #REQUIRED
+    lastModified CDATA #REQUIRED
+    date         CDATA #REQUIRED
+    size         CDATA #REQUIRED
+    absolutePath CDATA #REQUIRED
+    sort 		 CDATA #IMPLIED
+    reverse		 CDATA #IMPLIED>
+ <!ELEMENT file EMPTY>
+ <!ATTLIST file
+    name         CDATA #REQUIRED
+    lastModified CDATA #REQUIRED
+    date         CDATA #REQUIRED
+    size         CDATA #REQUIRED
+    absolutePath CDATA #REQUIRED>

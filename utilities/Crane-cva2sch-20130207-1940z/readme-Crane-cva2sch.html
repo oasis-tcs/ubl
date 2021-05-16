@@ -1,0 +1,642 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Crane's Schematron implementation of OASIS context/value association files for validation</title><meta name="generator" content="DocBook XSL Stylesheets V1.69.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="d0e2"></a>Crane's Schematron implementation of OASIS context/value association files for validation</h2></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">G. Ken</span> <span class="surname">Holman</span></h3><div class="affiliation"><span class="orgname">Crane Softwrights Ltd.<br></span><div class="address"><p><code class="email">&lt;<a href="mailto:gkholman@CraneSoftwrights.com">gkholman@CraneSoftwrights.com</a>&gt;</code></p></div></div></div></div></div><div><p class="copyright">Copyright &copy; 2013 Crane Softwrights Ltd.</p></div><div><p class="pubdate">$Date: 2013/02/07 19:40:50 $(UTC)</p></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#s.intro">1. Introduction</a></span></dt><dt><span class="section"><a href="#d0e77">2. 
+Implementation overview and example</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e80">2.1. Review of context/value association files and genericode</a></span></dt><dt><span class="section"><a href="#d0e100">2.2. Crane's implementation for validation</a></span></dt><dt><span class="section"><a href="#d0e133">2.3. Implementation restrictions</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e138">3. 
+Value validation</a></span></dt><dd><dl><dt><span class="section"><a href="#schematron">3.1. Using ISO/IEC 19757-3 Schematron</a></span></dt><dt><span class="section"><a href="#d0e211">3.2. Layering value-validation constraints</a></span></dt><dt><span class="section"><a href="#d0e249">3.3. 
+Implementation XSLT transformation stylesheets</a></span></dt><dt><span class="section"><a href="#d0e297">3.4. 
+Implementation data flow diagram</a></span></dt><dt><span class="section"><a href="#d0e389">3.5. 
+Necessary preconditions for the implementation</a></span></dt></dl></dd><dt><span class="section"><a href="#scenario">4. A complete running example</a></span></dt><dd><dl><dt><span class="section"><a href="#example">4.1. Example context/value association files</a></span></dt><dt><span class="section"><a href="#d0e432">4.2. Example validation shells</a></span></dt><dt><span class="section"><a href="#d0e492">4.3. 
+Support files required</a></span></dt><dt><span class="section"><a href="#d0e593">4.4. 
+Scenario</a></span></dt><dt><span class="section"><a href="#d0e656">4.5. 
+Running test instances against the scenario</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e773">5. Troubleshooting</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e782">5.1. Specification</a></span></dt><dt><span class="section"><a href="#d0e793">5.2. Runtime artefact generation</a></span></dt><dt><span class="section"><a href="#d0e802">5.3. Runtime artefact execution</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e807">6. Revision history</a></span></dt><dt><span class="bibliography"><a href="#bibl">References</a></span></dt></dl></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="s.intro"></a>1.&nbsp;Introduction</h2></div></div></div><p>
+This describes an implementation of the OASIS context/value association (CVA) file format [<a href="#b_cva" title="[CVA]"><span class="abbrev">CVA</span></a>] and the genericode file format [<a href="#b_genericode" title="[genericode]"><span class="abbrev">genericode</span></a>] when used for XML document validation.  These specifications were created by the OASIS Code List Representation Technical Committee [<a href="#b_clrtc" title="[CLRTC]"><span class="abbrev">CLRTC</span></a>].  This implementation generates a Schematron [<a href="#b_schematron" title="[Schematron]"><span class="abbrev">Schematron</span></a>] validation artefact.  As there are different ways to deploy Schematron validation, this implementation provides the tools to create an XSLT 1.0 [<a href="#b_xslt10" title="[XSLT 1.0]"><span class="abbrev">XSLT 1.0</span></a>] run-time artefact for out-of-the-box functionality.</p><p>This implementation assumes the addresses in the CVA file are that subset of XPath 1.0 [<a href="#b_xpath10" title="[XPath 1.0]"><span class="abbrev">XPath 1.0</span></a>] addresses defined as patterns in XSLT production [1].  There is no check of an appropriate value for the <code class="literal">queryBinding=</code>.</p><p>This implementation is in support of the second pass of a two-pass validation strategy, where the first pass confirms the structural and lexical constraints of a document and the second pass confirms the value constraints of a document.  <a href="#ctxrole" title="Figure&nbsp;1.&nbsp;Implementation role">Figure&nbsp;1, &#8220;Implementation role&#8221;</a> illustrates the two-pass validation of an incoming XML instance:  the first pass is accomplished with an XML document modeling language such as XML DTD, W3C Schema XSD [<a href="#b_w3cschema" title="[W3C Schema]"><span class="abbrev">W3C Schema</span></a>] (illustrated) or ISO/IEC 19757-2 RELAX-NG; the second pass is accomplished with a transformation language such as a W3C XSLT stylesheet (illustrated) or a Python program.  This second pass is as an implementation of ISO/IEC 19757-3 Schematron schemas that are created from OASIS context/value association files, independent of the technology used in the first pass.</p><div class="figure"><a name="ctxrole"></a><p class="title"><b>Figure&nbsp;1.&nbsp;Implementation role</b></p><div class="mediaobject"><img src="implementation-role.png" alt="Implementation role"></div></div><p>This implementation documentation focuses only on the second-pass value validation and is independent of the first-pass structural and lexical validation.  It assumes that first-pass structural and lexical validation has already been accomplished, so this is not depicted in other diagrams or mentioned in the text.  The structural and lexical validation ensures information items are in the correct places and are correctly formed.  As a complementary process, value validation addresses those information items governed by controlled vocabularies such as code lists and identifier lists, as well as business rules that might arbitrarily be decided between trading partners.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+Of course any information item that is not a code list or an identifier can be expressed as a value that is a member of a predetermined set of values.  Trading partners may wish to agree to limit any component of their information interchange based on business requirements for either party.</p></div><p>
+This implementation package includes the required stylesheets and illustrative test files that are referenced in the prose.  While these files as delivered are configured for use with the OASIS Universal Business Language (UBL) 2.0 [<a href="#b_ubl20" title="[UBL 2.0]"><span class="abbrev">UBL 2.0</span></a>] and with the genericode OASIS standard, they can be adapted for instances of any XML vocabulary and any representation of code lists.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e77"></a>2.&nbsp;
+Implementation overview and example</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e80"></a>2.1.&nbsp;Review of context/value association files and genericode</h3></div></div></div><p>
+The objective of applying this implementation to a set of document instances being validated is to express the lists of values that are allowed in the contexts of information items found in the instances.  One asserts in a context/value association file (a "CVA file") that (a) particular values from genericode files must be used in particular document contexts and (b) particular expressions are evaluated in particular document contexts, and the validation process confirms these assertions do not fail.</p><p>
+<a href="#ctxover" title="Figure&nbsp;2.&nbsp;OASIS context/value association">Figure&nbsp;2, &#8220;OASIS context/value association&#8221;</a> depicts a file of context/value associations in the lower center, where each association specifies for information items in the document instance being validated which lists of valid values in external value list expressions are to be used.</p><div class="figure"><a name="ctxover"></a><p class="title"><b>Figure&nbsp;2.&nbsp;OASIS context/value association</b></p><div class="mediaobject"><img src="methodology-context.png" alt="OASIS context/value association"></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e100"></a>2.2.&nbsp;Crane's implementation for validation</h3></div></div></div><p>
+ISO/IEC 19757-3 Schematron [<a href="#b_schematron" title="[Schematron]"><span class="abbrev">Schematron</span></a>] is an assertion-based schema language used to confirm the success or failure of a set of assertions made about XML document instances.  One can use ISO Schematron to express assertions supporting business rules and other limitations of XML information items so as to aggregate sets of requirements for the value validation of documents.</p><p>Crane Softwrights Ltd.'s approach to XML document validation is to translate an OASIS context/value association file into a set of Schematron assertions regarding the information items found in the instance.  A feature of this approach is the ability to incorporate the assertions of other business rules expressed in Schematron with the value assertions to produce a single expression of the value constraints of documents.</p><p>
+The synthesis of a pattern of ISO Schematron assertions to validate the values found in document contexts, and the use of ISO Schematron to validate those assertions are illustrated in <a href="#flowover" title="Figure&nbsp;3.&nbsp;Implementation overview">Figure&nbsp;3, &#8220;Implementation overview&#8221;</a>.</p><div class="figure"><a name="flowover"></a><p class="title"><b>Figure&nbsp;3.&nbsp;Implementation overview</b></p><div class="mediaobject"><img src="implementation-overview.png" alt="Implementation overview"></div></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+The inputs to the ISO Schematron dotted box in <a href="#flowover" title="Figure&nbsp;3.&nbsp;Implementation overview">Figure&nbsp;3, &#8220;Implementation overview&#8221;</a> can only be ISO Schematron schemas.  How ISO Schematron is implemented is not important to Crane's approach and any conforming implementation may be used.  The flow described inside of the ISO Schematron dotted box is the flow implemented by the XSLT stylesheets in the ZIP package supplied with this implementation.  The XSLT implementation provides for a runtime component being only the execution of an XSLT stylesheet.  Other implementations of ISO Schematron may use other runtime components.</p></div><p>
+To feed the ISO Schematron process, one needs to express the contexts of information items and the values used in those contexts in a CVA file.  The stylesheets provided with this implementation read CVA instances that point to lists of values externally-expressed using genericode.  Two XSLT processes are used to produce an ISO Schematron pattern of assertions that can then be combined with other patterns for business rule assertions to aggregate all document value validation requirements into a single ISO Schematron schema.</p><p>
+Provided the first-pass validation process has succeeded, this second-pass value validation process is then used against documents to be validated, producing for each document a report of that document's failures of assertions.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e133"></a>2.3.&nbsp;Implementation restrictions</h3></div></div></div><p>At this time this implementation is restricted from supporting coded values that include both an apostrophe (single quote) character and a double quote character in the one value string.  These stylesheets look for and signal the presence of a coded value that contains such a character combination.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e138"></a>3.&nbsp;
+Value validation</h2></div></div></div><p>
+The validation process involves checking all of the information items of an XML instance for their being in the context/value associations, and if so, having the instance values and their associated meta data checked against the values and meta data in the corresponding external XML representations of the value lists. </p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="schematron"></a>3.1.&nbsp;Using ISO/IEC 19757-3 Schematron</h3></div></div></div><p>
+The ISO assertion-based schema language Schematron [<a href="#b_schematron" title="[Schematron]"><span class="abbrev">Schematron</span></a>] works by validating the information items in an instance against a set of assertions.  An ISO Schematron validating process tests each information item against the highest-priority assertion (earliest in the list of assertions)  to which its XPath address matches.  </p><p>
+This implementation implements code list and value validation by expressing the assertions that the information items in the instance being validated, with any related meta data, are valid values from the external controlled-value expressions that are associated to the information items through the context/value association files.  By converting the context/value association file into a Schematron pattern, this is accomplished in a modular fashion so as to mesh with other Schematron patterns having other business rules that trading partners may need to express regarding their agreed-upon electronic documents expressed.</p><p>The user of this implementation pulls together all of the desired Schematron patterns into a "master" Schematron schema that is converted into the actual validation artefact used at run time to validate XML documents.  ISO Schematron offers flexible modes of operation and invocation with multiple phases containing multiple patterns, but the simplest (as illustrated in this implementation) is just to collect all of the patterns into a single unnamed phase.</p><p>The compressed package that is part of this implementation includes the following processing XSLT 1.0 stylesheets:</p><div class="itemizedlist"><ul type="disc"><li><p>
+<code class="literal">iso_schematron_assembly.xsl</code> assembles a fragmented ISO Schematron schema into a whole ISO Schematron schema through interpretation of the <code class="literal">&lt;sch:include&gt;</code> directive,</p></li><li><p>
+<code class="literal">iso_schematron_skeleton_for_xslt1.xsl</code> is a baseline reference XSLT 1.0 implementation of ISO Schematron suitable for being adapted for a particular reporting environment, and</p></li><li><p>
+<code class="literal">{schematron-wrapper}.xsl</code> is a placeholder for an adaptation of the ISO Schematron skeleton stylesheet for a particular reporting environment:</p><div class="itemizedlist"><ul type="circle"><li><p>
+<code class="literal">Message-Schematron-terminator.xsl</code> is included in the compressed package as an XSLT 1.0 adapted reporting environment for demonstrating this Schematron-based implementation in which all assertions are tested and reported with an XSLT <code class="literal">&lt;xsl:message&gt;</code> termination signaled in the presence of reports (thus allowing many XSLT processors to signal a non-zero error return code in the presence of reports and a zero error return code in the absence of reports).</p></li></ul></div></li></ul></div><p>
+These stylesheets are used in tandem to transform a compound set of Schematron sets of assertions into a single XSLT 1.0 stylesheet that in this demonstration environment, when applied against a document to be validated, reports any failed assertions that are detected.  All validation failures are sent to the operating system standard error port, and a non-zero exit is returned from most  XSLT processors.  A zero exit returned from the XSLT processor indicates successful validation.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+The supplied ISO Schematron stylesheets are the reference XSLT-based implementations of the specification available from the ISO Schematron web site at this time of writing.  Other implementations of ISO Schematron are also publicly available (e.g. Scimitar [<a href="#scimitar" title="[Scimitar]"><span class="abbrev">Scimitar</span></a>]).</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e198"></a>3.1.1.&nbsp;
+ISO Schematron reporting stylesheet</h4></div></div></div><p>
+While the supplied demonstrative <code class="literal">Message-Schematron-terminator.xsl</code> can be used in a production environment if it meets operational requirements, this implementation supports any adaptation of the ISO Schematron stylesheets.  The implementation stylesheets synthesize a rudimentary error report for a failed assertion in the absence of a suitably supplied <code class="literal">&lt;Message&gt;</code> element defining report content.</p><p>
+Users of the implementation may wish to implement more elaborate error reporting through detailed messaging, or possibly implement Schematron Validation Report Language (SVRL)-based errors and reporting through a suitable adaptation of the skeleton ISO stylesheet.  Such adaptation should avoid any editing modification of the skeleton ISO stylesheet file and achieve all behaviors through appropriate imported stylesheet customization techniques.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e211"></a>3.2.&nbsp;Layering value-validation constraints</h3></div></div></div><p>There may be many sources of value-validation constraints and users of the implementation may need to strategize the layering of these constraints to ensure the desired behavior.  This will dictate which Schematron patterns need to be created and how to write the "master" Schematron schema that includes them.</p><p>Consider that a committee might publish default context/value association files and users may wish to combine these published constraints with their own constraints in one of two manners:</p><div class="itemizedlist"><ul type="disc"><li><p>in parallel: engage both the committee constraints and the user constraints simultaneously without priority override; and </p></li><li><p>in priority: engage the user constraints in priority over the committee constraints, such that the committee constraints are only in play for those information items not covered by the user constraints.</p></li></ul></div><p><a href="#methlayer" title="Figure&nbsp;4.&nbsp;Implementation layering">Figure&nbsp;4, &#8220;Implementation layering&#8221;</a> illustrates the approaches of engaging constraints in parallel or in priority.</p><div class="figure"><a name="methlayer"></a><p class="title"><b>Figure&nbsp;4.&nbsp;Implementation layering</b></p><div class="mediaobject"><img src="implementation-layering.png" alt="Implementation layering"></div></div><p>Observe that all Schematron patterns in a given phase are processed without priority override, so engaging both the committee and user constraints in parallel would entail two <code class="literal">&lt;sch:include&gt;</code> directives, one for each pattern created by this implementation.</p><p>Observe also that all context/value association files included by an including context/value association file are processed in priority order with overriding behaviors.  The contexts in the including context/value association file have highest priority, followed in the contexts found in the included context/value association files in reverse document order of the including <code class="literal">&lt;cva:Include&gt;</code> directives.  Therefore, to override the committee constraints with the user constraints, the user context/value association file would include the committee context/value association file.  The one Schematron pattern would then be created from the including user context/value association file.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e249"></a>3.3.&nbsp;
+Implementation XSLT transformation stylesheets</h3></div></div></div><p>
+The compressed package that is part of this implementation includes an XSLT 1.0 stylesheet (complete with imported fragments) that transforms a context/value association file for a UBL document model and genericode external value list expressions into a corresponding Schematron set of assertions in a single named Schematron pattern.</p><p>
+These stylesheets are modular in a fashion that allows new stylesheets to take advantage of existing modules to support the implementation with other document models and other external code list expressions.  </p><p>When adapting this implementation to document models and external value list expressions, the basic stylesheet filename patterns follow these placeholder conventions:</p><div class="itemizedlist"><ul type="disc"><li><p>
+<code class="literal">Crane-cva2schXSLT.xsl</code> is the stylesheet being invoked, 
+</p></li><li><p>
+<code class="literal">Crane-{externalFormat}-CodeList.xsl</code> as the module identifying the meta data in the external code list expression, and 
+</p></li><li><p>
+<code class="literal">Crane-Constraints2SchematronXSLT.xsl</code> is the module directing the creation of the resulting <code class="literal">Schematron</code> expression.
+</p></li></ul></div><p>
+The <code class="literal">Crane-cva2schXSLT.xsl</code> stylesheet creates an XSLT stylesheet.  The stylesheet is labeled XSLT 2.0 but is limited in function to XSLT 1.0 features, thus it can be run with either an XSLT 1.0 or 2.0 processor.  This synthesized stylesheet is run standalone or with any document input (for example, itself) to create a Schematron pattern, named using the <code class="literal">name=</code> attribute in the context association file, in the standalone output file.  Each file's <code class="literal">&lt;Context&gt;</code> element becomes a Schematron assertion (thus requiring the document order of <code class="literal">&lt;Context&gt;</code> elements to be the required priority order).  This end result can then be incorporated into complete Schematron schemata by reference using the <code class="literal">&lt;sch:include&gt;</code> directive that is resolved in a strict assembly stage that takes place in advance of semantic interpretation of the other Schematron constructs</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e297"></a>3.4.&nbsp;
+Implementation data flow diagram</h3></div></div></div><p>
+The demonstrative example implementation of this implementation has two distinct phases, one for the preparation of the validation process and one for the validation activity itself, as shown in <a href="#flow" title="Figure&nbsp;5.&nbsp;Implementation data flow">Figure&nbsp;5, &#8220;Implementation data flow&#8221;</a>.  The placebo names are used for those stylesheet fragments that are replaced in this demonstrative environment with the stylesheet fragments indicated in the lists above.  The information expressed in the context/value association file is thus manipulated, but only when the inputs change, into a form with which the actual validation of the document instances is accomplished as many times as required.</p><div class="figure"><a name="flow"></a><p class="title"><b>Figure&nbsp;5.&nbsp;Implementation data flow</b></p><div class="mediaobject"><img src="implementation-dataflow.png" alt="Implementation data flow"></div></div><p>The following MSDOS invocations are an example of the five steps needed (shown as the five boxes in <a href="#flow" title="Figure&nbsp;5.&nbsp;Implementation data flow">Figure&nbsp;5, &#8220;Implementation data flow&#8221;</a> to convert the context/value association file <code class="literal">myNeeds.cva</code> into the runtime artefact <code class="literal">myNeedsOnly.xsl</code> and invoke it, assuming that the master Schematron schema is named <code class="literal">myNeedsOnly.sch</code>:</p><pre class="programlisting">Step 1: Create intermediate CVA XSLT:
+ xslt myNeeds.cva Crane-cva2schXSLT.xsl myNeeds.cva.xsl
+Step 2: Create Schematron pattern:
+ xslt myNeeds.cva.xsl myNeeds.cva.xsl myNeeds.sch
+Step 3: Assemble master Schematron schema into an assembly:
+ xslt myNeedsOnly.sch iso_schematron_assembly.xsl myNeedsOnlyAssembled.sch
+Step 4: Convert the assembled Schematron schema into XSLT:
+ xslt myNeedsOnlyAssembled.sch Message-Schematron-terminator.xsl myNeedsOnly.xsl
+Step 5: Invoke the generated XSLT at runtime with your data:
+ xslt myData.xml myNeedsOnly.xsl nul 2&gt;&amp;1 &gt;myDataResult.txt
+ echo Return code: %errorlevel%
+</pre><p>Using <code class="literal">Message-Schematron-terminator.xsl</code> the return code will be zero for success and non-zero for failure.  Using error port redirection the failures are reported in <code class="literal">myDataResult.txt</code> in this example.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e338"></a>3.4.1.&nbsp;
+Validation preparation</h4></div></div></div><p>
+The preparation phase incorporates a number of steps to interpret the requirements for validation in order to prepare the validation artefact.</p><p>
+The context/value association file points each of the document instance contexts to the associated external code list expressions.  The XSLT stylesheet that imports fragments with knowledge of the external code list expression structures transforms the input information into an XSLT stylesheet.  This stylesheet is then run with itself as input (the input is ignored but must be present for most XSLT processors to function) and produces a set of Schematron assertions that need to be true about the document being validated.  These assertions are exported in a Schematron file with only a single named pattern of code list rules.</p><p>
+A master Schematron schema validation shell .<code class="literal">sch</code> written by the user controls which Schematron rules are included in the validation artefact.  This shell might itself contain business rules but would typically be a skeletal shell that uses <code class="literal">&lt;sch:include&gt;</code> to incorporate all of the Schematron fragments needed for a particular validation process.  Some of these fragments will be those <code class="literal">.sch</code> artefacts created for the code list rules using the context/value association files.  Other fragments would be .<code class="literal">sch</code> artefacts possibly containing sets of business rules particular to validation scenarios.  </p><p>The Schematron assembly step starts with a particular validation shell <code class="literal">.sch</code> and assimilates all included <code class="literal">.sch</code> constructs into a complete Schematron schema <code class="literal">.sch</code> of all validation rules dictated by the shell.</p><p>
+The resulting Schematron schema <code class="literal">.sch</code> is then interpreted into an assertion validation XSLT stylesheet <code class="literal">.xsl</code> as the run-time artefact that implements the checking of the assertions against an instance for validity.</p><p>Note that the validation shell also satisfies a Schematron management issue of declaring the namespaces used by the other Schematron fragments.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e380"></a>3.4.2.&nbsp;
+Validation processing</h4></div></div></div><p>
+The XSLT expression of ISO Schematron assertions created in the preparation phase is run against all of the document instances being validated to produce the corresponding validation reports.</p><p>
+There is no need to recreate the assertion validation stylesheet unless anything changes in the context/value associations and external code list expressions, which must then be reprocessed to create a replacement validation artefact.</p><p>
+The functionality and results of the ISO Schematron processing are particular to a user's given environment.  While the stylesheet fragments included for demonstrative purposes may meet many users' requirements, any implementation of ISO Schematron or of assertion error reporting may be used in this implementation.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e389"></a>3.5.&nbsp;
+Necessary preconditions for the implementation</h3></div></div></div><p>
+Not illustrated in <a href="#flow" title="Figure&nbsp;5.&nbsp;Implementation data flow">Figure&nbsp;5, &#8220;Implementation data flow&#8221;</a> are three necessary preconditions for the data flow to produce bona fide validation reports.  The three inputs to the data flow must each be validated against their respective document models in advance to provide properly structured information to the internal processes.  None of the XSLT processes illustrated perform any validation of the inputs.</p><p>
+The context/value associations file must have been validated against the <code class="literal">ContextValueAssociation.xsd</code> constraints.</p><p>
+The external code list expressions must have been validated against their respective model, in this example the <code class="literal">genericode.xsd</code> constraints.</p><p>
+The documents being validated with this implementation must have been validated against their respective structural schema model, which is not included in this example.  This is a critically important precondition because the schema constraints will confirm the information items are correctly positioned in the XML instance document hierarchy. This ensures the XPath instructions in the context/value association will be properly applied.  Without having confirmed the structural integrity of the XML instance, the assertion validation report is meaningless.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="scenario"></a>4.&nbsp;A complete running example</h2></div></div></div><p>
+The compressed package that is part of this implementation includes the <code class="literal">scenario/</code> subdirectory in which the following complete scenario can be run to demonstrate how a file of context/value associations can be used to validate sample UBL instances using this implementation and the documented data flow.</p><p>
+Not included in this demonstration is the necessary step run in advance of the code list value validation implementation of validating the UBL document instances against the UBL W3C Schema expression of structural constraints.  As noted above, this precondition ensures the information items of the instances are correctly placed in the document hierarchy to be tested for their validity, thus producing bona fide validation reports.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="example"></a>4.1.&nbsp;Example context/value association files</h3></div></div></div><p>The following is an example of a short context/value association file <code class="literal">order-combined-doc.cva</code> that defines some constraints but includes another CVA file with other constraints:</p><pre class="programlisting">&lt;?xml-stylesheet type="text/xsl" href="Crane-cva2html.xsl"?&gt;
+&lt;cva:ContextValueAssociation 
+  xmlns:cva=
+          "http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/"
+  xmlns:cbc="urn:oasis:names:draft:ubl:schema:xsd:CommonBasicComponents-2"
+  xmlns:x="http://www.w3.org/TR/REC-html40"
+  xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+  id="urn:x-include-example"
+  version="$ Id: order-combined-doc.cva,v 1.5 2009/09/13 04:10:33 gkholman Exp $"
+  name="extended-rules"&gt;
+
+  &lt;Annotation&gt;
+    &lt;Description&gt;
+  &lt;x:p&gt;This illustrates inclusion and business rules as test constraints.&lt;/x:p&gt;
+    &lt;/Description&gt;
+  &lt;/Annotation&gt;
+
+  &lt;Title&gt;
+    Illustration of value tests
+  &lt;/Title&gt;
+
+  &lt;Include uri="order-constraints-doc.cva"&gt;
+    &lt;Annotation&gt;
+      &lt;Description&gt;
+        &lt;x:p&gt;Pull in other tests.&lt;/x:p&gt;
+      &lt;/Description&gt;
+    &lt;/Annotation&gt;
+  &lt;/Include&gt;
+
+  &lt;ValueTests&gt;
+    &lt;ValueTest xml:id="max-amount" test=". &amp;lt;= 10000"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;A limiting value for an amount.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/ValueTest&gt;
+  &lt;/ValueTests&gt;
+
+  &lt;Contexts&gt;
+    &lt;Context address="cbc:ToBePaidAmount" values="max-amount"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;Limit the amount to be paid.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;Message
+&gt;Total amount '&lt;sch:value-of select="."/&gt;' cannot be $10,000 or more&lt;/Message&gt;
+    &lt;/Context&gt;
+  &lt;/Contexts&gt;
+&lt;/cva:ContextValueAssociation&gt;</pre><p>
+The following is a complete example of a context/value association file constrained by this specification.  This incorporates all the features described in the OASIS specification (these features are specified in detail in the specification and not here in this implementation documentation):</p><pre class="programlisting">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="Crane-cva2html.xsl"?&gt;
+&lt;cva:ContextValueAssociation 
+  xmlns:cva=
+         "http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/"
+  xmlns:cbc="urn:oasis:names:draft:ubl:schema:xsd:CommonBasicComponents-2"
+  xmlns:cac="urn:oasis:names:draft:ubl:schema:xsd:CommonAggregateComponents-2"
+  xmlns:x="http://www.w3.org/TR/REC-html40"
+  xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+  id="urn:x-illustration"
+  name="code-list-rules"
+  version=
+"$ Id: order-constraints-doc.cva,v 1.21 2012/04/18 21:53:16 admin Exp $"&gt;
+  &lt;Annotation&gt;
+    &lt;Description&gt;
+      &lt;x:p&gt;
+        This is an illustrative example of all of the features of specifying
+        the context/value constraints that one can express for XML documents.
+      &lt;/x:p&gt;
+      &lt;x:p&gt;
+        The validation requirements for this contrived scenario are as follows:
+        &lt;x:ul&gt;
+          &lt;x:li&gt;the UN/CEFACT currency code list is restricted to be
+          only Canadian and US dollars:&lt;/x:li&gt;
+          &lt;x:li&gt;the seller must be in the US&lt;/x:li&gt;
+          &lt;x:li&gt;the buyer may be in either Canada or the US&lt;/x:li&gt;
+          &lt;x:li&gt;the definition for Payment Means is extended to include
+          both UBL definitions and additional definitions&lt;/x:li&gt;
+        &lt;/x:ul&gt;
+      &lt;/x:p&gt;
+    &lt;/Description&gt;
+  &lt;/Annotation&gt;
+
+  &lt;Title&gt;
+    Illustration of code list constraints - 
+    &lt;x:samp&gt;order-constraints.cva&lt;/x:samp&gt;
+  &lt;/Title&gt;
+
+  &lt;!--list all test expressions--&gt;
+  &lt;ValueTests&gt;
+    &lt;ValueTest xml:id="length-35" test="string-length(.)&amp;lt;=35"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;Certain fields are restricted to 35 characters in length.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/ValueTest&gt;
+  &lt;/ValueTests&gt;
+
+  &lt;!--list all of the genericode expressions of agreed-upon code list
+      value enumerations--&gt;
+  &lt;ValueLists&gt;
+    &lt;ValueList xml:id="currency" uri="CAUS_CurrencyCode.gc"
+               masqueradeUri="UBL_CurrencyCode-2.0.gc"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;Restricted to only Canadian and US dollars.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;Identification&gt;
+        &lt;LongName&gt;ISO Currency List&lt;/LongName&gt;
+      &lt;/Identification&gt;
+    &lt;/ValueList&gt;
+    &lt;ValueList xml:id="states" uri="US_CountrySubentityCode.gc"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;List of US states.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/ValueList&gt;
+    &lt;ValueList xml:id="provinces" uri="CA_CountrySubentityCode.gc"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;List of Canadian provinces&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/ValueList&gt;
+    &lt;ValueList xml:id="tax-ids" uri="TaxIdentifier.gc" key="codeKey"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;List of tax type identifiers&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/ValueList&gt;
+    &lt;ValueList xml:id="payments" uri="UBL_PaymentMeansCode-2.0.gc"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;
+            Copied from the UBL 2.0 suite:
+            &lt;x:a href="http://docs.oasis-open.org/ubl/cs-UBL-2.0/"&gt;
+              &lt;x:samp&gt;http://docs.oasis-open.org/ubl/cs-UBL-2.0/&lt;/x:samp&gt;
+            &lt;/x:a&gt;
+          &lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/ValueList&gt;
+    &lt;ValueList xml:id="additional_payments" 
+               uri="Additional_PaymentMeansCode.gc"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;An extra set of possible payment means.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/ValueList&gt;
+  &lt;/ValueLists&gt;
+  &lt;!--list all of the instance-level metadata components associated with
+      genericode &lt;Identification&gt; components--&gt;
+  &lt;InstanceMetadataSets&gt;
+    &lt;Annotation&gt;
+      &lt;Description&gt;
+        &lt;x:p&gt;UN/CEFACT CCTS V2.01 supplementary components to genericode&lt;/x:p&gt;
+      &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;InstanceMetadataSet xml:id="cctsV2.01-amount"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;CCTS 2.01 AmountType instance metadata&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;InstanceMetadata address="../@currencyCodeListVersionID"
+                        identification="Version"/&gt;
+    &lt;/InstanceMetadataSet&gt;
+    &lt;InstanceMetadataSet xml:id="cctsV2.01-measure"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;CCTS 2.01 MeasureType instance metadata&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;InstanceMetadata address="../@unitCodeListVersionID"
+                        identification="Version"/&gt;
+    &lt;/InstanceMetadataSet&gt;
+    &lt;InstanceMetadataSet xml:id="cctsV2.01-quantity"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;CCTS 2.01 QuantityType instance metadata&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;InstanceMetadata address="../@unitCodeListID"
+                        identification="Version"/&gt;
+      &lt;InstanceMetadata address="../@unitCodeListAgencyName"
+                        identification="Agency/LongName"/&gt;
+      &lt;InstanceMetadata address="../@unitCodeListAgencyID"
+                        identification="Agency/Identifier"/&gt;
+    &lt;/InstanceMetadataSet&gt;
+    &lt;InstanceMetadataSet xml:id="cctsV2.01-code"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;CCTS 2.01 CodeType instance metadata&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;InstanceMetadata address="@listName"
+                        identification="LongName[not(@Identifier='listID')]"/&gt;
+      &lt;InstanceMetadata address="@listID"
+                        identification="LongName[@Identifier='listID']"/&gt;
+      &lt;InstanceMetadata address="@listVersionID"
+                        identification="Version"/&gt;
+      &lt;InstanceMetadata address="@listSchemeURI"
+                        identification="CanonicalUri"/&gt;
+      &lt;InstanceMetadata address="@listURI"
+                        identification="LocationUri"/&gt;
+      &lt;InstanceMetadata address="@listAgencyName"
+                        identification="Agency/LongName"/&gt;
+      &lt;InstanceMetadata address="@listAgencyID"
+                        identification="Agency/Identifier"/&gt;
+    &lt;/InstanceMetadataSet&gt;
+    &lt;InstanceMetadataSet xml:id="cctsV2.01-identifier"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;CCTS 2.01 IdentifierType instance metadata&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;InstanceMetadata address="@schemeName"
+                        identification="LongName[not(@Identifier='listID')]"/&gt;
+      &lt;InstanceMetadata address="@schemeID"
+                        identification="LongName[@Identifier='listID']"/&gt;
+      &lt;InstanceMetadata address="@schemeVersionID"
+                        identification="Version"/&gt;
+      &lt;InstanceMetadata address="@schemeURI"
+                        identification="CanonicalUri"/&gt;
+      &lt;InstanceMetadata address="@schemeDataURI"
+                        identification="LocationUri"/&gt;
+      &lt;InstanceMetadata address="@schemeAgencyName"
+                        identification="Agency/LongName"/&gt;
+      &lt;InstanceMetadata address="@schemeAgencyID"
+                        identification="Agency/Identifier"/&gt;
+    &lt;/InstanceMetadataSet&gt;
+  &lt;/InstanceMetadataSets&gt;
+
+  &lt;!--list all of the contexts in which the value enumerations are used;
+      where two or more contexts might match a given node in the input,
+      list them here in order of most-important to least important match--&gt;
+  &lt;Contexts&gt;
+    &lt;Context address="@currencyID" values="currency" mark="money"
+             metadata="cctsV2.01-amount"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+      &lt;x:p&gt;All currencies are restricted to only Canadian and US dollars.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/Context&gt;
+    &lt;Context address="cac:BuyerCustomerParty//cbc:CountrySubentityCode"
+             values="provinces states"
+             metadata="cctsV2.01-code"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;The buyer can be in either Canada or the US.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;Message&gt;Invalid province or state '&lt;sch:value-of select="."/&gt;' for buyer "&lt;sch:value-of select="ancestor::cac:BuyerCustomerParty/cac:Party/cac:PartyName/cbc:Name"/&gt;"&lt;/Message&gt;
+    &lt;/Context&gt;
+    &lt;Context address="cac:SellerSupplierParty//cbc:CountrySubentityCode"
+             values="states"
+             metadata="cctsV2.01-code"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;The seller can only be in the US.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+      &lt;Message&gt;Invalid state '&lt;sch:value-of select="."/&gt;' for seller "&lt;sch:value-of select="ancestor::cac:SellerSupplierParty/cac:Party/cac:PartyName/cbc:Name"/&gt;"&lt;/Message&gt;
+    &lt;/Context&gt;
+    &lt;Context address="cac:TaxCategory/cbc:ID"
+             values="tax-ids" mark="money"
+             metadata="cctsV2.01-identifier"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;Limit the recognized tax identifiers&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/Context&gt;
+    &lt;Context address="cbc:PaymentMeansCode" mark="money"
+             values="payments additional_payments"
+             metadata="cctsV2.01-code"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+      &lt;x:p&gt;The payments can be by either standard or supplemental means.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/Context&gt;
+    &lt;Context address="cbc:Name" values="length-35"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;Names are not allowed to be too long.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/Context&gt;
+    &lt;Context address="cbc:StreetName" values="length-35"&gt;
+      &lt;Annotation&gt;
+        &lt;Description&gt;
+          &lt;x:p&gt;Addresses are not allowed to be too long.&lt;/x:p&gt;
+        &lt;/Description&gt;
+      &lt;/Annotation&gt;
+    &lt;/Context&gt;
+  &lt;/Contexts&gt;
+&lt;/cva:ContextValueAssociation&gt;
+</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e432"></a>4.2.&nbsp;Example validation shells</h3></div></div></div><p>The following <code class="literal">codes-only-constraints.sch</code> is a complete example of a validation shell suitable for including the Schematron fragment created for the <code class="literal">order-constraints-doc.cva</code> CVA file in <a href="#example" title="4.1.&nbsp;Example context/value association files">Section&nbsp;4.1, &#8220;Example context/value association files&#8221;</a> as the only value constraints to be engaged:</p><pre class="programlisting">&lt;schema xmlns="http://purl.oclc.org/dsdl/schematron"&gt;
+  &lt;title&gt;Code list value assertions&lt;/title&gt;
+  &lt;ns prefix="cbc"
+      uri="urn:oasis:names:draft:ubl:schema:xsd:CommonBasicComponents-2"/&gt;
+  &lt;ns prefix="cac"
+      uri="urn:oasis:names:draft:ubl:schema:xsd:CommonAggregateComponents-2"/&gt;
+  &lt;include href="order-constraints.sch"/&gt;
+&lt;/schema&gt;
+</pre><p>The following <code class="literal">order-combined-only.sch</code> is a complete example of a validation shell suitable for including the Schematron fragment created for the <code class="literal">order-combined.cva</code> CVA file in <a href="#example" title="4.1.&nbsp;Example context/value association files">Section&nbsp;4.1, &#8220;Example context/value association files&#8221;</a> as the only value constraints to be engaged:</p><pre class="programlisting">&lt;schema xmlns="http://purl.oclc.org/dsdl/schematron"&gt;
+  &lt;title&gt;Code list value assertions&lt;/title&gt;
+  &lt;ns prefix="cbc"
+      uri="urn:oasis:names:draft:ubl:schema:xsd:CommonBasicComponents-2"/&gt;
+  &lt;ns prefix="cac"
+      uri="urn:oasis:names:draft:ubl:schema:xsd:CommonAggregateComponents-2"/&gt;
+  &lt;include href="order-combined.sch"/&gt;
+&lt;/schema&gt;
+</pre><p>The following <code class="literal">total-constraints.sch</code> is a complete example of a validation shell that incorporates both a business rule Schematron schema fragment as well as the Schematron fragment created for the <code class="literal">order-constraints-doc.cva</code> CVA example:</p><pre class="programlisting">&lt;schema xmlns="http://purl.oclc.org/dsdl/schematron"
+        defaultPhase="only-phase"&gt;
+  &lt;title&gt;Business rules for maximum total value&lt;/title&gt;
+  &lt;ns prefix="cbc"
+      uri="urn:oasis:names:draft:ubl:schema:xsd:CommonBasicComponents-2"/&gt;
+  &lt;ns prefix="cac"
+      uri="urn:oasis:names:draft:ubl:schema:xsd:CommonAggregateComponents-2"/&gt;
+  &lt;phase id="only-phase"&gt;
+    &lt;active pattern="code-list-rules"/&gt;
+    &lt;active pattern="total-limit"/&gt;
+  &lt;/phase&gt;
+  &lt;include href="total-limit-constraint.sch"/&gt;
+  &lt;include href="order-constraints.sch"/&gt;
+&lt;/schema&gt;
+</pre><p>
+That validation shell pulls in a Schematron expression limiting the total amount of the invoice to less than $10,000.  This business rule would be in its own pattern,  as in the example <code class="literal">total-limits-constraint.sch</code> schema:</p><pre class="programlisting">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="total-limit"&gt;
+  &lt;rule context="cbc:ToBePaidAmount"&gt;
+    &lt;assert test=". &amp;lt; 10000"&gt;Total amount '&lt;value-of select="."/&gt;' 
+cannot be $10,000 or more&lt;/assert&gt;
+  &lt;/rule&gt;
+&lt;/pattern&gt;
+</pre><p>After creating all of the Schematron fragments needed by a validation shell, the run-time artefact is created from an assembly of the fragmented Schematron schema into a monolithic Schematron schema. </p><p>Note that the <code class="literal">order-combined-only.sch</code> and <code class="literal">total-constraints.sch</code> produce the same result using two different approaches to express the business rule of the total amount limitation.  In <code class="literal">order-combined.cva</code> the business rule is expressed as a value test, while in <code class="literal">total-limits-constraint.sch</code> the business rule is expressed as a Schematron pattern.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e492"></a>4.3.&nbsp;
+Support files required</h3></div></div></div><p>
+In both the Linux shell environment and the Windows command-line environment, two shell scripts or batch files are invoked in the test scenario and must be available on the path.  The following illustrates how each of these are invoked, the first line for a Windows environment and the second line for a Linux environment:</p><div class="itemizedlist"><ul type="disc"><li><pre class="programlisting">call w3cschema schema-file instance-file
+sh w3cschema.sh schema-file instance-file</pre><p>
+This invokes a W3C Schema validating processor applying the given W3C Schema set of constraints against the given instance file.  A non-zero error is returned if there are any validation errors.</p></li><li><pre class="programlisting">call xslt input-file stylesheet-file output-file
+sh xslt.sh input-file stylesheet-file output-file</pre><p>
+This invokes an XSLT stylesheet processor applying the given stylesheet file against the given input file to produce the named output file.  Optionally, any number of name/value pairs can be supplied to bind values to top-level parameters in the stylesheet.</p></li></ul></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e508"></a>4.3.1.&nbsp;
+Engaging the illustrative example</h4></div></div></div><p>
+The invocation files in the ZIP package are preconfigured ready to use once a number of required JAR files are copied into the scenario directory.</p><p> The supplied Java-based command-line invocation of the
+          Xerces [<a href="#xerces" title="[Xerces]"><span class="abbrev">Xerces</span></a>] W3C
+          Schema processor is xjparse (version 2 or greater)
+            [<a href="#xjparse" title="[xjparse]"><span class="abbrev">xjparse</span></a>], invoked as follows (with
+          the appropriate path to the jar file
+          set):</p><div class="itemizedlist"><ul type="disc"><li><p>
+              <code class="literal">java -jar xjparse.jar -S schema-file
+                instance-file</code></p></li></ul></div><p> The supplied Java-based XSLT processor is Saxon [<a href="#saxon" title="[Saxon]"><span class="abbrev">Saxon</span></a>],
+          invoked as follows (with the appropriate path to the
+          jar file set):</p><div class="itemizedlist"><ul type="disc"><li><p>
+<code class="literal">java -jar saxon.jar -o output-file input-file stylesheet-file param=value</code></p></li></ul></div><p>
+The classpaths supplied assume the following JAR files are copied into the <code class="literal">utility/</code> directory before use:</p><div class="itemizedlist"><ul type="disc"><li><p> from Saxon 6.5.5:
+                <code class="literal">saxon.jar</code></p></li><li><p> from xjparse (version 2 or
+              greater): <code class="literal">xjparse.jar</code> (copied from a versioned
+              filename)</p></li><li><p> from xjparse (version 2 or greater): the
+              entire <code class="literal">lib/</code> directory as a new
+                <code class="literal">utility/lib/</code> directory</p></li></ul></div><p>
+Of course the supplied invocation files can be replaced with invocation files of your choice.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e593"></a>4.4.&nbsp;
+Scenario</h3></div></div></div><p>
+In this scenario two trading partners are going to interchange UBL documents between buyer and seller parties.  At a technical level, they are using unmodified UBL W3C Schema expressions publicly available for the structural integrity of their XML instances.</p><p>
+At a business level, the trading partners have agreed that all currencies used in an instance can be only Canadian or US dollars.  The <code class="literal">CAUS_CurrencyCode.gc</code> file expresses this limited number of coded values.  The <code class="literal">UBL_CurrencyCode-2.0.gc</code> file is the genericode file from which the restricted file is derived, thus the restricted file's members have the same semantics as that from the original file.  The CVA file reflects this through the use of the <code class="literal">masqueradeUri=</code> attribute.</p><p>
+The partners have also agreed that the buyer's country sub-entity codes may be either a US state or a Canadian province, but that the seller's country sub-entity codes may only be a US state.  The two genericode files  <code class="literal">US_CountrySubentityCode.gc</code> and <code class="literal">CA_CountrySubentityCode.gc</code> express these limitations.</p><p>
+Using the <code class="literal">TaxIdentifier.gc</code> set of identifiers, the transactions can make reference to appropriate taxes.</p><p>
+Finally, the trading partners have agreed to use both the complete set of payment means used in UBL 2.0 plus an additional payment means not used in UBL 2.0, expressed in <code class="literal">Additional_PaymentMeansCode.gc</code>.</p><p>
+The context/value association file <code class="literal">order-constraints.cva</code> is listed in its entirety in <a href="#example" title="4.1.&nbsp;Example context/value association files">Section&nbsp;4.1, &#8220;Example context/value association files&#8221;</a> and points each of the UBL instance contexts to the required genericode files in order to satisfy the trading partner agreement for this scenario.</p><p>
+These genericode files and context/value association file together form a formal and unambiguous expression of the contextual coded value constraints that go beyond the constraints of the standardized UBL schema expressions.  The package of these files can, therefore, be included in a contractual agreement between the trading partners.</p><p>The <code class="literal">order-constraints.cva</code> file is used in three ways in this test scenario.  First it is used standalone by the <code class="literal">order-codes-only.sch</code> master Schematron schema.  Then it is included by the <code class="literal">order-combined.cva</code> CVA file illustrating how CVA files are combined in the <code class="literal">order-combined-only.sch</code> master Schematron schema.  Finally the standalone version is included in the <code class="literal">total-limit-constraint.sch</code> master Schematron schema that includes the <code class="literal">total-constraints.sch</code> Schematron schema.  There are no business rule violations in the first set of tests.  The same business rules are violated in the second and third sets of tests, with the same violation messages, but these are produced using the two different methods of a value test and a Schematron test.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e656"></a>4.5.&nbsp;
+Running test instances against the scenario</h3></div></div></div><p>
+A number of test instances are included to demonstrate the code list value validation implementation in this test scenario:</p><div class="itemizedlist"><ul type="disc"><li><p>
+<code class="literal">order-test-good1.xml</code> and <code class="literal">order-test-good2.xml</code> are two instances with valid coded values in context for currency and country sub-entity codes; the buyer in the first instance is in the US and the buyer in the second instance is in Canada;  note that the Canadian address uses meta data to indicate version 2 of the associated code list (it happens that a new Canadian territory named Nunavut was recently created by the splitting of the Northwest Territories, thus increasing the number of country sub-entity codes after many decades of not having changed);</p></li><li><p>
+<code class="literal">order-test-bad1.xml</code> uses the schema-valid currency coded value "UYU" for Peso Uruguayo (which happens to be next in the code list to the US dollar, and might have been inadvertently selected in a data entry user interface), but this violates the trading partner agreement to use only US or Canadian dollars, while it would have not violated the UBL W3C Schema expression;</p></li><li><p>
+<code class="literal">order-test-bad2.xml</code> uses the coded value for Canadian country sub-entity code with the meta data for the list indicating the coded value is from the old version "1" of the code list, but this violates the trading partner agreement to use only codes from version "2" of the code list; note that while the same coded value happens to be used as in version "1", it cannot be assumed to be valid because the coded value might represent different semantics in version "2" and the trading partners have agreed to use the updated version;</p></li><li><p>
+<code class="literal">order-test-bad3.xml</code> uses a Canadian province for the country sub-entity code of the seller's address, but this violates the trading partner agreement that the seller must have a US address.  There is a name in this file that is longer than the limit imposed by a value test.  This instance also has a typographical error in the amount to be paid, having omitted the decimal separator, thus indicating a total of $11,500 and not $115.00.</p></li></ul></div><p>
+First the scenario establishes the preconditions by validating the context/value association expression of constraints in <code class="literal">order-constraints.cva</code>, <code class="literal">order-combined.cva</code> and each of the genericode code list expressions (the necessary W3C Schema validation of the test input files is not included in the demonstration).  </p><p>
+Next, the code list rules expressed in the context/value association files are translated into a Schematron pattern in, respectively, <code class="literal">order-constraints.sch</code> and <code class="literal">order-combined.sch</code>.  These can now be reused wherever constraints need to be checked.  Note that the comments created in this pattern file include the markup for namespace declarations that are necessary in the including Schematron schemas.  It is the user's responsibility to ensure that all of the namespaces required by all of the included Schematron pattern files are appropriately declared in the including master schema.</p><p>The first test scenario, named "Test 1", translates only the <code class="literal">order-constraints.sch</code> pattern into the Schematron expression in <code class="literal">codes-only-constraints.sch</code> without any supplemental business rules, and then translates that first into a complete Schematron instance <code class="literal">order-codes-only.sch</code> and from there into an XSLT 1.0 expression in <code class="literal">order-codes-only.xsl</code>.</p><p>
+Preparation is complete for the first test and now the validation stage runs this resulting XSLT against all the test files, producing no errors and a zero return code when there are no problems, and producing a list of errors and a non-zero return code when there are problems.  The error report is output to the standard error port, and the return code is testable by the script running the process.</p><p>
+The second test scenario, named "Test 2", translates the <code class="literal">order-combined.sch</code> pattern into the Schematron expression in <code class="literal">order-codes-combined.sch</code> without any supplemental business rules, and then that first into a complete Schematron instance <code class="literal">order-codes-combined.sch</code> and from there into an XSLT 1.0 expression in <code class="literal">order-codes-combined.xsl</code>.</p><p>
+Preparation is complete for the second test and the validation stage runs the resulting XSLT against the <code class="literal">order-test-bad3.xml</code> file with the corrupted total amount, indicating the violation of both the code list and value test constraints.</p><p>
+The third test scenario, named "Test 3", augments the Schematron expression of business rules in <code class="literal">total-constraints.sch</code> with the code list rules into <code class="literal">order-codes-total.sch</code> and then translates that into an XSLT 1.0 expression in <code class="literal">order-codes-total.xsl</code>.</p><p>
+Preparation is complete for the third test and the validation stage runs the resulting XSLT against the <code class="literal">order-test-bad3.xml</code> file with the corrupted total amount, indicating the violation of both the code list and business constraints.</p><p>
+Note again how the constraints need only be prepared once, translating the requirements into the XSLT in the preparation phase to the artefact which is then reused during the validation phase as often as required.  In a production environment the XSLT used for validation need only be recreated whenever the trading partner agreement changes to include a new formal expression of the coded value constraints in either the context/value association file or a code list expression file.</p><p>
+Run "<code class="literal">sh test-all.sh</code>" in a Linux environment or "<code class="literal">test-all.bat</code>" in a Windows command-line environment to get the following results of running the test scenario:</p><pre class="programlisting"><code class="literal">Precondition validation...
+
+Validating partner-agreed constraints...
+  w3cschema ContextValueAssociation.xsd order-constraints.cva
+Attempting validating, namespace-aware parse
+Parse succeeded (0.311) with no errors and no warnings.
+  w3cschema ContextValueAssociation.xsd order-combined.cva
+Attempting validating, namespace-aware parse
+Parse succeeded (0.300) with no errors and no warnings.
+
+Validating code lists...
+  w3cschema genericode.xsd CA_CountrySubentityCode.gc
+Attempting validating, namespace-aware parse
+Parse succeeded (0.320) with no errors and no warnings.
+  w3cschema genericode.xsd US_CountrySubentityCode.gc
+Attempting validating, namespace-aware parse
+Parse succeeded (0.351) with no errors and no warnings.
+  w3cschema genericode.xsd CAUS_CurrencyCode.gc
+Attempting validating, namespace-aware parse
+Parse succeeded (0.331) with no errors and no warnings.
+  w3cschema genericode.xsd TaxIdentifier.gc
+Attempting validating, namespace-aware parse
+Parse succeeded (0.320) with no errors and no warnings.
+  w3cschema genericode.xsd Additional_PaymentMeansCode.gc
+Attempting validating, namespace-aware parse
+Parse succeeded (0.321) with no errors and no warnings.
+
+Preparing code list rules...
+
+Translating partner-agreed constraints into Schematron rules...
+ xslt order-constraints.cva 
+      ..\utility\Crane-cva2schXSLT.xsl
+      order-constraints.sch.xsl
+ xslt order-constraints.sch.xsl order-constraints.sch.xsl order-constraints.sch
+
+ xslt order-combined.cva 
+      ..\utility\Crane-cva2schXSLT.xsl
+      order-combined.sch.xsl
+ xslt order-combined.sch.xsl order-combined.sch.xsl order-combined.sch
+
+Test 1 - standalone code list rules
+
+Assembling rules into a Schematron schema...
+  xslt codes-only-constraints.sch ..\utility\iso_schematron_assembly.xsl 
+                                                     order-codes-only.sch
+
+Translating Schematron into validation stylesheet...
+  xslt order-codes-only.sch ..\utility\Message-Schematron-terminator.xsl 
+                                                     order-codes-only.xsl
+
+Document validation...
+
+Testing order-test-good1.xml...
+  xslt order-test-good1.xml order-codes-only.xsl nul "2&gt;test-constraints.txt"
+Result: 0
+
+
+Testing order-test-good2.xml...
+  xslt order-test-good2.xml order-codes-only.xsl nul "2&gt;test-constraints.txt"
+Result: 0
+
+
+Testing order-test-bad1.xml...
+  xslt order-test-bad1.xml order-codes-only.xsl nul "2&gt;test-constraints.txt"
+Result: 1
+Value supplied 'UYU' is unacceptable for constraints identified by 'currency' in
+the context '@currencyID': /Order/cac:TaxTotal[1]/cbc:TaxAmount[1]/@currencyID
+
+Processing terminated by xsl:message at line 151
+
+
+Testing order-test-bad2.xml...
+  xslt order-test-bad2.xml order-codes-only.xsl nul "2&gt;test-constraints.txt"
+Result: 1
+Invalid province or state 'ON' for buyer "Elliot's Electronics": 
+/Order/cac:BuyerCustomerParty[1]/cac:Party[1]/cac:Address[1]/
+cbc:CountrySubentityCode[1]
+
+Processing terminated by xsl:message at line 151
+
+
+Testing order-test-bad3.xml...
+  xslt order-test-bad3.xml order-codes-only.xsl nul "2&gt;test-constraints.txt"
+Result: 1
+Value supplied 'Joes Office Supply With A Very Long Name' is unacceptable
+for constraints identified by 'length-35' in the context 'cbc:Name': 
+/Order/cac:BuyerCustomerParty[1]/cac:Party[1]/cac:PartyName[1]/cbc:Name[1]
+Invalid state 'ON' for seller "Elliot's Electronics": 
+/Order/cac:SellerSupplierParty[1]/cac:Party[1]/cac:Address[1]/
+cbc:CountrySubentityCode[1]
+
+Processing terminated by xsl:message at line 151
+
+
+Test 2 - with business rule expressed as a value test
+
+Assembling rules into a Schematron schema...
+  xslt order-combined-only.sch ..\utility\iso_schematron_assembly.xsl 
+                                                     order-codes-combined.sch
+
+Translating Schematron into validation stylesheet...
+  xslt order-codes-combined.sch ..\utility\Message-Schematron-terminator.xsl 
+                                                     order-codes-combined.xsl
+
+Document validation...
+
+Testing order-test-bad3.xml...
+  xslt order-test-bad3.xml order-codes-combined.xsl nul "2&gt;test-constraints.txt"
+Result: 1
+Value supplied 'Joes Office Supply With A Very Long Name' is unacceptable
+for constraints identified by 'length-35' in association file with uri 
+'order-constraints-doc.cva' in the context 'cbc:Name': 
+/Order/cac:BuyerCustomerParty[1]/cac:Party[1]/cac:PartyName[1]/cbc:Name[1]
+Invalid state 'ON' for seller "Elliot's Electronics": 
+/Order/cac:SellerSupplierParty[1]/cac:Party[1]/cac:Address[1]/
+cbc:CountrySubentityCode[1]
+Total amount '11500' cannot be $10,000 or more: 
+/Order/cac:LegalTotal[1]/cbc:ToBePaidAmount[1]
+
+Processing terminated by xsl:message at line 151
+
+
+Test 3 - with business rule expressed as Schematron
+
+Assembling rules into a Schematron schema...
+  xslt total-constraints.sch ..\utility\iso_schematron_assembly.xsl 
+                                                     order-codes-total.sch
+
+Translating Schematron into validation stylesheet...
+  xslt order-codes-total.sch ..\utility\Message-Schematron-terminator.xsl 
+                                                     order-codes-total.xsl
+
+Document validation...
+
+Testing order-test-bad3.xml...
+  xslt order-test-bad3.xml order-codes-total.xsl nul "2&gt;test-constraints.txt"
+Result: 1
+Total amount '11500' cannot be $10,000 or more: 
+/Order/cac:LegalTotal[1]/cbc:ToBePaidAmount[1]
+Value supplied 'Joes Office Supply With A Very Long Name' is unacceptable
+for constraints identified by 'length-35' in the context 'cbc:Name': 
+/Order/cac:BuyerCustomerParty[1]/cac:Party[1]/cac:PartyName[1]/cbc:Name[1]
+Invalid state 'ON' for seller "Elliot's Electronics": 
+/Order/cac:SellerSupplierParty[1]/cac:Party[1]/cac:Address[1]/
+cbc:CountrySubentityCode[1]
+
+Processing terminated by xsl:message at line 152
+
+
+Done.
+</code></pre></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e773"></a>5.&nbsp;Troubleshooting</h2></div></div></div><p>This section will collect reports from users of specification,
+      invocation and execution problems encountered and their resolution.
+      Please do not hesitate to contact <a href="mailto:info@CraneSoftwrights.com" target="_top"><code class="literal">info@CraneSoftwrights.com</code></a> with any
+      comments or questions that will embellish this detail for yourself and
+      other users.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e782"></a>5.1.&nbsp;Specification</h3></div></div></div><p>Remember not to omit the <code class="literal">metadata=</code> attribute of
+        the <code class="literal">&lt;Context&gt;</code> element when you need to match up
+        the authored metadata with the values. Without it, the process will
+        appear to work just fine when your metadata is correct, but it will not
+        fail when your metadata is incorrect.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e793"></a>5.2.&nbsp;Runtime artefact generation</h3></div></div></div><p>Review <a href="#flow" title="Figure&nbsp;5.&nbsp;Implementation data flow">Figure&nbsp;5, &#8220;Implementation data flow&#8221;</a> for the steps of invocation.</p><p>Remember not to run the generated Schematron script as it is,
+        rather to include it into a master Schematron schema and use the master
+        to create the runtime XSLT artefact.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e802"></a>5.3.&nbsp;Runtime artefact execution</h3></div></div></div><p>XPath syntax errors at runtime may be due to omitting required
+        namespace declarations in the master Schematron schema for namespace
+        prefixes used in the included Schematron fragments (generated or
+        authored). The Schematron processor used for runtime artefact
+        generation does not detect this error at preparation time.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e807"></a>6.&nbsp;Revision history</h2></div></div></div><p>2013-02-07 - repaired an important bug to support the union operator
+      in the identification XPath address </p></div><div class="bibliography"><div class="titlepage"><div><div><h2 class="title"><a name="bibl"></a>References</h2></div></div></div><div class="bibliomixed"><a name="b_clrtc"></a><p class="bibliomixed">[<span class="abbrev">CLRTC</span>] <span class="title"><a href="http://www.oasis-open.org/committees/codelist" target="_top">OASIS Code List Representation Technical Committee</a></span></p></div><div class="bibliomixed"><a name="b_cva"></a><p class="bibliomixed">[<span class="abbrev">CVA</span>] G. Ken Holman <span class="title"><a href="http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/" target="_top">OASIS Context/Value Association Committee Specification 01</a></span></p></div><div class="bibliomixed"><a name="b_genericode"></a><p class="bibliomixed">[<span class="abbrev">genericode</span>] Tony Coates <span class="title"><a href="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" target="_top">OASIS Genericode Committee Specification 01</a></span></p></div><div class="bibliomixed"><a name="saxon"></a><p class="bibliomixed">[<span class="abbrev">Saxon</span>] Michael Kay <span class="title"><a href="http://saxon.sf.net/" target="_top">Saxon</a></span></p></div><div class="bibliomixed"><a name="b_schematron"></a><p class="bibliomixed">[<span class="abbrev">Schematron</span>] 
+
+Rick Jelliffe
+<span class="title">
+<a href="http://www.schematron.com/" target="_top">
+ISO/IEC 19757-3 Schematron</a></span>,
+<span class="title"><a href="http://www.DSDL.org" target="_top">
+Document Schema Definition Languages (DSDL) Part 3</a></span>,
+<span class="title"><a href="http://www.jtc1sc34.org/" target="_top">ISO/IEC JTC 1/SC 34/WG 1</a></span>
+</p></div><div class="bibliomixed"><a name="scimitar"></a><p class="bibliomixed">[<span class="abbrev">Scimitar</span>]  Fourthought, Inc. <span class="title"><a href="http://uche.ogbuji.net/tech/4suite/amara/" target="_top">Scimitar</a></span></p></div><div class="bibliomixed"><a name="b_ubl20"></a><p class="bibliomixed">[<span class="abbrev">UBL 2.0</span>] Jon Bosak, Tim McGrath, G. Ken Holman <span class="title"><a href="http://docs.oasis-open.org/ubl/os-ubl-2.0/" target="_top">Universal Business Language (UBL) Version 2.0</a></span>,
+<span class="title"><a href="http://www.oasis-open.org/committees/ubl/" target="_top">
+OASIS UBL Technical Committee</a></span> 2006
+</p></div><div class="bibliomixed"><a name="b_w3cschema"></a><p class="bibliomixed">[<span class="abbrev">W3C Schema</span>] <span class="title"><a href="http://www.w3.org/TR/xmlschema-0/" target="_top">XML Schema Part 0: Primer</a></span>, <span class="title"><a href="http://www.w3.org/TR/xmlschema-1/" target="_top">XML Schema Part 1: Structures</a></span>, <span class="title"><a href="http://www.w3.org/TR/xmlschema-2/" target="_top">XML Schema Part 2: Datatypes</a></span> 2004-10-28</p></div><div class="bibliomixed"><a name="xerces"></a><p class="bibliomixed">[<span class="abbrev">Xerces</span>] The Apache XML Project <span class="title"><a href="http://xerces.apache.org/xerces2-j/" target="_top">Xerces</a></span></p></div><div class="bibliomixed"><a name="xjparse"></a><p class="bibliomixed">[<span class="abbrev">xjparse</span>] Norman Walsh <span class="title"><a href="http://nwalsh.com/java/xjparse/" target="_top">xjparse</a></span></p></div><div class="bibliomixed"><a name="b_xpath10"></a><p class="bibliomixed">[<span class="abbrev">XPath 1.0</span>] James Clark, Steve DeRose <span class="title"><a href="http://www.w3.org/TR/1999/REC-xpath-19991116" target="_top">XML Path Language (XPath) Version 1.0</a></span> 1999-11-16</p></div><div class="bibliomixed"><a name="b_xslt10"></a><p class="bibliomixed">[<span class="abbrev">XSLT 1.0</span>] James Clark <span class="title"><a href="http://www.w3.org/TR/1999/REC-xslt-19991116" target="_top">XSL Transformations (XSLT) Version 1.0</a></span> 1999-11-16</p></div></div></div></body></html>

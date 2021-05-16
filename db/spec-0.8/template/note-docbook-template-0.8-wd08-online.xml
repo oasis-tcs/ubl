@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- 
+For use when a committee document points at the OASIS web site for publishing:
+<?xml-stylesheet type="text/xsl" 
+href="http://docs.oasis-open.org/templates/DocBook/spec-0.8/stylesheets/oasis-note-html.xsl"?>
+<!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+         "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" 
+           "http://www.w3.org/Math/DTD/mathml2/mathml2.dtd">
+
+For use when a committee document points to an embedded installation of DocBook
+(note the instructions for embedding DocBook requires pruning some directories
+and adjusting the stylesheet and DocBook directories in these declarations):
+<?xml-stylesheet type="text/xsl" 
+      href="../htmlruntime/spec-0.8/stylesheets/oasis-note-html-offline.xsl"?>
+<?oasis-spec-base-uri ../htmlruntime/spec-0.8/?>
+<!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" 
+         "../htmlruntime/spec-0.8/docbook/docbookx.dtd" 
+           "../htmlruntime/spec-0.8/mathml2/mathml2.dtd">
+
+For use when a committee document is published in a local environment only
+(note the instructions for local publishing require adjusting the stylesheet
+ and DocBook directories in these declarations):
+<?xml-stylesheet type="text/xsl" 
+href="file:///Users/admin/z/oasis/spec-0.8/stylesheets/oasis-note-html-offline.xsl"?>
+<!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+         "file:///Users/admin/z/oasis/spec-0.8/docbook/docbookx.dtd" 
+           "file:///Users/admin/z/oasis/spec-0.8/mathml2/mathml2.dtd">
+-->
+<?xml-stylesheet type="text/xsl" 
+href="http://docs.oasis-open.org/templates/DocBook/spec-0.8/stylesheets/oasis-note-html.xsl"?>
+<!DOCTYPE article
+  PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+         "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" 
+[
+<!--the document properties-->
+<!ENTITY name "note-docbook-template">
+<!ENTITY pversion "0.7">
+<!ENTITY version "0.8">
+<!ENTITY stage "wd08">
+<!ENTITY note "Stage and revision / Alternate stage and revision">
+<!ENTITY this-loc   "https://docs.oasis-open.org/templates/DocBook/spec-&version;/template">
+<!ENTITY previous-loc "http://docs.oasis-open.org/templates/DocBook/spec-&pversion;/template">
+<!ENTITY latest-loc   "https://docs.oasis-open.org/templates/DocBook/oasis-specification/template">
+<!ENTITY pubdate "05 April 2020">
+
+<!ENTITY % MATHML.prefixed "INCLUDE">
+<!ENTITY % MATHML.prefix "mml">
+<!ENTITY % equation.content "(alt?, (graphic+|mediaobject+|mml:math))">
+<!ENTITY % inlineequation.content 
+                "(alt?, (inlinegraphic+|inlinemediaobject+|mml:math))">
+<!ENTITY % mathml PUBLIC "-//W3C//DTD MathML 2.0//EN"
+           "http://www.w3.org/Math/DTD/mathml2/mathml2.dtd">
+%mathml;
+]>
+<article status="&note;">
+
+  <?axf line-number show?>
+  <?axf line-number-position end?>
+  <?axf line-number-offset 2mm?>
+  <?axf line-number-width 20pt?>
+  <?axf line-number-text-align start?>
+  <?axf line-number-font-family serif?>
+  <?axf line-number-font-size 10pt?>
+  <?axf line-number-font-weight normal?>
+  <?axf line-number-font-style italic?>
+  <?axf line-number-initial 1?>
+  <?axf line-number-start 5?>
+  <?axf line-number-interval 5?>
+  <?axf line-number-reset page?>
+  
+  <articleinfo>
+    <title>Note Title Version X.X</title>
+    <releaseinfo role="cvs"> $Id: note-docbook-template-0.8-wd08.xml,v 1.3 2020/04/05 19:08:28 admin Exp $ </releaseinfo>
+    <productname>&name;</productname>
+    <productnumber>&version;-&stage;</productnumber>
+    <releaseinfo role="track">Non-Standards Track</releaseinfo>
+    <releaseinfo role="OASIS-specification-this-authoritative">&this-loc;/&name;-&stage;.html</releaseinfo>
+    <releaseinfo role="OASIS-specification-this">&this-loc;/&name;-&stage;.pdf</releaseinfo>
+    <releaseinfo role="OASIS-specification-this">&this-loc;/&name;-&stage;.xml</releaseinfo>
+    <releaseinfo role="OASIS-specification-previous-authoritative">&previous-loc;/&name;.html</releaseinfo>
+    <releaseinfo role="OASIS-specification-previous">&previous-loc;/&name;.pdf</releaseinfo>
+    <releaseinfo role="OASIS-specification-previous">&previous-loc;/&name;.xml</releaseinfo>
+    <releaseinfo role="OASIS-specification-latest-authoritative">&latest-loc;/&name;.html</releaseinfo>
+    <releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;.pdf</releaseinfo>
+    <releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;.xml</releaseinfo>
+    <releaseinfo role="committee"><ulink url="https://www.oasis-open.org/committees/{tc-shortname}" conformance="skip">OASIS
+        {official name of technical committee} TC</ulink></releaseinfo>
+    <authorgroup>
+      <editor>
+        <firstname>Jane</firstname>
+        <surname>Doe</surname>
+        <affiliation>
+          <orgname><ulink url="www.example.com" conformance="skip">Example
+            Corporation</ulink></orgname>
+        </affiliation>
+        <email>jane.doe@example.com</email>
+      </editor>
+      <othercredit>
+        <firstname>Mary</firstname>
+        <surname>Baker</surname>
+        <affiliation>
+          <orgname>Another Corporation</orgname>
+        </affiliation>
+        <email>mary.baker@example.com</email>
+      </othercredit>
+      <othercredit>
+        <firstname>James</firstname>
+        <surname>Butcher</surname>
+        <affiliation>
+          <orgname>Associate Member</orgname>
+        </affiliation>
+        <email>james.butcher@example.com</email>
+      </othercredit>
+    </authorgroup>
+    <pubdate>&pubdate;</pubdate>
+    <copyright>
+      <year>2019</year>
+    </copyright>
+    <legalnotice role="additional">
+      <title>Additional artifacts</title>
+      <para>This prose specification is one component of a Work Product which also includes:</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>{XML schemas}</para>
+        </listitem>
+        <listitem>
+          <para>{Other parts}</para>
+        </listitem>
+      </itemizedlist>
+    </legalnotice>
+    <legalnotice role="related">
+      <title>Related work</title>
+      <para>This specification replaces or supersedes:</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>{specification replaced by this standard}</para>
+        </listitem>
+        <listitem>
+          <para>{specification replaced by this standard} </para>
+        </listitem>
+      </itemizedlist>
+      <para>This specification is related to:</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>{related specifications}</para>
+        </listitem>
+        <listitem>
+          <para>{related specifications}</para>
+        </listitem>
+      </itemizedlist>
+    </legalnotice>
+    <legalnotice role="namespaces">
+      <title>Declared XML namespaces</title>
+      <para><ulink url="https://docs.oasis-open.org/ns/{tc-shortname}/xxxx"
+          >https://docs.oasis-open.org/ns/{tc-shortname}/xxxx</ulink></para>
+    </legalnotice>
+    <abstract>
+      <para>{This specification defines...}</para>
+    </abstract>
+    <legalnotice role="status">
+      <title>Status</title>
+      <para><emphasis>(Use the following for a working draft; please check with TC Administration
+          for any revisions to this content as the guidelines change from time to
+        time)</emphasis></para>
+      <para>This <ulink
+          url="https://www.oasis-open.org/policies-guidelines/tc-process#dWorkingDraft"
+          conformance="skip">Working Draft</ulink> (WD) has been produced by one or more TC Members;
+        it has not yet been voted on by the TC or <ulink
+          url="https://www.oasis-open.org/policies-guidelines/tc-process#committeeDraft"
+          conformance="skip">approved</ulink> as a Committee Draft (Committee Specification Draft or
+        a Committee Note Draft). The OASIS document <ulink
+          url="https://www.oasis-open.org/policies-guidelines/tc-process#standApprovProcess"
+          conformance="skip">Approval Process</ulink> begins officially with a TC vote to approve a
+        WD as a Committee Draft. A TC may approve a Working Draft, revise it, and re-approve it any
+        number of times as a Committee Draft.</para>
+      <para><emphasis>(Use the following for approved documents; please check with TC Administration
+          for any revisions to this content as the guidelines change from time to
+        time)</emphasis></para>
+      <para>This document was last revised or approved by the {TC name | membership of OASIS} on the
+        above date. The level of approval is also listed above. Check the &#x201c;Latest
+        version&#x201d; location noted above for possible later revisions of this document. Any
+        other numbered Versions and other technical work produced by the Technical Committee (TC)
+        are listed at <ulink
+          url="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev={tc-shortname}#technical"
+          >https://www.oasis-open.org/committees/tc_home.php?wg_abbrev={tc-shortname}#technical</ulink>.</para>
+      <para>Technical Committee members should send comments on this specification to the Technical
+        Committee&#x2019;s email list. Others should send comments to the Technical Committee by
+        using the &#x201c;<ulink
+          url="https://www.oasis-open.org/committees/comments/index.php?wg_abbrev={tc-shortname}"
+          conformance="skip">Send A Comment</ulink>&#x201d; button on the Technical
+        Committee&#x2019;s web page at <ulink
+          url="https://www.oasis-open.org/committees/{tc-shortname}/"
+          >https://www.oasis-open.org/committees/{tc-shortname}/</ulink>.</para>
+      <para>For information on whether any patents have been disclosed that may be essential to
+        implementing this specification, and any offers of patent licensing terms, please refer to
+        the Intellectual Property Rights section of the Technical Committee web page (<ulink
+          url="https://www.oasis-open.org/committees/{tc-shortname}/ipr.php"
+          >https://www.oasis-open.org/committees/{tc-shortname}/ipr.php</ulink>).</para>
+      <para>The errata page for this specification is located at <ulink
+          url="&latest-loc;/&name;-errata.html">&latest-loc;/&name;-errata.html</ulink>.</para>
+    </legalnotice>
+    <legalnotice role="citation">
+      <title>Citation format</title>
+      <para>When referencing this specification the following citation format should be used:</para>
+      <bibliolist>
+        <bibliomixed conformance="skip">
+          <abbrev>&name;</abbrev>
+          <citetitle>Note Title Version X.X. </citetitle>
+          <date>&pubdate;.</date>
+          <releaseinfo>OASIS Committee Note Draft &stage;.</releaseinfo>
+          <bibliomisc><ulink url="&this-loc;/&name;.html"
+            >&this-loc;/&name;.html</ulink>.</bibliomisc>
+        </bibliomixed>
+      </bibliolist>
+    </legalnotice>
+    <legalnotice role="notices">
+      <title>Notices</title>
+      <para><emphasis>(Please check with TC Administration for any revisions to this content as the
+          guidelines change from time to time)</emphasis></para>
+      <para>Copyright &#169; OASIS Open 2019. All Rights Reserved. </para>
+      <para>All capitalized terms in the following text have the meanings assigned to them in the
+        OASIS Intellectual Property Rights Policy (the &#8220;OASIS IPR Policy&#8221;). The full
+          <ulink url="http://www.oasis-open.org/policies-guidelines/ipr" conformance="skip"
+          >Policy</ulink> may be found at the OASIS website.</para>
+      <para>This document and translations of it may be copied and furnished to others, and
+        derivative works that comment on or otherwise explain it or assist in its implementation may
+        be prepared, copied, published, and distributed, in whole or in part, without restriction of
+        any kind, provided that the above copyright notice and this section are included on all such
+        copies and derivative works. However, this document itself may not be modified in any way,
+        including by removing the copyright notice or references to OASIS, except as needed for the
+        purpose of developing any document or deliverable produced by an OASIS Technical Committee
+        (in which case the rules applicable to copyrights, as set forth in the OASIS IPR Policy,
+        must be followed) or as required to translate it into languages other than English.</para>
+      <para>The limited permissions granted above are perpetual and will not be revoked by OASIS or
+        its successors or assigns.</para>
+      <para>This document and the information contained herein is provided on an &#8220;AS IS&#8221;
+        basis and OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+        ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS
+        OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.</para>
+    </legalnotice>
+  </articleinfo>
+  <section id="S-INTRODUCTION">
+    <title>Introduction</title>
+    <section id="S-OVERVIEW">
+      <title>Overview</title>
+      <para>This is a pro-forma XML instance of the DocBook <xref linkend="docbook"/> vocabulary
+        illustrating the components of an OASIS standards-related document. This XML file also
+        includes the use of XML stylesheet association <xref linkend="xml-assoc"/>.</para>
+      <para>The markup is suitable for publishing according to OASIS conventions by using the
+        available OASIS Specification Publishing in DocBook XML stylesheets <xref
+          linkend="oasis-spec"/>. Please review the publishing information for details on the
+        environment and this template.</para>
+      <para>What follows is some Lorem text in order to force a page break.</para>
+      <para>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam justo. Mauris eleifend,
+        pede at congue porttitor, magna tellus consectetuer odio, et dapibus quam velit quis lectus.
+        Curabitur vestibulum mattis leo. Vestibulum eget massa. Etiam a ligula sed massa placerat
+        interdum. In hac habitasse platea dictumst. Curabitur augue sapien, tincidunt non, varius
+        et, tincidunt non, augue. Proin urna. In diam dolor, pulvinar quis, euismod vitae, rhoncus
+        sed, odio. Vestibulum pellentesque feugiat turpis. Sed viverra, est ut consequat mattis,
+        neque libero porta metus, sit amet aliquam magna tellus vitae erat. Etiam quam arcu, euismod
+        vel, elementum vitae, gravida sed, eros. In sagittis justo ut orci. Nulla neque urna,
+        porttitor ut, lobortis vel, mollis vel, ipsum. Curabitur lacinia. Ut dui. Donec sapien
+        lorem, molestie ac, vestibulum eu, posuere vel, leo. Nam hendrerit molestie enim.
+        Suspendisse potenti. Etiam dapibus nulla id ligula. Ut a arcu. Sed at nulla. Proin viverra
+        odio sed velit. Praesent leo. Nulla scelerisque, mauris volutpat ultricies fringilla, nunc
+        lectus elementum ligula, non ultricies metus ligula hendrerit ante. Pellentesque posuere
+        ullamcorper enim. Mauris viverra elit vitae justo. Suspendisse potenti. Curabitur ultrices
+        commodo sapien. Cras convallis scelerisque neque. Nullam sit amet tortor. Sed posuere libero
+        ut justo. Donec dignissim elementum quam. Donec egestas sem eu elit. Duis sed ipsum. In
+        pretium ultrices magna.</para>
+      <para>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque
+        laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi
+        architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas
+        sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione
+        voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit,
+        amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut
+        labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+        exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+        consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam
+        nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?
+        [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium
+        voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati
+        cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id
+        est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam
+        libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id,
+        quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet,
+        ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic
+        tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
+        perferendis doloribus asperiores repellat.</para>
+    </section>
+  <section id="S-ANOTHER-SECTION">
+    <title>Another section</title>
+    <para>This document includes the following important equation::</para>
+    <equation>
+      <title>Test of MathML standalone</title>
+      <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="block" id="mml_m174">
+  <mml:mrow>
+    <mml:msub>
+      <mml:mi>C</mml:mi>
+      <mml:mtext>t</mml:mtext>
+    </mml:msub>
+    <mml:mo>=</mml:mo>
+    <mml:mfrac>
+      <mml:mi>M</mml:mi>
+      <mml:mi>F</mml:mi>
+    </mml:mfrac>
+  </mml:mrow>
+</mml:math>
+    </equation>
+    <para>This is another paragraph.</para>
+    <para>In this paragraph is an inline equation
+      <inlineequation>
+      <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline" id="mml_m174b">
+  <mml:mrow>
+    <mml:msub>
+      <mml:mi>C</mml:mi>
+      <mml:mtext>t</mml:mtext>
+    </mml:msub>
+    <mml:mo>=</mml:mo>
+    <mml:mfrac>
+      <mml:mi>M</mml:mi>
+      <mml:mi>F</mml:mi>
+    </mml:mfrac>
+  </mml:mrow>
+</mml:math>
+      </inlineequation>
+      that should be displayed.
+    </para>
+    <para>This is another paragraph.</para>
+  </section>
+    <section id="S-TERMINOLOGY">
+      <title>Terminology</title>
+      <section id="S-KEY-WORDS">
+        <title> Key words</title>
+        <para>The key words <glossterm>must</glossterm>, <glossterm>must not</glossterm>,
+            <glossterm>required</glossterm>, <glossterm>shall</glossterm>, <glossterm>shall
+            not</glossterm>, <glossterm>should</glossterm>, <glossterm>should not</glossterm>,
+            <glossterm>recommended</glossterm>, <glossterm>may</glossterm>, and
+            <glossterm>optional</glossterm> are to be interpreted as described in <xref
+            linkend="rfc2119"/>. Note that for reasons of style, these words are not capitalized in
+          this document.</para>
+      </section>
+      <section id="S-DEFINITIONS">
+        <title> Definitions</title>
+        <variablelist>
+          <varlistentry>
+            <term> term</term>
+            <listitem>
+              <para>Definition</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term> term</term>
+            <listitem>
+              <para>Definition</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </section>
+      <section id="S-KEY-CONCEPTS">
+        <title> Key concepts</title>
+        <variablelist>
+          <varlistentry>
+            <term> concept</term>
+            <listitem>
+              <para>Definition</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term> concept</term>
+            <listitem>
+              <para>Definition</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term> concept</term>
+            <listitem>
+              <para>Definition</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </section>
+    </section>
+    <section id="S-REFERENCES">
+      <title>References</title>
+      <bibliolist>
+        <bibliomixed id="docbook">
+          <abbrev>DocBook</abbrev>
+          <citetitle>DocBook 4.5 </citetitle>
+          <date>17 January 2005. </date>
+          <releaseinfo>OASIS Committee Draft 4.5. </releaseinfo>
+          <bibliomisc><ulink url="http://www.docbook.org/specs/docbook-4.5-spec.html"
+              >http://www.docbook.org/specs/docbook-4.5-spec.html</ulink>.</bibliomisc>
+        </bibliomixed>
+        <bibliomixed id="rfc2119"><abbrev>RFC 2119</abbrev>
+          <citetitle>Key words for use in RFCs to Indicate Requirement Levels</citetitle>,
+            <date>March 1997. </date>
+          <author>
+            <firstname>S. </firstname>
+            <surname>Bradner</surname>
+          </author>. <releaseinfo>IETF (Internet Engineering Task Force) RFC 2119, </releaseinfo>
+          <bibliomisc><ulink url="http://www.ietf.org/rfc/rfc2119.txt"
+              >http://www.ietf.org/rfc/rfc2119.txt</ulink>.</bibliomisc>
+        </bibliomixed>
+        <bibliomixed id="oasis-spec">
+          <abbrev>oasis-spec</abbrev>
+          <citetitle>OASIS Specification Publishing in DocBook XML Version &version;. </citetitle>
+          <date>&pubdate;. </date>
+          <releaseinfo>OASIS Working Draft. </releaseinfo>
+          <bibliomisc><ulink
+              url="https://docs.oasis-open.org/templates/DocBook/spec-&version;/oasis-specification-&version;-&stage;.html"
+              >https://docs.oasis-open.org/templates/DocBook/spec-&version;/oasis-specification-&version;-&stage;.html</ulink>.</bibliomisc>
+        </bibliomixed>
+        <bibliomixed id="xml-assoc"><abbrev>xml-assoc</abbrev>
+          <title>Associating Style Sheets with XML documents Version 1.0. </title>
+          <date>29 June 1999. </date>
+          <author>
+            <firstname>James </firstname>
+            <surname>Clark</surname>
+          </author>. <releaseinfo>W3C Recommendation. </releaseinfo>
+          <bibliomisc><ulink url="http://www.w3.org/1999/06/REC-xml-stylesheet-19990629"
+              >http://www.w3.org/1999/06/REC-xml-stylesheet-19990629</ulink></bibliomisc>
+        </bibliomixed>
+      </bibliolist>
+    </section>
+  </section>
+  <section id="S-SECTION-TITLE">
+    <title>Section Title</title>
+    <section id="S-SUB-SECTION-TITLE">
+      <title>Sub-section Title</title>
+      <section id="S-SUB-SUB-SECTION-TITLE">
+        <title>Sub-sub-section Title</title>
+        <section id="S-SUB-SUB-SUB-SECTION-TITLE">
+          <title>Sub-sub-sub-section Title</title>
+          <section id="S-SUB-SUB-SUB-SECTION-INTRODUCTION">
+            <title>Sub-sub-sub-section Introduction</title>
+            <para>The parent level, this level and other deeper levels do not go into the table of
+              contents.</para>
+          </section>
+          <section id="S-SUB-SUB-SUB-SUB-SECTION-TITLE">
+            <title>Sub-sub-sub-sub-section Title</title>
+            <para>The parent level, this level and other deeper levels do not go into the table of
+              contents.</para>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+  <appendix id="A-AN-ANNEX">
+    <title>An Annex</title>
+    <para>Appendices are distinguished from sections.</para>
+  </appendix>
+  <appendix role="normative" id="A-A-NORMATIVE-ANNEX">
+    <title>A Normative Annex</title>
+    <para>An annex or section with <literal>role="normative"</literal>.</para>
+  </appendix>
+  <appendix role="non-normative" id="A-A-NON-NORMATIVE-ANNEX">
+    <title>A Non-normative Annex</title>
+    <para>An annex or section with <literal>role="non-normative"</literal>.</para>
+  </appendix>
+  <appendix role="informative" id="A-AN-INFORMATIVE-ANNEX">
+    <title>An Informative Annex</title>
+    <para>An annex or section with <literal>role="informative"</literal>.</para>
+  </appendix>
+  <appendix role="iso-normative" id="A-AN-ISO-NORMATIVE-ANNEX">
+    <title>An ISO-normative Annex</title>
+    <para>An annex or section with <literal>role="iso-normative"</literal>.</para>
+  </appendix>
+  <appendix role="iso-informative" id="A-AN-ISO-INFORMATIVE-ANNEX">
+    <title>An ISO-informative Annex</title>
+    <para>An annex or section with <literal>role="iso-informative"</literal>.</para>
+  </appendix>
+  <appendix role="non-normative" id="A-ACKNOWLEDGEMENTS">
+    <title>Acknowledgements</title>
+    <para>In a typical OASIS work product one might wish to list committee participants in a
+      non-normative annex (markup shown above in the normative annex example) using wording along
+      the line of &#x201c;The following individuals have participated in the creation of this
+      specification and are gratefully acknowledged:&#x201d;</para>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>Mary Baker, Associate Member</para>
+      </listitem>
+      <listitem>
+        <para>Jane Doe, Example Corporation Member</para>
+      </listitem>
+      <listitem>
+        <para>John Able, Other Example Corporation Member</para>
+      </listitem>
+    </itemizedlist>
+    <para>Note that the itemized list uses <literal>spacing="compact"</literal> to remove the space
+      between list items in the printed result, not the HTML result.</para>
+  </appendix>
+  <appendix id="A-REVISION-HISTORY">
+    <title>Revision History</title>
+    <para>Typically the revision history is removed from a finalized specification or note.</para>
+    <para>
+      <revhistory>
+        <revision>
+          <revnumber>X.Y</revnumber>
+          <date>DD Mmmmmm YYYY</date>
+          <authorinitials>abc</authorinitials>
+          <revremark>Details of the revision</revremark>
+        </revision>
+        <revision>
+          <revnumber>X.Y</revnumber>
+          <date>DD Mmmmmm YYYY</date>
+          <authorinitials>abc</authorinitials>
+          <revremark>Details of the revision</revremark>
+        </revision>
+      </revhistory>
+    </para>
+  </appendix>
+</article>

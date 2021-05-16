@@ -1,0 +1,66 @@
+{"_D":"",
+ "_A":"urn:X-test:UBL:TSC:CommonAggregate",
+ "_B":"urn:X-test:UBL:TSC:CommonBasic",
+ "ProofOfReexportationReminder":[{
+ "ID":[{"_":"A2344"}],
+ "IssueDate":[{"_":"2019-06-21"}],
+ "ProcedureCode":[{"_":"A-letter"}],
+ "ProofOfReexportationRequestDocumentReference":[{
+  "ID":[{"_":"req03245345"}]
+ }],
+ "ExportingGuarantorParty":[{
+  "PartyName":[{
+   "Name":[{"_":"Dansk Erhverv"}]
+  }],
+  "PostalAddress":[{
+   "StreetName":[{"_":"Slotsholmsgade"}],
+   "BuildingNumber":[{"_":"1"}],
+   "CityName":[{"_":"København K"}],
+   "PostalZone":[{"_":"1216"}],
+   "Country":[{
+    "IdentificationCode":[{"_":"DK"}]
+   }]
+  }],
+  "PartyLegalEntity":[{
+   "CompanyID":[{"_":"DK43232010"}]
+  }]
+ }],
+ "ImportingGuarantorParty":[{
+  "PartyName":[{
+   "Name":[{"_":"Deutscher Industrie- und Handelskammertag e.V."}]
+  }],
+  "PostalAddress":[{
+   "StreetName":[{"_":"Breite Straße"}],
+   "BuildingNumber":[{"_":"29"}],
+   "CityName":[{"_":"Berlin"}],
+   "PostalZone":[{"_":"10178"}],
+   "Country":[{
+    "IdentificationCode":[{"_":"DE"}]
+   }]
+  }],
+  "PartyLegalEntity":[{
+   "CompanyID":[{"_":"DE122125278"}]
+  }]
+ }],
+ "CustomsParty":[{
+  "PartyName":[{
+   "Name":[{"_":"Zollamt"}]
+  }],
+  "PostalAddress":[{
+   "StreetName":[{"_":"Tollbrettkoppel"}],
+   "BuildingNumber":[{"_":"8"}],
+   "CityName":[{"_":"Heiligenhafen"}],
+   "PostalZone":[{"_":"23774"}],
+   "Country":[{
+    "IdentificationCode":[{"_":"DE"}]
+   }]
+  }]
+ }],
+ "GoodsItemPassportCounterfoil":[{
+  "ID":[{"_":"645634567"}],
+  "GoodsItemPassportID":[{"_":"ata01661"}],
+  "VoucherDocumentReference":[{
+   "ID":[{"_":"23445567"}]
+  }]
+ }]
+}]}

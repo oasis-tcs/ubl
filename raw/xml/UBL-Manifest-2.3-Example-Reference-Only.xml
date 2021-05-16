@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Manifest xmlns="urn:oasis:names:specification:ubl:schema:xsd:Manifest-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+	<cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+	<cbc:CustomizationID>urn:oasis:names:specification:ubl:xpath:ForwardingInstructions-2.0:samples-2.0-draft</cbc:CustomizationID>
+	<cbc:ProfileID>bpid:urn:oasis:names:draft:bpss:ubl-2-sample-international-scenario</cbc:ProfileID>
+	<cbc:ID>KHN23-44048</cbc:ID>
+	<cbc:UUID>6E09886B-DC6E-439F-82D1-7C83709652B1</cbc:UUID>
+	<cbc:IssueDate>2005-06-24</cbc:IssueDate>
+	<cbc:IssueTime>14:20:00.0Z</cbc:IssueTime>
+	<cac:SendingLogisticsOperatorParty>
+		<cac:PartyName>
+			<cbc:Name>One-Stop Forwarders</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:Postbox>99043</cbc:Postbox>
+			<cbc:CityName>Boston</cbc:CityName>
+			<cbc:PostalZone>02210</cbc:PostalZone>
+			<cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+			<cac:Country>
+				<cbc:IdentificationCode>US</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:Contact>
+			<cbc:Name>Con Solidador</cbc:Name>
+			<cbc:Telephone> +1 343 1453654</cbc:Telephone>
+			<cbc:Telefax>+1 343 1453655</cbc:Telefax>
+			<cbc:ElectronicMail>ctanner@onestopfreight.com</cbc:ElectronicMail>
+		</cac:Contact>
+	</cac:SendingLogisticsOperatorParty>
+	<cac:ConsignorParty>
+		<cac:PartyName>
+			<cbc:Name>Consortial</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Boston Road</cbc:StreetName>
+			<cbc:BuildingName>Suite M-102</cbc:BuildingName>
+			<cbc:BuildingNumber>630</cbc:BuildingNumber>
+			<cbc:CityName>Billerica</cbc:CityName>
+			<cbc:PostalZone>01821</cbc:PostalZone>
+			<cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
+			<cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+			<cac:Country>
+				<cbc:IdentificationCode>US</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:Contact>
+			<cbc:Name>Mrs Bouquet</cbc:Name>
+			<cbc:Telephone> +1 158 1233714</cbc:Telephone>
+			<cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
+			<cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
+		</cac:Contact>
+	</cac:ConsignorParty>
+	<cac:ConsigneeParty>
+		<cac:PartyName>
+			<cbc:Name>IYT Corporation</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Avon Way</cbc:StreetName>
+			<cbc:BuildingName>Thereabouts</cbc:BuildingName>
+			<cbc:BuildingNumber>56A</cbc:BuildingNumber>
+			<cbc:CityName>Bridgtow</cbc:CityName>
+			<cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+			<cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+			<cac:AddressLine>
+				<cbc:Line>3rd Floor, Room 5</cbc:Line>
+			</cac:AddressLine>
+			<cac:Country>
+				<cbc:IdentificationCode>GB</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:Contact>
+			<cbc:Name>Mr Fred Churchill</cbc:Name>
+			<cbc:Telephone>+44 127 2653214</cbc:Telephone>
+			<cbc:Telefax>+44 127 2653215</cbc:Telefax>
+			<cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+		</cac:Contact>
+	</cac:ConsigneeParty>
+	<cac:DocumentReference>
+		<cbc:ID>234534533</cbc:ID>
+		<cbc:DocumentType>CMR</cbc:DocumentType>
+		<cac:IssuerParty>
+			<cac:PartyName>
+				<cbc:Name>Boston Road</cbc:Name>
+			</cac:PartyName>
+		</cac:IssuerParty>
+	</cac:DocumentReference>
+	<cac:DocumentReference>
+		<cbc:ID>2343456533</cbc:ID>
+		<cbc:DocumentType>CMR</cbc:DocumentType>
+		<cac:IssuerParty>
+			<cac:PartyName>
+				<cbc:Name>Boston Road</cbc:Name>
+			</cac:PartyName>
+		</cac:IssuerParty>
+	</cac:DocumentReference>
+	<cac:DocumentReference>
+		<cbc:ID>XD534533</cbc:ID>
+		<cbc:DocumentType>BOL</cbc:DocumentType>
+		<cac:IssuerParty>
+			<cac:PartyName>
+				<cbc:Name>Maersk</cbc:Name>
+			</cac:PartyName>
+		</cac:IssuerParty>
+	</cac:DocumentReference>
+</Manifest>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Example enumeration of code list values for Canadian Provinces.  
+
+     This is part of the test/demonstration environment for the
+     UBL Code List Value Validation Methodology.
+
+     $Id: CA_CountrySubentityCode.gc,v 1.3 2007/07/28 19:55:15 G. Ken Holman Exp $
+-->
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+   <Identification>
+      <ShortName>provinces</ShortName>
+      <LongName>Canadian Provinces</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:x-example:Canadian-Provinces</CanonicalUri>
+      <CanonicalVersionUri>urn:x-example:Canadian-Provinces-2</CanonicalVersionUri>
+      <AlternateFormatLocationUri MimeType="text/html">http://canadaonline.about.com/library/bl/blpabb.htm</AlternateFormatLocationUri>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>Code</ShortName>
+         <Data Type="xsd:normalizedString"/>
+      </Column>
+      <Column Id="name" Use="optional">
+         <ShortName>Name</ShortName>
+         <Data Type="xsd:string"/>
+      </Column>
+      <Key Id="codeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>AB</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Alberta</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>BC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>British Columbia</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>MB</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Manitoba</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NB</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>New Brunswick</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NL</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Newfoundland and Labrador</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Northwest Territories</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NS</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Nova Scotia</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>NU</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Nunavut</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ON</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ontario</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PE</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Prince Edward Island</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>QC</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Quebec</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SK</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Saskatchewan</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>YT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Yukon</SimpleValue>
+         </Value>
+      </Row>
+    </SimpleCodeList>
+  </gc:CodeList>
