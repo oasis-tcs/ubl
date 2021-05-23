@@ -4,15 +4,15 @@
 <!--
   This is the configuration of the base schema fragments for UBL 2.3 Signatures
 
-  Library:           OASIS Universal Business Language (UBL) 2.3 CSD05
-                     http://docs.oasis-open.org/ubl/csd05-UBL-2.3/
-  Release Date:      12 May 2021
+  Library:           OASIS Universal Business Language (UBL) 2.3 CS02
+                     http://docs.oasis-open.org/ubl/cs02-UBL-2.3/
+  Release Date:      25 May 2021
   
 -->
 <!ENTITY copyrightYear      "2021">
-<!ENTITY versionDate "12 May 2021">
-<!ENTITY versionDisplay "2.3 CSD05">
-<!ENTITY versionDirectory   "csd05-UBL-2.3">
+<!ENTITY versionDate "25 May 2021">
+<!ENTITY versionDisplay "2.3 CS02">
+<!ENTITY versionDirectory   "cs02-UBL-2.3">
 ]>
 <configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema">
  <ndr>
