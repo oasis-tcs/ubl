@@ -170,6 +170,10 @@ Before the process runs, the spreadsheets on Google should reflect the new stage
 - UBL 2.3 Library Elements Spreadsheet - CS01 master
 - UBL 2.3 Document Elements Spreadsheet - CS01 master
 
+The genericode file of the UBL vocabulary of the previously-published stage must replace that of the previous previously-published stage.
+- e.g. if the stage previous to `csd05` was `cs01`, then for `cs02` replace `UBL-Entities-2.3-cs01.gc` with `UBL-Entities-2.3-csd05.gc` (the renamed `UBL-Entities-2.3.gc` file from the `csd05` release)
+- do the same for the `UBL-Signature-Entities-*.gc` files
+
 Each revision is described by the following configuration files for the artefacts:
 - target identification when converting ODS to genericode
   - [`ident-UBL.xml`]( ident-UBL.xml ) 
@@ -192,8 +196,6 @@ Each revision is described by the following configuration files for the artefact
   - [`massageModelName.xml`]( massageModelName.xml )
 - documentary ODS template skeleton for generating spreadsheet results
   - [`skeletonDisplayEditSubset.ods`]( skeletonDisplayEditSubset.ods )
-
-Every `git push` to the repository triggers the GitHub Action execution of [`build-github.sh`](build-github.sh) to invoke whichever set of results is needed. The action takes about 25 minutes of processing on GitHub to create all of the artefacts. The resulting ZIP is about 160Mb and when unzipped provides the two archive and distribution ZIP files with the results. Editors post these results as-is to Kavi. OASIS TC Administration posts the distribution package to the https://docs.oasis-open.org/ubl  OASIS web site.
 
 # Configuring the hub document
 
@@ -277,6 +279,10 @@ Image creation using the http://draw.io tool:
   - save the resulting high-res PNG file into the [`art`]( art ) directory
   - copy the high-res PNG file into the [`htmlart`]( htmlart ) directory
   - using [ GIMP ]( https://www.gimp.org/ ) or some other pixel image manipulation tool, scale the [`htmlart`]( htmlart ) copy to be a maximum of 750 pixels (or proportionally smaller) and 96 DPI
+
+## Producing results
+
+Every `git push` to the repository triggers the GitHub Action execution of [`build-github.sh`](build-github.sh) to invoke whichever set of results is needed. The action takes about 25 minutes of processing on GitHub to create all of the artefacts. The resulting ZIP is about 160Mb and when unzipped provides the two archive and distribution ZIP files with the results. Editors post these results as-is to Kavi. OASIS TC Administration posts the distribution package to the https://docs.oasis-open.org/ubl OASIS web site.
 
 ## Preview results
 
