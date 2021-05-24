@@ -115,7 +115,9 @@ There should be no "`.txt`" files in the returned base directory. Various "`.txt
 
 When editors create their final edits, the results from the `git push` should be ready to be published without any modifications. If there are errant or unexpected files in the directory, the build process needs to address the discrepancies.
 
-## Configuring the artefacts
+## Creating a new release
+
+### Configuring the artefacts
 
 The [`build.sh`](build.sh) invocation points to the particular set of parameters to use to create the artefacts. The editors maintain this file for the technical committee version of the UBL package. Alternative configurations for subcommittees can create branches of this repository, but once created, they are not to be merged into the `main`, `results`, or `ubl-version-stage` branches. As is true for other maintainers, changes are submitted as a pull request to `review`. The subcommittee `build.sh` is not used by the technical committee.
 
@@ -197,7 +199,7 @@ Each revision is described by the following configuration files for the artefact
 - documentary ODS template skeleton for generating spreadsheet results
   - [`skeletonDisplayEditSubset.ods`]( skeletonDisplayEditSubset.ods )
 
-# Configuring the hub document
+### Configuring the hub document
 
 All references in the hub document `UBL.xml` to version, revision, and date information must be maintained in a set of general entities maintained in the internal document type subset along the lines of the following for CSD05 that followed CS01:
 
@@ -230,7 +232,7 @@ Recall that only the first declaration of a given general entity is respected. T
 
 There are a number of SYSTEM general entities whose content is not edited by hand. Rather, they are generated from the inputs of other configuration files `UBL-{version}-Party-summary-information.xml` and `UBL-{version}-Schema-summary-information.xml` that are the responsibility of the maintainer to make consistent with their expectations of the hub document.
 
-Source files, processing stylesheets, and resulting entities generated in the building of the hub document:
+Source files, processing stylesheets, and resulting entities generated or used in the building of the hub document:
 - `UBL.xml` is the raw main hub document that gets massaged, assembled, and processed in the final `UBL-{version}.xml`
 - `UBL-{prevVersion}-modified.xml` is the final `UBL-{prevVersion}.xml` hub document from the previous version of UBL possibly modified from the original; this is processed by `hub2processSummary.xsl`:
   - `summary-processes-ent.xml`
@@ -240,6 +242,15 @@ Source files, processing stylesheets, and resulting entities generated in the bu
   - `summary-namespaces-ent.xml`
   - `summary-schemas-ent.xml`
   - `summary-examples-ent.xml`
+- the artefacts building process creates the following four entity files for comparing current versions to old versions:
+  - `old2newDoc-from-previous-version-documents-ent.xml` 
+  - `old2newDoc-from-previous-version-library-ent.xml`   
+  - `old2newDoc-from-previous-stage-documents-ent.xml`   
+  - `old2newDoc-from-previous-stage-library-ent.xml`
+
+The `old2newDoc` version entities are always in play in the hub document, through to the completion of OASIS Standard. As the work proceeds in stages during working drafts and committee specification drafts, the `old2newDoc` stage entities are incorporated into the appendix comparing the previous stage to the current stage. Once the model has been completed and the work is progressing through Committee Specification to OASIS Standard, that stage-perspective section of the documentation is commented out and not included.
+
+Please note the documentation above regarding `ATTENTION-new-entities.txt` and how to remove that file from the build process by replacing the authoring environment "old" entities with the build environment "new" entities.
 
 Subdirectories:
 - [`images`]( images ) - original revisable source vector artwork in `.svg` or `.drawio` (incomplete set of files because many originals have been lost; please add originals here using same base name as published)
@@ -280,11 +291,7 @@ Image creation using the http://draw.io tool:
   - copy the high-res PNG file into the [`htmlart`]( htmlart ) directory
   - using [ GIMP ]( https://www.gimp.org/ ) or some other pixel image manipulation tool, scale the [`htmlart`]( htmlart ) copy to be a maximum of 750 pixels (or proportionally smaller) and 96 DPI
 
-## Producing results
-
-Every `git push` to the repository triggers the GitHub Action execution of [`build-github.sh`](build-github.sh) to invoke whichever set of results is needed. The action takes about 25 minutes of processing on GitHub to create all of the artefacts. The resulting ZIP is about 160Mb and when unzipped provides the two archive and distribution ZIP files with the results. Editors post these results as-is to Kavi. OASIS TC Administration posts the distribution package to the https://docs.oasis-open.org/ubl OASIS web site.
-
-## Preview results
+### Preview results
 
 Intermediate edits saved to the local `UBL.xml` file can be previewed instantly in a browser on your computer. It is recommended that one do this to establish their edits are satisfactory before checking in to GitHub to trigger the published results. The preview does not regenerate the SYSTEM general entities, so it may be necessary to push your intermediate work to your branch in order to obtain replacement entity files for your repository from the published results.
 
@@ -301,6 +308,10 @@ Opening the XML in Mac OSX:
 - drag and drop the XML source onto Safari, or "right-click, Open With, Safari"
 - use Cmd-R to refresh the browser after editing the file
 - this does not work with Firefox or Chrome browsers
+
+## Producing results
+
+Every `git push` to the repository triggers the GitHub Action execution of [`build-github.sh`](build-github.sh) to invoke whichever set of results is needed. The action takes about 25 minutes of processing on GitHub to create all of the artefacts. The resulting ZIP is about 160Mb and when unzipped provides the two archive and distribution ZIP files with the results. Editors post these results as-is to Kavi. OASIS TC Administration posts the distribution package to the https://docs.oasis-open.org/ubl OASIS web site.
 
 ## Results
 
