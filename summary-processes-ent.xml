@@ -754,6 +754,11 @@ directory.
                <xref linkend="S-DIGITAL-AGREEMENT"/>
             </para>
          </listitem>
+         <listitem>
+            <para>
+               <xref linkend="S-BUSINESS-REGISTRATION-INFORMATION-NOTICE"/>
+            </para>
+         </listitem>
       </itemizedlist>
    </listitem>
 </itemizedlist>
