@@ -1191,8 +1191,8 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/archive-only-not-in-final
             property=  "docs-UBL-xml-okay">
     <srcfiles dir=".">
       <include name="UBL.xml"/>
-      <include name="UBL-${UBLversion}-Party-summary-information.xml"/>
-      <include name="UBL-${UBLversion}-Schema-summary-information.xml"/>
+      <include name="UBL-Party-summary-information.xml"/>
+      <include name="UBL-Schema-summary-information.xml"/>
       <include name="schemadoc2db.xsl"/>
       <include name="partydoc2db.xsl"/>
       <include name="hub2processSummary.xsl"/>
@@ -1248,20 +1248,20 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/archive-only-not-in-final
   </java>
   <java jar="db/spec-0.8/validate/xjparse.jar" fork="true">
     <arg value="-v"/>
-    <arg value="UBL-${UBLversion}-Party-summary-information.xml"/>
+    <arg value="UBL-Party-summary-information.xml"/>
   </java>
   <java jar="utilities/saxon9he/saxon9he.jar" dir="${dir}" fork="true">
     <arg value="-xsl:${thisdir}/partydoc2db.xsl"/>
-    <arg value="-s:UBL-${UBLversion}-Party-summary-information.xml"/>
+    <arg value="-s:UBL-Party-summary-information.xml"/>
     <arg value="-o:summary-parties-ent.xml"/>
   </java>
   <java jar="db/spec-0.8/validate/xjparse.jar" fork="true">
     <arg value="-v"/>
-    <arg value="UBL-${UBLversion}-Schema-summary-information.xml"/>
+    <arg value="UBL-Schema-summary-information.xml"/>
   </java>
   <java jar="utilities/saxon9he/saxon9he.jar" dir="${dir}" fork="true">
     <arg value="-xsl:${thisdir}/schemadoc2db.xsl"/>
-    <arg value="-s:UBL-${UBLversion}-Schema-summary-information.xml"/>
+    <arg value="-s:UBL-Schema-summary-information.xml"/>
   </java>
   
   <!--assemble XML-->
@@ -1546,8 +1546,8 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/archive-only-not-in-final
         todir="${dir}/hub-${package}-${UBLstage}-${label}/archive-only-not-in-final-distribution">
     <fileset dir=".">
       <include name="UBL.xml"/>
-      <include name="UBL-${UBLversion}-Party-summary-information.xml"/>
-      <include name="UBL-${UBLversion}-Schema-summary-information.xml"/>
+      <include name="UBL-Party-summary-information.xml"/>
+      <include name="UBL-Schema-summary-information.xml"/>
     </fileset>
   </copy>
   <move preservelastmodified="true"

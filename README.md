@@ -4,6 +4,46 @@
 
 <p>OASIS TC GitHub repositories, as described in <a href="https://www.oasis-open.org/resources/tcadmin/github-repositories-for-oasis-tc-members-chartered-work">GitHub Repositories for OASIS TC Members' Chartered Work</a>, are governed by the OASIS <a href="https://www.oasis-open.org/policies-guidelines/tc-process">TC Process</a>, <a href="https://www.oasis-open.org/policies-guidelines/ipr">IPR Policy</a>, and other policies, similar to TC Wikis, TC JIRA issues tracking instances, TC SVN/Subversion repositories, etc.  While they make use of public GitHub repositories, these TC GitHub repositories are distinct from <a href="https://www.oasis-open.org/resources/open-repositories">OASIS TC Open Repositories</a>, which are used for development of open source <a href="https://www.oasis-open.org/resources/open-repositories/licenses">licensed</a> content.</p>
 
+## Table of contents
+
+[//]: # ( view source to find readme-toc.entries )
+
+[Description](#description) - the purpose of this repository
+
+[Published results](#published-results) - finding the official published results (hint: not in GitHub!)
+
+[Branches, roles, and protocol for contributions](#branches-roles-and-protocol-for-contributions) - where, who, how: overview
+
+[Detailed steps](#detailed-steps) - where, who, how: detail
+
+[Creating a new release](#creating-a-new-release) - getting started
+
+  [Setup for technical committee work products](#setup-for-technical-committee-work-products) - for editors
+
+  [Setup for subcommittee work products](#setup-for-subcommittee-work-products) - for subcommittee chairs
+
+  [Setup for other maintainer](#setup-for-other-maintainer) - for other maintainers
+
+  [Configuring the artefacts](#configuring-the-artefacts) - preparing artefacts
+
+  [Configuring the hub document](#configuring-the-hub-document) - preparing documentation
+
+[Preview results](#preview-results) - reviewing documentation
+
+[Producing results](#producing-results) - working day-to-day
+
+[Results](#results) - what to look for after you have committed/pushed
+
+[Housekeeping](#housekeeping) - important cleanup
+
+[To do:](#to-do) - shouldn't be long
+
+[Contributions](#contributions)
+
+[Licensing](#licensing)
+
+[Contact](#contact)
+
 ## Description
 
 <p>The purpose of this repository is to support committee-member collaborative activity in developing releases of the UBL committee's flagship work product, the UBL OASIS Standard.  The initial Maintainer is <a href="mailto:gkholman@CraneSoftwrights.com">G. Ken Holman</a> (GitHub: <a href="https://github.com/gkholman">gkholman</a>) of <a href="http://www.cranesoftwrights.com/">Crane Softwrights Ltd.</a>. Until further notice, questions regarding this repository may be directed to Ken.</p>
@@ -25,11 +65,11 @@ See the GitHub [Actions tab](https://github.com/oasis-tcs/ubl/actions) for the r
 
 You must be signed in to GitHub in order to download the results from the "Artifacts" section on the action's build result page. If not, you will get a "404 Not Found" error for the build result page.
 
-Each downloaded result is doubly-zipped: the outer zip for GitHub extraction purposes and the inner zips for posting to Kavi and distribution. Moreover, the actual content is copied in the distribution in its own third ZIP file for posting. The `archive-only/` subdirectory is not meant for inclusion in the final home in the [OASIS document server](https://docs.oasis-open.org/ubl), only for archive purposes in Kavi.
+Each downloaded result is doubly-zipped: the outer zip for GitHub extraction purposes and the inner zips for posting to Kavi and distribution. 
 
-At particular milestones (typically when the `main` branch is updated) these files are archived in the [committee Kavi documentation (members only)](https://www.oasis-open.org/apps/org/workgroup/ubl/documents.php) [(Public access)](https://www.oasis-open.org/committees/documents.php?wg_abbrev=ubl&show_descriptions=yes).
+These files are archived by editors and subcommittee chairs, as needed, in the [committee Kavi documentation (members only)](https://www.oasis-open.org/apps/org/workgroup/ubl/documents.php) [(Public access)](https://www.oasis-open.org/committees/documents.php?num_per_wg=1000&wg_abbrev=ubl&sort_field=d1.submission_date&sort_type=DESC) repositories. The results should then be deleted from the Actions tab to save space.
 
-The results in the [Actions tab](https://github.com/oasis-tcs/ubl/actions) eventually are deleted automatically by GitHub after 90 days, but if you have no need for a particular build result, you can delete it to save space.
+The results in the [Actions tab](https://github.com/oasis-tcs/ubl/actions) eventually are deleted automatically by GitHub after 90 days, but if you have no need for a particular build result, you can delete it to save space. Please keep this in mind if you are using the GitHub web interface and creating results for every commit of every file.
 
 ## Branches, roles, and protocol for contributions
 
@@ -59,9 +99,9 @@ Become a maintainer by sending your GitHub account name and associated email add
 
 ## Detailed steps
 
-The act of checking a committed branch to GitHub automatically triggers the generation of all artefacts and the publishing of the authored XML into OASIS layout PDF, OASIS layout HTML, and ISO Directives Part 2 layout PDF. See "[Published results](#Published-results)" below. The results of the build are found in the [Actions tab](https://github.com/oasis-tcs/ubl/actions) on GitHub. _Note that the results are automatically deleted from GitHub after 90 days._
+This details the relationship between the `main`, `review`, and all other branches, and the roles responsible for them.
 
-This is the relationship between the `main`, `review`, and all other branches:
+Maintainers focus on steps 1, 2, 5, and 6. Editors focus on steps 7, 8, 9, and 10. Steps 3 and 4 are automated by GitHub Actions.
 
 ![Detailed steps for submitting changes to the editor](architecture.png)
 
@@ -76,10 +116,9 @@ When completed they commit their changes and push their changes to GitHub in the
 1. The editor reviews the pull request and, if satisfied with the contribution, they pull the server’s copy of the `other` branch into their local environment and merge it into their local `UBL-{version}-{stage}` branch or directly into their local `review` branch.
 Typically the editor will continue to make any changes they wish in their local `UBL-{version}-{stage}` branch, pushing their intermediate work to review their progress.
 1. When the editor has incorporated changes from all of the contributing maintainers and is prepared to make the review document available, they merge their local `UBL-{version}-{stage}` branch into their local `review` branch and push their `review` branch to GitHub.
-This push automatically triggers the GitHub Action running the complete publishing process that returns the work product ready for the editor to download from GitHub to review. The GitHub Action results are posted to Kavi for the committee to download the published results and review. If maintainers wish to make changes they return to step 1 (not step 2) and repeat the process.
+This push automatically triggers the GitHub Action running the complete publishing process that returns the work product ready for the editor to download from GitHub to review. The GitHub Action results are posted to Kavi for the committee and public to download the published results and review. The artifacts ZIP is manually unpacked revealing the two inner ZIPs that are then uploaded to the OASIS Kavi server for posterity and to fulfill the obligation to the public that intermediate work products be easily available. Following the OASIS TC Process the committee can qualify a snapshot on the OASIS Kavi server to be uploaded by OASIS TC Administration to the OASIS Docs server. If maintainers wish to make changes they return to step 1 (not step 2) and repeat the process. 
 1. When the editor has accommodated all of the feedback from committee members regarding the review and wishes to archive a snapshot for public use, they merge their local `review` branch into their local `main` branch.
-1. The editor pushes their local `main` branch to GitHub.
-This push automatically triggers the GitHub Action running the complete publishing process that returns the work product ready for the editor to download from GitHub. The artifacts ZIP is manually unpacked revealing the two inner ZIPs that are then uploaded to the OASIS Kavi server for posterity and to fulfill the obligation to the public that intermediate work products be easily available. Following the OASIS TC Process the committee can qualify a snapshot on the OASIS Kavi server to be uploaded by OASIS TC Administration to the OASIS Docs server.
+1. The editor pushes their local `main` branch to GitHub. While this push will produce a set of artefacts, those artefacts are ignored and deleted by the editor because they may have different timestamps than the files approved by committee and uploaded to Kavi. But anyone wanting a snapshot of the source material (modulo remotely changed files such as spreadsheets) can find the last approved set from the `main` branch.
 
 If you are changing the Google spreadsheet but not any of your repository files, you cannot do a `git push` until you create a temporary file in your directory and then push the temporary file to the repository. The next time around, you can delete the temporary file in your directory and then push the deletion to the repository. Either of these steps will trigger GitHub actions that will reach out to the Google spreadsheet and run the process.
 
@@ -112,29 +151,24 @@ When editors create their final edits, the results from the `git push` should be
 
 ## Creating a new release
 
-### Configuring the artefacts
+The [`build.sh`](build.sh) invocation points to the particular set of parameters to use to create the artefacts. The editors maintain this file for the technical committee version of the UBL package. Alternative configurations for subcommittees can be created in subcommittee branches of this repository. As is true for other maintainers, subcommittee changes are submitted as a pull request to `review`. The subcommittee's `build.sh` is not used by the technical committee.
 
-The [`build.sh`](build.sh) invocation points to the particular set of parameters to use to create the artefacts. The editors maintain this file for the technical committee version of the UBL package. Alternative configurations for subcommittees can create branches of this repository, but once created, they are not to be merged into the `main`, `results`, or `ubl-version-stage` branches. As is true for other maintainers, changes are submitted as a pull request to `review`. The subcommittee `build.sh` is not used by the technical committee.
+Whether you are creating a new committee version (e.g. UBL-2.4) or a new subcommittee version (e.g. UBL-2.4-TSC) you will need to create new document model spreadsheets: e.g. UBL-2.4 from final UBL-2.3, and UBL-2.4-TSC from current UBL-2.4. The document models are downloaded directly from Google during the GitHub Action. Each document is referenced in the invocation script as follows:
 
-Am example for the Transportation Subcommittee might be along the lines of UBL 2.3 CSD03 that follows stage UBL 2.3 csd02 and version UBL 2.2:
+`libGoogle=https://docs.google.com/spreadsheets/d/1bWAhvsb8..library.spreadsheet..iCMLhgUrHFzY`
+- the URL of your Google spreadsheet for the common library (be sure not to include the "`/edit...`" at the end of the browser bar)
 
-```
-export title="UBL 2.3 TSC"
-export package=UBL-2.3-TSC
-export UBLversion=2.3
-export UBLstage=csd03
-export UBLprevStageVersion=2.3
-export UBLprevStage=csd02
-export UBLprevVersion=2.2
-export rawdir=raw
-export includeISO=false
+`docGoogle=https://docs.google.com/spreadsheets/d/1P-3yEI0..documents.spreadsheet..0NTmINxksPQ`
+- the URL of your Google spreadsheet for the documents (be sure not to include the "`/edit...`" at the end of the browser bar)
 
-export libGoogle=https://docs.google.com/spreadsheets/d/OKIu..library.spreadsheet..Cpp5O
-export docGoogle=https://docs.google.com/spreadsheets/d/iJ5D..documents.spreadsheet..5h1tA
-export sigGoogle=https://docs.google.com/spreadsheets/d/4mc6..signature.spreadsheet..OXE5T
-```
+`sigGoogle=https://docs.google.com/spreadsheets/d/1bWAhvsb8..signature.spreadsheet..hgUrHoiCML`
+- the URL of your Google spreadsheet for the common library (be sure not to include the "`/edit...`" at the end of the browser bar)
 
-The Technical Committee main publication parameters are along the lines of UBL 2.3 CSD05 that follows stage UBL 2.3 CS01 and version UBL 2.2:
+### Setup for technical committee work products
+
+Starting work on a new stage or a new version involves creating a new branch off of the stage or version last developed. Once the branch is created, first modify [`build.sh`](build.sh) as required.
+
+Consider this example of UBL 2.3 CSD05 that follows stage UBL 2.3 CS01 and version UBL 2.2:
 
 ```
 export title="UBL 2.3"
@@ -152,17 +186,6 @@ export docGoogle=https://docs.google.com/spreadsheets/d/1P-3yEI0..documents.spre
 export sigGoogle=https://docs.google.com/spreadsheets/d/1bWAhvsb8..signature.spreadsheet..hgUrHoiCML
 ```
 
-The document models are downloaded directly from Google during the GitHub Action. The titles of the Google documents are irrelevant. Each document is referenced in the invocation script as follows:
-
-`libGoogle=https://docs.google.com/spreadsheets/d/1bWAhvsb8..library.spreadsheet..iCMLhgUrHFzY`
-- the URL of your Google spreadsheet for the common library (be sure not to include the "`/edit...`" at the end of the browser bar)
-
-`docGoogle=https://docs.google.com/spreadsheets/d/1P-3yEI0..documents.spreadsheet..0NTmINxksPQ`
-- the URL of your Google spreadsheet for the documents (be sure not to include the "`/edit...`" at the end of the browser bar)
-
-`sigGoogle=https://docs.google.com/spreadsheets/d/1bWAhvsb8..signature.spreadsheet..hgUrHoiCML`
-- the URL of your Google spreadsheet for the common library (be sure not to include the "`/edit...`" at the end of the browser bar)
-
 Before the process runs, the spreadsheets on Google should reflect the new stage string in the spreadsheet name. Examples:
 - UBL 2.3 Library Elements Spreadsheet - CS01 master
 - UBL 2.3 Document Elements Spreadsheet - CS01 master
@@ -170,6 +193,48 @@ Before the process runs, the spreadsheets on Google should reflect the new stage
 The genericode file of the UBL vocabulary of the previously-published stage must replace that of the previous previously-published stage.
 - e.g. if the stage previous to `csd05` was `cs01`, then for `cs02` replace `UBL-Entities-2.3-cs01.gc` with `UBL-Entities-2.3-csd05.gc` (the renamed `UBL-Entities-2.3.gc` file from the `csd05` release)
 - do the same for the `UBL-Signature-Entities-*.gc` files
+
+### Setup for subcommittee work products
+
+When creating a branch reserved for your subcommittee, you will be responsible for tailoring the configuration to be distinct from the technical committee work products with your own spreadsheets.
+
+Consider an example for the Transportation Subcommittee might be along the lines of a proposed UBL 2.3 TSC CSD03 that follows stage UBL 2.3 CSD02 and version UBL 2.2. 
+
+If you are proposing spreadsheet changes, you will need to copy the CSD02 technical committee spreadsheets into separate subcommittee spreadsheets and change the titles of the spreadsheets accordingly.
+
+First create a new branch off of the stage or version last developed. Once the branch is created, the second step is to modify [`build.sh`](build.sh) as required (note how the title and package have been customized with the subcommittee abbreviation):
+
+```
+export title="UBL 2.3 TSC"
+export package=UBL-2.3-TSC
+export UBLversion=2.3
+export UBLstage=csd03
+export UBLprevStageVersion=2.3
+export UBLprevStage=csd02
+export UBLprevVersion=2.2
+export rawdir=raw
+export includeISO=false
+
+export libGoogle=https://docs.google.com/spreadsheets/d/OKIu..library.spreadsheet..Cpp5O
+export docGoogle=https://docs.google.com/spreadsheets/d/iJ5D..documents.spreadsheet..5h1tA
+export sigGoogle=https://docs.google.com/spreadsheets/d/4mc6..signature.spreadsheet..OXE5T
+```
+
+Before the process runs, the spreadsheets on Google should reflect the new committee acronym in the spreadsheet name. Examples:
+- UBL 2.3 TSC Library Elements Spreadsheet 
+- UBL 2.3 TSC Document Elements Spreadsheet 
+
+The other non-documentation artefacts configured by the technical committee should be sufficient to re-use as they are.
+
+### Setup for other maintainers
+
+If you are not working on the spreadsheets, it should be enough simply to create a new branch of your own from either the technical committee branch or one of the subcommittee branches, and re-use the configuration files as given.
+
+However, if you have to modify the spreadsheets, you could choose to operate as if you were a one-person subcommittee and follow all of the subcommittee directions for configuration.
+
+In fact, you could choose always to operate as if you are a one-person subcommittee and make configuration file changes to distinguish your work products from those of other maintainers. But this is not an obligation if all you have to do is submit revised text.
+
+### Configuring the artefacts
 
 Each revision is described by the following configuration files for the artefacts:
 - target identification when converting ODS to genericode
@@ -225,18 +290,18 @@ All references in the hub document `UBL.xml` to version, revision, and date info
 
 Recall that only the first declaration of a given general entity is respected. This allows prototypical declarations to be maintained after the active declaration is specified in the file.
 
-There are a number of SYSTEM general entities whose content is not edited by hand. Rather, they are generated from the inputs of other configuration files `UBL-{version}-Party-summary-information.xml` and `UBL-{version}-Schema-summary-information.xml` that are the responsibility of the maintainer to make consistent with their expectations of the hub document.
+There are a number of SYSTEM general entities whose content is not edited by hand. Rather, they are generated from the inputs of other configuration files `UBL-Party-summary-information.xml` and `UBL-Schema-summary-information.xml` that are the responsibility of the maintainer to make consistent with their expectations of the hub document.
 
-Source files, processing stylesheets, and resulting entities generated or used in the building of the hub document:
-- `UBL.xml` is the raw main hub document that gets massaged, assembled, and processed in the final `UBL-{version}.xml`
-- `UBL-{prevVersion}-modified.xml` is the final `UBL-{prevVersion}.xml` hub document from the previous version of UBL possibly modified from the original; this is processed by `hub2processSummary.xsl`:
-  - `summary-processes-ent.xml`
-- `UBL-{version}-Party-summary-information.xml` processed by `partydoc2db.xsl`:
+Source files, processing stylesheets, and resulting entities generated or used in the building of the hub document - EDIT THE XML FILES ONLY DO NOT EDIT THE ENTITIES (`-ent.xml`) DIRECTLY AS YOUR EDITS WILL BE IGNORED:
+- [`UBL.xml`](UBL.xml) is the raw main hub document that gets massaged, assembled, and processed in the final `UBL-{version}.xml`
+- [`UBL-Party-summary-information.xml`](UBL-Party-summary-information.xml) processed by `partydoc2db.xsl`:
   - `summary-parties-ent.xml`
-- `UBL-{version}-Schema-summary-information.xml` processed by `schemadoc2db.xsl`:
+- [`UBL-Schema-summary-information.xml`](UBL-Schema-summary-information.xml) processed by `schemadoc2db.xsl`:
   - `summary-namespaces-ent.xml`
   - `summary-schemas-ent.xml`
   - `summary-examples-ent.xml`
+- `UBL-{prevVersion}-modified.xml` is the final monolithic `UBL-{prevVersion}.xml` hub document from the previous version of UBL possibly modified from the original; this is processed by `hub2processSummary.xsl`:
+  - `summary-processes-ent.xml`
 - the artefacts building process creates the following four entity files for comparing current versions to old versions:
   - `old2newDoc-from-previous-version-documents-ent.xml` 
   - `old2newDoc-from-previous-version-library-ent.xml`   
@@ -306,21 +371,30 @@ Opening the XML in Mac OSX:
 
 ## Producing results
 
-Every `git push` to the repository triggers the GitHub Action execution of [`build-github.sh`](build-github.sh) to invoke whichever set of results is needed. The action takes about 25 minutes of processing on GitHub to create all of the artefacts. The resulting ZIP is about 160Mb and when unzipped provides the two archive and distribution ZIP files with the results. Editors post these results as-is to Kavi. OASIS TC Administration posts the distribution package to the https://docs.oasis-open.org/ubl OASIS web site.
+If you are working from the GitHub web interface, every time you commit a change you will trigger a `git push`. If you are working from the command line you can do multiple commits before you push them to the repository.
+
+Every `git push` to the repository triggers the GitHub Action execution of the build process on the files found in the repository after the push. The action takes about 25 minutes of processing on GitHub to create all of the artefacts. The resulting ZIP is about 160Mb and when unzipped provides the two archive and distribution ZIP files with the results.
+
+The results that are to be made public are posted as-is to Kavi. Please do not make reference to the GitHub artefacts in committee mail list posts as those artefacts evaporate after 90 days.
+
+When needed, OASIS TC Administration posts the distribution package from Kavi to the https://docs.oasis-open.org/ubl OASIS web site.
 
 ## Results
 
-The build result (after about 30 minutes on GitHub) in the target directory:
-- `UBL-2.x-{stage}-{timestamp}/` - distribution artefacts
-- `UBL-2.x-{stage}-{timestamp}/archive-only/` - archive artefacts
+The build result (after about 30 minutes on the [GitHub Actions tab](https://github.com/oasis-tcs/ubl/actions)) in the target directory:
+- `UBL-package-github-{timestamp}.zip` - download package
 
-Note that in the archive directory are the files:
+The embedded ZIP files found in the download package:
+- `UBL-2.x-{stage}-{timestamp}.zip` - distribution artefacts
+- `UBL-2.x-{stage}-{timestamp}-archive-only.zip` - archive artefacts
+
+Note that in the archive ZIP are the files:
 - `build.console.{timestamp}.txt` - console log of the execution of the Ant build script
 - `build.exitcode.{timestamp}.txt` - exit code from the execution of the Ant build script
 
 ## Housekeeping
 
-The return ZIP file is doubly-zipped, once on the web site to reduce storage costs, and once by GitHub to return the two ZIP artefacts from the server. When finished and the file is not for public access, please delete the download artefact off of GitHub to reduce storage costs.
+After having downloaded your results, please delete your entire workflow run listed in the [Actions tab](https://github.com/oasis-tcs/ubl/actions) after you are done. This will save space and will promote the public access of the Kavi repository rather than intermediate issues.
 
 ### To do:
 
