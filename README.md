@@ -226,10 +226,12 @@ Each revision is described by the following configuration files for the artefact
   - [`ident-UBL-Signature.xml`]( ident-UBL-Signature.xml )
 - XSD and JSON schema configuration
   - [`config-UBL.xml`]( config-UBL.xml )
-    - IMPORTANT NOTE: there is version information in a comment at the top of this configuration file that, when changed, must be manually added to comments in the eight `UBL-*.xsd` XSD schema fragments found in the directory [`raw/xsd/common`]( raw/xsd/common )
-    - `  Library:           OASIS Universal Business Language (UBL) 2.x *STAGE-UPPER-CASE*`
-    - `                     http://docs.oasis-open.org/ubl/*stage-lower-case*-UBL-2.x/`
-    - `  Release Date:      *DATE*`
+    - IMPORTANT NOTE 1: there is version information in a comment at the top of this configuration file that, when the version or the stage changes, must be manually added to comments in the eight `UBL-*.xsd` XSD schema fragments found in the directory [`raw/xsd/common`]( raw/xsd/common )
+      - `  Library:           OASIS Universal Business Language (UBL) 2.x *STAGE-UPPER-CASE*`
+      - `                     http://docs.oasis-open.org/ubl/*stage-lower-case*-UBL-2.x/`
+      - `  Release Date:      *DATE*`
+    - IMPORTANT NOTE 2: the same eight `UBL-*.xsd` XSD schema fragments found in the directory [`raw/xsd/common`]( raw/xsd/common ) have explicit `version=` and schema references assuming the current UBL version; these need to be updated when creating a new version release but not when creating a new stage release
+    - IMPORTANT NOTE 3: the `UBL-*.json` JSON schema extension components fragment found in the directory [`raw/json-schema/common`]( raw/json-schema/common ) has explicit schema references assuming the current UBL version; these need to be updated when creating a new version release but not when creating a new stage release
   - [`config-UBL-Signature.xml`]( config-UBL-Signature.xml )
     - IMPORTANT NOTE: this file has the same version information as found in `config-UBL.xml` that needs to be updated as required
 - Google bug-avoidance model name massage directives
@@ -244,6 +246,10 @@ Each revision is described by the following configuration files for the artefact
   - [`spellcheck-UBL.txt`]( spellcheck-UBL.txt )
 - documentary ODS template skeleton for generating spreadsheet results
   - [`skeletonDisplayEditSubset.ods`]( skeletonDisplayEditSubset.ods )
+  - [`raw/val`]( raw/val )
+    - note there are 10 invocations of test files, all hardwired with the current version of UBL to point to the current set of schemas; these references need to be updated when changing to a new version of UBL
+
+
 
 ### Configuring the hub document
 
@@ -318,9 +324,9 @@ Subdirectories:
   - [`raw/json-schema`]( raw/json-schema ) - hand-authored JSON Schema fragments
   - [`raw/mod`]( raw/mod ) - hand-authored model documentation fragments
   - [`raw/val`]( raw/val ) - demonstration validation environment and validation of the XML samples
-    - note there are 10 invocations of test files, all hardwired with the current version of UBL to point to the current set of schemas; these references need to be updated when changing to a new version of UBL
   - [`raw/xml`]( raw/xml ) - sample XML instances
   - [`raw/xsd`]( raw/xsd ) - hand-authored XML Schema fragments
+    - note that when changing UBL versions there are hardwired references to the UBL version number in the `common/UBL-*.xsd` files
 - [`utilities`]( utilities ) - tools used to generate outputs
 
 Image creation using the [`http://draw.io`](http://draw.io) tool:

@@ -30,7 +30,7 @@
         "ID": {
           "description": "An identifier for the Extension assigned by the creator of the extension.",
           "items": {
-            "$ref": "UBL-CommonBasicComponents-2.3.json#/definitions/ID"
+            "$ref": "UBL-CommonBasicComponents-2.4.json#/definitions/ID"
             },
           "maxItems": 1,
           "minItems": 1,
@@ -40,7 +40,7 @@
         "Name": {
           "description": "A name for the Extension assigned by the creator of the extension.",
           "items": {
-            "$ref": "UBL-CommonBasicComponents-2.3.json#/definitions/Name"
+            "$ref": "UBL-CommonBasicComponents-2.4.json#/definitions/Name"
             },
           "maxItems": 1,
           "minItems": 1,
@@ -120,7 +120,7 @@
         "ExtensionContent": {
           "description": "The definition of the extension content.",
           "items": {
-            "$ref": "UBL-ExtensionContentDataType-2.3.json#/definitions/ExtensionContent"
+            "$ref": "UBL-ExtensionContentDataType-2.4.json#/definitions/ExtensionContent"
             },
           "maxItems": 1,
           "minItems": 1,

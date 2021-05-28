@@ -3,7 +3,7 @@
   Library:           OASIS Universal Business Language (UBL) 2.4 CSD01WD01
                      http://docs.oasis-open.org/ubl/csd01wd01-UBL-2.4/
   Release Date:      28 May 2021
-  Module:            UBL-XAdES01903v141-201601-2.3.xsd
+  Module:            UBL-XAdES01903v141-201601-2.4.xsd
   Generated on:      2016-06-24 19:50(UTC)
 
   This is a copy of http://uri.etsi.org/01903/v1.4.1/XAdES01903v141-201601.xsd
@@ -11,8 +11,8 @@
   W3C dsig schema.
 -->
 <xsd:schema targetNamespace="http://uri.etsi.org/01903/v1.4.1#" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns="http://uri.etsi.org/01903/v1.4.1#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xades="http://uri.etsi.org/01903/v1.3.2#" elementFormDefault="qualified">
-	<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="UBL-xmldsig-core-schema-2.3.xsd"/>
-	<xsd:import namespace="http://uri.etsi.org/01903/v1.3.2#" schemaLocation="UBL-XAdES01903v132-201601-2.3.xsd"/>
+	<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="UBL-xmldsig-core-schema-2.4.xsd"/>
+	<xsd:import namespace="http://uri.etsi.org/01903/v1.3.2#" schemaLocation="UBL-XAdES01903v132-201601-2.4.xsd"/>
 	<!-- Start CertificateValues -->
 	<xsd:element name="TimeStampValidationData" type="ValidationDataType"/>
 	<xsd:complexType name="ValidationDataType">
