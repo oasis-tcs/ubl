@@ -5,9 +5,9 @@
   version="2.0">
 
 <xsl:output indent="yes" omit-xml-declaration="yes"/>
-  
-  <!--warning: this was hacked 2017-09-30 and attempted to be restored-->
-  
+
+<xsl:param name="UBLversion" as="xs:string" required="yes"/>
+
 <xsl:template match="/">
  <xsl:result-document href="summary-namespaces-ent.xml">
    <xsl:message select="'Creating entity with namespace summary'"/>
@@ -118,8 +118,9 @@ directory.
               <entry>
                 <para>
                   <literal>
-                    <ulink url="xsd/maindoc/UBL-{$compname}-2.3.xsd"
-            >xsd/maindoc/UBL-<xsl:value-of select="$compname"/>-2.3.xsd</ulink>
+                    <ulink url="xsd/maindoc/UBL-{$compname}-{$UBLversion}.xsd"
+                            >xsd/maindoc/UBL-<xsl:value-of select="$compname"
+                            />-<xsl:value-of select="$UBLversion"/>.xsd</ulink>
                   </literal>
                 </para>
               </entry>
@@ -129,8 +130,9 @@ directory.
               <entry>
                 <para>
                   <literal>
-                    <ulink url="xsdrt/maindoc/UBL-{$compname}-2.3.xsd"
-          >xsdrt/maindoc/UBL-<xsl:value-of select="$compname"/>-2.3.xsd</ulink>
+                   <ulink url="xsdrt/maindoc/UBL-{$compname}-{$UBLversion}.xsd"
+                            >xsdrt/maindoc/UBL-<xsl:value-of select="$compname"
+                            />-<xsl:value-of select="$UBLversion"/>.xsd</ulink>
                   </literal>
                 </para>
               </entry>
@@ -140,9 +142,9 @@ directory.
               <entry>
                 <para>
                   <literal>
-                    <ulink url="mod/summary/reports/UBL-{$compname}-2.3.html"
-                          >mod/summary/reports/UBL-<xsl:value-of
-                            select="$compname"/>-2.3.html</ulink>
+            <ulink url="mod/summary/reports/UBL-{$compname}-{$UBLversion}.html"
+                      >mod/summary/reports/UBL-<xsl:value-of select="$compname"
+                      />-<xsl:value-of select="$UBLversion"/>.html</ulink>
                   </literal>
                 </para>
               </entry>
