@@ -29,8 +29,8 @@
 	<!ENTITY stagetext "Committee Specification 02xxxxxx">
 	<!ENTITY standard "Committee Specification Draft 05xxxxxxxx">
 	<!ENTITY stagetext "Committee Specification Draft 05xxxxxxxx">
-	<!ENTITY this-loc "https://docs.oasis-open.org/ubl/&stage;-UBL-2.3">
-	<!ENTITY previous-loc "https://docs.oasis-open.org/ubl/&pstage;-UBL-2.3">
+	<!ENTITY this-loc "https://docs.oasis-open.org/ubl/&stage;-UBL-&version;">
+	<!ENTITY previous-loc "https://docs.oasis-open.org/ubl/&pstage;-UBL-&psversion;">
 	<!ENTITY latest-loc "https://docs.oasis-open.org/ubl">
 	<!ENTITY pubdate "28 May 2021">
 	<!--remove time from pub date-->
