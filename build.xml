@@ -84,6 +84,11 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <echo unless:set="cva2sch-exists" 
         message="Cannot find cva2sch=${cva2sch}"/>
 
+  <delete dir="${dir}/artefacts-${package}-${UBLstage}-${label}"/>
+  <mkdir  dir="${dir}/artefacts-${package}-${UBLstage}-${label}"/>
+  <delete dir="${dir}/hub-${package}-${UBLstage}-${label}"/>
+  <mkdir  dir="${dir}/hub-${package}-${UBLstage}-${label}"/>
+
   <antcall target="-make-artefacts" unless:set="skip-artefacts-generation"/>
 
   <!--don't bother with hub if there are problems with the artefacts-->
@@ -1014,8 +1019,6 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
 </target>
 
 <target name="-package-artefacts">
-  <delete dir="${dir}/artefacts-${package}-${UBLstage}-${label}"/>
-  <mkdir dir="${dir}/artefacts-${package}-${UBLstage}-${label}"/>
   <copy preservelastmodified="true" todir="${dir}/artefacts-${package}-${UBLstage}-${label}">
     <fileset dir="${dir}/${UBLstage}-${UBLversion}">
      <include name="**"/>
@@ -1440,8 +1443,6 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <property name="not-attempting-to-produce-necessary-results" value="false"/>
   <!--<echo message="Diagnostics:${xml-made}, HTML:${html-made}, PDF:${pdf-made}, ISO:${iso-made}, SKIP:${not-attempting-to-produce-necessary-results} validatedInputs:${validatedInputs}"/>-->
 
-  <delete dir="${dir}/hub-${package}-${UBLstage}-${label}"/>
-  <mkdir dir="${dir}/hub-${package}-${UBLstage}-${label}"/>
   <copy preservelastmodified="true"
         todir="${dir}/hub-${package}-${UBLstage}-${label}">
     <fileset dir="${dir}">
