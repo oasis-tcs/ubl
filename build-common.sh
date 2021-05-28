@@ -34,7 +34,10 @@ if [ "$6" = "DELETE-REPOSITORY-FILES-AS-WELL" ] #secret undocumented failsafe
 then
 # further reduce GitHub storage costs by deleting repository files
 
+if [ ! -f $targetdir/*.txt ]; then # don't delete if error notice files created
 find . -not -name target -not -name .github -maxdepth 1 -exec rm -r -f {} \;
+fi
+
 mv $targetdir/$package-$UBLstage-$label-archive-only.zip .
 mv $targetdir/$package-$UBLstage-$label.zip .
 rm -r -f $targetdir
