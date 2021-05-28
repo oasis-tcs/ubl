@@ -229,14 +229,14 @@ Each revision is described by the following configuration files for the artefact
     - `  Release Date:      *DATE*`
   - [`config-UBL-Signature.xml`]( config-UBL-Signature.xml )
     - IMPORTANT NOTE: this file has the same version information as found in `config-UBL.xml` that needs to be updated as required
+- Google bug-avoidance model name massage directives
+  - [`massageModelName.xml`]( massageModelName.xml )
 - CVA master file for code list second-pass validation
   - [`UBL-CVA-Skeleton.cva`]( UBL-CVA-Skeleton.cva )
 - shell wrapper for generated CVA Schematron pattern
   - [`UBL-DefaultDTQ-shell.sch`]( UBL-DefaultDTQ-shell.sch )
 - spell-check word list (each line is a word not in the dictionary that is allowed to be in UBL, including misspellings from previous versions of UBL that cannot be repaired due to backward compatibility)
   - [`spellcheck-UBL.txt`]( spellcheck-UBL.txt )
-- Google bug-avoidance model name massage directives
-  - [`massageModelName.xml`]( massageModelName.xml )
 - documentary ODS template skeleton for generating spreadsheet results
   - [`skeletonDisplayEditSubset.ods`]( skeletonDisplayEditSubset.ods )
 

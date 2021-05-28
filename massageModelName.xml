@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  $Id: massageModelName-2.3.xml,v 1.1 2018/10/27 19:59:17 admin Exp $
-  
   Use this file to express the regular expressions that shorten model
   names in document order and lengthen model names in reverse document order.
 
   Use this expression in the mod/maindoc directory to establish which names
   need shortening to 31 characters or less:
 
-ls *.ods | sed s/UBL-// | sed s/-2.3.ods// | sed -E "s/(.{1,31})(.*)/\1    \2/"
+ls *.ods | sed s/UBL-// | sed s/-2.4.ods// | sed -E "s/(.{1,31})(.*)/\1    \2/"
 
 -->
 <!DOCTYPE modelNameMassage
@@ -22,8 +20,8 @@ ls *.ods | sed s/UBL-// | sed s/-2.3.ods// | sed -E "s/(.{1,31})(.*)/\1    \2/"
 ]>
 <modelNameMassage>
   <pass>
-    <shorten find="UBL-(.+)-2.3" replace="$1"/>
-    <lengthen find="(.+)" replace="UBL-$1-2.3"/>
+    <shorten find="UBL-(.+)-2.4" replace="$1"/>
+    <lengthen find="(.+)" replace="UBL-$1-2.4"/>
   </pass>
   <pass>
     <shorten find="Catalogue" replace="Ctlg"/>
