@@ -13,6 +13,7 @@ java -Dant.home=utilities/ant -classpath utilities/saxon/saxon.jar:utilities/ant
 serverReturn=$?
 
 sleep 2
+if [ ! -d $targetdir/$package-$UBLstage-$label-archive-only/ ]; then mkdir $targetdir/$package-$UBLstage-$label-archive-only/ ; fi
 mv build.console.$label.txt $targetdir/$package-$UBLstage-$label-archive-only/
 echo $serverReturn         >$targetdir/$package-$UBLstage-$label-archive-only/build.exitcode.$label.txt
 touch                       $targetdir/$package-$UBLstage-$label-archive-only/build.console.$label.txt

@@ -376,6 +376,8 @@ To determine if the files are ready for sending to the project editors, look in 
 - `check-ubl-version-stage-ubl-version-pstage.html` - e.g. `check-ubl-2.3-csd05-ubl-2.3-cs01.html` - report of differences between the current version/stage and the previous version/stage
 - `check-ubl-version-stage-ubl-peversion.html` - e.g. `check-ubl-2.3-csd05-ubl-2.2` - report of differences between the current version/stage and the previous version.
 
+IMPORTANT: If there is no console log file, then the build script failed in an unexpected fashion. Details may be found in the action tab's workflow log.
+
 There should be no "`.txt`" files in the returned base directory. Various "`.txt`" files are possible to report problems with the build. The problems should be explained in the file itself or correlated in the `build.console.{timestamp}.txt` file:
  - `ATTENTION-new-entities.txt` indicates that in the `archive-only/` subdirectory has a `new-entities/` directory with new entity files that were created by your changes to the document, schema summary, and party XML files; if there are any new entity files, you must replace your local copies with those new entities in order for the validation in your XML editor to match the validation results on the server; if the `new-entities` directory does not exist, then there is no need to update your local entity files.
  - `INTEGRITY-PROBLEMS.txt` - there are files referenced in the hub document that do not exist, or there are files that exist and are not referenced in the hub document
