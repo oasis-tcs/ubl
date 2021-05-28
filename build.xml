@@ -102,6 +102,14 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
 
   <antcall target="-package-distribution"/>
 
+  <!--don't bother with hub if there are problems with the artefacts-->
+  <condition property="artefactsOrHubFailed">
+    <resourcecount when="greater" count="0">
+      <fileset file="${dir}/${package}-${UBLstage}-${label}/*.txt"/>
+    </resourcecount>
+  </condition>
+
+  <antcall target="-consistency-check" unless:set="artefactsOrHubFailed"/>
 </target>
   
 <target name="-make-artefacts">
@@ -1725,7 +1733,9 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
 <!--  <touch datetime="${datetimelocal}" pattern="yyyyMMdd-HHmm">
     <fileset dir="${dir}/${package}-${UBLstage}-${label}"/>
   </touch>-->
-
+</target>
+  
+<target name="-consistency-check">
   <!--final consistency checks before packaging-->
   
   <echo message="Creating: ${dir}/${package}-${UBLstage}-${label}-dir-listing.xml..."/>

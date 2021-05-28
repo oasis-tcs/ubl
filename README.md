@@ -394,6 +394,8 @@ There should be no "`.txt`" files in the returned base directory. Various "`.txt
  - `UNEXPECTED-TEST-RESULT-WARNING.txt` - the `val/test.sh` script did not end cleanly
  - `UNEXPECTED-TEST-SAMPLES-RESULT-WARNING.txt` - at least one invocation in the `val/testsamples.sh` did not validate 
 
+There should be no `intermediate-support-files/` subdirectory in the returned base directory. When it exists, there were problems in the build process and the intermediate files may provide some helpful information.
+
 When editors create their final edits, the results from the `git push` should be ready to be published without any modifications. If there are errant or unexpected files in the directory, the build process needs to address the discrepancies.
 
 ## Housekeeping
