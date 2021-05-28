@@ -1143,16 +1143,16 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <delete  file="${dir}/missing---iso-iec-19845-draft-pdf---missing.txt"/>
 
   <copy tofile="${dir}/old2newDoc-from-previous-version-documents-ent.xml"
-        preservelastmodified="true"
+        preservelastmodified="true" failonerror="false"
         file="${dir}/old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevVersion}-documents-ent.xml"/>
   <copy tofile="${dir}/old2newDoc-from-previous-version-library-ent.xml"
-        preservelastmodified="true"
+        preservelastmodified="true" failonerror="false"
         file="${dir}/old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevVersion}-library-ent.xml"/>
   <copy tofile="${dir}/old2newDoc-from-previous-stage-documents-ent.xml"
-        preservelastmodified="true"
+        preservelastmodified="true" failonerror="false"
         file="${dir}/old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevStageVersion}-${UBLprevStage}-documents-ent.xml"/>
   <copy tofile="${dir}/old2newDoc-from-previous-stage-library-ent.xml"
-        preservelastmodified="true"
+        preservelastmodified="true" failonerror="false"
         file="${dir}/old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevStageVersion}-${UBLprevStage}-library-ent.xml"/>
 
   <!--comment out the following check in order to force publishing-->
