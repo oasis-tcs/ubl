@@ -86,7 +86,16 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
 
   <antcall target="-make-artefacts" unless:set="skip-artefacts-generation"/>
 
-  <antcall target="-make-hub"/>
+  <!--don't bother with hub if there are problems with the artefacts-->
+  <condition property="artefactsFailed">
+    <resourcecount when="greater" count="0">
+      <fileset file="${dir}/artefacts-${package}-${UBLstage}-${label}/*.txt"/>
+    </resourcecount>
+  </condition>
+
+  <antcall target="-make-hub" unless:set="artefactsFailed"/>
+
+  <antcall target="-package-distribution"/>
 
 </target>
   
@@ -321,9 +330,12 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <antcall target="-artefacts"/>
   </sequential>
   <condition property="artefactsFailed">
-    <resourcecount when="greater" count="0">
-      <fileset file="${dir}/${UBLstage}-${UBLversion}/*.txt"/>
-    </resourcecount>
+    <or>
+      <isset property="processFailed"/>
+      <resourcecount when="greater" count="0">
+        <fileset file="${dir}/${UBLstage}-${UBLversion}/*.txt"/>
+      </resourcecount>
+    </or>
   </condition>
 
   <sequential unless:set="artefactsFailed">
@@ -334,12 +346,15 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <antcall target="-samples" unless:set="skip-samples"/>
   </sequential>
   <condition property="samplesFailed">
-    <resourcecount when="greater" count="0">
-      <fileset file="${dir}/${UBLstage}-${UBLversion}/*.txt"/>
-    </resourcecount>
+    <or>
+      <isset property="artefactsFailed"/>
+      <resourcecount when="greater" count="0">
+        <fileset file="${dir}/${UBLstage}-${UBLversion}/*.txt"/>
+      </resourcecount>
+    </or>
   </condition>
     
-  <sequential unless:set="artefactsFailed">
+  <sequential unless:set="samplesFailed">
     <!--prepare reports-->
     <antcall target="-reports"/>
   </sequential>
@@ -1009,11 +1024,11 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <touch if:set="skip-gc" file="${dir}/artefacts-${package}-${UBLstage}-${label}/GC-FILES-NOT-REGENERATED.txt"/>
   <touch if:set="skip-spreadsheet-generation" file="${dir}/artefacts-${package}-${UBLstage}-${label}/ODS-XLS-FILES-NOT-GENERATED.txt"/>
   <touch if:set="skip-html-generation" file="${dir}/artefacts-${package}-${UBLstage}-${label}/HTML-FILES-NOT-GENERATED.txt"/>
-  <mkdir dir="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support"/>
-  <mkdir dir="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support/json"/>
-  <mkdir dir="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support/json/val"/>
+  <mkdir dir="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files"/>
+  <mkdir dir="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/json"/>
+  <mkdir dir="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/json/val"/>
   <copy preservelastmodified="true"  includeEmptyDirs="false"
-       todir="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support">
+       todir="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files">
     <fileset dir=".">
       <include name="**"/>
       <exclude name="**/.git/**"/>
@@ -1023,24 +1038,24 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       <exclude name="**/${dir}/**"/>
     </fileset>
   </copy>
-  <move preservelastmodified="true" includeEmptyDirs="false" todir="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support">
+  <move preservelastmodified="true" includeEmptyDirs="false" todir="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files">
     <fileset dir="${dir}">
       <include name="*"/>
       <exclude name="artefacts.*.txt"/>
     </fileset>
   </move>
-  <move preservelastmodified="true" todir="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support/json">
+  <move preservelastmodified="true" todir="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/json">
     <fileset dir="${dir}/artefacts-${package}-${UBLstage}-${label}">
       <include name="json/**"/>
       <include name="json-schema/**"/>
     </fileset>
   </move>
-  <move preservelastmodified="true" todir="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support/json/val">
+  <move preservelastmodified="true" todir="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/json/val">
     <fileset dir="${dir}/artefacts-${package}-${UBLstage}-${label}/val">
       <include name="*json*"/>
     </fileset>
   </move>
-  <move preservelastmodified="true" todir="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support">
+  <move preservelastmodified="true" todir="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files">
     <fileset dir="${dir}/artefacts-${package}-${UBLstage}-${label}">
       <include name="master-code-list-*.xml"/>
     </fileset>
@@ -1104,13 +1119,13 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <!--copy all entity replacements generated from the artefacts, preserving
       the date and time stamp so that the file can be checked for changes-->
   <copy preservelastmodified="true" todir="${dir}" failonerror="false"
-file="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support/old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevVersion}-documents-ent.xml"/>
+file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevVersion}-documents-ent.xml"/>
   <copy preservelastmodified="true" todir="${dir}" failonerror="false"
-file="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support/old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevVersion}-library-ent.xml"/>
+file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevVersion}-library-ent.xml"/>
   <copy preservelastmodified="true" todir="${dir}" failonerror="false"
-file="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support/old2newDocBook-${package}-${UBLstage}-${package}-${UBLprevStage}-documents-ent.xml"/>
+file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/old2newDocBook-${package}-${UBLstage}-${package}-${UBLprevStage}-documents-ent.xml"/>
   <copy preservelastmodified="true" todir="${dir}" failonerror="false"
-file="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support/old2newDocBook-${package}-${UBLstage}-${package}-${UBLprevStage}-library-ent.xml"/>
+file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/old2newDocBook-${package}-${UBLstage}-${package}-${UBLprevStage}-library-ent.xml"/>
   <!--remove any vestiges of a previous run indicating missing results-->
   <delete  file="${dir}/missing---UBL-${UBLversion}-html---missing.txt"/>
   <delete  file="${dir}/missing---UBL-${UBLversion}-pdf---missing.txt"/>
@@ -1182,8 +1197,6 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support/old2newDocBo
   <!--At this point all of the documentation has been zipped up in its own
       package, ready to use. The artefacts are assumed to have been zipped
       up already before this process has run-->
-
-  <antcall target="-package-distribution"/>
 </target>
 
 <target name="-check-xml-currently-not-used">
@@ -1441,9 +1454,9 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support/old2newDocBo
     </fileset>
   </copy>
   
-  <mkdir dir="${dir}/hub-${package}-${UBLstage}-${label}/temp-support"/>
+  <mkdir dir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files"/>
   <move unless:true="includeISO" preservelastmodified="true"
-        todir="${dir}/hub-${package}-${UBLstage}-${label}/temp-support">
+        todir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files">
     <!--the ISO file is in the docs directory only for drafts; move it to archive if not a draft-->
     <fileset dir="${dir}/hub-${package}-${UBLstage}-${label}">
       <include name="iso-iec-19845-draft.pdf"/>
@@ -1453,7 +1466,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support/old2newDocBo
     </fileset>
   </move>
   <!--uncomment this when it comes time to preserve XML for ISO; work also needs to be done unpacking Realta returns
-  <mkdir dir="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/iso-iec-19845-draft-sts"/>
+  <mkdir dir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/iso-iec-19845-draft-sts"/>
   <copy preservelastmodified="true" todir="${dir}/hub-${package}-${UBLstage}-${label}/iso-iec-19845-draft-sts">
     <fileset dir=".">
       <include name="UBL-${UBLversion}.sts.graphics/**"/>
@@ -1500,9 +1513,9 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support/old2newDocBo
   </sequential>
 
   <!--determine if any attention needed to entity files-->
-  <delete dir="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities"/>
-  <mkdir  dir="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities"/>
-  <copy todir="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities"
+  <delete dir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities"/>
+  <mkdir  dir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities"/>
+  <copy todir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities"
         preservelastmodified="true">
     <fileset dir=".">
       <include name="old2newDoc-from-previous-stage-documents-ent.xml"/>
@@ -1515,35 +1528,35 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support/old2newDocBo
     <length file="summary-processes-ent.xml" when="greater" length="2"/>
   </condition>
   <copy preservelastmodified="true" if:set="ent-processes-okay"
-        todir="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities"
+        todir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities"
         file="summary-processes-ent.xml"/>
   <echo message="check value: ${ent-processes-okay}"/>
   <condition property="ent-parties-okay">
     <length file="summary-parties-ent.xml" when="greater" length="2"/>
   </condition>
   <copy preservelastmodified="true" if:set="ent-parties-okay"
-        todir="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities"
+        todir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities"
         file="summary-parties-ent.xml"/>
   <condition property="ent-namespaces-okay">
     <length file="summary-namespaces-ent.xml" when="greater" length="2"/>
   </condition>
   <copy preservelastmodified="true" if:set="ent-namespaces-okay"
-        todir="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities"
+        todir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities"
         file="summary-namespaces-ent.xml"/>
   <condition property="ent-schemas-okay">
     <length file="summary-schemas-ent.xml" when="greater" length="2"/>
   </condition>
   <copy preservelastmodified="true" if:set="ent-schemas-okay"
-        todir="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities"
+        todir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities"
         file="summary-schemas-ent.xml"/>
   <condition property="ent-examples-okay">
     <length file="summary-examples-ent.xml" when="greater" length="2"/>
   </condition>
   <copy preservelastmodified="true" if:set="ent-examples-okay"
-        todir="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities"
+        todir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities"
         file="summary-examples-ent.xml"/>
   <copy preservelastmodified="true"
-        todir="${dir}/hub-${package}-${UBLstage}-${label}/temp-support">
+        todir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files">
     <fileset dir=".">
       <include name="UBL.xml"/>
       <include name="UBL-Party-summary-information.xml"/>
@@ -1551,72 +1564,72 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/temp-support/old2newDocBo
     </fileset>
   </copy>
   <move preservelastmodified="true"
-        todir="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/old-entities">
+        todir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/old-entities">
     <fileset dir="${dir}/old-entities">
       <include name="**"/>
     </fileset>
   </move>
   <condition property="ent-same-processes">
     <filesmatch 
-file1="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/old-entities/summary-processes-ent.xml"
-file2="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/summary-processes-ent.xml"/>
+file1="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/old-entities/summary-processes-ent.xml"
+file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/summary-processes-ent.xml"/>
   </condition>
-  <delete if:set="ent-same-processes" file="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/summary-processes-ent.xml"/>
+  <delete if:set="ent-same-processes" file="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/summary-processes-ent.xml"/>
 
   <condition property="ent-same-parties">
     <filesmatch
-file1="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/old-entities/summary-parties-ent.xml"
-file2="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/summary-parties-ent.xml"/>
+file1="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/old-entities/summary-parties-ent.xml"
+file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/summary-parties-ent.xml"/>
   </condition>
-  <delete if:set="ent-same-parties" file="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/summary-parties-ent.xml"/>
+  <delete if:set="ent-same-parties" file="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/summary-parties-ent.xml"/>
 
   <condition property="ent-same-namespaces">
     <filesmatch
-file1="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/old-entities/summary-namespaces-ent.xml"
-file2="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/summary-namespaces-ent.xml"/>
+file1="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/old-entities/summary-namespaces-ent.xml"
+file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/summary-namespaces-ent.xml"/>
   </condition>
-  <delete if:set="ent-same-namespaces" file="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/summary-namespaces-ent.xml"/>
+  <delete if:set="ent-same-namespaces" file="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/summary-namespaces-ent.xml"/>
 
   <condition property="ent-same-schemas">
-    <filesmatch file1="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/old-entities/summary-schemas-ent.xml"
-file2="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/summary-schemas-ent.xml"/>
+    <filesmatch file1="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/old-entities/summary-schemas-ent.xml"
+file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/summary-schemas-ent.xml"/>
   </condition>
-  <delete if:set="ent-same-schemas" file="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/summary-schemas-ent.xml"/>
+  <delete if:set="ent-same-schemas" file="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/summary-schemas-ent.xml"/>
 
   <condition property="ent-same-examples">
     <filesmatch
-file1="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/old-entities/summary-examples-ent.xml"
-file2="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/summary-examples-ent.xml"/>
+file1="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/old-entities/summary-examples-ent.xml"
+file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/summary-examples-ent.xml"/>
   </condition>
-  <delete if:set="ent-same-examples" file="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/summary-examples-ent.xml"/>
+  <delete if:set="ent-same-examples" file="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/summary-examples-ent.xml"/>
 
   <condition property="ent-same-old2new-stage-documents">
     <filesmatch
-file1="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/old-entities/old2newDoc-from-previous-stage-documents-ent.xml"
-file2="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/old2newDoc-from-previous-stage-documents-ent.xml"/>
+file1="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/old-entities/old2newDoc-from-previous-stage-documents-ent.xml"
+file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/old2newDoc-from-previous-stage-documents-ent.xml"/>
   </condition>
-  <delete if:set="ent-same-old2new-stage-documents" file="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/old2newDoc-from-previous-stage-documents-ent.xml"/>
+  <delete if:set="ent-same-old2new-stage-documents" file="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/old2newDoc-from-previous-stage-documents-ent.xml"/>
 
   <condition property="ent-same-old2new-stage-library">
     <filesmatch
-file1="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/old-entities/old2newDoc-from-previous-stage-library-ent.xml"
-file2="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/old2newDoc-from-previous-stage-library-ent.xml"/>
+file1="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/old-entities/old2newDoc-from-previous-stage-library-ent.xml"
+file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/old2newDoc-from-previous-stage-library-ent.xml"/>
   </condition>
-  <delete if:set="ent-same-old2new-stage-library" file="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/old2newDoc-from-previous-stage-library-ent.xml"/>
+  <delete if:set="ent-same-old2new-stage-library" file="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/old2newDoc-from-previous-stage-library-ent.xml"/>
 
   <condition property="ent-same-old2new-version-documents">
     <filesmatch
-file1="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/old-entities/old2newDoc-from-previous-version-documents-ent.xml"
-file2="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/old2newDoc-from-previous-version-documents-ent.xml"/>
+file1="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/old-entities/old2newDoc-from-previous-version-documents-ent.xml"
+file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/old2newDoc-from-previous-version-documents-ent.xml"/>
   </condition>
-  <delete if:set="ent-same-old2new-version-documents" file="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/old2newDoc-from-previous-version-documents-ent.xml"/>
+  <delete if:set="ent-same-old2new-version-documents" file="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/old2newDoc-from-previous-version-documents-ent.xml"/>
 
   <condition property="ent-same-old2new-version-library">
     <filesmatch
-file1="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/old-entities/old2newDoc-from-previous-version-library-ent.xml"
-file2="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/old2newDoc-from-previous-version-library-ent.xml"/>
+file1="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/old-entities/old2newDoc-from-previous-version-library-ent.xml"
+file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/old2newDoc-from-previous-version-library-ent.xml"/>
   </condition>
-  <delete if:set="ent-same-old2new-version-library" file="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/old2newDoc-from-previous-version-library-ent.xml"/>
+  <delete if:set="ent-same-old2new-version-library" file="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities/old2newDoc-from-previous-version-library-ent.xml"/>
 
   <condition property="ent-same-all">
     <and>
@@ -1631,7 +1644,7 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/old2
       <isset property="ent-same-old2new-version-library"/>
     </and>
   </condition>
-  <delete if:set="ent-same-all" dir="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities"/>
+  <delete if:set="ent-same-all" dir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new-entities"/>
   <echo unless:set="ent-same-all" file="${dir}/hub-${package}-${UBLstage}-${label}/ATTENTION-new-entities.txt"
         message="The generated entities likely have changed since the last execution. This may be benign if the last execution was interrupted. It may be significant. Both old and new are in the archive-only directory.&#xa;&#xa;To get rid of this report, the files need to be the same, so if the execution was not interrupted, then copy the new entities from the 'archive-only/new-entities' directory into the git directory.&#xa;&#xa;For debug, the unset variables indicate the entity files that are not the same even though the entity name indicates 'same' (because the same-ness property is not set): ${ent-same-processes} ${ent-same-parties} ${ent-same-namespaces} ${ent-same-schemas} ${ent-same-examples} ${ent-same-old2new-stage-documents} ${ent-same-old2new-stage-library} ${ent-same-old2new-version-documents} ${ent-same-old2new-version-library}"/>
 <!--
@@ -1687,7 +1700,7 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/old2
   
   <!--artefacts archive moved to distribution archive-->  
   <move todir="${dir}/${package}-${UBLstage}-${label}-archive-only">
-    <fileset dir="${dir}/${package}-${UBLstage}-${label}/temp-support">
+    <fileset dir="${dir}/${package}-${UBLstage}-${label}/intermediate-support-files">
       <include name="**"/>
     </fileset>
   </move>
@@ -1791,10 +1804,7 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/temp-support/new-entities/old2
   </java>
   <echo message="Integrity checking completed after packaging ZIPs"/>-->
   
-  <sleep seconds="2"/>
   <echo message="Process completed"/>
-  <record name="${consoleFile}" action="stop"/>
-  <sleep seconds="2"/>
 </target>
 
 </project>

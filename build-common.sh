@@ -4,8 +4,8 @@ if [ ! -d $targetdir ]; then mkdir $targetdir ; fi
 if [ ! -d $targetdir/$package-$UBLstage-$label ]; then 
 mkdir     $targetdir/$package-$UBLstage-$label
 fi
-if [ ! -d $targetdir/$package-$UBLstage-$label/archive-only-not-in-final-distribution/ ]; then 
-mkdir     $targetdir/$package-$UBLstage-$label/archive-only-not-in-final-distribution/
+if [ ! -d $targetdir/$package-$UBLstage-$label/intermediate-support-files/ ]; then 
+mkdir     $targetdir/$package-$UBLstage-$label/intermediate-support-files/
 fi
 
 echo Building package...
@@ -34,9 +34,7 @@ if [ "$6" = "DELETE-REPOSITORY-FILES-AS-WELL" ] #secret undocumented failsafe
 then
 # further reduce GitHub storage costs by deleting repository files
 
-if [ ! -f $targetdir/*.txt ]; then # don't delete if error notice files created
 find . -not -name target -not -name .github -maxdepth 1 -exec rm -r -f {} \;
-fi
 
 mv $targetdir/$package-$UBLstage-$label-archive-only.zip .
 mv $targetdir/$package-$UBLstage-$label.zip .
