@@ -65,8 +65,8 @@
          >&previous-loc;/&name;-&version;.pdf</releaseinfo>
       <releaseinfo role="OASIS-specification-previous-authoritative"
          >&previous-loc;/&name;-&version;.xml</releaseinfo> -->
-    <releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;-2.3.html</releaseinfo>
-    <releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;-2.3.pdf</releaseinfo>
+    <releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;-&version;.html</releaseinfo>
+    <releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;-&version;.pdf</releaseinfo>
     <!-- generic form of above
       <releaseinfo role="OASIS-specification-latest"
          >&latest-loc;/&name;-&version;.html</releaseinfo>
@@ -74,7 +74,7 @@
          >&latest-loc;/&name;-&version;.pdf</releaseinfo>
       <releaseinfo role="OASIS-specification-latest-authoritative"
          >&latest-loc;/&name;-&version;.xml</releaseinfo> -->
-    <title>Universal Business Language Version&#xa0;2.3</title>
+    <title>Universal Business Language Version&#xa0;&version;</title>
     <releaseinfo role="committee">
 			<ulink url="https://www.oasis-open.org/committees/ubl/" conformance="skip">OASIS Universal
       Business Language TC</ulink>
@@ -189,7 +189,7 @@
       <itemizedlist>
         <listitem>
           <para>
-            <ulink url="&this-loc;/UBL-2.3.zip">&this-loc;/UBL-2.3.zip</ulink>
+            <ulink url="&this-loc;/UBL-&version;.zip">&this-loc;/UBL-&version;.zip</ulink>
           </para>
         </listitem>
       </itemizedlist>
@@ -209,10 +209,10 @@
         </bibliomixed>
       </bibliolist>
     </legalnotice>
-    <!--gentext: list of namespaces created when creating schema doc summary schematabledb2.3.xml-->
+    <!--gentext: list of namespaces created from schemadoc-->
     &summary-namespaces;
     <abstract>
-      <para>This specification defines the Universal Business Language, version&#xa0;2.3.</para>
+      <para>This specification defines the Universal Business Language, version&#xa0;&version;.</para>
     </abstract>
     <legalnotice role="status" id="STATUS">
       <title>Status</title>
