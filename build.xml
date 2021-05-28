@@ -342,22 +342,9 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <param name="config"  value="config-UBL.xml"/>
   </antcall>
 
-  <delete dir="${dir}/os-UBL-2.0"/>
-  <copy preservelastmodified="true" todir="${dir}/os-UBL-2.0">
-    <fileset dir="os-UBL-2.0/">
-      <include name="**"/>
-    </fileset>
-  </copy>
-  <delete dir="${dir}/os-UBL-2.1"/>
-  <copy preservelastmodified="true" todir="${dir}/os-UBL-2.1">
-    <fileset dir="os-UBL-2.1/">
-      <include name="**"/>
-    </fileset>
-  </copy>
-  <delete dir="${dir}/os-UBL-2.2"/>
-  <copy preservelastmodified="true" todir="${dir}/os-UBL-2.2">
-    <fileset dir="os-UBL-2.2/">
-      <include name="**"/>
+  <copy preservelastmodified="true" todir="${dir}">
+    <fileset dir=".">
+      <include name="os-UBL-2.*/**"/>
     </fileset>
   </copy>
   <copy todir="${dir}/${UBLstage}-${UBLversion}/cva">
