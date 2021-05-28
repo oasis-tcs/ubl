@@ -2,17 +2,18 @@
 <!DOCTYPE configuration
 [
 <!--
-  This is the configuration of the base schema fragments for UBL 2.3
+  This is the configuration of the base schema fragments for UBL 2.4
  
-  Library:           OASIS Universal Business Language (UBL) 2.3 CS02
-                     http://docs.oasis-open.org/ubl/cs02-UBL-2.3/
-  Release Date:      25 May 2021
+  Library:           OASIS Universal Business Language (UBL) 2.4 CSD01WD01
+                     http://docs.oasis-open.org/ubl/csd01wd01-UBL-2.4/
+  Release Date:      28 May 2021
   
 -->
 <!ENTITY copyrightYear      "2021">
-<!ENTITY versionDate "25 May 2021">
-<!ENTITY versionDisplay "2.3 CS02">
-<!ENTITY versionDirectory   "cs02-UBL-2.3">
+<!ENTITY versionDate "28 May 2021">
+<!ENTITY version        "2.4">
+<!ENTITY versionDisplay "2.4 CSD01WD01">
+<!ENTITY versionDirectory   "csd01wd01-UBL-2.4">
 ]>
 <configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ndr>
@@ -103,7 +104,7 @@
     <type>Video</type>
   </types>
  </ndr>
- <schema version="2.3">
+ <schema version="&version;">
   <comment>
   Library:           OASIS Universal Business Language (UBL) &versionDisplay;
                      http://docs.oasis-open.org/ubl/&versionDirectory;/
@@ -178,24 +179,24 @@
     </ccts:Component>
   </type-documentation>
   <dir name="cva">
-    <file type="CVA" name="UBL-DefaultDTQ-2.3.cva"
+    <file type="CVA" name="UBL-DefaultDTQ-&version;.cva"
           skeleton-uri="UBL-CVA-Skeleton.cva"/>
   </dir>
   <dir name="xsd" runtime-name="xsdrt">
     <dir name="common">
-      <file type="CABIE" name="UBL-CommonAggregateComponents-2.3.xsd"
+      <file type="CABIE" name="UBL-CommonAggregateComponents-&version;.xsd"
             prefix="cac"
 namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"/>
-      <file type="CBBIE" name="UBL-CommonBasicComponents-2.3.xsd"
+      <file type="CBBIE" name="UBL-CommonBasicComponents-&version;.xsd"
             prefix="cbc"
 namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/>
-      <file type="QDT" name="UBL-QualifiedDataTypes-2.3.xsd"
+      <file type="QDT" name="UBL-QualifiedDataTypes-&version;.xsd"
             prefix="qdt"
 namespace="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"/>
       <file type="UDT" name="BDNDR-UnqualifiedDataTypes-1.1.xsd"
             prefix="udt"
 namespace="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1"/>
-      <file type="EXT" name="UBL-CommonExtensionComponents-2.3.xsd"
+      <file type="EXT" name="UBL-CommonExtensionComponents-&version;.xsd"
             prefix="ext"
 namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
         <elements>
@@ -208,7 +209,7 @@ namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponent
       </file>
     </dir>
     <dir name="maindoc">
-      <files type="DABIE" name="UBL-%n-2.3.xsd"
+      <files type="DABIE" name="UBL-%n-&version;.xsd"
              namespace="urn:oasis:names:specification:ubl:schema:xsd:%n-2">
         <element-documentation>This element MUST be conveyed as the root element in any instance document based on this Schema expression</element-documentation>
       </files>
@@ -216,19 +217,19 @@ namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponent
   </dir>
    <dir name="json-schema">
     <dir name="common">
-      <file type="CABIE" name="UBL-CommonAggregateComponents-2.3.json"
+      <file type="CABIE" name="UBL-CommonAggregateComponents-&version;.json"
             syntax="JSON"
 namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"/>
-      <file type="CBBIE" name="UBL-CommonBasicComponents-2.3.json"
+      <file type="CBBIE" name="UBL-CommonBasicComponents-&version;.json"
             syntax="JSON"
 namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/>
-      <file type="QDT" name="UBL-QualifiedDataTypes-2.3.json"
+      <file type="QDT" name="UBL-QualifiedDataTypes-&version;.json"
             syntax="JSON"
 namespace="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"/>
       <file type="UDT" name="BDNDR-UnqualifiedDataTypes-1.1.json"
             syntax="JSON"
 namespace="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1"/>
-      <file type="EXT" name="UBL-CommonExtensionComponents-2.3.json"
+      <file type="EXT" name="UBL-CommonExtensionComponents-&version;.json"
             syntax="JSON"
 namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
         <declaration>
@@ -236,7 +237,7 @@ namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponent
           "title": "UBLExtensions",
           "description": "An optional set of extensions to the committee model",
           "items": { 
-            "$ref": "../common/UBL-CommonExtensionComponents-2.3.json#/definitions/UBLExtensions" },
+            "$ref": "../common/UBL-CommonExtensionComponents-&version;.json#/definitions/UBLExtensions" },
           "maxItems": 1,
           "minItems": 1,
           "type": "array"
@@ -246,7 +247,7 @@ namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponent
       </file>
     </dir>
      <dir name="maindoc">
-       <files type="DABIE" name="UBL-%n-2.3.json"
+       <files type="DABIE" name="UBL-%n-&version;.json"
               syntax="JSON"
               namespace="urn:oasis:names:specification:ubl:schema:xsd:%n-2"/>
     </dir>

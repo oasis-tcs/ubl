@@ -130,25 +130,6 @@ Two examples of the use of temporary files in a DOS script are:
 - `echo >trigger.txt` - creates the temporary file
 - `del trigger.txt` - deletes the temporary file
 
-To determine if the files are ready for sending to the project editors, look in the results in the `archive-only` directory for these files summarizing any problems with the submission:
-- `build.exitcode.{timestamp}.txt` - exit code from the execution of the Ant build script
-- `build.console.{timestamp}.txt` - console log of the execution of the Ant build script
-- `check-ubl-version-stage-ubl-version-pstage.html` - e.g. `check-ubl-2.3-csd05-ubl-2.3-cs01.html` - report of differences between the current version/stage and the previous version/stage
-- `check-ubl-version-stage-ubl-peversion.html` - e.g. `check-ubl-2.3-csd05-ubl-2.2` - report of differences between the current version/stage and the previous version.
-
-There should be no "`.txt`" files in the returned base directory. Various "`.txt`" files are possible to report problems with the build. The problems should be explained in the file itself or correlated in the `build.console.{timestamp}.txt` file:
- - `ATTENTION-new-entities.txt` indicates that in the `archive-only/` subdirectory has a `new-entities/` directory with new entity files that were created by your changes to the document, schema summary, and party XML files; if there are any new entity files, you must replace your local copies with those new entities in order for the validation in your XML editor to match the validation results on the server; if the `new-entities` directory does not exist, then there is no need to update your local entity files.
- - `INTEGRITY-PROBLEMS.txt` - there are files referenced in the hub document that do not exist, or there are files that exist and are not referenced in the hub document
- - `LIST-OF-PROBLEM-CODE-LISTS.txt` - genericode files in the `cl/` directory that are not genericode-schema valid
- - `MISMATCHED-TEST-SAMPLES-SH-WARNING.txt` - the number of invocations in the `val/testsamples.sh` script does not match the number of examples
- - `MISMATCHED-TEST-SAMPLES-BAT-WARNING.txt` - the number of invocations in the `val/testsamples.bat` script does not match the number of examples
- - `NDR-SPELL-CHECK-WARNING.txt` - see the `unexpetedWords.txt` for a list of words that are not found in English or the UBL dictionary
- - `UNEXPECTED-SAMPLES-NS-PI-DETAILS.txt` - open the file to see a list of unexpected namespace declarations found in sample files
- - `UNEXPECTED-TEST-RESULT-WARNING.txt` - the `val/test.sh` script did not end cleanly
- - `UNEXPECTED-TEST-SAMPLES-RESULT-WARNING.txt` - at least one invocation in the `val/testsamples.sh` did not validate 
-
-When editors create their final edits, the results from the `git push` should be ready to be published without any modifications. If there are errant or unexpected files in the directory, the build process needs to address the discrepancies.
-
 ## Creating a new release
 
 The [`build.sh`](build.sh) invocation points to the particular set of parameters to use to create the artefacts. The editors maintain this file for the technical committee version of the UBL package. Alternative configurations for subcommittees can be created in subcommittee branches of this repository. As is true for other maintainers, subcommittee changes are submitted as a pull request to `review`. The subcommittee's `build.sh` is not used by the technical committee.
@@ -300,7 +281,7 @@ Source files, processing stylesheets, and resulting entities generated or used i
   - `summary-namespaces-ent.xml`
   - `summary-schemas-ent.xml`
   - `summary-examples-ent.xml`
-- `UBL-{prevVersion}-modified.xml` is the final monolithic `UBL-{prevVersion}.xml` hub document from the previous version of UBL possibly modified from the original; this is processed by `hub2processSummary.xsl`:
+- `UBL-{prevVersion}.xml` is the final monolithic hub document from the previous version of UBL; this is processed by `hub2processSummary.xsl`:
   - `summary-processes-ent.xml`
 - the artefacts building process creates the following four entity files for comparing current versions to old versions:
   - `old2newDoc-from-previous-version-documents-ent.xml` 
@@ -322,6 +303,7 @@ Subdirectories:
 - [`os-UBL-2.0`]( os-UBL-2.0 ) - code list subdirectory copied from released version of UBL 2.0
 - [`os-UBL-2.1`]( os-UBL-2.1 ) - code list subdirectory copied from released version of UBL 2.1
 - [`os-UBL-2.2`]( os-UBL-2.2 ) - code list subdirectory copied from released version of UBL 2.2
+- [`os-UBL-2.3`]( os-UBL-2.3 ) - code list subdirectory copied from released version of UBL 2.3
 - [`raw`]( raw ) - pre-populated content of the results directory with skeleton contents
   - [`raw/cl`]( raw/cl ) - code list content from having run the code list tooling and results here:
     - https://www.oasis-open.org/committees/document.php?document_id=67039 - tooling
@@ -335,9 +317,9 @@ Subdirectories:
   - [`raw/xsd`]( raw/xsd ) - hand-authored XML Schema fragments
 - [`utilities`]( utilities ) - tools used to generate outputs
 
-Image creation using the http://draw.io tool:
-- copy [`UBL-2.3-Pre-awardProcess.drawio`]( https://raw.githubusercontent.com/oasis-tcs/ubl-2.3-hub/master/images/UBL-2.3-Pre-awardProcess.drawio ) as a starting point full-width image with your own file name
-- open the copy in http://draw.io and modify it as required
+Image creation using the [`http://draw.io`](http://draw.io) tool:
+- copy [`UBL-2.3-Pre-awardProcess.drawio`](images/UBL-2.3-Pre-awardProcess.drawio ) as a starting point full-width image with your own file name
+- open the copy in [`http://draw.io`](http://draw.io) and modify it as required
 - save the vector file in the [`images`]( images ) directory
 - using the menu item File / Export as / Advanced...
   - select PNG format
@@ -388,24 +370,41 @@ The embedded ZIP files found in the download package:
 - `UBL-2.x-{stage}-{timestamp}.zip` - distribution artefacts
 - `UBL-2.x-{stage}-{timestamp}-archive-only.zip` - archive artefacts
 
-Note that in the archive ZIP are the files:
-- `build.console.{timestamp}.txt` - console log of the execution of the Ant build script
+To determine if the files are ready for sending to the project editors, look in the results in the `archive-only` ZIP for these files summarizing any problems with the submission:
 - `build.exitcode.{timestamp}.txt` - exit code from the execution of the Ant build script
+- `build.console.{timestamp}.txt` - console log of the execution of the Ant build script
+- `check-ubl-version-stage-ubl-version-pstage.html` - e.g. `check-ubl-2.3-csd05-ubl-2.3-cs01.html` - report of differences between the current version/stage and the previous version/stage
+- `check-ubl-version-stage-ubl-peversion.html` - e.g. `check-ubl-2.3-csd05-ubl-2.2` - report of differences between the current version/stage and the previous version.
+
+There should be no "`.txt`" files in the returned base directory. Various "`.txt`" files are possible to report problems with the build. The problems should be explained in the file itself or correlated in the `build.console.{timestamp}.txt` file:
+ - `ATTENTION-new-entities.txt` indicates that in the `archive-only/` subdirectory has a `new-entities/` directory with new entity files that were created by your changes to the document, schema summary, and party XML files; if there are any new entity files, you must replace your local copies with those new entities in order for the validation in your XML editor to match the validation results on the server; if the `new-entities` directory does not exist, then there is no need to update your local entity files.
+ - `INTEGRITY-PROBLEMS.txt` - there are files referenced in the hub document that do not exist, or there are files that exist and are not referenced in the hub document
+ - `LIST-OF-PROBLEM-CODE-LISTS.txt` - genericode files in the `cl/` directory that are not genericode-schema valid
+ - `MISMATCHED-TEST-SAMPLES-SH-WARNING.txt` - the number of invocations in the `val/testsamples.sh` script does not match the number of examples
+ - `MISMATCHED-TEST-SAMPLES-BAT-WARNING.txt` - the number of invocations in the `val/testsamples.bat` script does not match the number of examples
+ - `NDR-SPELL-CHECK-WARNING.txt` - see the [`unexpectedWords.txt`](unexpectedWords.txt) for a list of words that are not found in English or the UBL dictionary
+ - `UNEXPECTED-SAMPLES-NS-PI-DETAILS.txt` - open the file to see a list of unexpected namespace declarations found in sample files
+ - `UNEXPECTED-TEST-RESULT-WARNING.txt` - the `val/test.sh` script did not end cleanly
+ - `UNEXPECTED-TEST-SAMPLES-RESULT-WARNING.txt` - at least one invocation in the `val/testsamples.sh` did not validate 
+
+When editors create their final edits, the results from the `git push` should be ready to be published without any modifications. If there are errant or unexpected files in the directory, the build process needs to address the discrepancies.
 
 ## Housekeeping
 
 After having downloaded your results, please delete your entire workflow run listed in the [Actions tab](https://github.com/oasis-tcs/ubl/actions) after you are done. This will save space and will promote the public access of the Kavi repository rather than intermediate issues.
 
+PLEASE BE CAREFUL: ANY MEMBER CAN DELETE ANY WORKFLOW SO TRY HARD NOT TO DELETE THE WORKFLOW CREATED BY A COLLEAGUE; CHECK THE BRANCH NAMES.
+
 ### To do:
 
-- when 2.4 is started, remove the "-modified" suffix of the previous version hub document
+- the 2.4 code list files in the `raw/` directory for now simply are the 2.3 code list files renamed as 2.4
 
 ---
 <h3>Contributions</h3>
-<p>As stated in this repository's <a href="https://github.com/oasis-tcs/ubl/blob/master/CONTRIBUTING.md">CONTRIBUTING file</a>, contributors to this repository are expected to be Members of the OASIS UBL TC, for any substantive change requests.  Anyone wishing to contribute to this GitHub project and <a href="https://www.oasis-open.org/join/participation-instructions">participate</a> in the TC's technical activity is invited to join as an OASIS TC Member.  Public feedback is also accepted, subject to the terms of the <a href="https://www.oasis-open.org/policies-guidelines/ipr#appendixa">OASIS Feedback License</a>.</p>
+<p>As stated in this repository's <a href="https://github.com/oasis-tcs/ubl/blob/main/CONTRIBUTING.md">CONTRIBUTING file</a>, contributors to this repository are expected to be Members of the OASIS UBL TC, for any substantive change requests.  Anyone wishing to contribute to this GitHub project and <a href="https://www.oasis-open.org/join/participation-instructions">participate</a> in the TC's technical activity is invited to join as an OASIS TC Member.  Public feedback is also accepted, subject to the terms of the <a href="https://www.oasis-open.org/policies-guidelines/ipr#appendixa">OASIS Feedback License</a>.</p>
 
 <h3>Licensing</h3>
-<p>Please see the <a href="https://github.com/oasis-tcs/ubl/blob/master/LICENSE.md">LICENSE</a> file for description of the license terms and OASIS policies applicable to the TC's work in this GitHub project. Content in this repository is intended to be part of the UBL TC's permanent record of activity, visible and freely available for all to use, subject to applicable OASIS policies, as presented in the repository <a href="https://github.com/oasis-tcs/ubl/blob/master/LICENSE.md">LICENSE</a> file.</p>
+<p>Please see the <a href="https://github.com/oasis-tcs/ubl/blob/main/LICENSE.md">LICENSE</a> file for description of the license terms and OASIS policies applicable to the TC's work in this GitHub project. Content in this repository is intended to be part of the UBL TC's permanent record of activity, visible and freely available for all to use, subject to applicable OASIS policies, as presented in the repository <a href="https://github.com/oasis-tcs/ubl/blob/main/LICENSE.md">LICENSE</a> file.</p>
 
 <h3>Contact</h3>
 <p>Please send questions or comments about <a href="https://www.oasis-open.org/resources/tcadmin/github-repositories-for-oasis-tc-members-chartered-work">OASIS TC GitHub repositories</a> to  <a href="mailto:chet.ensign@oasis-open.org">Chet Ensign</a>.  For questions about content in this repository, please contact the TC Chair or Co-Chairs as listed on the the UBL TC's <a href="https://www.oasis-open.org/committees/ubl/">home page</a>.</p>

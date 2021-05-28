@@ -1,14 +1,15 @@
 <!DOCTYPE Identification [
-<!ENTITY short "CS02">
-<!ENTITY dir   "cs02">
+<!ENTITY short "CSD01WD02 ">
+<!ENTITY dir   "csd01wd02">
+<!ENTITY version "2.4">
 ]>
 <Identification>
-  <ShortName>UBL-2.3-&short;</ShortName>
-  <LongName>UBL 2.3 &short; Business Entity Summary</LongName>
-  <Version>2.3</Version>
+  <ShortName>UBL-&version;-&short;</ShortName>
+  <LongName>UBL &version; &short; Business Entity Summary</LongName>
+  <Version>&version;</Version>
   <CanonicalUri>urn:oasis:names:specification:ubl:BIE</CanonicalUri>
-  <CanonicalVersionUri>urn:oasis:names:specification:ubl:BIE:2.3</CanonicalVersionUri>
-  <LocationUri>http://docs.oasis-open.org/ubl/&dir;-UBL-2.3/mod/UBL-Entities-2.3.gc</LocationUri>
+  <CanonicalVersionUri>urn:oasis:names:specification:ubl:BIE:&version;</CanonicalVersionUri>
+  <LocationUri>http://docs.oasis-open.org/ubl/&dir;-UBL-&version;/mod/UBL-Entities-&version;.gc</LocationUri>
   <Agency>
      <LongName xml:lang="en">OASIS Universal Business Language</LongName>
      <Identifier>UBL</Identifier>

@@ -4,16 +4,17 @@ xmlns:cva="http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/"
 xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
 xmlns:c="urn:X-Crane-gc2obdndr"
 xmlns:x="http://www.w3.org/1999/xhtml"
-name="UBL-DataTypeQualifications-2.3"
-version="2020-04-18 14:50(UTC)"
+name="UBL-DataTypeQualifications-2.4"
+version="2021-05-28 00:30(UTC)"
 id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
    <Annotation>
       <Description>
          <x:p>
         This describes all of the qualified supplementary components and 
         business information entities for the OASIS Universal Business
-        Language (UBL) 2.3 vocabulary.  It includes all of the UBL 2.2,
-        UBL 2.1, and UBL 2.0 constructs as well for backward compatibility.
+        Language (UBL) 2.4 vocabulary.  It includes all of the UBL 2.3, 
+        UBL 2.2, UBL 2.1, and UBL 2.0 constructs as well for backward
+        compatibility.
       </x:p>
          <x:p>
         In UBL 2.1+ qualified data types are anonymous (in that they are
@@ -42,7 +43,7 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
       </Description>
    </Annotation>
    <Title>
-    UBL 2.0, 2.1, 2.2, and UBL 2.3 qualified information items
+    UBL 2.0, 2.1, 2.2, 2.3 and UBL 2.4 qualified information items
   </Title>
    <ValueLists>
       <Annotation>
@@ -71,7 +72,9 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
       <ValueList xml:id="AllowanceChargeReason-2.2"
                  uri="../../os-UBL-2.2/cl/gc/default/AllowanceChargeReasonCode-2.2.gc"/>
       <ValueList xml:id="AllowanceChargeReason-2.3"
-                 uri="../cl/gc/default/AllowanceChargeReasonCode-2.3.gc"/>
+                 uri="../../os-UBL-2.3/cl/gc/default/AllowanceChargeReasonCode-2.3.gc"/>
+      <ValueList xml:id="AllowanceChargeReason-2.4"
+                 uri="../cl/gc/default/AllowanceChargeReasonCode-2.4.gc"/>
       <ValueList xml:id="BinaryObjectMime-2.0"
                  uri="../../os-UBL-2.0/cl/gc/cefact/BinaryObjectMimeCode-2.0.gc"/>
       <ValueList xml:id="BinaryObjectMime-2.1"
@@ -79,7 +82,9 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
       <ValueList xml:id="BinaryObjectMime-2.2"
                  uri="../../os-UBL-2.2/cl/gc/default/BinaryObjectMimeCode-2.2.gc"/>
       <ValueList xml:id="BinaryObjectMime-2.3"
-                 uri="../cl/gc/default/BinaryObjectMimeCode-2.3.gc"/>
+                 uri="../../os-UBL-2.3/cl/gc/default/BinaryObjectMimeCode-2.3.gc"/>
+      <ValueList xml:id="BinaryObjectMime-2.4"
+                 uri="../cl/gc/default/BinaryObjectMimeCode-2.4.gc"/>
       <ValueList xml:id="Channel-2.0"
                  uri="../../os-UBL-2.0/cl/gc/default/ChannelCode-2.0.gc"/>
       <ValueList xml:id="Channel-2.1"
@@ -87,7 +92,9 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
       <ValueList xml:id="Channel-2.2"
                  uri="../../os-UBL-2.2/cl/gc/default/ChannelCode-2.2.gc"/>
       <ValueList xml:id="Channel-2.3"
-                 uri="../cl/gc/default/ChannelCode-2.3.gc"/>
+                 uri="../../os-UBL-2.3/cl/gc/default/ChannelCode-2.3.gc"/>
+      <ValueList xml:id="Channel-2.4"
+                 uri="../cl/gc/default/ChannelCode-2.4.gc"/>
       <ValueList xml:id="Chip-2.0"
                  uri="../../os-UBL-2.0/cl/gc/default/ChipCode-2.0.gc"/>
       <ValueList xml:id="CountryIdentification-2.0"
@@ -97,7 +104,9 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
       <ValueList xml:id="CountryIdentification-2.2"
                  uri="../../os-UBL-2.2/cl/gc/default/CountryIdentificationCode-2.2.gc"/>
       <ValueList xml:id="CountryIdentification-2.3"
-                 uri="../cl/gc/default/CountryIdentificationCode-2.3.gc"/>
+                 uri="../../os-UBL-2.3/cl/gc/default/CountryIdentificationCode-2.3.gc"/>
+      <ValueList xml:id="CountryIdentification-2.4"
+                 uri="../cl/gc/default/CountryIdentificationCode-2.4.gc"/>
       <ValueList xml:id="Currency-2.0"
                  uri="../../os-UBL-2.0/cl/gc/cefact/CurrencyCode-2.0.gc"/>
       <ValueList xml:id="Currency-2.1"
@@ -105,7 +114,9 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
       <ValueList xml:id="Currency-2.2"
                  uri="../../os-UBL-2.2/cl/gc/default/CurrencyCode-2.2.gc"/>
       <ValueList xml:id="Currency-2.3"
-                 uri="../cl/gc/default/CurrencyCode-2.3.gc"/>
+                 uri="../../os-UBL-2.3/cl/gc/default/CurrencyCode-2.3.gc"/>
+      <ValueList xml:id="Currency-2.4"
+                 uri="../cl/gc/default/CurrencyCode-2.4.gc"/>
       <ValueList xml:id="DocumentStatus-2.0"
                  uri="../../os-UBL-2.0/cl/gc/default/DocumentStatusCode-2.0.gc"/>
       <ValueList xml:id="DocumentStatus-2.1"
@@ -113,7 +124,9 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
       <ValueList xml:id="Language-2.2"
                  uri="../../os-UBL-2.2/cl/gc/default/LanguageCode-2.2.gc"/>
       <ValueList xml:id="Language-2.3"
-                 uri="../cl/gc/default/LanguageCode-2.3.gc"/>
+                 uri="../../os-UBL-2.3/cl/gc/default/LanguageCode-2.3.gc"/>
+      <ValueList xml:id="Language-2.4"
+                 uri="../cl/gc/default/LanguageCode-2.4.gc"/>
       <ValueList xml:id="LatitudeDirection-2.0"
                  uri="../../os-UBL-2.0/cl/gc/default/LatitudeDirectionCode-2.0.gc"/>
       <ValueList xml:id="LineStatus-2.0"
@@ -129,7 +142,9 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
       <ValueList xml:id="PackagingType-2.2"
                  uri="../../os-UBL-2.2/cl/gc/default/PackagingTypeCode-2.2.gc"/>
       <ValueList xml:id="PackagingType-2.3"
-                 uri="../cl/gc/default/PackagingTypeCode-2.3.gc"/>
+                 uri="../../os-UBL-2.3/cl/gc/default/PackagingTypeCode-2.3.gc"/>
+      <ValueList xml:id="PackagingType-2.4"
+                 uri="../cl/gc/default/PackagingTypeCode-2.4.gc"/>
       <ValueList xml:id="PaymentMeans-2.0"
                  uri="../../os-UBL-2.0/cl/gc/default/PaymentMeansCode-2.0.gc"/>
       <ValueList xml:id="PaymentMeans-2.1"
@@ -137,7 +152,9 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
       <ValueList xml:id="PaymentMeans-2.2"
                  uri="../../os-UBL-2.2/cl/gc/default/PaymentMeansCode-2.2.gc"/>
       <ValueList xml:id="PaymentMeans-2.3"
-                 uri="../cl/gc/default/PaymentMeansCode-2.3.gc"/>
+                 uri="../../os-UBL-2.3/cl/gc/default/PaymentMeansCode-2.3.gc"/>
+      <ValueList xml:id="PaymentMeans-2.4"
+                 uri="../cl/gc/default/PaymentMeansCode-2.4.gc"/>
       <ValueList xml:id="ReceiptAdviceType-2.1"
                  uri="../../os-UBL-2.1/cl/gc/default/ReceiptAdviceTypeCode-2.1.gc"/>
       <ValueList xml:id="SubstitutionStatus-2.0"
@@ -149,7 +166,9 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
       <ValueList xml:id="TransportEquipmentType-2.2"
                  uri="../../os-UBL-2.2/cl/gc/default/TransportEquipmentTypeCode-2.2.gc"/>
       <ValueList xml:id="TransportEquipmentType-2.3"
-                 uri="../cl/gc/default/TransportEquipmentTypeCode-2.3.gc"/>
+                 uri="../../os-UBL-2.3/cl/gc/default/TransportEquipmentTypeCode-2.3.gc"/>
+      <ValueList xml:id="TransportEquipmentType-2.4"
+                 uri="../cl/gc/default/TransportEquipmentTypeCode-2.4.gc"/>
       <ValueList xml:id="TransportMode-2.0"
                  uri="../../os-UBL-2.0/cl/gc/default/TransportModeCode-2.0.gc"/>
       <ValueList xml:id="TransportMode-2.1"
@@ -157,7 +176,9 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
       <ValueList xml:id="TransportMode-2.2"
                  uri="../../os-UBL-2.2/cl/gc/default/TransportModeCode-2.2.gc"/>
       <ValueList xml:id="TransportMode-2.3"
-                 uri="../cl/gc/default/TransportModeCode-2.3.gc"/>
+                 uri="../../os-UBL-2.3/cl/gc/default/TransportModeCode-2.3.gc"/>
+      <ValueList xml:id="TransportMode-2.4"
+                 uri="../cl/gc/default/TransportModeCode-2.4.gc"/>
       <ValueList xml:id="UnitOfMeasure-2.0"
                  uri="../../os-UBL-2.0/cl/gc/cefact/UnitOfMeasureCode-2.0.gc"/>
       <ValueList xml:id="UnitOfMeasure-2.1"
@@ -165,7 +186,9 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
       <ValueList xml:id="UnitOfMeasure-2.2"
                  uri="../../os-UBL-2.2/cl/gc/default/UnitOfMeasureCode-2.2.gc"/>
       <ValueList xml:id="UnitOfMeasure-2.3"
-                 uri="../cl/gc/default/UnitOfMeasureCode-2.3.gc"/>
+                 uri="../../os-UBL-2.3/cl/gc/default/UnitOfMeasureCode-2.3.gc"/>
+      <ValueList xml:id="UnitOfMeasure-2.4"
+                 uri="../cl/gc/default/UnitOfMeasureCode-2.4.gc"/>
       <ValueList xml:id="WeekDay-2.1"
                  uri="../../os-UBL-2.1/cl/gc/default/WeekDayCode-2.1.gc"/>
       <ValueList xml:id="WeighingMethod-2.2"
@@ -331,13 +354,13 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
         </x:p>
          </Description>
       </Annotation>
-      <Context values="Currency-2.0 Currency-2.1 Currency-2.2 Currency-2.3"
+      <Context values="Currency-2.0 Currency-2.1 Currency-2.2 Currency-2.3 Currency-2.4"
                metadata="cctsV2.01-amount"
                address="@currencyID"/>
-      <Context values="BinaryObjectMime-2.0 BinaryObjectMime-2.1 BinaryObjectMime-2.2 BinaryObjectMime-2.3"
+      <Context values="BinaryObjectMime-2.0 BinaryObjectMime-2.1 BinaryObjectMime-2.2 BinaryObjectMime-2.3 BinaryObjectMime-2.4"
                metadata="cctsV2.01-binary"
                address="@mimeCode"/>
-      <Context values="UnitOfMeasure-2.0 UnitOfMeasure-2.1 UnitOfMeasure-2.2 UnitOfMeasure-2.3"
+      <Context values="UnitOfMeasure-2.0 UnitOfMeasure-2.1 UnitOfMeasure-2.2 UnitOfMeasure-2.3 UnitOfMeasure-2.4"
                metadata="cctsV2.01-measure"
                address="/@unitCode">
         <Annotation>
@@ -346,7 +369,7 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
           </AppInfo>
         </Annotation>
       </Context>
-      <Context values="UnitOfMeasure-2.0 UnitOfMeasure-2.1 UnitOfMeasure-2.2 UnitOfMeasure-2.3"
+      <Context values="UnitOfMeasure-2.0 UnitOfMeasure-2.1 UnitOfMeasure-2.2 UnitOfMeasure-2.3 UnitOfMeasure-2.4"
                metadata="cctsV2.01-quantity"
                address="/@unitCode">
         <Annotation>
@@ -355,7 +378,7 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
           </AppInfo>
         </Annotation>
       </Context>
-      <Context values="AllowanceChargeReason-2.0 AllowanceChargeReason-2.1 AllowanceChargeReason-2.2 AllowanceChargeReason-2.3"
+      <Context values="AllowanceChargeReason-2.0 AllowanceChargeReason-2.1 AllowanceChargeReason-2.2 AllowanceChargeReason-2.3 AllowanceChargeReason-2.4"
                metadata="cctsV2.01-code"
                address="">
         <Annotation>
@@ -364,7 +387,7 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
           </AppInfo>
         </Annotation>
       </Context>
-      <Context values="Channel-2.0 Channel-2.1 Channel-2.2 Channel-2.3"
+      <Context values="Channel-2.0 Channel-2.1 Channel-2.2 Channel-2.3 Channel-2.4"
                metadata="cctsV2.01-code"
                address="">
         <Annotation>
@@ -382,7 +405,7 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
           </AppInfo>
         </Annotation>
       </Context>
-      <Context values="CountryIdentification-2.0 CountryIdentification-2.1 CountryIdentification-2.2 CountryIdentification-2.3"
+      <Context values="CountryIdentification-2.0 CountryIdentification-2.1 CountryIdentification-2.2 CountryIdentification-2.3 CountryIdentification-2.4"
                metadata="cctsV2.01-code"
                address="">
         <Annotation>
@@ -391,7 +414,7 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
           </AppInfo>
         </Annotation>
       </Context>
-      <Context values="Currency-2.0 Currency-2.1 Currency-2.2 Currency-2.3"
+      <Context values="Currency-2.0 Currency-2.1 Currency-2.2 Currency-2.3 Currency-2.4"
                metadata="cctsV2.01-code"
                address="">
         <Annotation>
@@ -409,7 +432,7 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
           </AppInfo>
         </Annotation>
       </Context>
-      <Context values="Language-2.2 Language-2.3"
+      <Context values="Language-2.2 Language-2.3 Language-2.4"
                metadata="cctsV2.01-code"
                address="">
         <Annotation>
@@ -454,7 +477,7 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
           </AppInfo>
         </Annotation>
       </Context>
-      <Context values="PackagingType-2.0 PackagingType-2.1 PackagingType-2.2 PackagingType-2.3"
+      <Context values="PackagingType-2.0 PackagingType-2.1 PackagingType-2.2 PackagingType-2.3 PackagingType-2.4"
                metadata="cctsV2.01-code"
                address="">
         <Annotation>
@@ -463,7 +486,7 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
           </AppInfo>
         </Annotation>
       </Context>
-      <Context values="PaymentMeans-2.0 PaymentMeans-2.1 PaymentMeans-2.2 PaymentMeans-2.3"
+      <Context values="PaymentMeans-2.0 PaymentMeans-2.1 PaymentMeans-2.2 PaymentMeans-2.3 PaymentMeans-2.4"
                metadata="cctsV2.01-code"
                address="">
         <Annotation>
@@ -490,7 +513,7 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
           </AppInfo>
         </Annotation>
       </Context>
-      <Context values="TransportEquipmentType-2.0 TransportEquipmentType-2.1 TransportEquipmentType-2.2 TransportEquipmentType-2.3"
+      <Context values="TransportEquipmentType-2.0 TransportEquipmentType-2.1 TransportEquipmentType-2.2 TransportEquipmentType-2.3 TransportEquipmentType-2.4"
                metadata="cctsV2.01-code"
                address="">
         <Annotation>
@@ -499,7 +522,7 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
           </AppInfo>
         </Annotation>
       </Context>
-      <Context values="TransportMode-2.0 TransportMode-2.1 TransportMode-2.2 TransportMode-2.3"
+      <Context values="TransportMode-2.0 TransportMode-2.1 TransportMode-2.2 TransportMode-2.3 TransportMode-2.4"
                metadata="cctsV2.01-code"
                address="">
         <Annotation>
@@ -508,7 +531,7 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
           </AppInfo>
         </Annotation>
       </Context>
-      <Context values="UnitOfMeasure-2.0 UnitOfMeasure-2.1 UnitOfMeasure-2.2 UnitOfMeasure-2.3"
+      <Context values="UnitOfMeasure-2.0 UnitOfMeasure-2.1 UnitOfMeasure-2.2 UnitOfMeasure-2.3 UnitOfMeasure-2.4"
                metadata="cctsV2.01-code"
                address="">
         <Annotation>

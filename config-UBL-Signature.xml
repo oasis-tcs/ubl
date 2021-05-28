@@ -2,17 +2,18 @@
 <!DOCTYPE configuration
 [
 <!--
-  This is the configuration of the base schema fragments for UBL 2.3 Signatures
-
-  Library:           OASIS Universal Business Language (UBL) 2.3 CS02
-                     http://docs.oasis-open.org/ubl/cs02-UBL-2.3/
-  Release Date:      25 May 2021
+  This is the configuration of the base schema fragments for UBL 2.4 Signatures
+ 
+  Library:           OASIS Universal Business Language (UBL) 2.4 CSD01WD01
+                     http://docs.oasis-open.org/ubl/csd01wd01-UBL-2.4/
+  Release Date:      28 May 2021
   
 -->
 <!ENTITY copyrightYear      "2021">
-<!ENTITY versionDate "25 May 2021">
-<!ENTITY versionDisplay "2.3 CS02">
-<!ENTITY versionDirectory   "cs02-UBL-2.3">
+<!ENTITY versionDate "28 May 2021">
+<!ENTITY version        "2.4">
+<!ENTITY versionDisplay "2.4 CSD01WD01">
+<!ENTITY versionDirectory   "csd01wd01-UBL-2.4">
 ]>
 <configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema">
  <ndr>
@@ -72,7 +73,7 @@
     <type>Video</type>
   </types>
  </ndr>
- <schema version="2.3">
+ <schema version="&version;">
   <comment>
   Library:           OASIS Universal Business Language (UBL) &versionDisplay;
                      http://docs.oasis-open.org/ubl/&versionDirectory;/
@@ -148,17 +149,17 @@
   </type-documentation>
   <dir name="xsd" runtime-name="xsdrt">
       <dir name="common">
-        <file type="XABIE" name="UBL-CommonSignatureComponents-2.3.xsd"
+        <file type="XABIE" name="UBL-CommonSignatureComponents-&version;.xsd"
               abie="UBLDocumentSignatures"
 namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2"/>
-        <file type="SABIE" name="UBL-SignatureAggregateComponents-2.3.xsd"
+        <file type="SABIE" name="UBL-SignatureAggregateComponents-&version;.xsd"
               prefix="sac"
 namespace="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2">
           <imports>
 
    <!-- ===== Incorporate W3C signature specification-->
    <xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" 
-               schemaLocation="UBL-xmldsig1-schema-2.3.xsd"/>
+               schemaLocation="UBL-xmldsig1-schema-&version;.xsd"/>
 
           </imports>
           <elements xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
@@ -170,7 +171,7 @@ namespace="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateCompon
          </xsd:element>
           </elements>
         </file>
-        <file type="SBBIE" name="UBL-SignatureBasicComponents-2.3.xsd"
+        <file type="SBBIE" name="UBL-SignatureBasicComponents-&version;.xsd"
               prefix="sbc"
 namespace="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2"/>
       </dir>

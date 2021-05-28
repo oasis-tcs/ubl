@@ -1244,7 +1244,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/archive-only-not-in-final
      <arg value="-xsl:${thisdir}/hub2processSummary.xsl"/>
     <arg value="-s:UBL.xml"/>
     <arg value="-o:summary-processes-ent.xml"/>
-    <arg value="old=UBL-${UBLprevVersion}-modified.xml"/>
+    <arg value="old=UBL-${UBLprevVersion}.xml"/>
   </java>
   <java jar="db/spec-0.8/validate/xjparse.jar" fork="true">
     <arg value="-v"/>
