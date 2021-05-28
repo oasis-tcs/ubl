@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--$Id: UBL-2.3-Party-summary-information.xml,v 1.6 2020/01/28 02:14:37 admin Exp $-->
 <!DOCTYPE roletable
 [
 <!ELEMENT roletable ( entry+ )>
