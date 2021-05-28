@@ -15,23 +15,24 @@
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "db/spec-0.8/docbook/docbookx.dtd" [
 	<!ENTITY name "UBL">
-	<!ENTITY pversion "2.2">
-	<!ENTITY version  "2.3">
-	<!ENTITY pstage   "csd05">
-	<!ENTITY PSTAGE   "CSD05">
-	<!ENTITY stage    "cs02">
-	<!ENTITY STAGE    "CS02">
+	<!ENTITY pversion "2.3">
+	<!ENTITY version  "2.4">
+	<!ENTITY psversion "2.3">
+	<!ENTITY pstage   "os">
+	<!ENTITY PSTAGE   "OS">
+	<!ENTITY stage    "csd01wd01">
+	<!ENTITY STAGE    "CSD01WD01">
 	<!ENTITY isostage "WD">
-	<!ENTITY standard "Committee Specification 02">
-	<!ENTITY stagetext "Committee Specification 02">
+	<!ENTITY standard "Committee Specification Draft 01 / Working Draft 01">
+	<!ENTITY stagetext "Committee Specification Draft 01 Working Draft 01">
+	<!ENTITY standard "Committee Specification 02xxxxxxx">
+	<!ENTITY stagetext "Committee Specification 02xxxxxx">
 	<!ENTITY standard "Committee Specification Draft 05xxxxxxxx">
 	<!ENTITY stagetext "Committee Specification Draft 05xxxxxxxx">
-	<!ENTITY standard "Committee Specification Draft 04 / Working Draft 03xxxxx">
-	<!ENTITY stagetext "Committee Specification Draft 04 Working Draft 03xxxxx">
 	<!ENTITY this-loc "https://docs.oasis-open.org/ubl/&stage;-UBL-2.3">
 	<!ENTITY previous-loc "https://docs.oasis-open.org/ubl/&pstage;-UBL-2.3">
 	<!ENTITY latest-loc "https://docs.oasis-open.org/ubl">
-	<!ENTITY pubdate "25 May 2021">
+	<!ENTITY pubdate "28 May 2021">
 	<!--remove time from pub date-->
 	<!ENTITY pubyear "2021">
 	<!ENTITY pubdate-iso "ccyy-mm-dd">
@@ -198,13 +199,13 @@
       <para>This specification supersedes: </para>
       <bibliolist>
         <bibliomixed conformance="skip">
-          <abbrev condition="oasis">UBL-2.2</abbrev>
-          <citetitle>Universal Business Language Version 2.2.</citetitle>
+          <abbrev condition="oasis">UBL-2.3</abbrev>
+          <citetitle>Universal Business Language Version 2.3.</citetitle>
           <bibliomisc>Edited by G. Ken Holman.</bibliomisc>
-          <date>09 July 2018. </date>
+          <date>09 July 2018. ######### Update this when determined#######</date>
           <releaseinfo>OASIS Standard. </releaseinfo>
           <bibliomisc>
-            <ulink url="http://docs.oasis-open.org/ubl/os-UBL-2.2/UBL-2.2.html" conformance="skip">http://docs.oasis-open.org/ubl/os-UBL-2.2/UBL-2.2.html</ulink>. </bibliomisc>
+            <ulink url="http://docs.oasis-open.org/ubl/os-UBL-2.3/UBL-2.3.html" conformance="skip">http://docs.oasis-open.org/ubl/os-UBL-2.3/UBL-2.3.html</ulink>. </bibliomisc>
         </bibliomixed>
       </bibliolist>
     </legalnotice>
@@ -236,13 +237,13 @@
       <para>When referencing this specification the following citation format should be used:</para>
       <bibliolist id="citationfmt">
         <bibliomixed id="UBL" conformance="skip">
-          <abbrev condition="oasis">UBL-2.3</abbrev>
-          <citetitle>Universal Business Language Version 2.3.</citetitle>
+          <abbrev condition="oasis">UBL-&version;</abbrev>
+          <citetitle>Universal Business Language Version &version;.</citetitle>
           <bibliomisc>Edited by G. Ken Holman.</bibliomisc>
           <date>&pubdate;. </date>
           <releaseinfo>&standard;. </releaseinfo>
           <bibliomisc>
-            <ulink url="https://docs.oasis-open.org/ubl/&stage;-UBL-2.3/UBL-2.3.html">https://docs.oasis-open.org/ubl/&stage;-UBL-2.3/UBL-2.3.html</ulink>. Latest version: <ulink url="https://docs.oasis-open.org/ubl/UBL-2.3.html">https://docs.oasis-open.org/ubl/UBL-2.3.html</ulink>. </bibliomisc>
+            <ulink url="https://docs.oasis-open.org/ubl/&stage;-UBL-&version;/UBL-&version;.html">https://docs.oasis-open.org/ubl/&stage;-UBL-&version;/UBL-&version;.html</ulink>. Latest version: <ulink url="https://docs.oasis-open.org/ubl/UBL-&version;.html">https://docs.oasis-open.org/ubl/UBL-&version;.html</ulink>. </bibliomisc>
         </bibliomixed>
       </bibliolist>
     </legalnotice>
@@ -272,11 +273,11 @@
     </legalnotice>
     <!--metadata for ISO/IEC 19845-->
     <othername role="intro">Information Technology</othername>
-    <othername role="main">Universal Business Language Version&#xa0;2.3 (UBL&#xa0;v2.3)</othername>
-    <othername role="full">Information Technology - Universal Business Language Version&#xa0;2.3 (UBL&#xa0;v2.3)</othername>
+    <othername role="main">Universal Business Language Version&#xa0;&version; (UBL&#xa0;v&version;)</othername>
+    <othername role="full">Information Technology - Universal Business Language Version&#xa0;&version; (UBL&#xa0;v&version;)</othername>
     <othername lang="fr" role="intro">Technologie d l’information</othername>
-    <othername lang="fr" role="main">Langage d’affaire universel version 2.3 (UBL&#xa0;v2.3)</othername>
-    <othername lang="fr" role="full">Technologie d l’information - Langage d’affaire universel version 2.3 (UBL&#xa0;v2.3)</othername>
+    <othername lang="fr" role="main">Langage d’affaire universel version &version; (UBL&#xa0;v&version;)</othername>
+    <othername lang="fr" role="full">Technologie d l’information - Langage d’affaire universel version &version; (UBL&#xa0;v&version;)</othername>
     <releaseinfo role="doc-sdo">ISO/IEC</releaseinfo>
     <releaseinfo role="doc-proj-id">ISO/IEC 19845</releaseinfo>
     <releaseinfo role="doc-language">en</releaseinfo>
@@ -311,12 +312,12 @@
       <para>Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. ISO and IEC shall not be held responsible for identifying any or all such patent rights. </para>
       <para>The first version of ISO/IEC 19845 was prepared by the OASIS Universal Business Language Technical Committee [as OASIS Universal Business Language Version 2.1] and was adopted, under the PAS procedure, by Joint Technical Committee ISO/IEC JTC 1, Information technology, in parallel with
         its approval by the national bodies of ISO and IEC. The content of ISO/IEC 19845:2015 and OASIS UBL v2.1 is identical. </para>
-      <para>This version of ISO/IEC 19845 is identical to UBL v2.3, a minor revision of UBL v2.2, itself a minor revision of UBL v2.1. Of significance, UBL v2.3 is fully backward compatible with UBL v2.2, and so with UBL v2.1. That is, all schema-valid XML instances of ISO/IEC 19845:2015 (UBL v2.1)
-        are also schema-valid XML instances of this version of ISO/IEC 19845 (UBL v2.3).</para>
+      <para>This version of ISO/IEC 19845 is identical to UBL v&version;, a minor revision of UBL v2.3, itself a minor revision of previous revisions. Of significance, UBL v&version; is fully backward compatible with UBL v2.3, and so on with UBL v2.1. That is, all schema-valid XML instances of ISO/IEC 19845:2015 (UBL v2.1)
+        are also schema-valid XML instances of this version of ISO/IEC 19845 (UBL v&version;).</para>
     </legalnotice>
     <legalnotice role="scope" condition="sts">
       <title>Scope</title>
-      <para>ISO/IEC 19845 specifies the OASIS Universal Business Language (UBL) v2.3, which defines a generic XML interchange format for a selection of procurement and transportation business documents that can be restricted or extended to meet the requirements of particular industries.
+      <para>ISO/IEC 19845 specifies the OASIS Universal Business Language (UBL) v&version;, which defines a generic XML interchange format for a selection of procurement and transportation business documents that can be restricted or extended to meet the requirements of particular industries.
         Specifically, UBL provides the following:</para>
       <para>&#x2014; A suite of structured business objects and their associated semantics expressed as reusable data components and common business documents.</para>
       <para>— A library of XML schemas for reusable data components such as “Address”, “Item”, and “Payment”, the common data elements of everyday business documents.</para>
@@ -392,7 +393,7 @@
       <para>UBL schemas are modular, reusable, and extensible in XML-aware ways. As an implementation of UN/CEFACT Core Components Technical Specification (CCTS) 2.01 <xref linkend="ccts"/>, the UBL Library is based on a conceptual model of information components known as Business Information
         Entities (BIEs). These components are assembled into specific document models such as <link linkend="S-ORDER-SCHEMA">Order</link> and <link linkend="S-INVOICE-SCHEMA">Invoice</link>. These document models are then transformed in accordance with UBL Naming and Design Rules’ <xref
           linkend="b_ublndr"/> use of the OASIS Business Document Naming and Design Rules (NDR) <xref linkend="b_bdndr"/> into W3C XSD schema syntax. This approach facilitates the creation of UBL-based document types beyond those specified in this release. More information regarding the use of CCTS
-        and NDR is found in <xref linkend="A-THE-UBL-2.3-DATA-MODEL"/>.</para>
+        and NDR is found in <xref linkend="A-THE-UBL-&version;-DATA-MODEL"/>.</para>
       <para>UBL can also be regarded as a generic Open-edi Configuration in the perspective of the Open-edi Reference Model (ISO/IEC 14662:2010). This is described in more detail in <xref linkend="A-THE-OPEN-EDI-REFERENCE-MODEL-PERSPECTIVE-OF-UBL"/>.</para>
       <para>The intended primary audiences for this specification are:</para>
       <itemizedlist>
@@ -984,16 +985,16 @@
       </bibliolist>
     </section>
   </section>
-  <section id="S-UBL-2.3-BUSINESS-OBJECTS">
-    <title>UBL 2.3 Business Objects</title>
+  <section id="S-UBL-&version;-BUSINESS-OBJECTS">
+    <title>UBL &version; Business Objects</title>
     <section id="S-BUSINESS-OBJECT-OVERVIEW">
       <title>Business Object Overview</title>
-      <para>The processes described in this section, and the business rules associated with them, define a context for the use of UBL 2.3 business documents. They are normative insofar as they provide semantics for the UBL document schemas, but they should not be construed as limiting the
+      <para>The processes described in this section, and the business rules associated with them, define a context for the use of UBL &version; business documents. They are normative insofar as they provide semantics for the UBL document schemas, but they should not be construed as limiting the
         application of those schemas.</para>
       <para>UBL 2.2 extended the pre-award tendering processes, adds a new transportation document for the weight statement, and adds new documents for a business directory and agreements. UBL 2.1 extended the generalized supply chain processes of UBL 2.0 (including the commercial collaborations of
         international trade) to include support for collaborative planning, forecasting, and replenishment; vendor managed inventory; utility billing; tendering; and intermodal freight management. </para>
-      <!--<para>The following diagrams illustrate the business context use case covered by UBL 2.3.</para><figure id="F-UBL-2.3-USE-CASE-OVERALL-VIEW"><title>UBL 2.3 Use Case Overall View</title><mediaobject><imageobject><imagedata fileref="art/UBL-2.2-UseCaseOverview.png"/></imageobject><textobject><phrase>[Use Case Overview Diagram]</phrase></textobject></mediaobject></figure><figure id="F-UBL-2.3-USE-CASE-DETAIL"><title>UBL 2.3 Use Case Detail</title><mediaobject><imageobject><imagedata fileref="art/UBL-2.2-UseCase.png"/></imageobject><textobject><phrase>[Use Case Detail Diagram]</phrase></textobject></mediaobject></figure>-->
-      <para>The document types included in UBL 2.3 are listed in <xref linkend="S-UBL-2.3-SCHEMAS"/>. It is important to note that, as with previous UBL releases, the UBL 2.3 library is designed to support the construction of a wide variety of document types beyond those provided in the 2.2 package.
+      <!--<para>The following diagrams illustrate the business context use case covered by UBL &version;.</para><figure id="F-UBL-&version;-USE-CASE-OVERALL-VIEW"><title>UBL &version; Use Case Overall View</title><mediaobject><imageobject><imagedata fileref="art/UBL-2.2-UseCaseOverview.png"/></imageobject><textobject><phrase>[Use Case Overview Diagram]</phrase></textobject></mediaobject></figure><figure id="F-UBL-&version;-USE-CASE-DETAIL"><title>UBL &version; Use Case Detail</title><mediaobject><imageobject><imagedata fileref="art/UBL-2.2-UseCase.png"/></imageobject><textobject><phrase>[Use Case Detail Diagram]</phrase></textobject></mediaobject></figure>-->
+      <para>The document types included in UBL &version; are listed in <xref linkend="S-UBL-&version;-SCHEMAS"/>. It is important to note that, as with previous UBL releases, the UBL &version; library is designed to support the construction of a wide variety of document types beyond those provided in the &version; package.
         It is expected that implementers will develop their own customized document types and components and that more UBL document types will be added as the library evolves. </para>
       <para>For guidance in customizing UBL document types, see the UBL Guidelines for Customization <xref linkend="custguide"/>. </para>
       <para>For guidance in submitting recommended additions to and new UBL document types, see the UBL Maintenance Governance Procedures <xref linkend="governance"/>.</para>
@@ -1002,7 +1003,7 @@
       <title>General Business Rules</title>
       <section id="S-GENERAL-BUSINESS-RULES-INTRODUCTION">
         <title>General Business Rules Introduction</title>
-        <para>This section describes some of the requirements and general business rules that are assumed for collaborations and document exchanges using UBL 2.3.</para>
+        <para>This section describes some of the requirements and general business rules that are assumed for collaborations and document exchanges using UBL &version;.</para>
       </section>
       <section id="S-MANIFEST-VALUES">
         <title>Manifest Values</title>
@@ -1221,9 +1222,9 @@
       <title>Supply Chain Business Processes</title>
       <section id="S-SUPPLY-CHAIN-OVERVIEW">
         <title>Supply Chain Overview</title>
-        <para>Following from UBL 2.2, the UBL 2.3 library and documents support an increased range of different business processes. See <xref linkend="S-MINOR-REVISION-UBL-2.3"/> for a detailed summary of the changes to the library and documents. The UBL business processes now supported can be
-          categorized as follows (those with document type additions in 2.3 are shown in italicized boldface):</para>
-        <!--gentext: process summary from re-edited chapter processesdb2.3.xml-->
+        <para>Following from UBL &pversion;, the UBL &version; library and documents support an increased range of different business processes. See <xref linkend="S-MINOR-REVISION-UBL-&version;"/> for a detailed summary of the changes to the library and documents. The UBL business processes now supported can be
+          categorized as follows (those with document type additions in &version; are shown in italicized boldface):</para>
+        <!--gentext: process summary from re-edited chapter processesdb&version;.xml-->
         &summary-processes;
       </section>
       <section id="S-PLAN">
@@ -3233,36 +3234,36 @@
         the transport of goods, hence both these actors may undertake the Transport User role. In other words, the role of a specific actor depends on the specific circumstances.</para>
       <para>The following table contains a description of the typical roles for the actor known as Party. Note that some roles require an extension of the information entities required. In UBL, the following are roles that extend the Party structure: Customer Party, Supplier Party, Contracting
         Party, Endorser Party, and Qualifying Party.</para>
-      <!--gentext: party role table pasted here from partytabledb2.3.xml-->
+      <!--gentext: party role table pasted here by reference-->
       &summary-parties;
     </section>
   </section>
-  <section id="S-UBL-2.3-SCHEMAS">
-    <title>UBL 2.3 Schemas</title>
-    <section id="S-UBL-2.3-SCHEMAS-INTRODUCTION">
-      <title>UBL 2.3 Schemas Introduction</title>
+  <section id="S-UBL-&version;-SCHEMAS">
+    <title>UBL &version; Schemas</title>
+    <section id="S-UBL-&version;-SCHEMAS-INTRODUCTION">
+      <title>UBL &version; Schemas Introduction</title>
       <para>The UBL XSD schemas <xref linkend="xsd1"/>
         <xref linkend="xsd2"/> are the only normative representations of the UBL document types and library components for the purposes of XML <xref linkend="xml"/> document validation and conformance.</para>
       <para>All of the UBL XSD schemas are contained in the <literal>xsd</literal> subdirectory of the UBL release package (see <xref linkend="A-RELEASE-NOTES"/> for more information regarding the structure of the release package and <xref linkend="S-SCHEMA-DEPENDENCIES"/> for information regarding
         dependencies among the schema modules). The <literal>xsd</literal> directory is further subdivided into an <literal>xsd/maindoc</literal> subdirectory containing the schemas for individual document types and an <literal>xsd/common</literal> subdirectory containing schemas in the UBL common
         library. For convenience in implementing the schemas, parallel (and technically non-normative) &#8220;runtime&#8221; sets with the annotation elements stripped out are provided in the <literal>xsdrt/</literal> directory.</para>
     </section>
-    <section id="S-UBL-2.3-DOCUMENT-SCHEMAS" role="documentSchemas">
-      <title>UBL 2.3 Document Schemas</title>
-      <section id="S-UBL-2.3-DOCUMENT-SCHEMAS-INTRODUCTION" role="documentSchemasIntroduction">
-        <title>UBL 2.3 Document Schemas Introduction</title>
-        <para>The tables that follow describe each of the UBL document types. Along with a link to the normative schema for each document type, each table provides links to the corresponding “runtime” schema, model spreadsheets and summary report in HTML (see <xref linkend="A-THE-UBL-2.3-DATA-MODEL"
-          />), and example instance, if any (see <xref linkend="A-UBL-2.3-EXAMPLE-DOCUMENT-INSTANCES"/>).</para>
+    <section id="S-UBL-&version;-DOCUMENT-SCHEMAS" role="documentSchemas">
+      <title>UBL &version; Document Schemas</title>
+      <section id="S-UBL-&version;-DOCUMENT-SCHEMAS-INTRODUCTION" role="documentSchemasIntroduction">
+        <title>UBL &version; Document Schemas Introduction</title>
+        <para>The tables that follow describe each of the UBL document types. Along with a link to the normative schema for each document type, each table provides links to the corresponding “runtime” schema, model spreadsheets and summary report in HTML (see <xref linkend="A-THE-UBL-&version;-DATA-MODEL"
+          />), and example instance, if any (see <xref linkend="A-UBL-&version;-EXAMPLE-DOCUMENT-INSTANCES"/>).</para>
       </section>
-      <!--gentext: list of document schemas from schematabledb2.3.xml -->
+      <!--gentext: list of document schemas pasted here by reference-->
       &summary-schemas;
     </section>
-    <section id="S-UBL-2.3-COMMON-SCHEMAS">
-      <title>UBL 2.3 Common Schemas</title>
-      <section id="S-UBL-2.3-COMMON-SCHEMAS-INTRODUCTION">
-        <title>UBL 2.3 Common Schemas Introduction</title>
+    <section id="S-UBL-&version;-COMMON-SCHEMAS">
+      <title>UBL &version; Common Schemas</title>
+      <section id="S-UBL-&version;-COMMON-SCHEMAS-INTRODUCTION">
+        <title>UBL &version; Common Schemas Introduction</title>
         <para>The <literal>xsd/common</literal> directory contains schemas referenced by the document schemas in <literal>xsd/maindoc</literal>. Elements defined in the common schemas constitute a library of reusable business data components from which the UBL document schemas are (and customized
-          document types may be) assembled. For a discussion of the way schemas are assembled, see <xref linkend="A-THE-UBL-2.3-DATA-MODEL"/>.</para>
+          document types may be) assembled. For a discussion of the way schemas are assembled, see <xref linkend="A-THE-UBL-&version;-DATA-MODEL"/>.</para>
         <para>The name of each schema file together with a brief description of its contents is given below.</para>
       </section>
       <section id="S-REUSABLE-BIE-SCHEMAS">
@@ -3274,7 +3275,7 @@
           <blockquote>
             <para>
               <literal>
-                <ulink url="xsd/common/UBL-CommonBasicComponents-2.3.xsd">xsd/common/UBL-CommonBasicComponents-2.3.xsd</ulink>
+                <ulink url="xsd/common/UBL-CommonBasicComponents-&version;.xsd">xsd/common/UBL-CommonBasicComponents-&version;.xsd</ulink>
               </literal>
             </para>
             <para>The <phrase lang="none">CommonBasicComponents</phrase> schema defines the global Basic Business Information Entities (BBIEs) that are used throughout UBL, serving, in effect, as a &#8220;global BBIE type database&#8221; for constructing documents. BBIEs are the &#8220;leaf
@@ -3286,7 +3287,7 @@
           <blockquote>
             <para>
               <literal>
-                <ulink url="xsd/common/UBL-CommonAggregateComponents-2.3.xsd">xsd/common/UBL-CommonAggregateComponents-2.3.xsd</ulink>
+                <ulink url="xsd/common/UBL-CommonAggregateComponents-&version;.xsd">xsd/common/UBL-CommonAggregateComponents-&version;.xsd</ulink>
               </literal>
             </para>
             <para>The <phrase lang="none">CommonAggregateComponents</phrase> schema defines the Aggregate Business Information Entities (ABIEs) that are used throughout UBL, serving, in effect, as an &#8220;ABIE type database&#8221; for constructing the main documents.</para>
@@ -3327,15 +3328,15 @@
           <blockquote>
             <para>
               <literal>
-                <ulink url="xsd/common/UBL-QualifiedDataTypes-2.3.xsd">xsd/common/UBL-QualifiedDataTypes-2.3.xsd</ulink>
+                <ulink url="xsd/common/UBL-QualifiedDataTypes-&version;.xsd">xsd/common/UBL-QualifiedDataTypes-&version;.xsd</ulink>
               </literal>
             </para>
             <para>
-              <xref linkend="ccts"/> permits the definition of Qualified Datatypes as derivations from CCTS-specified Unqualified Datatypes. In UBL 2.3, all data type qualifications are expressed in the <xref linkend="cva"/> file <literal>
-                <ulink url="cva/UBL-DefaultDTQ-2.3.cva">cva/UBL-DefaultDTQ-2.3.cva</ulink>
-              </literal>. The UBL-QualifiedDataTypes-2.3.xsd file in the UBL 2.3 release has declarations for each qualified type being only an unmodified restriction of the base unqualified data type, thus adding no constraints. The Common Basic Components type declarations point to the XSD
+              <xref linkend="ccts"/> permits the definition of Qualified Datatypes as derivations from CCTS-specified Unqualified Datatypes. In UBL &version;, all data type qualifications are expressed in the <xref linkend="cva"/> file <literal>
+                <ulink url="cva/UBL-DefaultDTQ-&version;.cva">cva/UBL-DefaultDTQ-&version;.cva</ulink>
+              </literal>. The UBL-QualifiedDataTypes-&version;.xsd file in the UBL &version; release has declarations for each qualified type being only an unmodified restriction of the base unqualified data type, thus adding no constraints. The Common Basic Components type declarations point to the XSD
               qualified types where the BBIEs are qualified in the CCTS model, but all BBIEs are effectively unqualified.</para>
-            <para>See <xref linkend="A-DATA-TYPE-QUALIFICATIONS-IN-UBL"/> for information regarding UBL 2.3 data type derivation.</para>
+            <para>See <xref linkend="A-DATA-TYPE-QUALIFICATIONS-IN-UBL"/> for information regarding UBL &version; data type derivation.</para>
           </blockquote>
         </blockquote>
       </section>
@@ -3350,7 +3351,7 @@
           <blockquote>
             <para>
               <literal>
-                <ulink url="xsd/common/UBL-CommonExtensionComponents-2.3.xsd">xsd/common/UBL-CommonExtensionComponents-2.3.xsd</ulink>
+                <ulink url="xsd/common/UBL-CommonExtensionComponents-&version;.xsd">xsd/common/UBL-CommonExtensionComponents-&version;.xsd</ulink>
               </literal>
             </para>
             <para>The <phrase lang="none">CommonExtensionComponents</phrase> schema defines the extension scaffolding used in all UBL document types, providing metadata regarding the use of an extension embedded in a UBL document instance (see <xref linkend="S-EXTENSION-METHODOLOGY-AND-VALIDATION"
@@ -3362,10 +3363,10 @@
           <blockquote>
             <para>
               <literal>
-                <ulink url="xsd/common/UBL-ExtensionContentDataType-2.3.xsd">xsd/common/UBL-ExtensionContentDataType-2.3.xsd</ulink>
+                <ulink url="xsd/common/UBL-ExtensionContentDataType-&version;.xsd">xsd/common/UBL-ExtensionContentDataType-&version;.xsd</ulink>
               </literal>
             </para>
-            <para>The <phrase lang="none">ExtensionContentDataType</phrase> schema specifies the actual structural constraints of the extension element containing the foreign non-UBL content. By default, the version of this schema provided in the UBL 2.3 distribution imports the UBL Signature
+            <para>The <phrase lang="none">ExtensionContentDataType</phrase> schema specifies the actual structural constraints of the extension element containing the foreign non-UBL content. By default, the version of this schema provided in the UBL &version; distribution imports the UBL Signature
               Extension module and namespace (see <xref linkend="S-SIGNATURE-EXTENSION-SCHEMAS"/>). This both enables support by default for digital signatures and serves as an illustration of the way extensions are defined in UBL.</para>
             <para>This is the only schema intended to be modified by a user when it is necessary to support the constraints of additional user-defined extension structures. This is accomplished by adding other schema import directives, as is already done for the signature extension and that
               extension’s use of XAdES. Without adding additional directives, the user’s constructs found under the extension point will not be validated. </para>
@@ -3376,7 +3377,7 @@
       </section>
       <section id="S-SIGNATURE-EXTENSION-SCHEMAS">
         <title>Signature Extension Schemas</title>
-        <para>UBL 2.3 schemas are supplied with a predefined standard extension that supports digital signatures; see <xref linkend="S-SCHEMA-DEPENDENCIES"/> and <xref linkend="S-UBL-EXTENSION-FOR-ENVELOPED-XML-DIGITAL-SIGNATURES"/> for further information regarding the UBL extension supporting
+        <para>UBL &version; schemas are supplied with a predefined standard extension that supports digital signatures; see <xref linkend="S-SCHEMA-DEPENDENCIES"/> and <xref linkend="S-UBL-EXTENSION-FOR-ENVELOPED-XML-DIGITAL-SIGNATURES"/> for further information regarding the UBL extension supporting
           digital signatures such as XAdES.</para>
         <blockquote>
           <para>
@@ -3385,7 +3386,7 @@
           <blockquote>
             <para>
               <literal>
-                <ulink url="xsd/common/UBL-CommonSignatureComponents-2.3.xsd">xsd/common/UBL-CommonSignatureComponents-2.3.xsd</ulink>
+                <ulink url="xsd/common/UBL-CommonSignatureComponents-&version;.xsd">xsd/common/UBL-CommonSignatureComponents-&version;.xsd</ulink>
               </literal>
             </para>
             <para>The <phrase lang="none">CommonSignatureComponents</phrase> schema defines the scaffolding structures containing the IETF/W3C Digital Signature information XML elements related to either the entire document or particular signature business objects found within the document.</para>
@@ -3396,7 +3397,7 @@
           <blockquote>
             <para>
               <literal>
-                <ulink url="xsd/common/UBL-SignatureAggregateComponents-2.3.xsd">xsd/common/UBL-SignatureAggregateComponents-2.3.xsd</ulink>
+                <ulink url="xsd/common/UBL-SignatureAggregateComponents-&version;.xsd">xsd/common/UBL-SignatureAggregateComponents-&version;.xsd</ulink>
               </literal>
             </para>
             <para>The <phrase lang="none">SignatureAggregateComponents</phrase> schema defines those Aggregate Business Information Entities (ABIEs) that are used for signature constructs not defined in the common library.</para>
@@ -3407,7 +3408,7 @@
           <blockquote>
             <para>
               <literal>
-                <ulink url="xsd/common/UBL-SignatureBasicComponents-2.3.xsd">xsd/common/UBL-SignatureBasicComponents-2.3.xsd</ulink>
+                <ulink url="xsd/common/UBL-SignatureBasicComponents-&version;.xsd">xsd/common/UBL-SignatureBasicComponents-&version;.xsd</ulink>
               </literal>
             </para>
             <para>The <phrase lang="none">SignatureBasicComponents</phrase> schema defines those Basic Business Information Entities (BBIEs) that are used for signature constructs not defined in the common library.</para>
@@ -3419,7 +3420,7 @@
           <blockquote>
             <para>
               <literal>
-                <ulink url="xsd/common/UBL-xmldsig1-schema-2.3.xsd">xsd/common/UBL-xmldsig1-schema-2.3.xsd</ulink>
+                <ulink url="xsd/common/UBL-xmldsig1-schema-&version;.xsd">xsd/common/UBL-xmldsig1-schema-&version;.xsd</ulink>
               </literal>
             </para>
             <para>This is a copy of <ulink url="http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd" conformance="skip">the IETF/W3C Digital Signature core schema file</ulink>, modified only to include a header and to import the renamed other digital signature schema fragments.</para>
@@ -3430,7 +3431,7 @@
           <blockquote>
             <para>
               <literal>
-                <ulink url="xsd/common/UBL-xmldsig11-schema-2.3.xsd">xsd/common/UBL-xmldsig11-schema-2.3.xsd</ulink>
+                <ulink url="xsd/common/UBL-xmldsig11-schema-&version;.xsd">xsd/common/UBL-xmldsig11-schema-&version;.xsd</ulink>
               </literal>
             </para>
             <para>This is a copy of <ulink conformance="skip" url="http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd">the IETF/W3C Digital Signature core schema file</ulink>, modified only to include a header.</para>
@@ -3441,7 +3442,7 @@
           <blockquote>
             <para>
               <literal>
-                <ulink url="xsd/common/UBL-xmldsig-core-schema-2.3.xsd">xsd/common/UBL-xmldsig-core-schema-2.3.xsd</ulink>
+                <ulink url="xsd/common/UBL-xmldsig-core-schema-&version;.xsd">xsd/common/UBL-xmldsig-core-schema-&version;.xsd</ulink>
               </literal>
             </para>
             <para>This is a copy of <ulink conformance="skip" url="http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd">the IETF/W3C Digital Signature core schema file</ulink>, modified only to include a header and to remove the unnecessary PUBLIC and SYSTEM identifiers from the
@@ -3453,7 +3454,7 @@
           <blockquote>
             <para>
               <literal>
-                <ulink url="xsd/common/UBL-XAdES01903v132-201601-2.3.xsd">xsd/common/UBL-XAdES01903v132-201601-2.3.xsd</ulink>
+                <ulink url="xsd/common/UBL-XAdES01903v132-201601-&version;.xsd">xsd/common/UBL-XAdES01903v132-201601-&version;.xsd</ulink>
               </literal>
             </para>
             <para>This is a copy of <ulink conformance="skip" url="http://uri.etsi.org/01903/v1.3.2/XAdES.xsd">the XAdES v1.3.2 schema file</ulink>, modified only to change the importing URI for the XML digital signature core schema file.</para>
@@ -3465,7 +3466,7 @@
           <blockquote>
             <para>
               <literal>
-                <ulink url="xsd/common/UBL-XAdES01903v141-201601-2.3.xsd">xsd/common/UBL-XAdES01903v141-201601-2.3.xsd</ulink>
+                <ulink url="xsd/common/UBL-XAdES01903v141-201601-&version;.xsd">xsd/common/UBL-XAdES01903v141-201601-&version;.xsd</ulink>
               </literal>
             </para>
             <para>This is a copy of <ulink conformance="skip" url="http://uri.etsi.org/01903/v1.4.1/XAdESv141.xsd">the XAdES v1.4.1 schema file</ulink>, modified only to change the importing URI for the XAdES v1.3.2 and the XML digital signature core schema files.</para>
@@ -3476,7 +3477,7 @@
     </section>
     <section id="S-SCHEMA-DEPENDENCIES">
       <title>Schema Dependencies</title>
-      <para>The following diagram details the dependencies among the schema modules making up a UBL 2.3 document schema.</para>
+      <para>The following diagram details the dependencies among the schema modules making up a UBL &version; document schema.</para>
       <figure id="F-UBL-SCHEMA-DEPENDENCIES">
         <title>UBL Schema Dependencies</title>
         <mediaobject>
@@ -3651,7 +3652,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <section id="S-EXTENSION-VALIDATION">
         <title>Extension Validation</title>
         <para>The UBL Digital Signature extension described in <xref linkend="S-UBL-DIGITAL-SIGNATURES"/> is built into the UBL distribution and validates transparently. </para>
-        <para>Users wishing to validate other extensions found in the instance simply revise the <literal>UBL-ExtensionContentDataType-2.3.xsd</literal> schema fragment. An <literal>&lt;xsd:import></literal> directive is added to incorporate the schema constraints of the apex of another extension to
+        <para>Users wishing to validate other extensions found in the instance simply revise the <literal>UBL-ExtensionContentDataType-&version;.xsd</literal> schema fragment. An <literal>&lt;xsd:import></literal> directive is added to incorporate the schema constraints of the apex of another extension to
           be validated in the single pass of XSD validation. <xref linkend="F-UBL-SCHEMA-DEPENDENCIES"/> shows the replacement of the schema fragment with one in which user-defined extension modules with namespaces <literal>ext:</literal>, <literal>xxx:</literal>, <literal>xac:</literal>, and
             <literal>xbc:</literal> augment the digital signature extension modules with namespaces <literal>ext:</literal>, <literal>sig:</literal>, <literal>sac:</literal>, <literal>sbc:</literal> and <literal>ds:</literal>.</para>
         <para>Due to limitations of W3C Schema validation semantics (this is not the case in RELAX NG <xref linkend="relaxng"/>, for example), the apex element of the extension in the instance being validated cannot be constrained solely to the apex element declared. W3C Schema&#8217;s lax
@@ -3684,7 +3685,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
     <title>Additional Document Constraints</title>
     <section id="S-ADDITIONAL-DOCUMENT-CONSTRAINTS-INTRODUCTION">
       <title>Additional Document Constraints Introduction</title>
-      <para>In addition to the UBL document constraints formally expressed by the schemas in <xref linkend="S-UBL-2.3-SCHEMAS"/>, UBL mandates several other rules governing conforming UBL instances that cannot be expressed using W3C Schema. These additional UBL document rules, addressing XML
+      <para>In addition to the UBL document constraints formally expressed by the schemas in <xref linkend="S-UBL-&version;-SCHEMAS"/>, UBL mandates several other rules governing conforming UBL instances that cannot be expressed using W3C Schema. These additional UBL document rules, addressing XML
         instance <xref linkend="xml"/> validation, character encoding, and empty elements, are specified below.</para>
       <note>
         <para>These rules first appeared in the OASIS UBL 1.0 and UBL 1.0 NDR Standards. They are listed here because logically they belong with the great majority of UBL instance constraints specified in the schemas. To aid in coordinating references between these various publications, the rules
@@ -3703,7 +3704,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         <para>
           <emphasis role="bold">[IND1]</emphasis> All UBL instance documents SHALL validate to a corresponding schema.</para>
       </blockquote>
-      <para>UBL recommends a two-phase approach for validation of rules related to specific data content (such as to check of code list values). See <xref linkend="A-UBL-2.3-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/> for a description of this approach.</para>
+      <para>UBL recommends a two-phase approach for validation of rules related to specific data content (such as to check of code list values). See <xref linkend="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/> for a description of this approach.</para>
     </section>
     <section id="S-CHARACTER-ENCODING">
       <title>Character Encoding</title>
@@ -3939,7 +3940,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           <para>XMLDSig and XAdES signatures can be created and verified using <xref linkend="b_dss"/> signature signing and verifying protocol.</para>
         </note>
         <note>
-          <para>The references to <xref linkend="b_XAdES"/> and <xref linkend="b_asic"/> standards have been updated from UBL 2.2 to UBL 2.3. Refer to <xref linkend="b_etsi-ts-119-112"/> for the most significant differences between XAdES and ASiC ENs and the formerly referenced TSs</para>
+          <para>The references to <xref linkend="b_XAdES"/> and <xref linkend="b_asic"/> standards were updated from UBL 2.2 to UBL 2.3. Refer to <xref linkend="b_etsi-ts-119-112"/> for the most significant differences between XAdES and ASiC ENs and the formerly referenced TSs</para>
         </note>
       </section>
       <section id="S-ENVELOPED-XML-SIGNATURES-IN-UBL-DOCUMENTS">
@@ -4047,7 +4048,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         <para>UBL extensions enable user-defined additions to the standard schemas. The UBL schemas in this distribution are provided with a predefined standard extension for enveloped signatures that supports IETF/W3C Digital Signature profiles. These also include advanced IETF/W3C XML digital
           signatures conforming to XAdES.</para>
         <para>This extension also serves as a case study for the creation of user-defined UBL extensions; see <xref linkend="S-NOTES-FOR-EXTENSION-CREATORS"/>. Further information on the UBL extension mechanism can be found in <xref linkend="custguide"/>.</para>
-        <para>UBL&#8217;s implementation of XML digital signatures puts all the signatures relating to a document in a single extension, which is engaged in validation by the <literal>UBL-ExtensionContentDataType-2.3.xsd</literal> schema module.</para>
+        <para>UBL&#8217;s implementation of XML digital signatures puts all the signatures relating to a document in a single extension, which is engaged in validation by the <literal>UBL-ExtensionContentDataType-&version;.xsd</literal> schema module.</para>
       </section>
       <section id="S-DIGITAL-SIGNATURE-NAMESPACES">
         <title>Digital Signature Namespaces</title>
@@ -4141,7 +4142,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       </section>
       <section id="S-DIGITAL-SIGNATURE-VALIDATION">
         <title>Digital Signature Validation</title>
-        <para>The <literal>UBL-ExtensionContentDataType-2.3.xsd</literal> module links UBL validation to all needed extensions by importing the apex schema fragment of each extension vocabulary. The distribution version of this module supports IETF/W3C XML digital signatures by declaring that the
+        <para>The <literal>UBL-ExtensionContentDataType-&version;.xsd</literal> module links UBL validation to all needed extensions by importing the apex schema fragment of each extension vocabulary. The distribution version of this module supports IETF/W3C XML digital signatures by declaring that the
             <literal>&lt;ext:ExtensionContent></literal> element can contain elements from the UBL Digital Signature extension namespace. Accordingly, a single <literal>&lt;sig:UBLDocumentSignatures></literal> element is used as the apex of all the document&#8217;s electronic signatures.</para>
         <para>The <literal>&lt;ext:ExtensionContent></literal> element alternatively allows any other namespace apex element in order to allow other foreign extensions in the same document.</para>
       </section>
@@ -4156,12 +4157,12 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
             <simplelist>
               <member>
                 <literal>
-                  <ulink url="mod/UBL-Signature-Entities-2.3.ods">mod/UBL-Signature-Entities-2.3.ods</ulink>
+                  <ulink url="mod/UBL-Signature-Entities-&version;.ods">mod/UBL-Signature-Entities-&version;.ods</ulink>
                 </literal>
               </member>
               <member>
                 <literal>
-                  <ulink url="mod/UBL-Signature-Entities-2.3.xls">mod/UBL-Signature-Entities-2.3.xls</ulink>
+                  <ulink url="mod/UBL-Signature-Entities-&version;.xls">mod/UBL-Signature-Entities-&version;.xls</ulink>
                 </literal>
               </member>
             </simplelist>
@@ -4171,7 +4172,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
             <simplelist>
               <member>
                 <literal>
-                  <ulink url="mod/summary/reports/All-UBL-2.3-SignatureExtensionComponents.html">mod/summary/reports/All-UBL-2.3-SignatureExtensionComponents.html</ulink>
+                  <ulink url="mod/summary/reports/All-UBL-&version;-SignatureExtensionComponents.html">mod/summary/reports/All-UBL-&version;-SignatureExtensionComponents.html</ulink>
                 </literal>
               </member>
             </simplelist>
@@ -4345,12 +4346,12 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
     <title>Conformance</title>
     <section id="S-DOCUMENT-AND-SCHEMA-CONFORMANCE">
       <title>Document and Schema Conformance</title>
-      <para>The UBL 2.3 XSD schemas <xref linkend="xsd1"/>
-        <xref linkend="xsd2"/> are the only normative representations of the UBL 2.3 document types and library components for the purposes of XML document <xref linkend="xml"/> validation and conformance.</para>
-      <para>An XML document is considered conforming to UBL 2.3 when all are true that:</para>
+      <para>The UBL &version; XSD schemas <xref linkend="xsd1"/>
+        <xref linkend="xsd2"/> are the only normative representations of the UBL &version; document types and library components for the purposes of XML document <xref linkend="xml"/> validation and conformance.</para>
+      <para>An XML document is considered conforming to UBL &version; when all are true that:</para>
       <orderedlist>
         <listitem>
-          <para>there are no violations of the XSD validation schema constraints when using one of the normative document schemas listed in <xref linkend="S-UBL-2.3-DOCUMENT-SCHEMAS"/>, </para>
+          <para>there are no violations of the XSD validation schema constraints when using one of the normative document schemas listed in <xref linkend="S-UBL-&version;-DOCUMENT-SCHEMAS"/>, </para>
         </listitem>
         <listitem>
           <para>there are no violations of the XSD or other constraints on extension scaffolding and metadata described in <xref linkend="S-EXTENSION-METHODOLOGY-AND-VALIDATION"/>, and</para>
@@ -4368,7 +4369,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <title>Digital Signature Extension Conformance</title>
       <section id="S-BASIC-DIGITAL-SIGNATURE-EXTENSION-CONFORMANCE">
         <title>Basic Digital Signature Extension Conformance</title>
-        <para>Claiming syntax conformance to the enveloped signature profile of UBL 2.3 requires the following:</para>
+        <para>Claiming syntax conformance to the enveloped signature profile of UBL &version; requires the following:</para>
         <itemizedlist>
           <listitem>
             <para>a schema-valid UBL extension in which the UBL Signature apex element is the apex of the extension;</para>
@@ -4385,13 +4386,13 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
                 <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;enveloped:&#8203;xades</literal> as its value.</para>
           </listitem>
         </itemizedlist>
-        <para>Claiming processing conformance to the enveloped profile of UBL 2.3 requires the conforming processing of all contained <literal>&lt;ds:Signature></literal> elements per <xref linkend="b_xmldsig"/>.</para>
+        <para>Claiming processing conformance to the enveloped profile of UBL &version; requires the conforming processing of all contained <literal>&lt;ds:Signature></literal> elements per <xref linkend="b_xmldsig"/>.</para>
         <para>Claiming syntax conformance to the detached profile of this specification requires that the <literal>&lt;cbc:SignatureMethod></literal> element, when present, of signature business objects whose signatures are outside of the UBL document has either
             <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;detached</literal> or <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;detached:&#8203;xades</literal> as its value.</para>
       </section>
       <section id="S-XADES-DIGITAL-SIGNATURE-EXTENSION-CONFORMANCE">
         <title>XAdES Digital Signature Extension Conformance</title>
-        <para>When conformance to XAdES in a UBL extension is chosen, UBL 2.3 requires the valid expression and processing of the XAdES syntax found in an XMLDSig per <xref linkend="b_XAdES"/>.</para>
+        <para>When conformance to XAdES in a UBL extension is chosen, UBL &version; requires the valid expression and processing of the XAdES syntax found in an XMLDSig per <xref linkend="b_XAdES"/>.</para>
       </section>
     </section>
   </section>
@@ -4419,9 +4420,9 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
     </section>
     <section id="S-PACKAGE-STRUCTURE">
       <title>Package Structure</title>
-      <para>The UBL 2.3 specification is published as a zip archive in the release directory. Unzipping this archive creates a directory named &stage;-UBL-2.3 containing a master DocBook XML file (UBL-2.3.xml), a generated hypertext version of this file (UBL-2.3.html), a generated PDF version of
-        this file (UBL-2.3.pdf), and a number of subdirectories. The files in these subdirectories, linked to from UBL-2.3.xml, UBL-2.3.html, and UBL-2.3.pdf, contain the various normative and informational pieces of the 2.3 release. A description of each subdirectory is given below. Note that while
-        the UBL-2.3.xml file is the &#8220;original&#8221; of this specification, it may not be viewable in all currently available web browsers.</para>
+      <para>The UBL &version; specification is published as a zip archive in the release directory. Unzipping this archive creates a directory named &stage;-UBL-&version; containing a master DocBook XML file (UBL-&version;.xml), a generated hypertext version of this file (UBL-&version;.html), a generated PDF version of
+        this file (UBL-&version;.pdf), and a number of subdirectories. The files in these subdirectories, linked to from UBL-&version;.xml, UBL-&version;.html, and UBL-&version;.pdf, contain the various normative and informational pieces of the &version; release. A description of each subdirectory is given below. Note that while
+        the UBL-&version;.xml file is the &#8220;original&#8221; of this specification, it may not be viewable in all currently available web browsers.</para>
       <blockquote>
         <para>
           <emphasis role="bold">
@@ -4437,7 +4438,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           </emphasis>
         </para>
         <blockquote>
-          <para>Code list specification files; see <xref linkend="A-UBL-2.3-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/>
+          <para>Code list specification files; see <xref linkend="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/>
           </para>
         </blockquote>
         <para>
@@ -4455,7 +4456,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           </emphasis>
         </para>
         <blockquote>
-          <para>DocBook stylesheets for viewing UBL-2.3.xml</para>
+          <para>DocBook stylesheets for viewing UBL-&version;.xml</para>
         </blockquote>
         <para>
           <emphasis role="bold">
@@ -4463,7 +4464,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           </emphasis>
         </para>
         <blockquote>
-          <para>Spreadsheets and HTML renderings of the UBL data models; see <xref linkend="A-THE-UBL-2.3-DATA-MODEL"/>
+          <para>Spreadsheets and HTML renderings of the UBL data models; see <xref linkend="A-THE-UBL-&version;-DATA-MODEL"/>
           </para>
         </blockquote>
         <para>
@@ -4472,7 +4473,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           </emphasis>
         </para>
         <blockquote>
-          <para>Test harness for demonstrating UBL 2.3 two-phase validation; see <xref linkend="A-UBL-2.3-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/>
+          <para>Test harness for demonstrating UBL &version; two-phase validation; see <xref linkend="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/>
           </para>
         </blockquote>
         <para>
@@ -4481,7 +4482,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           </emphasis>
         </para>
         <blockquote>
-          <para>Sample UBL 2.3 instances; see <xref linkend="A-UBL-2.3-EXAMPLE-DOCUMENT-INSTANCES"/>
+          <para>Sample UBL &version; instances; see <xref linkend="A-UBL-&version;-EXAMPLE-DOCUMENT-INSTANCES"/>
           </para>
         </blockquote>
         <para>
@@ -4490,7 +4491,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           </emphasis>
         </para>
         <blockquote>
-          <para>XSD schemas; see <xref linkend="S-UBL-2.3-SCHEMAS"/>
+          <para>XSD schemas; see <xref linkend="S-UBL-&version;-SCHEMAS"/>
           </para>
         </blockquote>
         <para>
@@ -4499,7 +4500,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           </emphasis>
         </para>
         <blockquote>
-          <para>&#8220;Runtime&#8221; XSD schemas; see <xref linkend="S-UBL-2.3-SCHEMAS"/>
+          <para>&#8220;Runtime&#8221; XSD schemas; see <xref linkend="S-UBL-&version;-SCHEMAS"/>
           </para>
         </blockquote>
       </blockquote>
@@ -4547,17 +4548,17 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <para>The goal of UBL customization is to maintain a common understanding of the meaning of information being exchanged between specific implementations. The factors governing when to customize may be business-driven, technically driven, or both. The decision should be based on real-world
         needs balanced against perceived economic benefits.</para>
     </section>
-    <section id="S-UPGRADING-FROM-UBL-2.0-UBL-2.1-OR-UBL-2.2-TO-UBL-2.3">
-      <title>Upgrading from UBL 2.0, UBL 2.1, or UBL 2.2 to UBL 2.3</title>
-      <para>For current UBL implementers, the most important thing to know about UBL 2.3 is that it is completely backward-compatible with earlier versions of UBL 2. In other words, any document that validates against a UBL 2 schema released before UBL 2.3 will validate against the UBL 2.3 version
+    <section id="S-UPGRADING-FROM-UBL-2.0-UBL-2.1-UBL-2.2-OR-UBL-2.3-TO-UBL-&version;">
+      <title>Upgrading from UBL 2.0, UBL 2.1, UBL 2.2, or UBL 2.3 to UBL &version;</title>
+      <para>For current UBL implementers, the most important thing to know about UBL &version; is that it is completely backward-compatible with earlier versions of UBL 2. In other words, any document that validates against a UBL 2 schema released before UBL &version; will validate against the UBL &version; version
         of that schema.</para>
-      <para>Nonetheless, it would be unwise to simply overlay this UBL 2.3 release onto an existing installation, and the possible differences among existing installations are too large to allow a specific set of instructions to be provided for making the transition.</para>
-      <para>The brief history of UBL document types in the next section puts the new capabilities into context and may help users of existing UBL implementations decide whether to upgrade to 2.3.</para>
-      <para>New 2.3 users, on the other hand, can simply install 2.3 and rest assured that their software will interoperate with UBL documents generated by existing conforming UBL 2.0 installations. For more on the concept of conformance, see <xref linkend="S-CONFORMANCE"/> and <xref
+      <para>Nonetheless, it would be unwise to simply overlay this UBL &version; release onto an existing installation, and the possible differences among existing installations are too large to allow a specific set of instructions to be provided for making the transition.</para>
+      <para>The brief history of UBL document types in the next section puts the new capabilities into context and may help users of existing UBL implementations decide whether to upgrade to &version;.</para>
+      <para>New &version; users, on the other hand, can simply install &version; and rest assured that their software will interoperate with UBL documents generated by existing conforming UBL 2.0 installations. For more on the concept of conformance, see <xref linkend="S-CONFORMANCE"/> and <xref
           linkend="custguide"/>.</para>
     </section>
-    <section id="S-KNOWN-ERRORS-IN-UBL-2.3">
-      <title>Known errors in UBL 2.3</title>
+    <section id="S-KNOWN-ERRORS-IN-UBL-&version;">
+      <title>Known errors in UBL &version;</title>
       <para>During deployment the presence of errors in the UBL normative components comes to the attention of the UBL Technical Committee. Some of these cannot be repaired without breaking backwards compatibility to previous versions of UBL. Accordingly, they are obliged to remain in UBL untouched
         to avoid ambiguity and to avoid problems with backwards compatibility.</para>
       <para>The list of known errors that are not being changed is as follows:</para>
@@ -4749,7 +4750,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <title>Minor Revision: UBL 2.3</title>
       <section id="S-NEW-DOCUMENT-TYPES-IN-UBL-2.3" role="newDocumentTypes23">
         <title>New Document Types in UBL 2.3</title>
-        <para>Because it preserves backward compatibility with UBL 2.2, UBL 2.1, and UBL 2.0, UBL 2.3 is technically a minor release, not a major one. However, it does add ten new document types, bringing the total number of UBL business documents to 91.</para>
+        <para>Because it preserves backward compatibility with UBL 2.2, UBL 2.1, and UBL 2.0, UBL &version; is technically a minor release, not a major one. However, it does add ten new document types, bringing the total number of UBL business documents to 91.</para>
         <blockquote>
           <!--reviewtext-->
           <para>
@@ -4759,133 +4760,133 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
               <link linkend="S-PROOF-OF-REEXPORTATION-REMINDER-SCHEMA">Proof Of Reexportation Reminder</link>, <link linkend="S-PROOF-OF-REEXPORTATION-REQUEST-SCHEMA">Proof Of Reexportation Request</link>, <link linkend="S-TRANSIT-CUSTOMS-DECLARATION-SCHEMA">Transit Customs Declaration</link></para>
         </blockquote>
       </section>
-      <section id="S-SCHEMA-CHANGES-FROM-UBL-2.2-TO-UBL-2.3">
-        <title>Schema changes from UBL 2.2 to UBL 2.3</title>
+    </section>
+    <section id="S-MINOR-REVISION-UBL-2.4">
+      <title>Minor Revision: UBL 2.4</title>
+      <section id="S-NEW-DOCUMENT-TYPES-IN-UBL-2.4" role="newDocumentTypes23">
+        <title>New Document Types in UBL 2.4</title>
+        <para>Because it preserves backward compatibility with UBL 2.3, UBL 2.2, UBL 2.1, and UBL 2.0, UBL &version; is technically a minor release, not a major one. However, it does add ten new document types, bringing the total number of UBL business documents to 91.</para>
+        <blockquote>
+          <!--reviewtext-->
+          <para>
+            <emphasis role="bold">Added UBL 2.4 document types for transportation: </emphasis> ################### FILL THIS IN ####################
+          </para>
+        </blockquote>
+      </section>
+      <section id="S-SCHEMA-CHANGES-FROM-UBL-&pversion;-TO-UBL-&version;">
+        <title>Schema changes from UBL &pversion; to UBL &version;</title>
         <section id="S-SCHEMA-CHANGES-INTRODUCTION">
           <title>Schema Changes Introduction</title>
-          <para>The following two tables show the differences between the XML elements in UBL 2.2 and those in UBL 2.3.</para>
-          <para>All changes in 2.3 schemas are backward-compatible with valid UBL 2.2, UBL 2.1, and UBL 2.0 instances. Changes include the addition of new elements and attributes; changes in cardinality from 1 to 0..1 (i.e., making a formerly required element optional); changes in cardinality from 1
+          <para>The following two tables show the differences between the XML elements in UBL &pversion; and those in UBL &version;.</para>
+          <para>All changes in &version; schemas are backward-compatible with valid UBL 2.3, UBL 2.2, UBL 2.1, and UBL 2.0 instances. Changes include the addition of new elements and attributes; changes in cardinality from 1 to 0..1 (i.e., making a formerly required element optional); changes in cardinality from 1
             to 1..n or from 0..1 to 0..n (i.e., allowing an unlimited number of occurrences instead of just one); and corrections to Dictionary Entry Names (DENs).</para>
         </section>
-        <section id="S-CHANGES-TO-LIBRARY-ELEMENTS-UBL-2.2-TO-UBL-2.3">
-          <title>Changes to Library Elements, UBL 2.2 to UBL 2.3</title>
+        <section id="S-CHANGES-TO-LIBRARY-ELEMENTS-UBL-&pversion;-TO-UBL-&version;">
+          <title>Changes to Library Elements, UBL &pversion; to UBL &version;</title>
           <para>A number of changes related to pre-award semantic components further the support of notification documents:</para>
           <itemizedlist>
             <listitem>
-              <para>a richer set of structured information elements such as “prize” and “concession revenue” elements, and</para>
-            </listitem>
-            <listitem>
-              <para>making documents fitter for purpose to support more scenarios by relaxing some cardinalities, for example:</para>
-              <itemizedlist>
-                <listitem>
-                  <para>Tendering Criterion Property is no longer mandatory to allow for the case when a Tendering Criterion is composed of sub criteria, in which case the master criterion has no property itself), and</para>
-                </listitem>
-                <listitem>
-                  <para>adding ASBIEs ( e.g. “Additional Notice Language” to support multiple official languages), in particular to support the <phrase lang="none">eForms</phrase> implementing regulation (Commission Implementing Regulation (EU) 2019/1780).</para>
-                </listitem>
-              </itemizedlist>
+              <para>################### FILL THIS IN ################</para>
             </listitem>
           </itemizedlist>
-          <para>The following table sums up the differences between the XML elements in the UBL 2.2 Common Library and those in the UBL 2.3 Common Library.</para>
-          <table conformance="skip" id="T-SUMMARY-CHANGES-TO-LIBRARY-ELEMENTS-UNIVERSAL-BUSINESS-LANGUAGE-UBL-2.3-&STAGE;-TO-2.2">
-            <title>Summary changes to Library Elements Universal Business Language UBL 2.3 &STAGE; to 2.2</title>
+          <para>The following table sums up the differences between the XML elements in the UBL &pversion; Common Library and those in the UBL &version; Common Library.</para>
+          <table conformance="skip" id="T-SUMMARY-CHANGES-TO-LIBRARY-ELEMENTS-UNIVERSAL-BUSINESS-LANGUAGE-UBL-&version;-&STAGE;-TO-&pversion;">
+            <title>Summary changes to Library Elements Universal Business Language UBL &version; &STAGE; to &pversion;</title>
             &old2newDoc-from-previous-version-library;
           </table>
         </section>
-        <section id="S-CHANGES-TO-DOCUMENT-ELEMENTS-UBL-2.2-TO-UBL-2.3">
-          <title>Changes to Document Elements, UBL 2.2 to UBL 2.3</title>
-          <para>The following table sums up the differences between the XML elements in the UBL 2.2 document schemas and those in the UBL 2.3 document schemas.</para>
-          <table conformance="skip" id="T-SUMMARY-CHANGES-TO-DOCUMENT-ELEMENTS-UNIVERSAL-BUSINESS-LANGUAGE-UBL-2.3-&STAGE;-TO-2.2">
-            <title>Summary changes to Document Elements Universal Business Language UBL 2.3 &STAGE; to 2.2</title>
+        <section id="S-CHANGES-TO-DOCUMENT-ELEMENTS-UBL-&pversion;-TO-UBL-&version;">
+          <title>Changes to Document Elements, UBL &pversion; to UBL &version;</title>
+          <para>The following table sums up the differences between the XML elements in the UBL &pversion; document schemas and those in the UBL &version; document schemas.</para>
+          <table conformance="skip" id="T-SUMMARY-CHANGES-TO-DOCUMENT-ELEMENTS-UNIVERSAL-BUSINESS-LANGUAGE-UBL-&version;-&STAGE;-TO-&pversion;">
+            <title>Summary changes to Document Elements Universal Business Language UBL &version; &STAGE; to &pversion;</title>
             &old2newDoc-from-previous-version-documents;
           </table>
         </section>
       </section>
       
-      <!--<section id="S-SCHEMA-CHANGES-FROM-UBL-2.3-CSD03-TO-UBL-2.3-CSD04">
-        <title>Schema changes from UBL 2.3 csd03 to UBL 2.3 csd04</title>
+      <!--<section id="S-SCHEMA-CHANGES-FROM-UBL-&version;-CSD03-TO-UBL-&version;-CSD04">
+        <title>Schema changes from UBL &version; csd03 to UBL &version; csd04</title>
         <section id="S-SCHEMA-CHANGES-DURING-DEVELOPMENT">
           <title>Schema Changes During Development</title>
-          <para>The following two tables show the differences between the XML elements in UBL 2.3 csd03 and those in UBL 2.3 csd04.</para>
+          <para>The following two tables show the differences between the XML elements in UBL &version; csd03 and those in UBL &version; csd04.</para>
           <para>During development such changes may not be backward compatible to a previous development version, but never will these not be backward compatible to all previously released final versions.</para>
-          <para>This is a temporary annex and will not be included in the final version of UBL 2.3.</para>
+          <para>This is a temporary annex and will not be included in the final version of UBL &version;.</para>
         </section>
-        <section id="S-CHANGES-TO-LIBRARY-ELEMENTS-UBL-2.3-CSD03-TO-UBL-2.3-CSD04">
-          <title>Changes to Library Elements, UBL 2.3 csd03 to UBL 2.3 csd04</title>
+        <section id="S-CHANGES-TO-LIBRARY-ELEMENTS-UBL-&version;-CSD03-TO-UBL-&version;-CSD04">
+          <title>Changes to Library Elements, UBL &version; csd03 to UBL &version; csd04</title>
           <para>The following table sums up the differences between the XML elements in the common libraries of development versions.</para>
-          <table conformance="skip" id="T-SUMMARY-CHANGES-TO-LIBRARY-ELEMENTS-UNIVERSAL-BUSINESS-LANGUAGE-UBL-2.3-&STAGE;-TO-2.3-&PSTAGE;">
-            <title>Summary changes to Library Elements Universal Business Language UBL 2.3 &stage; to 2.3 &pstage;</title>
+          <table conformance="skip" id="T-SUMMARY-CHANGES-TO-LIBRARY-ELEMENTS-UNIVERSAL-BUSINESS-LANGUAGE-UBL-&version;-&STAGE;-TO-&version;-&PSTAGE;">
+            <title>Summary changes to Library Elements Universal Business Language UBL &version; &stage; to &version; &pstage;</title>
             &old2newDoc-from-previous-stage-library;
           </table>
         </section>
-        <section id="S-CHANGES-TO-DOCUMENT-ELEMENTS-UBL-2.3-CSD03-TO-UBL-2.3-CSD04">
-          <title>Changes to Document Elements, UBL 2.3 csd03 to UBL 2.3 csd04</title>
+        <section id="S-CHANGES-TO-DOCUMENT-ELEMENTS-UBL-&version;-CSD03-TO-UBL-&version;-CSD04">
+          <title>Changes to Document Elements, UBL &version; csd03 to UBL &version; csd04</title>
           <para>The following table sums up the differences between the XML elements in the common libraries of development versions.</para>
-          <table conformance="skip" id="T-SUMMARY-CHANGES-TO-DOCUMENT-ELEMENTS-UNIVERSAL-BUSINESS-LANGUAGE-UBL-2.3-&STAGE;-TO-2.3-&PSTAGE;">
-            <title>Summary changes to Document Elements Universal Business Language UBL 2.3 &stage; to 2.3 &pstage;</title>
+          <table conformance="skip" id="T-SUMMARY-CHANGES-TO-DOCUMENT-ELEMENTS-UNIVERSAL-BUSINESS-LANGUAGE-UBL-&version;-&STAGE;-TO-&version;-&PSTAGE;">
+            <title>Summary changes to Document Elements Universal Business Language UBL &version; &stage; to &version; &pstage;</title>
             &old2newDoc-from-previous-stage-documents;
           </table>
         </section>
       </section>-->
 
-      <section id="S-EDITORIAL-CHANGES-FROM-UBL-2.2-TO-UBL-2.3">
-        <title>Editorial changes from UBL 2.2 to UBL 2.3</title>
-        <para>As this is a very lengthy specification, this guidance to the reader reflects where UBL 2.3 has not changed substantially or substantively from UBL 2.2. Editorial changes that are related to grammar, spelling, and turn of phrase are not enumerated.</para>
+      <section id="S-EDITORIAL-CHANGES-FROM-UBL-&pversion;-TO-UBL-&version;">
+        <title>Editorial changes from UBL &pversion; to UBL &version;</title>
+        <para>As this is a very lengthy specification, this guidance to the reader reflects where UBL &version; has not changed substantially or substantively from UBL &pversion;. Editorial changes that are related to grammar, spelling, and turn of phrase are not enumerated.</para>
         <para>
-          <xref linkend="S-INTRODUCTION"/> is unchanged from UBL 2.2.</para>
+          <xref linkend="S-INTRODUCTION"/> is unchanged from UBL &pversion;.</para>
         <para>
-          <xref linkend="S-UBL-2.3-BUSINESS-OBJECTS"/> has been augmented with the new transportation documents. No subject areas from UBL 2.2 have been removed from this section.</para>
+          <xref linkend="S-UBL-&version;-BUSINESS-OBJECTS"/> is unchanged from UBL &pversion;.</para>
         <para>
-          <xref linkend="S-UBL-2.3-SCHEMAS"/> has been augmented with a number of new document types and references to example instances. The new UBL 2.3 availability of an extension point at the start of every ABIE, not only the top-level document ABIE, is described in <xref
-            linkend="S-EXTENSION-EXPRESSION"/>.</para>
+          <xref linkend="S-UBL-&version;-SCHEMAS"/> is unchanged from UBL &pversion;.</para>
         <para>
-          <xref linkend="S-ADDITIONAL-DOCUMENT-CONSTRAINTS"/> is unchanged from UBL 2.2 except for the correction of the incorrectly labeled [IND9] in <xref linkend="S-EMPTY-ATTRIBUTES"/>.</para>
+          <xref linkend="S-ADDITIONAL-DOCUMENT-CONSTRAINTS"/> is unchanged from UBL &pversion;.</para>
         <para>
-          <xref linkend="S-UBL-DIGITAL-SIGNATURES"/> has been updated with a new narrative outlining the latest version of using XAdES with XMLDSig.</para>
+          <xref linkend="S-UBL-DIGITAL-SIGNATURES"/> is unchanged from UBL &pversion;.</para>
         <para>
-          <xref linkend="S-CONFORMANCE"/> is unchanged from UBL 2.2 with the exception of clarifying the need to conform to documented other constraints for the extension scaffolding and content.</para>
+          <xref linkend="S-CONFORMANCE"/> is unchanged from UBL &pversion;.</para>
         <para>
-          <xref linkend="A-RELEASE-NOTES"/> is unchanged with the exception of adding UBL 2.3 to the section on upgrading, and enumerating the known errors in the document models.</para>
+          <xref linkend="A-RELEASE-NOTES"/> is unchanged with the exception of adding UBL &version; to the section on upgrading, and enumerating the known errors in the document models.</para>
         <para>
-          <xref linkend="A-REVISION-HISTORY"/> adds details of the changes from UBL 2.2 to UBL 2.3. The first subsection <xref linkend="S-THE-BUSINESS-AND-REGULATORY-IMPACT-OF-UBL-MAJOR-AND-MINOR-REVISIONS"/> has been entirely rewritten from UBL 2.2 to assist in the understanding of the impact of
-          major and minor revisions.</para>
+          <xref linkend="A-REVISION-HISTORY"/> adds details of the changes from UBL &pversion; to UBL &version;.</para>
         <para>
-          <xref linkend="A-THE-UBL-2.3-DATA-MODEL"/> is changed from UBL 2.2 to include revisions to a diagram and a summary of the use of the spreadsheet columns.</para>
+          <xref linkend="A-THE-UBL-&version;-DATA-MODEL"/> is unchanged from UBL &pversion;.</para>
         <para>
-          <xref linkend="A-DATA-TYPE-QUALIFICATIONS-IN-UBL"/> is unchanged from UBL 2.2.</para>
+          <xref linkend="A-DATA-TYPE-QUALIFICATIONS-IN-UBL"/> is unchanged from UBL &pversion;.</para>
         <para>
-          <xref linkend="A-UBL-2.3-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/> is changed from UBL 2.2 to revise the list of code lists and to include an illustrative example of a Schematron script for the UBL additional document constraints.</para>
+          <xref linkend="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/> is unchanged from UBL &pversion;.</para>
         <para>
-          <xref linkend="A-UBL-2.3-EXAMPLE-DOCUMENT-INSTANCES"/> includes a revised list of example instances.</para>
+          <xref linkend="A-UBL-&version;-EXAMPLE-DOCUMENT-INSTANCES"/> includes a revised list of example instances.</para>
         <para>
-          <xref linkend="A-ALTERNATIVE-REPRESENTATIONS-OF-THE-UBL-2.3-SCHEMAS"/> is unchanged other than referring to UBL 2.3 instead of UBL 2.2.</para>
+          <xref linkend="A-ALTERNATIVE-REPRESENTATIONS-OF-THE-UBL-&version;-SCHEMAS"/> is unchanged other than referring to UBL &version; instead of UBL &pversion;.</para>
         <para>
           <xref linkend="A-THE-OPEN-EDI-REFERENCE-MODEL-PERSPECTIVE-OF-UBL"/> is unchanged.</para>
         <para>
-          <xref linkend="A-ACKNOWLEDGEMENTS"/> is changed to reflect the active membership of the technical committee during the development of UBL 2.3.</para>
+          <xref linkend="A-ACKNOWLEDGEMENTS"/> is changed to reflect the active membership of the technical committee during the development of UBL &version;.</para>
       </section>
     </section>
   </appendix>
-  <appendix id="A-THE-UBL-2.3-DATA-MODEL" role="non-normative">
-    <title>The UBL 2.3 Data Model</title>
+  <appendix id="A-THE-UBL-&version;-DATA-MODEL" role="non-normative">
+    <title>The UBL &version; Data Model</title>
     <section id="S-THE-USE-OF-THE-OASIS-BUSINESS-DOCUMENT-NAMING-AND-DESIGN-RULES">
       <title>The Use of the OASIS Business Document Naming and Design Rules</title>
       <para>As described in the OASIS UBL Naming and Design Rules <xref linkend="b_ublndr"/> application of the OASIS Business Document Naming and Design Rules <xref linkend="b_bdndr"/>, the UBL data model design follows the principles of the UN/CEFACT Core Components Technical Specification <xref
           linkend="ccts"/>. The UBL data model is based on a library of reusable information items known as Business Information Entities (BIEs). Each business document defined by UBL is created by assembling items appropriate to that document type from the UBL BIE library. Further detail regarding
         BIEs is provided in <xref linkend="S-BUSINESS-INFORMATION-ENTITIES"/>.</para>
       <para>Historically, both the UBL common library of reusable components and the assembly models for the individual UBL documents have been published as separate spreadsheets using a format specifically developed for UBL business information modeling (this format is discussed further below).
-        Beginning with UBL 2.3, all of these models are published as separate worksheets in a single spreadsheet. This spreadsheet is provided in both Open Document and Microsoft Excel formats in <literal>mod/</literal> subdirectory (see <xref
+        Beginning with UBL &version;, all of these models are published as separate worksheets in a single spreadsheet. This spreadsheet is provided in both Open Document and Microsoft Excel formats in <literal>mod/</literal> subdirectory (see <xref
           linkend="S-THE-CCTS-SPECIFICATION-OF-UBL-BUSINESS-INFORMATION-ENTITIES"/> for details regarding the spreadsheet columns):</para>
       <blockquote>
         <simplelist>
           <member>
             <literal>
-              <ulink url="mod/UBL-Entities-2.3.ods">mod/UBL-Entities-2.3.ods</ulink>
+              <ulink url="mod/UBL-Entities-&version;.ods">mod/UBL-Entities-&version;.ods</ulink>
             </literal>
           </member>
           <member>
             <literal>
-              <ulink url="mod/UBL-Entities-2.3.xls">mod/UBL-Entities-2.3.xls</ulink>
+              <ulink url="mod/UBL-Entities-&version;.xls">mod/UBL-Entities-&version;.xls</ulink>
             </literal>
           </member>
         </simplelist>
@@ -4895,7 +4896,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         <simplelist>
           <member>
             <literal>
-              <ulink url="mod/UBL-Entities-2.3.gc">mod/UBL-Entities-2.3.gc</ulink>
+              <ulink url="mod/UBL-Entities-&version;.gc">mod/UBL-Entities-&version;.gc</ulink>
             </literal>
           </member>
         </simplelist>
@@ -4905,17 +4906,17 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         <simplelist>
           <member>
             <literal>
-              <ulink url="mod/UBL-Signature-Entities-2.3.ods">mod/UBL-Signature-Entities-2.3.ods</ulink>
+              <ulink url="mod/UBL-Signature-Entities-&version;.ods">mod/UBL-Signature-Entities-&version;.ods</ulink>
             </literal>
           </member>
           <member>
             <literal>
-              <ulink url="mod/UBL-Signature-Entities-2.3.xls">mod/UBL-Signature-Entities-2.3.xls</ulink>
+              <ulink url="mod/UBL-Signature-Entities-&version;.xls">mod/UBL-Signature-Entities-&version;.xls</ulink>
             </literal>
           </member>
           <member>
             <literal>
-              <ulink url="mod/UBL-Signature-Entities-2.3.gc">mod/UBL-Signature-Entities-2.3.gc</ulink>
+              <ulink url="mod/UBL-Signature-Entities-&version;.gc">mod/UBL-Signature-Entities-&version;.gc</ulink>
             </literal>
           </member>
         </simplelist>
@@ -4925,17 +4926,17 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         <simplelist>
           <member>
             <literal>
-              <ulink url="mod/summary/reports/All-UBL-2.3-Documents.html">mod/summary/reports/All-UBL-2.3-Documents.html</ulink>
+              <ulink url="mod/summary/reports/All-UBL-&version;-Documents.html">mod/summary/reports/All-UBL-&version;-Documents.html</ulink>
             </literal>
           </member>
           <member>
             <literal>
-              <ulink url="mod/summary/reports/All-UBL-2.3-SignatureExtensionComponents.html">mod/summary/reports/All-UBL-2.3-SignatureExtensionComponents.html</ulink>
+              <ulink url="mod/summary/reports/All-UBL-&version;-SignatureExtensionComponents.html">mod/summary/reports/All-UBL-&version;-SignatureExtensionComponents.html</ulink>
             </literal>
           </member>
         </simplelist>
       </blockquote>
-      <para>For links to the individual HTML reports for each of the document types, see the schema tables in <xref linkend="S-UBL-2.3-DOCUMENT-SCHEMAS"/>. These reports elide all of the library components that are not used by each document type and are far shorter than the “all documents”
+      <para>For links to the individual HTML reports for each of the document types, see the schema tables in <xref linkend="S-UBL-&version;-DOCUMENT-SCHEMAS"/>. These reports elide all of the library components that are not used by each document type and are far shorter than the “all documents”
         report.</para>
       <para>For notes on the use of the HTML reports, see</para>
       <blockquote>
@@ -4990,7 +4991,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       [...]
    </xsd:element>
 ]]></programlisting>
-      <para>One consequence of this approach is that the list of global elements that begins the CAC module contains elements that are in fact never used under those names in UBL 2.3. For example, the element <literal>ActivityDataLine</literal> mentioned above is used by reference in creating the
+      <para>One consequence of this approach is that the list of global elements that begins the CAC module contains elements that are in fact never used under those names in UBL &version;. For example, the element <literal>ActivityDataLine</literal> mentioned above is used by reference in creating the
         ASBIE <literal>SupplyChainActivityDataLine</literal>, but it never appears in the form of an ASBIE named <literal>ActivityDataLine</literal>. Such unused ABIE names remain available in the global element declarations for customizers and designers of future additions to UBL.</para>
       <para>Refer to <xref linkend="S-THE-CCTS-SPECIFICATION-OF-UBL-BUSINESS-INFORMATION-ENTITIES"/> for more information regarding the granularity of CCTS information maintained in the UBL document models.</para>
     </section>
@@ -5014,67 +5015,67 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         <simplelist>
           <member>
             <literal>
-              <ulink url="mod/summary/reports/UBL-Invoice-2.3.html">mod/summary/reports/UBL-Invoice-2.3.html</ulink>
+              <ulink url="mod/summary/reports/UBL-Invoice-&version;.html">mod/summary/reports/UBL-Invoice-&version;.html</ulink>
             </literal>
           </member>
         </simplelist>
       </blockquote>
-      <para>Line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Details" conformance="skip" role="DEN-Row" remap="Invoice. Details">2</ulink> of the Invoice model defines the document ABIE named <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
+      <para>Line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Details" conformance="skip" role="DEN-Row" remap="Invoice. Details">2</ulink> of the Invoice model defines the document ABIE named <literal>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
         </literal>. The Component Type column confirms that <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
         </literal> is an ABIE, as also indicated by the pink background in that row of the rendering.</para>
       <para>Everything after <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
         </literal> in the model ends up as part of the schema, and the order seen here is the order in which these components will appear in both the schema and any conforming instances of <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
         </literal>. The BBIE children of <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
         </literal> are given first (white background), and then all the ASBIE children of <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
         </literal> (green background).</para>
       <para>As shown in Cardinality column, most of these components are optional. The first required field is <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Identifier" conformance="skip" role="DEN-Name" remap="Invoice. Identifier">ID</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Identifier" conformance="skip" role="DEN-Name" remap="Invoice. Identifier">ID</ulink>
         </literal> (line <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Identifier" conformance="skip" role="DEN-Row" remap="Invoice. Identifier">7</ulink>) and the second is <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.IssueDate.Date" conformance="skip" role="DEN-Name"
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Identifier" conformance="skip" role="DEN-Row" remap="Invoice. Identifier">7</ulink>) and the second is <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.IssueDate.Date" conformance="skip" role="DEN-Name"
             remap="Invoice. Issue Date. Date">IssueDate</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.IssueDate.Date" conformance="skip" role="DEN-Row" remap="Invoice. Issue Date. Date">10</ulink>), so we can write, for example,</para>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.IssueDate.Date" conformance="skip" role="DEN-Row" remap="Invoice. Issue Date. Date">10</ulink>), so we can write, for example,</para>
       <programlisting role="font-size-92%"><![CDATA[  <cbc:ID>123</cbc:ID>
   <cbc:IssueDate>2011-09-22</cbc:IssueDate>
 ]]></programlisting>
       <para>Next let&#8217;s add an optional <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Row" remap="Invoice. Invoice_ Period. Period">25</ulink>). This is an ASBIE, implying that it has some kind of substructure, and it derives from the generic
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Row" remap="Invoice. Invoice_ Period. Period">25</ulink>). This is an ASBIE, implying that it has some kind of substructure, and it derives from the generic
         ABIE called <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
         </literal> (this is the &#8220;Associated Object Class&#8221; referred to in a column of the same name). To find this structure, we look for the <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
         </literal> library ABIE in the model report or in the Common Library worksheet of the UBL model spreadsheet.</para>
       <para>
         <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
-        </literal> will be found at line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1709</ulink> and seen to contain a number of possible BBIE children, all of them optional; and the ASBIE <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
+        </literal> will be found at line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1709</ulink> and seen to contain a number of possible BBIE children, all of them optional; and the ASBIE <literal>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
         </literal> in <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
         </literal> therefore has this structure, too. From this one could conclude that instantiations of the <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
-        </literal> structure (there are more than 50 of them in UBL) need not contain any of the seven optional BBIE elements specified after line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1709</ulink>, and
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
+        </literal> structure (there are more than 50 of them in UBL) need not contain any of the seven optional BBIE elements specified after line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1709</ulink>, and
         indeed the corresponding declaration of the complex type <literal>PeriodType</literal> in the CAC schema (<literal>
-          <ulink url="xsd/common/UBL-CommonAggregateComponents-2.3.xsd">xsd/common/UBL-CommonAggregateComponents-2.3.xsd</ulink>
+          <ulink url="xsd/common/UBL-CommonAggregateComponents-&version;.xsd">xsd/common/UBL-CommonAggregateComponents-&version;.xsd</ulink>
         </literal>) shows that an empty <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
         </literal> element will pass XML validation; but UBL explicitly prohibits such structures (see <xref linkend="S-EMPTY-ELEMENTS"/>). In UBL, as a normative rule independent of schema constraints, every ASBIE shall have at least one child (BBIE or ASBIE) instantiated. In this case, therefore,
         one or more of the seven possible BBIE children of <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
         </literal> will need to appear in a UBL Invoice document for it to be conforming to UBL in addition to the requirement that the document validate against the <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
         </literal> schema. If <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Period.StartDate.Date" conformance="skip" role="DEN-Name" remap="Period. Start Date. Date">StartDate</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.StartDate.Date" conformance="skip" role="DEN-Name" remap="Period. Start Date. Date">StartDate</ulink>
         </literal> and <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Period.EndDate.Date" conformance="skip" role="DEN-Name" remap="Period. End Date. Date">EndDate</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.EndDate.Date" conformance="skip" role="DEN-Name" remap="Period. End Date. Date">EndDate</ulink>
         </literal> (for exsample) are chosen for the content of <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
         </literal>, the corresponding section of the sample instance might then look like this:</para>
       <programlisting role="font-size-92%"><![CDATA[  <cac:InvoicePeriod>
     <cbc:StartDate>2011-08-01</cbc:StartDate>
@@ -5082,37 +5083,37 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
   </cac:InvoicePeriod>
 ]]></programlisting>
       <para>Next in order in the Invoice come two required pieces, the ASBIEs <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Accounting_SupplierParty.SupplierParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Supplier Party. Supplier Party">AccountingSupplierParty</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Accounting_SupplierParty.SupplierParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Supplier Party. Supplier Party">AccountingSupplierParty</ulink>
         </literal> and <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Accounting_CustomerParty.CustomerParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Customer Party. Customer Party">AccountingCustomerParty</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Accounting_CustomerParty.CustomerParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Customer Party. Customer Party">AccountingCustomerParty</ulink>
         </literal>. As shown in Associated Object Class column of the Invoice model, <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Accounting_SupplierParty.SupplierParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Supplier Party. Supplier Party">AccountingSupplierParty</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Accounting_SupplierParty.SupplierParty" conformance="skip" role="DEN-Row" remap="Invoice. Accounting_ Supplier Party. Supplier Party">36</ulink>) derives from the <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-SupplierParty.Details" conformance="skip" role="DEN-Name" remap="Supplier Party. Details">SupplierParty</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Accounting_SupplierParty.SupplierParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Supplier Party. Supplier Party">AccountingSupplierParty</ulink>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Accounting_SupplierParty.SupplierParty" conformance="skip" role="DEN-Row" remap="Invoice. Accounting_ Supplier Party. Supplier Party">36</ulink>) derives from the <literal>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-SupplierParty.Details" conformance="skip" role="DEN-Name" remap="Supplier Party. Details">SupplierParty</ulink>
         </literal> ABIE and <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Accounting_CustomerParty.CustomerParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Customer Party. Customer Party">AccountingCustomerParty</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Accounting_CustomerParty.CustomerParty" conformance="skip" role="DEN-Row" remap="Invoice. Accounting_ Customer Party. Customer Party">37</ulink>) derives from the <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-CustomerParty.Details" conformance="skip" role="DEN-Name" remap="Customer Party. Details">CustomerParty</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Accounting_CustomerParty.CustomerParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Customer Party. Customer Party">AccountingCustomerParty</ulink>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Accounting_CustomerParty.CustomerParty" conformance="skip" role="DEN-Row" remap="Invoice. Accounting_ Customer Party. Customer Party">37</ulink>) derives from the <literal>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-CustomerParty.Details" conformance="skip" role="DEN-Name" remap="Customer Party. Details">CustomerParty</ulink>
         </literal> ABIE. Checking in the Common Library, it is seen that both <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-SupplierParty.Details" conformance="skip" role="DEN-Name" remap="Supplier Party. Details">SupplierParty</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-SupplierParty.Details" conformance="skip" role="DEN-Row" remap="Supplier Party. Details">2348</ulink> of the Common Library) and <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-CustomerParty.Details" conformance="skip" role="DEN-Name" remap="Customer Party. Details">CustomerParty</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-CustomerParty.Details" conformance="skip" role="DEN-Row" remap="Customer Party. Details">640</ulink> of the Common Library) can contain an ASBIE named <literal>Party</literal> (as shown in lines <ulink
-          url="mod/summary/reports/UBL-Invoice-2.3.html#Table-SupplierParty.Party" conformance="skip" role="DEN-Row" remap="Supplier Party. Party">2352</ulink> and <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-CustomerParty.Party" conformance="skip" role="DEN-Row"
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-SupplierParty.Details" conformance="skip" role="DEN-Name" remap="Supplier Party. Details">SupplierParty</ulink>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-SupplierParty.Details" conformance="skip" role="DEN-Row" remap="Supplier Party. Details">2348</ulink> of the Common Library) and <literal>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-CustomerParty.Details" conformance="skip" role="DEN-Name" remap="Customer Party. Details">CustomerParty</ulink>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-CustomerParty.Details" conformance="skip" role="DEN-Row" remap="Customer Party. Details">640</ulink> of the Common Library) can contain an ASBIE named <literal>Party</literal> (as shown in lines <ulink
+          url="mod/summary/reports/UBL-Invoice-&version;.html#Table-SupplierParty.Party" conformance="skip" role="DEN-Row" remap="Supplier Party. Party">2352</ulink> and <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-CustomerParty.Party" conformance="skip" role="DEN-Row"
           remap="Customer Party. Party">644</ulink>, respectively) and that each <literal>Party</literal> ASBIE is an instantiation of the <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Party.Details" conformance="skip" role="DEN-Name" remap="Party. Details">Party</ulink>
-        </literal> ABIE (line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Party.Details" conformance="skip" role="DEN-Row" remap="Party. Details">1597</ulink>). Therefore both parties have the same structure (the BBIEs and ASBIEs following line <ulink
-          url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Party.Details" conformance="skip" role="DEN-Row" remap="Party. Details">1597</ulink>). Thus <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Accounting_SupplierParty.SupplierParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Supplier Party. Supplier Party">AccountingSupplierParty</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.Details" conformance="skip" role="DEN-Name" remap="Party. Details">Party</ulink>
+        </literal> ABIE (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.Details" conformance="skip" role="DEN-Row" remap="Party. Details">1597</ulink>). Therefore both parties have the same structure (the BBIEs and ASBIEs following line <ulink
+          url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.Details" conformance="skip" role="DEN-Row" remap="Party. Details">1597</ulink>). Thus <literal>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Accounting_SupplierParty.SupplierParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Supplier Party. Supplier Party">AccountingSupplierParty</ulink>
         </literal> and <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Accounting_CustomerParty.CustomerParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Customer Party. Customer Party">AccountingCustomerParty</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Accounting_CustomerParty.CustomerParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Customer Party. Customer Party">AccountingCustomerParty</ulink>
         </literal> share the information components common to parties in general and differ in the information specific to suppliers and customers. Parties commonly have a <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Party.PartyName" conformance="skip" role="DEN-Name" remap="Party. Party Name">PartyName</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Party.PartyName" conformance="skip" role="DEN-Row" remap="Party. Party Name">1605</ulink>) that derives (the Associated Object Class column) from the ABIE <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-PartyName.Details" conformance="skip" role="DEN-Name" remap="Party Name. Details">PartyName</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-PartyName.Details" conformance="skip" role="DEN-Row" remap="Party Name. Details">1637</ulink>), which is a wrapper for the BBIE <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-PartyName.Name" conformance="skip" role="DEN-Name" remap="Party Name. Name">Name</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-PartyName.Name" conformance="skip" role="DEN-Row" remap="Party Name. Name">1638</ulink>). A conforming piece of the document instance might therefore look like this: </para>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.PartyName" conformance="skip" role="DEN-Name" remap="Party. Party Name">PartyName</ulink>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.PartyName" conformance="skip" role="DEN-Row" remap="Party. Party Name">1605</ulink>) that derives (the Associated Object Class column) from the ABIE <literal>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Details" conformance="skip" role="DEN-Name" remap="Party Name. Details">PartyName</ulink>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Details" conformance="skip" role="DEN-Row" remap="Party Name. Details">1637</ulink>), which is a wrapper for the BBIE <literal>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Name" conformance="skip" role="DEN-Name" remap="Party Name. Name">Name</ulink>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Name" conformance="skip" role="DEN-Row" remap="Party Name. Name">1638</ulink>). A conforming piece of the document instance might therefore look like this: </para>
       <programlisting role="font-size-92%"><![CDATA[  <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyName>
@@ -5129,17 +5130,17 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
   </cac:AccountingCustomerParty>
 ]]></programlisting>
       <para>Returning to the Invoice model, it is seen that the <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
         </literal> needs to end with a <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Legal_MonetaryTotal.MonetaryTotal" conformance="skip" role="DEN-Name" remap="Invoice. Legal_ Monetary Total. Monetary Total">LegalMonetaryTotal</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Legal_MonetaryTotal.MonetaryTotal" conformance="skip" role="DEN-Row" remap="Invoice. Legal_ Monetary Total. Monetary Total">54</ulink>) and at least one <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.InvoiceLine" conformance="skip" role="DEN-Name" remap="Invoice. Invoice Line">InvoiceLine</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.InvoiceLine" conformance="skip" role="DEN-Row" remap="Invoice. Invoice Line">55</ulink>). Taking <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Legal_MonetaryTotal.MonetaryTotal" conformance="skip" role="DEN-Name" remap="Invoice. Legal_ Monetary Total. Monetary Total">LegalMonetaryTotal</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Legal_MonetaryTotal.MonetaryTotal" conformance="skip" role="DEN-Name" remap="Invoice. Legal_ Monetary Total. Monetary Total">LegalMonetaryTotal</ulink>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Legal_MonetaryTotal.MonetaryTotal" conformance="skip" role="DEN-Row" remap="Invoice. Legal_ Monetary Total. Monetary Total">54</ulink>) and at least one <literal>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.InvoiceLine" conformance="skip" role="DEN-Name" remap="Invoice. Invoice Line">InvoiceLine</ulink>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.InvoiceLine" conformance="skip" role="DEN-Row" remap="Invoice. Invoice Line">55</ulink>). Taking <literal>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Legal_MonetaryTotal.MonetaryTotal" conformance="skip" role="DEN-Name" remap="Invoice. Legal_ Monetary Total. Monetary Total">LegalMonetaryTotal</ulink>
         </literal> first, it is found in the Common Library to be derived from <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-MonetaryTotal.Details" conformance="skip" role="DEN-Name" remap="Monetary Total. Details">MonetaryTotal</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Details" conformance="skip" role="DEN-Name" remap="Monetary Total. Details">MonetaryTotal</ulink>
         </literal> (line <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-MonetaryTotal.Details" conformance="skip" role="DEN-Row" remap="Monetary Total. Details">1518</ulink>), which has a mandatory <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-MonetaryTotal.Payable_Amount.Amount"
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Details" conformance="skip" role="DEN-Row" remap="Monetary Total. Details">1518</ulink>), which has a mandatory <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount"
             conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
         </literal> BBIE. A corresponding example instance fragment might be therefore be constructed as follows:</para>
       <programlisting role="font-size-92%"><![CDATA[  <cac:LegalMonetaryTotal>
@@ -5147,14 +5148,14 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
   </cac:LegalMonetaryTotal>
 ]]></programlisting>
       <para>If the preceding explanation of <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Party.Details" conformance="skip" role="DEN-Name" remap="Party. Details">Party</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.Details" conformance="skip" role="DEN-Name" remap="Party. Details">Party</ulink>
         </literal> is understood, there should be nothing problematic about the process of forming the example <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.Legal_MonetaryTotal.MonetaryTotal" conformance="skip" role="DEN-Name" remap="Invoice. Legal_ Monetary Total. Monetary Total">LegalMonetaryTotal</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Legal_MonetaryTotal.MonetaryTotal" conformance="skip" role="DEN-Name" remap="Invoice. Legal_ Monetary Total. Monetary Total">LegalMonetaryTotal</ulink>
         </literal> element shown above except the <literal>currencyID</literal> attribute on <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
-        </literal>, which does not appear explicitly in the model line for that BBIE (line <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Row" remap="Monetary Total. Payable_ Amount. Amount">1527</ulink>). This is because
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
+        </literal>, which does not appear explicitly in the model line for that BBIE (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Row" remap="Monetary Total. Payable_ Amount. Amount">1527</ulink>). This is because
         UBL does not define the primitive data types upon which the model is built; instead it uses standard data type definitions from <xref linkend="ccts"/> and <xref linkend="xsd2"/>. In the case of <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
         </literal>, the CCTS data type (the Data Type column) is &#8220;Amount. Type&#8221; (the space is part of the name), and that type is defined in <xref linkend="ccts"/> itself (Table 8-1 of the CCTS 2.01 specification). There it will be seen that &#8220;Amount. Type&#8221; has two
         supplementary &#8220;CCT Components&#8221; called &#8220;Amount. Currency. Identifier&#8221; and &#8220;Currency. Code List Version. Identifier&#8221;. In the XML realization of CCTS, supplementary components are expressed as attributes, and the CCTS names &#8220;Amount. Currency.
         Identifier&#8221;and &#8220;Currency. Code List Version. Identifier&#8221; are transformed into the XML attribute names <literal>currencyID</literal> and <literal>currencyCodeListVersionID</literal>, respectively. All of these CCTS-based types and attributes are declared in the CCTS Core
@@ -5181,14 +5182,14 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
       <blockquote>
         <para>
           <literal>
-            <ulink url="mod/summary/reports/All-UBL-2.3-Documents.html#UDT">mod/summary/reports/All-UBL-2.3-Documents.html#UDT</ulink>
+            <ulink url="mod/summary/reports/All-UBL-&version;-Documents.html#UDT">mod/summary/reports/All-UBL-&version;-Documents.html#UDT</ulink>
           </literal>
         </para>
       </blockquote>
-      <para>In the example fragment above, <literal>currencyID</literal> has been used to label the amount in Canadian dollars (CAD). As explained in <xref linkend="A-UBL-2.3-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/>, the value <literal>CAD</literal> for this attribute is not specified in schemas to be
+      <para>In the example fragment above, <literal>currencyID</literal> has been used to label the amount in Canadian dollars (CAD). As explained in <xref linkend="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/>, the value <literal>CAD</literal> for this attribute is not specified in schemas to be
         checked using XSD validation but will instead be found in separate OASIS genericode code list files in the <literal>gc/</literal> directory of the UBL distribution, which are engaged through a separate XSLT-based process.</para>
       <para>Using the same methodology, a sample <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-2.3.html#Table-Invoice.InvoiceLine" conformance="skip" role="DEN-Name" remap="Invoice. Invoice Line">InvoiceLine</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.InvoiceLine" conformance="skip" role="DEN-Name" remap="Invoice. Invoice Line">InvoiceLine</ulink>
         </literal> can be constructed to complete the example as follows:</para>
       <programlisting role="font-size-92%"><![CDATA[  <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -5799,7 +5800,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         ASBIEs to library ABIEs. The library ABIEs are defined by the contained BBIEs and ASBIEs to library ABIEs. The library ABIEs and ASBIEs are all in the aggregate namespace. The document and library BBIEs are all in the basic namespace. The business objects and document aggregates are reified
         as validation artefacts in XSD, illustrated in each box as an XSD schema fragment associated with the namespace URI string indicated by the documentary namespace prefix.</para>
       <para>Also shown in the modeling artefacts are the semantic code list associations in CVA for the context/value constraints governed by lists of codes in genericode files. The CVA and genericode files are used to create the data type qualifications XSLT stylesheet validation artefact used for
-        the demonstrative second-pass validation process documented in <xref linkend="A-UBL-2.3-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/>.</para>
+        the demonstrative second-pass validation process documented in <xref linkend="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/>.</para>
       <para>In the diagram section for the validation artefacts, the namespaces shown in the shaded boxes (with prefixes <literal>qdt:</literal>, <literal>udt:</literal>, <literal>ccts-cct:</literal> and <literal>ccts:</literal>) exist only for the management of the schema components and have no
         utility in UBL XML document instances. Declaring unused namespaces in an XML instance is superfluous and does not impact on conformance, but having them present may be confusing or misleading to the reader.</para>
       <note>
@@ -5912,14 +5913,14 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
       </tgroup>
     </table>
     <para>The UBL unqualified data types include the CCTS unqualified data types (named according to the UBL Naming and Design Rules) and a few others, as listed in the following table. Some of these (<literal>GraphicType</literal>, <literal>PictureType</literal>, <literal>SoundType</literal>,
-        <literal>VideoType</literal>, and <literal>ValueType</literal>) are defined for completeness but not actually used in UBL 2.3.</para>
+        <literal>VideoType</literal>, and <literal>ValueType</literal>) are defined for completeness but not actually used in UBL &version;.</para>
     <para>The rightmost column of this table lists the UBL XML attributes that implement the CCTS supplementary components associated with each CCTS data type. It is important to be aware of these attributes, because they do not appear directly in the UBL data models but are logically implied by
       data type inheritance and do appear in the UBL XML schemas in accordance with the UBL Naming and Design Rules. As indicated here, a few of the most significant of these supplementary CCTS components become required XML attributes in UBL and will be required in any instance of an element
       derived from the corresponding type. See <xref linkend="S-NAVIGATING-THE-UBL-DATA-MODEL"/> for an example of UBL attributes and a further discussion of this point. A reverse lookup of the implied occurrence of each attribute in the data models is provided in this summary report: </para>
     <blockquote>
       <para>
         <literal>
-          <ulink url="mod/summary/reports/All-UBL-2.3-Documents.html#UDT">mod/summary/reports/All-UBL-2.3-Documents.html#UDT</ulink>
+          <ulink url="mod/summary/reports/All-UBL-&version;-Documents.html#UDT">mod/summary/reports/All-UBL-&version;-Documents.html#UDT</ulink>
         </literal>
       </para>
     </blockquote>
@@ -5992,7 +5993,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             <entry align="left">
               <simplelist>
                 <member>
-                  <emphasis role="italic">not used in UBL 2.3</emphasis>
+                  <emphasis role="italic">not used in UBL &version;</emphasis>
                 </member>
               </simplelist>
             </entry>
@@ -6007,7 +6008,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             <entry align="left">
               <simplelist>
                 <member>
-                  <emphasis role="italic">not used in UBL 2.3</emphasis>
+                  <emphasis role="italic">not used in UBL &version;</emphasis>
                 </member>
               </simplelist>
             </entry>
@@ -6022,7 +6023,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             <entry align="left">
               <simplelist>
                 <member>
-                  <emphasis role="italic">not used in UBL 2.3</emphasis>
+                  <emphasis role="italic">not used in UBL &version;</emphasis>
                 </member>
               </simplelist>
             </entry>
@@ -6037,7 +6038,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             <entry align="left">
               <simplelist>
                 <member>
-                  <emphasis role="italic">not used in UBL 2.3</emphasis>
+                  <emphasis role="italic">not used in UBL &version;</emphasis>
                 </member>
               </simplelist>
             </entry>
@@ -6073,7 +6074,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             <entry align="left">
               <simplelist>
                 <member>
-                  <emphasis role="italic">format (not used in UBL 2.3)</emphasis>
+                  <emphasis role="italic">format (not used in UBL &version;)</emphasis>
                 </member>
               </simplelist>
             </entry>
@@ -6175,7 +6176,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             <entry align="left">
               <simplelist>
                 <member>
-                  <emphasis role="italic">not used in UBL 2.3</emphasis>
+                  <emphasis role="italic">not used in UBL &version;</emphasis>
                 </member>
               </simplelist>
             </entry>
@@ -6254,11 +6255,11 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
       </tgroup>
     </table>
     <para>Some UBL BBIEs have data type qualifications based on the unqualified UBL types. These qualified types are all code types, and their definitions are the mechanism whereby a specific set of values is associated with each code.</para>
-    <para>UBL data type qualifications are expressed formally in an OASIS <xref linkend="cva"/> (Context/Value Association) file contained in the <literal>cva</literal> directory of the 2.3 distribution.</para>
+    <para>UBL data type qualifications are expressed formally in an OASIS <xref linkend="cva"/> (Context/Value Association) file contained in the <literal>cva</literal> directory of the &version; distribution.</para>
     <blockquote>
       <para>
         <literal>
-          <ulink url="cva/UBL-DefaultDTQ-2.3.cva">cva/UBL-DefaultDTQ-2.3.cva</ulink>
+          <ulink url="cva/UBL-DefaultDTQ-&version;.cva">cva/UBL-DefaultDTQ-&version;.cva</ulink>
         </literal>
       </para>
     </blockquote>
@@ -6267,7 +6268,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
     <blockquote>
       <para>
         <literal>
-          <ulink url="cva/UBL-DefaultDTQ-2.3.html">cva/UBL-DefaultDTQ-2.3.html</ulink>
+          <ulink url="cva/UBL-DefaultDTQ-&version;.html">cva/UBL-DefaultDTQ-&version;.html</ulink>
         </literal>
       </para>
     </blockquote>
@@ -6276,7 +6277,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
     <blockquote>
       <para>
         <literal>
-          <ulink url="val/UBL-DefaultDTQ-2.3.xsl">val/UBL-DefaultDTQ-2.3.xsl</ulink>
+          <ulink url="val/UBL-DefaultDTQ-&version;.xsl">val/UBL-DefaultDTQ-&version;.xsl</ulink>
         </literal>
       </para>
     </blockquote>
@@ -6303,10 +6304,11 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
     <para>The two remaining boxes on the right in the diagram illustrate that users can add further data type qualifications if desired by preparing a custom CVA <emphasis role="bold">(H)</emphasis> and creating a custom XSLT file <emphasis role="bold">(J)</emphasis> to replace the default CVA and
       XSLT stylesheet provided in the UBL distribution.</para>
     <para>Users intending to prepare a custom CVA should note that <literal>
-        <ulink url="cva/UBL-DefaultDTQ-2.3.cva">cva/UBL-DefaultDTQ-2.3.cva</ulink>
-      </literal> contains relative URIs that expect the UBL 2.0 code lists from the UBL 2.0 Update Package in a sibling directory named <literal>os-UBL-2.0</literal>, the UBL 2.1 code lists from the UBL 2.1 distribution in a sibling directory named <literal>os-UBL-2.1</literal>, and the UBL 2.2 code
-      lists from the UBL 2.2 distribution in a sibling directory named <literal>os-UBL-2.2</literal>. This is irrelevant to users of the pre-compiled <literal>
-        <ulink url="val/UBL-DefaultDTQ-2.3.xsl">val/UBL-DefaultDTQ-2.3.xsl</ulink>
+        <ulink url="cva/UBL-DefaultDTQ-&version;.cva">cva/UBL-DefaultDTQ-&version;.cva</ulink>
+      </literal> contains relative URIs that expect the UBL 2.0 code lists from the UBL 2.0 Update Package in a sibling directory named <literal>os-UBL-2.0</literal>, the UBL 2.1 code lists from the UBL 2.1 distribution in a sibling directory named <literal>os-UBL-2.1</literal>, the UBL 2.2 code
+      lists from the UBL 2.2 distribution in a sibling directory named <literal>os-UBL-2.2</literal>, and the UBL 2.3 code
+      lists from the UBL 2.3 distribution in a sibling directory named <literal>os-UBL-2.3</literal>. This is irrelevant to users of the pre-compiled <literal>
+        <ulink url="val/UBL-DefaultDTQ-&version;.xsl">val/UBL-DefaultDTQ-&version;.xsl</ulink>
       </literal> file contained in the UBL package, but users wishing to create their own CVA file need first to install the code lists of prior releases of UBL 2.0. To properly install the update, first download and install the original UBL 2.0 release: </para>
     <blockquote>
       <para>
@@ -6339,11 +6341,19 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         </literal>
       </para>
     </blockquote>
-    <para>Complete installation instructions can be found in the each package. As indicated above, the <literal>os-UBL-2.0/</literal>, <literal>os-UBL-2.1/</literal>, and <literal>os-UBL-2.2/</literal> directories thus created need to be siblings directories to the directory created by installing
-      the UBL 2.3 package.</para>
+    <para>Then download and install the UBL 2.3 release: </para>
+    <blockquote>
+      <para>
+        <literal>
+          <ulink url="https://docs.oasis-open.org/ubl/os-UBL-2.3/UBL-2.3.zip">https://docs.oasis-open.org/ubl/os-UBL-2.3/UBL-2.3.zip</ulink>
+        </literal>
+      </para>
+    </blockquote>
+    <para>Complete installation instructions can be found in the each package. As indicated above, the <literal>os-UBL-2.0/</literal>, <literal>os-UBL-2.1/</literal>, <literal>os-UBL-2.3/</literal>, and <literal>os-UBL-2.3/</literal> directories thus created need to be siblings directories to the directory created by installing
+      the UBL &version; package.</para>
   </appendix>
-  <appendix id="A-UBL-2.3-CODE-LISTS-AND-TWO-PHASE-VALIDATION" role="non-normative">
-    <title>UBL 2.3 Code Lists and Two-phase Validation</title>
+  <appendix id="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION" role="non-normative">
+    <title>UBL &version; Code Lists and Two-phase Validation</title>
     <section id="S-CODE-LISTS-INTRODUCTION">
       <title>Code Lists Introduction</title>
       <para>Code lists&#8212;the sets of codes such as &#8220;FR&#8221; and &#8220;USD&#8221; that are used to specify countries, currencies, and so on&#8212;play an important role in UBL, just as they do in all electronic business messaging schemes. By default, UBL uses several lists of standard
@@ -6352,8 +6362,8 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         schemas also made it difficult to modify the code lists to suit individual trading partner relationships and impossible to extend the list of allowable code list values while still using the standard UBL schemas as published by OASIS.</para>
       <para>To give users maximum flexibility in configuring and updating UBL code lists without changing the standard UBL schemas, UBL 2.0 introduced a two-phase validation model that has now been fully implemented in UBL 2.1 and beyond. In the first phase, the UBL instance is checked for structure
         and vocabulary against a standard UBL schema using a generic schema validator (or custom-built software performing the same function). This is exactly the same procedure used for validation in UBL 1.0, except that the schemas do not contain hardwired code list values. Then in an added second
-        validation (or verification) phase, code list values in the instance are checked against values obtained from external code list configuration files using an XSLT 1.0 processor driven by an XSLT 1.0 stylesheet. The default code list values assumed by the UBL 2.3 specification are expressed
-        as data type qualifications in a file named <literal>UBL-2.3-DefaultDTQ.xsl</literal> located in the <literal>val</literal> directory, as described in more detail below. Publicly available tools were used to create the XSL file using the methodology described in the &#8220;Validation&#8221;
+        validation (or verification) phase, code list values in the instance are checked against values obtained from external code list configuration files using an XSLT 1.0 processor driven by an XSLT 1.0 stylesheet. The default code list values assumed by the UBL &version; specification are expressed
+        as data type qualifications in a file named <literal>UBL-&version;-DefaultDTQ.xsl</literal> located in the <literal>val</literal> directory, as described in more detail below. Publicly available tools were used to create the XSL file using the methodology described in the &#8220;Validation&#8221;
         section of <xref linkend="custguide"/>, the <citetitle>UBL Guidelines for Customization</citetitle>.</para>
       <para>Separating the checking of structure and vocabulary from the checking of code values allows trading partners to easily and precisely specify code list subsets and extensions and to apply them not just to individual UBL document types but also to particular elements and sub-trees within
         UBL document instances. Another way to say this is that the UBL code list methodology allows different versions of the same code list to be used in different document contexts. Thus, for example, a business in Canada might agree with a business in the United States to use a set of code list
@@ -6514,7 +6524,7 @@ No code list validation errors.</programlisting>
       <para>In each test’s first phase, a standard W3C Schema (XSD) validator, Xerxes, is invoked from <literal><ulink url="val/w3cschema.bat">val/w3cschema.bat</ulink></literal> (or <literal><ulink url="val/w3cschema.sh">val/w3cschema.sh</ulink></literal>) to validate the specified UBL document
           (<literal>.xml</literal>) against the specified UBL runtime schema (<literal>.xsd</literal>). Since the input is a valid UBL Order, the output of the first phase simply indicates that the file is valid against the given Order schema.</para>
       <para>The second phase of each test uses a standard XSLT 1.0 engine, Saxon, to verify that the values of various codes used in the UBL document to be tested (currency codes, packaging types, etc.) are valid in terms of the default UBL code list values specified in <literal>
-          <ulink url="val/UBL-DefaultDTQ-2.3.xsl">val/UBL-DefaultDTQ-2.3.xsl</ulink>
+          <ulink url="val/UBL-DefaultDTQ-&version;.xsl">val/UBL-DefaultDTQ-&version;.xsl</ulink>
         </literal>. Here the output line &#8220;No code list validation errors&#8221; from the <literal>validate</literal> script indicates that the Saxon run (invoked from <literal>
           <ulink url="val/xslt.bat">val/xslt.bat</ulink>
         </literal> or <literal>
@@ -6527,12 +6537,12 @@ No code list validation errors.</programlisting>
         to a non-zero status code from <literal>w3cschema.bat</literal> (or <literal>w3cschema.sh</literal>) by terminating the validation process.</para>
       <para>In the third test of the set, the input document <literal>order-test-bad-code.xml</literal> is syntactically well-formed according to XML, and structurally valid according to the Order schema, but it contains a misspelled code list value (the <phrase lang="none">ChannelCode</phrase>
         &#8220;AL&#8221; for cell phone has been mistyped as &#8220;LA&#8221;). Thus it passes the first phase when tested against the schema but fails the second phase when tested against <literal>
-          <ulink url="val/UBL-DefaultDTQ-2.3.xsl">val/UBL-DefaultDTQ-2.3.xsl</ulink>
+          <ulink url="val/UBL-DefaultDTQ-&version;.xsl">val/UBL-DefaultDTQ-&version;.xsl</ulink>
         </literal>.</para>
       <para>To summarize, input documents are checked in the first validation phase for correctness of syntax, structure, and vocabulary, using the constraints expressed in the appropriate UBL schema. Then they are checked in the second phase for correctness of default code list values, using the
-        default constraints expressed in the XSLT file <literal>UBL-DefaultDTQ-2.3.xsl</literal>. This process is illustrated in the following diagram.</para>
-      <figure id="F-TWO-PHASE-DEFAULT-UBL-2.3-VALIDATION">
-        <title>Two-phase Default UBL 2.3 Validation</title>
+        default constraints expressed in the XSLT file <literal>UBL-DefaultDTQ-&version;.xsl</literal>. This process is illustrated in the following diagram.</para>
+      <figure id="F-TWO-PHASE-DEFAULT-UBL-&version;-VALIDATION">
+        <title>Two-phase Default UBL &version; Validation</title>
         <mediaobject>
           <imageobject>
             <imagedata fileref="art/UBL-2.2-DefaultValidation.png"/>
@@ -6548,17 +6558,17 @@ No code list validation errors.</programlisting>
     <section id="S-CUSTOMIZING-THE-DEFAULT-XSLT-FILE">
       <title>Customizing the Default XSLT File</title>
       <para>The validation framework provided in the <literal>val</literal> directory can be used to implement code list changes, define variant code lists to fit specific trading partner agreements, or associate different versions of the same code list with different parts of the same UBL document
-        by substituting a custom process (be it XSLT or some other language or process) for the default <literal>UBL-DefaultDTQ-2.3.xsl</literal> provided in the UBL 2.3 distribution. This allows extensive code list management without the need to change the standard UBL 2.3 schemas. </para>
-      <para>The top-level Schematron <xref linkend="schematron"/> fragment <literal><ulink url="cva/UBL-DefaultDTQ-2.3.sch">cva/UBL-DefaultDTQ-2.3.sch</ulink></literal> defining the constraints to be expressed in XSLT pulls in two fragments tailored for UBL 2.3: </para>
+        by substituting a custom process (be it XSLT or some other language or process) for the default <literal>UBL-DefaultDTQ-&version;.xsl</literal> provided in the UBL &version; distribution. This allows extensive code list management without the need to change the standard UBL &version; schemas. </para>
+      <para>The top-level Schematron <xref linkend="schematron"/> fragment <literal><ulink url="cva/UBL-DefaultDTQ-&version;.sch">cva/UBL-DefaultDTQ-&version;.sch</ulink></literal> defining the constraints to be expressed in XSLT pulls in two fragments tailored for UBL &version;: </para>
       <itemizedlist>
         <listitem>
-          <para><literal><ulink url="cva/UBL-DefaultDTQ-2.3.pattern.sch">cva/UBL-DefaultDTQ-2.3.pattern.sch</ulink></literal> with the code list constraints from <literal><ulink url="cva/UBL-DefaultDTQ-2.3.cva">cva/UBL-DefaultDTQ-2.3.cva</ulink></literal> , and </para>
+          <para><literal><ulink url="cva/UBL-DefaultDTQ-&version;.pattern.sch">cva/UBL-DefaultDTQ-&version;.pattern.sch</ulink></literal> with the code list constraints from <literal><ulink url="cva/UBL-DefaultDTQ-&version;.cva">cva/UBL-DefaultDTQ-&version;.cva</ulink></literal> , and </para>
         </listitem>
         <listitem>
-          <para><literal><ulink url="cva/UBL-DocumentConstraints-2.3.pattern.sch">cva/UBL-DocumentConstraints-2.3.pattern.sch</ulink></literal> with the subset of <xref linkend="S-ADDITIONAL-DOCUMENT-CONSTRAINTS"/> that can be tested using the technology.</para>
+          <para><literal><ulink url="cva/UBL-DocumentConstraints-&version;.pattern.sch">cva/UBL-DocumentConstraints-&version;.pattern.sch</ulink></literal> with the subset of <xref linkend="S-ADDITIONAL-DOCUMENT-CONSTRAINTS"/> that can be tested using the technology.</para>
         </listitem>
       </itemizedlist>
-      <para>Schematron-based techniques for generating a custom XSLT file to take the place of <literal>UBL-DefaultDTQ-2.3.xsl</literal> are explained in <xref linkend="cva"/> and <xref linkend="custguide"/>. See also <xref linkend="A-DATA-TYPE-QUALIFICATIONS-IN-UBL"/> for more about UBL data type
+      <para>Schematron-based techniques for generating a custom XSLT file to take the place of <literal>UBL-DefaultDTQ-&version;.xsl</literal> are explained in <xref linkend="cva"/> and <xref linkend="custguide"/>. See also <xref linkend="A-DATA-TYPE-QUALIFICATIONS-IN-UBL"/> for more about UBL data type
         qualifications.</para>
       <para>Since XSLT is a very powerful general-purpose XML transformation tool, the same framework can be extended to perform fairly sophisticated business rule checking by manually coding additional logic into the XSLT file that drives the second validation phase. Such modification is beyond the
         scope of the customization methodologies associated specifically with UBL, but a business analyst willing to perform XSLT programming can use this mechanism to offload a large proportion of input filtering from the back-end business application to a simpler input processing area. Additional
@@ -6593,7 +6603,7 @@ No code list validation errors.</programlisting>
           </blockquote>
         </listitem>
         <listitem>
-          <para>The file <literal><ulink url="val/UBL-DefaultDTQ-2.3.xsl">val/UBL-DefaultDTQ-2.3.xsl</ulink></literal> was created from the file <literal><ulink url="cva/UBL-DefaultDTQ-2.3.sch">cva/UBL-DefaultDTQ-2.3.sch</ulink></literal> using the Schematron <xref linkend="schematron"/>
+          <para>The file <literal><ulink url="val/UBL-DefaultDTQ-&version;.xsl">val/UBL-DefaultDTQ-&version;.xsl</ulink></literal> was created from the file <literal><ulink url="cva/UBL-DefaultDTQ-&version;.sch">cva/UBL-DefaultDTQ-&version;.sch</ulink></literal> using the Schematron <xref linkend="schematron"/>
             implementation of CVA files for validation at</para>
           <blockquote>
             <para>
@@ -6605,26 +6615,26 @@ No code list validation errors.</programlisting>
         </listitem>
       </itemizedlist>
     </section>
-    <section id="S-CODE-LISTS-INCLUDED-IN-UBL-2.3">
-      <title>Code Lists Included in UBL 2.3</title>
+    <section id="S-CODE-LISTS-INCLUDED-IN-UBL-&version;">
+      <title>Code Lists Included in UBL &version;</title>
       <section id="S-CODE-LIST-FORMAT">
         <title>Code List Format</title>
-        <para>The code lists included in the UBL 2.3 distribution use an OASIS Standard XML format for code lists called <xref linkend="gc"/>. Each code list in the distribution is expressed as a genericode file. The code lists of UBL 2.0, UBL 2.1, UBL 2.2, and UBL 2.3 are incorporated into the
+        <para>The code lists included in the UBL &version; distribution use an OASIS Standard XML format for code lists called <xref linkend="gc"/>. Each code list in the distribution is expressed as a genericode file. The code lists of UBL 2.0, UBL 2.1, UBL 2.2, UBL 2.3, and UBL &version; are incorporated into the
           default validation framework. Documentation on the UBL code lists is contained in a generated report file:</para>
         <blockquote>
           <para>
             <literal>
-              <ulink url="cva/UBL-DefaultDTQ-2.3.html">cva/UBL-DefaultDTQ-2.3.html</ulink>
+              <ulink url="cva/UBL-DefaultDTQ-&version;.html">cva/UBL-DefaultDTQ-&version;.html</ulink>
             </literal>
           </para>
         </blockquote>
-        <para>The code list files in UBL 2.3 are divided into two subdirectories, <literal>cl/gc/default</literal> and <literal>cl/gc/special-purpose</literal>.</para>
+        <para>The code list files in UBL &version; are divided into two subdirectories, <literal>cl/gc/default</literal> and <literal>cl/gc/special-purpose</literal>.</para>
       </section>
       <section id="S-CL-GC-DEFAULT">
         <title>
           <literal>cl/gc/default</literal>
         </title>
-        <para>The code lists in the <literal>cl/gc/default</literal> directory contain the default code values represented in <literal>UBL-DefaultDTQ-2.3.xsl</literal>. A second-phase code list check using an unmodified version of the test setup from this distribution as described above will verify
+        <para>The code lists in the <literal>cl/gc/default</literal> directory contain the default code values represented in <literal>UBL-DefaultDTQ-&version;.xsl</literal>. A second-phase code list check using an unmodified version of the test setup from this distribution as described above will verify
           all occurrences of code values from these lists against the values specified in the <literal>cl/gc/default</literal> directory. These are the code lists expected to be used in most application contexts, but there is no obligation to use them. The genericode files with corresponding
           “including deprecated” or “including deleted” files have been culled of deprecated or deleted values in order to be used in typical contexts. The files with entries no longer used are included for completeness.</para>
         <!--reviewtext: codelists-->
@@ -6632,72 +6642,72 @@ No code list validation errors.</programlisting>
           <simplelist role="codelists">
             <member>
               <literal>
-                <ulink url="cl/gc/default/AllowanceChargeReasonCode-2.3.gc">cl/gc/default/AllowanceChargeReasonCode-2.3.gc</ulink>
+                <ulink url="cl/gc/default/AllowanceChargeReasonCode-&version;.gc">cl/gc/default/AllowanceChargeReasonCode-&version;.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/BinaryObjectMimeCode-2.3.gc">cl/gc/default/BinaryObjectMimeCode-2.3.gc</ulink>
+                <ulink url="cl/gc/default/BinaryObjectMimeCode-&version;.gc">cl/gc/default/BinaryObjectMimeCode-&version;.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/BinaryObjectMimeCode-2.3-incl-deprecated.gc">cl/gc/default/BinaryObjectMimeCode-2.3-incl-deprecated.gc</ulink>
+                <ulink url="cl/gc/default/BinaryObjectMimeCode-&version;-incl-deprecated.gc">cl/gc/default/BinaryObjectMimeCode-&version;-incl-deprecated.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/ChannelCode-2.3.gc">cl/gc/default/ChannelCode-2.3.gc</ulink>
+                <ulink url="cl/gc/default/ChannelCode-&version;.gc">cl/gc/default/ChannelCode-&version;.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/CountryIdentificationCode-2.3.gc">cl/gc/default/CountryIdentificationCode-2.3.gc</ulink>
+                <ulink url="cl/gc/default/CountryIdentificationCode-&version;.gc">cl/gc/default/CountryIdentificationCode-&version;.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/CurrencyCode-2.3.gc">cl/gc/default/CurrencyCode-2.3.gc</ulink>
+                <ulink url="cl/gc/default/CurrencyCode-&version;.gc">cl/gc/default/CurrencyCode-&version;.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/LanguageCode-2.3.gc">cl/gc/default/LanguageCode-2.3.gc</ulink>
+                <ulink url="cl/gc/default/LanguageCode-&version;.gc">cl/gc/default/LanguageCode-&version;.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/PackagingTypeCode-2.3.gc">cl/gc/default/PackagingTypeCode-2.3.gc</ulink>
+                <ulink url="cl/gc/default/PackagingTypeCode-&version;.gc">cl/gc/default/PackagingTypeCode-&version;.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/PackagingTypeCode-2.3-incl-deleted.gc">cl/gc/default/PackagingTypeCode-2.3-incl-deleted.gc</ulink>
+                <ulink url="cl/gc/default/PackagingTypeCode-&version;-incl-deleted.gc">cl/gc/default/PackagingTypeCode-&version;-incl-deleted.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/PaymentMeansCode-2.3.gc">cl/gc/default/PaymentMeansCode-2.3.gc</ulink>
+                <ulink url="cl/gc/default/PaymentMeansCode-&version;.gc">cl/gc/default/PaymentMeansCode-&version;.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/TransportEquipmentTypeCode-2.3.gc">cl/gc/default/TransportEquipmentTypeCode-2.3.gc</ulink>
+                <ulink url="cl/gc/default/TransportEquipmentTypeCode-&version;.gc">cl/gc/default/TransportEquipmentTypeCode-&version;.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/TransportModeCode-2.3.gc">cl/gc/default/TransportModeCode-2.3.gc</ulink>
+                <ulink url="cl/gc/default/TransportModeCode-&version;.gc">cl/gc/default/TransportModeCode-&version;.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/UnitOfMeasureCode-2.3.gc">cl/gc/default/UnitOfMeasureCode-2.3.gc</ulink>
+                <ulink url="cl/gc/default/UnitOfMeasureCode-&version;.gc">cl/gc/default/UnitOfMeasureCode-&version;.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/UnitOfMeasureCode-2.3-incl-deleted.gc">cl/gc/default/UnitOfMeasureCode-2.3-incl-deleted.gc</ulink>
+                <ulink url="cl/gc/default/UnitOfMeasureCode-&version;-incl-deleted.gc">cl/gc/default/UnitOfMeasureCode-&version;-incl-deleted.gc</ulink>
               </literal>
             </member>
           </simplelist>
@@ -6705,11 +6715,11 @@ No code list validation errors.</programlisting>
       </section>
     </section>
   </appendix>
-  <appendix id="A-UBL-2.3-EXAMPLE-DOCUMENT-INSTANCES" role="non-normative">
-    <title>UBL 2.3 Example Document Instances</title>
+  <appendix id="A-UBL-&version;-EXAMPLE-DOCUMENT-INSTANCES" role="non-normative">
+    <title>UBL &version; Example Document Instances</title>
     <para>The <literal>xml</literal> directory of this distribution contains a number of sample UBL documents that can be used for testing purposes. The <literal>testsamples.bat</literal> batch file and the <literal>testsamples.sh</literal> script in the <literal>val</literal> directory of this
-      distribution can be used to demonstrate the validity of these examples in Windows and Linux operating environments. See <xref linkend="A-UBL-2.3-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/> for a general discussion of UBL validation methodology. For convenience, those examples that relate
-      specifically to a particular document type are linked from the description of that type in <xref linkend="S-UBL-2.3-DOCUMENT-SCHEMAS"/>.</para>
+      distribution can be used to demonstrate the validity of these examples in Windows and Linux operating environments. See <xref linkend="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/> for a general discussion of UBL validation methodology. For convenience, those examples that relate
+      specifically to a particular document type are linked from the description of that type in <xref linkend="S-UBL-&version;-DOCUMENT-SCHEMAS"/>.</para>
     <blockquote role="examples">
       <para>
         <emphasis role="bold">Example instances containing extensions</emphasis>
@@ -6783,14 +6793,14 @@ No code list validation errors.</programlisting>
       &summary-examples;
     </blockquote>
   </appendix>
-  <appendix id="A-ALTERNATIVE-REPRESENTATIONS-OF-THE-UBL-2.3-SCHEMAS" role="non-normative">
-    <title>Alternative Representations of the UBL 2.3 Schemas</title>
-    <para>UBL 2.3 continues the practice, adopted at the beginning of the UBL effort, of creating its normative XML specifications using W3C Schema (XSD) syntax. Alternative representations of the same content are technically non-normative, but can be generated directly from the XSD and, with the
-      exception of the UBL 2.3 digital signature extension (see <xref linkend="S-UBL-EXTENSION-FOR-ENVELOPED-XML-DIGITAL-SIGNATURES"/>), are intended to implement the same document instance constraints. The ASN.1 schemas of prior releases of the UBL models are an example of the result of such an XSD
+  <appendix id="A-ALTERNATIVE-REPRESENTATIONS-OF-THE-UBL-&version;-SCHEMAS" role="non-normative">
+    <title>Alternative Representations of the UBL &version; Schemas</title>
+    <para>UBL &version; continues the practice, adopted at the beginning of the UBL effort, of creating its normative XML specifications using W3C Schema (XSD) syntax. Alternative representations of the same content are technically non-normative, but can be generated directly from the XSD and, with the
+      exception of the UBL &version; digital signature extension (see <xref linkend="S-UBL-EXTENSION-FOR-ENVELOPED-XML-DIGITAL-SIGNATURES"/>), are intended to implement the same document instance constraints. The ASN.1 schemas of prior releases of the UBL models are an example of the result of such an XSD
       schema transformation.</para>
     <para>Regarding creating RELAX-NG <xref linkend="relaxng"/> expressions of the UBL document models, the free Trang tool found at <ulink url="https://github.com/relaxng/jing-trang"/> is suitable for converting the UBL W3C Schema expressions into such expressions.</para>
     <para>It is also possible to create an alternative representation directly from the CCTS model of UBL. The JSON schemas of prior releases of the UBL models are an example of the result of such a CCTS transformation.</para>
-    <para>Please see the <ulink url="https://docs.oasis-open.org/ubl">https://docs.oasis-open.org/ubl</ulink> web site for available or anticipated alternative representations of UBL 2.3 models in ASN.1, JSON, and possibly other technologies.</para>
+    <para>Please see the <ulink url="https://docs.oasis-open.org/ubl">https://docs.oasis-open.org/ubl</ulink> web site for available or anticipated alternative representations of UBL &version; models in ASN.1, JSON, and possibly other technologies.</para>
   </appendix>
   <appendix id="A-THE-OPEN-EDI-REFERENCE-MODEL-PERSPECTIVE-OF-UBL" role="non-normative">
     <title>The Open-edi reference model perspective of UBL</title>
@@ -6837,10 +6847,10 @@ No code list validation errors.</programlisting>
       </mediaobject>
     </figure>
     <para>
-      <xref linkend="S-UBL-2.3-BUSINESS-OBJECTS"/> provides the configuration&#8217;s BOV with a suite of normative business objects and associated semantics from which the community selects the semantic components needed in an information bundle. An information bundle describes the semantics of the
+      <xref linkend="S-UBL-&version;-BUSINESS-OBJECTS"/> provides the configuration&#8217;s BOV with a suite of normative business objects and associated semantics from which the community selects the semantic components needed in an information bundle. An information bundle describes the semantics of the
       recorded information to be exchanged between Open-edi Support Infrastructures servicing Decision Making Applications. The community&#8217;s configuration combines these information bundles with their identified scenarios and roles. </para>
     <para>
-      <xref linkend="S-UBL-2.3-SCHEMAS"/> and <xref linkend="S-ADDITIONAL-DOCUMENT-CONSTRAINTS"/> provides the configuration&#8217;s FSV with a set of corresponding normative XML schemas and document instance rules constraining the expression of the business objects in user data. One translates the
+      <xref linkend="S-UBL-&version;-SCHEMAS"/> and <xref linkend="S-ADDITIONAL-DOCUMENT-CONSTRAINTS"/> provides the configuration&#8217;s FSV with a set of corresponding normative XML schemas and document instance rules constraining the expression of the business objects in user data. One translates the
       semantic component values into a transfer syntax from the information bundle specification as a set of recorded information. It is the UBL XML syntax for the sets of recorded information defined by the information bundles that is exchanged between Parties. </para>
     <para>
       <xref linkend="S-UBL-DIGITAL-SIGNATURES"/> provides the configuration&#8217;s FSV with a normative schema fragment suitable for including profiles of digital signatures in user data. </para>
@@ -6886,7 +6896,7 @@ No code list validation errors.</programlisting>
     <note>
       <para>This temporary appendix will be removed in the final version of the committee specification.</para>
     </note>
-    <para>During the review process of UBL 2.3, the distribution includes the parallel production of the specification PDF for publishing as ISO/IEC 19845 using the page layout prescribed by “ISO/IEC Directives, Part 2”.</para>
+    <para>During the review process of UBL &version;, the distribution includes the parallel production of the specification PDF for publishing as ISO/IEC 19845 using the page layout prescribed by “ISO/IEC Directives, Part 2”.</para>
     <para>This rendering is found at <literal>
         <ulink url="iso-iec-19845-draft.pdf">iso-iec-19845-draft.pdf</ulink>
       </literal>. This rendering is not included in the final distribution but its content is submitted directly to ITTF for publishing.</para>
@@ -6953,7 +6963,7 @@ No code list validation errors.</programlisting>
             <entry>csprd01</entry>
             <entry>07 August 2019</entry>
             <entry>GKH</entry>
-            <entry>Initial version of UBL 2.3 for review</entry>
+            <entry>Initial version of UBL &version; for review</entry>
           </row>
         </tbody>
       </tgroup>

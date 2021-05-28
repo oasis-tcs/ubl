@@ -1130,13 +1130,13 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <!--copy all entity replacements generated from the artefacts, preserving
       the date and time stamp so that the file can be checked for changes-->
   <copy preservelastmodified="true" todir="${dir}" failonerror="false"
-file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevVersion}-documents-ent.xml"/>
+file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/old2newDocBook-UBL-${UBLversion}-${UBLstage}-UBL-${UBLprevVersion}-documents-ent.xml"/>
   <copy preservelastmodified="true" todir="${dir}" failonerror="false"
-file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevVersion}-library-ent.xml"/>
+file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/old2newDocBook-UBL-${UBLversion}-${UBLstage}-UBL-${UBLprevVersion}-library-ent.xml"/>
   <copy preservelastmodified="true" todir="${dir}" failonerror="false"
-file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/old2newDocBook-${package}-${UBLstage}-${package}-${UBLprevStage}-documents-ent.xml"/>
+file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/old2newDocBook-UBL-${UBLversion}-${UBLstage}-UBL-${UBLprevStageVersion}-${UBLprevStage}-documents-ent.xml"/>
   <copy preservelastmodified="true" todir="${dir}" failonerror="false"
-file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/old2newDocBook-${package}-${UBLstage}-${package}-${UBLprevStage}-library-ent.xml"/>
+file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/old2newDocBook-UBL-${UBLversion}-${UBLstage}-UBL-${UBLprevStageVersion}-${UBLprevStage}-library-ent.xml"/>
   <!--remove any vestiges of a previous run indicating missing results-->
   <delete  file="${dir}/missing---UBL-${UBLversion}-html---missing.txt"/>
   <delete  file="${dir}/missing---UBL-${UBLversion}-pdf---missing.txt"/>
@@ -1144,16 +1144,16 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
 
   <copy tofile="${dir}/old2newDoc-from-previous-version-documents-ent.xml"
         preservelastmodified="true" failonerror="false"
-        file="${dir}/old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevVersion}-documents-ent.xml"/>
+        file="${dir}/old2newDocBook-UBL-${UBLversion}-${UBLstage}-UBL-${UBLprevVersion}-documents-ent.xml"/>
   <copy tofile="${dir}/old2newDoc-from-previous-version-library-ent.xml"
         preservelastmodified="true" failonerror="false"
-        file="${dir}/old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevVersion}-library-ent.xml"/>
+        file="${dir}/old2newDocBook-UBL-${UBLversion}-${UBLstage}-UBL-${UBLprevVersion}-library-ent.xml"/>
   <copy tofile="${dir}/old2newDoc-from-previous-stage-documents-ent.xml"
         preservelastmodified="true" failonerror="false"
-        file="${dir}/old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevStageVersion}-${UBLprevStage}-documents-ent.xml"/>
+        file="${dir}/old2newDocBook-UBL-${UBLversion}-${UBLstage}-UBL-${UBLprevStageVersion}-${UBLprevStage}-documents-ent.xml"/>
   <copy tofile="${dir}/old2newDoc-from-previous-stage-library-ent.xml"
         preservelastmodified="true" failonerror="false"
-        file="${dir}/old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevStageVersion}-${UBLprevStage}-library-ent.xml"/>
+        file="${dir}/old2newDocBook-UBL-${UBLversion}-${UBLstage}-UBL-${UBLprevStageVersion}-${UBLprevStage}-library-ent.xml"/>
 
   <!--comment out the following check in order to force publishing-->
   <!--<antcallback target="-check-xml" return="docs-UBL-xml-okay"/>-->
@@ -1222,12 +1222,12 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
       <include name="hub2processSummary.xsl"/>
     </srcfiles>
     <srcfiles dir="${dir}">
-      <include name="old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevVersion}-documents-ent.xml"/>
-      <include name="old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevVersion}-library-ent.xml"/>
+      <include name="old2newDocBook-UBL-${UBLversion}-${UBLstage}-UBL-${UBLprevVersion}-documents-ent.xml"/>
+      <include name="old2newDocBook-UBL-${UBLversion}-${UBLstage}-UBL-${UBLprevVersion}-library-ent.xml"/>
       <include
-         name="old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevStageVersion}-${UBLprevStage}-documents-ent.xml"/>
+         name="old2newDocBook-UBL-${UBLprevStageVersion}-${UBLstage}-UBL-${UBLprevStageVersion}-${UBLprevStage}-documents-ent.xml"/>
       <include
-         name="old2newDocBook-${package}-${UBLstage}-UBL-${UBLprevStageVersion}-${UBLprevStage}-library-ent.xml"/>
+         name="old2newDocBook-UBL-${UBLprevStageVersion}-${UBLstage}-UBL-${UBLprevStageVersion}-${UBLprevStage}-library-ent.xml"/>
     </srcfiles>
   </uptodate>  
 </target>
