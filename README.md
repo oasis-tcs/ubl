@@ -318,6 +318,7 @@ Subdirectories:
   - [`raw/json-schema`]( raw/json-schema ) - hand-authored JSON Schema fragments
   - [`raw/mod`]( raw/mod ) - hand-authored model documentation fragments
   - [`raw/val`]( raw/val ) - demonstration validation environment and validation of the XML samples
+    - note there are 10 invocations of test files, all hardwired with the current version of UBL to point to the current set of schemas; these references need to be updated when changing to a new version of UBL
   - [`raw/xml`]( raw/xml ) - sample XML instances
   - [`raw/xsd`]( raw/xsd ) - hand-authored XML Schema fragments
 - [`utilities`]( utilities ) - tools used to generate outputs

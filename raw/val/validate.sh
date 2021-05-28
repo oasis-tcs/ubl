@@ -6,6 +6,7 @@ echo Usage: sh validate.sh ubl-schema-file ubl-xml-file
 exit 1
 fi
 
+UBLversion=2.4
 DP0=$( cd "$(dirname "$0")" ; pwd -P )
 echo
 echo "############################################################"
@@ -19,7 +20,7 @@ then echo No schema validation errors.
 else cat output.txt; exit $errorRet
 fi
 echo ============ Phase 2: XSLT code list validation ============
-sh "$DP0/xslt.sh" "$2" "$DP0/UBL-DefaultDTQ-2.3.xsl" /dev/null 2>output.txt
+sh "$DP0/xslt.sh" "$2" "$DP0/UBL-DefaultDTQ-$UBLversion.xsl" /dev/null 2>output.txt
 errorRet=$?
 if [ $errorRet -eq 0 ]
 then echo No code list validation errors.
