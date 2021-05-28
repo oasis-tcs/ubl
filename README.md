@@ -172,6 +172,9 @@ Before the process runs, the spreadsheets on Google should reflect the new stage
 - UBL 2.3 Document Elements Spreadsheet - CS01 master
 
 The genericode file of the UBL vocabulary of the previously-published stage must replace that of the previous previously-published stage.
+- e.g. for UBL 2.3 the `UBL-Entities-2.2.gc` and `UBL-Signature-Entities-2.2.gc` files from the UBL 2.2 release must exist in the directory
+
+The genericode file of the UBL vocabulary of the previously-published stage must replace that of the previous previously-published stage.
 - e.g. if the stage previous to `csd05` was `cs01`, then for `cs02` replace `UBL-Entities-2.3-cs01.gc` with `UBL-Entities-2.3-csd05.gc` (the renamed `UBL-Entities-2.3.gc` file from the `csd05` release)
 - do the same for the `UBL-Signature-Entities-*.gc` files
 
