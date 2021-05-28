@@ -236,8 +236,10 @@ Each revision is described by the following configuration files for the artefact
   - [`massageModelName.xml`]( massageModelName.xml )
 - CVA master file for code list second-pass validation
   - [`UBL-CVA-Skeleton.cva`]( UBL-CVA-Skeleton.cva )
+- Schematron pattern for UBL's document constraints
+  - `UBL-DocumentConstraints-{UBLversion}.sch`
 - shell wrapper for generated CVA Schematron pattern
-  - [`UBL-DefaultDTQ-shell.sch`]( UBL-DefaultDTQ-shell.sch )
+  - `UBL-DefaultDTQ-{UBLversion}.sch`
 - spell-check word list (each line is a word not in the dictionary that is allowed to be in UBL, including misspellings from previous versions of UBL that cannot be repaired due to backward compatibility)
   - [`spellcheck-UBL.txt`]( spellcheck-UBL.txt )
 - documentary ODS template skeleton for generating spreadsheet results

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-         id="UBL-DocumentConstraints-2.3"><!--
-UBL 2.3 Additional Document Constraints
+         id="UBL-DocumentConstraints-2.4"><!--
+UBL 2.4 Additional Document Constraints
   
-20200708-2250(UTC)
+20210528-0250(UTC)
 
-A set of Schematron rules against which UBL 2.3 document constraints are
+A set of Schematron rules against which UBL 2.4 document constraints are
 tested where in the scope of a second pass validation after schema validation
 has been performed.
 
@@ -15,7 +15,7 @@ Required namespace declarations as indicated in this set of rules:
 <ns prefix="cbc" uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/>
 
 The following is a summary of the additional document constraints enumerated
-in UBL 2.3:
+in UBL 2.4:
 
 [IND1] All UBL instance documents SHALL validate to a corresponding schema.
 
