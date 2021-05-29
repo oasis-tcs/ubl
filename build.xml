@@ -155,13 +155,19 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <delete file="${dir}/UBL-Signature-Entities-${UBLversion}.gc"/>
     <delete file="${dir}/UBL-Entities-${UBLversion}.gc"/>
     
-    <echo file="${dir}/wget-signature-time.txt" message="${wgettime}"/>
-    <echo file="${dir}/wget-signature-uri.txt" message="${signatureGoogle}"/>
-    <exec executable="wget">
-      <arg value="--no-check-certificate"/>
-      <arg value="-O"/><arg value="${dir}/UBL-Signature-Google.ods"/>
-      <arg value="${signatureGoogle}/export?format=ods"/>
-    </exec>
+    <available property="google-sig-file-exists"
+               file="${dir}/UBL-Signature-Google.ods"/>
+    <echo if:set="google-sig-file-exists"
+ message="Using local copy of signature Google spreadsheet; no online access"/>
+    <sequential unless:set="google-sig-file-exists">
+      <echo file="${dir}/wget-signature-time.txt" message="${wgettime}"/>
+      <echo file="${dir}/wget-signature-uri.txt" message="${signatureGoogle}"/>
+      <exec executable="wget">
+        <arg value="--no-check-certificate"/>
+        <arg value="-O"/><arg value="${dir}/UBL-Signature-Google.ods"/>
+        <arg value="${signatureGoogle}/export?format=ods"/>
+      </exec>
+    </sequential>
     <uptodate targetfile="${dir}/UBL-Signature-Entities-${UBLversion}.gc"
               property=  "gc-sig-files-okay">
       <srcfiles dir="${dir}">
@@ -202,19 +208,36 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <touch if:set="gcSigErrors"
            file="${dir}/VALID-SIGNATURE-GC-FILE-NOT-GENERATED.txt"/>
   
-    <echo file="${dir}/wget-model-time.txt" message="${wgettime}"/>
-    <echo file="${dir}/wget-model-library-uri.txt" message="${libraryGoogle}"/>
-    <echo file="${dir}/wget-model-documents-uri.txt" message="${documentsGoogle}"/>
-    <exec executable="wget">
-      <arg value="--no-check-certificate"/>
-      <arg value="-O"/><arg value="${dir}/UBL-Library-Google.ods"/>
-      <arg value="${libraryGoogle}/export?format=ods"/>
-    </exec>
-    <exec executable="wget">
-      <arg value="--no-check-certificate"/>
-      <arg value="-O"/><arg value="${dir}/UBL-Documents-Google.ods"/>
-      <arg value="${documentsGoogle}/export?format=ods"/>
-    </exec>
+    <available property="google-library-file-exists"
+               file="${dir}/UBL-Library-Google.ods"/>
+    <echo if:set="google-library-file-exists"
+   message="Using local copy of library Google spreadsheet; no online access"/>
+    <sequential unless:set="google-library-file-exists">
+      <echo file="${dir}/wget-model-time.txt" message="${wgettime}"/>
+      <echo file="${dir}/wget-model-library-uri.txt"
+            message="${libraryGoogle}"/>
+      <exec executable="wget">
+        <arg value="--no-check-certificate"/>
+        <arg value="-O"/><arg value="${dir}/UBL-Library-Google.ods"/>
+        <arg value="${libraryGoogle}/export?format=ods"/>
+      </exec>
+    </sequential>
+    
+    <available property="google-documents-file-exists"
+               file="${dir}/UBL-Documents-Google.ods"/>
+    <echo if:set="google-documents-file-exists"
+ message="Using local copy of documents Google spreadsheet; no online access"/>
+    <sequential unless:set="google-library-file-exists">
+      <echo file="${dir}/wget-model-time.txt" message="${wgettime}"/>
+      <echo file="${dir}/wget-model-documents-uri.txt"
+            message="${documentsGoogle}"/>
+      <exec executable="wget">
+        <arg value="--no-check-certificate"/>
+        <arg value="-O"/><arg value="${dir}/UBL-Documents-Google.ods"/>
+        <arg value="${documentsGoogle}/export?format=ods"/>
+      </exec>
+    </sequential>
+    
     <uptodate targetfile="${dir}/UBL-Entities-${UBLversion}.gc"
               property=  "gc-files-okay">
       <srcfiles dir="${dir}">

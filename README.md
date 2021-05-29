@@ -111,7 +111,7 @@ Pulling from the `review` branch must be done after every time the editor update
 When completed they commit their changes and push their changes to GitHub in their private branch.
 1. Every push to GitHub triggers a GitHub Action that forwards a copy of the XML to the https://www.RealtaOnline.com API entry point specific to the desired outputs.
 1. Réalta prepares the HTML and PDF outputs for the OASIS layout and the PDF output for the ISO Directives Part 2 layout.
-1. Réalta returns to GitHub the published results in a ZIP file. The Action’s script unzips the results and packages them in a doubly-zipped ZIP file. The outer ZIP is used to wrap the Action’s artifacts results. The inner two ZIP files wrap for posting to the OASIS Kavi server, respectively, the work product inputs and intermediate files for archive purposes, and the set of work product files to be posted by TC Administration to the OASIS Docs server. These Action results are transient and not placed into the GitHub code repository. Eventually GitHub deletes old Action results. The maintainer downloads the GitHub Action’s artifacts ZIP file for their review and, if desired, local backup. If they wish to make changes, they return to step 2 and repeat the process.
+1. Réalta returns to GitHub the published results in a ZIP file. The Action’s script unzips the results and packages them in a doubly-zipped ZIP file. The outer ZIP is used to wrap the Action’s artifacts results. The inner two ZIP files wrap for posting to the OASIS Kavi server, respectively, the work product inputs and intermediate files for archive purposes, and the set of work product files to be posted by TC Administration to the OASIS Docs server. These Action results are transient and not placed into the GitHub code repository. Eventually GitHub deletes old Action results, but participants are encouraged to delete the workflows and files as soon as possible. The maintainer downloads the GitHub Action’s artifacts ZIP file for their review and, if desired, local backup. If they wish to make changes, they return to step 2 and repeat the process.
 1. When the maintainer is satisfied with their work to be reviewed by the editor and other team members, they send a pull request to the editor describing their changes that they have committed to their `other` branch.
 1. The editor reviews the pull request and, if satisfied with the contribution, they pull the server’s copy of the `other` branch into their local environment and merge it into their local `UBL-{version}-{stage}` branch or directly into their local `review` branch.
 Typically the editor will continue to make any changes they wish in their local `UBL-{version}-{stage}` branch, pushing their intermediate work to review their progress.
@@ -363,7 +363,7 @@ Opening the XML in Mac OSX:
 - use Cmd-R to refresh the browser after editing the file
 - this does not work with Firefox or Chrome browsers
 
-## Producing results
+## Producing new results
 
 If you are working from the GitHub web interface, every time you commit a change you will trigger a `git push`. If you are working from the command line you can do multiple commits before you push them to the repository.
 
@@ -372,6 +372,21 @@ Every `git push` to the repository triggers the GitHub Action execution of the b
 The results that are to be made public are posted as-is to Kavi. Please do not make reference to the GitHub artefacts in committee mail list posts as those artefacts evaporate after 90 days.
 
 When needed, OASIS TC Administration posts the distribution package from Kavi to the https://docs.oasis-open.org/ubl OASIS web site.
+
+## Reproducing old results
+
+Every new result snapshots in the archive-only ZIP the Google spreadsheets at the time the results were created.
+
+If ever it is necessary to run the current publication process on an old snapshot from Google, this is accommodated by copying into the repository the three Google files from an archive-only ZIP:
+- `UBL-Signature-Google.ods`
+- `UBL-Library-Google.ods`
+- `UBL-Documents-Google.ods`
+
+A possible (but infrequent) scenario for this is when the production and packaging have changed after the spreadsheet has changed, but the new processes need to be run on the old semantic library.
+
+Another possible (but hopefully very infrequent) scenario for this is when it is necessary to recreate an old repository snapshot reproduction of the result after the online spreadsheets have changed. To re-run, check out the old branch to a new branch, add the ODS files from that branch's archive, and check in the new branch. The end results should be identical. 
+
+Remember to delete from the repository the Google ODS files in order to restart online access to the current Google spreadsheets.
 
 ## Results
 
