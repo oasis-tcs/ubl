@@ -9,7 +9,7 @@ mkdir     $targetdir/$package-$UBLstage-$label/intermediate-support-files/
 fi
 
 echo Building package...
-java -Dant.home=utilities/ant -classpath utilities/saxon/saxon.jar:utilities/ant/lib/ant-launcher.jar:utilities/saxon9he/saxon9he.jar:. org.apache.tools.ant.launch.Launcher -buildfile build.xml "-Dtitle=$title" "-Dpackage=$package" "-DUBLversion=$UBLversion" "-DUBLprevStageVersion=$UBLprevStageVersion" "-DUBLprevStage=$UBLprevStage" "-DUBLprevVersion=$UBLprevVersion" "-Drawdir=$rawdir" "-DlibraryGoogle=$libGoogle" "-DdocumentsGoogle=$docGoogle" "-DsignatureGoogle=$sigGoogle" "-Ddir=$targetdir" "-DUBLstage=$UBLstage" "-Dlabel=$label" "-DisDraft=$isDraft" "-Drealtauser=$4" "-Drealtapass=$5"
+java -Dant.home=utilities/ant -classpath utilities/saxon/saxon.jar:utilities/ant/lib/ant-launcher.jar:utilities/saxon9he/saxon9he.jar:. org.apache.tools.ant.launch.Launcher -buildfile build.xml "-Dtitle=$title" "-Dpackage=$package" "-DUBLversion=$UBLversion" "-DUBLprevStageVersion=$UBLprevStageVersion" "-DUBLprevStage=$UBLprevStage" "-DUBLprevVersion=$UBLprevVersion" "-Drawdir=$rawdir" "-DlibraryGoogle=$libGoogle" "-DdocumentsGoogle=$docGoogle" "-DsignatureGoogle=$sigGoogle" "-Ddir=$targetdir" "-DUBLstage=$UBLstage" "-Dlabel=$label" "-DisDraft=$isDraft" "-Drealtauser=$4" "-Drealtapass=$5" "-Dplatform=$platform"
 serverReturn=$?
 
 sleep 2
@@ -28,7 +28,7 @@ popd
 
 if [ "$targetdir" = "target" ]
 then
-if [ "$2" = "github" ]
+if [ "$platform" = "github" ]
 then
 if [ "$6" = "DELETE-REPOSITORY-FILES-AS-WELL" ] #secret undocumented failsafe
 then

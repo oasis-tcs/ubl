@@ -5,9 +5,14 @@
 <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
 
 <target name="make">
+  <tstamp>
+    <format property="localTime" pattern="yyyy-MM-dd HH:mm:ss"/>
+  </tstamp>
   <property name="thisdir" value="${user.dir}"/>
   <property name="consoleFile" location="${thisdir}/build.console.${label}.txt"/>
   <record name="${consoleFile}" action="start"/>
+  <echo message="build.xml - ${package} ${UBLstage} ${label} (${platform} - ${localTime})"/>
+  <echo message=""/>
   <mkdir dir="${dir}"/>
   <property name="utilitydir" value="${thisdir}/utilities/"/>
   <!--test skip-gc.txt to preserve the old genericode model file-->
@@ -55,13 +60,11 @@
   <echo message="UBLprevVersion=${UBLprevVersion}"/>
   <echo message="abieExtensions=${abieExtensions}"/>
   <echo message="label=${label}"/>
+  <echo message="platform=${platform}"/>
   <echo message="libraryGoogle=${libraryGoogle}"/>
   <echo message="documentsGoogle=${documentsGoogle}"/>
   <echo message="signatureGoogle=${signatureGoogle}"/>
-  <tstamp>
-    <format property="wgettime" pattern="yyyy-MM-dd HH:mm:ss"/>
-  </tstamp>
-  <echo message="wgettime=${wgettime}"/>
+  <echo message="localTime=${localTime}"/>
   
   <available property="gc2obdndr-exists"
          file="${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-gc2obdndr.xsl"/>
@@ -160,7 +163,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <echo if:set="google-sig-file-exists"
  message="Using local copy of signature Google spreadsheet; no online access"/>
     <sequential unless:set="google-sig-file-exists">
-      <echo file="${dir}/wget-signature-time.txt" message="${wgettime}"/>
+      <echo file="${dir}/wget-signature-time.txt" message="${localTime}"/>
       <echo file="${dir}/wget-signature-uri.txt" message="${signatureGoogle}"/>
       <exec executable="wget">
         <arg value="--no-check-certificate"/>
@@ -213,7 +216,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <echo if:set="google-library-file-exists"
    message="Using local copy of library Google spreadsheet; no online access"/>
     <sequential unless:set="google-library-file-exists">
-      <echo file="${dir}/wget-model-time.txt" message="${wgettime}"/>
+      <echo file="${dir}/wget-model-time.txt" message="${localTime}"/>
       <echo file="${dir}/wget-model-library-uri.txt"
             message="${libraryGoogle}"/>
       <exec executable="wget">
@@ -228,7 +231,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <echo if:set="google-documents-file-exists"
  message="Using local copy of documents Google spreadsheet; no online access"/>
     <sequential unless:set="google-library-file-exists">
-      <echo file="${dir}/wget-model-time.txt" message="${wgettime}"/>
+      <echo file="${dir}/wget-model-time.txt" message="${localTime}"/>
       <echo file="${dir}/wget-model-documents-uri.txt"
             message="${documentsGoogle}"/>
       <exec executable="wget">
