@@ -32,7 +32,7 @@
 
 [Producing new results](#producing-new-results) - working day-to-day
 
-[Reproducing old results](#reproducing-old-results) - working day-to-day
+[Reproducing old results](#reproducing-old-results) - late recovery when needed
 
 [Results](#results) - what to look for after you have committed/pushed
 
@@ -369,7 +369,7 @@ Opening the XML in Mac OSX:
 
 If you are working from the GitHub web interface, every time you commit a change you will trigger a `git push`. If you are working from the command line you can do multiple commits before you push them to the repository.
 
-Every `git push` to the repository triggers the GitHub Action execution of the build process on the files found in the repository after the push. The action takes about 25 minutes of processing on GitHub to create all of the artefacts. The resulting ZIP is about 160Mb and when unzipped provides the two archive and distribution ZIP files with the results.
+Every `git push` to the repository triggers the GitHub Action execution of the build process on the files found in the repository after the push. The action takes about 25 minutes of processing on GitHub to create all of the 550Mb of artefacts. The resulting ZIP is about 160Mb and when unzipped provides the two archive and distribution ZIP files with the results.
 
 The results that are to be made public are posted as-is to Kavi. Please do not make reference to the GitHub artefacts in committee mail list posts as those artefacts evaporate after 90 days.
 
