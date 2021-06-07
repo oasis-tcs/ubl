@@ -9,7 +9,7 @@
   "schemeID":"Profile"}],
  "ID":[{"_":"34"}],
  "IssueDate":[{"_":"2010-02-31"}],
- "IssueTime":[{"_":"12:30:00"}],
+ "IssueTime":[{"_":"12:30:00Z"}],
  "Note":[{"_":"Information text for the whole order"}],
  "DocumentCurrencyCode":[{"_":"SEK"}],
  "AccountingCostCode":[{"_":"Project123"}],

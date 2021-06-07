@@ -214,7 +214,7 @@ namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponent
       </files>
     </dir>
   </dir>
-   <dir name="json-schema">
+   <dir name="json-schema-legacy" runtime-name="json-schema-model">
     <dir name="common">
       <file type="CABIE" name="UBL-CommonAggregateComponents-2.3.json"
             syntax="JSON"
