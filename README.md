@@ -174,7 +174,7 @@ The genericode file of the UBL vocabulary of the previously-published stage must
 - e.g. if the stage previous to `csd05` was `cs01`, then for `cs02` replace `UBL-Entities-2.3-cs01.gc` with `UBL-Entities-2.3-csd05.gc` (the renamed `UBL-Entities-2.3.gc` file from the `csd05` release)
 - do the same for the `UBL-Signature-Entities-*.gc` files
 
-Each revision is described by the following configuration files for the artefacts:
+Each revision (e.g. CSDXX) influences the following configuration files for the artefacts:
 - target identification when converting ODS to genericode
   - [`ident-UBL.xml`]( ident-UBL.xml ) 
   - [`ident-UBL-Signature.xml`]( ident-UBL-Signature.xml )
@@ -186,6 +186,8 @@ Each revision is described by the following configuration files for the artefact
     - `  Release Date:      *DATE*`
   - [`config-UBL-Signature.xml`]( config-UBL-Signature.xml )
     - IMPORTANT NOTE: this file has the same version information as found in `config-UBL.xml` that needs to be updated as required
+
+Each version (e.g. 2.X) influences the following configuration files for the artefacts:
 - CVA master file for code list second-pass validation
   - [`UBL-CVA-Skeleton.cva`]( UBL-CVA-Skeleton.cva )
 - shell wrapper for generated CVA Schematron pattern

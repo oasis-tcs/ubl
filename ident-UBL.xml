@@ -1,6 +1,6 @@
 <!DOCTYPE Identification [
-<!ENTITY short "CS02">
-<!ENTITY dir   "cs02">
+<!ENTITY short "OS">
+<!ENTITY dir   "os">
 ]>
 <Identification>
   <ShortName>UBL-2.3-&short;</ShortName>
