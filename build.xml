@@ -31,7 +31,7 @@
   <!--override abieExtensions as "no" for UBL 2.2 and earlier-->
   <property name="abieExtensions" value="yes"/>
   <!--software timestamps-->
-  <property name="gc2obdndr" value="20200604-1750z-modified"/>
+  <property name="gc2obdndr" value="20210607-1250z"/>
   <property name="ods2obdgc" value="20200809-0140z"/>
   <property name="cvagcxsl"  value="20130416-0040z"/>
   <property name="cva2sch"   value="20130207-1940z"/>
@@ -1031,8 +1031,10 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   </move>
   <move preservelastmodified="true" todir="${dir}/artefacts-${package}-${UBLstage}-${label}/archive-only-not-in-final-distribution/json">
     <fileset dir="${dir}/artefacts-${package}-${UBLstage}-${label}">
-      <include name="json/**"/>
-      <include name="json-schema/**"/>
+      <include name="json-model/**"/>
+      <include name="json-legacy/**"/>
+    <include name="json-schema-legacy/**"/>
+      <include name="json-schema-model/**"/>
     </fileset>
   </move>
   <move preservelastmodified="true" todir="${dir}/artefacts-${package}-${UBLstage}-${label}/archive-only-not-in-final-distribution/json/val">
@@ -1734,6 +1736,8 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/archive-only-not-in-final-dist
   <condition property="integrity-problems">
     <length file="${dir}/INTEGRITY-PROBLEMS.txt" when="greater" length="0"/>
   </condition>
+  <echo unless:set="integrity-problems"
+        message="No integrity problems detected."/>
   <sequential if:set="integrity-problems">
     <loadfile property="integrity-report"
               srcfile="${dir}/INTEGRITY-PROBLEMS.txt"/>

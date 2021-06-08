@@ -4,15 +4,15 @@
 <!--
   This is the configuration of the base schema fragments for UBL 2.3
  
-  Library:           OASIS Universal Business Language (UBL) 2.3 CS02
-                     http://docs.oasis-open.org/ubl/cs02-UBL-2.3/
-  Release Date:      25 May 2021
+  Library:           OASIS Universal Business Language (UBL) 2.3 OS
+                     http://docs.oasis-open.org/ubl/os-UBL-2.3/
+  Release Date:      15 June 2021
   
 -->
-<!ENTITY copyrightYear      "2021">
-<!ENTITY versionDate "25 May 2021">
-<!ENTITY versionDisplay "2.3 CS02">
-<!ENTITY versionDirectory   "cs02-UBL-2.3">
+<!ENTITY copyrightYear       "2021">
+<!ENTITY versionDate "15 June 2021">
+<!ENTITY versionDisplay "2.3 OS">
+<!ENTITY versionDirectory   "os-UBL-2.3">
 ]>
 <configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ndr>
@@ -214,7 +214,7 @@ namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponent
       </files>
     </dir>
   </dir>
-   <dir name="json-schema">
+   <dir name="json-schema-legacy" runtime-name="json-schema-model">
     <dir name="common">
       <file type="CABIE" name="UBL-CommonAggregateComponents-2.3.json"
             syntax="JSON"
