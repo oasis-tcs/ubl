@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$5" = "" ]; then echo Missing results directory, platform, label, realta-username, realta-password arguments ; exit 1 ; fi
+if [ "$5" ]; then echo Missing results directory, platform, label, realta-username, realta-password arguments ; exit 1 ; fi
 
 export targetdir="$1"
 export platform=$2
