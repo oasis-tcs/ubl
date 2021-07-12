@@ -1,1 +1,1 @@
-FROM klakegg/devcontainer-ubltc:edge
+FROM klakegg/devcontainer-ubltc
