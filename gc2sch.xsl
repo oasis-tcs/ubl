@@ -85,7 +85,7 @@
 </xs:template>
 <xsl:template match="/">
     <schema xmlns="http://purl.oclc.org/dsdl/schematron"
-            queryBinding="xslt2">
+            queryBinding="xslt">
       <ns prefix="{$bbie-prefix}" uri="{$bbie-ns}"/>
       <ns prefix="{$ext-prefix}" uri="{$ext-ns}"/>
       
@@ -147,8 +147,11 @@ The following is a summary of the additional document constraints:
    an extension
       </xsl:comment>
       <pattern>
-         <rule context="ext:*[* except ext:*]//*">
-           <xsl:comment select="'no constraints'"/>
+         <rule context="ext:*">
+           <xsl:comment select="'no constraints for extension elements'"/>
+         </rule>
+         <rule context="ext:*//*">
+           <xsl:comment select="'no constraints in extension elements'"/>
          </rule>
         <rule context="*[not(*)]">
           <assert test="normalize-space(.)"
@@ -168,7 +171,8 @@ The following is a summary of the additional document constraints:
       <pattern>
         <rule context="*[@languageID]">
           <!--check using string() to equate absent with empty-->
-          <assert test="not(../(* except current())[name(.)=name(current())]
+          <assert test="not(../*[name(.)=name(current())]
+                          [generate-id(.)!=generate-id(current())]
                           [string(@languageID)=string(current()/@languageID)])"
 >UBL rule [IND7] states that two sibling elements of the same name cannot have the same languageID= attribute value
 </assert>
@@ -206,7 +210,9 @@ The following is a summary of the additional document constraints:
             <xsl:attribute select="for $c:name in $c:textBBIEnames
                                    return concat($bbie-prefix,':',$c:name)"
                            separator=" | " name="context"/>
-            <assert test="not(../(* except current())[name(.)=name(current())][not(@languageID)])">
+            <assert test="not(../*[name(.)=name(current())]
+                                  [generate-id(.)!=generate-id(current())]
+                                  [not(@languageID)])"
 >UBL rule [IND8] states that two sibling elements of the same name cannot both omit the languageID= attribute
 </assert>
           </rule>

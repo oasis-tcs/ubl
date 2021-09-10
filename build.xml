@@ -403,7 +403,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
 <!--========================================================================-->
 
 <target name="-artefacts">
-  <echo message='Creating Schematron Additioanl Document Constraints from UBL-Entities-${ublVersion}.gc ...'/>
+  <echo message='Creating Schematron Additional Document Constraints from UBL-Entities-${ublVersion}.gc ...'/>
   <java failonerror="yes" append="true" classname="net.sf.saxon.Transform">
     <arg value="-o:${dir}/${UBLstage}-${UBLversion}/cva/UBL-DocumentConstraints-${UBLversion}.patterns.sch"/>
     <arg value="-s:${dir}/UBL-Entities-${UBLversion}.gc"/>
