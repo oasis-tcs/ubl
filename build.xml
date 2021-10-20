@@ -293,7 +293,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     </condition>
   </sequential>
 
-  <!--create CVA/XSD/XSL files-->
+  <!--create CVA/XSD/XSL/SCH files-->
   <sequential unless:set="gcErrors">
     
   <uptodate targetfile="${dir}/${UBLstage}-${UBLversion}/val/UBL-DefaultDTQ-${UBLversion}.xsl"
@@ -302,7 +302,6 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       <include name="UBL-Entities-${UBLversion}.gc"/>
       <include name="config-UBL.xml"/>
       <include name="UBL-DefaultDTQ.sch"/>
-      <include name="UBL-DocumentConstraints-2.3.pattern.sch"/>
       <include name="UBL-CVA-Skeleton.cva"/>
     </srcfiles>
   </uptodate>
@@ -365,7 +364,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   </condition>
 
   <sequential unless:set="processFailed">
-    <!--prepare other artefacts-->
+    <!--prepare other artefacts including Schematron-->
     <antcall target="-artefacts"/>
   </sequential>
   <condition property="artefactsFailed">
@@ -404,6 +403,13 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
 <!--========================================================================-->
 
 <target name="-artefacts">
+  <echo message='Creating Schematron Additional Document Constraints from UBL-Entities-${ublVersion}.gc ...'/>
+  <java failonerror="yes" append="true" classname="net.sf.saxon.Transform">
+    <arg value="-o:${dir}/${UBLstage}-${UBLversion}/cva/UBL-DocumentConstraints-${UBLversion}.patterns.sch"/>
+    <arg value="-s:${dir}/UBL-Entities-${UBLversion}.gc"/>
+    <arg value="-xsl:gc2sch.xsl"/>
+  </java>
+  
   <antcall target="-gc2cva">
     <param name="source"  value="${dir}/UBL-Entities-${UBLversion}.gc"/>
     <param name="config"  value="config-UBL.xml"/>
@@ -414,12 +420,8 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       <include name="os-UBL-2.*/**"/>
     </fileset>
   </copy>
-  <copy todir="${dir}/${UBLstage}-${UBLversion}/cva">
-    <fileset dir=".">
-      <include name="UBL-DefaultDTQ-${UBLversion}.sch"/>
-      <include name="UBL-DocumentConstraints-${UBLversion}.pattern.sch"/>
-    </fileset>
-  </copy>
+  <copy todir="${dir}/${UBLstage}-${UBLversion}/cva"
+        file="UBL-DefaultDTQ-${UBLversion}.sch"/>
   <antcall target="-cva2xsl">
     <param name="okay"    value="xsd-okay"/>
     <param name="cvain"   value="${dir}/${UBLstage}-${UBLversion}/cva/UBL-DefaultDTQ-${UBLversion}.cva"/>

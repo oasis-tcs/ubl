@@ -9,6 +9,6 @@
 uri="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"/>
   <ns prefix="cbc" 
 uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/>
-  <include href="UBL-DocumentConstraints-2.4.pattern.sch"/>
+  <include href="UBL-DocumentConstraints-2.4.patterns.sch"/>
   <include href="UBL-DefaultDTQ-2.4.pattern.sch"/>
 </schema>

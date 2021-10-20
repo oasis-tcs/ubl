@@ -6567,7 +6567,7 @@ No code list validation errors.</programlisting>
           <para><literal><ulink url="cva/UBL-DefaultDTQ-&version;.pattern.sch">cva/UBL-DefaultDTQ-&version;.pattern.sch</ulink></literal> with the code list constraints from <literal><ulink url="cva/UBL-DefaultDTQ-&version;.cva">cva/UBL-DefaultDTQ-&version;.cva</ulink></literal> , and </para>
         </listitem>
         <listitem>
-          <para><literal><ulink url="cva/UBL-DocumentConstraints-&version;.pattern.sch">cva/UBL-DocumentConstraints-&version;.pattern.sch</ulink></literal> with the subset of <xref linkend="S-ADDITIONAL-DOCUMENT-CONSTRAINTS"/> that can be tested using the technology.</para>
+          <para><literal><ulink url="cva/UBL-DocumentConstraints-&version;.patterns.sch">cva/UBL-DocumentConstraints-&version;.patterns.sch</ulink></literal> with the subset of <xref linkend="S-ADDITIONAL-DOCUMENT-CONSTRAINTS"/> that can be tested using the technology.</para>
         </listitem>
       </itemizedlist>
       <para>Schematron-based techniques for generating a custom XSLT file to take the place of <literal>UBL-DefaultDTQ-&version;.xsl</literal> are explained in <xref linkend="cva"/> and <xref linkend="custguide"/>. See also <xref linkend="A-DATA-TYPE-QUALIFICATIONS-IN-UBL"/> for more about UBL data type
