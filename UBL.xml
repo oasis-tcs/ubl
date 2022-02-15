@@ -3225,6 +3225,23 @@
             </mediaobject>
           </figure>
         </section>
+	<section id="S-BUSINESS-REGISTRATION-INFORMATION-NOTICE">
+          <title>Business Registration Information Notice</title>
+          <para>The document Business Registration Information Notification document serves two purposes: 
+		1- It supports requesting the registration of a business to a registration authority.
+		2- It support the notification of this registration to a publciation authority.</para>
+          <figure id="F-BUSINESS-REGISTRATION-INFORMATION-NOTIFICATION-PROCESS">
+            <title>Business Registration Information Notification process</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="art/UBL-2.4-BRIN.png"/>
+              </imageobject>
+              <textobject>
+                <phrase>[Business Registration Information Notification Diagram]</phrase>
+              </textobject>
+            </mediaobject>
+          </figure>
+        </section>
       </section>
     </section>
     <section id="S-PARTY-ROLES">
