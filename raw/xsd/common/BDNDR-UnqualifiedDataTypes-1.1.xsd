@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  BDNDR-UnqualifiedDataTypes-1.1.xsd - 10 April 2020
+  BDNDR-UnqualifiedDataTypes-1.1.xsd - 08 September 2021
   
   This schema fragment implements OASIS BDNDR unqualified datatypes using core
   component types with all supplementary components as described in
@@ -46,7 +46,7 @@ xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchema
             xmlns:ccts="urn:un:unece:uncefact:documentation:2" 
             elementFormDefault="qualified" 
             attributeFormDefault="unqualified"
-            version="2.1">
+            version="1.1">
 <!-- ===== Imports ===== -->
   <xsd:import schemaLocation="BDNDR-CCTS_CCT_SchemaModule-1.1.xsd"
 namespace="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2"/>
