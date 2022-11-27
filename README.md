@@ -430,7 +430,7 @@ PLEASE BE CAREFUL: ANY MEMBER CAN DELETE ANY WORKFLOW SO TRY HARD NOT TO DELETE 
 
 ### To do:
 
-- the 2.4 code list files in the `raw/` directory for now simply are the 2.3 code list files renamed as 2.4
+- _(nothing on the 'to do' list at this time)_
 
 ---
 <h3>Contributions</h3>

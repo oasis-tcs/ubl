@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <ndr>
+  <!--
+    This is the configuration of an example of additional documents for UBL 2.1
+  -->
+  <name-abbreviations>
+    <abbreviation short="CV2">Card Verification Value</abbreviation>
+    <abbreviation short="ID">Identifier</abbreviation>
+    <abbreviation short="URI">Uniform Resource Identifier</abbreviation>
+    <abbreviation short="UNDG">United Nations Development Group</abbreviation>
+    <abbreviation short="UBL">Universal Business Language</abbreviation>
+    <abbreviation short="UUID">Universally Unique Identifier</abbreviation>
+    <abbreviation short="XPath">XML Path Language</abbreviation>
+  </name-abbreviations>
+  <den-abbreviations>
+    <abbreviation short="CV2">Card Verification Value</abbreviation>
+    <abbreviation short="URI">Uniform Resource Identifier</abbreviation>
+    <abbreviation short="UNDG">United Nations Development Group</abbreviation>
+    <abbreviation short="UBL">Universal Business Language</abbreviation>
+    <abbreviation short="UUID">Universally Unique Identifier</abbreviation>
+    <abbreviation short="XPath">XML Path Language</abbreviation>
+  </den-abbreviations>
+  <equivalences>
+    <equivalence>
+      <primary-noun>URI</primary-noun>
+      <representation-term>Identifier</representation-term>
+    </equivalence>
+    <equivalence>
+      <primary-noun>UUID</primary-noun>
+      <representation-term>Identifier</representation-term>
+    </equivalence>
+  </equivalences>
+  <fields-allowing-excess-space>
+    <field-name>Definition</field-name>
+    <field-name>Examples</field-name>
+    <field-name>EditorsNotes</field-name>
+  </fields-allowing-excess-space>
+  <expected-maindoc-BIEs>
+    <property-term type="BBIE" cardinality="0..1" order="1"
+                                  >UBL Version Identifier</property-term>
+    <property-term type="BBIE" cardinality="0..1" order="2"
+                                  >Customization Identifier</property-term>
+    <property-term type="BBIE" cardinality="0..1" order="3"
+                                  >Profile Identifier</property-term>
+    <property-term type="BBIE" cardinality="0..1" order="4"
+                                  >Profile Execution Identifier</property-term>
+    <property-term type="ASBIE" cardinality="0..n"
+                                  >Signature</property-term>
+  </expected-maindoc-BIEs>
+  <types>
+    <type>Amount</type>
+    <type>Binary Object</type>
+    <type>Code</type>
+    <type>Date Time</type>
+    <type>Date</type>
+    <type>Graphic</type>t
+    <type>Identifier</type>
+    <type>Indicator</type>
+    <type>Measure</type>
+    <type>Name</type>
+    <type>Numeric</type>
+    <type>Percent</type>
+    <type>Picture</type>
+    <type>Quantity</type>
+    <type>Rate</type>
+    <type>Sound</type>
+    <type>Text</type>
+    <type>Time</type>
+    <type>Value</type>
+    <type>Video</type>
+  </types>
+ </ndr>
+  <schema version="2.1">
+    <comment>
+  Library:           My library of Return Authorization documents
+  Module:            %f
+  Generated on:      %z
+</comment>
+    <copyright position="end">
+  Test copyright
+</copyright>
+    <dir name="xsd" runtime-name="xsdrt">
+      <dir name="mydoc">
+        <file type="SABIE" name="MyRAAggregateComponents.xsd" prefix="raa"
+      namespace="urn:X-MyCompany:xsd:MyRARequestResponse:AggregateComponents"/>
+        <file type="SBBIE" name="MyRABasicComponents.xsd" prefix="rab" 
+          namespace="urn:X-MyCompany:xsd:MyRARequestResponse:BasicComponents"/>
+        <files type="AABIE" name="My%n.xsd"
+               namespace="urn:X-MyCompany:xsd:My%n"/>
+      </dir>
+    </dir>
+  </schema>
+</configuration>

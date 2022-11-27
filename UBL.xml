@@ -32,9 +32,9 @@
 	<!ENTITY this-loc "https://docs.oasis-open.org/ubl/&stage;-UBL-&version;">
 	<!ENTITY previous-loc "https://docs.oasis-open.org/ubl/&pstage;-UBL-&psversion;">
 	<!ENTITY latest-loc "https://docs.oasis-open.org/ubl">
-	<!ENTITY pubdate "10 September 2021">
+	<!ENTITY pubdate "27 November 2022">
 	<!--remove time from pub date-->
-	<!ENTITY pubyear "2021">
+	<!ENTITY pubyear "2022">
 	<!ENTITY pubdate-iso "ccyy-mm-dd">
 	<!ENTITY reldate-iso "ccyy-mm">
 	<!ENTITY summary-parties SYSTEM "summary-parties-ent.xml">

@@ -1,0 +1,1117 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Creating Validation Artefacts Using OASIS Business Document Naming and Design Rules</title><meta name="generator" content="DocBook XSL Stylesheets V1.69.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="d0e2"></a>Creating Validation Artefacts Using OASIS Business Document Naming and Design Rules</h2></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">G. Ken</span> <span class="surname">Holman</span></h3><div class="affiliation"><span class="orgname">Crane Softwrights Ltd.<br></span><div class="address"><p><code class="email">&lt;<a href="mailto:gkholman@CraneSoftwrights.com">gkholman@CraneSoftwrights.com</a>&gt;</code></p></div></div></div></div></div><div><p class="copyright">Copyright &copy; 2018 Crane Softwrights Ltd.</p></div><div><p class="pubdate">$Date: 2018/02/13 17:50:24 $(UTC)</p></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#S-INTRODUCTION">1. Introduction </a></span></dt><dt><span class="section"><a href="#S-TOOL-SET-PACKAGES">2. Tool set packages</a></span></dt><dt><span class="section"><a href="#S-THE-CONFIGURATION-FILE">3. The configuration file</a></span></dt><dt><span class="section"><a href="#S-DEMONSTRATION">4. Demonstration</a></span></dt><dd><dl><dt><span class="section"><a href="#S-DEMONSTRATION-SCENARIOS">4.1. Demonstration scenarios</a></span></dt><dt><span class="section"><a href="#S-DEMONSTRATION-FILES">4.2. Demonstration files</a></span></dt><dt><span class="section"><a href="#S-UBL-EXTENSION-DEMONSTRATION-INVOCATION">4.3. UBL extension demonstration invocation</a></span></dt><dt><span class="section"><a href="#S-SUBSETTEST-EXTENSION-DEMONSTRATION-INVOCATION">4.4. SubsetTest extension demonstration invocation</a></span></dt><dt><span class="section"><a href="#S-BDE-DEMONSTRATION-INVOCATION">4.5. BDE demonstration invocation</a></span></dt></dl></dd><dt><span class="section"><a href="#S-CHECKING-CREATING-AND-REPORTING-MODEL-INFORMATION-AND-ARTEFACTS">5. Checking, creating and reporting model information and artefacts</a></span></dt><dd><dl><dt><span class="section"><a href="#S-EXPRESSING-THE-MODEL-IN-A-COMMON-FORM">5.1. Expressing the model in a common form</a></span></dt><dt><span class="section"><a href="#S-CHECKING-THE-MODEL-FOR-COMPLETENESS">5.2. Checking the model for completeness</a></span></dt><dt><span class="section"><a href="#S-CREATING-THE-RUNTIME-VALIDATION-ARTEFACTS">5.3. Creating the runtime validation artefacts</a></span></dt><dt><span class="section"><a href="#S-DOCUMENTING-THE-MODEL">5.4. Documenting the model</a></span></dt><dt><span class="section"><a href="#S-UNQUALIFIED-DATA-TYPE-SCHEMA-FRAGMENTS">5.5. Unqualified data type schema fragments</a></span></dt></dl></dd><dt><span class="section"><a href="#S-USING-THE-SCHEMAS-TO-VALIDATE">6. Using the schemas to validate</a></span></dt><dt><span class="section"><a href="#S-CONTEXT-VALUE-ASSOCIATION-FILES">7. Context/value association files</a></span></dt><dt><span class="appendix"><a href="#A-ACKNOWLEDGEMENT">A. Acknowledgement</a></span></dt><dt><span class="bibliography"><a href="#d0e605">Bibliography</a></span></dt></dl></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="S-INTRODUCTION"></a>1.&nbsp;Introduction </h2></div></div></div><p>The OASIS Business Document Naming and Design Rules [<a href="#b_obdndr" title="[OBDNDR]"><span class="abbrev">OBDNDR</span></a>]
+      specification defines a set of rules used to confirm the contents of a CCTS [<a href="#b_ccts" title="[CCTS]"><span class="abbrev">CCTS</span></a>] model of a business document&#8217;s structure and convert that model
+      into a sets of document validation artifacts. Some of the NDRs regard the values of some CCTS
+      components compared to the values of other CCTS components. Some of the NDRs regard the
+      expression of the components in the validation artefacts.</p><p>Crane&#8217;s tools for generating these validation artefacts presume that the CCTS model
+      is expressed as a sparsely-populated table using the OASIS genericode specification[<a href="#b_genericode" title="[genericode]"><span class="abbrev">genericode</span></a>]. For the convenience of users, the model component values can
+      originate from an OASIS Open Document Format Spreadsheet that is maintained offline by an
+      application and saved as an ODS file, or maintained online as a Google Spreadsheet and
+      downloaded as an ODS file.</p><p>Beyond the concepts found in the NDR, Crane&#8217;s tools also support generating the
+      schemas for a subset of a model based on a user&#8217;s specification of overriding
+      cardinality values for each information item. Such a &#8220;subset schema&#8221; has two
+      primary roles:</p><div class="itemizedlist"><ul type="disc"><li><p>as a validation artefact used to quickly determine that an instance contains a
+          modelled construct that is disallowed by the subset specification; and</p></li><li><p>as a directed-editing artefact used to inform an instance creation tool of the allowed
+          components from which an author can chose.</p></li></ul></div><p>Two examples of CCTS-based XML vocabularies following the OASIS Business Document NDR and
+      with published validation artefacts created by earlier versions of these tools are:</p><div class="itemizedlist"><ul type="disc"><li><p>Universal Business Language [<a href="#b_UBL21" title="[UBL-2.1]"><span class="abbrev">UBL-2.1</span></a>], in conjunction with the UBL
+          Naming and Design Rules [<a href="#b_ublndr30" title="[UBL NDR 3.0]"><span class="abbrev">UBL NDR 3.0</span></a>]; and</p></li><li><p>Business Document Envelope [<a href="#b_BDE" title="[BDE-1.1]"><span class="abbrev">BDE-1.1</span></a>].</p></li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="S-TOOL-SET-PACKAGES"></a>2.&nbsp;Tool set packages</h2></div></div></div><p>Two tool set packages contain four programs used in the data flow depicted in <a href="#F-BUSINESS-DOCUMENT-NDR-MODEL-REVISION-PROCESS" title="Figure&nbsp;1.&nbsp;Business Document NDR model revision process">Figure&nbsp;1, &#8220;Business Document NDR model revision process&#8221;</a>:</p><div class="figure"><a name="F-BUSINESS-DOCUMENT-NDR-MODEL-REVISION-PROCESS"></a><p class="title"><b>Figure&nbsp;1.&nbsp;Business Document NDR model revision process</b></p><div class="mediaobject"><img src="obdrevprocess.png" alt="Business Document NDR model revision process"></div></div><p>The focus of the process is to convert the genericode expression of the model (labeled [1]
+      in the diagram) into a set of XSD files (labeled [2]) and optionally a CVA file.</p><p>The Crane-ods2obdgc[<a href="#b_crane-ods2obdgc" title="[ods2obdgc]"><span class="abbrev">ods2obdgc</span></a>] package includes the one tool of
+      the same name (labeled [3]). This program converts an instance of ODS into an instance of
+      genericode suitable for expressing an OASIS Business Document model. The package includes a
+      pro-forma ODS instance with an empty row of each component type with which one can create a
+      model from scratch.</p><p>The following three tools are in the Crane-gc2obdndr[<a href="#b_crane-gc2obdndr" title="[gc2obdndr]"><span class="abbrev">gc2obdndr</span></a>]
+      package:</p><div class="itemizedlist"><ul type="disc"><li><p>Crane-checkgc4obdndr (labeled [4]) is used to assess the conformance of the
+          model-related MODxx and COMxx NDRs, optionally assessing backwards compatibility issues
+          with another model;</p></li><li><p>Crane-gc2obdndr (labeled [5]) is used to create the XSD schemas and CVA file for XML
+          and the JSON schemas for JSON; and</p></li><li><p>Crane-gc2obdsummary (labeled [6]) is used to create hyperlinked HTML summary reports
+          of the CCTS model.</p></li></ul></div><p>Two ODS files are depicted in the diagram to illustrate how the genericode expressions of
+      two different revisions of a model, one an older version of the other. The process of creating
+      artefacts for either version is the same. The Crane-checkgc4obdndr program can produce a
+      report of the differences between the two revisions.</p><p>The use in the diagram of the online Google spreadsheet is optional. An ODS file can be
+      maintained offline or it can be created as a download from Google Drive or by some other
+      application. As a genericode file is suitable for interchange, there are no applications that
+      directly manipulate the content of a genericode file.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="S-THE-CONFIGURATION-FILE"></a>3.&nbsp;The configuration file</h2></div></div></div><p>Critical to the process is the tool configuration file written as XML. It has many
+      sections:</p><pre class="programlisting">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+ &lt;ndr&gt;
+  &lt;name-abbreviations&gt;
+    &lt;!--a list of abbreviations mapping a short string to a long string
+        where the abbreviation is allowed in a component name--&gt;
+    &lt;abbreviation short="CV2"&gt;Card Verification Value&lt;/abbreviation&gt;
+  &lt;/name-abbreviations&gt;
+  &lt;den-abbreviations&gt;
+    &lt;!--a list of abbreviations mapping a short string to a long string
+        where the abbreviation is allowed in a dectionary entry name--&gt;
+    &lt;abbreviation short="CV2"&gt;Card Verification Value&lt;/abbreviation&gt;
+  &lt;/den-abbreviations&gt;
+  &lt;equivalences&gt;
+    &lt;!--a list of equivalences between a primary noun and a rep. term--&gt;
+    &lt;equivalence&gt;
+      &lt;primary-noun&gt;URI&lt;/primary-noun&gt;
+      &lt;representation-term&gt;Identifier&lt;/representation-term&gt;
+    &lt;/equivalence&gt;
+  &lt;/equivalences&gt;
+  &lt;expected-maindoc-BIEs&gt;
+    &lt;!--a list of required Document ABIE initial properties that may be
+        aribrarily positioned or otherwise specifically positioned in an
+        order based on the attribute--&gt;
+    &lt;property-term type="BBIE" cardinality="0..1" order="1"
+                                  &gt;UBL Version Identifier&lt;/property-term&gt;
+    &lt;property-term type="ASBIE" cardinality="0..n"
+                                  &gt;Signature&lt;/property-term&gt;
+  &lt;/expected-maindoc-BIEs&gt;
+  &lt;types&gt;
+    &lt;!--the list of CCTS primary and secondary representation terms from
+        CCTS table 8-3: Permissible Representation Terms--&gt;
+    &lt;type&gt;Amount&lt;/type&gt;
+  &lt;/types&gt;
+ &lt;/ndr&gt;
+ &lt;schema version="2.1"&gt;
+  &lt;comment&gt;
+    The content of a metadata comment at the head of every file that is
+    generated; the available string substitutions are:
+       %% - a single percent sign
+       %f - the module's configuration subdirectories and file name
+       %n - the output ABIE name
+       %t - the local time stamp for the file
+       %z - the UTC (Zulu) time stamp for the file
+&lt;/comment&gt;
+  &lt;copyright position="end"&gt;
+    The content of a copyright comment that can be positioned either
+    at the start or the end of the generated file based on the mandatory
+    position= attribute being "start" or "end".
+&lt;/copyright&gt;
+  &lt;type-documentation&gt;
+    &lt;ccts:Component xmlns:ccts="urn:un:unece:uncefact:documentation:2"&gt;
+       &lt;!--the documentation to fill out for each component; the text value
+           of the element is the compressed title of the CCTS spreadsheet
+           column--&gt; 
+       &lt;ccts:ComponentType&gt;ComponentType&lt;/ccts:ComponentType&gt;
+    &lt;/ccts:Component&gt;
+  &lt;/type-documentation&gt;
+  &lt;!--the directory structure (using &lt;dir&gt;) of a single file (using &lt;file&gt;)
+      or a set of document ABIE files (using &lt;files&gt;) to be realized in the
+      generated results:
+      name= - the name of the documented directory or file
+      runtime-name= - the name of the runtime directory or file
+      type= - CVA - context/value association file
+            - DABIE - Document ABIE file or files
+            - CABIE - common Library ABIE file
+            - CBBIE - common BBIE file
+            - AABIE - alternate Document ABIE file or files
+            - XABIE - extension ABIE file or files
+            - SABIE - supplemental Library ABIE files
+            - SBBIE - supplemental Library BBIE files
+            - QDT - qualified data type file
+            - UDT - unqualified data type file
+            - EXT - extension metadata file
+      skeleton-uri= - the pro-forma CVA file with qualification
+                      data types
+      prefix= - the namespace prefix to declare in the fragments for
+                constructs in the given file
+      namespace= - the namespace URI to declare in the fragments for
+                   constructs in the given file 
+      syntax= - indication of a non-XML syntax (e.g. "JSON")
+      
+      Specialized children of the &lt;file&gt; or &lt;files&gt; element
+      
+      type="{any}"
+       &lt;imports&gt; = the list of &lt;xsd:import&gt; statements to add to the result
+       
+      type="XABIE"
+       &lt;elements&gt; = the element declarations to add after all of the
+                    BBIE and ASBIE child elements of the extension
+                    ABIE have been declared
+                    
+      type="EXT":
+       &lt;elements&gt; = the extension element declaration at the start of
+                    every Document ABIE or alternate Document ABIE
+                    
+      type="EXT", syntax="JSON":
+       &lt;declarations&gt; = the extension declaration to be added at the start of
+                        every Document ABIE or alternate Document ABIE
+  --&gt;
+  &lt;dir name="{base directory name}"&gt;
+    &lt;dir name="{subdirectory name}"&gt;     
+    &lt;!--file declarations--&gt;
+    &lt;/dir&gt;
+  &lt;/dir&gt;
+ &lt;/schema&gt;
+&lt;/configuration&gt;</pre><p>The UBL 2.1 main configuration file is as follows:</p><pre class="programlisting">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE configuration
+[
+&lt;!ENTITY versionDisplay "2.1 OS"&gt;
+&lt;!ENTITY versionDirectory   "os-UBL-2.1"&gt;
+&lt;!ENTITY versionDate        "04 November 2013"&gt;
+]&gt;
+&lt;configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;!--
+    This is the configuration of the base schema fragments for UBL 2.1
+  --&gt;
+ &lt;ndr&gt;
+  &lt;name-abbreviations&gt;
+    &lt;abbreviation short="CV2"&gt;Card Verification Value&lt;/abbreviation&gt;
+    &lt;abbreviation short="ID"&gt;Identifier&lt;/abbreviation&gt;
+    &lt;abbreviation short="URI"&gt;Uniform Resource Identifier&lt;/abbreviation&gt;
+    &lt;abbreviation short="UNDG"&gt;United Nations Development Group&lt;/abbreviation&gt;
+    &lt;abbreviation short="UBL"&gt;Universal Business Language&lt;/abbreviation&gt;
+    &lt;abbreviation short="UUID"&gt;Universally Unique Identifier&lt;/abbreviation&gt;
+    &lt;abbreviation short="XPath"&gt;XML Path Language&lt;/abbreviation&gt;
+  &lt;/name-abbreviations&gt;
+  &lt;den-abbreviations&gt;
+    &lt;abbreviation short="CV2"&gt;Card Verification Value&lt;/abbreviation&gt;
+    &lt;abbreviation short="URI"&gt;Uniform Resource Identifier&lt;/abbreviation&gt;
+    &lt;abbreviation short="UNDG"&gt;United Nations Development Group&lt;/abbreviation&gt;
+    &lt;abbreviation short="UBL"&gt;Universal Business Language&lt;/abbreviation&gt;
+    &lt;abbreviation short="UUID"&gt;Universally Unique Identifier&lt;/abbreviation&gt;
+    &lt;abbreviation short="XPath"&gt;XML Path Language&lt;/abbreviation&gt;
+  &lt;/den-abbreviations&gt;
+  &lt;equivalences&gt;
+    &lt;equivalence&gt;
+      &lt;primary-noun&gt;URI&lt;/primary-noun&gt;
+      &lt;representation-term&gt;Identifier&lt;/representation-term&gt;
+    &lt;/equivalence&gt;
+    &lt;equivalence&gt;
+      &lt;primary-noun&gt;UUID&lt;/primary-noun&gt;
+      &lt;representation-term&gt;Identifier&lt;/representation-term&gt;
+    &lt;/equivalence&gt;
+  &lt;/equivalences&gt;
+  &lt;expected-maindoc-BIEs&gt;
+    &lt;property-term type="BBIE" cardinality="0..1" order="1"
+                                  &gt;UBL Version Identifier&lt;/property-term&gt;
+    &lt;property-term type="BBIE" cardinality="0..1" order="2"
+                                  &gt;Customization Identifier&lt;/property-term&gt;
+    &lt;property-term type="BBIE" cardinality="0..1" order="3"
+                                  &gt;Profile Identifier&lt;/property-term&gt;
+    &lt;property-term type="BBIE" cardinality="0..1" order="4"
+                                  &gt;Profile Execution Identifier&lt;/property-term&gt;
+    &lt;property-term type="ASBIE" cardinality="0..n"
+                                  &gt;Signature&lt;/property-term&gt;
+  &lt;/expected-maindoc-BIEs&gt;
+  &lt;types&gt;
+    &lt;type&gt;Amount&lt;/type&gt;
+    &lt;type&gt;Binary Object&lt;/type&gt;
+    &lt;type&gt;Code&lt;/type&gt;
+    &lt;type&gt;Date Time&lt;/type&gt;
+    &lt;type&gt;Date&lt;/type&gt;
+    &lt;type&gt;Graphic&lt;/type&gt;
+    &lt;type&gt;Identifier&lt;/type&gt;
+    &lt;type&gt;Indicator&lt;/type&gt;
+    &lt;type&gt;Measure&lt;/type&gt;
+    &lt;type&gt;Name&lt;/type&gt;
+    &lt;type&gt;Numeric&lt;/type&gt;
+    &lt;type&gt;Percent&lt;/type&gt;
+    &lt;type&gt;Picture&lt;/type&gt;
+    &lt;type&gt;Quantity&lt;/type&gt;
+    &lt;type&gt;Rate&lt;/type&gt;
+    &lt;type&gt;Sound&lt;/type&gt;
+    &lt;type&gt;Text&lt;/type&gt;
+    &lt;type&gt;Time&lt;/type&gt;
+    &lt;type&gt;Value&lt;/type&gt;
+    &lt;type&gt;Video&lt;/type&gt;
+  &lt;/types&gt;
+ &lt;/ndr&gt;
+ &lt;schema version="2.1"&gt;
+  &lt;comment&gt;
+  Library:           OASIS Universal Business Language (UBL) &amp;versionDisplay;
+                     http://docs.oasis-open.org/ubl/&amp;versionDirectory;/
+  Release Date:      &amp;versionDate;
+  Module:            %f
+  Generated on:      %z
+  Copyright (c) OASIS Open 2016. All Rights Reserved.
+&lt;/comment&gt;
+    &lt;copyright position="end"&gt;
+  OASIS takes no position regarding the validity or scope of any 
+  intellectual property or other rights that might be claimed to pertain 
+  to the implementation or use of the technology described in this 
+  document or the extent to which any license under such rights 
+  might or might not be available; neither does it represent that it has 
+  made any effort to identify any such rights. Information on OASIS's 
+  procedures with respect to rights in OASIS specifications can be 
+  found at the OASIS website. Copies of claims of rights made 
+  available for publication and any assurances of licenses to be made 
+  available, or the result of an attempt made to obtain a general 
+  license or permission for the use of such proprietary rights by 
+  implementors or users of this specification, can be obtained from 
+  the OASIS Executive Director.
+
+  OASIS invites any interested party to bring to its attention any 
+  copyrights, patents or patent applications, or other proprietary 
+  rights which may cover technology that may be required to 
+  implement this specification. Please address the information to the 
+  OASIS Executive Director.
+  
+  This document and translations of it may be copied and furnished to 
+  others, and derivative works that comment on or otherwise explain 
+  it or assist in its implementation may be prepared, copied, 
+  published and distributed, in whole or in part, without restriction of 
+  any kind, provided that the above copyright notice and this 
+  paragraph are included on all such copies and derivative works. 
+  However, this document itself may not be modified in any way, 
+  such as by removing the copyright notice or references to OASIS, 
+  except as needed for the purpose of developing OASIS 
+  specifications, in which case the procedures for copyrights defined 
+  in the OASIS Intellectual Property Rights document must be 
+  followed, or as required to translate it into languages other than 
+  English. 
+
+  The limited permissions granted above are perpetual and will not be 
+  revoked by OASIS or its successors or assigns. 
+
+  This document and the information contained herein is provided on 
+  an "AS IS" basis and OASIS DISCLAIMS ALL WARRANTIES, 
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY 
+  WARRANTY THAT THE USE OF THE INFORMATION HEREIN 
+  WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED 
+  WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A 
+  PARTICULAR PURPOSE.    
+&lt;/copyright&gt;
+  &lt;type-documentation&gt;
+    &lt;ccts:Component xmlns:ccts="urn:un:unece:uncefact:documentation:2"&gt;
+       &lt;ccts:ComponentType&gt;ComponentType&lt;/ccts:ComponentType&gt;
+       &lt;ccts:DictionaryEntryName&gt;DictionaryEntryName&lt;/ccts:DictionaryEntryName&gt;
+       &lt;ccts:Version&gt;Version&lt;/ccts:Version&gt;
+       &lt;ccts:Definition&gt;Definition&lt;/ccts:Definition&gt;
+       &lt;ccts:Cardinality&gt;Cardinality&lt;/ccts:Cardinality&gt;
+       &lt;ccts:ObjectClassQualifier&gt;ObjectClassQualifier&lt;/ccts:ObjectClassQualifier&gt;
+       &lt;ccts:ObjectClass&gt;ObjectClass&lt;/ccts:ObjectClass&gt;
+       &lt;ccts:PropertyTermQualifier&gt;PropertyTermQualifier&lt;/ccts:PropertyTermQualifier&gt;
+       &lt;ccts:PropertyTerm&gt;PropertyTerm&lt;/ccts:PropertyTerm&gt;
+       &lt;ccts:AssociatedObjectClass&gt;AssociatedObjectClass&lt;/ccts:AssociatedObjectClass&gt;
+       &lt;ccts:RepresentationTerm&gt;RepresentationTerm&lt;/ccts:RepresentationTerm&gt;
+       &lt;ccts:DataTypeQualifier&gt;DataTypeQualifier&lt;/ccts:DataTypeQualifier&gt;
+       &lt;ccts:DataType&gt;DataType&lt;/ccts:DataType&gt;
+       &lt;ccts:AlternativeBusinessTerms
+                            &gt;AlternativeBusinessTerms&lt;/ccts:AlternativeBusinessTerms&gt;
+       &lt;ccts:Examples&gt;Examples&lt;/ccts:Examples&gt;
+    &lt;/ccts:Component&gt;
+  &lt;/type-documentation&gt;
+  &lt;dir name="cva"&gt;
+    &lt;file type="CVA" name="UBL-DefaultDTQ-2.1.cva"
+          skeleton-uri="UBL-2.1-CVA-Skeleton.cva"/&gt;
+  &lt;/dir&gt;
+  &lt;dir name="xsd" runtime-name="xsdrt"&gt;
+    &lt;dir name="common"&gt;
+      &lt;file type="CABIE" name="UBL-CommonAggregateComponents-2.1.xsd"
+            prefix="cac"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"/&gt;
+      &lt;file type="CBBIE" name="UBL-CommonBasicComponents-2.1.xsd"
+            prefix="cbc"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/&gt;
+      &lt;file type="QDT" name="UBL-QualifiedDataTypes-2.1.xsd"
+            prefix="qdt"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"/&gt;
+      &lt;file type="UDT" name="UBL-UnqualifiedDataTypes-2.1.xsd"
+            prefix="udt"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"/&gt;
+      &lt;file type="EXT" name="UBL-CommonExtensionComponents-2.1.xsd"
+            prefix="ext"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"&gt;
+        &lt;elements&gt;
+         &lt;xsd:element ref="ext:UBLExtensions" minOccurs="0" maxOccurs="1"&gt;
+            &lt;xsd:annotation&gt;
+               &lt;xsd:documentation&gt;A container for all extensions present in the
+ document.&lt;/xsd:documentation&gt;
+            &lt;/xsd:annotation&gt;
+         &lt;/xsd:element&gt;
+        &lt;/elements&gt;
+      &lt;/file&gt;
+    &lt;/dir&gt;
+    &lt;dir name="maindoc"&gt;
+      &lt;files type="DABIE" name="UBL-%n-2.1.xsd"
+             namespace="urn:oasis:names:specification:ubl:schema:xsd:%n-2"&gt;
+        &lt;element-documentation&gt;This element MUST be conveyed as the root element in
+ any instance document based on this Schema expression&lt;/element-documentation&gt;
+      &lt;/files&gt;
+    &lt;/dir&gt;
+  &lt;/dir&gt;
+   &lt;dir name="json-schema"&gt;
+    &lt;dir name="common"&gt;
+      &lt;file type="CABIE" name="UBL-CommonAggregateComponents-2.1.json"
+            syntax="JSON"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"/&gt;
+      &lt;file type="CBBIE" name="UBL-CommonBasicComponents-2.1.json"
+            syntax="JSON"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/&gt;
+      &lt;file type="QDT" name="UBL-QualifiedDataTypes-2.1.json"
+            syntax="JSON"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"/&gt;
+      &lt;file type="UDT" name="UBL-UnqualifiedDataTypes-2.1.json"
+            syntax="JSON"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"/&gt;
+      &lt;file type="EXT" name="UBL-CommonExtensionComponents-2.1.json"
+            syntax="JSON"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"&gt;
+        &lt;declaration&gt;
+        "UBLExtensions": {
+          "title": "UBLExtensions",
+          "description": "An optional set of extensions to the committee model",
+          "items": { 
+            "$ref":
+ "../common/UBL-CommonExtensionComponents-2.1.json#/definitions/UBLExtensions" },
+          "maxItems": 1,
+          "minItems": 1,
+          "additionalProperties": false,
+          "type": "array"
+          },
+
+&lt;/declaration&gt;
+      &lt;/file&gt;
+    &lt;/dir&gt;
+     &lt;dir name="maindoc"&gt;
+       &lt;files type="DABIE" name="UBL-%n-2.1.json"
+              syntax="JSON"
+              namespace="urn:oasis:names:specification:ubl:schema:xsd:%n-2"/&gt;
+    &lt;/dir&gt;
+   &lt;/dir&gt;
+ &lt;/schema&gt;
+&lt;/configuration&gt;
+</pre><p>The UBL 2.2 Signature Extension configuration file is as follows:</p><pre class="programlisting">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE configuration
+[
+&lt;!ENTITY versionDisplay "2.1 OS"&gt;
+&lt;!ENTITY versionDirectory   "os-UBL-2.1"&gt;
+&lt;!ENTITY versionDate        "04 November 2013"&gt;
+]&gt;
+&lt;configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ndr&gt;
+  &lt;name-abbreviations&gt;
+    &lt;abbreviation short="CV2"&gt;Card Verification Value&lt;/abbreviation&gt;
+    &lt;abbreviation short="ID"&gt;Identifier&lt;/abbreviation&gt;
+    &lt;abbreviation short="URI"&gt;Uniform Resource Identifier&lt;/abbreviation&gt;
+    &lt;abbreviation short="UNDG"&gt;United Nations Development Group&lt;/abbreviation&gt;
+    &lt;abbreviation short="UBL"&gt;Universal Business Language&lt;/abbreviation&gt;
+    &lt;abbreviation short="UUID"&gt;Universally Unique Identifier&lt;/abbreviation&gt;
+    &lt;abbreviation short="XPath"&gt;XML Path Language&lt;/abbreviation&gt;
+  &lt;/name-abbreviations&gt;
+  &lt;den-abbreviations&gt;
+    &lt;abbreviation short="CV2"&gt;Card Verification Value&lt;/abbreviation&gt;
+    &lt;abbreviation short="URI"&gt;Uniform Resource Identifier&lt;/abbreviation&gt;
+    &lt;abbreviation short="UNDG"&gt;United Nations Development Group&lt;/abbreviation&gt;
+    &lt;abbreviation short="UBL"&gt;Universal Business Language&lt;/abbreviation&gt;
+    &lt;abbreviation short="UUID"&gt;Universally Unique Identifier&lt;/abbreviation&gt;
+    &lt;abbreviation short="XPath"&gt;XML Path Language&lt;/abbreviation&gt;
+  &lt;/den-abbreviations&gt;
+  &lt;equivalences&gt;
+    &lt;equivalence&gt;
+      &lt;primary-noun&gt;URI&lt;/primary-noun&gt;
+      &lt;representation-term&gt;Identifier&lt;/representation-term&gt;
+    &lt;/equivalence&gt;
+    &lt;equivalence&gt;
+      &lt;primary-noun&gt;UUID&lt;/primary-noun&gt;
+      &lt;representation-term&gt;Identifier&lt;/representation-term&gt;
+    &lt;/equivalence&gt;
+  &lt;/equivalences&gt;
+  &lt;fields-allowing-excess-space&gt;
+    &lt;field-name&gt;Definition&lt;/field-name&gt;
+    &lt;field-name&gt;Examples&lt;/field-name&gt;
+    &lt;field-name&gt;EditorsNotes&lt;/field-name&gt;
+  &lt;/fields-allowing-excess-space&gt;
+  &lt;types&gt;
+    &lt;type&gt;Amount&lt;/type&gt;
+    &lt;type&gt;Binary Object&lt;/type&gt;
+    &lt;type&gt;Code&lt;/type&gt;
+    &lt;type&gt;Date Time&lt;/type&gt;
+    &lt;type&gt;Date&lt;/type&gt;
+    &lt;type&gt;Graphic&lt;/type&gt;t
+    &lt;type&gt;Identifier&lt;/type&gt;
+    &lt;type&gt;Indicator&lt;/type&gt;
+    &lt;type&gt;Measure&lt;/type&gt;
+    &lt;type&gt;Name&lt;/type&gt;
+    &lt;type&gt;Numeric&lt;/type&gt;
+    &lt;type&gt;Percent&lt;/type&gt;
+    &lt;type&gt;Picture&lt;/type&gt;
+    &lt;type&gt;Quantity&lt;/type&gt;
+    &lt;type&gt;Rate&lt;/type&gt;
+    &lt;type&gt;Sound&lt;/type&gt;
+    &lt;type&gt;Text&lt;/type&gt;
+    &lt;type&gt;Time&lt;/type&gt;
+    &lt;type&gt;Value&lt;/type&gt;
+    &lt;type&gt;Video&lt;/type&gt;
+  &lt;/types&gt;
+  &lt;/ndr&gt;
+  &lt;schema version="2.1"&gt;
+&lt;comment&gt;
+  Library:           OASIS Universal Business Language (UBL) &amp;versionDisplay;
+                     http://docs.oasis-open.org/ubl/&amp;versionDirectory;/
+  Release Date:      &amp;versionDate;
+  Module:            %f
+  Generated on:      %z
+  Copyright (c) OASIS Open 2013. All Rights Reserved.
+&lt;/comment&gt;
+    &lt;copyright position="end"&gt;
+  OASIS takes no position regarding the validity or scope of any 
+  intellectual property or other rights that might be claimed to pertain 
+  to the implementation or use of the technology described in this 
+  document or the extent to which any license under such rights 
+  might or might not be available; neither does it represent that it has 
+  made any effort to identify any such rights. Information on OASIS's 
+  procedures with respect to rights in OASIS specifications can be 
+  found at the OASIS website. Copies of claims of rights made 
+  available for publication and any assurances of licenses to be made 
+  available, or the result of an attempt made to obtain a general 
+  license or permission for the use of such proprietary rights by 
+  implementors or users of this specification, can be obtained from 
+  the OASIS Executive Director.
+
+  OASIS invites any interested party to bring to its attention any 
+  copyrights, patents or patent applications, or other proprietary 
+  rights which may cover technology that may be required to 
+  implement this specification. Please address the information to the 
+  OASIS Executive Director.
+  
+  This document and translations of it may be copied and furnished to 
+  others, and derivative works that comment on or otherwise explain 
+  it or assist in its implementation may be prepared, copied, 
+  published and distributed, in whole or in part, without restriction of 
+  any kind, provided that the above copyright notice and this 
+  paragraph are included on all such copies and derivative works. 
+  However, this document itself may not be modified in any way, 
+  such as by removing the copyright notice or references to OASIS, 
+  except as needed for the purpose of developing OASIS 
+  specifications, in which case the procedures for copyrights defined 
+  in the OASIS Intellectual Property Rights document must be 
+  followed, or as required to translate it into languages other than 
+  English. 
+
+  The limited permissions granted above are perpetual and will not be 
+  revoked by OASIS or its successors or assigns. 
+
+  This document and the information contained herein is provided on 
+  an "AS IS" basis and OASIS DISCLAIMS ALL WARRANTIES, 
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY 
+  WARRANTY THAT THE USE OF THE INFORMATION HEREIN 
+  WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED 
+  WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A 
+  PARTICULAR PURPOSE.    
+&lt;/copyright&gt;
+    &lt;type-documentation&gt;
+      &lt;ccts:Component xmlns:ccts="urn:un:unece:uncefact:documentation:2"&gt;
+         &lt;ccts:ComponentType&gt;ComponentType&lt;/ccts:ComponentType&gt;
+         &lt;ccts:DictionaryEntryName&gt;DictionaryEntryName&lt;/ccts:DictionaryEntryName&gt;
+         &lt;ccts:Version&gt;Version&lt;/ccts:Version&gt;
+         &lt;ccts:Definition&gt;Definition&lt;/ccts:Definition&gt;
+         &lt;ccts:Cardinality&gt;Cardinality&lt;/ccts:Cardinality&gt;
+         &lt;ccts:ObjectClassQualifier&gt;ObjectClassQualifier&lt;/ccts:ObjectClassQualifier&gt;
+         &lt;ccts:ObjectClass&gt;ObjectClass&lt;/ccts:ObjectClass&gt;
+         &lt;ccts:PropertyTermQualifier&gt;PropertyTermQualifier&lt;/ccts:PropertyTermQualifier&gt;
+         &lt;ccts:PropertyTerm&gt;PropertyTerm&lt;/ccts:PropertyTerm&gt;
+         &lt;ccts:AssociatedObjectClass&gt;AssociatedObjectClass&lt;/ccts:AssociatedObjectClass&gt;
+         &lt;ccts:RepresentationTerm&gt;RepresentationTerm&lt;/ccts:RepresentationTerm&gt;
+         &lt;ccts:DataTypeQualifier&gt;DataTypeQualifier&lt;/ccts:DataTypeQualifier&gt;
+         &lt;ccts:DataType&gt;DataType&lt;/ccts:DataType&gt;
+         &lt;ccts:AlternativeBusinessTerms&gt;AlternativeBusinessTerms&lt;/ccts:AlternativeBusinessTerms&gt;
+         &lt;ccts:Examples&gt;Examples&lt;/ccts:Examples&gt;
+      &lt;/ccts:Component&gt;
+    &lt;/type-documentation&gt;
+  &lt;dir name="xsd" runtime-name="xsdrt"&gt;
+      &lt;dir name="common"&gt;
+        &lt;file type="XABIE" name="UBL-CommonSignatureComponents-2.1.xsd"
+              abie="UBLDocumentSignatures"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2"/&gt;
+        &lt;file type="SABIE" name="UBL-SignatureAggregateComponents-2.1.xsd"
+              prefix="sac"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2"&gt;
+          &lt;imports&gt;
+
+   &lt;!-- ===== Incorporate W3C signature specification--&gt;
+   &lt;xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" 
+               schemaLocation="UBL-xmldsig-core-schema-2.1.xsd"/&gt;
+
+   &lt;!-- ===== Incorporate ETSI signature specifications--&gt;
+   &lt;xsd:import namespace="http://uri.etsi.org/01903/v1.3.2#" 
+               schemaLocation="UBL-XAdESv132-2.1.xsd"/&gt;
+   &lt;xsd:import namespace="http://uri.etsi.org/01903/v1.4.1#"
+               schemaLocation="UBL-XAdESv141-2.1.xsd"/&gt;
+          &lt;/imports&gt;
+          &lt;elements xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+                    abie="SignatureInformation"&gt;
+         &lt;xsd:element ref="ds:Signature" minOccurs="0" maxOccurs="1"&gt;
+           &lt;xsd:annotation&gt;
+             &lt;xsd:documentation&gt;This is a single digital signature as defined by the W3C specification.&lt;/xsd:documentation&gt;
+           &lt;/xsd:annotation&gt;
+         &lt;/xsd:element&gt;
+          &lt;/elements&gt;
+        &lt;/file&gt;
+        &lt;file type="SBBIE" name="UBL-SignatureBasicComponents-2.1.xsd"
+              prefix="sbc"
+namespace="urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2"/&gt;
+      &lt;/dir&gt;
+    &lt;/dir&gt;
+  &lt;/schema&gt;
+&lt;/configuration&gt;</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="S-DEMONSTRATION"></a>4.&nbsp;Demonstration</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="S-DEMONSTRATION-SCENARIOS"></a>4.1.&nbsp;Demonstration scenarios</h3></div></div></div><p>Consider the example of a return authorization request and response pair of business
+        documents. These documents are not modeled as part of UBL, yet you might need such documents
+        in your interactions with your trading partners. Using business objects from the UBL common
+        library, say for example the identification of parties, will help in the construction of
+        your additional documents so that your back end is dealing the same way with the same
+        business objects found in all documents. Having schemas for these additional documents is as
+        important as having schemas for the UBL documents. The Google spreadsheet at <a href="https://docs.google.com/spreadsheets/d/1HdkOhKBX5Guwyx5z4Ol6gjfY3QYQQ4uPxue36X5LilE/view" target="_top">https://docs.google.com/spreadsheets/d/1HdkOhKBX5Guwyx5z4Ol6gjfY3QYQQ4uPxue36X5LilE/view</a> has this CCTS model.</p><p>Consider also the example of the existing UBL invoice. When writing an invoice for a
+        particular trading partner you may need to include the information from a timesheet. In the
+        UBL 2.1 library there are no timesheet constructs. Yet when you submit your invoice, your
+        trading partner is expecting to receive in that invoice a day-by-day and task-by-task
+        breakdown of the hours incurred. An extension structure can be designed and implemented as a
+        set of schema fragments in which this information can be captured for any UBL invoice (or
+        any other UBL document for that matter). This non-standard structure is a descendant of the
+        standardized extension point found at the beginning of the UBL document-level invoice
+        structure (and the beginning of every document-level structure in UBL). The Google
+        spreadsheet at <a href="https://docs.google.com/spreadsheets/d/1iEAfAF-JF_rkXI8epVF5sv7Qr5NOx7wq8EPwZqptTLU/view" target="_top">https://docs.google.com/spreadsheets/d/1iEAfAF-JF_rkXI8epVF5sv7Qr5NOx7wq8EPwZqptTLU/view</a> has this CCTS model.</p><p>The one trading partner expecting the timesheet information needs to be assured the
+        information supplied is correctly structured, thus they would incorporate the extension
+        schema fragments in their environment, ready to validate the incoming instances treating the
+        timesheet information as integral information and not foreign content. This is done simply
+        by adding a single <code class="literal">&lt;xsd:import&gt;</code> statement of the extension schema into
+        the extension content data type schema fragment. Other trading partners have no interest in
+        such details, so they would not bother incorporating the schema fragments in their
+        environment. Nevertheless, they are already equipped to receive the augmented document as
+        the standardized structures blindly accept unrecognized foreign content that is correctly
+        used under the extension point.</p><p>The above examples of adding new documents to UBL and creating an extension for UBL are
+        in the <code class="literal">ubl/</code> demonstration subdirectory. The Google spreadsheet at <a href="https://docs.google.com/spreadsheets/d/1u4LTxyFvJoc2YxNfNCGXBTlH7yndc0TP4fD2XpFMjM8/view" target="_top">https://docs.google.com/spreadsheets/d/1u4LTxyFvJoc2YxNfNCGXBTlH7yndc0TP4fD2XpFMjM8/view</a> has the CCTS model for UBL 2.1.</p><p>The <code class="literal">bde/</code> demonstration subdirectory recreates the OASIS Business
+        Document Envelope set of schemas. The Google spreadsheet at <a href="https://docs.google.com/spreadsheets/d/1TQ597-7MBLr6RwDBg2kFLx8sgO51xk6K-wpTDUEN9Uc/view" target="_top">https://docs.google.com/spreadsheets/d/1TQ597-7MBLr6RwDBg2kFLx8sgO51xk6K-wpTDUEN9Uc/view</a> has the CCTS model for this vocabulary.</p><p>Finally, consider the example of an invoicing project that needs only the UBL invoice,
+        not any of the other 64 document types. Moreover, it may need only part of the UBL invoice
+        is needed. Creating a subset schema with only the desired components produces an artefact
+        suitable for both validation and for constraining data entry. The Google spreadsheet at
+          <a href="https://docs.google.com/spreadsheets/d/1wJFeWRQ8g70ZyYL_thao-4nSB0xeWGMgTcxnSnfvV6c/view" target="_top">https://docs.google.com/spreadsheets/d/1wJFeWRQ8g70ZyYL_thao-4nSB0xeWGMgTcxnSnfvV6c/view</a> has the &#8220;Subset Test&#8221; column populated with values indicating the
+        cardinality of the item when used in the subset. Crane&#8217;s programs are invoked
+        indicating that only the Invoice is to be created, the transformed name of the column
+        &#8220;SubsetTest&#8221; for cardinalities, and the flag that unspecified cardinality
+        implies the item is not included in the subset.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>In command-line parameters transform the name of the column by removing all non-XML
+          Name characters (e.g. spaces, punctuation) leaving only a contiguous string of letters and
+          numbers.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="S-DEMONSTRATION-FILES"></a>4.2.&nbsp;Demonstration files</h3></div></div></div><p>The current version of this environment [<a href="#b_crane-gc2obdndr" title="[gc2obdndr]"><span class="abbrev">gc2obdndr</span></a>] unpacks to
+        create the following files, starting with the stylesheet and the documentation in the base
+        directory:</p><pre class="programlisting">Crane-gc2obdndr/Crane-checkgc4obdndr.xsl
+Crane-gc2obdndr/Crane-gc2obdndr.xsl
+Crane-gc2obdndr/Crane-gc2obdsummary.xsl
+Crane-gc2obdndr/Crane-mergegc.xsl
+Crane-gc2obdndr/Crane-normalizegc.xsl
+Crane-gc2obdndr/CreatingSchemasWithOBDNDR.html
+Crane-gc2obdndr/obdrevprocess.png
+Crane-gc2obdndr/readme-Crane-checkgc4obdndr.txt
+Crane-gc2obdndr/readme-Crane-gc2obdndr.txt
+Crane-gc2obdndr/readme-Crane-gc2obdsummary.txt
+Crane-gc2obdndr/readme-Crane-mergegc.txt
+Crane-gc2obdndr/readme-Crane-normalizegc.txt</pre><p>The <code class="literal">support/</code> directory contains stylesheet fragments referenced by
+        the base stylesheets:</p><pre class="programlisting">Crane-commonjson.xsl
+Crane-commonndr.xsl
+Crane-utilndr.xsl
+checkgc4obdndr-model.xsl
+checkgc4obdndr-report.xsl
+checkgc4obdndr-rules.xsl
+checkgc4obdndr-schema.xsl
+ndrSubset.xsl
+udt4html.xsl</pre><p>The <code class="literal">xsd/</code> directory contains pro-forma schema fragments available to
+        be used in new deployments:</p><pre class="programlisting">Crane-gc2obdndr/xsd/OBD-UnqualifiedDataTypes.xsd
+Crane-gc2obdndr/xsd/CCTS_CCT_SchemaModule.xsd</pre><p>The <code class="literal">json/</code> directory contains pro-forma schema fragments available to
+        be used in new deployments:</p><pre class="programlisting">Crane-gc2obdndr/xsd/OBD-UnqualifiedDataTypes.json
+Crane-gc2obdndr/xsd/CCTS_CCT_SchemaModule.json</pre><p>Note that the <code class="literal">saxon9he/</code> directory includes a copy of the free
+          <code class="literal">saxon9he.jar</code> file and its necessary notices, downloaded from Saxon
+          [<a href="#b_saxon" title="[Saxon]"><span class="abbrev">Saxon</span></a>] Home Edition (HE) XSLT processor package at <a href="http://saxon.sf.net" target="_top"><code class="literal">http://saxon.sf.net</code></a>:</p><pre class="programlisting">Crane-gc2obdndr/saxon9he/saxon9he.jar
+Crane-gc2obdndr/saxon9he/notices/CERN.txt
+Crane-gc2obdndr/saxon9he/notices/JAMESCLARK.txt
+Crane-gc2obdndr/saxon9he/notices/LICENSE.txt
+Crane-gc2obdndr/saxon9he/notices/THAI.txt
+Crane-gc2obdndr/saxon9he/notices/UNICODE.txt</pre><p>The <code class="literal">ubl/</code> directory includes everything needed to recreate the UBL
+        schema constructs and to run the demonstration that creates an additional document schema
+        and a document extension schema:</p><pre class="programlisting">Crane-gc2obdndr/ubl/config-myext.xml           - extension generation configuration
+Crane-gc2obdndr/ubl/config-rar.xml             - additional document generation configuration
+Crane-gc2obdndr/ubl/config-ubl-2.1-ext.xml     - signature extension generation configuration
+Crane-gc2obdndr/ubl/config-ubl-2.1.xml         - UBL 2.1 generation configuration
+Crane-gc2obdndr/ubl/createMyExt.bat            - extension generation invocation for Windows
+Crane-gc2obdndr/ubl/createMyExt.sh             - extension generation invocation for Unix
+Crane-gc2obdndr/ubl/createRAR.bat              - document generation invocation for Windows
+Crane-gc2obdndr/ubl/createRAR.sh               - document generation invocation for Unix 
+Crane-gc2obdndr/ubl/createUBL.bat              - UBL 2.1 generation invocation for Windows 
+Crane-gc2obdndr/ubl/createUBL.sh               - UBL 2.1 generation invocation for Unix
+Crane-gc2obdndr/ubl/doall.bat                  - demonstration invocation for Windows
+Crane-gc2obdndr/ubl/doall.sh                   - demonstration invocation for Unix
+Crane-gc2obdndr/ubl/UBL-2.1-CVA-Skeleton.cva   - pro-forma CVA for UBL 2.1 code lists</pre><p>The <code class="literal">ubl/json-schema/common</code> directory includes the UBL JSON schema
+        fragments not generated by this environment:</p><pre class="programlisting">CCTS_CCT_SchemaModule-2.1.json
+UBL-CommonExtensionComponents-2.1.json
+UBL-ExtensionContentDataType-2.1.json
+UBL-UnqualifiedDataTypes-2.1.json</pre><p>The <code class="literal">mod/</code> directory contains the serialization of the document models
+        in genericode, and the subdirectories contain the additional document and document extension
+        models in OpenOffice ODS format:</p><pre class="programlisting">Crane-gc2obdndr/ubl/mod/mydoc/MyRARequestResponse.ods    - additional document model spreadsheet
+Crane-gc2obdndr/ubl/mod/myext/MyTimesheetExtension.ods   - extension document model spreadsheet
+Crane-gc2obdndr/ubl/mod/MyRARequestResponse-Entities.gc  - additional document model in genericode
+Crane-gc2obdndr/ubl/mod/MyTimesheetExtension-Entities.gc - extension document model in genericode
+Crane-gc2obdndr/ubl/mod/UBL-Entities-2.0.gc              - UBL 2.0 BIEs in genericode 
+Crane-gc2obdndr/ubl/mod/UBL-Entities-2.1.gc              - UBL 2.1 BIEs in genericode
+Crane-gc2obdndr/ubl/mod/UBL-Signature-Entities-2.1.gc    - UBL signature BIEs in genericode</pre><p>The <code class="literal">val/</code> directory contains an environment with test instances and
+        invocations to validate the test instances (note that this is essentially the same as in the
+        UBL distribution except that the XSLT scripts invoke the saxon9he already part of this
+        distribution:</p><pre class="programlisting">Crane-gc2obdndr/ubl/val/CatalogManager.properties   - library for XSD validation
+Crane-gc2obdndr/ubl/val/Invoice.json                - sample valid instance in JSON
+Crane-gc2obdndr/ubl/val/InvoiceBad.json             - sample invalid instance in JSON
+Crane-gc2obdndr/ubl/val/InvoiceExt.xml              - sample valid instance with custom extension
+Crane-gc2obdndr/ubl/val/InvoiceExtBad.xml           - sample invalid instance with custom extension
+Crane-gc2obdndr/ubl/val/jsonvalidate.py             - application for JSON schema validation
+Crane-gc2obdndr/ubl/val/MyRARequest.xml             - sample valid custom document
+Crane-gc2obdndr/ubl/val/MyRARequestBad.xml          - sample invalid custom document
+Crane-gc2obdndr/ubl/val/MyRAResponse.xml            - sample valid custom document
+Crane-gc2obdndr/ubl/val/MyRAResponseBad.xml         - sample invalid custom document
+Crane-gc2obdndr/ubl/val/resolver.jar                - library for XSD validation
+Crane-gc2obdndr/ubl/val/test.bat                    - invocation of all validation in Windows
+Crane-gc2obdndr/ubl/val/test.sh                     - invocation of all validation in Unix
+Crane-gc2obdndr/ubl/val/UBL-DefaultDTQ-2.1.xsl      - copy of UBL data type qualifications
+Crane-gc2obdndr/ubl/val/validate.bat                - invocation of UBL validation in Windows
+Crane-gc2obdndr/ubl/val/validate.sh                 - invocation of UBL validation in Unix
+Crane-gc2obdndr/ubl/val/validatejson.bat            - invocation of JSON validation in Windows
+Crane-gc2obdndr/ubl/val/validatejson.sh             - invocation of JSON validation in Unix
+Crane-gc2obdndr/ubl/val/w3cschema-cygwin.sh         - invocation of XSD validation in Cygwin
+Crane-gc2obdndr/ubl/val/w3cschema.bat               - invocation of XSD validation in Windows
+Crane-gc2obdndr/ubl/val/w3cschema.sh                - invocation of XSD validation in Unix
+Crane-gc2obdndr/ubl/val/xercesImpl.jar              - library for XSD validation
+Crane-gc2obdndr/ubl/val/xjparse.jar                 - library for XSD validation
+Crane-gc2obdndr/ubl/val/xslt.bat                    - invocation of XSLT process in Windows
+Crane-gc2obdndr/ubl/val/xslt.sh                     - invocation of XSLT process in Unix</pre><p>The <code class="literal">SubsetTest/</code> directory contains three subdirectories. The
+          <code class="literal">mod/</code> subdirectory has the serialization of the document models in
+        genericode and OpenOffice ODS format. The <code class="literal">annotated/</code> subdirectory has
+        artefacts annotated with an indication of what has been removed from the model by
+        subsetting. The <code class="literal">minimal/</code> subdirectory has artefacts without annotations
+        and so is the minimal expression of the subset model.</p><pre class="programlisting">Crane-gc2obdndr/SubsetTest/config-ubl-2.1-test-no-ndr.xml    - schema generation without NDR checking
+Crane-gc2obdndr/SubsetTest/config-ubl-2.1-test-no-schema.xml - NDR checking without schema generation
+Crane-gc2obdndr/SubsetTest/createSubsetTest.bat              - demonstration invocation in Windows
+Crane-gc2obdndr/SubsetTest/createSubsetTest.sh               - demonstration invocation in Unix
+Crane-gc2obdndr/SubsetTest/mod/SubsetTest-Entities.gc        - subset BIEs in genericode
+Crane-gc2obdndr/SubsetTest/mod/Subset test of UBL 2.1.ods    - subset BIEs spreadsheet
+Crane-gc2obdndr/SubsetTest/annotated/                        - results with change annotations
+Crane-gc2obdndr/SubsetTest/minimal/                          - results without change annotations</pre><p>The <code class="literal">xsd/</code> and <code class="literal">xsdrt/</code> directories under each of the
+          <code class="literal">ubl/</code> and <code class="literal">SubsetTest/</code> contain copies of the UBL 2.1
+        schema fragments that are not created by this demonstration environment (note that a custom
+        version of the <code class="literal">UBL-ExtensionContentDataType-2.1.xsd</code> file is included in
+          <code class="literal">ubl/</code>, hand-crafted to point to the generated extension environment of
+        the demonstration):</p><pre class="programlisting">CCTS_CCT_SchemaModule-2.1.xsd
+UBL-CommonExtensionComponents-2.1.xsd
+UBL-CommonSignatureComponents-2.1.xsd
+UBL-CoreComponentParameters-2.1.xsd
+UBL-ExtensionContentDataType-2.1-original.xsd
+UBL-ExtensionContentDataType-2.1.xsd
+UBL-QualifiedDataTypes-2.1.xsd
+UBL-SignatureAggregateComponents-2.1.xsd
+UBL-SignatureBasicComponents-2.1.xsd
+UBL-UnqualifiedDataTypes-2.1.xsd
+UBL-XAdESv132-2.1.xsd
+UBL-XAdESv141-2.1.xsd
+UBL-xmldsig-core-schema-2.1.xsd</pre><p>The <code class="literal">bde/</code> directory includes everything needed to recreate the
+        Business Document Envelope schema constructs:</p><pre class="programlisting">Crane-gc2obdndr/bde/config-bde-1.1.xml      - BDE generation configuration
+Crane-gc2obdndr/bde/createBDE.bat           - demonstration invocation in Windows
+Crane-gc2obdndr/bde/createBDE.sh            - demonstration invocation in Unix
+Crane-gc2obdndr/bde/mod/BDE-Entities-1.1.gc - BDE BBIEs in genericode</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="S-UBL-EXTENSION-DEMONSTRATION-INVOCATION"></a>4.3.&nbsp;UBL extension demonstration invocation</h3></div></div></div><p>In <code class="literal">ubl/</code> the <code class="literal">createUBL.bat</code> and
+          <code class="literal">createUBL.sh</code> invocations produce the base UBL validation artefacts
+        related to the business objects. The hand-crafted and UN/CEFACT schema fragments are not
+        recreated by this process, they are simply copied from the latest UBL 2.1
+        distribution.</p><p>One hand-crafted UBL schema artefact that needs to be modified, and has been modified in
+        this demonstration, is the one that imports all of the extension document apex schema
+        fragments. The original version is included in this package and shows only the
+        committee-standardized signature extension being imported. The modified fragment (using the
+        original fragment&#8217;s <code class="literal">UBL-ExtensionContentDataType-2.1.xsd</code> file
+        name) contains an additional import directive for the timesheet extension. No other changes
+        are needed for this fragment, only the addition of import directives.</p><p>The <code class="literal">createMyExt.bat</code> and <code class="literal">createMyExt.sh</code> invocations
+        produce the document extension schema fragments.</p><p>The <code class="literal">createRAR.bat</code> and <code class="literal">createRAR.sh</code> invocations
+        produce the additional document schema fragments.</p><p>The <code class="literal">doall.bat</code> and <code class="literal">doall.sh</code> invocations run all
+        three creation and testing scripts.</p><p>The demonstration artefacts can then be generated and tested by the single invocation of
+          &#8220;<code class="literal">doall</code>&#8221; from the <code class="literal">ubl/</code> directory, based
+        on either being in a Windows environment:</p><pre class="programlisting">cd ubl
+doall.bat</pre><p>... or being in a Linux/BSD/Unix environment:</p><pre class="programlisting">cd ubl
+sh doall.sh</pre><p>The final test demonstrates that the artefacts were correctly created and engaged. This
+        test shows the one error-free JSON instance and three error-free XML instances not to have
+        errors, and the three invalid XML instances (named &#8220;Bad&#8221;) to have expected
+        validation errors (note the test is run once with the fully-commented schemas and once with
+        the runtime schemas):</p><pre class="programlisting">############################################################
+Validating InvoiceExt.xml
+############################################################
+============== Phase 1: XSD schema validation ==============
+No schema validation errors.
+============ Phase 2: XSLT code list validation ============
+No code list validation errors.
+
+############################################################
+Validating InvoiceExtBad.xml
+############################################################
+============== Phase 1: XSD schema validation ==============
+Attempting validating, namespace-aware parse
+Error:file:///T:/Crane-gc2obdndr-test/ubl/val/
+InvoiceExtBad.xml:14:19:cvc-complex-type.2.4.a: Invalid
+ content was found starting with element 'mxa:Taskx'. One of
+ '{"urn:X-MyCompany:xsd:MyTimesheetExtension:
+AggregateComponents":Task}' is expected.
+Parse succeeded (1.653) with 1 error and no warnings.
+
+############################################################
+Validating MyRARequest.xml
+############################################################
+============== Phase 1: XSD schema validation ==============
+No schema validation errors.
+============ Phase 2: XSLT code list validation ============
+No code list validation errors.
+
+############################################################
+Validating MyRARequestBad.xml
+############################################################
+============== Phase 1: XSD schema validation ==============
+Attempting validating, namespace-aware parse
+Error:file:///T:/Crane-gc2obdndr-test/ubl/val/
+MyRARequestBad.xml:15:29:cvc-complex-type.2.4.a: Invalid
+ content was found starting with element
+ 'rqb:RequestedQuantityx'. One of '{"urn:X-MyCompany:xsd:
+MyRARequestResponse:BasicComponents":RequestedQuantity}' is
+ expected.
+Parse succeeded (1.622) with 1 error and no warnings.
+
+############################################################
+Validating MyRAResponse.xml
+############################################################
+============== Phase 1: XSD schema validation ==============
+No schema validation errors.
+============ Phase 2: XSLT code list validation ============
+No code list validation errors.
+
+############################################################
+Validating MyRAResponseBad.xml
+############################################################
+============== Phase 1: XSD schema validation ==============
+Attempting validating, namespace-aware parse
+Error:file:///T:/Crane-gc2obdndr-test/ubl/val/
+MyRAResponseBad.xml:19:27:cvc-complex-type.2.4.a: Invalid
+ content was found starting with element
+ 'rsb:GrantedQuantityx'. One of '{"urn:X-MyCompany:xsd:
+MyRARequestResponse:BasicComponents":GrantedQuantity}' is
+ expected.
+Parse succeeded (1.642) with 1 error and no warnings.
+
+############################################################
+Validating InvoiceExt.xml
+############################################################
+============== Phase 1: XSD schema validation ==============
+No schema validation errors.
+============ Phase 2: XSLT code list validation ============
+No code list validation errors.
+
+############################################################
+Validating InvoiceExtBad.xml
+############################################################
+============== Phase 1: XSD schema validation ==============
+Attempting validating, namespace-aware parse
+Error:file:///T:/Crane-gc2obdndr-test/ubl/val/
+InvoiceExtBad.xml:14:19:cvc-complex-type.2.4.a: Invalid
+ content was found starting with element 'mxa:Taskx'. One of
+ '{"urn:X-MyCompany:xsd:MyTimesheetExtension:
+AggregateComponents":Task}' is expected.
+Parse succeeded (1.202) with 1 error and no warnings.
+
+############################################################
+Validating MyRARequest.xml
+############################################################
+============== Phase 1: XSD schema validation ==============
+No schema validation errors.
+============ Phase 2: XSLT code list validation ============
+No code list validation errors.
+
+############################################################
+Validating MyRARequestBad.xml
+############################################################
+============== Phase 1: XSD schema validation ==============
+Attempting validating, namespace-aware parse
+Error:file:///T:/Crane-gc2obdndr-test/ubl/val/
+MyRARequestBad.xml:15:29:cvc-complex-type.2.4.a: Invalid
+ content was found starting with element
+ 'rqb:RequestedQuantityx'. One of '{"urn:X-MyCompany:xsd:
+MyRARequestResponse:BasicComponents":RequestedQuantity}' is
+ expected.
+Parse succeeded (1.352) with 1 error and no warnings.
+
+############################################################
+Validating MyRAResponse.xml
+############################################################
+============== Phase 1: XSD schema validation ==============
+No schema validation errors.
+============ Phase 2: XSLT code list validation ============
+No code list validation errors.
+
+############################################################
+Validating MyRAResponseBad.xml
+############################################################
+============== Phase 1: XSD schema validation ==============
+Attempting validating, namespace-aware parse
+Error:file:///T:/Crane-gc2obdndr-test/ubl/val/
+MyRAResponseBad.xml:19:27:cvc-complex-type.2.4.a: Invalid
+ content was found starting with element
+ 'rsb:GrantedQuantityx'. One of '{"urn:X-MyCompany:xsd:
+MyRARequestResponse:BasicComponents":GrantedQuantity}' is
+ expected.
+Parse succeeded (1.272) with 1 error and no warnings.
+
+############################################################
+Validating Invoice.json
+############################################################
+No schema validation errors.
+
+############################################################
+Validating InvoiceBad.json
+############################################################
+Validation error: u'DateContent' is a required property
+validator: required
+path: deque([u'Invoice', 0, u'IssueDate', 0])
+cause: None
+context: []
+validator_value: [u'DateContent']
+schema_path: deque([u'properties', u'Invoice', u'items', u'properties', u'IssueDate', u'items', u'required'])
+parent: None</pre><p>A special note regarding the validation of the JSON test instance. At the time of
+        writing this, the library on which the Python application <code class="literal">jsonvalidate.py</code>
+        is based does not work on a Windows platform but does work on Unix platforms. It may be that
+        the Python distribution you are using includes a version of the library that does not fail
+        under Windows. There is a link in the Python source to the bug ticket reporting the
+        problem.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="S-SUBSETTEST-EXTENSION-DEMONSTRATION-INVOCATION"></a>4.4.&nbsp;SubsetTest extension demonstration invocation</h3></div></div></div><p>In <code class="literal">SubsetTest/</code> the <code class="literal">createSubsetTest.bat</code> and
+          <code class="literal">createSubsetTest.sh</code> invocations produce the subsets of UBL 2.1.</p><p>Contrast the annotated and minimal versions of the XSD files and HTML reports to see how
+        the absent content is documented in the artefacts.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="S-BDE-DEMONSTRATION-INVOCATION"></a>4.5.&nbsp;BDE demonstration invocation</h3></div></div></div><p>In <code class="literal">bde/</code> the <code class="literal">createBDE.bat</code> and
+          <code class="literal">createBDE.sh</code> invocations reproduce the Business Document Envelope
+        schemas.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="S-CHECKING-CREATING-AND-REPORTING-MODEL-INFORMATION-AND-ARTEFACTS"></a>5.&nbsp;Checking, creating and reporting model information and artefacts</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="S-EXPRESSING-THE-MODEL-IN-A-COMMON-FORM"></a>5.1.&nbsp;Expressing the model in a common form</h3></div></div></div><p>OASIS genericode [<a href="#b_genericode" title="[genericode]"><span class="abbrev">genericode</span></a>] is the specification of an XML
+        vocabulary to express sparsely-populated tables. Originally developed to express the
+        information associated with code lists (e.g. currency code lists, country code lists, etc.),
+        genericode is ideally suited to express the sparsely-populated table of CCTS information
+        associated with document models using the Business Document NDR.</p><p>Crane&#8217;s genericode translation package [<a href="#b_crane-ods2obdgc" title="[ods2obdgc]"><span class="abbrev">ods2obdgc</span></a>] (not
+        included in the OBD NDR package) contains a skeleton OBD NDR spreadsheet in ODS format. The
+        UBL committee has also published an <a href="https://docs.google.com/spreadsheets/d/1AeWNkJefPbMj2iODpO_oiBZ_LMrGVK2V3S1ebdjGr_U/view" target="_top">online Google spreadsheet empty skeleton model</a> with which to
+        create CCTS models of documents. These tools were used to create the spreadsheets in the
+        demonstration environment of this package.</p><p>If you choose to use any other means to model the OBD NDR information in your documents,
+        the tools in this environment rely on you expressing the model contents in genericode XML so
+        that this environment is independent of the original modeling expression. You must use the
+        same genericode column value labels as the column headers used in the proforma ODS
+        spreadsheet.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="S-CHECKING-THE-MODEL-FOR-COMPLETENESS"></a>5.2.&nbsp;Checking the model for completeness</h3></div></div></div><p>However the model&#8217;s genericode expression is created, it should be checked for
+        completeness before attempting to produce the runtime validation artefacts. The
+          <code class="literal">Crane-checkgc4obdndr.xsl</code> stylesheet reads the same configuration file
+        and genericode inputs used for creating the artefacts. This stylesheet reports on any
+        inconsistencies or incomplete information that would be needed to produce a proper set of
+        outputs. When requested, this stylesheet will also output DocBook tables summarizing
+        differences beteen old and new revisions of a model.</p><p>See the <a href="readme-Crane-checkgc4obdndr.txt" target="_top">OBD NDR checker
+          stylesheet documentation</a> for the invocation parameters available for
+        processing.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="S-CREATING-THE-RUNTIME-VALIDATION-ARTEFACTS"></a>5.3.&nbsp;Creating the runtime validation artefacts</h3></div></div></div><p>When using OBD NDR, the runtime validation artefacts are W3C XML Schemas [<a href="#b_xsd" title="[XSD]"><span class="abbrev">XSD</span></a>] for a document&#8217;s structural constraints and OASIS Context/value
+        Association files [<a href="#b_cva" title="[CVA]"><span class="abbrev">CVA</span></a>] for a document&#8217;s value constraints. The
+          <code class="literal">Crane-gc2obdndr.xsl</code> stylesheet reads a configuration file and
+        genericode inputs and produces those validation artefacts related to the model (which are
+        not all of the artefacts needed to validate instances). </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Important note:</h3><p>The schema generator does not validate that the model expressed in genericode is self
+          consistent and conforms to the OBD NDR 3.0 rules. If there are errors in this expression
+          of the model, there will be errors in the generated schemas. The corollary is that if you
+          find errors in the generated schemas, these are likely to be caused by errors in the
+          expression of the model. Of course if there are no corresponding errors in the model
+          according to the running of the model checker, then there is a problem with the
+          generator.</p></div><p>See the <a href="readme-Crane-gc2obdndr.txt" target="_top">Translating
+          genericode to OBD NDR stylesheet documentation</a> for the invocation parameters
+        available for processing.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="S-DOCUMENTING-THE-MODEL"></a>5.4.&nbsp;Documenting the model</h3></div></div></div><p>The <code class="literal">Crane-gc2obdsummary.xsl</code> stylesheet produces a hyperlinked HTML
+        report that gives users a quick method of perusing a CCTS model. </p><p>See the <a href="readme-Crane-gc2obdndr.txt" target="_top">Summarizing OBD NDR
+          stylesheet documentation</a> for the invocation parameters available for
+        processing.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="S-UNQUALIFIED-DATA-TYPE-SCHEMA-FRAGMENTS"></a>5.5.&nbsp;Unqualified data type schema fragments</h3></div></div></div><p>The <code class="literal">xsd/</code> directory includes the following two files:</p><div class="itemizedlist"><ul type="disc"><li><p><code class="literal">CCTS_CCT_SchemaModule.xsd</code></p><div class="itemizedlist"><ul type="circle"><li><p>a copy of the UN/CEFACT schema module declaring base core component types for
+                CCTS 2.01; and</p></li></ul></div></li><li><p><code class="literal">OBD-UnqualifiedDataTypes.xsd</code></p><div class="itemizedlist"><ul type="circle"><li><p>a set of declarations of unqualified data types based on CCTS base core
+                component types that: </p><div class="orderedlist"><ol type="1"><li><p>leverage XSD data types for date and time, date, time and boolean values
+                    core component types; and</p></li><li><p>mandate the presence of the following attributes for supplementary
+                    components:</p><div class="itemizedlist"><ul type="square"><li><p><code class="literal">(AmountType)/@currencyID</code>,</p></li><li><p><code class="literal">(BinaryObjectType)/@mimeCode</code>,</p></li><li><p><code class="literal">(GraphicType)/@mimeCode</code>,</p></li><li><p><code class="literal">(PictureType)/@mimeCode</code>,</p></li><li><p><code class="literal">(SoundType)/@mimeCode</code>,</p></li><li><p><code class="literal">(VideoType)/@mimeCode</code>, and</p></li><li><p><code class="literal">(MeasureType)/@unitCode</code>.</p></li></ul></div></li></ol></div></li></ul></div></li></ul></div><p>The <code class="literal">json/</code> directory includes JSON schema equivalents to these two
+        files.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="S-USING-THE-SCHEMAS-TO-VALIDATE"></a>6.&nbsp;Using the schemas to validate</h2></div></div></div><p>The <code class="literal">val/</code> directory contains a copy of the UBL validation tools, and six
+      test instances: two being a UBL sample invoice document with a (thematically irrelevant)
+      timesheet extension and four being a custom document exploiting the UBL common library
+      definition of a party. In each pair of documents, one of the documents has no constraint
+      violations and validates without error, while the other has misspelled element names in order
+      to trigger a validation error to prove the schemas are in play.</p><p>In each of these example instances, note the careful use of namespaces and their
+      associated prefixes. Remember, of course, the prefixes chosen are inconsequential and need not
+      be the same as the prefixes used in the schemas.</p><p>The test invoice documents <code class="literal">InvoiceExt.xml</code> and
+        <code class="literal">InvoiceExtBad.xml</code> begin with a timesheet extension that use both common
+      and foreign constructs:</p><pre class="programlisting">&lt;Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+ xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+ xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+ xmlns:mxd="urn:X-MyCompany:xsd:MyTimesheetExtension"
+ xmlns:mxa="urn:X-MyCompany:xsd:MyTimesheetExtension:AggregateComponents"
+ xmlns:mxb="urn:X-MyCompany:xsd:MyTimesheetExtension:BasicComponents"&gt;
+  &lt;ext:UBLExtensions&gt;
+    &lt;ext:UBLExtension&gt;
+      &lt;!-- standardized extension metadata inserted here if desired --&gt;
+      &lt;!-- followed by the extension content with a foreign apex construct --&gt;
+      &lt;ext:ExtensionContent&gt;
+        &lt;mxd:Timesheet&gt;
+          &lt;cbc:StartDate&gt;2011-10-01&lt;/cbc:StartDate&gt;
+          &lt;cbc:EndDate&gt;2011-10-31&lt;/cbc:EndDate&gt;
+          &lt;mxa:TimesheetParty&gt;
+            &lt;mxa:TimesheetEntry&gt;
+              &lt;cbc:Date&gt;2011-10-12&lt;/cbc:Date&gt;
+              &lt;mxb:HoursNumeric&gt;4&lt;/mxb:HoursNumeric&gt;
+              &lt;mxa:Task&gt;
+                &lt;cbc:Description&gt;Teleconference&lt;/cbc:Description&gt;
+                &lt;mxb:HoursNumeric&gt;1&lt;/mxb:HoursNumeric&gt;
+              &lt;/mxa:Task&gt;
+              &lt;mxa:Task&gt;
+                &lt;cbc:Description&gt;Development&lt;/cbc:Description&gt;
+                &lt;mxb:HoursNumeric&gt;3&lt;/mxb:HoursNumeric&gt;
+              &lt;/mxa:Task&gt;
+            &lt;/mxa:TimesheetEntry&gt;
+            &lt;cac:Party&gt;
+              &lt;cac:PartyIdentification&gt;
+                &lt;cbc:ID&gt;Ken&lt;/cbc:ID&gt;
+              &lt;/cac:PartyIdentification&gt;
+            &lt;/cac:Party&gt;
+          &lt;/mxa:TimesheetParty&gt;
+        &lt;/mxd:Timesheet&gt;
+      &lt;/ext:ExtensionContent&gt;
+    &lt;/ext:UBLExtension&gt;
+  &lt;/ext:UBLExtensions&gt;
+  &lt;cbc:UBLVersionID&gt;2.0&lt;/cbc:UBLVersionID&gt;
+  &lt;!-- remaining invoice content continues here --&gt;</pre><p>The custom documents <code class="literal">MyRARequest.xml</code> and
+        <code class="literal">MyRARequestBad.xml</code> are short and contain both common and foreign
+      constructs:</p><pre class="programlisting">&lt;ReturnAuthorizationRequest
+  xmlns="urn:X-MyCompany:xsd:MyReturnAuthorizationRequest"
+  xmlns:rqa="urn:X-MyCompany:xsd:MyRARequestResponse:AggregateComponents"
+  xmlns:rqb="urn:X-MyCompany:xsd:MyRARequestResponse:BasicComponents"
+  xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+  xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"&gt;
+  &lt;rqb:RequestDate&gt;2011-11-15&lt;/rqb:RequestDate&gt;
+  &lt;rqa:RequestingParty&gt;
+    &lt;cac:Contact&gt;
+      &lt;cbc:ElectronicMail&gt;joeBloggs@example.com&lt;/cbc:ElectronicMail&gt;
+    &lt;/cac:Contact&gt;
+  &lt;/rqa:RequestingParty&gt;
+  &lt;rqa:ReturnRequested&gt;
+    &lt;rqb:RequestedQuantity&gt;3&lt;/rqb:RequestedQuantity&gt;
+    &lt;cac:OrderLineReference&gt;
+      &lt;cbc:LineID&gt;1&lt;/cbc:LineID&gt;
+      &lt;cac:OrderReference&gt;
+        &lt;cbc:ID&gt;20111110-0112&lt;/cbc:ID&gt;
+      &lt;/cac:OrderReference&gt;
+    &lt;/cac:OrderLineReference&gt;
+  &lt;/rqa:ReturnRequested&gt;
+&lt;/ReturnAuthorizationRequest&gt;</pre><pre class="programlisting">&lt;ReturnAuthorizationRequest
+  xmlns="urn:X-MyCompany:xsd:MyReturnAuthorizationRequest"
+  xmlns:rqa="urn:X-MyCompany:xsd:MyRARequestResponse:AggregateComponents"
+  xmlns:rqb="urn:X-MyCompany:xsd:MyRARequestResponse:BasicComponents"
+  xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+  xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"&gt;
+  &lt;rqb:RequestDate&gt;2011-11-15&lt;/rqb:RequestDate&gt;
+  &lt;rqa:RequestingParty&gt;
+    &lt;cac:Contact&gt;
+      &lt;cbc:ElectronicMail&gt;joeBloggs@example.com&lt;/cbc:ElectronicMail&gt;
+    &lt;/cac:Contact&gt;
+  &lt;/rqa:RequestingParty&gt;
+  &lt;rqa:ReturnRequested&gt;
+    &lt;rqb:RequestedQuantityx&gt;3&lt;/rqb:RequestedQuantityx&gt;
+    &lt;cac:OrderLineReference&gt;
+      &lt;cbc:LineID&gt;1&lt;/cbc:LineID&gt;
+      &lt;cac:OrderReference&gt;
+        &lt;cbc:ID&gt;20111110-0112&lt;/cbc:ID&gt;
+      &lt;/cac:OrderReference&gt;
+    &lt;/cac:OrderLineReference&gt;
+  &lt;/rqa:ReturnRequested&gt;
+&lt;/ReturnAuthorizationRequest&gt;</pre><p>The custom documents <code class="literal">MyRAResponse.xml</code> and
+        <code class="literal">MyRAResponseBad.xml</code> are short and contain both common and foreign
+      constructs: </p><pre class="programlisting">&lt;ReturnAuthorizationResponse
+  xmlns="urn:X-MyCompany:xsd:MyReturnAuthorizationResponse"
+  xmlns:rsa="urn:X-MyCompany:xsd:MyRARequestResponse:AggregateComponents"
+  xmlns:rsb="urn:X-MyCompany:xsd:MyRARequestResponse:BasicComponents"
+  xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+  xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"&gt;
+  &lt;cbc:ResponseDate&gt;2011-11-15&lt;/cbc:ResponseDate&gt;
+  &lt;rsb:ReturnGrantedIndicator&gt;true&lt;/rsb:ReturnGrantedIndicator&gt;
+  &lt;rsa:AuthorizingParty&gt;
+    &lt;cac:PartyIdentification&gt;
+      &lt;cbc:ID&gt;EMP0987&lt;/cbc:ID&gt;
+    &lt;/cac:PartyIdentification&gt;
+  &lt;/rsa:AuthorizingParty&gt;
+  &lt;rsa:RequestDocumentReference&gt;
+    &lt;cbc:ID&gt;17134&lt;/cbc:ID&gt;
+  &lt;/rsa:RequestDocumentReference&gt;
+  &lt;rsa:ReturnGranted&gt;
+    &lt;rsb:GrantedQuantity&gt;2&lt;/rsb:GrantedQuantity&gt;
+    &lt;rsa:ReturnRequested&gt;
+      &lt;rsb:RequestedQuantity&gt;3&lt;/rsb:RequestedQuantity&gt;
+      &lt;cac:OrderLineReference&gt;
+        &lt;cbc:LineID&gt;1&lt;/cbc:LineID&gt;
+        &lt;cac:OrderReference&gt;
+          &lt;cbc:ID&gt;20111110-0112&lt;/cbc:ID&gt;
+        &lt;/cac:OrderReference&gt;
+      &lt;/cac:OrderLineReference&gt;
+    &lt;/rsa:ReturnRequested&gt;
+  &lt;/rsa:ReturnGranted&gt;
+&lt;/ReturnAuthorizationResponse&gt;</pre><pre class="programlisting">&lt;ReturnAuthorizationResponse
+  xmlns="urn:X-MyCompany:xsd:MyReturnAuthorizationResponse"
+  xmlns:rsa="urn:X-MyCompany:xsd:MyRARequestResponse:AggregateComponents"
+  xmlns:rsb="urn:X-MyCompany:xsd:MyRARequestResponse:BasicComponents"
+  xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+  xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"&gt;
+  &lt;cbc:ResponseDate&gt;2011-11-15&lt;/cbc:ResponseDate&gt;
+  &lt;rsb:ReturnGrantedIndicator&gt;true&lt;/rsb:ReturnGrantedIndicator&gt;
+  &lt;rsa:AuthorizingParty&gt;
+    &lt;cac:PartyIdentification&gt;
+      &lt;cbc:ID&gt;EMP0987&lt;/cbc:ID&gt;
+    &lt;/cac:PartyIdentification&gt;
+  &lt;/rsa:AuthorizingParty&gt;
+  &lt;rsa:RequestDocumentReference&gt;
+    &lt;cbc:ID&gt;17134&lt;/cbc:ID&gt;
+  &lt;/rsa:RequestDocumentReference&gt;
+  &lt;rsa:ReturnGranted&gt;
+    &lt;rsb:GrantedQuantityx&gt;2&lt;/rsb:GrantedQuantityx&gt;
+    &lt;rsa:ReturnRequested&gt;
+      &lt;rsb:RequestedQuantity&gt;3&lt;/rsb:RequestedQuantity&gt;
+      &lt;cac:OrderLineReference&gt;
+        &lt;cbc:LineID&gt;1&lt;/cbc:LineID&gt;
+        &lt;cac:OrderReference&gt;
+          &lt;cbc:ID&gt;20111110-0112&lt;/cbc:ID&gt;
+        &lt;/cac:OrderReference&gt;
+      &lt;/cac:OrderLineReference&gt;
+    &lt;/rsa:ReturnRequested&gt;
+  &lt;/rsa:ReturnGranted&gt;
+&lt;/ReturnAuthorizationResponse&gt;</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="S-CONTEXT-VALUE-ASSOCIATION-FILES"></a>7.&nbsp;Context/value association files</h2></div></div></div><p>This environment will create an OASIS context/value association file [<a href="#b_cva" title="[CVA]"><span class="abbrev">CVA</span></a>] for every configuration file entry of type &#8220;<code class="literal">CVA</code>&#8221;.
+      Typically there will be only zero or one such file in the configuration, as all such files
+      will perform the same analysis on the input genericode files.</p><p>When present, the CVA configuration file entry specifies the URI of a skeleton CVA file
+      used as a proforma output document. This skeleton file is schema-valid using the OASIS CVA XSD
+      schemas, however, the empty <code class="literal">address=</code> attributes will be unacceptable to
+      downstream processing. Thus, the skeleton can only be used as a pro-forma to create the
+      production CVA. The skeleton is annotated with indications of which BBIEs of the model are to
+      have their XPath address included in the context, determined by their data type in the
+        <code class="literal">&lt;c:DataType xmlns:c="urn:X-Crane-gc2obdndr"&gt;</code> element. This environment
+      recognizes these annotations and replaces the <code class="literal">address=</code> attributes with the
+      appropriate XSLT match pattern of XPath addresses, preserving the annotation as documentation
+      for the reader.</p><p>An example from UBL 2.1 found in <code class="literal">ubl/UBL-2.1-CVA-Skeleton.cva</code> is for
+      the data type &#8220;Currency_ Code. Type&#8221;. The input skeleton CVA file contains the
+      element with the empty <code class="literal">address=</code> attribute:</p><pre class="programlisting">...xmlns:c="urn:X-Crane-gc2obdndr"...
+&lt;Context values="Currency-2.0 Currency-2.1"
+         metadata="cctsV2.01-code"
+         address=""&gt;
+  &lt;Annotation&gt;
+    &lt;AppInfo&gt;
+      &lt;c:DataType&gt;Currency_ Code. Type&lt;/c:DataType&gt;
+    &lt;/AppInfo&gt;
+  &lt;/Annotation&gt;
+&lt;/Context&gt;</pre><p>The output populated CVA file contains the corresponding element with a populated
+        <code class="literal">address=</code> attribute:</p><pre class="programlisting">&lt;Context values="Currency-2.0 Currency-2.1" metadata="cctsV2.01-code"
+         address="cbc:CurrencyCode | cbc:DocumentCurrencyCode | 
+                  cbc:PaymentAlternativeCurrencyCode | 
+                  cbc:PaymentCurrencyCode | cbc:PricingCurrencyCode | 
+                  cbc:RequestedInvoiceCurrencyCode | 
+                  cbc:SourceCurrencyCode | cbc:TargetCurrencyCode | 
+                  cbc:TaxCurrencyCode"&gt;
+   &lt;Annotation&gt;
+      &lt;AppInfo&gt;
+         &lt;c:DataType&gt;Currency_ Code. Type&lt;/c:DataType&gt;
+      &lt;/AppInfo&gt;
+  &lt;/Annotation&gt;
+&lt;/Context&gt;</pre><p>The creation of an XSLT stylesheet from the combination of a CVA file and its referenced
+      genericode files can be implemented using the <code class="literal">Crane-cva2sch</code> package.</p></div><div class="appendix" lang="en"><h2 class="title" style="clear: both"><a name="A-ACKNOWLEDGEMENT"></a>A.&nbsp;Acknowledgement</h2><p>Many thanks to Stephen Green for identifying the need for this paper and the impetus to
+      adapt an existing software project to accommodate these identified requirements.</p></div><div class="bibliography"><div class="titlepage"><div><div><h2 class="title"><a name="d0e605"></a>Bibliography</h2></div></div></div><div class="bibliomixed"><a name="b_obdndr"></a><p class="bibliomixed">[<span class="abbrev">OBDNDR</span>] 
+      <span class="title"><a href="http://docs.oasis-open.org/ubl/Business-Document-NDR/v1.0/Business-Document-NDR-v1.0.html" target="_top">OASIS Business Document Naming and Design Rules Version
+            1.0</a></span><span class="title"></span>
+    </p></div><div class="bibliomixed"><a name="b_BDE"></a><p class="bibliomixed">[<span class="abbrev">BDE-1.1</span>] 
+      <span class="title">
+        <a href="http://docs.oasis-open.org/ubl/os-UBL-2.1/UBL-2.1.html" target="_top">OASIS
+          Business Document Envelope</a>
+      </span> Version 1.1 </p></div><div class="bibliomixed"><a name="b_ccts"></a><p class="bibliomixed">[<span class="abbrev">CCTS</span>] 
+      <span class="title"><a href="http://www.unece.org/cefact/ebxml/CCTS_V2-01_Final.pdf" target="_top">Core Components Technical Specification</a></span> Version 2.01 - 15 November
+      2003</p></div><div class="bibliomixed"><a name="b_cva"></a><p class="bibliomixed">[<span class="abbrev">CVA</span>] G. Ken Holman <span class="title"><a href="http://www.oasis-open.org/committees/document.php?document_id=33336" target="_top">Context Value Association files</a></span>
+    </p></div><div class="bibliomixed"><a name="b_crane-ods2obdgc"></a><p class="bibliomixed">[<span class="abbrev">ods2obdgc</span>]  Crane Softwrights Ltd.
+          <span class="title"><a href="http://www.CraneSoftwrights.com/resources/ubl/index.htm#ods2obdgc" target="_top">OpenOffice spreadsheet export to
+      genericode</a></span></p></div><div class="bibliomixed"><a name="b_crane-gc2obdndr"></a><p class="bibliomixed">[<span class="abbrev">gc2obdndr</span>]  Crane Softwrights Ltd.
+          <span class="title"><a href="http://www.CraneSoftwrights.com/resources/ubl/index.htm#gc2obdndr" target="_top">Genericode to UBL NDR artefacts</a></span></p></div><div class="bibliomixed"><a name="b_genericode"></a><p class="bibliomixed">[<span class="abbrev">genericode</span>] Tony Coates <span class="title"><a href="http://www.genericode.org/" target="_top">genericode</a></span>,
+          <span class="title"><a href="http://docs.oasis-open.org/codelist/genericode" target="_top">OASIS Code List Representation Technical Committee
+      repository</a></span></p></div><div class="bibliomixed"><a name="b_saxon"></a><p class="bibliomixed">[<span class="abbrev">Saxon</span>] Michael Kay <span class="title"><a href="http://saxon.sf.net/" target="_top">Saxon</a></span></p></div><div class="bibliomixed"><a name="b_ublndr30"></a><p class="bibliomixed">[<span class="abbrev">UBL NDR 3.0</span>] 
+      <span class="title">
+        <a href="http://docs.oasis-open.org/ubl/UBL-NDR/v3.0/UBL-NDR-v3.0.html" target="_top">UBL Naming and Design Rules Version 3.0</a> 04 February 2015
+      </span>
+    </p></div><div class="bibliomixed"><a name="b_UBL21"></a><p class="bibliomixed">[<span class="abbrev">UBL-2.1</span>] 
+      <span class="title">
+        <a href="http://docs.oasis-open.org/ubl/os-UBL-2.1/UBL-2.1.html" target="_top">Universal Business Language Version 2.1</a>
+      </span> 04 November 2013 </p></div><div class="bibliomixed"><a name="b_xsd"></a><p class="bibliomixed">[<span class="abbrev">XSD</span>] Henry S. Thomson, et al.<span class="title"><a href="http://www.w3.org/TR/2004/PER-xmlschema-1-20040318" target="_top">XML Schema
+          Part 1: Structures Second Edition</a></span> 2004-03-18</p></div></div></div></body></html>

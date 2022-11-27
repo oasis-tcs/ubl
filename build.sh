@@ -11,15 +11,15 @@ export label=$3
 export title="UBL 2.4"
 export package=UBL-2.4
 export UBLversion=2.4
-export UBLstage=csd01wd01
+export UBLstage=csd01wd02
 export UBLprevStageVersion=2.3
 export UBLprevStage=cs02
 export UBLprevVersion=2.3
 export rawdir=raw
 export includeISO=false
 
-export libGoogle=https://docs.google.com/spreadsheets/d/1kxlFLz2thJOlvpq2ChRAcv76SiKgEIRtoVRqsZ7OBUs
-export docGoogle=https://docs.google.com/spreadsheets/d/1GNpHCS7_QkJtP3QIOdPJWL5N3kQ1EzPznT6M8sPsA0Y
+export libGoogle=https://docs.google.com/spreadsheets/d/1VeHhy9XN0Zr5LpvMfHhUpw8OhJo8hA45n6ztySlNs8s
+export docGoogle=https://docs.google.com/spreadsheets/d/1h-wi3tjY2Rk6d9B0bKHAPlxAAruwoiqDDF9I5vxUKiU
 export sigGoogle=https://docs.google.com/spreadsheets/d/1T6z2NZ4mc69YllZOXE5TnT5Ey-FlVtaXN1oQ4AIMp7g
 
 bash build-common.sh "$1" "$2" "$3" "$4" "$5" "$6"

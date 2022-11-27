@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <ndr>
+  <name-abbreviations>
+    <abbreviation short="CV2">Card Verification Value</abbreviation>
+    <abbreviation short="ID">Identifier</abbreviation>
+    <abbreviation short="URI">Uniform Resource Identifier</abbreviation>
+    <abbreviation short="UNDG">United Nations Development Group</abbreviation>
+    <abbreviation short="UBL">Universal Business Language</abbreviation>
+    <abbreviation short="UUID">Universally Unique Identifier</abbreviation>
+    <abbreviation short="XPath">XML Path Language</abbreviation>
+  </name-abbreviations>
+  <den-abbreviations>
+    <abbreviation short="CV2">Card Verification Value</abbreviation>
+    <abbreviation short="URI">Uniform Resource Identifier</abbreviation>
+    <abbreviation short="UNDG">United Nations Development Group</abbreviation>
+    <abbreviation short="UBL">Universal Business Language</abbreviation>
+    <abbreviation short="UUID">Universally Unique Identifier</abbreviation>
+    <abbreviation short="XPath">XML Path Language</abbreviation>
+  </den-abbreviations>
+  <equivalences>
+    <equivalence>
+      <primary-noun>URI</primary-noun>
+      <representation-term>Identifier</representation-term>
+    </equivalence>
+    <equivalence>
+      <primary-noun>UUID</primary-noun>
+      <representation-term>Identifier</representation-term>
+    </equivalence>
+  </equivalences>
+  <fields-allowing-excess-space>
+    <field-name>Definition</field-name>
+    <field-name>Examples</field-name>
+    <field-name>EditorsNotes</field-name>
+  </fields-allowing-excess-space>
+  <types>
+    <type>Amount</type>
+    <type>Binary Object</type>
+    <type>Code</type>
+    <type>Date Time</type>
+    <type>Date</type>
+    <type>Graphic</type>t
+    <type>Identifier</type>
+    <type>Indicator</type>
+    <type>Measure</type>
+    <type>Name</type>
+    <type>Numeric</type>
+    <type>Percent</type>
+    <type>Picture</type>
+    <type>Quantity</type>
+    <type>Rate</type>
+    <type>Sound</type>
+    <type>Text</type>
+    <type>Time</type>
+    <type>Value</type>
+    <type>Video</type>
+  </types>
+ </ndr>
+ <schema version="1">
+<copyright position="end">
+  Test copyright statement.
+</copyright>
+    <dir name="xsd" runtime-name="xsdrt">
+      <dir name="myext">
+        <file type="XABIE" name="MyTimesheetExtension.xsd"
+              abie="Timesheet"
+              prefix="mxd" sabie-prefix="mxa" sbbie-prefix="mxb"
+              namespace="urn:X-MyCompany:xsd:MyTimesheetExtension">
+        <comment>
+  Library:           MyTimesheetExtension UBL extension demonstration
+  Module:            %f
+  Generated on:      %z
+</comment>
+        </file>
+        <file type="SABIE" name="MyExtensionAggregateComponents.xsd"
+              prefix="mxa"
+              namespace="urn:X-MyCompany:xsd:MyTimesheetExtension:AggregateComponents">
+        <comment>
+  Library:           MyTimesheetExtension UBL extension demonstration
+  Module:            %f
+  Generated on:      %z
+</comment>
+        </file>
+        <file type="SBBIE" name="MyExtensionBasicComponents.xsd"
+              prefix="mxb"
+              namespace="urn:X-MyCompany:xsd:MyTimesheetExtension:BasicComponents">
+        <comment>
+  Library:           MyTimesheetExtension UBL extension demonstration
+  Module:            %f
+  Generated on:      %z
+</comment>
+        </file>
+      </dir>
+    </dir>
+ </schema>
+</configuration>

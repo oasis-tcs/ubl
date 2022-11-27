@@ -36,7 +36,7 @@
   <!--override abieExtensions as "no" for UBL 2.2 and earlier-->
   <property name="abieExtensions" value="yes"/>
   <!--software timestamps-->
-  <property name="gc2obdndr" value="20200604-1750z-modified"/>
+  <property name="gc2obdndr" value="20210607-1250z"/>
   <property name="ods2obdgc" value="20200809-0140z"/>
   <property name="cvagcxsl"  value="20130416-0040z"/>
   <property name="cva2sch"   value="20130207-1940z"/>
@@ -1742,7 +1742,18 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
       <include name="**"/>
     </fileset>
   </move>
-   
+  <!--JSON files useful, but not yet as part of the distribution-->
+  <move todir="${dir}/${package}-${UBLstage}-${label}-archive-only/json-schema-legacy">
+    <fileset dir="${dir}/${package}-${UBLstage}-${label}/json-schema-legacy">
+      <include name="**"/>
+    </fileset>
+  </move>
+  <move todir="${dir}/${package}-${UBLstage}-${label}-archive-only/json-schema-model">
+    <fileset dir="${dir}/${package}-${UBLstage}-${label}/json-schema-model">
+      <include name="**"/>
+    </fileset>
+  </move>
+  
   <!--peel off the STS results into the archive
   <move file="${dir}/${package}-${UBLstage}-${label}/iso-iec-19845-draft-sts"
         todir="${dir}/${package}-${UBLstage}-${label}/archive-only"
