@@ -33,6 +33,11 @@
   <!--test skip-artefacts.txt for no artefacts at all-->
   <available property="skip-artefacts-generation" file="skip-artefacts.txt"/>
   <echo if:set="skip-artefacts-generation" message="!!!!!!!!!!!!!! Incomplete execution requested: artefacts are presumed to exist; delete skip-artefacts.txt to restore normal operation!!!!!!!!!!!!!!!!"/>
+  <!--without a publishing userid/password, full publishing not invoked-->
+  <condition property="skip-publish">
+    <equals arg1="${realtauser}" arg2=""/>
+  </condition>
+  <echo if:set="skip-publish" message="!!!!!!!!!!!!!! Incomplete execution requested: documentation not being generated in the absence of secret values!!!!!!!!!!!!!!!!"/>
   <!--override abieExtensions as "no" for UBL 2.2 and earlier-->
   <property name="abieExtensions" value="yes"/>
   <!--software timestamps-->
@@ -159,9 +164,12 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <delete file="${dir}/UBL-Entities-${UBLversion}.gc"/>
     
     <available property="google-sig-file-exists"
-               file="${dir}/UBL-Signature-Google.ods"/>
+               file="../UBL-Signature-Google.ods"/>
     <echo if:set="google-sig-file-exists"
  message="Using local copy of signature Google spreadsheet; no online access"/>
+    <copy if:set="google-sig-file-exists"
+          file="../UBL-Signature-Google.ods"
+          tofile="${dir}/UBL-Signature-Google.ods"/>
     <sequential unless:set="google-sig-file-exists">
       <echo file="${dir}/wget-signature-time.txt" message="${localTime}"/>
       <echo file="${dir}/wget-signature-uri.txt" message="${signatureGoogle}"/>
@@ -212,9 +220,12 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
            file="${dir}/VALID-SIGNATURE-GC-FILE-NOT-GENERATED.txt"/>
   
     <available property="google-library-file-exists"
-               file="${dir}/UBL-Library-Google.ods"/>
+               file="../UBL-Library-Google.ods"/>
     <echo if:set="google-library-file-exists"
-   message="Using local copy of library Google spreadsheet; no online access"/>
+ message="Using local copy of library Google spreadsheet; no online access"/>
+    <copy if:set="google-library-file-exists"
+          file="../UBL-Library-Google.ods"
+          tofile="${dir}/UBL-Library-Google.ods"/>
     <sequential unless:set="google-library-file-exists">
       <echo file="${dir}/wget-model-time.txt" message="${localTime}"/>
       <echo file="${dir}/wget-model-library-uri.txt"
@@ -227,9 +238,12 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     </sequential>
     
     <available property="google-documents-file-exists"
-               file="${dir}/UBL-Documents-Google.ods"/>
+               file="../UBL-Documents-Google.ods"/>
     <echo if:set="google-documents-file-exists"
  message="Using local copy of documents Google spreadsheet; no online access"/>
+    <copy if:set="google-documents-file-exists"
+          file="../UBL-Documents-Google.ods"
+          tofile="${dir}/UBL-Documents-Google.ods"/>
     <sequential unless:set="google-library-file-exists">
       <echo file="${dir}/wget-model-time.txt" message="${localTime}"/>
       <echo file="${dir}/wget-model-documents-uri.txt"
@@ -1134,9 +1148,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <!--<echo message="datetimelocal=${datetimelocal}"/>-->
   <echo message="includeISO=${includeISO}"/>
 
-  <!--test skip-publish.txt to preserve the old genericode model file-->
-  <available property="skip-publish" file="skip-publish.txt"/>
-  <echo if:set="skip-publish" message="!!!!!!!!!!!!!! Incomplete execution requested: UBL-Entities-${UBLversion}.gc not being generated from the given spreadsheets; delete skip-publish.txt to restore normal operation!!!!!!!!!!!!!!!!"/>
+  <echo if:set="skip-publish" message="!!!!!!!!!!!!!! Incomplete execution requested: documentation not being generated in the absence of secret values!!!!!!!!!!!!!!!!"/>
 
   <!--preserve old entities for archive and copmarison-->
   <delete dir="${dir}/old-entities"/>
