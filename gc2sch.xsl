@@ -85,7 +85,7 @@
 </xs:template>
 <xsl:template match="/">
     <schema xmlns="http://purl.oclc.org/dsdl/schematron"
-            queryBinding="xslt">
+            queryBinding="xslt2">
       <ns prefix="{$bbie-prefix}" uri="{$bbie-ns}"/>
       <ns prefix="{$ext-prefix}" uri="{$ext-ns}"/>
       

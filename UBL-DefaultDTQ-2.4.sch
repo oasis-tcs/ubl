@@ -3,7 +3,7 @@
     converted to a Schematron pattern and the UBL 2.4 additional
     document constraints pattern into a complete suite of constraints.
 -->
-<schema xmlns="http://purl.oclc.org/dsdl/schematron">
+<schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
   <title>UBL 2.4 Default Data Type Qualifications</title>
   <ns prefix="ext"
 uri="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"/>

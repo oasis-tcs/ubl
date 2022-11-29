@@ -216,11 +216,9 @@
     </abstract>
     <legalnotice role="status" id="STATUS">
       <title>Status</title>
-      
       <para>This <ulink conformance="skip" url="https://www.oasis-open.org/policies-guidelines/tc-process#dWorkingDraft">Working Draft</ulink> (WD) has been produced by one or more TC Members; it has not yet been voted on by the TC or <ulink conformance="skip"
           url="https://www.oasis-open.org/policies-guidelines/tc-process#committeeDraft">approved</ulink> as a Committee Specification Draft. The OASIS document <ulink conformance="skip" url="https://www.oasis-open.org/policies-guidelines/tc-process#standApprovProcess">Approval Process</ulink>
         begins officially with a TC vote to approve a WD as a Committee Draft. A TC may approve a Working Draft, revise it, and re-approve it any number of times as a Committee Draft.</para>
-      
       <!--
       <para>This document was last revised or approved by the OASIS Universal Business Language TC <!-\-OASIS Members-\-> on the above date. The level of approval is also listed above. Check the &#x201c;Latest version&#x201d; location noted above for possible later revisions of this document. Any
         other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at <ulink url="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl#technical">https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl#technical</ulink>. </para>
@@ -245,7 +243,8 @@
           <date>&pubdate;. </date>
           <releaseinfo>&standard;. </releaseinfo>
           <bibliomisc>
-            <ulink url="https://docs.oasis-open.org/ubl/&stage;-UBL-&version;/UBL-&version;.html">https://docs.oasis-open.org/ubl/&stage;-UBL-&version;/UBL-&version;.html</ulink>. Latest version: <ulink url="https://docs.oasis-open.org/ubl/UBL-&version;.html">https://docs.oasis-open.org/ubl/UBL-&version;.html</ulink>. </bibliomisc>
+            <ulink url="https://docs.oasis-open.org/ubl/&stage;-UBL-&version;/UBL-&version;.html">https://docs.oasis-open.org/ubl/&stage;-UBL-&version;/UBL-&version;.html</ulink>. Latest version: <ulink url="https://docs.oasis-open.org/ubl/UBL-&version;.html"
+              >https://docs.oasis-open.org/ubl/UBL-&version;.html</ulink>. </bibliomisc>
         </bibliomixed>
       </bibliolist>
     </legalnotice>
@@ -314,8 +313,8 @@
       <para>Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. ISO and IEC shall not be held responsible for identifying any or all such patent rights. </para>
       <para>The first version of ISO/IEC 19845 was prepared by the OASIS Universal Business Language Technical Committee [as OASIS Universal Business Language Version 2.1] and was adopted, under the PAS procedure, by Joint Technical Committee ISO/IEC JTC 1, Information technology, in parallel with
         its approval by the national bodies of ISO and IEC. The content of ISO/IEC 19845:2015 and OASIS UBL v2.1 is identical. </para>
-      <para>This version of ISO/IEC 19845 is identical to UBL v&version;, a minor revision of UBL v2.3, itself a minor revision of previous revisions. Of significance, UBL v&version; is fully backward compatible with UBL v2.3, and so on with UBL v2.1. That is, all schema-valid XML instances of ISO/IEC 19845:2015 (UBL v2.1)
-        are also schema-valid XML instances of this version of ISO/IEC 19845 (UBL v&version;).</para>
+      <para>This version of ISO/IEC 19845 is identical to UBL v&version;, a minor revision of UBL v2.3, itself a minor revision of previous revisions. Of significance, UBL v&version; is fully backward compatible with UBL v2.3, and so on with UBL v2.1. That is, all schema-valid XML instances of
+        ISO/IEC 19845:2015 (UBL v2.1) are also schema-valid XML instances of this version of ISO/IEC 19845 (UBL v&version;).</para>
     </legalnotice>
     <legalnotice role="scope" condition="sts">
       <title>Scope</title>
@@ -996,8 +995,8 @@
       <para>UBL 2.2 extended the pre-award tendering processes, adds a new transportation document for the weight statement, and adds new documents for a business directory and agreements. UBL 2.1 extended the generalized supply chain processes of UBL 2.0 (including the commercial collaborations of
         international trade) to include support for collaborative planning, forecasting, and replenishment; vendor managed inventory; utility billing; tendering; and intermodal freight management. </para>
       <!--<para>The following diagrams illustrate the business context use case covered by UBL &version;.</para><figure id="F-UBL-&version;-USE-CASE-OVERALL-VIEW"><title>UBL &version; Use Case Overall View</title><mediaobject><imageobject><imagedata fileref="art/UBL-2.2-UseCaseOverview.png"/></imageobject><textobject><phrase>[Use Case Overview Diagram]</phrase></textobject></mediaobject></figure><figure id="F-UBL-&version;-USE-CASE-DETAIL"><title>UBL &version; Use Case Detail</title><mediaobject><imageobject><imagedata fileref="art/UBL-2.2-UseCase.png"/></imageobject><textobject><phrase>[Use Case Detail Diagram]</phrase></textobject></mediaobject></figure>-->
-      <para>The document types included in UBL &version; are listed in <xref linkend="S-UBL-&version;-SCHEMAS"/>. It is important to note that, as with previous UBL releases, the UBL &version; library is designed to support the construction of a wide variety of document types beyond those provided in the &version; package.
-        It is expected that implementers will develop their own customized document types and components and that more UBL document types will be added as the library evolves. </para>
+      <para>The document types included in UBL &version; are listed in <xref linkend="S-UBL-&version;-SCHEMAS"/>. It is important to note that, as with previous UBL releases, the UBL &version; library is designed to support the construction of a wide variety of document types beyond those provided
+        in the &version; package. It is expected that implementers will develop their own customized document types and components and that more UBL document types will be added as the library evolves. </para>
       <para>For guidance in customizing UBL document types, see the UBL Guidelines for Customization <xref linkend="custguide"/>. </para>
       <para>For guidance in submitting recommended additions to and new UBL document types, see the UBL Maintenance Governance Procedures <xref linkend="governance"/>.</para>
     </section>
@@ -1224,8 +1223,8 @@
       <title>Supply Chain Business Processes</title>
       <section id="S-SUPPLY-CHAIN-OVERVIEW">
         <title>Supply Chain Overview</title>
-        <para>Following from UBL &pversion;, the UBL &version; library and documents support an increased range of different business processes. See <xref linkend="S-MINOR-REVISION-UBL-&version;"/> for a detailed summary of the changes to the library and documents. The UBL business processes now supported can be
-          categorized as follows (those with document type additions in &version; are shown in italicized boldface):</para>
+        <para>Following from UBL &pversion;, the UBL &version; library and documents support an increased range of different business processes. See <xref linkend="S-MINOR-REVISION-UBL-&version;"/> for a detailed summary of the changes to the library and documents. The UBL business processes now
+          supported can be categorized as follows (those with document type additions in &version; are shown in italicized boldface):</para>
         <!--gentext: process summary from re-edited chapter processesdb&version;.xml-->
         &summary-processes;
       </section>
@@ -3254,8 +3253,8 @@
       <title>UBL &version; Document Schemas</title>
       <section id="S-UBL-&version;-DOCUMENT-SCHEMAS-INTRODUCTION" role="documentSchemasIntroduction">
         <title>UBL &version; Document Schemas Introduction</title>
-        <para>The tables that follow describe each of the UBL document types. Along with a link to the normative schema for each document type, each table provides links to the corresponding “runtime” schema, model spreadsheets and summary report in HTML (see <xref linkend="A-THE-UBL-&version;-DATA-MODEL"
-          />), and example instance, if any (see <xref linkend="A-UBL-&version;-EXAMPLE-DOCUMENT-INSTANCES"/>).</para>
+        <para>The tables that follow describe each of the UBL document types. Along with a link to the normative schema for each document type, each table provides links to the corresponding “runtime” schema, model spreadsheets and summary report in HTML (see <xref
+            linkend="A-THE-UBL-&version;-DATA-MODEL"/>), and example instance, if any (see <xref linkend="A-UBL-&version;-EXAMPLE-DOCUMENT-INSTANCES"/>).</para>
       </section>
       <!--gentext: list of document schemas pasted here by reference-->
       &summary-schemas;
@@ -3336,8 +3335,8 @@
             <para>
               <xref linkend="ccts"/> permits the definition of Qualified Datatypes as derivations from CCTS-specified Unqualified Datatypes. In UBL &version;, all data type qualifications are expressed in the <xref linkend="cva"/> file <literal>
                 <ulink url="cva/UBL-DefaultDTQ-&version;.cva">cva/UBL-DefaultDTQ-&version;.cva</ulink>
-              </literal>. The UBL-QualifiedDataTypes-&version;.xsd file in the UBL &version; release has declarations for each qualified type being only an unmodified restriction of the base unqualified data type, thus adding no constraints. The Common Basic Components type declarations point to the XSD
-              qualified types where the BBIEs are qualified in the CCTS model, but all BBIEs are effectively unqualified.</para>
+              </literal>. The UBL-QualifiedDataTypes-&version;.xsd file in the UBL &version; release has declarations for each qualified type being only an unmodified restriction of the base unqualified data type, thus adding no constraints. The Common Basic Components type declarations point to the
+              XSD qualified types where the BBIEs are qualified in the CCTS model, but all BBIEs are effectively unqualified.</para>
             <para>See <xref linkend="A-DATA-TYPE-QUALIFICATIONS-IN-UBL"/> for information regarding UBL &version; data type derivation.</para>
           </blockquote>
         </blockquote>
@@ -3379,8 +3378,8 @@
       </section>
       <section id="S-SIGNATURE-EXTENSION-SCHEMAS">
         <title>Signature Extension Schemas</title>
-        <para>UBL &version; schemas are supplied with a predefined standard extension that supports digital signatures; see <xref linkend="S-SCHEMA-DEPENDENCIES"/> and <xref linkend="S-UBL-EXTENSION-FOR-ENVELOPED-XML-DIGITAL-SIGNATURES"/> for further information regarding the UBL extension supporting
-          digital signatures such as XAdES.</para>
+        <para>UBL &version; schemas are supplied with a predefined standard extension that supports digital signatures; see <xref linkend="S-SCHEMA-DEPENDENCIES"/> and <xref linkend="S-UBL-EXTENSION-FOR-ENVELOPED-XML-DIGITAL-SIGNATURES"/> for further information regarding the UBL extension
+          supporting digital signatures such as XAdES.</para>
         <blockquote>
           <para>
             <emphasis role="bold" lang="none">CommonSignatureComponents</emphasis>
@@ -3654,9 +3653,9 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <section id="S-EXTENSION-VALIDATION">
         <title>Extension Validation</title>
         <para>The UBL Digital Signature extension described in <xref linkend="S-UBL-DIGITAL-SIGNATURES"/> is built into the UBL distribution and validates transparently. </para>
-        <para>Users wishing to validate other extensions found in the instance simply revise the <literal>UBL-ExtensionContentDataType-&version;.xsd</literal> schema fragment. An <literal>&lt;xsd:import></literal> directive is added to incorporate the schema constraints of the apex of another extension to
-          be validated in the single pass of XSD validation. <xref linkend="F-UBL-SCHEMA-DEPENDENCIES"/> shows the replacement of the schema fragment with one in which user-defined extension modules with namespaces <literal>ext:</literal>, <literal>xxx:</literal>, <literal>xac:</literal>, and
-            <literal>xbc:</literal> augment the digital signature extension modules with namespaces <literal>ext:</literal>, <literal>sig:</literal>, <literal>sac:</literal>, <literal>sbc:</literal> and <literal>ds:</literal>.</para>
+        <para>Users wishing to validate other extensions found in the instance simply revise the <literal>UBL-ExtensionContentDataType-&version;.xsd</literal> schema fragment. An <literal>&lt;xsd:import></literal> directive is added to incorporate the schema constraints of the apex of another
+          extension to be validated in the single pass of XSD validation. <xref linkend="F-UBL-SCHEMA-DEPENDENCIES"/> shows the replacement of the schema fragment with one in which user-defined extension modules with namespaces <literal>ext:</literal>, <literal>xxx:</literal>,
+            <literal>xac:</literal>, and <literal>xbc:</literal> augment the digital signature extension modules with namespaces <literal>ext:</literal>, <literal>sig:</literal>, <literal>sac:</literal>, <literal>sbc:</literal> and <literal>ds:</literal>.</para>
         <para>Due to limitations of W3C Schema validation semantics (this is not the case in RELAX NG <xref linkend="relaxng"/>, for example), the apex element of the extension in the instance being validated cannot be constrained solely to the apex element declared. W3C Schema&#8217;s lax
           validation permits any element declared in any schema fragment to be the apex of an extension. Thus, an instance will pass when a known extension element not permitted by the user to be an apex element is in the place of an apex element. This is simply regarded by downstream processes as
           an unknown extension and will likely be ignored.</para>
@@ -4144,8 +4143,8 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       </section>
       <section id="S-DIGITAL-SIGNATURE-VALIDATION">
         <title>Digital Signature Validation</title>
-        <para>The <literal>UBL-ExtensionContentDataType-&version;.xsd</literal> module links UBL validation to all needed extensions by importing the apex schema fragment of each extension vocabulary. The distribution version of this module supports IETF/W3C XML digital signatures by declaring that the
-            <literal>&lt;ext:ExtensionContent></literal> element can contain elements from the UBL Digital Signature extension namespace. Accordingly, a single <literal>&lt;sig:UBLDocumentSignatures></literal> element is used as the apex of all the document&#8217;s electronic signatures.</para>
+        <para>The <literal>UBL-ExtensionContentDataType-&version;.xsd</literal> module links UBL validation to all needed extensions by importing the apex schema fragment of each extension vocabulary. The distribution version of this module supports IETF/W3C XML digital signatures by declaring that
+          the <literal>&lt;ext:ExtensionContent></literal> element can contain elements from the UBL Digital Signature extension namespace. Accordingly, a single <literal>&lt;sig:UBLDocumentSignatures></literal> element is used as the apex of all the document&#8217;s electronic signatures.</para>
         <para>The <literal>&lt;ext:ExtensionContent></literal> element alternatively allows any other namespace apex element in order to allow other foreign extensions in the same document.</para>
       </section>
       <section id="S-DIGITAL-SIGNATURE-STRUCTURE">
@@ -4422,9 +4421,9 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
     </section>
     <section id="S-PACKAGE-STRUCTURE">
       <title>Package Structure</title>
-      <para>The UBL &version; specification is published as a zip archive in the release directory. Unzipping this archive creates a directory named &stage;-UBL-&version; containing a master DocBook XML file (UBL-&version;.xml), a generated hypertext version of this file (UBL-&version;.html), a generated PDF version of
-        this file (UBL-&version;.pdf), and a number of subdirectories. The files in these subdirectories, linked to from UBL-&version;.xml, UBL-&version;.html, and UBL-&version;.pdf, contain the various normative and informational pieces of the &version; release. A description of each subdirectory is given below. Note that while
-        the UBL-&version;.xml file is the &#8220;original&#8221; of this specification, it may not be viewable in all currently available web browsers.</para>
+      <para>The UBL &version; specification is published as a zip archive in the release directory. Unzipping this archive creates a directory named &stage;-UBL-&version; containing a master DocBook XML file (UBL-&version;.xml), a generated hypertext version of this file (UBL-&version;.html), a
+        generated PDF version of this file (UBL-&version;.pdf), and a number of subdirectories. The files in these subdirectories, linked to from UBL-&version;.xml, UBL-&version;.html, and UBL-&version;.pdf, contain the various normative and informational pieces of the &version; release. A
+        description of each subdirectory is given below. Note that while the UBL-&version;.xml file is the &#8220;original&#8221; of this specification, it may not be viewable in all currently available web browsers.</para>
       <blockquote>
         <para>
           <emphasis role="bold">
@@ -4552,8 +4551,8 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
     </section>
     <section id="S-UPGRADING-FROM-UBL-2.0-UBL-2.1-UBL-2.2-OR-UBL-2.3-TO-UBL-&version;">
       <title>Upgrading from UBL 2.0, UBL 2.1, UBL 2.2, or UBL 2.3 to UBL &version;</title>
-      <para>For current UBL implementers, the most important thing to know about UBL &version; is that it is completely backward-compatible with earlier versions of UBL 2. In other words, any document that validates against a UBL 2 schema released before UBL &version; will validate against the UBL &version; version
-        of that schema.</para>
+      <para>For current UBL implementers, the most important thing to know about UBL &version; is that it is completely backward-compatible with earlier versions of UBL 2. In other words, any document that validates against a UBL 2 schema released before UBL &version; will validate against the UBL
+        &version; version of that schema.</para>
       <para>Nonetheless, it would be unwise to simply overlay this UBL &version; release onto an existing installation, and the possible differences among existing installations are too large to allow a specific set of instructions to be provided for making the transition.</para>
       <para>The brief history of UBL document types in the next section puts the new capabilities into context and may help users of existing UBL implementations decide whether to upgrade to &version;.</para>
       <para>New &version; users, on the other hand, can simply install &version; and rest assured that their software will interoperate with UBL documents generated by existing conforming UBL 2.0 installations. For more on the concept of conformance, see <xref linkend="S-CONFORMANCE"/> and <xref
@@ -4771,8 +4770,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         <blockquote>
           <!--reviewtext-->
           <para>
-            <emphasis role="bold">Added UBL 2.4 document types for transportation: </emphasis> ################### FILL THIS IN ####################
-          </para>
+            <emphasis role="bold">Added UBL 2.4 document types for transportation: </emphasis> ################### FILL THIS IN #################### </para>
         </blockquote>
       </section>
       <section id="S-SCHEMA-CHANGES-FROM-UBL-&pversion;-TO-UBL-&version;">
@@ -4780,8 +4778,8 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         <section id="S-SCHEMA-CHANGES-INTRODUCTION">
           <title>Schema Changes Introduction</title>
           <para>The following two tables show the differences between the XML elements in UBL &pversion; and those in UBL &version;.</para>
-          <para>All changes in &version; schemas are backward-compatible with valid UBL 2.3, UBL 2.2, UBL 2.1, and UBL 2.0 instances. Changes include the addition of new elements and attributes; changes in cardinality from 1 to 0..1 (i.e., making a formerly required element optional); changes in cardinality from 1
-            to 1..n or from 0..1 to 0..n (i.e., allowing an unlimited number of occurrences instead of just one); and corrections to Dictionary Entry Names (DENs).</para>
+          <para>All changes in &version; schemas are backward-compatible with valid UBL 2.3, UBL 2.2, UBL 2.1, and UBL 2.0 instances. Changes include the addition of new elements and attributes; changes in cardinality from 1 to 0..1 (i.e., making a formerly required element optional); changes in
+            cardinality from 1 to 1..n or from 0..1 to 0..n (i.e., allowing an unlimited number of occurrences instead of just one); and corrections to Dictionary Entry Names (DENs).</para>
         </section>
         <section id="S-CHANGES-TO-LIBRARY-ELEMENTS-UBL-&pversion;-TO-UBL-&version;">
           <title>Changes to Library Elements, UBL &pversion; to UBL &version;</title>
@@ -4806,7 +4804,6 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           </table>
         </section>
       </section>
-      
       <!--<section id="S-SCHEMA-CHANGES-FROM-UBL-&version;-CSD03-TO-UBL-&version;-CSD04">
         <title>Schema changes from UBL &version; csd03 to UBL &version; csd04</title>
         <section id="S-SCHEMA-CHANGES-DURING-DEVELOPMENT">
@@ -4832,7 +4829,6 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           </table>
         </section>
       </section>-->
-
       <section id="S-EDITORIAL-CHANGES-FROM-UBL-&pversion;-TO-UBL-&version;">
         <title>Editorial changes from UBL &pversion; to UBL &version;</title>
         <para>As this is a very lengthy specification, this guidance to the reader reflects where UBL &version; has not changed substantially or substantively from UBL &pversion;. Editorial changes that are related to grammar, spelling, and turn of phrase are not enumerated.</para>
@@ -4993,8 +4989,8 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       [...]
    </xsd:element>
 ]]></programlisting>
-      <para>One consequence of this approach is that the list of global elements that begins the CAC module contains elements that are in fact never used under those names in UBL &version;. For example, the element <literal>ActivityDataLine</literal> mentioned above is used by reference in creating the
-        ASBIE <literal>SupplyChainActivityDataLine</literal>, but it never appears in the form of an ASBIE named <literal>ActivityDataLine</literal>. Such unused ABIE names remain available in the global element declarations for customizers and designers of future additions to UBL.</para>
+      <para>One consequence of this approach is that the list of global elements that begins the CAC module contains elements that are in fact never used under those names in UBL &version;. For example, the element <literal>ActivityDataLine</literal> mentioned above is used by reference in creating
+        the ASBIE <literal>SupplyChainActivityDataLine</literal>, but it never appears in the form of an ASBIE named <literal>ActivityDataLine</literal>. Such unused ABIE names remain available in the global element declarations for customizers and designers of future additions to UBL.</para>
       <para>Refer to <xref linkend="S-THE-CCTS-SPECIFICATION-OF-UBL-BUSINESS-INFORMATION-ENTITIES"/> for more information regarding the granularity of CCTS information maintained in the UBL document models.</para>
     </section>
     <section id="S-NAVIGATING-THE-UBL-DATA-MODEL">
@@ -5039,16 +5035,16 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
       <para>As shown in Cardinality column, most of these components are optional. The first required field is <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Identifier" conformance="skip" role="DEN-Name" remap="Invoice. Identifier">ID</ulink>
         </literal> (line <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Identifier" conformance="skip" role="DEN-Row" remap="Invoice. Identifier">7</ulink>) and the second is <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.IssueDate.Date" conformance="skip" role="DEN-Name"
-            remap="Invoice. Issue Date. Date">IssueDate</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Identifier" conformance="skip" role="DEN-Row" remap="Invoice. Identifier">7</ulink>) and the second is <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.IssueDate.Date" conformance="skip"
+            role="DEN-Name" remap="Invoice. Issue Date. Date">IssueDate</ulink>
         </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.IssueDate.Date" conformance="skip" role="DEN-Row" remap="Invoice. Issue Date. Date">10</ulink>), so we can write, for example,</para>
       <programlisting role="font-size-92%"><![CDATA[  <cbc:ID>123</cbc:ID>
   <cbc:IssueDate>2011-09-22</cbc:IssueDate>
 ]]></programlisting>
       <para>Next let&#8217;s add an optional <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Row" remap="Invoice. Invoice_ Period. Period">25</ulink>). This is an ASBIE, implying that it has some kind of substructure, and it derives from the generic
-        ABIE called <literal>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Row" remap="Invoice. Invoice_ Period. Period">25</ulink>). This is an ASBIE, implying that it has some kind of substructure, and it derives from the
+        generic ABIE called <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
         </literal> (this is the &#8220;Associated Object Class&#8221; referred to in a column of the same name). To find this structure, we look for the <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
@@ -5062,8 +5058,8 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
         </literal> therefore has this structure, too. From this one could conclude that instantiations of the <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
-        </literal> structure (there are more than 50 of them in UBL) need not contain any of the seven optional BBIE elements specified after line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1709</ulink>, and
-        indeed the corresponding declaration of the complex type <literal>PeriodType</literal> in the CAC schema (<literal>
+        </literal> structure (there are more than 50 of them in UBL) need not contain any of the seven optional BBIE elements specified after line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1709</ulink>,
+        and indeed the corresponding declaration of the complex type <literal>PeriodType</literal> in the CAC schema (<literal>
           <ulink url="xsd/common/UBL-CommonAggregateComponents-&version;.xsd">xsd/common/UBL-CommonAggregateComponents-&version;.xsd</ulink>
         </literal>) shows that an empty <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
@@ -5142,8 +5138,8 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         </literal> first, it is found in the Common Library to be derived from <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Details" conformance="skip" role="DEN-Name" remap="Monetary Total. Details">MonetaryTotal</ulink>
         </literal> (line <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Details" conformance="skip" role="DEN-Row" remap="Monetary Total. Details">1518</ulink>), which has a mandatory <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount"
-            conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Details" conformance="skip" role="DEN-Row" remap="Monetary Total. Details">1518</ulink>), which has a mandatory <ulink
+            url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
         </literal> BBIE. A corresponding example instance fragment might be therefore be constructed as follows:</para>
       <programlisting role="font-size-92%"><![CDATA[  <cac:LegalMonetaryTotal>
      <cbc:PayableAmount currencyID="CAD">100.00</cbc:PayableAmount>
@@ -5155,8 +5151,8 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Legal_MonetaryTotal.MonetaryTotal" conformance="skip" role="DEN-Name" remap="Invoice. Legal_ Monetary Total. Monetary Total">LegalMonetaryTotal</ulink>
         </literal> element shown above except the <literal>currencyID</literal> attribute on <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
-        </literal>, which does not appear explicitly in the model line for that BBIE (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Row" remap="Monetary Total. Payable_ Amount. Amount">1527</ulink>). This is because
-        UBL does not define the primitive data types upon which the model is built; instead it uses standard data type definitions from <xref linkend="ccts"/> and <xref linkend="xsd2"/>. In the case of <literal>
+        </literal>, which does not appear explicitly in the model line for that BBIE (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Row" remap="Monetary Total. Payable_ Amount. Amount">1527</ulink>). This is
+        because UBL does not define the primitive data types upon which the model is built; instead it uses standard data type definitions from <xref linkend="ccts"/> and <xref linkend="xsd2"/>. In the case of <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
         </literal>, the CCTS data type (the Data Type column) is &#8220;Amount. Type&#8221; (the space is part of the name), and that type is defined in <xref linkend="ccts"/> itself (Table 8-1 of the CCTS 2.01 specification). There it will be seen that &#8220;Amount. Type&#8221; has two
         supplementary &#8220;CCT Components&#8221; called &#8220;Amount. Currency. Identifier&#8221; and &#8220;Currency. Code List Version. Identifier&#8221;. In the XML realization of CCTS, supplementary components are expressed as attributes, and the CCTS names &#8220;Amount. Currency.
@@ -5188,8 +5184,8 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </literal>
         </para>
       </blockquote>
-      <para>In the example fragment above, <literal>currencyID</literal> has been used to label the amount in Canadian dollars (CAD). As explained in <xref linkend="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/>, the value <literal>CAD</literal> for this attribute is not specified in schemas to be
-        checked using XSD validation but will instead be found in separate OASIS genericode code list files in the <literal>gc/</literal> directory of the UBL distribution, which are engaged through a separate XSLT-based process.</para>
+      <para>In the example fragment above, <literal>currencyID</literal> has been used to label the amount in Canadian dollars (CAD). As explained in <xref linkend="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/>, the value <literal>CAD</literal> for this attribute is not specified in schemas
+        to be checked using XSD validation but will instead be found in separate OASIS genericode code list files in the <literal>gc/</literal> directory of the UBL distribution, which are engaged through a separate XSLT-based process.</para>
       <para>Using the same methodology, a sample <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.InvoiceLine" conformance="skip" role="DEN-Name" remap="Invoice. Invoice Line">InvoiceLine</ulink>
         </literal> can be constructed to complete the example as follows:</para>
@@ -6301,15 +6297,14 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
     <para>In subsequent releases of UBL, the schema library of common basic components (<emphasis role="bold">(B)</emphasis> in the diagram) is based on a combination of the data types defined in the file of UBL qualified data types <emphasis role="bold">(E)</emphasis> and the data types defined in
       a file of UBL unqualified data types <emphasis role="bold">(M)</emphasis>. The latter inherits the data type definitions in the UN/CEFACT CCTS CCT schema module <phrase lang="none">Ver. 1.1 050114</phrase>
       <emphasis role="bold">(N)</emphasis>. The UBL data type qualifications CVA file <emphasis role="bold">(F)</emphasis> controls the creation of the UBL XSLT stylesheet <emphasis role="bold">(G)</emphasis> used in the two-pass validation process, offering both limitations and extensions to values
-      such as code lists. While this XSLT file, <literal>UBL-2.x-DefaultDTQ.xsl</literal>, can, when modified, apply to data type qualifications in general (such as field length restrictions and value range restrictions), the version of this file included in the UBL release contains only code list
-      values linked to the metadata of the applicable code list.</para>
+      such as code lists. While this XSLT file, <literal>UBL-&version;-DefaultDTQ.xsl</literal>, can, when modified, apply to data type qualifications in general (such as field length restrictions and value range restrictions), the version of this file included in the UBL release contains only code
+      list values linked to the metadata of the applicable code list.</para>
     <para>The two remaining boxes on the right in the diagram illustrate that users can add further data type qualifications if desired by preparing a custom CVA <emphasis role="bold">(H)</emphasis> and creating a custom XSLT file <emphasis role="bold">(J)</emphasis> to replace the default CVA and
       XSLT stylesheet provided in the UBL distribution.</para>
     <para>Users intending to prepare a custom CVA should note that <literal>
         <ulink url="cva/UBL-DefaultDTQ-&version;.cva">cva/UBL-DefaultDTQ-&version;.cva</ulink>
       </literal> contains relative URIs that expect the UBL 2.0 code lists from the UBL 2.0 Update Package in a sibling directory named <literal>os-UBL-2.0</literal>, the UBL 2.1 code lists from the UBL 2.1 distribution in a sibling directory named <literal>os-UBL-2.1</literal>, the UBL 2.2 code
-      lists from the UBL 2.2 distribution in a sibling directory named <literal>os-UBL-2.2</literal>, and the UBL 2.3 code
-      lists from the UBL 2.3 distribution in a sibling directory named <literal>os-UBL-2.3</literal>. This is irrelevant to users of the pre-compiled <literal>
+      lists from the UBL 2.2 distribution in a sibling directory named <literal>os-UBL-2.2</literal>, and the UBL 2.3 code lists from the UBL 2.3 distribution in a sibling directory named <literal>os-UBL-2.3</literal>. This is irrelevant to users of the pre-compiled <literal>
         <ulink url="val/UBL-DefaultDTQ-&version;.xsl">val/UBL-DefaultDTQ-&version;.xsl</ulink>
       </literal> file contained in the UBL package, but users wishing to create their own CVA file need first to install the code lists of prior releases of UBL 2.0. To properly install the update, first download and install the original UBL 2.0 release: </para>
     <blockquote>
@@ -6351,8 +6346,8 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         </literal>
       </para>
     </blockquote>
-    <para>Complete installation instructions can be found in the each package. As indicated above, the <literal>os-UBL-2.0/</literal>, <literal>os-UBL-2.1/</literal>, <literal>os-UBL-2.3/</literal>, and <literal>os-UBL-2.3/</literal> directories thus created need to be siblings directories to the directory created by installing
-      the UBL &version; package.</para>
+    <para>Complete installation instructions can be found in the each package. As indicated above, the <literal>os-UBL-2.0/</literal>, <literal>os-UBL-2.1/</literal>, <literal>os-UBL-2.3/</literal>, and <literal>os-UBL-2.3/</literal> directories thus created need to be siblings directories to the
+      directory created by installing the UBL &version; package.</para>
   </appendix>
   <appendix id="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION" role="non-normative">
     <title>UBL &version; Code Lists and Two-phase Validation</title>
@@ -6364,9 +6359,9 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         schemas also made it difficult to modify the code lists to suit individual trading partner relationships and impossible to extend the list of allowable code list values while still using the standard UBL schemas as published by OASIS.</para>
       <para>To give users maximum flexibility in configuring and updating UBL code lists without changing the standard UBL schemas, UBL 2.0 introduced a two-phase validation model that has now been fully implemented in UBL 2.1 and beyond. In the first phase, the UBL instance is checked for structure
         and vocabulary against a standard UBL schema using a generic schema validator (or custom-built software performing the same function). This is exactly the same procedure used for validation in UBL 1.0, except that the schemas do not contain hardwired code list values. Then in an added second
-        validation (or verification) phase, code list values in the instance are checked against values obtained from external code list configuration files using an XSLT 1.0 processor driven by an XSLT 1.0 stylesheet. The default code list values assumed by the UBL &version; specification are expressed
-        as data type qualifications in a file named <literal>UBL-&version;-DefaultDTQ.xsl</literal> located in the <literal>val</literal> directory, as described in more detail below. Publicly available tools were used to create the XSL file using the methodology described in the &#8220;Validation&#8221;
-        section of <xref linkend="custguide"/>, the <citetitle>UBL Guidelines for Customization</citetitle>.</para>
+        validation (or verification) phase, code list values in the instance are checked against values obtained from external code list configuration files using an XSLT 2.0 processor driven by an XSLT 2.0 stylesheet. The default code list values assumed by the UBL &version; specification are
+        expressed as data type qualifications in a file named <literal>UBL-&version;-DefaultDTQ.xsl</literal> located in the <literal>val</literal> directory, as described in more detail below. Publicly available tools were used to create the XSL file using the methodology described in the
+        &#8220;Validation&#8221; section of <xref linkend="custguide"/>, the <citetitle>UBL Guidelines for Customization</citetitle>.</para>
       <para>Separating the checking of structure and vocabulary from the checking of code values allows trading partners to easily and precisely specify code list subsets and extensions and to apply them not just to individual UBL document types but also to particular elements and sub-trees within
         UBL document instances. Another way to say this is that the UBL code list methodology allows different versions of the same code list to be used in different document contexts. Thus, for example, a business in Canada might agree with a business in the United States to use a set of code list
         configuration files that allow the Buyer to be associated with either a U.S. state or a Canadian province but restrict the Seller to just U.S. states&#8212;that is, to apply a code list subset containing state and province codes in one place in a document instance and a different code list
@@ -6375,7 +6370,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
     <section id="S-DEFAULT-VALIDATION-SETUP">
       <title>Default Validation Setup</title>
       <para>To facilitate the processing of UBL instances using the two-phase method, an &#8220;out-of-the-box&#8221; collection of open-source software that can be used to demonstrate default validation of UBL documents is included in the <literal>val</literal> directory of this release package.
-        The validation harness assumes a Linux or Windows system with no currently installed XML or XSLT processing software.</para>
+        The validation harness assumes a Shell or Windows system with no currently installed XML or XSLT processing software.</para>
       <para>The Java Runtime Environment (JRE) 1.5 or later is required to use the programs in the <literal>val</literal> directory; JRE versions below 1.5 will throw an error from the <literal>xjparse.jar</literal> module used to invoke the Xerxes schema parser. If necessary, download and install
         the latest JRE from the following location before continuing:</para>
       <blockquote>
@@ -6396,7 +6391,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             <literal>test.bat</literal> (Windows command prompt)</para>
           <para>or</para>
           <para>
-            <literal>sh test.sh</literal> (Linux/OSX Terminal shell prompt)</para>
+            <literal>sh test.sh</literal> (Shell/OSX Terminal shell prompt)</para>
           <para>The output, which is explained in the next section, should resemble the output shown in the following transcript (the spacing has been manually adjusted to make the output easier to read).</para>
         </listitem>
       </orderedlist>
@@ -6447,13 +6442,20 @@ Validating order-test-bad-code.xml
 ############################################################
 ============== Phase 1: XSD schema validation ==============
 No schema validation errors.
-============ Phase 2: XSLT code list validation ============
-Value supplied 'LA' is unacceptable for constraints identified by
- 'Channel-2.0 Channel-2.1 Channel-2.2 Channel-2.3' in the context
- 'cbc:ChannelCode': /Order/cac:BuyerCustomerParty[1]/cac:Party[1]/
-cac:Contact[1]/cac:OtherCommunication[1]/cbc:ChannelCode[1]
+============ Phase 2: XSLT value validation ============
+1. Value supplied 'LA' is unacceptable for constraints identified by
+ 'Channel-2.0 Channel-2.1 Channel-2.2 Channel-2.3 Channel-2.4' in
+ the context 'cbc:ChannelCode' /Order/cac:BuyerCustomerParty[1]/
+ cac:Party[1]/cac:Contact[1]/cac:OtherCommunication[1]/
+ cbc:ChannelCode[1] / (code list expression suppressed)
+Count of data errors: 1
 
-Processing terminated by xsl:message at line 151
+
+The following error report is simply the exit mechanism and can be ignored:
+Error in xsl:message/@terminate on line 134 column 34 of testSVRL4UBLerrors.xsl:
+  XTMM9000: Processing terminated by xsl:message at line 134 in
+ testSVRL4UBLerrors.xsl
+Processing terminated by xsl:message at line 134 in testSVRL4UBLerrors.xsl
 
 ############################################################
 Validating order-test-good.xml
@@ -6504,43 +6506,30 @@ No code list validation errors.</programlisting>
     </section>
     <section id="S-DISCUSSION-OF-THE-DEFAULT-VALIDATION-TEST">
       <title>Discussion of the Default Validation Test</title>
-      <para>The test output displayed above demonstrates the default validation process with four test files: a UBL Order containing invalid syntax (<literal>
-          <ulink url="val/order-test-bad-syntax.xml">val/order-test-bad-syntax.xml</ulink>
-        </literal>); a UBL Order containing a bad (misspelled) element (<literal>
-          <ulink url="val/order-test-bad-model.xml">val/order-test-bad-model.xml</ulink>
-        </literal>); a UBL Order that is schema-valid but contains an illegal code list value (<literal>
-          <ulink url="val/order-test-bad-code.xml">val/order-test-bad-code.xml</ulink>
-        </literal>); and a valid UBL Order (<literal>
-          <ulink url="val/order-test-good.xml">val/order-test-good.xml</ulink>
-        </literal>);. The file <literal>
-          <ulink url="val/test.bat">val/test.bat</ulink>
-        </literal> (Windows) or <literal>
-          <ulink url="val/test.sh">val/test.sh</ulink>
-        </literal> (Linux) is used to run the script <literal>
-          <ulink url="val/validate.bat">val/validate.bat</ulink>
-        </literal> or <literal>
-          <ulink url="val/validate.sh">val/validate.sh</ulink>
-        </literal> against each of the test files.</para>
+      <para>The test output displayed above demonstrates the default validation process with four test files: a UBL Order containing invalid syntax (<literal><ulink url="val/order-test-bad-syntax.xml">val/order-test-bad-syntax.xml</ulink></literal>); a UBL Order containing a bad (misspelled) element
+            (<literal><ulink url="val/order-test-bad-model.xml">val/order-test-bad-model.xml</ulink></literal>); a UBL Order that is schema-valid but contains an illegal code list value (<literal><ulink url="val/order-test-bad-code.xml">val/order-test-bad-code.xml</ulink></literal>); and a valid UBL
+        Order (<literal><ulink url="val/order-test-good.xml">val/order-test-good.xml</ulink></literal>);. The file <literal><ulink url="val/test.bat">val/test.bat</ulink></literal> (Windows) or <literal><ulink url="val/test.sh">val/test.sh</ulink></literal> (Shell) is used to run the script
+            <literal><ulink url="val/validate.bat">val/validate.bat</ulink></literal> or <literal><ulink url="val/validate.sh">val/validate.sh</ulink></literal> against each of the test files.</para>
       <para>Looking at the last test results first, run using <literal>order-test-good.xml</literal>, this demonstrates both phases of the default validation process running normally. The exit status of the entire test is the exit of the last test which should be successful when being tested for
         error.</para>
       <para>In each test’s first phase, a standard W3C Schema (XSD) validator, Xerxes, is invoked from <literal><ulink url="val/w3cschema.bat">val/w3cschema.bat</ulink></literal> (or <literal><ulink url="val/w3cschema.sh">val/w3cschema.sh</ulink></literal>) to validate the specified UBL document
-          (<literal>.xml</literal>) against the specified UBL runtime schema (<literal>.xsd</literal>). Since the input is a valid UBL Order, the output of the first phase simply indicates that the file is valid against the given Order schema.</para>
-      <para>The second phase of each test uses a standard XSLT 1.0 engine, Saxon, to verify that the values of various codes used in the UBL document to be tested (currency codes, packaging types, etc.) are valid in terms of the default UBL code list values specified in <literal>
-          <ulink url="val/UBL-DefaultDTQ-&version;.xsl">val/UBL-DefaultDTQ-&version;.xsl</ulink>
-        </literal>. Here the output line &#8220;No code list validation errors&#8221; from the <literal>validate</literal> script indicates that the Saxon run (invoked from <literal>
-          <ulink url="val/xslt.bat">val/xslt.bat</ulink>
-        </literal> or <literal>
-          <ulink url="val/xslt.sh">val/xslt.sh</ulink>
-        </literal>) finds no illegal code values in the document.</para>
+          (<literal>.xml</literal>) against the specified UBL runtime schema (<literal>.xsd</literal>). Since the input is a valid UBL Order, the output of the first phase simply indicates that the file is valid against the given Order schema. Error messages are persisted in the file with the XML
+        name and added extension <literal>.error.txt</literal>. In this test the persistent error files from phase one are <literal><ulink url="val/order-test-bad-syntax.xml.error.txt">val/order-test-bad-syntax.xml.error.txt</ulink></literal> and <literal><ulink
+            url="val/order-test-bad-model.xml.error.txt">val/order-test-bad-model.xml.error.txt</ulink></literal>.</para>
+      <para>The second phase of each test uses a standard XSLT 2.0 engine, Saxon Home Edition, to verify that the values of various codes used in the UBL document to be tested (currency codes, packaging types, etc.) are valid in terms of the default UBL code list values specified in <literal><ulink
+            url="val/UBL-DefaultDTQ-&version;.xsl">val/UBL-DefaultDTQ-&version;.xsl</ulink></literal>. Here the output line &#8220;No code list validation errors&#8221; from the <literal>validate</literal> script indicates that the Saxon run (invoked from <literal><ulink url="val/xslt2.bat"
+            >val/xslt2.bat</ulink></literal> or <literal><ulink url="val/xslt2.sh">val/xslt2.sh</ulink></literal>) finds no illegal code values in the document. Second phase error messages in the Schematron Validation Report Language (SVRL) are persisted in the file with the XML name and added
+        extension <literal>.svrl.xml</literal>. This file is massaged by the <literal><ulink url="val/testSVRL4UBLerrors.xsl">val/testSVRL4UBLerrors.xsl</ulink></literal> stylesheet in order to suppress lengthy components of the messages (namespace URI strings and code list validation expressions)
+        in the resulting file with the XML name and added extension <literal>.error.txt</literal>. In this test the persistent error files from phase two are <literal><ulink url="val/order-test-bad-code.xml.svrl.xml">val/order-test-bad-code.xml.svrl.xml</ulink></literal> and <literal><ulink
+            url="val/order-test-bad-code.xml.error.txt">val/order-test-bad-code.xml.error.txt</ulink></literal>.</para>
       <para>The first test of the set shows what happens when the input document (<literal>order-test-bad-syntax.xml</literal>) contains an XML syntax error, in this case due to omission of the trailing &#8220;>&#8221; from the start tag of the element named <literal>cbc:ChannelCode</literal>. When
         the Xerxes parser encounters bad syntax, it emits the error message shown in the example, and the <literal>validate</literal> script reacts to a non-zero status code from <literal>w3cschema.bat</literal> (or <literal>w3cschema.sh</literal>) by terminating the validation process.</para>
       <para>The second test of the set shows what happens when the input document (<literal>order-test-bad-model.xml</literal>) is syntactically well-formed but contains a structure or vocabulary error, in this case due to omission of the trailing &#8220;e&#8221; from the element named
           <literal>cbc:ChannelCode</literal> resulting in the name <literal>cbc:ChannelCod</literal> which is not part of the UBL model. When the Xerxes parser encounters the unrecognized element name, it emits the error message shown in the example, and the <literal>validate</literal> script reacts
         to a non-zero status code from <literal>w3cschema.bat</literal> (or <literal>w3cschema.sh</literal>) by terminating the validation process.</para>
       <para>In the third test of the set, the input document <literal>order-test-bad-code.xml</literal> is syntactically well-formed according to XML, and structurally valid according to the Order schema, but it contains a misspelled code list value (the <phrase lang="none">ChannelCode</phrase>
-        &#8220;AL&#8221; for cell phone has been mistyped as &#8220;LA&#8221;). Thus it passes the first phase when tested against the schema but fails the second phase when tested against <literal>
-          <ulink url="val/UBL-DefaultDTQ-&version;.xsl">val/UBL-DefaultDTQ-&version;.xsl</ulink>
-        </literal>.</para>
+        &#8220;AL&#8221; for cell phone has been mistyped as &#8220;LA&#8221;). Thus it passes the first phase when tested against the schema but fails the second phase when tested against <literal><ulink url="val/UBL-DefaultDTQ-&version;.xsl"
+        >val/UBL-DefaultDTQ-&version;.xsl</ulink></literal>.</para>
       <para>To summarize, input documents are checked in the first validation phase for correctness of syntax, structure, and vocabulary, using the constraints expressed in the appropriate UBL schema. Then they are checked in the second phase for correctness of default code list values, using the
         default constraints expressed in the XSLT file <literal>UBL-DefaultDTQ-&version;.xsl</literal>. This process is illustrated in the following diagram.</para>
       <figure id="F-TWO-PHASE-DEFAULT-UBL-&version;-VALIDATION">
@@ -6560,7 +6549,8 @@ No code list validation errors.</programlisting>
     <section id="S-CUSTOMIZING-THE-DEFAULT-XSLT-FILE">
       <title>Customizing the Default XSLT File</title>
       <para>The validation framework provided in the <literal>val</literal> directory can be used to implement code list changes, define variant code lists to fit specific trading partner agreements, or associate different versions of the same code list with different parts of the same UBL document
-        by substituting a custom process (be it XSLT or some other language or process) for the default <literal>UBL-DefaultDTQ-&version;.xsl</literal> provided in the UBL &version; distribution. This allows extensive code list management without the need to change the standard UBL &version; schemas. </para>
+        by substituting a custom process (be it XSLT or some other language or process) for the default <literal>UBL-DefaultDTQ-&version;.xsl</literal> provided in the UBL &version; distribution. This allows extensive code list management without the need to change the standard UBL &version;
+        schemas. </para>
       <para>The top-level Schematron <xref linkend="schematron"/> fragment <literal><ulink url="cva/UBL-DefaultDTQ-&version;.sch">cva/UBL-DefaultDTQ-&version;.sch</ulink></literal> defining the constraints to be expressed in XSLT pulls in two fragments tailored for UBL &version;: </para>
       <itemizedlist>
         <listitem>
@@ -6570,8 +6560,8 @@ No code list validation errors.</programlisting>
           <para><literal><ulink url="cva/UBL-DocumentConstraints-&version;.patterns.sch">cva/UBL-DocumentConstraints-&version;.patterns.sch</ulink></literal> with the subset of <xref linkend="S-ADDITIONAL-DOCUMENT-CONSTRAINTS"/> that can be tested using the technology.</para>
         </listitem>
       </itemizedlist>
-      <para>Schematron-based techniques for generating a custom XSLT file to take the place of <literal>UBL-DefaultDTQ-&version;.xsl</literal> are explained in <xref linkend="cva"/> and <xref linkend="custguide"/>. See also <xref linkend="A-DATA-TYPE-QUALIFICATIONS-IN-UBL"/> for more about UBL data type
-        qualifications.</para>
+      <para>Schematron-based techniques for generating a custom XSLT file to take the place of <literal>UBL-DefaultDTQ-&version;.xsl</literal> are explained in <xref linkend="cva"/> and <xref linkend="custguide"/>. See also <xref linkend="A-DATA-TYPE-QUALIFICATIONS-IN-UBL"/> for more about UBL data
+        type qualifications.</para>
       <para>Since XSLT is a very powerful general-purpose XML transformation tool, the same framework can be extended to perform fairly sophisticated business rule checking by manually coding additional logic into the XSLT file that drives the second validation phase. Such modification is beyond the
         scope of the customization methodologies associated specifically with UBL, but a business analyst willing to perform XSLT programming can use this mechanism to offload a large proportion of input filtering from the back-end business application to a simpler input processing area. Additional
         XSLT scripts can be added to extract logical sub-trees of incoming UBL documents for allocation to different downstream processes and to perform even more extensive front-end processing.</para>
@@ -6594,19 +6584,19 @@ No code list validation errors.</programlisting>
         </listitem>
         <listitem>
           <para>The file <literal>
-              <ulink url="val/saxon.jar">val/saxon.jar</ulink>
-            </literal> is from the Saxon 6.5.5 distribution at</para>
+              <ulink url="val/saxon9he.jar">val/saxon9he.jar</ulink>
+            </literal> is from the Saxon 9 Home Edition distribution at</para>
           <blockquote>
             <para>
               <literal>
-                <ulink url="http://prdownloads.sourceforge.net/saxon/saxon6-5-5.zip">http://prdownloads.sourceforge.net/saxon/saxon6-5-5.zip</ulink>
+                <ulink url="http://saxon.sourceforge.net/">http://saxon.sourceforge.net/</ulink>
               </literal>
             </para>
           </blockquote>
         </listitem>
         <listitem>
-          <para>The file <literal><ulink url="val/UBL-DefaultDTQ-&version;.xsl">val/UBL-DefaultDTQ-&version;.xsl</ulink></literal> was created from the file <literal><ulink url="cva/UBL-DefaultDTQ-&version;.sch">cva/UBL-DefaultDTQ-&version;.sch</ulink></literal> using the Schematron <xref linkend="schematron"/>
-            implementation of CVA files for validation at</para>
+          <para>The file <literal><ulink url="val/UBL-DefaultDTQ-&version;.xsl">val/UBL-DefaultDTQ-&version;.xsl</ulink></literal> was created from the file <literal><ulink url="cva/UBL-DefaultDTQ-&version;.sch">cva/UBL-DefaultDTQ-&version;.sch</ulink></literal> using the Schematron <xref
+              linkend="schematron"/> implementation of CVA files for validation at</para>
           <blockquote>
             <para>
               <literal>
@@ -6621,8 +6611,8 @@ No code list validation errors.</programlisting>
       <title>Code Lists Included in UBL &version;</title>
       <section id="S-CODE-LIST-FORMAT">
         <title>Code List Format</title>
-        <para>The code lists included in the UBL &version; distribution use an OASIS Standard XML format for code lists called <xref linkend="gc"/>. Each code list in the distribution is expressed as a genericode file. The code lists of UBL 2.0, UBL 2.1, UBL 2.2, UBL 2.3, and UBL &version; are incorporated into the
-          default validation framework. Documentation on the UBL code lists is contained in a generated report file:</para>
+        <para>The code lists included in the UBL &version; distribution use an OASIS Standard XML format for code lists called <xref linkend="gc"/>. Each code list in the distribution is expressed as a genericode file. The code lists of UBL 2.0, UBL 2.1, UBL 2.2, UBL 2.3, and UBL &version; are
+          incorporated into the default validation framework. Documentation on the UBL code lists is contained in a generated report file:</para>
         <blockquote>
           <para>
             <literal>
@@ -6636,8 +6626,8 @@ No code list validation errors.</programlisting>
         <title>
           <literal>cl/gc/default</literal>
         </title>
-        <para>The code lists in the <literal>cl/gc/default</literal> directory contain the default code values represented in <literal>UBL-DefaultDTQ-&version;.xsl</literal>. A second-phase code list check using an unmodified version of the test setup from this distribution as described above will verify
-          all occurrences of code values from these lists against the values specified in the <literal>cl/gc/default</literal> directory. These are the code lists expected to be used in most application contexts, but there is no obligation to use them. The genericode files with corresponding
+        <para>The code lists in the <literal>cl/gc/default</literal> directory contain the default code values represented in <literal>UBL-DefaultDTQ-&version;.xsl</literal>. A second-phase code list check using an unmodified version of the test setup from this distribution as described above will
+          verify all occurrences of code values from these lists against the values specified in the <literal>cl/gc/default</literal> directory. These are the code lists expected to be used in most application contexts, but there is no obligation to use them. The genericode files with corresponding
           “including deprecated” or “including deleted” files have been culled of deprecated or deleted values in order to be used in typical contexts. The files with entries no longer used are included for completeness.</para>
         <!--reviewtext: codelists-->
         <blockquote>
@@ -6720,7 +6710,7 @@ No code list validation errors.</programlisting>
   <appendix id="A-UBL-&version;-EXAMPLE-DOCUMENT-INSTANCES" role="non-normative">
     <title>UBL &version; Example Document Instances</title>
     <para>The <literal>xml</literal> directory of this distribution contains a number of sample UBL documents that can be used for testing purposes. The <literal>testsamples.bat</literal> batch file and the <literal>testsamples.sh</literal> script in the <literal>val</literal> directory of this
-      distribution can be used to demonstrate the validity of these examples in Windows and Linux operating environments. See <xref linkend="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/> for a general discussion of UBL validation methodology. For convenience, those examples that relate
+      distribution can be used to demonstrate the validity of these examples in Windows and Shell operating environments. See <xref linkend="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/> for a general discussion of UBL validation methodology. For convenience, those examples that relate
       specifically to a particular document type are linked from the description of that type in <xref linkend="S-UBL-&version;-DOCUMENT-SCHEMAS"/>.</para>
     <blockquote role="examples">
       <para>
@@ -6797,9 +6787,9 @@ No code list validation errors.</programlisting>
   </appendix>
   <appendix id="A-ALTERNATIVE-REPRESENTATIONS-OF-THE-UBL-&version;-SCHEMAS" role="non-normative">
     <title>Alternative Representations of the UBL &version; Schemas</title>
-    <para>UBL &version; continues the practice, adopted at the beginning of the UBL effort, of creating its normative XML specifications using W3C Schema (XSD) syntax. Alternative representations of the same content are technically non-normative, but can be generated directly from the XSD and, with the
-      exception of the UBL &version; digital signature extension (see <xref linkend="S-UBL-EXTENSION-FOR-ENVELOPED-XML-DIGITAL-SIGNATURES"/>), are intended to implement the same document instance constraints. The ASN.1 schemas of prior releases of the UBL models are an example of the result of such an XSD
-      schema transformation.</para>
+    <para>UBL &version; continues the practice, adopted at the beginning of the UBL effort, of creating its normative XML specifications using W3C Schema (XSD) syntax. Alternative representations of the same content are technically non-normative, but can be generated directly from the XSD and, with
+      the exception of the UBL &version; digital signature extension (see <xref linkend="S-UBL-EXTENSION-FOR-ENVELOPED-XML-DIGITAL-SIGNATURES"/>), are intended to implement the same document instance constraints. The ASN.1 schemas of prior releases of the UBL models are an example of the result of
+      such an XSD schema transformation.</para>
     <para>Regarding creating RELAX-NG <xref linkend="relaxng"/> expressions of the UBL document models, the free Trang tool found at <ulink url="https://github.com/relaxng/jing-trang"/> is suitable for converting the UBL W3C Schema expressions into such expressions.</para>
     <para>It is also possible to create an alternative representation directly from the CCTS model of UBL. The JSON schemas of prior releases of the UBL models are an example of the result of such a CCTS transformation.</para>
     <para>Please see the <ulink url="https://docs.oasis-open.org/ubl">https://docs.oasis-open.org/ubl</ulink> web site for available or anticipated alternative representations of UBL &version; models in ASN.1, JSON, and possibly other technologies.</para>
@@ -6849,11 +6839,11 @@ No code list validation errors.</programlisting>
       </mediaobject>
     </figure>
     <para>
-      <xref linkend="S-UBL-&version;-BUSINESS-OBJECTS"/> provides the configuration&#8217;s BOV with a suite of normative business objects and associated semantics from which the community selects the semantic components needed in an information bundle. An information bundle describes the semantics of the
-      recorded information to be exchanged between Open-edi Support Infrastructures servicing Decision Making Applications. The community&#8217;s configuration combines these information bundles with their identified scenarios and roles. </para>
+      <xref linkend="S-UBL-&version;-BUSINESS-OBJECTS"/> provides the configuration&#8217;s BOV with a suite of normative business objects and associated semantics from which the community selects the semantic components needed in an information bundle. An information bundle describes the semantics
+      of the recorded information to be exchanged between Open-edi Support Infrastructures servicing Decision Making Applications. The community&#8217;s configuration combines these information bundles with their identified scenarios and roles. </para>
     <para>
-      <xref linkend="S-UBL-&version;-SCHEMAS"/> and <xref linkend="S-ADDITIONAL-DOCUMENT-CONSTRAINTS"/> provides the configuration&#8217;s FSV with a set of corresponding normative XML schemas and document instance rules constraining the expression of the business objects in user data. One translates the
-      semantic component values into a transfer syntax from the information bundle specification as a set of recorded information. It is the UBL XML syntax for the sets of recorded information defined by the information bundles that is exchanged between Parties. </para>
+      <xref linkend="S-UBL-&version;-SCHEMAS"/> and <xref linkend="S-ADDITIONAL-DOCUMENT-CONSTRAINTS"/> provides the configuration&#8217;s FSV with a set of corresponding normative XML schemas and document instance rules constraining the expression of the business objects in user data. One
+      translates the semantic component values into a transfer syntax from the information bundle specification as a set of recorded information. It is the UBL XML syntax for the sets of recorded information defined by the information bundles that is exchanged between Parties. </para>
     <para>
       <xref linkend="S-UBL-DIGITAL-SIGNATURES"/> provides the configuration&#8217;s FSV with a normative schema fragment suitable for including profiles of digital signatures in user data. </para>
     <para>The other aspects of the implemented BOV and implemented FSV of the community&#8217;s Open-edi Configuration are governed by influences outside of the scope of UBL. Those aspects guide the community in customizing UBL to suit their requirements, as outlined in <xref
