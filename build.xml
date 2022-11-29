@@ -923,20 +923,13 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
      <arg value="${cvain}.temp.xsl"/>
      <arg value="${cvain}.temp.xsl"/>
   </java>
-  <java append="true" classname="com.icl.saxon.StyleSheet">
-     <arg value="-o"/>
-     <arg value="${schin}.temp.sch"/>
-     <arg value="${schin}"/>
-     <arg value="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"/>
-  </java>
-  <java append="true" classname="com.icl.saxon.StyleSheet">
-     <arg value="-o"/>
-     <arg value="${xslout}"/>
-     <arg value="${schin}.temp.sch"/>
-     <arg value="${utilitydir}Crane-cva2sch-${cva2sch}/utility/Message-Schematron-terminator.xsl"/>
+  <echo message="Creating ${xslout} from ${schin}..."/>
+  <java append="true" classname="net.sf.saxon.Transform">
+     <arg value="-o:${xslout}"/>
+     <arg value="-s:${schin}"/>
+     <arg value="-xsl:${utilitydir}schxslt/2.0/pipeline-for-svrl.xsl"/>
   </java>
   <delete file="${cvain}.temp.xsl"/>
-  <delete file="${schin}.temp.sch"/>
   <echo message='Completed creating CVA/SCH/XSD artefacts'/>
 </target>
 
