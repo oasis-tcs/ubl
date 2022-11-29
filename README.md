@@ -379,7 +379,7 @@ When needed, OASIS TC Administration posts the distribution package from Kavi to
 
 Every new result snapshots in the archive-only ZIP the Google spreadsheets at the time the results were created.
 
-If ever it is necessary to run the current publication process on an old snapshot from Google, this is accommodated by copying into the repository the three Google files from an archive-only ZIP:
+If ever it is necessary to run the current publication process on an old snapshot from Google, this is accommodated by copying into the parent directory of the repository the three Google files from an archive-only ZIP:
 - `UBL-Signature-Google.ods`
 - `UBL-Library-Google.ods`
 - `UBL-Documents-Google.ods`
@@ -388,7 +388,22 @@ A possible (but infrequent) scenario for this is when the production and packagi
 
 Another possible (but hopefully very infrequent) scenario for this is when it is necessary to recreate an old repository snapshot reproduction of the result after the online spreadsheets have changed. To re-run, check out the old branch to a new branch, add the ODS files from that branch's archive, and check in the new branch. The end results should be identical. 
 
-Remember to delete from the repository the Google ODS files in order to restart online access to the current Google spreadsheets.
+IMPORTANT: Remember to delete the Google ODS files from the parent directory in order to restart online access to the current Google spreadsheets.
+
+## Previewing results from one's local environment
+
+If you are in a shell environment (such as MacOS Terminal) you can create the results locally as a pre-test before pushing any commits to GitHub. The invocation is:
+```
+  ./build.sh {results-directory} {platform} {label} 
+```
+or if you have publishing credentials for the online publshing service:
+```
+  ./build.sh {results-directory} {platform} {label} {username} {password}
+```
+as in the following specifying "local" for the local machine and "debug" as a label to produce the results in a temporary directory:
+```
+  ./build.sh  ~/temp/ubl-results  local  debug 
+```
 
 ## Results
 
