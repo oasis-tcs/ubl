@@ -149,9 +149,11 @@ The following is a summary of the additional document constraints:
       <pattern>
          <rule context="ext:*">
            <xsl:comment select="'no constraints for extension elements'"/>
+           <report test="false()"/>
          </rule>
          <rule context="ext:*//*">
            <xsl:comment select="'no constraints in extension elements'"/>
+           <report test="false()"/>
          </rule>
         <rule context="*[not(*)]">
           <assert test="normalize-space(.)"
