@@ -30,7 +30,7 @@ jobs:
         echo "TIMESTAMP=${timestamp}" >>$GITHUB_ENV
         bash build.sh target github ${timestamp}z "${REALTA_USERNAME:-}" "${REALTA_PASSWORD:-}" DELETE-REPOSITORY-FILES-AS-WELL
 
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: UBL-package-github-${{ env.TIMESTAMP }}z
         path: ./*
