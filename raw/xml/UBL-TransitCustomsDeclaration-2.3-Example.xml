@@ -2,7 +2,7 @@
 <TransitCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransitCustomsDeclaration-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:ID>2345678-910</cbc:ID>
   <cbc:IssueDate>2013-09-15</cbc:IssueDate>
-  <cbc:IssueTime>15:31:00</cbc:IssueTime>
+  <cbc:IssueTime>15:31:00Z</cbc:IssueTime>
   <cbc:NatureOfTransactionCode>T1</cbc:NatureOfTransactionCode>
   <cac:ValidityPeriod>
     <cbc:EndDate>1967-08-13</cbc:EndDate>
@@ -137,7 +137,7 @@
       </cac:DeliveryAddress>
       <cac:Despatch>
         <cbc:ActualDespatchDate>2013-09-15</cbc:ActualDespatchDate>
-        <cbc:ActualDespatchTime>16:00:00</cbc:ActualDespatchTime>
+        <cbc:ActualDespatchTime>16:00:00Z</cbc:ActualDespatchTime>
         <cac:DespatchAddress>
           <cac:Country>
             <cbc:IdentificationCode>RU</cbc:IdentificationCode>

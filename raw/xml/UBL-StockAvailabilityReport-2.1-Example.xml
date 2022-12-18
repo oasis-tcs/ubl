@@ -10,7 +10,7 @@
     <cbc:Note>Report about quantities of each item which are (or will be) available</cbc:Note>
     <cac:InventoryPeriod>
         <cbc:StartDate>2010-04-11</cbc:StartDate>
-        <cbc:StartTime>08:00:00</cbc:StartTime>
+        <cbc:StartTime>08:00:00Z</cbc:StartTime>
         <cbc:EndDate>2011-04-11</cbc:EndDate>
     </cac:InventoryPeriod>
     <cac:SellerSupplierParty>

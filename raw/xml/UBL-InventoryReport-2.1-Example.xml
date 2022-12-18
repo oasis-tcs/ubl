@@ -11,7 +11,7 @@
     <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">EUR</cbc:DocumentCurrencyCode>
     <cac:InventoryPeriod>
         <cbc:StartDate>2010-04-11</cbc:StartDate>
-        <cbc:StartTime>14:00:00</cbc:StartTime>
+        <cbc:StartTime>14:00:00Z</cbc:StartTime>
         <cbc:EndDate>2010-04-11</cbc:EndDate>
     </cac:InventoryPeriod>
     <cac:RetailerCustomerParty>

@@ -9,7 +9,7 @@
 	<cbc:CopyIndicator>false</cbc:CopyIndicator>
 	<cbc:UUID>349ABBAE-DF9D-40B4-849F-94C5FF9D1AF4</cbc:UUID>
 	<cbc:IssueDate>2005-01-10</cbc:IssueDate>
-	<cbc:IssueTime>12:00:01.000</cbc:IssueTime>
+	<cbc:IssueTime>12:00:01.000Z</cbc:IssueTime>
 	<cbc:Note>sample</cbc:Note>
 	<cbc:ProfileStatusCode>NEW</cbc:ProfileStatusCode>
 	<cac:Period>
