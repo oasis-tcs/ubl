@@ -366,7 +366,7 @@
           <para>Lower cost of integration, both among and within enterprises, through the reuse of common data structures.</para>
         </listitem>
         <listitem>
-          <para>Lower cost of commercial software, because software written to process a given XML tag set is much easier to develop than software that can handle an unlimited number of tag sets.</para>
+          <para>Lower cost of commercial software, because software written to process a given XML tag set is much easier to develop than software that is capable of handling an unlimited number of tag sets.</para>
         </listitem>
         <listitem>
           <para>An easier learning curve, because users need master just a single library.</para>
@@ -387,8 +387,8 @@
           <para>A standard target for inexpensive off-the-shelf business software.</para>
         </listitem>
       </itemizedlist>
-      <para>UBL is designed to provide a universally understood and recognized syntax for legally binding business documents and to operate within a standard business framework such as ISO/IEC 15000 (ebXML) to provide a complete, standards-based infrastructure that can extend the benefits of
-        existing EDI systems to businesses of all sizes. UBL is freely available to everyone without legal encumbrance or licensing fees.</para>
+      <para>UBL is designed to provide a universally understood and recognized syntax for legally binding business documents and to operate within a standard business framework such as ISO/IEC 15000 (ebXML) to provide a complete, standards-based infrastructure that is capable of extending the
+        benefits of existing EDI systems to businesses of all sizes. UBL is freely available to everyone without legal encumbrance or licensing fees.</para>
       <para>UBL is engineered to be backward compatible across minor revisions to the specification. UBL documents conforming to a given UBL version are and shall always be conforming to subsequent minor revisions of that UBL version. This impact of this is detailed in <xref
           linkend="S-THE-BUSINESS-AND-REGULATORY-IMPACT-OF-UBL-MAJOR-AND-MINOR-REVISIONS"/>.</para>
       <para>UBL schemas are modular, reusable, and extensible in XML-aware ways. As an implementation of UN/CEFACT Core Components Technical Specification (CCTS) 2.01 <xref linkend="ccts"/>, the UBL Library is based on a conceptual model of information components known as Business Information
@@ -505,7 +505,7 @@
         <para>The terms <emphasis>Core Component (CC), Basic Core Component (BCC), Aggregate Core Component (ACC), Association Core Component (ASCC), Business Information Entity (BIE), Basic Business Information Entity (BBIE),</emphasis> and <emphasis>Aggregate Business Information Entity
             (ABIE)</emphasis> are used in this specification with the meanings given in <xref linkend="ccts"/>.</para>
         <para>The terms <emphasis>Object Class, Property Term, Representation Term,</emphasis> and <emphasis>Qualifier</emphasis> are used in this specification with the meanings given in <xref linkend="iso11179"/>.</para>
-        <para>The keywords MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, MAY and OPTIONAL, when they appear in this document, are to be interpreted as described in <xref linkend="rfc2119"/>.</para>
+        <para>Within the normative text of this specification, the terms "shall", "shall not", "should", "should not", "may" and “need not” are to be interpreted as described in Annex H of <xref linkend="ISOIEC_Directives"/>.</para>
       </section>
       <section id="S-SYMBOLS-AND-ABBREVIATED-TERMS" role="symbols">
         <title>Symbols and Abbreviated Terms</title>
@@ -566,25 +566,6 @@
             <entry>
 
               <para>Core Component</para>
-
-            </entry>
-          </row>
-          -->
-              <row>
-                <entry>
-                  <emphasis role="bold">CPFR</emphasis>
-                </entry>
-                <entry>
-                  <para>Collaborative Planning, Forecasting, and Replenishment <xref linkend="cpfr"/>
-                  </para>
-                </entry>
-              </row>
-              <!--
-          <row>
-            <entry><emphasis role="bold">CV2</emphasis></entry>
-            <entry>
-
-              <para>Credit Card Verification Numbering System</para>
 
             </entry>
           </row>
@@ -738,11 +719,9 @@
     <section id="S-NORMATIVE-REFERENCES" role="norm-refs">
       <title>Normative References</title>
       <bibliolist id="normbibl">
-        <bibliomixed id="rfc2119">
-          <abbrev condition="oasis">RFC2119</abbrev>
-          <citetitle>
-            <ulink url="http://www.faqs.org/rfcs/rfc2119.html" conformance="skip">Key words for use in RFCs to Indicate Requirement Levels</ulink>
-          </citetitle>
+        <bibliomixed id="ISOIEC_Directives">
+          <abbrev condition="oasis">ISO/IEC Directives</abbrev>
+          <citetitle>ISO/IEC Directives, Part 2 (Fifth Edition) Rules for the structure and drafting of International Standards, International Organization for Standardization and International Electrotechnical Commission, 2004.</citetitle>
         </bibliomixed>
         <bibliomixed id="b_XAdES">
           <abbrev condition="oasis">XAdES</abbrev>
@@ -808,19 +787,6 @@
           <abbrev condition="oasis">CCTS</abbrev>
           <citetitle>
             <ulink conformance="skip" url="http://www.unece.org/cefact/codesfortrade/ccts_index.html">UN/CEFACT Core Component Technical Specification, Version 2.01</ulink>
-          </citetitle>
-        </bibliomixed>
-        <bibliomixed id="cpfr">
-          <abbrev condition="oasis">CPFR</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://www.ecrbrasil.com.br/ecrbrasil/includes/baixarArquivo.asp?caminhoArquivo=../downloads/biblioteca/bibl0349.pdf">Voluntary Interindustry Commerce Standards, Collaborative Planning, Forecasting, and Replenishment Version 2.0, Global Commerce Initiative
-              Recommended Guidelines, June 2002</ulink>
-          </citetitle>
-        </bibliomixed>
-        <bibliomixed id="cpfroview">
-          <abbrev condition="oasis" lang="none">CPFRoverview</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="https://www.gs1us.org/DesktopModules/Bring2mind/DMX/Download.aspx?command=core_download&amp;entryid=492&amp;language=en-US&amp;PortalId=0&amp;TabId=134">CPFR: An Overview, 18 May 2004</ulink>
           </citetitle>
         </bibliomixed>
         <bibliomixed id="custguide">
@@ -1010,9 +976,9 @@
         <title>Manifest Values</title>
         <para>All information items in a UBL document are specified by the sender either as they are valued or as they are determined by some manner of a calculation model. For examples, an element may contain a fixed value, such as a name, or may contain a calculated value, such as one that is
           derived as the sum of other elements’ values. The way a value is established or perhaps based upon a calculation model may or may not be documented by the sender. This imposes obligations on the sender when creating the UBL.</para>
-        <para>All fixed and calculated values shall be manifest in the UBL instance. The receiver cannot presume to know that the sender has omitted an absent value as an assumption or as an indication of any kind that is pertinent to how the information is processed. Moreover, the sender cannot
-          rely on the receiver deriving absent values from received values. The onus is on the sender to include all information, such as all pertinent indications and all relevant sums or calculations. The receiver need not make any assumptions nor perform any computations whatsoever when dealing
-          with the sender’s information.</para>
+        <para>All fixed and calculated values will be manifest in the UBL instance. The receiver cannot presume to know that the sender has omitted an absent value as an assumption or as an indication of any kind that is pertinent to how the information is processed. Moreover, the sender cannot rely
+          on the receiver deriving absent values from received values. The onus is on the sender to include all information, such as all pertinent indications and all relevant sums or calculations. The receiver need not make any assumptions nor perform any computations whatsoever when dealing with
+          the sender’s information.</para>
         <para>An example receiver application is a print facility that can print any instance of a given UBL document type without having to perform any calculations nor need even know the underlying calculation model.</para>
       </section>
       <section id="S-ITEMS">
@@ -1105,8 +1071,8 @@
       </section>
       <section id="S-MULTILINGUAL-TEXT">
         <title>Multilingual Text</title>
-        <para>Some textual components, such as Notes and Description, may be specified in several languages. Each should be a separate occurrence of the component, using the language attribute to define its presentation. However, multiple occurrences of the same textual components should not be in
-          the same language.</para>
+        <para>Some textual components, such as Notes and Description, may be specified in several languages. Each ought to be a separate occurrence of the component, using the language attribute to define its presentation. However, multiple occurrences of the same textual components ought not to be
+          in the same language.</para>
       </section>
       <section id="S-TAXATION-RULES">
         <title>Taxation Rules</title>
@@ -1234,16 +1200,14 @@
           <title>Collaborative Planning, Forecasting, and Replenishment</title>
           <section id="S-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT-INTRODUCTION">
             <title>Collaborative Planning, Forecasting, and Replenishment Introduction</title>
-            <para>The VICS Collaborative Planning, Forecasting, and Replenishment (CPFR®) guidelines <xref linkend="cpfr"/> formalize the processes by which two trading partners agree upon a joint plan to forecast and monitor sales through replenishment and to recognize and respond to any
-              exceptions.</para>
-            <para>In the UBL context of use, these CPFR processes between the retailer and the manufacturer have been extended to cover the planning process between other parties such as the manufacturer and the supplier. These binary collaboration definitions are the template guidelines for
-              implementers to build their own collaboration process based on their supply chain topology and requirements.</para>
-            <para>As shown in Figure 2-2 of <xref linkend="cpfr"/>, the seller and the buyer engage in three main activities in order to improve the overall performance of the supply chain:</para>
-            <orderedlist numeration="arabic">
+            <para>Collaborative Planning, Forecasting, and Replenishment formalizes the processes by which two trading partners agree upon a joint plan to forecast and monitor sales through replenishment and to recognize and respond to any exceptions. In UBL, these processes also cover the planning
+              process between other parties such as the manufacturer and the supplier.</para>
+            <para>There are three main actitivities in which the seller and the buyer engage in order to improve the overall performance of the supply chain:</para>
+            <orderedlist numeration="arabic" inheritnum="ignore" continuation="restarts">
               <listitem>
                 <para>
-                  <emphasis role="bold">Planning</emphasis> establishes the ground rules for the collaborative relationship. Trading partners exchange information about their corporate strategies and business plans in order to collaborate in the development of a Joint Business Plan. The Joint
-                  Business Plan identifies the significant events that affect supply and demand in the planning period, such as promotions, inventory policy changes, store openings/closings, and product introductions.</para>
+                  <emphasis role="bold">Planning</emphasis> establishes the ground rules for the collaborative relationship. Trading partners exchange information about their corporate strategies and business plans in order to collaborate in the development of a joint business plan. The joint
+                  business plan identifies the significant events that affect supply and demand in the planning period, such as promotions, inventory policy changes, store openings/closings, and product introductions.</para>
               </listitem>
               <listitem>
                 <para>The <emphasis role="bold">Forecasting</emphasis> phase involves the development of a shared plan based on consumer demand. Estimation of consumer demand at the point of sale is called sales forecasting, and future product ordering based on the sales forecast is referred to as
@@ -1255,7 +1219,7 @@
               </listitem>
             </orderedlist>
             <para>A fourth collaborative activity, <emphasis role="bold">Analysis,</emphasis> involves monitoring the execution of activities for exceptions that are identified during the strategy and planning phase. Calculation of key performance metrics and plan adjustments for improving results
-              also take place in Analysis. This activity is represented in the CPFR diagram by the arrows labeled &#8220;Exception Triggers&#8221; and the process called &#8220;Resolve/Collaborate on Exception Items&#8221; in the Forecasting phase.</para>
+              also take place in Analysis.</para>
             <para>While these collaboration activities are presented in logical order, most companies are involved in all of them at any moment in time. There is no predefined sequence of steps. Execution issues can impact strategy, and analysis can lead to adjustments in forecasts.</para>
           </section>
           <section id="S-COLLABORATION-AGREEMENT-AND-JOINT-BUSINESS-PLANNING">
@@ -1266,7 +1230,7 @@
                 <para>Receive and review background information from the sales organization or buyers</para>
               </listitem>
               <listitem>
-                <para>Identify the product categories that should be included in the initial scope</para>
+                <para>Identify the product categories that ought to be included in the initial scope</para>
               </listitem>
               <listitem>
                 <para>Define Collaboration Objectives</para>
@@ -1287,18 +1251,19 @@
                 <para>Document additional information that can be used in the event analysis.</para>
               </listitem>
             </itemizedlist>
-            <figure id="F-CPFR-STEPS-1-AND-2">
-              <title>CPFR Steps 1 and 2</title>
+            <figure id="F-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT-STEPS-1-AND-2">
+              <title>Collaborative Planning, Forecasting, and Replenishment steps 1 and 2</title>
               <mediaobject>
                 <imageobject>
                   <imagedata fileref="art/UBL-2.2-CPFR-Steps1-2.png"/>
                 </imageobject>
                 <textobject>
-                  <phrase>[CPFR Steps 1 &amp; 2 Diagram]</phrase>
+                  <phrase>[Collaborative Planning, Forecasting, and Replenishment steps 1 &amp; 2 Diagram]</phrase>
                 </textobject>
               </mediaobject>
             </figure>
-            <para>The first step of the CPFR Process continues with the exchange of messages containing purchase conditions. (UBL does not standardize the format of such messages.) Afterwards, for determining the exception criteria that should be monitored and handled during the execution, <link
+            <para>The first step of the Collaborative Planning, Forecasting, and Replenishment process continues with the exchange of messages containing purchase conditions. (UBL does not standardize the format of such messages.) Afterwards, for determining the exception criteria that ought to be
+              monitored and handled during the execution, <link
                 linkend="S-EXCEPTION-CRITERIA-SCHEMA">Exception Criteria</link> messages are exchanged. Exchange of revised Exception Criteria messages continues until the criteria are accepted by both sides.</para>
             <figure id="F-ESTABLISH-COLLABORATIVE-RELATIONSHIPS">
               <title>Establish Collaborative Relationships</title>
@@ -1311,36 +1276,37 @@
                 </textobject>
               </mediaobject>
             </figure>
-            <para>In CPFR Step 2 (the Joint Business Planning phase) there are two messages that should be exchanged and agreed upon: <link linkend="S-RETAIL-EVENT-SCHEMA">Retail Event</link> and <link linkend="S-TRADE-ITEM-LOCATION-PROFILE-SCHEMA">Trade Item Location Profile</link>. Revisions are
+            <para>In Collaborative Planning, Forecasting, and Replenishment step 2 (the joint business planning phase) there are two messages that ought to be exchanged and agreed upon: <link linkend="S-RETAIL-EVENT-SCHEMA">Retail Event</link> and <link linkend="S-TRADE-ITEM-LOCATION-PROFILE-SCHEMA">Trade Item Location Profile</link>. Revisions are
               exchanged until an agreement is achieved.</para>
             <figure id="F-CREATE-JOINT-BUSINESS-PLAN">
-              <title>Create Joint Business Plan</title>
+              <title>Create joint business plan</title>
               <mediaobject>
                 <imageobject>
                   <imagedata fileref="art/UBL-2.2-CPFR-CreateJointBusinessPlan.png"/>
                 </imageobject>
                 <textobject>
-                  <phrase>[Create Joint Business Plan Diagram]</phrase>
+                  <phrase>[Create joint business plan Diagram]</phrase>
                 </textobject>
               </mediaobject>
             </figure>
           </section>
           <section id="S-SALES-FORECAST-GENERATION-AND-EXCEPTION-HANDLING">
             <title>Sales Forecast Generation and Exception Handling</title>
-            <para>CPFR Step 2 helps the buyer and seller agree to the event details and calendar that meet their joint business and collaboration objectives. The objective of the event calendar is to ensure that events are planned to achieve the optimal results and to enable both parties to plan the
-              execution of the event more accurately, from the preparation of advertising and displays to the production and delivery of the promotional stock.</para>
-            <para>In CPFR Step 3, the Sales <link linkend="S-FORECAST-SCHEMA">Forecast</link> is generated. Following Option A, Conventional Order Management, from the CPFR implementation scenarios (see <xref linkend="cpfroview"/>, Table 3), the responsible partner for the generation of Sales
-              Forecast is the Seller. Having Event Calendar information and the Delivery Plan already in their system, there are two more kinds of information that the Seller needs for an effective Sales Forecast: POS Data and DC Data. As shown in <xref linkend="F-CPFR-STEPS-3-4-AND-5"/> and <xref
+            <para>Collaborative Planning, Forecasting, and Replenishment Step 2 helps the buyer and seller agree to the event details and calendar that meet their joint business and collaboration objectives. The objective of the event calendar is to ensure that events are planned to achieve the
+              optimal results and to enable both parties to plan the execution of the event more accurately, from the preparation of advertising and displays to the production and delivery of the promotional stock.</para>
+            <para>In Collaborative Planning, Forecasting, and Replenishment step 3, the Sales <link linkend="S-FORECAST-SCHEMA">Forecast</link> is generated. Following Option A, Conventional Order Management, from the Collaborative Planning, Forecasting, and Replenishment implementation scenarios,
+              the responsible partner for the generation of Sales Forecast is the Seller. Having Event Calendar information and the Delivery Plan already in their system, there are two more kinds of information that the Seller needs for an effective Sales Forecast: POS Data and DC Data. As shown in
+                <xref linkend="F-CPFR-STEPS-3-4-AND-5"/> and <xref
                 linkend="F-CREATE-SALES-FORECAST"/>, both of these pieces of information are sent within a <link linkend="S-PRODUCT-ACTIVITY-SCHEMA">Product Activity</link> message. This time there is no revision of the messages because these messages contain statistical and historical information
               collected previously by the Buyer.</para>
-            <figure id="F-CPFR-STEPS-3-4-AND-5">
-              <title>CPFR Steps 3, 4, and 5</title>
+            <figure id="F-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT-STEPS-3-4-AND-5">
+              <title>Collaborative Planning, Forecasting, and Replenishment steps 3, 4, and 5</title>
               <mediaobject>
                 <imageobject>
                   <imagedata fileref="art/UBL-2.2-CPFR-Steps3-4-5.png"/>
                 </imageobject>
                 <textobject>
-                  <phrase>[CPFR Steps 3, 4, and 5 Diagram]</phrase>
+                  <phrase>[Collaborative Planning, Forecasting, and Replenishment steps 3, 4, and 5 Diagram]</phrase>
                 </textobject>
               </mediaobject>
             </figure>
@@ -1358,11 +1324,12 @@
                 </textobject>
               </mediaobject>
             </figure>
-            <para>In many cases some time may elapse between Sales Forecast Generation and Order Generation. During this period, both sides observe changes to the conditions. If one of the partners detects an exception invalidating the exception criteria defined in CPFR Step 1, it sends an <link
-                linkend="S-EXCEPTION-NOTIFICATION-SCHEMA">Exception Notification</link> message to the other party. Exceptional circumstances that may be communicated between trading partners include deviations between planned impacts (either between buyer and seller, or between subsequent
-              generations of planned impacts from the same trading partner), as well as deviations between planned and actual impacts. It should be noted that both sides might detect an exception, and therefore both sides should be capable of sending and receiving exceptions. Of course, for specific
-              implementations if the collaborating parties want to change this behaviour, they can customize the process so that one partner will be responsible for the generation of the Exception Notifications.</para>
-            <para>CPFR Step 4 is solely composed of the exception generation and receiving activity. CPFR Step 5, on the other hand, is the resolution of the Exceptions.</para>
+            <para>In many cases some time may elapse between Sales Forecast Generation and Order Generation. During this period, both sides observe changes to the conditions. If one of the partners detects an exception invalidating the exception criteria defined in Collaborative Planning,
+              Forecasting, and Replenishment step 1, it sends an <link
+                linkend="S-EXCEPTION-NOTIFICATION-SCHEMA">Exception Notification</link> message to the other party. Exceptional circumstances that may be communicated between trading partners include deviations between planned impacts (either
+              between buyer and seller, or between subsequent generations of planned impacts from the same trading partner), as well as deviations between planned and actual impacts. It ought to be noted that both sides might detect an exception, and therefore both sides ought to be capable of
+              sending and receiving exceptions. Of course, for specific implementations if the collaborating parties want to change this behaviour, they can customize the process so that one partner will be responsible for the generation of the Exception Notifications.</para>
+            <para>Collaborative Planning, Forecasting, and Replenishment Step 4 is solely composed of the exception generation and receiving activity. Collaborative Planning, Forecasting, and Replenishment Step 5, on the other hand, is the resolution of the Exceptions.</para>
             <figure id="F-EXCEPTION-HANDLING">
               <title>Exception Handling</title>
               <mediaobject>
@@ -1374,21 +1341,21 @@
                 </textobject>
               </mediaobject>
             </figure>
-            <para>If there is no Exception Notification Message within the defined period, the process continues with Order Forecast Generation (CPFR Step 6).</para>
+            <para>If there is no Exception Notification Message within the defined period, the process continues with Order Forecast Generation (Collaborative Planning, Forecasting, and Replenishment step 6).</para>
           </section>
           <section id="S-ORDER-FORECAST-GENERATION-AND-EXCEPTION-HANDLING">
             <title>Order Forecast Generation and Exception Handling</title>
             <para>In the supply chain process, it is important for sales forecasts that are created to be converted into the shipment (order) forecasts that can then be used in the production planning processes at the manufacturing locations and be incorporated into the ordering processes at the
-              retailer. As shown in <xref linkend="F-CPFR-STEPS-6-7-8-AND-9"/>, the responsibility for creating Order Forecast belongs to the Seller per Option A of the CPFR implementation scenarios (see <xref linkend="cpfroview"/>, Table 3). Sales forecasts can be transformed into order forecasts
-              by incorporating inventory status information, possible retail event plans, and current point of sale data. Therefore, Buyer sends the updated versions of the Retail Event, Inventory Status, and POS Data to the Seller.</para>
-            <figure id="F-CPFR-STEPS-6-7-8-AND-9">
-              <title>CPFR Steps 6, 7, 8 and 9</title>
+              retailer. As shown in <xref linkend="F-CPFR-STEPS-6-7-8-AND-9"/>, the responsibility for creating Order Forecast belongs to the Seller per Option A of the Collaborative Planning, Forecasting, and Replenishment implementation scenarios. Sales forecasts can be transformed into order
+              forecasts by incorporating inventory status information, possible retail event plans, and current point of sale data. Therefore, Buyer sends the updated versions of the Retail Event, Inventory Status, and POS Data to the Seller.</para>
+            <figure id="F-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT-STEPS-6-7-8-AND-9">
+              <title>Collaborative Planning, Forecasting, and Replenishment steps 6, 7, 8 and 9</title>
               <mediaobject>
                 <imageobject>
                   <imagedata fileref="art/UBL-2.2-CPFR-Steps6-9.png"/>
                 </imageobject>
                 <textobject>
-                  <phrase>[CPFR Steps 6, 7, 8 and 9 Diagram]</phrase>
+                  <phrase>[Collaborative Planning, Forecasting, and Replenishment steps 6, 7, 8 and 9 Diagram]</phrase>
                 </textobject>
               </mediaobject>
             </figure>
@@ -1406,9 +1373,10 @@
                 </textobject>
               </mediaobject>
             </figure>
-            <para>After the Order Forecast is frozen, the process continues with the exception detection activity (CPFR Step 7). The exception detection process that follows Order Forecast is similar to process described earlier for exception detection following Sales Forecast (see <xref
+            <para>After the Order Forecast is frozen, the process continues with the exception detection activity (Collaborative Planning, Forecasting, and Replenishment step 7). The exception detection process that follows Order Forecast is similar to process described earlier for exception
+              detection following Sales Forecast (see <xref
                 linkend="S-SALES-FORECAST-GENERATION-AND-EXCEPTION-HANDLING"/>). The only difference between the Order Forecast and Sales Forecast exceptions is the content of the exceptions.</para>
-            <para>CPFR Step 8, Order Forecast Exception Resolution activity, is handled similarly to Sales Forecast Exception Resolution.</para>
+            <para>Collaborative Planning, Forecasting, and Replenishment step 8, Order Forecast Exception Resolution activity, is handled similarly to Sales Forecast Exception Resolution.</para>
             <figure id="F-IDENTIFYING-AND-RESOLVING-EXCEPTIONS-FOR-ORDER-FORECAST">
               <title>Identifying and Resolving Exceptions for Order Forecast</title>
               <mediaobject>
@@ -1743,25 +1711,25 @@
             <title>Catalogue Business Rules</title>
             <itemizedlist mark="bullet">
               <listitem>
-                <para>Any conditions specified in the contract shall overrule those stated in the common Catalogue.</para>
+                <para>Any conditions specified in the contract will overrule those stated in the common Catalogue.</para>
               </listitem>
               <listitem>
-                <para>A Catalogue exchange shall be between one Provider and one Receiver Party.</para>
+                <para>A Catalogue exchange will be between one Provider and one Receiver Party.</para>
               </listitem>
               <listitem>
                 <para>A classification system may have its own set of properties.</para>
               </listitem>
               <listitem>
-                <para>A classification scheme shall have metadata.</para>
+                <para>A classification scheme will have metadata.</para>
               </listitem>
               <listitem>
                 <para>A Catalogue may have a validity period.</para>
               </listitem>
               <listitem>
-                <para>A Catalogue should include item classifications.</para>
+                <para>A Catalogue ought to include item classifications.</para>
               </listitem>
               <listitem>
-                <para>Classification schemes should include standard and specific properties.</para>
+                <para>Classification schemes ought to include standard and specific properties.</para>
               </listitem>
               <listitem>
                 <para>A Catalogue may refer to the lot (sub-section) of a contract.</para>
@@ -1773,7 +1741,7 @@
                 <para>A Catalogue may refer to a DPS contract number.</para>
               </listitem>
               <listitem>
-                <para>When a Catalogue item is updated, the item shall be replaced in the Catalogue.</para>
+                <para>When a Catalogue item is updated, the item will be replaced in the Catalogue.</para>
               </listitem>
               <listitem>
                 <para>When a Catalogue item is updated, historical information about replaced or updated items must be available to reconcile with outstanding transactions.</para>
@@ -1788,10 +1756,10 @@
                 <para>If a Receiver initiates a request for a Catalogue, they may request an entire Catalogue or only updates to either pricing or item specification details.</para>
               </listitem>
               <listitem>
-                <para>Whether Receiver Party initiated or not, the decision to issue a new Catalogue or update an existing one shall be at the discretion of the Provider Party.</para>
+                <para>Whether Receiver Party initiated or not, the decision to issue a new Catalogue or update an existing one will be at the discretion of the Provider Party.</para>
               </listitem>
               <listitem>
-                <para>If an updated Catalogue is issued, then an action code shall define the status of the items in the Catalogue.</para>
+                <para>If an updated Catalogue is issued, then an action code will define the status of the items in the Catalogue.</para>
               </listitem>
             </itemizedlist>
           </section>
@@ -2001,7 +1969,7 @@
                 <para>Replenishment on Customer Demand</para>
               </listitem>
             </itemizedlist>
-            <para>These processes are described in more detail below. It should be noted that the particular semantics used here come from a large-scale UBL application developed for the Italian textile and clothing industry by ENEA, the Italian National Agency for New Technologies, Energy, and
+            <para>These processes are described in more detail below. It ought to be noted that the particular semantics used here come from a large-scale UBL application developed for the Italian textile and clothing industry by ENEA, the Italian National Agency for New Technologies, Energy, and
               Sustainable Economic Development (see <xref linkend="ebiz"/>). These models are applicable to the implementation of vendor-managed relationships in a broad range of retail sectors, but for the sake of simplicity, and in keeping with the model application, the two principal parties in
               the VMI relationship (the Seller Supplier Party and the Retailer Customer Party) are referred to as &#8220;producer&#8221; and &#8220;retailer&#8221; in the descriptions that follow; more generically, they are vendor and customer.</para>
           </section>
@@ -2401,7 +2369,7 @@
               Forwarder or Carrier and advising the Delivery Party of the arrangements as needed.</para>
             <para>Document types in these processes are <link linkend="S-FORWARDING-INSTRUCTIONS-SCHEMA">Forwarding Instructions</link>, <link linkend="S-PACKING-LIST-SCHEMA">Packing List</link>, <link linkend="S-BILL-OF-LADING-SCHEMA">Bill Of Lading</link>, and <link linkend="S-WAYBILL-SCHEMA"
                 >Waybill</link>. (Regarding the <link linkend="S-TRANSPORTATION-STATUS-SCHEMA">Transportation Status</link> document type, see <xref linkend="S-FREIGHT-STATUS-REPORTING"/>).</para>
-            <para>It should be noted that these processes involve the Consignee and Consignor and do not cover all the logistical processes required to physically move the goods or regulatory notifications such as Customs declarations.</para>
+            <para>It ought to be noted that these processes involve the Consignee and Consignor and do not cover all the logistical processes required to physically move the goods or regulatory notifications such as Customs declarations.</para>
             <note>
               <para>For a discussion of the difference between <emphasis role="italic">consignment</emphasis> (consignor to consignee) and <emphasis role="italic">shipment</emphasis> (shipper to recipient), see <xref linkend="S-SHIPMENT-VS.-CONSIGNMENT"/>.</para>
               <para>For a discussion of the difference between <emphasis role="italic">transport</emphasis> and <emphasis role="italic">transportation</emphasis>, see <xref linkend="S-TRANSPORT-VS.-TRANSPORTATION"/>.</para>
@@ -2750,7 +2718,7 @@
               carried by road, but there are instances of short sea shipping, inland waterways, and rail being used as end legs.</para>
             <para>The Intermodal Freight Management process differs from conventional international freight management in that it may involve multiple different transport modes. The focus is the multimodal transport chain as seen from the Transport User’s point of view. The Transport User needs
               information about all the possible transport services that can be used to build a complete transport chain. If the choices to be made by the Transport User or his agent are based upon the qualities of the transport services themselves, and not by which transport mode is used, the
-              description of the transport services and the exchanges of information about the transport roles and services shall be simple and common. Taking an intermodal approach requires a generalized view of the business processes, parties, and roles involved in the process.</para>
+              description of the transport services and the exchanges of information about the transport roles and services will be simple and common. Taking an intermodal approach requires a generalized view of the business processes, parties, and roles involved in the process.</para>
             <para>The roles of the various Parties are defined as follows:</para>
             <itemizedlist mark="bullet">
               <listitem>
@@ -2767,7 +2735,7 @@
                 <para>The <emphasis>Transport Regulator</emphasis> is the role that receives all mandatory reporting (and checks if reporting has been carried out) in order to ensure that all transport services are completed according to existing rules and regulations.</para>
               </listitem>
             </itemizedlist>
-            <para>It should be noted that one Party (person or organization) may take on different roles. For example, a freight forwarder is, on the one hand, a Transport Service Provider when its client is a Transport User. On the other hand, the freight forwarder is a Transport User when it
+            <para>It ought to be noted that one Party (person or organization) may take on different roles. For example, a freight forwarder is, on the one hand, a Transport Service Provider when its client is a Transport User. On the other hand, the freight forwarder is a Transport User when it
               acquires services from subcontractors to ensure that a transport service is carried out between origin and destination. In so doing, the freight forwarder can operate as agent, thus arranging a contractual relationship between the carrier and the shipper, or as principal, thus
               organizing the transportation chain by concluding contracts in its own name on behalf of the shipper(s).</para>
             <para>The Intermodal Freight Management process takes place in three stages:</para>
@@ -2847,12 +2815,12 @@
               Transport User then sends a Transport Execution Plan with a status code indicating confirmation. Assuming acceptance by the Transport Service Provider, this scenario is considered a two-step choreography.</para>
             <para>If a pre-established agreement does not exist (e.g., spot market services), the Transport User issues a Transport Execution Plan Request with a status code indicating that the Transport Execution Plan is not yet confirmed. The Transport User only confirms the Transport Execution
               Plan after a careful analysis of what has been submitted by the Transport Service Provider. This scenario is a three-step choreography where the Transport User confirms the Transport Execution Plan content in his second or subsequent response to the Transport Service Provider.</para>
-            <para>Updates to the Transport Execution Plan may be issued by either the Transport User or the Transport Service Provider. If the Transport User wants to update an existing Transport Execution Plan, a new instance of a Transport Execution Plan shall be issued with reference to the
+            <para>Updates to the Transport Execution Plan may be issued by either the Transport User or the Transport Service Provider. If the Transport User wants to update an existing Transport Execution Plan, a new instance of a Transport Execution Plan will be issued with reference to the
               original Transport Execution Plan. Similarly, if the Transport Service Provider wants to update an existing Transport Execution Plan, a new Transport Execution Plan replaces the original Transport Execution Plan with a reference to the original one. In either case, the Transport
-              Execution Plan shall include a document status code indicating that this is an update of the original content.</para>
-            <para>The cancellation of a Transport Execution Plan may be requested by either the Transport Service Provider or the Transport User. In either case, the Transport Execution Plan is sent with a document status code indicating that the Transport Execution Plan should be cancelled. For the
-              cancellation to be effective, it must be accepted by the party receiving the cancellation request. Acceptance is signified by sending back a Transport Execution Plan with a status code indicating confirmation; rejection of the cancellation is signified by issuing a Transport Execution
-              Plan with a status code indicating rejection.</para>
+              Execution Plan will include a document status code indicating that this is an update of the original content.</para>
+            <para>The cancellation of a Transport Execution Plan may be requested by either the Transport Service Provider or the Transport User. In either case, the Transport Execution Plan is sent with a document status code indicating that the Transport Execution Plan ought to be cancelled. For
+              the cancellation to be effective, it must be accepted by the party receiving the cancellation request. Acceptance is signified by sending back a Transport Execution Plan with a status code indicating confirmation; rejection of the cancellation is signified by issuing a Transport
+              Execution Plan with a status code indicating rejection.</para>
             <para>Upon completion of the transport service covered by the Transport Execution Plan, a final Transport Execution Plan document is sent from the Transport Service Provider to the Transport User that includes a document status code indicating that the transport service is
               completed.</para>
             <figure id="F-TRANSPORT-EXECUTION-PLAN">
@@ -3504,15 +3472,15 @@
         <title>Extension Methodology Overview</title>
         <para>There exist many established XML vocabularies expressing useful semantics for information exchange. The W3C digital signature vocabulary is but one example of such a vocabulary that has its own governance, life-cycle and publication schedule. It is futile to attempt to mimic all of an
           established vocabulary’s constructs as new UBL constructs and keep up with changes made in their life cycle. Moreover, it is untenable to ask users to re-frame all of the content of an established vocabulary into any such new UBL constructs.</para>
-        <para>Also, user communities may have the need to exchange information that is found neither in the UBL schemas nor in an established XML vocabulary. A colloquial XML vocabulary can be designed within which this information is expressed. Should the user community wish to promote the
-          inclusion of their additional semantics into the UBL specification, the UBL Maintenance Governance Procedures <xref linkend="governance"/> outlines how one would use the extension point and submit proposals for enhancements.</para>
+        <para>Also, user communities may have the need to exchange information that is found neither in the UBL schemas nor in an established XML vocabulary. A colloquial XML vocabulary can be designed within which this information is expressed. If the user community wish to promote the inclusion of
+          their additional semantics into the UBL specification, the UBL Maintenance Governance Procedures <xref linkend="governance"/> outlines how one would use the extension point and submit proposals for enhancements.</para>
         <para>The UBL extension scaffolding allows the inclusion of multiple extensions in any UBL instance, be they structured by established or colloquial XML vocabularies.</para>
       </section>
       <section id="S-EXTENSION-EXPRESSION">
         <title>Extension Expression</title>
         <para>Every UBL ABIE is allowed to contain extension content using the element <literal>&lt;ext:UBLExtensions></literal> in the extension namespace
-            <literal>urn:&#x200b;oasis:&#x200b;names:&#x200b;specification:&#x200b;ubl:&#x200b;schema:&#x200b;xsd:&#x200b;CommonExtensionComponents-2</literal> (there are no constraints on the namespace prefix, only the namespace URI). This schema-defined element shall be the first child element of
-          the ABIE element, appearing before every BIE child of the ABIE. It shall contain one or more <literal>&lt;ext:UBLExtension></literal> element children.</para>
+            <literal>urn:&#x200b;oasis:&#x200b;names:&#x200b;specification:&#x200b;ubl:&#x200b;schema:&#x200b;xsd:&#x200b;CommonExtensionComponents-2</literal> (there are
+          no constraints on the namespace prefix, only the namespace URI). This schema-defined element will be the first child element of the ABIE element, appearing before every BIE child of the ABIE. It will contain one or more <literal>&lt;ext:UBLExtension></literal> element children.</para>
         <para>Each <literal>&lt;ext:UBLExtension></literal> element contains the metadata and content of a single extension. All extension metadata is optional, and the extension content is mandatory. The extension content element contains as its only child the apex element, in a namespace other
           than the UBL extension namespace, of an arbitrary XML structure.</para>
         <table frame="all" rowsep="1" colsep="1" id="T-UBL-EXTENSION-METADATA-AND-CONTENT">
@@ -3662,10 +3630,10 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       </section>
       <section id="S-NOTES-FOR-EXTENSION-CREATORS">
         <title>Notes For Extension Creators</title>
-        <para>The following points should be noted:</para>
+        <para>The following points ought to be noted:</para>
         <itemizedlist>
           <listitem>
-            <para>Extension designers should follow the example by providing separate namespaces for apex element, aggregate constructs, and basic constructs if they wish the new items to be considered for inclusion in future UBL releases. This structures the new items for inclusion in the UBL
+            <para>Extension designers ought to follow the example by providing separate namespaces for apex element, aggregate constructs, and basic constructs if they wish the new items to be considered for inclusion in future UBL releases. This structures the new items for inclusion in the UBL
               common library. See <literal>
                 <literal>
                   <ulink url="xml/MyTransportationStatus.xml">xml/MyTransportationStatus.xml</ulink>
@@ -3673,9 +3641,9 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
               </literal> for a document instance exemplifying the recommended treatment of namespaces in a colloquial XML vocabulary.</para>
           </listitem>
           <listitem>
-            <para>Whenever possible, one should use existing UBL common library aggregate and basic constructs in extensions rather than inventing new items with the same semantics. However, a common library aggregate construct should only be used when the entire aggregate and all of its descendants
-              are applicable in the extension context without any changes. If any items need to be removed, then a new extension aggregate with a new local name should be used. If all the constructs in the common library aggregate are applicable but some items need to be added, then a new extension
-              aggregate with the same name should be created by adding the new constructs to a copy of the common library aggregate.</para>
+            <para>Whenever possible, one ought to use existing UBL common library aggregate and basic constructs in extensions rather than inventing new items with the same semantics. However, a common library aggregate construct ought to be used only when the entire aggregate and all of its
+              descendants are applicable in the extension context without any changes. If any items need to be removed, then a new extension aggregate with a new local name ought to be used. If all the constructs in the common library aggregate are applicable but some items need to be added, then a
+              new extension aggregate with the same name ought to be created by adding the new constructs to a copy of the common library aggregate.</para>
           </listitem>
         </itemizedlist>
         <para>The UBL Digital Signature extension described in <xref linkend="S-UBL-DIGITAL-SIGNATURES"/> has been modeled as an example to follow when designing and writing other custom extensions.</para>
@@ -3743,7 +3711,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         <para>
           <emphasis role="bold">[IND5]</emphasis> UBL-conforming instance documents SHALL NOT contain an element devoid of content or containing null values.</para>
       </blockquote>
-      <para>An important implication of this rule is that every container UBL element shall contain at least one of its possible constituents even if all of its possible constituents are declared to be optional.</para>
+      <para>An important implication of this rule is that every container UBL element will contain at least one of its possible constituents even if all of its possible constituents are declared to be optional.</para>
       <para>To ensure that no attempt is made to circumvent rule IND5, UBL also prohibits attempting to convey meaning by omitting an element (i.e., an optional element may be omitted, but that omission cannot carry a specific meaning upon which an action is conditioned).</para>
       <blockquote id="ADDITIONAL-DOCUMENT-CONSTRAINT-IND6">
         <para>
@@ -3757,7 +3725,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <para>Natural language text elements such as Note and Description appear throughout the UBL document model. They are of the same unstructured Text type as character data fields that are not intended for natural language prose, such as Address Line.</para>
       <para>All natural language text elements in UBL are repeatable within some container; for example, all Note elements are repeatable as adjacent siblings under a common parent. Despite appearances, these multiple text elements are not intended for the representation of separate paragraphs or
         divisions within a single parent text; rather, each Note element (for example) contains the entire text of the note in one of the languages in which the note is provided. In other words, UBL allows 0..n Note or Description elements in order to present the same note or description in 0..n
-        languages, not to reflect structures such as paragraphs internal to a text in a single language. Since UBL text elements are intended for unstructured sequences of character data, more complex texts should be located in external documents and associated with the UBL message using document
+        languages, not to reflect structures such as paragraphs internal to a text in a single language. Since UBL text elements are intended for unstructured sequences of character data, more complex texts ought to be located in external documents and associated with the UBL message using document
         references.</para>
       <para>UBL enforces this restriction with the following two rules:</para>
       <blockquote id="ADDITIONAL-DOCUMENT-CONSTRAINT-IND7">
@@ -3941,7 +3909,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           <para>XMLDSig and XAdES signatures can be created and verified using <xref linkend="b_dss"/> signature signing and verifying protocol.</para>
         </note>
         <note>
-          <para>The references to <xref linkend="b_XAdES"/> and <xref linkend="b_asic"/> standards were updated from UBL 2.2 to UBL 2.3. Refer to <xref linkend="b_etsi-ts-119-112"/> for the most significant differences between XAdES and ASiC ENs and the formerly referenced TSs</para>
+          <para>The references to <xref linkend="b_XAdES"/> and <xref linkend="b_asic"/> standards have been updated from UBL 2.2 to UBL 2.3. Refer to <xref linkend="b_etsi-ts-119-112"/> for the most significant differences between XAdES and ASiC ENs and the formerly referenced TSs</para>
         </note>
       </section>
       <section id="S-ENVELOPED-XML-SIGNATURES-IN-UBL-DOCUMENTS">
@@ -3950,9 +3918,9 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           <title>Enveloped Signature Introduction</title>
           <para>The enveloped signature profile supports one or more signatures to be applied to a UBL document and embedded in the UBL document itself inside a dedicated extension. This profile can be used with all UBL documents under their respective <literal>&lt;ext:UBLExtensions></literal>
             extension points. UBL syntax implementing the enveloped profile, together with examples of its use, are provided in <xref linkend="S-UBL-EXTENSION-FOR-ENVELOPED-XML-DIGITAL-SIGNATURES"/>.</para>
-          <para>The user MAY choose to indicate in a <literal>&lt;cac:Signature></literal> element that the signature details are found in the signature extension. The URI <literal>urn:oasis:names:specification:ubl:dsig:enveloped</literal> is reserved as a value for
-              <literal>&lt;cbc:SignatureMethod></literal> to signal this. The URI <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;enveloped:&#8203;xades</literal> MAY be used as a value for <literal>&lt;cbc:SignatureMethod></literal> to signal when XAdES is
-            in use. Additionally, the user MAY include a <literal>&lt;cbc:ID></literal> child of <literal>&lt;cac:Signature></literal> for referencing purposes from the enveloped signature. The identifier used can be any value, but for convenience the URI of a URN beginning with
+          <para>The user CAN choose to indicate in a <literal>&lt;cac:Signature></literal> element that the signature details are found in the signature extension. The URI <literal>urn:oasis:names:specification:ubl:dsig:enveloped</literal> is reserved as a value for
+              <literal>&lt;cbc:SignatureMethod></literal> to signal this. The URI <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;enveloped:&#8203;xades</literal> CAN be used as a value for <literal>&lt;cbc:SignatureMethod></literal> to signal
+            when XAdES is in use. Additionally, the user CAN include a <literal>&lt;cbc:ID></literal> child of <literal>&lt;cac:Signature></literal> for referencing purposes from the enveloped signature. The identifier used can be any value, but for convenience the URI of a URN beginning with
               <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;signature:</literal>, ending with the local name of the parent of the signature business object, and optionally followed with a colon and number, as in the
               <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;signature:&#8203;IssuerEndorsement</literal> example, is reserved for this purpose for UBL users. As with all identifiers, the identifier SHOULD exist and SHOULD be unique across all identifier values. An
             example is as follows:</para>
@@ -3983,10 +3951,9 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           <para>This profile supports the application to a UBL document of one or more signatures located outside of the document itself in some other resource.</para>
           <para>It is important to note that externally signing a UBL document with a detached signature imposes no requirements on the UBL document itself. Such a signature, in any kind of signature container, can digitally sign the content of a UBL document regardless of whether this is reflected
             in the document.</para>
-          <para>Before a detached signature conforming IETF/W3C XML digital signature is generated, the user MAY choose to signal in their UBL document that it is so signed. The URI value <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;detached</literal> is
-            reserved to indicate that the detached signature is an IETF/W3C XML digital signature. The URI <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;detached:&#8203;xades</literal> MAY be used as a value to signal when XAdES is in use. The value is
-            used in the <literal>&lt;cbc:SignatureMethod></literal> child of <literal>&lt;cac:Signature></literal>.</para>
-          <para>If the location of the digital signature is known, the user MAY choose to indicate the location in a <literal>&lt;cbc:URI></literal> child element of a <literal>&lt;cac:ExternalReference></literal> child element of a <literal>&lt;cac:DigitalSignatureAttachment></literal>
+          <para>Before a detached signature conforming IETF/W3C XML digital signature is generated, the user CAN choose to signal in their UBL document that it is so signed. The URI value <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;detached</literal> is
+            reserved to indicate that the detached signature is an IETF/W3C XML digital signature. The URI <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;detached:&#8203;xades</literal> CAN be used as a value to signal when XAdES is in use. The value is used in the <literal>&lt;cbc:SignatureMethod></literal> child of <literal>&lt;cac:Signature></literal>.</para>
+          <para>If the location of the digital signature is known, the user CAN choose to indicate the location in a <literal>&lt;cbc:URI></literal> child element of a <literal>&lt;cac:ExternalReference></literal> child element of a <literal>&lt;cac:DigitalSignatureAttachment></literal>
             element.</para>
           <para>Following is a complete example of a <literal>&lt;cac:Signature></literal> business object that might be found in a UBL instance:</para>
           <programlisting role="font-size-92%"><![CDATA[ <cac:Signature>
@@ -4183,7 +4150,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         <section id="S-DIGITAL-SIGNATURE-EXTENSION-METADATA">
           <title>Digital Signature Extension Metadata</title>
           <para>The standard scaffolding for a given signature extension begins with the <literal>&lt;ext:UBLExtension></literal> element. The extension&#8217;s role as a UBL signature extension is indicated with a child <literal>&lt;ext:ExtensionURI></literal> element with the
-              <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;enveloped</literal> value. The <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;enveloped:&#8203;xades</literal> value MAY be used to indicate the use of
+              <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;enveloped</literal> value. The <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;enveloped:&#8203;xades</literal> value CAN be used to indicate the use of
             XAdES in the extension. Other extension metadata elements defined in UBL are allowed to be included for the convenience of users without changing the meaning or use of the extension.</para>
           <programlisting><![CDATA[<ext:UBLExtension>
   <ext:ExtensionURI
@@ -4232,7 +4199,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         <section id="S-DIGITAL-SIGNATURE-CONTENT">
           <title>Digital Signature Content</title>
           <para>A single <literal>&lt;ds:Signature></literal> element is a child of the aggregate. It MAY be absent from the document, thus supporting workflow scenarios where the element is added by a subsequent process after the UBL scaffolding is added by an earlier process. However, the
-            signature information is semantically incomplete without the IETF/W3C-defined element. To support signatures countersigning this signature, this element shall use the <literal>Id=</literal> attribute with a value unique among other attributes of schema type <literal>ID</literal> in the
+            signature information is semantically incomplete without the IETF/W3C-defined element. To support signatures countersigning this signature, this element 1will use the <literal>Id=</literal> attribute with a value unique among other attributes of schema type <literal>ID</literal> in the
             instance.</para>
         </section>
         <section id="S-EXAMPLE-DIGITAL-SIGNATURE-SKELETON">
@@ -4546,7 +4513,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <para>UBL provides a vocabulary that, for many user communities, can be used &#8220;as is&#8221;. However, it is recognized that some user communities need to address use cases whose requirements are not met by the UBL off-the-shelf solution. A separate OASIS Committee Specification known as
         the <citetitle>UBL 2 Guidelines for Customization</citetitle>
         <xref linkend="custguide"/> has been published to aid such users in developing custom solutions based on UBL.</para>
-      <para>The goal of UBL customization is to maintain a common understanding of the meaning of information being exchanged between specific implementations. The factors governing when to customize may be business-driven, technically driven, or both. The decision should be based on real-world
+      <para>The goal of UBL customization is to maintain a common understanding of the meaning of information being exchanged between specific implementations. The factors governing when to customize may be business-driven, technically driven, or both. The decision ought to be based on real-world
         needs balanced against perceived economic benefits.</para>
     </section>
     <section id="S-UPGRADING-FROM-UBL-2.0-UBL-2.1-UBL-2.2-OR-UBL-2.3-TO-UBL-&version;">
@@ -4560,7 +4527,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
     </section>
     <section id="S-KNOWN-ERRORS-IN-UBL-&version;">
       <title>Known errors in UBL &version;</title>
-      <para>During deployment the presence of errors in the UBL normative components comes to the attention of the UBL Technical Committee. Some of these cannot be repaired without breaking backwards compatibility to previous versions of UBL. Accordingly, they are obliged to remain in UBL untouched
+      <para>During deployment the presence of errors in the UBL normative components comes to the attention of the UBL Technical Committee. Some of these are incapable of being repaired without breaking backwards compatibility to previous versions of UBL. Accordingly, they are obliged to remain in UBL untouched
         to avoid ambiguity and to avoid problems with backwards compatibility.</para>
       <para>The list of known errors that are not being changed is as follows:</para>
       <itemizedlist>
@@ -4592,14 +4559,14 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         UBL.</para>
       <para>A major revision is considered only when the UBL committee has assessed that the changes needed to meet stakeholder requirements justify changes in the way business objects and documents are expressed. There has been only one major revision, that being from UBL 1.0 to UBL 2.0, and this
         was made to accommodate requirements described in <xref linkend="S-MAJOR-REVISION-UBL-2.0"/>.</para>
-      <para>UBL documents are structured instances of arranged information. A given document shall not violate sets of abstract document constraints that govern its content, chosen by the UBL committee and expressed in the UBL data model. The abstract model is reified in concrete form as sets of
+      <para>UBL documents are structured instances of arranged information. A given document will not violate sets of abstract document constraints that govern its content, chosen by the UBL committee and expressed in the UBL data model. The abstract model is reified in concrete form as sets of
         constraint expressions. These constraint expressions take two forms: mandatory document schemas in XSD and optional code list associations in CVA. When UBL is published, these concrete constraint expressions are made available in a form computers use to validate that an XML document is, in
         fact, a properly formed and valued UBL document. The computer can then act on the values found inside of the UBL document in order to satisfy business objectives.</para>
       <para>Accordingly, after the release of UBL 1.0, users created UBL 1.0 documents that conformed to the UBL 1.0 document constraints expressed in the UBL 1.0 document model.</para>
       <para>The impact of the major revision from UBL 1.0 to UBL 2.0 is that UBL 1.0 documents violate the constraints of the UBL 2.0 document model. A system designed for UBL 2.0 is unable to ingest a UBL 1.0 document precisely because the validation of the UBL 2.0 document constraints will fail
         and the UBL 1.0 document is not recognized as a valid instance of the UBL 2.0 document model.</para>
       <para>There is no impact of minor revisions in UBL for existing UBL documents for a major revision. The committee goes to great lengths to ensure that the document constraints for every minor revision of UBL will not be violated by any UBL document created by a previous minor revision. Of
-        course this cannot work in the other direction. That is, a document of a new minor revision may very well violate the constraints of an earlier revision due to the introduction of new business objects.</para>
+        course this will not work in the other direction. That is, a document of a new minor revision may very well violate the constraints of an earlier revision due to the introduction of new business objects.</para>
       <para>From a business perspective, this approach removes any need to redress older UBL documents to prevent constraint violations in newer UBL systems. Documents of older minor revisions are automatically, without making any changes, considered valid documents of newer minor revisions. In a
         network of heterogeneous systems, it is not necessary to upgrade every installation at the same time in order to preserve interoperability. A new system can ingest a UBL document created by an old system without that old document violating the new document constraints.</para>
       <para>From a regulatory perspective, this approach allows a jurisdiction to mandate constraints on any minor revision of UBL and those constraints will apply equally to all subsequent minor revisions. There is no need to update any regulation for a given version of UBL just because the
@@ -4973,7 +4940,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         opaque labels and to ignore the historical expansions of these acronyms.</para>
       <para>It can be seen from the above that the XML implementations of ASBIEs and library ABIEs share the same <literal>cac:</literal> namespace. In the schemas, library ABIEs are all implemented as XML types, and ASBIEs are all implemented as XML elements. This is simply a reflection of their
         different roles&#8212;library ABIEs as abstract classes or structural templates (realized as XML types) and ASBIEs as concrete instantiations (realized as XML elements derived from those types).</para>
-      <para>While the distinction between ABIEs/classes/types on the one hand and ASBIEs/instantiations/elements on the other is clear enough, it should be noted that in some cases an ASBIE does not qualify the name of the ABIE from which it is derived. In effect, they have the same name. Some
+      <para>While the distinction between ABIEs/classes/types on the one hand and ASBIEs/instantiations/elements on the other is clear enough, it ought to be noted that in some cases an ASBIE does not qualify the name of the ABIE from which it is derived. In effect, they have the same name. Some
         library ABIEs are used only in the form of an ASBIE having the same name; for example, <literal>AddressLine</literal> is a library ABIE that is only used in the form of an ASBIE named <literal>AddressLine.</literal> Some library ABIEs are realized in some places as ASBIEs with the same name
         (where it is felt that the unqualified name is sufficient) and elsewhere as ASBIEs with a name that is further qualified; for example, the library ABIE <literal>Address</literal> has numerous ASBIE realizations with qualified names like <literal>LocationAddress</literal>,
           <literal>ApplicableAddress</literal>, <literal>DespatchAddress</literal>, and so on, but it&#8217;s also seen as an ASBIE simply named <literal>Address</literal> that&#8217;s included in the library ABIEs <literal>FinancialInstitution</literal>, <literal>Branch</literal>,
@@ -5147,7 +5114,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
 ]]></programlisting>
       <para>If the preceding explanation of <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.Details" conformance="skip" role="DEN-Name" remap="Party. Details">Party</ulink>
-        </literal> is understood, there should be nothing problematic about the process of forming the example <literal>
+        </literal> is understood, there ought to be nothing problematic about the process of forming the example <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Legal_MonetaryTotal.MonetaryTotal" conformance="skip" role="DEN-Name" remap="Invoice. Legal_ Monetary Total. Monetary Total">LegalMonetaryTotal</ulink>
         </literal> element shown above except the <literal>currencyID</literal> attribute on <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
@@ -5241,7 +5208,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           <para>C - Cardinality</para>
           <itemizedlist>
             <listitem>
-              <para>the constraint of how often the given BIE shall be or is allowed to be repeated when encountered in a UBL document</para>
+              <para>the constraint of how often the given BIE will be or is allowed to be repeated when encountered in a UBL document</para>
             </listitem>
             <listitem>
               <para>1=mandatory, 0..1=optional, 1..n=mandatory and repeatable, 0..n=optional and repeatable</para>
@@ -5311,7 +5278,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
               <para>in UBL object classes are qualified by their use in context using the property term qualifier, not by their definition</para>
             </listitem>
             <listitem>
-              <para>this value is not specified by anyone and should never be used in UBL</para>
+              <para>this value is not specified by anyone and ought not be used in UBL</para>
             </listitem>
             <listitem>
               <para>this column is not included in the HTML summary reports</para>
@@ -5448,7 +5415,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
               <para>in UBL object classes are qualified by their use in context using the property term qualifier, not by their definition</para>
             </listitem>
             <listitem>
-              <para>this value is not specified by anyone and should never be used in UBL</para>
+              <para>this value is not specified by anyone and ought not be used in UBL</para>
             </listitem>
             <listitem>
               <para>this column is not included in the HTML summary reports</para>
@@ -5549,7 +5516,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
               <para>the possessive noun leads the primary noun expanding on the primary noun to distinguish the semantic concept from other BBIEs based on the same semantic concept</para>
             </listitem>
             <listitem>
-              <para>this cannot be an adjective and it shall be a noun along the lines of “the {primary noun} relates to the {possessive noun}” or using the possession concept “the {possessive noun}’s {primary noun}”</para>
+              <para>this cannot be an adjective and it will be a noun along the lines of “the {primary noun} relates to the {possessive noun}” or using the possession concept “the {possessive noun}’s {primary noun}”</para>
             </listitem>
           </itemizedlist>
         </listitem>
@@ -5560,7 +5527,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
       <para>Additionally, the ASBIE or BBIE property term may be augmented by a property term qualifier as an adjective. This qualification may be needed or helpful to clarify the semantic role of the BIE, or it may be necessary in order to disambiguate other sibling BIEs of the parent ABIE:</para>
       <itemizedlist>
         <listitem>
-          <para>this cannot be a noun and it shall be an adjective along the lines of “the {property term} of qualified type {qualifier}”</para>
+          <para>this cannot be a noun and it will be an adjective along the lines of “the {property term} of qualified type {qualifier}”</para>
         </listitem>
       </itemizedlist>
       <para>Consider the following excerpt from the “Address. Details” ABIE where these property term concepts are illustrated:</para>
@@ -5803,7 +5770,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         utility in UBL XML document instances. Declaring unused namespaces in an XML instance is superfluous and does not impact on conformance, but having them present may be confusing or misleading to the reader.</para>
       <note>
         <para>All namespace prefixes used in this specification and in the validation artefacts are arbitrarily chosen and used consistently for documentary purposes. There is no requirement to use these particular namespace prefix values in actual UBL documents. This is in contrast to the UBL
-          namespace URI strings that are normative and shall be used as required whatever arbitrary non-normative namespace prefixes are chosen by users.</para>
+          namespace URI strings that are normative and will be used as required whatever arbitrary non-normative namespace prefixes are chosen by users.</para>
       </note>
     </section>
   </appendix>
@@ -6301,7 +6268,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
       list values linked to the metadata of the applicable code list.</para>
     <para>The two remaining boxes on the right in the diagram illustrate that users can add further data type qualifications if desired by preparing a custom CVA <emphasis role="bold">(H)</emphasis> and creating a custom XSLT file <emphasis role="bold">(J)</emphasis> to replace the default CVA and
       XSLT stylesheet provided in the UBL distribution.</para>
-    <para>Users intending to prepare a custom CVA should note that <literal>
+    <para>Users intending to prepare a custom CVA ought to note that <literal>
         <ulink url="cva/UBL-DefaultDTQ-&version;.cva">cva/UBL-DefaultDTQ-&version;.cva</ulink>
       </literal> contains relative URIs that expect the UBL 2.0 code lists from the UBL 2.0 Update Package in a sibling directory named <literal>os-UBL-2.0</literal>, the UBL 2.1 code lists from the UBL 2.1 distribution in a sibling directory named <literal>os-UBL-2.1</literal>, the UBL 2.2 code
       lists from the UBL 2.2 distribution in a sibling directory named <literal>os-UBL-2.2</literal>, and the UBL 2.3 code lists from the UBL 2.3 distribution in a sibling directory named <literal>os-UBL-2.3</literal>. This is irrelevant to users of the pre-compiled <literal>
@@ -6392,7 +6359,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           <para>or</para>
           <para>
             <literal>sh test.sh</literal> (Shell/OSX Terminal shell prompt)</para>
-          <para>The output, which is explained in the next section, should resemble the output shown in the following transcript (the spacing has been manually adjusted to make the output easier to read).</para>
+          <para>The output, which is explained in the next section, ought to resemble the output shown in the following transcript (the spacing has been manually adjusted to make the output easier to read).</para>
         </listitem>
       </orderedlist>
       <programlisting>############################################################
@@ -6510,8 +6477,8 @@ No code list validation errors.</programlisting>
             (<literal><ulink url="val/order-test-bad-model.xml">val/order-test-bad-model.xml</ulink></literal>); a UBL Order that is schema-valid but contains an illegal code list value (<literal><ulink url="val/order-test-bad-code.xml">val/order-test-bad-code.xml</ulink></literal>); and a valid UBL
         Order (<literal><ulink url="val/order-test-good.xml">val/order-test-good.xml</ulink></literal>);. The file <literal><ulink url="val/test.bat">val/test.bat</ulink></literal> (Windows) or <literal><ulink url="val/test.sh">val/test.sh</ulink></literal> (Shell) is used to run the script
             <literal><ulink url="val/validate.bat">val/validate.bat</ulink></literal> or <literal><ulink url="val/validate.sh">val/validate.sh</ulink></literal> against each of the test files.</para>
-      <para>Looking at the last test results first, run using <literal>order-test-good.xml</literal>, this demonstrates both phases of the default validation process running normally. The exit status of the entire test is the exit of the last test which should be successful when being tested for
-        error.</para>
+      <para>Looking at the last test results first, run using <literal>order-test-good.xml</literal>, this demonstrates both phases of the default validation process running normally. The exit status of the entire test is the exit of the last test which ought to be successful when
+        being tested for error.</para>
       <para>In each test’s first phase, a standard W3C Schema (XSD) validator, Xerxes, is invoked from <literal><ulink url="val/w3cschema.bat">val/w3cschema.bat</ulink></literal> (or <literal><ulink url="val/w3cschema.sh">val/w3cschema.sh</ulink></literal>) to validate the specified UBL document
           (<literal>.xml</literal>) against the specified UBL runtime schema (<literal>.xsd</literal>). Since the input is a valid UBL Order, the output of the first phase simply indicates that the file is valid against the given Order schema. Error messages are persisted in the file with the XML
         name and added extension <literal>.error.txt</literal>. In this test the persistent error files from phase one are <literal><ulink url="val/order-test-bad-syntax.xml.error.txt">val/order-test-bad-syntax.xml.error.txt</ulink></literal> and <literal><ulink
@@ -6543,8 +6510,8 @@ No code list validation errors.</programlisting>
           </textobject>
         </mediaobject>
       </figure>
-      <para>It should be clear from the foregoing that the second phase of the default validation process can safely be omitted if it is considered unnecessary to check code list values. However, the reverse is not true; the second phase depends for correct operation on a prior check for structural
-        validity, and therefore it will not give reliable results if run in the absence of the first (schema) validation phase.</para>
+      <para>It ought to be clear from the foregoing that the second phase of the default validation process can safely be omitted if it is considered unnecessary to check code list values. However, the reverse is not true; the second phase depends for correct operation on a prior check for
+        structural validity, and therefore it will not give reliable results if run in the absence of the first (schema) validation phase.</para>
     </section>
     <section id="S-CUSTOMIZING-THE-DEFAULT-XSLT-FILE">
       <title>Customizing the Default XSLT File</title>
