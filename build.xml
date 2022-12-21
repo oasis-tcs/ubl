@@ -1467,8 +1467,8 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
     <arg value="-t"/>
     <arg value="odt"/>
     <arg value="-o"/>
-    <arg value="UBL-${UBLversion}.odt"/>
-    <arg value="UBL-${UBLversion}.xml"/>
+    <arg value="${dir}/UBL-${UBLversion}.odt"/>
+    <arg value="${dir}/UBL-${UBLversion}.xml"/>
   </exec> 
 </target>
 
