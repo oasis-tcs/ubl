@@ -1470,6 +1470,9 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
     <arg value="${dir}/UBL-${UBLversion}.odt"/>
     <arg value="${dir}/UBL-${UBLversion}.xml"/>
   </exec> 
+  <available property="ready-odt" file="${dir}/UBL-${UBLversion}.odt"/>
+  <echo unless:set="ready-odt" message="ODT not created"/>
+  <echo if:set="ready-odt" message="ODT created"/>
 </target>
 
 <target name="-package-docs">
