@@ -844,7 +844,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       </not>
     </and>
   </condition>
-  <loadfile property="spellErrors" srcfile="${dir}'/unexpectedWords.txt"/>
+  <loadfile property="spellErrors" srcfile="${dir}/unexpectedWords.txt"/>
   <echo message="${spellErrors}"
         if:set="reportSpell" file="${dir}/${UBLstage}-${UBLversion}/NDR-SPELL-CHECK-WARNING.txt"/>
 </target>
