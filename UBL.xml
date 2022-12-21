@@ -5025,12 +5025,12 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
         </literal> therefore has this structure, too. From this one could conclude that instantiations of the <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
-        </literal> structure (there are more than 50 of them in UBL) need not contain any of the seven optional BBIE elements specified after line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1709</ulink>,
+        </literal> structure (there are more than 50 of them in UBL) might not contain any of the seven optional BBIE elements specified after line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1709</ulink>,
         and indeed the corresponding declaration of the complex type <literal>PeriodType</literal> in the CAC schema (<literal>
           <ulink url="xsd/common/UBL-CommonAggregateComponents-&version;.xsd">xsd/common/UBL-CommonAggregateComponents-&version;.xsd</ulink>
         </literal>) shows that an empty <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
-        </literal> element will pass XML validation; but UBL explicitly prohibits such structures (see <xref linkend="S-EMPTY-ELEMENTS"/>). In UBL, as a normative rule independent of schema constraints, every ASBIE shall have at least one child (BBIE or ASBIE) instantiated. In this case, therefore,
+        </literal> element will pass XML validation; but UBL explicitly prohibits such structures (see <xref linkend="S-EMPTY-ELEMENTS"/>). In UBL, as a normative rule independent of schema constraints, every ASBIE will have at least one child (BBIE or ASBIE) instantiated. In this case, therefore,
         one or more of the seven possible BBIE children of <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
         </literal> will need to appear in a UBL Invoice document for it to be conforming to UBL in addition to the requirement that the document validate against the <literal>
@@ -6337,7 +6337,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
     <section id="S-DEFAULT-VALIDATION-SETUP">
       <title>Default Validation Setup</title>
       <para>To facilitate the processing of UBL instances using the two-phase method, an &#8220;out-of-the-box&#8221; collection of open-source software that can be used to demonstrate default validation of UBL documents is included in the <literal>val</literal> directory of this release package.
-        The validation harness assumes a Shell or Windows system with no currently installed XML or XSLT processing software.</para>
+        The validation harness assumes a Unix-like or Windows system with no currently installed XML or XSLT processing software.</para>
       <para>The Java Runtime Environment (JRE) 1.5 or later is required to use the programs in the <literal>val</literal> directory; JRE versions below 1.5 will throw an error from the <literal>xjparse.jar</literal> module used to invoke the Xerxes schema parser. If necessary, download and install
         the latest JRE from the following location before continuing:</para>
       <blockquote>
@@ -6358,7 +6358,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             <literal>test.bat</literal> (Windows command prompt)</para>
           <para>or</para>
           <para>
-            <literal>sh test.sh</literal> (Shell/OSX Terminal shell prompt)</para>
+            <literal>sh test.sh</literal> (Unix-like shell prompt)</para>
           <para>The output, which is explained in the next section, ought to resemble the output shown in the following transcript (the spacing has been manually adjusted to make the output easier to read).</para>
         </listitem>
       </orderedlist>
@@ -6475,7 +6475,7 @@ No code list validation errors.</programlisting>
       <title>Discussion of the Default Validation Test</title>
       <para>The test output displayed above demonstrates the default validation process with four test files: a UBL Order containing invalid syntax (<literal><ulink url="val/order-test-bad-syntax.xml">val/order-test-bad-syntax.xml</ulink></literal>); a UBL Order containing a bad (misspelled) element
             (<literal><ulink url="val/order-test-bad-model.xml">val/order-test-bad-model.xml</ulink></literal>); a UBL Order that is schema-valid but contains an illegal code list value (<literal><ulink url="val/order-test-bad-code.xml">val/order-test-bad-code.xml</ulink></literal>); and a valid UBL
-        Order (<literal><ulink url="val/order-test-good.xml">val/order-test-good.xml</ulink></literal>);. The file <literal><ulink url="val/test.bat">val/test.bat</ulink></literal> (Windows) or <literal><ulink url="val/test.sh">val/test.sh</ulink></literal> (Shell) is used to run the script
+        Order (<literal><ulink url="val/order-test-good.xml">val/order-test-good.xml</ulink></literal>);. The file <literal><ulink url="val/test.bat">val/test.bat</ulink></literal> (Windows) or <literal><ulink url="val/test.sh">val/test.sh</ulink></literal> (Unix-like) is used to run the script
             <literal><ulink url="val/validate.bat">val/validate.bat</ulink></literal> or <literal><ulink url="val/validate.sh">val/validate.sh</ulink></literal> against each of the test files.</para>
       <para>Looking at the last test results first, run using <literal>order-test-good.xml</literal>, this demonstrates both phases of the default validation process running normally. The exit status of the entire test is the exit of the last test which ought to be successful when
         being tested for error.</para>
@@ -6677,7 +6677,7 @@ No code list validation errors.</programlisting>
   <appendix id="A-UBL-&version;-EXAMPLE-DOCUMENT-INSTANCES" role="non-normative">
     <title>UBL &version; Example Document Instances</title>
     <para>The <literal>xml</literal> directory of this distribution contains a number of sample UBL documents that can be used for testing purposes. The <literal>testsamples.bat</literal> batch file and the <literal>testsamples.sh</literal> script in the <literal>val</literal> directory of this
-      distribution can be used to demonstrate the validity of these examples in Windows and Shell operating environments. See <xref linkend="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/> for a general discussion of UBL validation methodology. For convenience, those examples that relate
+      distribution can be used to demonstrate the validity of these examples in Windows and Unix-like operating environments. See <xref linkend="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/> for a general discussion of UBL validation methodology. For convenience, those examples that relate
       specifically to a particular document type are linked from the description of that type in <xref linkend="S-UBL-&version;-DOCUMENT-SCHEMAS"/>.</para>
     <blockquote role="examples">
       <para>
