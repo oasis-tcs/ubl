@@ -1296,7 +1296,7 @@
               optimal results and to enable both parties to plan the execution of the event more accurately, from the preparation of advertising and displays to the production and delivery of the promotional stock.</para>
             <para>In Collaborative Planning, Forecasting, and Replenishment step 3, the Sales <link linkend="S-FORECAST-SCHEMA">Forecast</link> is generated. Following Option A, Conventional Order Management, from the Collaborative Planning, Forecasting, and Replenishment implementation scenarios,
               the responsible partner for the generation of Sales Forecast is the Seller. Having Event Calendar information and the Delivery Plan already in their system, there are two more kinds of information that the Seller needs for an effective Sales Forecast: POS Data and DC Data. As shown in
-                <xref linkend="F-CPFR-STEPS-3-4-AND-5"/> and <xref
+                <xref linkend="F-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT-STEPS-3-4-AND-5"/> and <xref
                 linkend="F-CREATE-SALES-FORECAST"/>, both of these pieces of information are sent within a <link linkend="S-PRODUCT-ACTIVITY-SCHEMA">Product Activity</link> message. This time there is no revision of the messages because these messages contain statistical and historical information
               collected previously by the Buyer.</para>
             <figure id="F-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT-STEPS-3-4-AND-5">
@@ -1346,7 +1346,7 @@
           <section id="S-ORDER-FORECAST-GENERATION-AND-EXCEPTION-HANDLING">
             <title>Order Forecast Generation and Exception Handling</title>
             <para>In the supply chain process, it is important for sales forecasts that are created to be converted into the shipment (order) forecasts that can then be used in the production planning processes at the manufacturing locations and be incorporated into the ordering processes at the
-              retailer. As shown in <xref linkend="F-CPFR-STEPS-6-7-8-AND-9"/>, the responsibility for creating Order Forecast belongs to the Seller per Option A of the Collaborative Planning, Forecasting, and Replenishment implementation scenarios. Sales forecasts can be transformed into order
+              retailer. As shown in <xref linkend="F-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT-STEPS-6-7-8-AND-9"/>, the responsibility for creating Order Forecast belongs to the Seller per Option A of the Collaborative Planning, Forecasting, and Replenishment implementation scenarios. Sales forecasts can be transformed into order
               forecasts by incorporating inventory status information, possible retail event plans, and current point of sale data. Therefore, Buyer sends the updated versions of the Retail Event, Inventory Status, and POS Data to the Seller.</para>
             <figure id="F-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT-STEPS-6-7-8-AND-9">
               <title>Collaborative Planning, Forecasting, and Replenishment steps 6, 7, 8 and 9</title>
