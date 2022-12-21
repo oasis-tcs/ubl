@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
-	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<Invoice
+ xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+ xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
 	<cbc:ID>TOSL108</cbc:ID>
 	<cbc:IssueDate>2009-12-15</cbc:IssueDate>
@@ -87,8 +88,8 @@
 			</cac:Contact>
 			<cac:Person>
 				<cbc:FirstName>Antonio</cbc:FirstName>
-				<cbc:FamilyName>M</cbc:FamilyName>
-				<cbc:MiddleName>Salemacher</cbc:MiddleName>
+				<cbc:FamilyName>Salemacher</cbc:FamilyName>
+				<cbc:MiddleName>M</cbc:MiddleName>
 				<cbc:JobTitle>Sales manager</cbc:JobTitle>
 			</cac:Person>
 		</cac:Party>
@@ -141,8 +142,8 @@
 			</cac:Contact>
 			<cac:Person>
 				<cbc:FirstName>John</cbc:FirstName>
-				<cbc:FamilyName>X</cbc:FamilyName>
-				<cbc:MiddleName>Doe</cbc:MiddleName>
+				<cbc:FamilyName>Doe</cbc:FamilyName>
+				<cbc:MiddleName>X</cbc:MiddleName>
 				<cbc:JobTitle>Purchasing manager</cbc:JobTitle>
 			</cac:Person>
 		</cac:Party>

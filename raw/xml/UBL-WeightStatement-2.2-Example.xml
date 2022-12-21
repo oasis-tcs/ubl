@@ -7,7 +7,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
 	<cbc:UBLVersionID>2.2</cbc:UBLVersionID>
 	<cbc:ID>GOA294107</cbc:ID>
 	<cbc:IssueDate>2016-11-03</cbc:IssueDate>
-	<cbc:IssueTime>09:30:00</cbc:IssueTime>
+	<cbc:IssueTime>09:30:00Z</cbc:IssueTime>
 	<cbc:WeightStatementTypeCode listAgencyID="6" listID="UN/ECE 1001" listVersionID="d16a">749</cbc:WeightStatementTypeCode>
 	<cac:SenderParty>
 		<cbc:EndpointID schemeID="GLN" schemeAgencyID="9">1234567987654</cbc:EndpointID>
@@ -86,7 +86,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
 				<cac:VerifiedGrossMass>
 					<cbc:ID>123</cbc:ID>
 					<cbc:WeighingDate>2016-11-01</cbc:WeighingDate>
-					<cbc:WeighingTime>00:30:00</cbc:WeighingTime>
+					<cbc:WeighingTime>00:30:00Z</cbc:WeighingTime>
 					<cbc:WeighingMethodCode listAgencyID="54" listID="IMO SOLAS">SM1</cbc:WeighingMethodCode>
 					<cbc:WeighingDeviceID>TS12345</cbc:WeighingDeviceID>
 					<cbc:WeighingDeviceType>Truck Scale</cbc:WeighingDeviceType>

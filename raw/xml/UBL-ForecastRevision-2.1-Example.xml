@@ -8,7 +8,7 @@
 	<cbc:CopyIndicator>false</cbc:CopyIndicator>
 	<cbc:UUID>349ABBAE-DF9D-40B4-849F-94C5FF9D1AF4</cbc:UUID>
 	<cbc:IssueDate>2002-02-10</cbc:IssueDate>
-	<cbc:IssueTime>12:00:01.000</cbc:IssueTime>
+	<cbc:IssueTime>12:00:01.000Z</cbc:IssueTime>
 	<cbc:Note>sample</cbc:Note>
 	<cbc:SequenceNumberID>1</cbc:SequenceNumberID>
 	<cbc:RevisionStatusCode>NEW</cbc:RevisionStatusCode>
@@ -109,7 +109,7 @@
 		<cbc:ID>FRL1</cbc:ID>
 		<cbc:RevisedForecastLineID>RFL1</cbc:RevisedForecastLineID>
 		<cbc:SourceForecastIssueDate>2005-02-17</cbc:SourceForecastIssueDate>
-		<cbc:SourceForecastIssueTime>10:00:00.000</cbc:SourceForecastIssueTime>
+		<cbc:SourceForecastIssueTime>10:00:00.000Z</cbc:SourceForecastIssueTime>
 		<cbc:AdjustmentReasonCode>REVISED_PROMOTION</cbc:AdjustmentReasonCode>
 		<cac:ForecastPeriod>
 			<cbc:StartDate>2005-02-26</cbc:StartDate>

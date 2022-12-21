@@ -104,12 +104,12 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
 	  <cbc:MaximumDataLossDurationMeasure unitCode="HUR">24</cbc:MaximumDataLossDurationMeasure>
 	  <cbc:MeanTimeToRecoverDurationMeasure unitCode="HUR">3</cbc:MeanTimeToRecoverDurationMeasure>
       <cac:ServiceAvailabilityPeriod>
-        <cbc:StartTime>09:00:00</cbc:StartTime>
-        <cbc:EndTime>16:00:00</cbc:EndTime>
+        <cbc:StartTime>09:00:00Z</cbc:StartTime>
+        <cbc:EndTime>16:00:00Z</cbc:EndTime>
       </cac:ServiceAvailabilityPeriod>
       <cac:ServiceMaintenancePeriod>
-        <cbc:StartTime>22:00:00</cbc:StartTime>
-        <cbc:EndTime>06:00:00</cbc:EndTime>
+        <cbc:StartTime>22:00:00Z</cbc:StartTime>
+        <cbc:EndTime>06:00:00Z</cbc:EndTime>
       </cac:ServiceMaintenancePeriod>
 	</cac:ServiceLevelAgreement>
 	<cac:ServiceLevelAgreement>
@@ -119,12 +119,12 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
 	  <cbc:SaturdayAvailabilityIndicator>true</cbc:SaturdayAvailabilityIndicator>
 	  <cbc:SundayAvailabilityIndicator>true</cbc:SundayAvailabilityIndicator>
       <cac:ServiceAvailabilityPeriod>
-        <cbc:StartTime>09:00:00</cbc:StartTime>
-        <cbc:EndTime>16:00:00</cbc:EndTime>
+        <cbc:StartTime>09:00:00Z</cbc:StartTime>
+        <cbc:EndTime>16:00:00Z</cbc:EndTime>
       </cac:ServiceAvailabilityPeriod>
       <cac:ServiceMaintenancePeriod>
-        <cbc:StartTime>22:00:00</cbc:StartTime>
-        <cbc:EndTime>06:00:00</cbc:EndTime>
+        <cbc:StartTime>22:00:00Z</cbc:StartTime>
+        <cbc:EndTime>06:00:00Z</cbc:EndTime>
       </cac:ServiceMaintenancePeriod>
 	</cac:ServiceLevelAgreement>
   </cac:DigitalAgreementTerms>

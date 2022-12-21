@@ -5,7 +5,7 @@
   <cbc:ProfileID schemeAgencyID="BII" schemeID="Profile">urn:www.cenbii.eu:profile:BIIXYZ:ver1.0</cbc:ProfileID>
   <cbc:ID>7</cbc:ID>
   <cbc:IssueDate>2010-01-21</cbc:IssueDate>
-  <cbc:IssueTime>12:30:00</cbc:IssueTime>
+  <cbc:IssueTime>12:30:00Z</cbc:IssueTime>
   <cbc:CancellationNote>With reference to phone call</cbc:CancellationNote>
   <cac:OrderReference>
     <cbc:ID>34</cbc:ID>

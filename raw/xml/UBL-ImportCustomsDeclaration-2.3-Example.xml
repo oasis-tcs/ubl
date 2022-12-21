@@ -12,7 +12,7 @@
   </ext:UBLExtensions>
 	<cbc:ID>10158209175014500</cbc:ID>
 	<cbc:IssueDate>2013-08-29</cbc:IssueDate>
-	<cbc:IssueTime>11:32:00</cbc:IssueTime>
+	<cbc:IssueTime>11:32:00Z</cbc:IssueTime>
 	<cbc:TypeCode>X</cbc:TypeCode>
 	<cbc:SubTypeCode>IM</cbc:SubTypeCode>
 	<cbc:NatureOfTransactionCode>11</cbc:NatureOfTransactionCode>

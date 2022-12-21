@@ -8,7 +8,7 @@
 	<cbc:CopyIndicator>false</cbc:CopyIndicator>
 	<cbc:UUID>349ABBAE-DF9D-40B4-849F-94C5FF9D1AF4</cbc:UUID>
 	<cbc:IssueDate>2010-04-26</cbc:IssueDate>
-	<cbc:IssueTime>12:00:01.000</cbc:IssueTime>
+	<cbc:IssueTime>12:00:01.000Z</cbc:IssueTime>
 	<cbc:Note>sample</cbc:Note>
 	<cac:ExceptionObservationPeriod>
 		<cbc:StartDate>2010-03-26</cbc:StartDate>
@@ -118,7 +118,7 @@
 			<cbc:ForecastPurposeCode>ORDER_FORECAST</cbc:ForecastPurposeCode>
 			<cbc:ForecastTypeCode>TOTAL</cbc:ForecastTypeCode>
 			<cbc:IssueDate>2010-04-17</cbc:IssueDate>
-			<cbc:IssueTime>10:00:00.000</cbc:IssueTime>
+			<cbc:IssueTime>10:00:00.000Z</cbc:IssueTime>
 			<cbc:DataSourceCode>BUYER</cbc:DataSourceCode>
 		</cac:ForecastException>
 		<cac:SupplyItem>

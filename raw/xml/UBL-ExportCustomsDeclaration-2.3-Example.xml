@@ -74,9 +74,9 @@
 					</cac:Location>
 					<cac:Period>
 						<cbc:StartDate>2016-08-02</cbc:StartDate>
-						<cbc:StartTime>07:00:00</cbc:StartTime>
+						<cbc:StartTime>07:00:00Z</cbc:StartTime>
 						<cbc:EndDate>2016-08-02</cbc:EndDate>
-						<cbc:EndTime>15:30:00</cbc:EndTime>
+						<cbc:EndTime>15:30:00Z</cbc:EndTime>
 					</cac:Period>
 				</cac:RequestedPickupTransportEvent>
 				<cac:RequestedDeliveryTransportEvent>
