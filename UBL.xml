@@ -956,7 +956,7 @@
     <title>UBL &version; Business Objects</title>
     <section id="S-BUSINESS-OBJECT-OVERVIEW">
       <title>Business Object Overview</title>
-      <para>The processes described in this section, and the business rules associated with them, define a context for the use of UBL &version; business documents. They are normative insofar as they provide semantics for the UBL document schemas, but they should not be construed as limiting the
+      <para>The processes described in this section, and the business rules associated with them, define a context for the use of UBL &version; business documents. They are normative insofar as they provide semantics for the UBL document schemas, but they ought not be construed as limiting the
         application of those schemas.</para>
       <para>UBL 2.2 extended the pre-award tendering processes, adds a new transportation document for the weight statement, and adds new documents for a business directory and agreements. UBL 2.1 extended the generalized supply chain processes of UBL 2.0 (including the commercial collaborations of
         international trade) to include support for collaborative planning, forecasting, and replenishment; vendor managed inventory; utility billing; tendering; and intermodal freight management. </para>
@@ -3276,7 +3276,7 @@
                 <ulink url="xsd/common/BDNDR-CCTS_CCT_SchemaModule-1.1.xsd">xsd/common/BDNDR-CCTS_CCT_SchemaModule-1.1.xsd</ulink>
               </literal>
             </para>
-            <para>This schema provides Core Component Types as defined by <xref linkend="ccts"/>. These types are used to construct higher-level data types in a standardized and consistent manner. This schema is defined by UN/CEFACT and should not be modified. It is imported by the UBL Unqualified
+            <para>This schema provides Core Component Types as defined by <xref linkend="ccts"/>. These types are used to construct higher-level data types in a standardized and consistent manner. This schema is defined by UN/CEFACT and ought not be modified. It is imported by the UBL Unqualified
               Data Type Schema, and its types are the basis upon which UBL&#8217;s unqualified data types are defined.</para>
           </blockquote>
           <para>
@@ -4199,7 +4199,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         <section id="S-DIGITAL-SIGNATURE-CONTENT">
           <title>Digital Signature Content</title>
           <para>A single <literal>&lt;ds:Signature></literal> element is a child of the aggregate. It MAY be absent from the document, thus supporting workflow scenarios where the element is added by a subsequent process after the UBL scaffolding is added by an earlier process. However, the
-            signature information is semantically incomplete without the IETF/W3C-defined element. To support signatures countersigning this signature, this element 1will use the <literal>Id=</literal> attribute with a value unique among other attributes of schema type <literal>ID</literal> in the
+            signature information is semantically incomplete without the IETF/W3C-defined element. To support signatures countersigning this signature, this element will use the <literal>Id=</literal> attribute with a value unique among other attributes of schema type <literal>ID</literal> in the
             instance.</para>
         </section>
         <section id="S-EXAMPLE-DIGITAL-SIGNATURE-SKELETON">
@@ -5039,7 +5039,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.StartDate.Date" conformance="skip" role="DEN-Name" remap="Period. Start Date. Date">StartDate</ulink>
         </literal> and <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.EndDate.Date" conformance="skip" role="DEN-Name" remap="Period. End Date. Date">EndDate</ulink>
-        </literal> (for exsample) are chosen for the content of <literal>
+        </literal> (for example) are chosen for the content of <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
         </literal>, the corresponding section of the sample instance might then look like this:</para>
       <programlisting role="font-size-92%"><![CDATA[  <cac:InvoicePeriod>
