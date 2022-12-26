@@ -1467,10 +1467,10 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
     <arg value="-t"/>
     <arg value="odt"/>
     <arg value="-o"/>
-    <arg value="${dir}/UBL-${UBLversion}.odt"/>
+    <arg value="${dir}/UBL-${UBLversion}-${label}.odt"/>
     <arg value="${dir}/UBL-${UBLversion}.xml"/>
   </exec> 
-  <available property="ready-odt" file="${dir}/UBL-${UBLversion}.odt"/>
+  <available property="ready-odt" file="${dir}/UBL-${UBLversion}-${label}.odt"/>
   <echo unless:set="ready-odt" message="ODT not created"/>
   <echo if:set="ready-odt" message="ODT created"/>
 </target>
@@ -1481,7 +1481,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <available property="html-made" file="${dir}/UBL-${UBLversion}.html"/>
   <available property="pdf-made" file="${dir}/UBL-${UBLversion}.pdf"/>
   <available property="iso-made" file="${dir}/iso-iec-19845-draft.pdf"/>
-  <available property="odt-made" file="${dir}/UBL-${UBLversion}.odt"/>
+  <available property="odt-made" file="${dir}/UBL-${UBLversion}-${label}.odt"/>
   <condition property="docs-not-made">
     <not>
       <and>
@@ -1794,7 +1794,7 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
     </fileset>
     <fileset dir="${dir}">
       <include name="UBL-${UBLversion}*.txt"/>
-      <include name="UBL-${UBLversion}.odt"/>
+      <include name="UBL-${UBLversion}*.odt"/>
     </fileset>
   </move>
 
