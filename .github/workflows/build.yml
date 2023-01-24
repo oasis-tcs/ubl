@@ -20,7 +20,7 @@ jobs:
     - name: Dependencies
       run: |
         sudo apt update
-        sudo apt install -y aspell libreoffice
+        sudo apt install -y aspell libreoffice pandoc
 
     - name: Build
       env:

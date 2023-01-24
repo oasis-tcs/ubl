@@ -844,7 +844,9 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       </not>
     </and>
   </condition>
-  <touch if:set="reportSpell" file="${dir}/${UBLstage}-${UBLversion}/NDR-SPELL-CHECK-WARNING.txt"/>
+  <copy if:set="reportSpell" 
+        file="${dir}/unexpectedWords.txt"
+        tofile="${dir}/${UBLstage}-${UBLversion}/NDR-SPELL-CHECK-WARNING.txt"/>
 </target>
 
 <target name="-gc2ndr" unless="${okay}">
@@ -1454,6 +1456,23 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
         tofile="${dir}/iso-iec-19845-draft.pdf"/>
   <!--intermediate file no longer needed-->
   <delete file="${dir}/UBL-${UBLversion}-pub.zip"/>
+  
+  <!--at this point we have all of the published outputs, create an arbitrary
+      ODT for comparison purposes:
+      pandoc -f docbook -t odt -o UBL.odt UBL.xml
+  -->
+  <exec executable="pandoc">
+    <arg value="-f"/>
+    <arg value="docbook"/>
+    <arg value="-t"/>
+    <arg value="odt"/>
+    <arg value="-o"/>
+    <arg value="${dir}/UBL-${UBLversion}-${label}.odt"/>
+    <arg value="${dir}/UBL-${UBLversion}.xml"/>
+  </exec> 
+  <available property="ready-odt" file="${dir}/UBL-${UBLversion}-${label}.odt"/>
+  <echo unless:set="ready-odt" message="ODT not created"/>
+  <echo if:set="ready-odt" message="ODT created"/>
 </target>
 
 <target name="-package-docs">
@@ -1462,6 +1481,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <available property="html-made" file="${dir}/UBL-${UBLversion}.html"/>
   <available property="pdf-made" file="${dir}/UBL-${UBLversion}.pdf"/>
   <available property="iso-made" file="${dir}/iso-iec-19845-draft.pdf"/>
+  <available property="odt-made" file="${dir}/UBL-${UBLversion}-${label}.odt"/>
   <condition property="docs-not-made">
     <not>
       <and>
@@ -1472,6 +1492,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
             <istrue value="${html-made}"/>
             <istrue value="${pdf-made}"/>
             <istrue value="${iso-made}"/>
+            <istrue value="${odt-made}"/>
           </and>
         </or>
       </and>
@@ -1482,6 +1503,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <property name="html-made" value="false"/>
   <property name="pdf-made" value="false"/>
   <property name="iso-made" value="false"/>
+  <property name="odt-made" value="false"/>
   <property name="not-attempting-to-produce-necessary-results" value="false"/>
   <!--<echo message="Diagnostics:${xml-made}, HTML:${html-made}, PDF:${pdf-made}, ISO:${iso-made}, SKIP:${not-attempting-to-produce-necessary-results} validatedInputs:${validatedInputs}"/>-->
 
@@ -1772,6 +1794,7 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
     </fileset>
     <fileset dir="${dir}">
       <include name="UBL-${UBLversion}*.txt"/>
+      <include name="UBL-${UBLversion}*.odt"/>
     </fileset>
   </move>
 
