@@ -22,8 +22,8 @@ directory.
   <xsl:text>&#xa;</xsl:text>
    
   <legalnotice role="namespaces">
-    <title>Declared XML Namespaces</title>
-    
+   <title>Declared XML Namespaces</title>
+   <para> 
     <simplelist lang="none">
       <member>
         urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2 </member>
@@ -43,9 +43,9 @@ directory.
         urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2
       </member>
     </simplelist>
+   </para>
     
-    <para conformance="skip"/>
-    
+   <para>
     <simplelist lang="none">
       <xsl:for-each select="/schemadocs/schema">
         <xsl:sort select="name"/>
@@ -53,6 +53,7 @@ directory.
                   select="translate(normalize-space(name),' ','')"/>-2</member>
       </xsl:for-each>
     </simplelist>
+   </para>
   </legalnotice>
  </xsl:result-document>
  <xsl:result-document href="summary-schemas-ent.xml">

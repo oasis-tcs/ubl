@@ -1428,10 +1428,10 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <echo message="Submitting print job..."/>
   <property name="serverScript" location="RealtaServerAnt.xml"/> 
   <ant antfile="${serverScript}" dir="${dir}">
-    <property name="entrypoint" value="OASIS-spec2pdfhtml-ISO-pdf"/>
-    <property name="fileupload"
-              value="UBL-${UBLversion}-pub.zip"/>
+    <property name="entrypoint" value="OASIS-2020-spec2pdfhtml-ISO-pdfdocx"/>
+    <property name="fileupload" value="UBL-${UBLversion}-pub.zip"/>
     <property name="dateprefix" value="UBL ${UBLversion}"/>
+    <property name="filelocal"  value="UBL-${UBLversion}.xml"/><!--diagnostic-->
   </ant>
   <echo message="Check and cleanup..."/>
   <available property="ready-pdf" file="${dir}/UBL-${UBLversion}.oasis.pdf"/>
