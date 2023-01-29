@@ -1428,7 +1428,8 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <echo message="Submitting print job..."/>
   <property name="serverScript" location="RealtaServerAnt.xml"/> 
   <ant antfile="${serverScript}" dir="${dir}">
-    <property name="entrypoint" value="OASIS-2020-spec2pdfhtml-ISO-pdfdocx"/>
+    <!--<property name="entrypoint" value="OASIS-2020-spec2pdfhtml-ISO-pdfdocx"/>-->
+    <property name="entrypoint" value="OASIS-spec2pdfhtml-ISO-pdf"/>
     <property name="fileupload" value="UBL-${UBLversion}-pub.zip"/>
     <property name="dateprefix" value="UBL ${UBLversion}"/>
     <property name="filelocal"  value="UBL-${UBLversion}.xml"/><!--diagnostic-->
@@ -1491,7 +1492,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
           <and>
             <istrue value="${html-made}"/>
             <istrue value="${pdf-made}"/>
-            <istrue value="${iso-made}"/>
+            <!--<istrue value="${iso-made}"/>-->
             <istrue value="${odt-made}"/>
           </and>
         </or>
@@ -1518,7 +1519,12 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
       <include name="missing*missing.txt"/>
     </fileset>
   </copy>
-  
+<!--
+  <!-\-signal unobvious (because the file is empty) or obvious (missing) errors-\->
+  <touch unless:true="ready-html" file="${dir}/hub-${package}-${UBLstage}-${label}/ERROR-HTML-FILE-NOT-MADE.txt"/>
+  <touch unless:true="ready-pdf" file="${dir}/hub-${package}-${UBLstage}-${label}/ERROR-PDF-FILE-NOT-MADE.txt"/>
+  <!-\-<touch unless:true="iso-made" file="${dir}/hub-${package}-${UBLstage}-${label}/ERROR-ISO-FILE-NOT-MADE.txt"/>-\->
+-->  
   <mkdir dir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files"/>
   <move unless:true="includeISO" preservelastmodified="true"
         todir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files">

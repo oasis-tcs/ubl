@@ -1,11 +1,9 @@
 <project default="-realta" xmlns:if="ant:if" xmlns:unless="ant:unless">
 
 <!--
-  2021-01-27 16:40z
+  2023-01-29 02:00z
   
   This Ant project interacts with the Realta Server API using curl.
-  
-  **This script will change soon with the switch over to new server addresses**
   
   Prerequisite: Ant library lib/ant-contrib-1.0b3.jar
   Prerequisite: curl utility avaialble on the command path
@@ -17,7 +15,7 @@
   ${realtapass} = server password
 
   Optional parameters for remote API submission:
-  ${servername} = server name (default "api.realtaonline.com/v2")
+  ${servername} = server name (production: use target "-realta")
   ${dateprefix} = identifier for the job (automatically suffixed with date)
   ${skipunpack} = set this to "true" to keep results zipped and not unpacked
   
@@ -29,8 +27,18 @@
 
 <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
 
+<target name="-dev">
+  <property name="servername" value=   "dev-api.realtaonline.com/v2"/>
+  <antcall target="-realta"/>
+</target>
+
+<target name="-qatest">
+  <property name="servername" value="qatest-api.realtaonline.com/v2"/>
+  <antcall target="-realta"/>
+</target>
+
 <target name="-realta">
-  <property name="servername" value="api.realtaonline.com/v2"/>
+  <property name="servername" value=       "api.realtaonline.com/v2"/>
   <property name="dateprefix" value=""/>
   
   <echo message="Realta server access initiated"/>
@@ -47,6 +55,17 @@
     </sequential>
   </sequential>
   <antcallback target="-realta-complete-v2"/>
+</target>
+
+<!--the following is used in a local test environment; please ignore-->
+<target name="-ken-local">
+  <unzip src="${fileupload}" dest="${dir}"/>
+  <touch file="${dir}/preserve_work.txt"/>
+  <ant antfile="RealtaAPIinvoke.xml"
+       dir="/Users/admin/u/git/render/render/" inheritAll="false">
+    <property name="entrypoint" value="${entrypoint}"/>
+    <property name="fileupload" value="${dir}/${filelocal}"/>
+  </ant>
 </target>
 
 <!--========================================================================-->
