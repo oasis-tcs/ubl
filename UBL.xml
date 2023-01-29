@@ -32,9 +32,9 @@
 	<!ENTITY this-loc "https://docs.oasis-open.org/ubl/&stage;-UBL-&version;">
 	<!ENTITY previous-loc "https://docs.oasis-open.org/ubl/&pstage;-UBL-&psversion;">
 	<!ENTITY latest-loc "https://docs.oasis-open.org/ubl">
-	<!ENTITY pubdate "27 November 2022">
+	<!ENTITY pubdate "28 January 2023">
 	<!--remove time from pub date-->
-	<!ENTITY pubyear "2022">
+	<!ENTITY pubyear "2023">
 	<!ENTITY pubdate-iso "ccyy-mm-dd">
 	<!ENTITY reldate-iso "ccyy-mm">
 	<!ENTITY summary-parties SYSTEM "summary-parties-ent.xml">
@@ -55,9 +55,11 @@
     <releaseinfo role="OASIS-specification-this">&this-loc;/&name;-&version;.html</releaseinfo>
     <releaseinfo role="OASIS-specification-this" lang="none">&this-loc;/&name;-&version;.pdf</releaseinfo>
     <releaseinfo role="OASIS-specification-this-authoritative" lang="none">&this-loc;/&name;-&version;.xml</releaseinfo>
+    <!--
     <releaseinfo role="OASIS-specification-previous">&previous-loc;/UBL-&version;.html</releaseinfo>
     <releaseinfo role="OASIS-specification-previous">&previous-loc;/UBL-&version;.pdf</releaseinfo>
     <releaseinfo role="OASIS-specification-previous-authoritative">&previous-loc;/UBL-&version;.xml</releaseinfo>
+    -->
     <!-- generic form of above
       <releaseinfo role="OASIS-specification-previous"
          >&previous-loc;/&name;-&version;.html</releaseinfo>
@@ -202,10 +204,10 @@
           <abbrev condition="oasis">UBL-2.3</abbrev>
           <citetitle>Universal Business Language Version 2.3.</citetitle>
           <bibliomisc>Edited by G. Ken Holman.</bibliomisc>
-          <date>09 July 2018. ######### Update this when determined#######</date>
+          <date>15 June 2021.</date>
           <releaseinfo>OASIS Standard. </releaseinfo>
           <bibliomisc>
-            <ulink url="http://docs.oasis-open.org/ubl/os-UBL-2.3/UBL-2.3.html" conformance="skip">http://docs.oasis-open.org/ubl/os-UBL-2.3/UBL-2.3.html</ulink>. </bibliomisc>
+            <ulink url="https://docs.oasis-open.org/ubl/os-UBL-2.3/UBL-2.3.html">https://docs.oasis-open.org/ubl/os-UBL-2.3/UBL-2.3.html</ulink>. </bibliomisc>
         </bibliomixed>
       </bibliolist>
     </legalnotice>
@@ -216,17 +218,20 @@
     </abstract>
     <legalnotice role="status" id="STATUS">
       <title>Status</title>
+      <!--only one of the two below paragraphs applies; comment out the other one-->
+      
       <para>This <ulink conformance="skip" url="https://www.oasis-open.org/policies-guidelines/tc-process#dWorkingDraft">Working Draft</ulink> (WD) has been produced by one or more TC Members; it has not yet been voted on by the TC or <ulink conformance="skip"
           url="https://www.oasis-open.org/policies-guidelines/tc-process#committeeDraft">approved</ulink> as a Committee Specification Draft. The OASIS document <ulink conformance="skip" url="https://www.oasis-open.org/policies-guidelines/tc-process#standApprovProcess">Approval Process</ulink>
         begins officially with a TC vote to approve a WD as a Committee Draft. A TC may approve a Working Draft, revise it, and re-approve it any number of times as a Committee Draft.</para>
+      
       <!--
-      <para>This document was last revised or approved by the OASIS Universal Business Language TC <!-\-OASIS Members-\-> on the above date. The level of approval is also listed above. Check the &#x201c;Latest version&#x201d; location noted above for possible later revisions of this document. Any
-        other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at <ulink url="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl#technical">https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl#technical</ulink>. </para>
+      <para>This document was last revised or approved by the OASIS Universal Business Language TC <!-\-OASIS Members-\-> on the above date. The level of approval is also listed above. Check the &#x201c;Latest stage&#x201d; location noted above for possible later revisions of this document. Any
+        other numbered versions and other technical work produced by the Technical Committee (TC) are listed at <ulink url="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl#technical">https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl#technical</ulink>. </para>
       -->
       <!--only one of the two above paragraphs applies; comment out the other one-->
       <para>TC members should send comments on this document to the TC’s email list. Others should send comments to the TC’s public comment list, after subscribing to it by following the instructions at the “<ulink conformance="skip"
           url="https://www.oasis-open.org/committees/comments/index.php?wg_abbrev=ubl">Send A Comment</ulink>&#8221; button on the TC&#8217;s web page at <ulink url="https://www.oasis-open.org/committees/ubl/">https://www.oasis-open.org/committees/ubl/</ulink>.</para>
-      <para>This specification is provided under the <ulink url="https://www.oasis-open.org/policies-guidelines/ipr/#RF-on-Limited-Mode" conformance="skip">RF on Limited Terms Mode</ulink> of the <ulink url="https://www.oasis-open.org/policies-guidelines/ipr" conformance="skip">OASIS IPR
+      <para>This specification is provided under the <ulink url="https://www.oasis-open.org/policies-guidelines/ipr/#RF-on-Limited-Mode" conformance="skip">RF on Limited Terms Mode</ulink> of the <ulink url="https://www.oasis-open.org/policies-guidelines/ipr/" conformance="skip">OASIS IPR
           Policy</ulink>, the mode chosen when the Technical Committee was established. For information on whether any patents have been disclosed that may be essential to implementing this specification, and any offers of patent licensing terms, please refer to the Intellectual Property Rights
         section of the Technical Committee web page (<ulink url="https://www.oasis-open.org/committees/ubl/ipr.php">https://www.oasis-open.org/committees/ubl/ipr.php</ulink>).</para>
       <para>Note that any machine-readable content (<ulink url="https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26#wpComponentsCompLang" conformance="skip">Computer Language Definitions</ulink>) declared Normative for this Work Product is provided in separate plain text files. In
@@ -243,7 +248,7 @@
           <date>&pubdate;. </date>
           <releaseinfo>&standard;. </releaseinfo>
           <bibliomisc>
-            <ulink url="https://docs.oasis-open.org/ubl/&stage;-UBL-&version;/UBL-&version;.html">https://docs.oasis-open.org/ubl/&stage;-UBL-&version;/UBL-&version;.html</ulink>. Latest version: <ulink url="https://docs.oasis-open.org/ubl/UBL-&version;.html"
+            <ulink url="https://docs.oasis-open.org/ubl/&stage;-UBL-&version;/UBL-&version;.html">https://docs.oasis-open.org/ubl/&stage;-UBL-&version;/UBL-&version;.html</ulink>. Latest stage: <ulink url="https://docs.oasis-open.org/ubl/UBL-&version;.html"
               >https://docs.oasis-open.org/ubl/UBL-&version;.html</ulink>. </bibliomisc>
         </bibliomixed>
       </bibliolist>
@@ -251,26 +256,7 @@
     <legalnotice role="notices">
       <title>Notices</title>
       <para>Copyright &#169; OASIS Open 2001-&pubyear;. All Rights Reserved. </para>
-      <para>All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the &#8220;OASIS IPR Policy&#8221;). The full <ulink url="https://www.oasis-open.org/policies-guidelines/ipr" conformance="skip">Policy</ulink> may be found at
-        the OASIS website.</para>
-      <para>This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published, and distributed, in whole or in part, without restriction of any kind, provided
-        that the above copyright notice and this section are included on all such copies and derivative works. However, this document itself may not be modified in any way, including by removing the copyright notice or references to OASIS, except as needed for the purpose of developing any document
-        or deliverable produced by an OASIS Technical Committee (in which case the rules applicable to copyrights, as set forth in the OASIS IPR Policy, must be followed) or as required to translate it into languages other than English.</para>
-      <para>The limited permissions granted above are perpetual and will not be revoked by OASIS or its successors or assigns.</para>
-      <para>This document and the information contained herein is provided on an &#8220;AS IS&#8221; basis and OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS AND ANY IMPLIED
-        WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.</para>
-      <para>OASIS requests that any OASIS Party or any other party that believes it has patent claims that would necessarily be infringed by implementations of this OASIS Committee Specification or OASIS Standard notify OASIS TC Administrator and provide an indication of its willingness to grant
-        patent licenses to such patent claims in a manner consistent with the IPR Mode of the OASIS Technical Committee that produced this specification.</para>
-      <para>OASIS invites any party to contact the OASIS TC Administrator if it is aware of a claim of ownership of any patent claims that would necessarily be infringed by implementations of this specification by a patent holder that is not willing to provide a license to such patent claims in a
-        manner consistent with the IPR Mode of the OASIS Technical Committee that produced this specification. OASIS may include such claims on its website, but disclaims any obligation to do so.</para>
-      <para>OASIS takes no position regarding the validity or scope of any intellectual property or other rights that might be claimed to pertain to the implementation or use of the technology described in this document or the extent to which any license under such rights might or might not be
-        available; neither does it represent that it has made any effort to identify any such rights. Information on OASIS&#8217; procedures with respect to rights in any document or deliverable produced by an OASIS Technical Committee can be found on the OASIS website. Copies of claims of rights
-        made available for publication and any assurances of licenses to be made available, or the result of an attempt made to obtain a general license or permission for the use of such proprietary rights by implementers or users of this OASIS Committee Specification or OASIS Standard, can be
-        obtained from the OASIS TC Administrator. OASIS makes no representation that any information or list of intellectual property rights will at any time be complete, or that any claims in such list are, in fact, Essential Claims.</para>
-      <para>The name &#8220;OASIS&#8221; is a trademark of <ulink conformance="skip" url="https://www.oasis-open.org">OASIS</ulink>, the owner and developer of this specification, and should be used only to refer to the organization and its official outputs. OASIS welcomes reference to, and
-        implementation and use of, specifications, while reserving the right to enforce its marks against misleading uses. Please see <ulink url="https://www.oasis-open.org/policies-guidelines/trademark">https://www.oasis-open.org/policies-guidelines/trademark</ulink> for guidance.</para>
-      <para>CPFR is a registered trademark of the Voluntary Interindustry Commerce Solutions (VICS) association. The term &#8220;CPFR&#8221; is not to be used in any format without written permission from VICS. For more information on VICS and CPFR, visit <ulink conformance="skip"
-          url="http://www.vics.org">www.vics.org</ulink>.</para>
+      <para>Distributed under the terms of the OASIS IPR Policy, [<ulink url="https://www.oasis-open.org/policies-guidelines/ipr/">https://www.oasis-open.org/policies-guidelines/ipr/</ulink>]. For complete copyright information please see the full Notices section in <xref linkend="A-NOTICES"/>.</para>
     </legalnotice>
     <!--metadata for ISO/IEC 19845-->
     <othername role="intro">Information Technology</othername>
@@ -411,12 +397,6 @@
           <para>those involved in the design, integration and operation of business applications dealing with digital documents.</para>
         </listitem>
       </itemizedlist>
-    </section>
-    <section id="S-IPR-POLICY" condition="oasis">
-      <title>IPR Policy</title>
-      <para>This specification is provided under the <ulink url="https://www.oasis-open.org/policies-guidelines/ipr/#RF-on-Limited-Mode" conformance="skip">RF on Limited Terms Mode</ulink> of the <ulink url="https://www.oasis-open.org/policies-guidelines/ipr" conformance="skip">OASIS IPR
-          Policy</ulink>, the mode chosen when the Technical Committee was established. For information on whether any patents have been disclosed that may be essential to implementing this specification, and any offers of patent licensing terms, please refer to the Intellectual Property Rights
-        section of the Technical Committee web page (<ulink url="https://www.oasis-open.org/committees/ubl/ipr.php">https://www.oasis-open.org/committees/ubl/ipr.php</ulink>).</para>
     </section>
     <section id="S-TERMINOLOGY" role="terms" conformance="skip">
       <title>Terminology</title>
@@ -715,241 +695,6 @@
           </tgroup>
         </informaltable>
       </section>
-    </section>
-    <section id="S-NORMATIVE-REFERENCES" role="norm-refs">
-      <title>Normative References</title>
-      <bibliolist id="normbibl">
-        <bibliomixed id="ISOIEC_Directives">
-          <abbrev condition="oasis">ISO/IEC Directives</abbrev>
-          <citetitle>ISO/IEC Directives, Part 2 (Fifth Edition) Rules for the structure and drafting of International Standards, International Organization for Standardization and International Electrotechnical Commission, 2004.</citetitle>
-        </bibliomixed>
-        <bibliomixed id="b_XAdES">
-          <abbrev condition="oasis">XAdES</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="https://www.etsi.org/deliver/etsi_en/319100_319199/31913201/01.01.01_60/en_31913201v010101p.pdf">XAdES digital signatures; Part 1: Building blocks and XAdES baseline signatures. ETSI EN 319 132-1 V1.1.1, April 2016</ulink>. </citetitle>
-        </bibliomixed>
-        <bibliomixed id="xml">
-          <abbrev condition="oasis">XML</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://www.w3.org/TR/2000/REC-xml-20001006">Extensible Markup Language (XML) 1.0 (Second Edition), W3C Recommendation 6 October 2000</ulink>
-          </citetitle>
-        </bibliomixed>
-        <bibliomixed id="b_xmldsig">
-          <abbrev condition="oasis" lang="none">xmldsig</abbrev>
-          <citetitle>
-            <ulink url="http://www.w3.org/TR/2013/REC-xmldsig-core1-20130411/" conformance="skip">XML-Signature Syntax and Processing Version 1.1. W3C Recommendation 11 April 2013</ulink>
-          </citetitle>
-        </bibliomixed>
-        <bibliomixed id="xsd1">
-          <abbrev condition="oasis">XSD1</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/">XML Schema Part 1: Structures. Second Edition. W3C Recommendation 28 October 2004</ulink>
-          </citetitle>
-        </bibliomixed>
-        <bibliomixed id="xsd2">
-          <abbrev condition="oasis">XSD2</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/">XML Schema Part 2: Datatypes. Second Edition. W3C Recommendation 28 October 2004</ulink>
-          </citetitle>
-        </bibliomixed>
-      </bibliolist>
-    </section>
-    <section id="S-NON-NORMATIVE-REFERENCES" role="non-norm-refs">
-      <title>
-        <phrase condition="oasis">Non-normative References</phrase>
-        <phrase condition="sts">Bibliography</phrase>
-      </title>
-      <bibliolist id="infobibl">
-        <bibliomixed id="b_asic">
-          <abbrev condition="oasis">ASiC</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://www.etsi.org/deliver/etsi_ts/102900_102999/102918/01.02.01_60/ts_102918v010201p.pdf">Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 1: Building blocks and ASiC baseline containers. ETSI EN 319 162-1
-              V1.1.1, April 2016</ulink>. </citetitle>
-        </bibliomixed>
-        <bibliomixed id="b_bdndr">
-          <abbrev condition="oasis">BD-NDR</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://docs.oasis-open.org/ubl/Business-Document-NDR/v1.0/Business-Document-NDR-v1.0.html">Business Document Naming and Design Rules Version 1.0.</ulink>
-          </citetitle>
-          <bibliomisc>Edited by Tim McGrath, Andy Schoka and G. Ken Holman.</bibliomisc>
-          <date>14 July 2016.</date>
-          <releaseinfo>OASIS Committee Specification 01.</releaseinfo>
-          <bibliomisc>
-            <ulink url="http://docs.oasis-open.org/ubl/Business-Document-NDR/v1.0/cs01/Business-Document-NDR-v1.0-cs01.html" conformance="skip">http://docs.oasis-open.org/ubl/Business-Document-NDR/v1.0/cs01/Business-Document-NDR-v1.0-cs01.html</ulink>. Latest version: <ulink
-              url="http://docs.oasis-open.org/ubl/Business-Document-NDR/v1.0/Business-Document-NDR-v1.0.html" conformance="skip">http://docs.oasis-open.org/ubl/Business-Document-NDR/v1.0/Business-Document-NDR-v1.0.html</ulink>. </bibliomisc>
-        </bibliomixed>
-        <!--<bibliomixed id="b_asn.1"><abbrev condition="oasis">ASN.1</abbrev><citetitle> <ulink url="http://www.itu.int/ITU-T/studygroups/com17/languages/X.680-X.693-0207w.zip" conformance="skip">ITU-T X.680-X.683: Abstract Syntax Notation One (ASN.1)</ulink></citetitle>, <citetitle><ulink conformance="skip" url="http://www.oasis-open.org/committees/download.php/6320/X.680-X.693-0207w.zip">ITU-T X.690-X.693: ASN.1 encoding rules</ulink></citetitle></bibliomixed>-->
-        <bibliomixed id="b_bovfsv">
-          <abbrev condition="oasis">BOV-FSV</abbrev>
-          <citetitle>ISO/IEC 15944-20 Information technology - Business operational view - Linking business operational view to functional service view</citetitle>
-        </bibliomixed>
-        <bibliomixed id="ccts">
-          <abbrev condition="oasis">CCTS</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://www.unece.org/cefact/codesfortrade/ccts_index.html">UN/CEFACT Core Component Technical Specification, Version 2.01</ulink>
-          </citetitle>
-        </bibliomixed>
-        <bibliomixed id="custguide">
-          <abbrev condition="oasis">Customization</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://docs.oasis-open.org/ubl/guidelines/UBL2-Customization1.0cs01.pdf">OASIS Committee Specification 01, UBL 2 Guidelines for Customization, First Edition, 25 December 2009</ulink>
-          </citetitle>
-        </bibliomixed>
-        <bibliomixed id="cva">
-          <abbrev condition="oasis">CVA</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://docs.oasis-open.org/codelist/ContextValueAssociation/doc/context-value-association.html">OASIS Context/value association using Genericode 1.0.</ulink>
-          </citetitle>
-          <date>15 April 2010. </date>
-          <releaseinfo>Committee Specification 01</releaseinfo>
-          <bibliomisc>
-            <ulink url="http://docs.oasis-open.org/codelist/ContextValueAssociation/doc/context-value-association.html" conformance="skip">http://docs.oasis-open.org/codelist/ContextValueAssociation/doc/context-value-association.html</ulink>. </bibliomisc>
-        </bibliomixed>
-        <bibliomixed id="b_dss">
-          <abbrev condition="oasis">DSS-v2.0</abbrev>
-          <citetitle>Digital Signature Service Core Protocols, Elements, and Bindings Version 2.0.</citetitle>
-          <bibliomisc>Edited by Andreas Kuehne and Stefan Hagen.</bibliomisc>
-          <date>07 January 2019. </date>
-          <releaseinfo>OASIS Committee Specification Draft 01 / Public Review Draft 02. </releaseinfo>
-          <bibliomisc>
-            <ulink url="https://docs.oasis-open.org/dss-x/dss-core/v2.0/csprd02/dss-core-v2.0-csprd02.html"/>. </bibliomisc>
-          <bibliomisc> Latest version: <ulink url="https://docs.oasis-open.org/dss-x/dss-core/v2.0/dss-core-v2.0.html">https://docs.oasis-open.org/dss-x/dss-core/v2.0/dss-core-v2.0.html</ulink>.</bibliomisc>
-        </bibliomixed>
-        <bibliomixed id="ebiz">
-          <abbrev condition="oasis">eBiz-TCF</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://spring.bologna.enea.it/ebiz/defaultebiz.asp?versione=DOWNSTREAM">Reference Architecture of <phrase lang="none">eBusiness</phrase> in Textile Clothing and Footwear Sector</ulink>
-          </citetitle>
-        </bibliomixed>
-        <bibliomixed id="b_eIDAS">
-          <abbrev condition="oasis">eIDAS</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://eur-lex.europa.eu/legal-content/en/TXT/?uri=CELEX%3A31999L0093">REGULATION (EU) No 910/2014 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 23 July 2014 on electronic identification and trust services for electronic transactions in the internal
-              market and repealing Directive 1999/93/EC</ulink>. </citetitle>
-        </bibliomixed>
-        <bibliomixed id="b_etsi-ts-119-112">
-          <abbrev condition="oasis">ETSI TS 119 112</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="https://www.etsi.org/deliver/etsi_tr/119100_119199/119112/01.01.01_60/tr_119112v010101p.pdf">ETSI TR 119 112 V1.1.1 (2019-04) - Electronic Signatures and Infrastructures (ESI); Most significant differences between AdES/ASiC ENs and previous TSs</ulink>.
-          </citetitle>
-        </bibliomixed>
-        <bibliomixed id="b_etsi-ts-119-511">
-          <abbrev condition="oasis">ETSI TS 119 511</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="https://www.etsi.org/deliver/etsi_ts/119500_119599/119511/01.01.01_60/ts_119511v010101p.pdf">ETSI TS 119 511 V1.1.1 (2019-06) - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers providing long-term
-              preservation of digital signatures or general data using digital signature techniques </ulink>. </citetitle>
-        </bibliomixed>
-        <bibliomixed id="b_etsi-ts-119-512">
-          <abbrev condition="oasis">ETSI TS 119 512</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="https://portal.etsi.org/TBSiteMap/esi/ESIActivities.aspx">ETSI TS 119 512 - TS 119 512 Protocols for trust service providers providing long-term preservation of digital signatures or unsigned data using signature techniques</ulink>. </citetitle>
-        </bibliomixed>
-        <bibliomixed id="gc">
-          <abbrev condition="oasis">genericode</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://docs.oasis-open.org/codelist/approved/genericode/oasis-code-list-representation-genericode.html">OASIS Code List Representation (Genericode) Version 1.0.</ulink>
-          </citetitle>
-          <date>28 December 2007. </date>
-          <releaseinfo>Committee Specification 01. </releaseinfo>
-          <bibliomisc>
-            <ulink url="http://docs.oasis-open.org/codelist/approved/genericode/oasis-code-list-representation-genericode.html" conformance="skip">http://docs.oasis-open.org/codelist/approved/genericode/oasis-code-list-representation-genericode.html</ulink>. </bibliomisc>
-        </bibliomixed>
-        <bibliomixed id="governance">
-          <abbrev condition="oasis">Governance</abbrev>
-          <citetitle>UBL Maintenance Governance Procedures Version 1.0.</citetitle>
-          <bibliomisc>Edited by Ole Madsen, Tim McGrath and G. Ken Holman.</bibliomisc>
-          <date>04 March 2015. </date>
-          <releaseinfo>OASIS Committee Note 01. </releaseinfo>
-          <bibliomisc>
-            <ulink url="http://docs.oasis-open.org/ubl/UBL-Governance/v1.0/cn01/UBL-Governance-v1.0-cn01.html" conformance="skip"/>. </bibliomisc>
-          <bibliomisc> Latest version: <ulink url="http://docs.oasis-open.org/ubl/UBL-Governance/v1.0/UBL-Governance-v1.0.html" conformance="skip">http://docs.oasis-open.org/ubl/UBL-Governance/v1.0/UBL-Governance-v1.0.html</ulink>.</bibliomisc>
-        </bibliomixed>
-        <bibliomixed id="iso11179">
-          <abbrev condition="oasis">ISO11179</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="https://www.iso.org/standard/61932.html">ISO/IEC 11179-1:1999 Information technology &#8212; Specification and standardization of data elements &#8212; Part 1: Framework for the specification and standardization of data elements</ulink>
-          </citetitle>
-        </bibliomixed>
-        <bibliomixed id="b_openedi">
-          <abbrev condition="oasis">Open-edi</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://standards.iso.org/ittf/PubliclyAvailableStandards/c055290_ISO_IEC_14662_2010%28E%29.zip">ISO/IEC 14662:2010 Information technology - Open-edi reference model</ulink>
-          </citetitle>
-        </bibliomixed>
-        <bibliomixed id="b_odfp">
-          <abbrev condition="oasis">ODFP</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://docs.oasis-open.org/office/v1.2/csprd03/OpenDocument-v1.2-csprd03-part3.pdf">OASIS Standard, Open Document Format for Office Applications (OpenDocument) Version 1.2 - Part 3 Packages, December 2006</ulink>. </citetitle>
-        </bibliomixed>
-        <bibliomixed id="relaxng">
-          <abbrev condition="oasis">RELAX NG</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://standards.iso.org/ittf/PubliclyAvailableStandards/c037605_ISO_IEC_19757-2_2003(E).zip">ISO/IEC 19757-2, Information technology &#8212; Document Schema Definition Language (DSDL) &#8212; Part 2: Regular-grammar-based validation &#8212; RELAX
-              NG</ulink>
-          </citetitle>, <citetitle>
-            <ulink conformance="skip" url="http://standards.iso.org/ittf/PubliclyAvailableStandards/c040774_ISO_IEC_19757-2_2003_Amd_1_2006(E).zip">Information technology &#8212; Document Schema Definition Language (DSDL) &#8212; Part 2: Regular-grammar-based validation &#8212; RELAX NG AMENDMENT 1:
-              Compact Syntax</ulink>
-          </citetitle>
-        </bibliomixed>
-        <bibliomixed id="rfc3161">
-          <abbrev condition="oasis">RFC3161</abbrev>
-          <citetitle>
-            <ulink url="http://www.faqs.org/rfcs/rfc3161.html" conformance="skip">Internet X.509 Public Key Infrastructure Time-Stamp Protocol (TSP), August 2001</ulink>. </citetitle>
-        </bibliomixed>
-        <bibliomixed id="schematron">
-          <abbrev condition="oasis">SCH</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://standards.iso.org/ittf/PubliclyAvailableStandards/c040833_ISO_IEC_19757-3_2006(E).zip">Document Schema Definition Languages (DSDL) &#8212; Part 3: Rule-based validation (Schematron)</ulink>
-          </citetitle>
-        </bibliomixed>
-        <bibliomixed id="b_ublndr">
-          <abbrev condition="oasis">UBL-NDR</abbrev>
-          <citetitle>UBL Naming and Design Rules Version 3.0</citetitle>. <bibliomisc>Edited by G. Ken Holman.</bibliomisc>
-          <date>20 July 2016</date>. <releaseinfo>OASIS Committee Note 01.</releaseinfo>
-          <bibliomisc>
-            <ulink url="http://docs.oasis-open.org/ubl/UBL-NDR/v3.0/cn01/UBL-NDR-v3.0-cn01.html" conformance="skip"/>. Latest version: <ulink url="http://docs.oasis-open.org/ubl/UBL-NDR/v3.0/UBL-NDR-v3.0.html" conformance="skip"/>. </bibliomisc>
-        </bibliomixed>
-        <bibliomixed id="b_uml">
-          <abbrev condition="oasis">UML</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="https://www.oasis-open.org/committees/download.php/6240/03-03-01.zip">Unified Modeling Language Version 1.5 (formal/03-03-01)</ulink>
-          </citetitle>
-        </bibliomixed>
-        <!--<bibliomixed id="b_rec37"><abbrev condition="oasis">UN/CEFACT Rec.
-          37</abbrev><citetitle><ulink conformance="skip"
-          url="http://www.unece.org/cefact/cf_plenary/plenary10/ECE_TRADE_C_CEFACT_2010_14E.pdf"
-          >Signed Digital Evidence Interoperability Recommendation, 27
-          September 2010</ulink>.</citetitle></bibliomixed>-->
-        <bibliomixed id="b_XAdES-ISO">
-          <abbrev condition="oasis">XAdES (ISO)</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://www.iso.org/iso/catalogue_detail?csnumber=56025">ISO 14533-2:2012 Processes, data elements and documents in commerce, industry and administration -- Long term signature profiles -- Part 2: Long term signature profiles for XML Advanced Electronic
-              Signatures (XAdES) </ulink>
-          </citetitle>
-        </bibliomixed>
-        <bibliomixed id="b_c14n">
-          <abbrev condition="oasis">XML C14N</abbrev>John Boyer, <citetitle>
-            <ulink conformance="skip" url="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">Canonical XML Version 1.0, 15 March 2001</ulink>. </citetitle>
-        </bibliomixed>
-        <bibliomixed id="b_xpath20">
-          <abbrev condition="oasis">XPath 2.0</abbrev>Anders Berglund, et al., <citetitle>
-            <ulink conformance="skip" url="http://www.w3.org/TR/2007/REC-xpath20-20070123/">XML Path Language (XPath) Version 2.0, 23 January 2007</ulink>. </citetitle>
-        </bibliomixed>
-        <bibliomixed id="b_xpointer">
-          <abbrev condition="oasis">XPointer</abbrev>Steven DeRose, et al., <citetitle>
-            <ulink conformance="skip" url="http://www.w3.org/TR/xptr/">XML Pointer Language (XPointer) Version 1.0 Working Draft, 16 August 2002</ulink>. </citetitle>
-        </bibliomixed>
-        <bibliomixed id="xslt">
-          <abbrev condition="oasis">XSLT</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://www.w3.org/TR/1999/REC-xslt-19991116">XSL Transformations (XSLT) Version 1.0, W3C Recommendation 16 November 1999</ulink>
-          </citetitle>
-        </bibliomixed>
-        <bibliomixed id="b_xslt20">
-          <abbrev condition="oasis">XSLT 2.0</abbrev>Michael Kay, <citetitle>
-            <ulink url="http://www.w3.org/TR/xslt20/" conformance="skip">XSL Transformations (XSLT) Version 2.0, 2007-01-23</ulink>. </citetitle>
-        </bibliomixed>
-      </bibliolist>
     </section>
   </section>
   <section id="S-UBL-&version;-BUSINESS-OBJECTS">
@@ -4364,6 +4109,248 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       </section>
     </section>
   </section>
+  <appendix id="A-REFERENCES" conformance="skip">
+    <title>References</title>
+    <para condition="oasis">This appendix contains the normative and informative references that are used in this document.</para>
+    <para condition="oasis">While any hyperlinks included in this appendix were valid at the time of publication, OASIS cannot guarantee their long-term validity.</para>
+    <section id="S-NORMATIVE-REFERENCES" role="norm-refs">
+      <title>Normative References</title>
+      <para condition="oasis">The following documents are referenced in such a way that some or all of their content constitutes requirements of this document.</para>
+      <bibliolist id="normbibl">
+        <bibliomixed id="ISOIEC_Directives">
+          <abbrev condition="oasis">ISO/IEC Directives</abbrev>
+          <citetitle>ISO/IEC Directives, Part 2 (Ninth Edition) Rules for the structure and drafting of International Standards, International Organization for Standardization and International Electrotechnical Commission, 2021. <ulink url="https://www.iso.org/sites/directives/current/part2/index.xhtml">https://www.iso.org/sites/directives/current/part2/index.xhtml</ulink></citetitle>
+        </bibliomixed>
+        <bibliomixed id="b_XAdES">
+          <abbrev condition="oasis">XAdES</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="https://www.etsi.org/deliver/etsi_en/319100_319199/31913201/01.01.01_60/en_31913201v010101p.pdf">XAdES digital signatures; Part 1: Building blocks and XAdES baseline signatures. ETSI EN 319 132-1 V1.1.1, April 2016</ulink>. </citetitle>
+        </bibliomixed>
+        <bibliomixed id="xml">
+          <abbrev condition="oasis">XML</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://www.w3.org/TR/2000/REC-xml-20001006">Extensible Markup Language (XML) 1.0 (Second Edition), W3C Recommendation 6 October 2000</ulink>
+          </citetitle>
+        </bibliomixed>
+        <bibliomixed id="b_xmldsig">
+          <abbrev condition="oasis" lang="none">xmldsig</abbrev>
+          <citetitle>
+            <ulink url="http://www.w3.org/TR/2013/REC-xmldsig-core1-20130411/" conformance="skip">XML-Signature Syntax and Processing Version 1.1. W3C Recommendation 11 April 2013</ulink>
+          </citetitle>
+        </bibliomixed>
+        <bibliomixed id="xsd1">
+          <abbrev condition="oasis">XSD1</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/">XML Schema Part 1: Structures. Second Edition. W3C Recommendation 28 October 2004</ulink>
+          </citetitle>
+        </bibliomixed>
+        <bibliomixed id="xsd2">
+          <abbrev condition="oasis">XSD2</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/">XML Schema Part 2: Datatypes. Second Edition. W3C Recommendation 28 October 2004</ulink>
+          </citetitle>
+        </bibliomixed>
+      </bibliolist>
+    </section>
+    <section id="S-NON-NORMATIVE-REFERENCES" role="non-norm-refs">
+      <title>
+        <phrase condition="oasis">Non-normative References</phrase>
+        <phrase condition="sts">Bibliography</phrase>
+      </title>
+      <para condition="oasis">The following referenced documents are not required for the application of this document but may assist the reader with regard to a particular subject area.</para>
+      <bibliolist id="infobibl">
+        <bibliomixed id="b_asic">
+          <abbrev condition="oasis">ASiC</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://www.etsi.org/deliver/etsi_ts/102900_102999/102918/01.02.01_60/ts_102918v010201p.pdf">Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC); Part 1: Building blocks and ASiC baseline containers. ETSI EN 319 162-1
+              V1.1.1, April 2016</ulink>. </citetitle>
+        </bibliomixed>
+        <bibliomixed id="b_bdndr">
+          <abbrev condition="oasis">BD-NDR</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://docs.oasis-open.org/ubl/Business-Document-NDR/v1.0/Business-Document-NDR-v1.0.html">Business Document Naming and Design Rules Version 1.0.</ulink>
+          </citetitle>
+          <bibliomisc>Edited by Tim McGrath, Andy Schoka and G. Ken Holman.</bibliomisc>
+          <date>14 July 2016.</date>
+          <releaseinfo>OASIS Committee Specification 01.</releaseinfo>
+          <bibliomisc>
+            <ulink url="http://docs.oasis-open.org/ubl/Business-Document-NDR/v1.0/cs01/Business-Document-NDR-v1.0-cs01.html" conformance="skip">http://docs.oasis-open.org/ubl/Business-Document-NDR/v1.0/cs01/Business-Document-NDR-v1.0-cs01.html</ulink>. Latest version: <ulink
+              url="http://docs.oasis-open.org/ubl/Business-Document-NDR/v1.0/Business-Document-NDR-v1.0.html" conformance="skip">http://docs.oasis-open.org/ubl/Business-Document-NDR/v1.0/Business-Document-NDR-v1.0.html</ulink>. </bibliomisc>
+        </bibliomixed>
+        <!--<bibliomixed id="b_asn.1"><abbrev condition="oasis">ASN.1</abbrev><citetitle> <ulink url="http://www.itu.int/ITU-T/studygroups/com17/languages/X.680-X.693-0207w.zip" conformance="skip">ITU-T X.680-X.683: Abstract Syntax Notation One (ASN.1)</ulink></citetitle>, <citetitle><ulink conformance="skip" url="http://www.oasis-open.org/committees/download.php/6320/X.680-X.693-0207w.zip">ITU-T X.690-X.693: ASN.1 encoding rules</ulink></citetitle></bibliomixed>-->
+        <bibliomixed id="b_bovfsv">
+          <abbrev condition="oasis">BOV-FSV</abbrev>
+          <citetitle>ISO/IEC 15944-20 Information technology - Business operational view - Linking business operational view to functional service view</citetitle>
+        </bibliomixed>
+        <bibliomixed id="ccts">
+          <abbrev condition="oasis">CCTS</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://www.unece.org/cefact/codesfortrade/ccts_index.html">UN/CEFACT Core Component Technical Specification, Version 2.01</ulink>
+          </citetitle>
+        </bibliomixed>
+        <bibliomixed id="custguide">
+          <abbrev condition="oasis">Customization</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://docs.oasis-open.org/ubl/guidelines/UBL2-Customization1.0cs01.pdf">OASIS Committee Specification 01, UBL 2 Guidelines for Customization, First Edition, 25 December 2009</ulink>
+          </citetitle>
+        </bibliomixed>
+        <bibliomixed id="cva">
+          <abbrev condition="oasis">CVA</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://docs.oasis-open.org/codelist/ContextValueAssociation/doc/context-value-association.html">OASIS Context/value association using Genericode 1.0.</ulink>
+          </citetitle>
+          <date>15 April 2010. </date>
+          <releaseinfo>Committee Specification 01</releaseinfo>
+          <bibliomisc>
+            <ulink url="http://docs.oasis-open.org/codelist/ContextValueAssociation/doc/context-value-association.html" conformance="skip">http://docs.oasis-open.org/codelist/ContextValueAssociation/doc/context-value-association.html</ulink>. </bibliomisc>
+        </bibliomixed>
+        <bibliomixed id="b_dss">
+          <abbrev condition="oasis">DSS-v2.0</abbrev>
+          <citetitle>Digital Signature Service Core Protocols, Elements, and Bindings Version 2.0.</citetitle>
+          <bibliomisc>Edited by Andreas Kuehne and Stefan Hagen.</bibliomisc>
+          <date>07 January 2019. </date>
+          <releaseinfo>OASIS Committee Specification Draft 01 / Public Review Draft 02. </releaseinfo>
+          <bibliomisc>
+            <ulink url="https://docs.oasis-open.org/dss-x/dss-core/v2.0/csprd02/dss-core-v2.0-csprd02.html"/>. </bibliomisc>
+          <bibliomisc> Latest version: <ulink url="https://docs.oasis-open.org/dss-x/dss-core/v2.0/dss-core-v2.0.html">https://docs.oasis-open.org/dss-x/dss-core/v2.0/dss-core-v2.0.html</ulink>.</bibliomisc>
+        </bibliomixed>
+        <bibliomixed id="ebiz">
+          <abbrev condition="oasis">eBiz-TCF</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://spring.bologna.enea.it/ebiz/defaultebiz.asp?versione=DOWNSTREAM">Reference Architecture of <phrase lang="none">eBusiness</phrase> in Textile Clothing and Footwear Sector</ulink>
+          </citetitle>
+        </bibliomixed>
+        <bibliomixed id="b_eIDAS">
+          <abbrev condition="oasis">eIDAS</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://eur-lex.europa.eu/legal-content/en/TXT/?uri=CELEX%3A31999L0093">REGULATION (EU) No 910/2014 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 23 July 2014 on electronic identification and trust services for electronic transactions in the internal
+              market and repealing Directive 1999/93/EC</ulink>. </citetitle>
+        </bibliomixed>
+        <bibliomixed id="b_etsi-ts-119-112">
+          <abbrev condition="oasis">ETSI TS 119 112</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="https://www.etsi.org/deliver/etsi_tr/119100_119199/119112/01.01.01_60/tr_119112v010101p.pdf">ETSI TR 119 112 V1.1.1 (2019-04) - Electronic Signatures and Infrastructures (ESI); Most significant differences between AdES/ASiC ENs and previous TSs</ulink>.
+          </citetitle>
+        </bibliomixed>
+        <bibliomixed id="b_etsi-ts-119-511">
+          <abbrev condition="oasis">ETSI TS 119 511</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="https://www.etsi.org/deliver/etsi_ts/119500_119599/119511/01.01.01_60/ts_119511v010101p.pdf">ETSI TS 119 511 V1.1.1 (2019-06) - Electronic Signatures and Infrastructures (ESI); Policy and security requirements for trust service providers providing long-term
+              preservation of digital signatures or general data using digital signature techniques </ulink>. </citetitle>
+        </bibliomixed>
+        <bibliomixed id="b_etsi-ts-119-512">
+          <abbrev condition="oasis">ETSI TS 119 512</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="https://portal.etsi.org/TBSiteMap/esi/ESIActivities.aspx">ETSI TS 119 512 - TS 119 512 Protocols for trust service providers providing long-term preservation of digital signatures or unsigned data using signature techniques</ulink>. </citetitle>
+        </bibliomixed>
+        <bibliomixed id="gc">
+          <abbrev condition="oasis">genericode</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://docs.oasis-open.org/codelist/approved/genericode/oasis-code-list-representation-genericode.html">OASIS Code List Representation (Genericode) Version 1.0.</ulink>
+          </citetitle>
+          <date>28 December 2007. </date>
+          <releaseinfo>Committee Specification 01. </releaseinfo>
+          <bibliomisc>
+            <ulink url="http://docs.oasis-open.org/codelist/approved/genericode/oasis-code-list-representation-genericode.html" conformance="skip">http://docs.oasis-open.org/codelist/approved/genericode/oasis-code-list-representation-genericode.html</ulink>. </bibliomisc>
+        </bibliomixed>
+        <bibliomixed id="governance">
+          <abbrev condition="oasis">Governance</abbrev>
+          <citetitle>UBL Maintenance Governance Procedures Version 1.0.</citetitle>
+          <bibliomisc>Edited by Ole Madsen, Tim McGrath and G. Ken Holman.</bibliomisc>
+          <date>04 March 2015. </date>
+          <releaseinfo>OASIS Committee Note 01. </releaseinfo>
+          <bibliomisc>
+            <ulink url="http://docs.oasis-open.org/ubl/UBL-Governance/v1.0/cn01/UBL-Governance-v1.0-cn01.html" conformance="skip"/>. </bibliomisc>
+          <bibliomisc> Latest version: <ulink url="http://docs.oasis-open.org/ubl/UBL-Governance/v1.0/UBL-Governance-v1.0.html" conformance="skip">http://docs.oasis-open.org/ubl/UBL-Governance/v1.0/UBL-Governance-v1.0.html</ulink>.</bibliomisc>
+        </bibliomixed>
+        <bibliomixed id="iso11179">
+          <abbrev condition="oasis">ISO11179</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="https://www.iso.org/standard/61932.html">ISO/IEC 11179-1:1999 Information technology &#8212; Specification and standardization of data elements &#8212; Part 1: Framework for the specification and standardization of data elements</ulink>
+          </citetitle>
+        </bibliomixed>
+        <bibliomixed id="b_openedi">
+          <abbrev condition="oasis">Open-edi</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://standards.iso.org/ittf/PubliclyAvailableStandards/c055290_ISO_IEC_14662_2010%28E%29.zip">ISO/IEC 14662:2010 Information technology - Open-edi reference model</ulink>
+          </citetitle>
+        </bibliomixed>
+        <bibliomixed id="b_odfp">
+          <abbrev condition="oasis">ODFP</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://docs.oasis-open.org/office/v1.2/csprd03/OpenDocument-v1.2-csprd03-part3.pdf">OASIS Standard, Open Document Format for Office Applications (OpenDocument) Version 1.2 - Part 3 Packages, December 2006</ulink>. </citetitle>
+        </bibliomixed>
+        <bibliomixed id="relaxng">
+          <abbrev condition="oasis">RELAX NG</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://standards.iso.org/ittf/PubliclyAvailableStandards/c037605_ISO_IEC_19757-2_2003(E).zip">ISO/IEC 19757-2, Information technology &#8212; Document Schema Definition Language (DSDL) &#8212; Part 2: Regular-grammar-based validation &#8212; RELAX
+              NG</ulink>
+          </citetitle>, <citetitle>
+            <ulink conformance="skip" url="http://standards.iso.org/ittf/PubliclyAvailableStandards/c040774_ISO_IEC_19757-2_2003_Amd_1_2006(E).zip">Information technology &#8212; Document Schema Definition Language (DSDL) &#8212; Part 2: Regular-grammar-based validation &#8212; RELAX NG AMENDMENT 1:
+              Compact Syntax</ulink>
+          </citetitle>
+        </bibliomixed>
+        <bibliomixed id="rfc3161">
+          <abbrev condition="oasis">RFC3161</abbrev>
+          <citetitle>
+            <ulink url="http://www.faqs.org/rfcs/rfc3161.html" conformance="skip">Internet X.509 Public Key Infrastructure Time-Stamp Protocol (TSP), August 2001</ulink>. </citetitle>
+        </bibliomixed>
+        <bibliomixed id="schematron">
+          <abbrev condition="oasis">SCH</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://standards.iso.org/ittf/PubliclyAvailableStandards/c040833_ISO_IEC_19757-3_2006(E).zip">Document Schema Definition Languages (DSDL) &#8212; Part 3: Rule-based validation (Schematron)</ulink>
+          </citetitle>
+        </bibliomixed>
+        <bibliomixed id="b_ublndr">
+          <abbrev condition="oasis">UBL-NDR</abbrev>
+          <citetitle>UBL Naming and Design Rules Version 3.0</citetitle>. <bibliomisc>Edited by G. Ken Holman.</bibliomisc>
+          <date>20 July 2016</date>. <releaseinfo>OASIS Committee Note 01.</releaseinfo>
+          <bibliomisc>
+            <ulink url="http://docs.oasis-open.org/ubl/UBL-NDR/v3.0/cn01/UBL-NDR-v3.0-cn01.html" conformance="skip"/>. Latest version: <ulink url="http://docs.oasis-open.org/ubl/UBL-NDR/v3.0/UBL-NDR-v3.0.html" conformance="skip"/>. </bibliomisc>
+        </bibliomixed>
+        <bibliomixed id="b_uml">
+          <abbrev condition="oasis">UML</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="https://www.oasis-open.org/committees/download.php/6240/03-03-01.zip">Unified Modeling Language Version 1.5 (formal/03-03-01)</ulink>
+          </citetitle>
+        </bibliomixed>
+        <!--<bibliomixed id="b_rec37"><abbrev condition="oasis">UN/CEFACT Rec.
+          37</abbrev><citetitle><ulink conformance="skip"
+          url="http://www.unece.org/cefact/cf_plenary/plenary10/ECE_TRADE_C_CEFACT_2010_14E.pdf"
+          >Signed Digital Evidence Interoperability Recommendation, 27
+          September 2010</ulink>.</citetitle></bibliomixed>-->
+        <bibliomixed id="b_XAdES-ISO">
+          <abbrev condition="oasis">XAdES (ISO)</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://www.iso.org/iso/catalogue_detail?csnumber=56025">ISO 14533-2:2012 Processes, data elements and documents in commerce, industry and administration -- Long term signature profiles -- Part 2: Long term signature profiles for XML Advanced Electronic
+              Signatures (XAdES) </ulink>
+          </citetitle>
+        </bibliomixed>
+        <bibliomixed id="b_c14n">
+          <abbrev condition="oasis">XML C14N</abbrev>John Boyer, <citetitle>
+            <ulink conformance="skip" url="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">Canonical XML Version 1.0, 15 March 2001</ulink>. </citetitle>
+        </bibliomixed>
+        <bibliomixed id="b_xpath20">
+          <abbrev condition="oasis">XPath 2.0</abbrev>Anders Berglund, et al., <citetitle>
+            <ulink conformance="skip" url="http://www.w3.org/TR/2007/REC-xpath20-20070123/">XML Path Language (XPath) Version 2.0, 23 January 2007</ulink>. </citetitle>
+        </bibliomixed>
+        <bibliomixed id="b_xpointer">
+          <abbrev condition="oasis">XPointer</abbrev>Steven DeRose, et al., <citetitle>
+            <ulink conformance="skip" url="http://www.w3.org/TR/xptr/">XML Pointer Language (XPointer) Version 1.0 Working Draft, 16 August 2002</ulink>. </citetitle>
+        </bibliomixed>
+        <bibliomixed id="xslt">
+          <abbrev condition="oasis">XSLT</abbrev>
+          <citetitle>
+            <ulink conformance="skip" url="http://www.w3.org/TR/1999/REC-xslt-19991116">XSL Transformations (XSLT) Version 1.0, W3C Recommendation 16 November 1999</ulink>
+          </citetitle>
+        </bibliomixed>
+        <bibliomixed id="b_xslt20">
+          <abbrev condition="oasis">XSLT 2.0</abbrev>Michael Kay, <citetitle>
+            <ulink url="http://www.w3.org/TR/xslt20/" conformance="skip">XSL Transformations (XSLT) Version 2.0, 2007-01-23</ulink>. </citetitle>
+        </bibliomixed>
+      </bibliolist>
+    </section>
+  </appendix>
   <!--reviewtext-->
   <appendix id="A-RELEASE-NOTES" role="non-normative">
     <title>Release Notes</title>
@@ -6848,6 +6835,19 @@ No code list validation errors.</programlisting>
       <member>Enric Staromiejski Torregrosa, everis, S.L.U.</member>
       <member>Matt Vickers, Xero</member>
     </simplelist>
+  </appendix>
+  <appendix id="A-NOTICES" condition="oasis">
+    <title>Notices</title>
+      <para>Copyright &#169; OASIS Open 2001-&pubyear;. All Rights Reserved. </para>
+<para>All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the “OASIS IPR Policy”). The full <ulink url="https://www.oasis-open.org/policies-guidelines/ipr/" conformance="skip">Policy</ulink> may be found at the OASIS website: [<ulink url="https://www.oasis-open.org/policies-guidelines/ipr/">https://www.oasis-open.org/policies-guidelines/ipr/</ulink>].</para>
+<para>This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published, and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this section are included on all such copies and derivative works. However, this document itself may not be modified in any way, including by removing the copyright notice or references to OASIS, except as needed for the purpose of developing any document or deliverable produced by an OASIS Technical Committee (in which case the rules applicable to copyrights, as set forth in the OASIS IPR Policy, must be followed) or as required to translate it into languages other than English.</para>
+<para>The limited permissions granted above are perpetual and will not be revoked by OASIS or its successors or assigns.</para>
+<para>This document and the information contained herein is provided on an “AS IS” basis and OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. OASIS AND ITS MEMBERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THIS DOCUMENT OR ANY PART THEREOF.</para>
+<para>As stated in the OASIS IPR Policy, the following three paragraphs in brackets apply to OASIS Standards Final Deliverable documents (Committee Specifications, OASIS Standards, or Approved Errata).</para>
+<para>[OASIS requests that any OASIS Party or any other party that believes it has patent claims that would necessarily be infringed by implementations of this OASIS Standards Final Deliverable, to notify OASIS TC Administrator and provide an indication of its willingness to grant patent licenses to such patent claims in a manner consistent with the IPR Mode of the OASIS Technical Committee that produced this deliverable.]</para>
+<para>[OASIS invites any party to contact the OASIS TC Administrator if it is aware of a claim of ownership of any patent claims that would necessarily be infringed by implementations of this OASIS Standards Final Deliverable by a patent holder that is not willing to provide a license to such patent claims in a manner consistent with the IPR Mode of the OASIS Technical Committee that produced this OASIS Standards Final Deliverable. OASIS may include such claims on its website, but disclaims any obligation to do so.]</para>
+<para>[OASIS takes no position regarding the validity or scope of any intellectual property or other rights that might be claimed to pertain to the implementation or use of the technology described in this OASIS Standards Final Deliverable or the extent to which any license under such rights might or might not be available; neither does it represent that it has made any effort to identify any such rights. Information on OASIS’ procedures with respect to rights in any document or deliverable produced by an OASIS Technical Committee can be found on the OASIS website. Copies of claims of rights made available for publication and any assurances of licenses to be made available, or the result of an attempt made to obtain a general license or permission for the use of such proprietary rights by implementers or users of this OASIS Standards Final Deliverable, can be obtained from the OASIS TC Administrator. OASIS makes no representation that any information or list of intellectual property rights will at any time be complete, or that any claims in such list are, in fact, Essential Claims.]</para>
+<para>The name “OASIS” is a trademark of <ulink url="https://www.oasis-open.org" conformance="skip">OASIS</ulink>, the owner and developer of this document, and should be used only to refer to the organization and its official outputs. OASIS welcomes reference to, and implementation and use of, documents, while reserving the right to enforce its marks against misleading uses. Please see <ulink url="https://www.oasis-open.org/policies-guidelines/trademark/">https://www.oasis-open.org/policies-guidelines/trademark/</ulink> for above guidance.</para>
   </appendix>
   <!--
   <appendix id="A-TEMPORARY-ANNEX-\-\-RENDERING-PER-ISO-IEC-DIRECTIVES-PART-2" role="non-normative">
