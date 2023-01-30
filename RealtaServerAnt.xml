@@ -1,4 +1,4 @@
-<project default="-realta" xmlns:if="ant:if" xmlns:unless="ant:unless">
+<project default="-qatest" xmlns:if="ant:if" xmlns:unless="ant:unless">
 
 <!--
   2023-01-29 02:00z
