@@ -135,7 +135,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <!--and the configuration files found in the base directory-->
   <copy preservelastmodified="true" todir="${dir}">
     <fileset dir=".">
-      <include name="*"/>
+      <include name="**"/>
       <exclude name="**/.git/**"/>
       <exclude name="**/.github/**"/>
       <exclude name="**/utilities/**"/>
