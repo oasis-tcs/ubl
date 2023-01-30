@@ -1825,10 +1825,12 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
     <arg value="${dir}/${package}-${UBLstage}-${label}"/>    
   </exec>
   <echo message="Creating: ${dir}/${package}-${UBLstage}-${label}-gentext.xml..."/>
-  <echo unless:set="docAssembled"
+  <available property="docXMLvalid"
+             file="${dir}/${package}-${UBLstage}-${label}/UBL-${UBLversion}.xml"/>
+  <echo unless:set="docXMLvalid"
         message="XML source not assembled"
         file="${dir}/INTEGRITY-PROBLEMS.txt"/>
-  <java if:set="docAssembled"
+  <java if:set="docXMLvalid"
         append="true" classname="net.sf.saxon.Transform"
         error="${dir}/INTEGRITY-PROBLEMS.txt">
      <arg value="-xsl:hub-integrity.xsl"/>
