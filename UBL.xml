@@ -219,11 +219,9 @@
     <legalnotice role="status" id="STATUS">
       <title>Status</title>
       <!--only one of the two below paragraphs applies; comment out the other one-->
-      
       <para>This <ulink conformance="skip" url="https://www.oasis-open.org/policies-guidelines/tc-process#dWorkingDraft">Working Draft</ulink> (WD) has been produced by one or more TC Members; it has not yet been voted on by the TC or <ulink conformance="skip"
           url="https://www.oasis-open.org/policies-guidelines/tc-process#committeeDraft">approved</ulink> as a Committee Specification Draft. The OASIS document <ulink conformance="skip" url="https://www.oasis-open.org/policies-guidelines/tc-process#standApprovProcess">Approval Process</ulink>
         begins officially with a TC vote to approve a WD as a Committee Draft. A TC may approve a Working Draft, revise it, and re-approve it any number of times as a Committee Draft.</para>
-      
       <!--
       <para>This document was last revised or approved by the OASIS Universal Business Language TC <!-\-OASIS Members-\-> on the above date. The level of approval is also listed above. Check the &#x201c;Latest stage&#x201d; location noted above for possible later revisions of this document. Any
         other numbered versions and other technical work produced by the Technical Committee (TC) are listed at <ulink url="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl#technical">https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl#technical</ulink>. </para>
@@ -256,7 +254,8 @@
     <legalnotice role="notices">
       <title>Notices</title>
       <para>Copyright &#169; OASIS Open 2001-&pubyear;. All Rights Reserved. </para>
-      <para>Distributed under the terms of the OASIS IPR Policy, [<ulink url="https://www.oasis-open.org/policies-guidelines/ipr/">https://www.oasis-open.org/policies-guidelines/ipr/</ulink>]. For complete copyright information please see the full Notices section in <xref linkend="A-NOTICES"/>.</para>
+      <para>Distributed under the terms of the OASIS IPR Policy, [<ulink url="https://www.oasis-open.org/policies-guidelines/ipr/">https://www.oasis-open.org/policies-guidelines/ipr/</ulink>]. For complete copyright information please see the full Notices section in <xref linkend="A-NOTICES"
+        />.</para>
     </legalnotice>
     <!--metadata for ISO/IEC 19845-->
     <othername role="intro">Information Technology</othername>
@@ -1008,8 +1007,7 @@
               </mediaobject>
             </figure>
             <para>The first step of the Collaborative Planning, Forecasting, and Replenishment process continues with the exchange of messages containing purchase conditions. (UBL does not standardize the format of such messages.) Afterwards, for determining the exception criteria that ought to be
-              monitored and handled during the execution, <link
-                linkend="S-EXCEPTION-CRITERIA-SCHEMA">Exception Criteria</link> messages are exchanged. Exchange of revised Exception Criteria messages continues until the criteria are accepted by both sides.</para>
+              monitored and handled during the execution, <link linkend="S-EXCEPTION-CRITERIA-SCHEMA">Exception Criteria</link> messages are exchanged. Exchange of revised Exception Criteria messages continues until the criteria are accepted by both sides.</para>
             <figure id="F-ESTABLISH-COLLABORATIVE-RELATIONSHIPS">
               <title>Establish Collaborative Relationships</title>
               <mediaobject>
@@ -1021,8 +1019,8 @@
                 </textobject>
               </mediaobject>
             </figure>
-            <para>In Collaborative Planning, Forecasting, and Replenishment step 2 (the joint business planning phase) there are two messages that ought to be exchanged and agreed upon: <link linkend="S-RETAIL-EVENT-SCHEMA">Retail Event</link> and <link linkend="S-TRADE-ITEM-LOCATION-PROFILE-SCHEMA">Trade Item Location Profile</link>. Revisions are
-              exchanged until an agreement is achieved.</para>
+            <para>In Collaborative Planning, Forecasting, and Replenishment step 2 (the joint business planning phase) there are two messages that ought to be exchanged and agreed upon: <link linkend="S-RETAIL-EVENT-SCHEMA">Retail Event</link> and <link linkend="S-TRADE-ITEM-LOCATION-PROFILE-SCHEMA"
+                >Trade Item Location Profile</link>. Revisions are exchanged until an agreement is achieved.</para>
             <figure id="F-CREATE-JOINT-BUSINESS-PLAN">
               <title>Create joint business plan</title>
               <mediaobject>
@@ -1041,9 +1039,8 @@
               optimal results and to enable both parties to plan the execution of the event more accurately, from the preparation of advertising and displays to the production and delivery of the promotional stock.</para>
             <para>In Collaborative Planning, Forecasting, and Replenishment step 3, the Sales <link linkend="S-FORECAST-SCHEMA">Forecast</link> is generated. Following Option A, Conventional Order Management, from the Collaborative Planning, Forecasting, and Replenishment implementation scenarios,
               the responsible partner for the generation of Sales Forecast is the Seller. Having Event Calendar information and the Delivery Plan already in their system, there are two more kinds of information that the Seller needs for an effective Sales Forecast: POS Data and DC Data. As shown in
-                <xref linkend="F-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT-STEPS-3-4-AND-5"/> and <xref
-                linkend="F-CREATE-SALES-FORECAST"/>, both of these pieces of information are sent within a <link linkend="S-PRODUCT-ACTIVITY-SCHEMA">Product Activity</link> message. This time there is no revision of the messages because these messages contain statistical and historical information
-              collected previously by the Buyer.</para>
+                <xref linkend="F-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT-STEPS-3-4-AND-5"/> and <xref linkend="F-CREATE-SALES-FORECAST"/>, both of these pieces of information are sent within a <link linkend="S-PRODUCT-ACTIVITY-SCHEMA">Product Activity</link> message. This time there is
+              no revision of the messages because these messages contain statistical and historical information collected previously by the Buyer.</para>
             <figure id="F-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT-STEPS-3-4-AND-5">
               <title>Collaborative Planning, Forecasting, and Replenishment steps 3, 4, and 5</title>
               <mediaobject>
@@ -1070,8 +1067,7 @@
               </mediaobject>
             </figure>
             <para>In many cases some time may elapse between Sales Forecast Generation and Order Generation. During this period, both sides observe changes to the conditions. If one of the partners detects an exception invalidating the exception criteria defined in Collaborative Planning,
-              Forecasting, and Replenishment step 1, it sends an <link
-                linkend="S-EXCEPTION-NOTIFICATION-SCHEMA">Exception Notification</link> message to the other party. Exceptional circumstances that may be communicated between trading partners include deviations between planned impacts (either
+              Forecasting, and Replenishment step 1, it sends an <link linkend="S-EXCEPTION-NOTIFICATION-SCHEMA">Exception Notification</link> message to the other party. Exceptional circumstances that may be communicated between trading partners include deviations between planned impacts (either
               between buyer and seller, or between subsequent generations of planned impacts from the same trading partner), as well as deviations between planned and actual impacts. It ought to be noted that both sides might detect an exception, and therefore both sides ought to be capable of
               sending and receiving exceptions. Of course, for specific implementations if the collaborating parties want to change this behaviour, they can customize the process so that one partner will be responsible for the generation of the Exception Notifications.</para>
             <para>Collaborative Planning, Forecasting, and Replenishment Step 4 is solely composed of the exception generation and receiving activity. Collaborative Planning, Forecasting, and Replenishment Step 5, on the other hand, is the resolution of the Exceptions.</para>
@@ -1091,8 +1087,8 @@
           <section id="S-ORDER-FORECAST-GENERATION-AND-EXCEPTION-HANDLING">
             <title>Order Forecast Generation and Exception Handling</title>
             <para>In the supply chain process, it is important for sales forecasts that are created to be converted into the shipment (order) forecasts that can then be used in the production planning processes at the manufacturing locations and be incorporated into the ordering processes at the
-              retailer. As shown in <xref linkend="F-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT-STEPS-6-7-8-AND-9"/>, the responsibility for creating Order Forecast belongs to the Seller per Option A of the Collaborative Planning, Forecasting, and Replenishment implementation scenarios. Sales forecasts can be transformed into order
-              forecasts by incorporating inventory status information, possible retail event plans, and current point of sale data. Therefore, Buyer sends the updated versions of the Retail Event, Inventory Status, and POS Data to the Seller.</para>
+              retailer. As shown in <xref linkend="F-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT-STEPS-6-7-8-AND-9"/>, the responsibility for creating Order Forecast belongs to the Seller per Option A of the Collaborative Planning, Forecasting, and Replenishment implementation scenarios.
+              Sales forecasts can be transformed into order forecasts by incorporating inventory status information, possible retail event plans, and current point of sale data. Therefore, Buyer sends the updated versions of the Retail Event, Inventory Status, and POS Data to the Seller.</para>
             <figure id="F-COLLABORATIVE-PLANNING-FORECASTING-AND-REPLENISHMENT-STEPS-6-7-8-AND-9">
               <title>Collaborative Planning, Forecasting, and Replenishment steps 6, 7, 8 and 9</title>
               <mediaobject>
@@ -1119,8 +1115,7 @@
               </mediaobject>
             </figure>
             <para>After the Order Forecast is frozen, the process continues with the exception detection activity (Collaborative Planning, Forecasting, and Replenishment step 7). The exception detection process that follows Order Forecast is similar to process described earlier for exception
-              detection following Sales Forecast (see <xref
-                linkend="S-SALES-FORECAST-GENERATION-AND-EXCEPTION-HANDLING"/>). The only difference between the Order Forecast and Sales Forecast exceptions is the content of the exceptions.</para>
+              detection following Sales Forecast (see <xref linkend="S-SALES-FORECAST-GENERATION-AND-EXCEPTION-HANDLING"/>). The only difference between the Order Forecast and Sales Forecast exceptions is the content of the exceptions.</para>
             <para>Collaborative Planning, Forecasting, and Replenishment step 8, Order Forecast Exception Resolution activity, is handled similarly to Sales Forecast Exception Resolution.</para>
             <figure id="F-IDENTIFYING-AND-RESOLVING-EXCEPTIONS-FOR-ORDER-FORECAST">
               <title>Identifying and Resolving Exceptions for Order Forecast</title>
@@ -2961,6 +2956,21 @@
       <para>All of the UBL XSD schemas are contained in the <literal>xsd</literal> subdirectory of the UBL release package (see <xref linkend="A-RELEASE-NOTES"/> for more information regarding the structure of the release package and <xref linkend="S-SCHEMA-DEPENDENCIES"/> for information regarding
         dependencies among the schema modules). The <literal>xsd</literal> directory is further subdivided into an <literal>xsd/maindoc</literal> subdirectory containing the schemas for individual document types and an <literal>xsd/common</literal> subdirectory containing schemas in the UBL common
         library. For convenience in implementing the schemas, parallel (and technically non-normative) &#8220;runtime&#8221; sets with the annotation elements stripped out are provided in the <literal>xsdrt/</literal> directory.</para>
+      <para>Each schema directory includes an XML catalogue conforming to OASIS XML Catalogs V1.1 that points the user-facing namespaces to the schema fragments:</para>
+      <itemizedlist>
+        <listitem>
+          <para><literal>
+              <ulink url="xsd/UBL-&version;-catalog.xml">xsd/UBL-&version;-catalog.xml</ulink>
+            </literal>
+          </para>
+        </listitem>
+        <listitem>
+          <para><literal>
+              <ulink url="xsdrt/UBL-&version;-catalog.xml">xsdrt/UBL-&version;-catalog.xml</ulink>
+            </literal>
+          </para>
+        </listitem>
+      </itemizedlist>
     </section>
     <section id="S-UBL-&version;-DOCUMENT-SCHEMAS" role="documentSchemas">
       <title>UBL &version; Document Schemas</title>
@@ -3224,8 +3234,8 @@
       <section id="S-EXTENSION-EXPRESSION">
         <title>Extension Expression</title>
         <para>Every UBL ABIE is allowed to contain extension content using the element <literal>&lt;ext:UBLExtensions></literal> in the extension namespace
-            <literal>urn:&#x200b;oasis:&#x200b;names:&#x200b;specification:&#x200b;ubl:&#x200b;schema:&#x200b;xsd:&#x200b;CommonExtensionComponents-2</literal> (there are
-          no constraints on the namespace prefix, only the namespace URI). This schema-defined element will be the first child element of the ABIE element, appearing before every BIE child of the ABIE. It will contain one or more <literal>&lt;ext:UBLExtension></literal> element children.</para>
+            <literal>urn:&#x200b;oasis:&#x200b;names:&#x200b;specification:&#x200b;ubl:&#x200b;schema:&#x200b;xsd:&#x200b;CommonExtensionComponents-2</literal> (there are no constraints on the namespace prefix, only the namespace URI). This schema-defined element will be the first child element of
+          the ABIE element, appearing before every BIE child of the ABIE. It will contain one or more <literal>&lt;ext:UBLExtension></literal> element children.</para>
         <para>Each <literal>&lt;ext:UBLExtension></literal> element contains the metadata and content of a single extension. All extension metadata is optional, and the extension content is mandatory. The extension content element contains as its only child the apex element, in a namespace other
           than the UBL extension namespace, of an arbitrary XML structure.</para>
         <table frame="all" rowsep="1" colsep="1" id="T-UBL-EXTENSION-METADATA-AND-CONTENT">
@@ -3399,8 +3409,8 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
     <title>Additional Document Constraints</title>
     <section id="S-ADDITIONAL-DOCUMENT-CONSTRAINTS-INTRODUCTION">
       <title>Additional Document Constraints Introduction</title>
-      <para>In addition to the UBL document constraints formally expressed by the schemas in <xref linkend="S-UBL-&version;-SCHEMAS"/>, UBL mandates several other rules governing conforming UBL instances that are incapable of being expressed using W3C Schema. These additional UBL document rules, addressing XML
-        instance <xref linkend="xml"/> validation, character encoding, and empty elements, are specified below.</para>
+      <para>In addition to the UBL document constraints formally expressed by the schemas in <xref linkend="S-UBL-&version;-SCHEMAS"/>, UBL mandates several other rules governing conforming UBL instances that are incapable of being expressed using W3C Schema. These additional UBL document rules,
+        addressing XML instance <xref linkend="xml"/> validation, character encoding, and empty elements, are specified below.</para>
       <note>
         <para>These rules first appeared in the OASIS UBL 1.0 and UBL 1.0 NDR Standards. They are listed here because logically they belong with the great majority of UBL instance constraints specified in the schemas. To aid in coordinating references between these various publications, the rules
           below retain their original &#8220;IND&#8221; labels. The former IND4 was removed in the revision process leading to UBL 2.0.</para>
@@ -3664,8 +3674,8 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           <para>The enveloped signature profile supports one or more signatures to be applied to a UBL document and embedded in the UBL document itself inside a dedicated extension. This profile can be used with all UBL documents under their respective <literal>&lt;ext:UBLExtensions></literal>
             extension points. UBL syntax implementing the enveloped profile, together with examples of its use, are provided in <xref linkend="S-UBL-EXTENSION-FOR-ENVELOPED-XML-DIGITAL-SIGNATURES"/>.</para>
           <para>The user CAN choose to indicate in a <literal>&lt;cac:Signature></literal> element that the signature details are found in the signature extension. The URI <literal>urn:oasis:names:specification:ubl:dsig:enveloped</literal> is reserved as a value for
-              <literal>&lt;cbc:SignatureMethod></literal> to signal this. The URI <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;enveloped:&#8203;xades</literal> CAN be used as a value for <literal>&lt;cbc:SignatureMethod></literal> to signal
-            when XAdES is in use. Additionally, the user CAN include a <literal>&lt;cbc:ID></literal> child of <literal>&lt;cac:Signature></literal> for referencing purposes from the enveloped signature. The identifier used can be any value, but for convenience the URI of a URN beginning with
+              <literal>&lt;cbc:SignatureMethod></literal> to signal this. The URI <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;enveloped:&#8203;xades</literal> CAN be used as a value for <literal>&lt;cbc:SignatureMethod></literal> to signal when XAdES is
+            in use. Additionally, the user CAN include a <literal>&lt;cbc:ID></literal> child of <literal>&lt;cac:Signature></literal> for referencing purposes from the enveloped signature. The identifier used can be any value, but for convenience the URI of a URN beginning with
               <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;signature:</literal>, ending with the local name of the parent of the signature business object, and optionally followed with a colon and number, as in the
               <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;signature:&#8203;IssuerEndorsement</literal> example, is reserved for this purpose for UBL users. As with all identifiers, the identifier SHOULD exist and SHOULD be unique across all identifier values. An
             example is as follows:</para>
@@ -3697,7 +3707,8 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           <para>It is important to note that externally signing a UBL document with a detached signature imposes no requirements on the UBL document itself. Such a signature, in any kind of signature container, can digitally sign the content of a UBL document regardless of whether this is reflected
             in the document.</para>
           <para>Before a detached signature conforming IETF/W3C XML digital signature is generated, the user CAN choose to signal in their UBL document that it is so signed. The URI value <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;detached</literal> is
-            reserved to indicate that the detached signature is an IETF/W3C XML digital signature. The URI <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;detached:&#8203;xades</literal> CAN be used as a value to signal when XAdES is in use. The value is used in the <literal>&lt;cbc:SignatureMethod></literal> child of <literal>&lt;cac:Signature></literal>.</para>
+            reserved to indicate that the detached signature is an IETF/W3C XML digital signature. The URI <literal>urn:&#8203;oasis:&#8203;names:&#8203;specification:&#8203;ubl:&#8203;dsig:&#8203;detached:&#8203;xades</literal> CAN be used as a value to signal when XAdES is in use. The value is
+            used in the <literal>&lt;cbc:SignatureMethod></literal> child of <literal>&lt;cac:Signature></literal>.</para>
           <para>If the location of the digital signature is known, the user CAN choose to indicate the location in a <literal>&lt;cbc:URI></literal> child element of a <literal>&lt;cac:ExternalReference></literal> child element of a <literal>&lt;cac:DigitalSignatureAttachment></literal>
             element.</para>
           <para>Following is a complete example of a <literal>&lt;cac:Signature></literal> business object that might be found in a UBL instance:</para>
@@ -4119,7 +4130,8 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <bibliolist id="normbibl">
         <bibliomixed id="ISOIEC_Directives">
           <abbrev condition="oasis">ISO/IEC Directives</abbrev>
-          <citetitle>ISO/IEC Directives, Part 2 (Ninth Edition) Rules for the structure and drafting of International Standards, International Organization for Standardization and International Electrotechnical Commission, 2021. <ulink url="https://www.iso.org/sites/directives/current/part2/index.xhtml">https://www.iso.org/sites/directives/current/part2/index.xhtml</ulink></citetitle>
+          <citetitle>ISO/IEC Directives, Part 2 (Ninth Edition) Rules for the structure and drafting of International Standards, International Organization for Standardization and International Electrotechnical Commission, 2021. <ulink
+              url="https://www.iso.org/sites/directives/current/part2/index.xhtml">https://www.iso.org/sites/directives/current/part2/index.xhtml</ulink></citetitle>
         </bibliomixed>
         <bibliomixed id="b_XAdES">
           <abbrev condition="oasis">XAdES</abbrev>
@@ -4514,8 +4526,8 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
     </section>
     <section id="S-KNOWN-ERRORS-IN-UBL-&version;">
       <title>Known errors in UBL &version;</title>
-      <para>During deployment the presence of errors in the UBL normative components comes to the attention of the UBL Technical Committee. Some of these are incapable of being repaired without breaking backwards compatibility to previous versions of UBL. Accordingly, they are obliged to remain in UBL untouched
-        to avoid ambiguity and to avoid problems with backwards compatibility.</para>
+      <para>During deployment the presence of errors in the UBL normative components comes to the attention of the UBL Technical Committee. Some of these are incapable of being repaired without breaking backwards compatibility to previous versions of UBL. Accordingly, they are obliged to remain in
+        UBL untouched to avoid ambiguity and to avoid problems with backwards compatibility.</para>
       <para>The list of known errors that are not being changed is as follows:</para>
       <itemizedlist>
         <listitem>
@@ -6464,8 +6476,8 @@ No code list validation errors.</programlisting>
             (<literal><ulink url="val/order-test-bad-model.xml">val/order-test-bad-model.xml</ulink></literal>); a UBL Order that is schema-valid but contains an illegal code list value (<literal><ulink url="val/order-test-bad-code.xml">val/order-test-bad-code.xml</ulink></literal>); and a valid UBL
         Order (<literal><ulink url="val/order-test-good.xml">val/order-test-good.xml</ulink></literal>);. The file <literal><ulink url="val/test.bat">val/test.bat</ulink></literal> (Windows) or <literal><ulink url="val/test.sh">val/test.sh</ulink></literal> (Unix-like) is used to run the script
             <literal><ulink url="val/validate.bat">val/validate.bat</ulink></literal> or <literal><ulink url="val/validate.sh">val/validate.sh</ulink></literal> against each of the test files.</para>
-      <para>Looking at the last test results first, run using <literal>order-test-good.xml</literal>, this demonstrates both phases of the default validation process running normally. The exit status of the entire test is the exit of the last test which ought to be successful when
-        being tested for error.</para>
+      <para>Looking at the last test results first, run using <literal>order-test-good.xml</literal>, this demonstrates both phases of the default validation process running normally. The exit status of the entire test is the exit of the last test which ought to be successful when being tested for
+        error.</para>
       <para>In each test’s first phase, a standard W3C Schema (XSD) validator, Xerxes, is invoked from <literal><ulink url="val/w3cschema.bat">val/w3cschema.bat</ulink></literal> (or <literal><ulink url="val/w3cschema.sh">val/w3cschema.sh</ulink></literal>) to validate the specified UBL document
           (<literal>.xml</literal>) against the specified UBL runtime schema (<literal>.xsd</literal>). Since the input is a valid UBL Order, the output of the first phase simply indicates that the file is valid against the given Order schema. Error messages are persisted in the file with the XML
         name and added extension <literal>.error.txt</literal>. In this test the persistent error files from phase one are <literal><ulink url="val/order-test-bad-syntax.xml.error.txt">val/order-test-bad-syntax.xml.error.txt</ulink></literal> and <literal><ulink
@@ -6838,16 +6850,26 @@ No code list validation errors.</programlisting>
   </appendix>
   <appendix id="A-NOTICES" condition="oasis">
     <title>Notices</title>
-      <para>Copyright &#169; OASIS Open 2001-&pubyear;. All Rights Reserved. </para>
-<para>All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the “OASIS IPR Policy”). The full <ulink url="https://www.oasis-open.org/policies-guidelines/ipr/" conformance="skip">Policy</ulink> may be found at the OASIS website: [<ulink url="https://www.oasis-open.org/policies-guidelines/ipr/">https://www.oasis-open.org/policies-guidelines/ipr/</ulink>].</para>
-<para>This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published, and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this section are included on all such copies and derivative works. However, this document itself may not be modified in any way, including by removing the copyright notice or references to OASIS, except as needed for the purpose of developing any document or deliverable produced by an OASIS Technical Committee (in which case the rules applicable to copyrights, as set forth in the OASIS IPR Policy, must be followed) or as required to translate it into languages other than English.</para>
-<para>The limited permissions granted above are perpetual and will not be revoked by OASIS or its successors or assigns.</para>
-<para>This document and the information contained herein is provided on an “AS IS” basis and OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. OASIS AND ITS MEMBERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THIS DOCUMENT OR ANY PART THEREOF.</para>
-<para>As stated in the OASIS IPR Policy, the following three paragraphs in brackets apply to OASIS Standards Final Deliverable documents (Committee Specifications, OASIS Standards, or Approved Errata).</para>
-<para>[OASIS requests that any OASIS Party or any other party that believes it has patent claims that would necessarily be infringed by implementations of this OASIS Standards Final Deliverable, to notify OASIS TC Administrator and provide an indication of its willingness to grant patent licenses to such patent claims in a manner consistent with the IPR Mode of the OASIS Technical Committee that produced this deliverable.]</para>
-<para>[OASIS invites any party to contact the OASIS TC Administrator if it is aware of a claim of ownership of any patent claims that would necessarily be infringed by implementations of this OASIS Standards Final Deliverable by a patent holder that is not willing to provide a license to such patent claims in a manner consistent with the IPR Mode of the OASIS Technical Committee that produced this OASIS Standards Final Deliverable. OASIS may include such claims on its website, but disclaims any obligation to do so.]</para>
-<para>[OASIS takes no position regarding the validity or scope of any intellectual property or other rights that might be claimed to pertain to the implementation or use of the technology described in this OASIS Standards Final Deliverable or the extent to which any license under such rights might or might not be available; neither does it represent that it has made any effort to identify any such rights. Information on OASIS’ procedures with respect to rights in any document or deliverable produced by an OASIS Technical Committee can be found on the OASIS website. Copies of claims of rights made available for publication and any assurances of licenses to be made available, or the result of an attempt made to obtain a general license or permission for the use of such proprietary rights by implementers or users of this OASIS Standards Final Deliverable, can be obtained from the OASIS TC Administrator. OASIS makes no representation that any information or list of intellectual property rights will at any time be complete, or that any claims in such list are, in fact, Essential Claims.]</para>
-<para>The name “OASIS” is a trademark of <ulink url="https://www.oasis-open.org" conformance="skip">OASIS</ulink>, the owner and developer of this document, and should be used only to refer to the organization and its official outputs. OASIS welcomes reference to, and implementation and use of, documents, while reserving the right to enforce its marks against misleading uses. Please see <ulink url="https://www.oasis-open.org/policies-guidelines/trademark/">https://www.oasis-open.org/policies-guidelines/trademark/</ulink> for above guidance.</para>
+    <para>Copyright &#169; OASIS Open 2001-&pubyear;. All Rights Reserved. </para>
+    <para>All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the “OASIS IPR Policy”). The full <ulink url="https://www.oasis-open.org/policies-guidelines/ipr/" conformance="skip">Policy</ulink> may be found at the OASIS
+      website: [<ulink url="https://www.oasis-open.org/policies-guidelines/ipr/">https://www.oasis-open.org/policies-guidelines/ipr/</ulink>].</para>
+    <para>This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published, and distributed, in whole or in part, without restriction of any kind, provided that
+      the above copyright notice and this section are included on all such copies and derivative works. However, this document itself may not be modified in any way, including by removing the copyright notice or references to OASIS, except as needed for the purpose of developing any document or
+      deliverable produced by an OASIS Technical Committee (in which case the rules applicable to copyrights, as set forth in the OASIS IPR Policy, must be followed) or as required to translate it into languages other than English.</para>
+    <para>The limited permissions granted above are perpetual and will not be revoked by OASIS or its successors or assigns.</para>
+    <para>This document and the information contained herein is provided on an “AS IS” basis and OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS OR ANY IMPLIED WARRANTIES OF
+      MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. OASIS AND ITS MEMBERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THIS DOCUMENT OR ANY PART THEREOF.</para>
+    <para>As stated in the OASIS IPR Policy, the following three paragraphs in brackets apply to OASIS Standards Final Deliverable documents (Committee Specifications, OASIS Standards, or Approved Errata).</para>
+    <para>[OASIS requests that any OASIS Party or any other party that believes it has patent claims that would necessarily be infringed by implementations of this OASIS Standards Final Deliverable, to notify OASIS TC Administrator and provide an indication of its willingness to grant patent
+      licenses to such patent claims in a manner consistent with the IPR Mode of the OASIS Technical Committee that produced this deliverable.]</para>
+    <para>[OASIS invites any party to contact the OASIS TC Administrator if it is aware of a claim of ownership of any patent claims that would necessarily be infringed by implementations of this OASIS Standards Final Deliverable by a patent holder that is not willing to provide a license to such
+      patent claims in a manner consistent with the IPR Mode of the OASIS Technical Committee that produced this OASIS Standards Final Deliverable. OASIS may include such claims on its website, but disclaims any obligation to do so.]</para>
+    <para>[OASIS takes no position regarding the validity or scope of any intellectual property or other rights that might be claimed to pertain to the implementation or use of the technology described in this OASIS Standards Final Deliverable or the extent to which any license under such rights
+      might or might not be available; neither does it represent that it has made any effort to identify any such rights. Information on OASIS’ procedures with respect to rights in any document or deliverable produced by an OASIS Technical Committee can be found on the OASIS website. Copies of
+      claims of rights made available for publication and any assurances of licenses to be made available, or the result of an attempt made to obtain a general license or permission for the use of such proprietary rights by implementers or users of this OASIS Standards Final Deliverable, can be
+      obtained from the OASIS TC Administrator. OASIS makes no representation that any information or list of intellectual property rights will at any time be complete, or that any claims in such list are, in fact, Essential Claims.]</para>
+    <para>The name “OASIS” is a trademark of <ulink url="https://www.oasis-open.org" conformance="skip">OASIS</ulink>, the owner and developer of this document, and should be used only to refer to the organization and its official outputs. OASIS welcomes reference to, and implementation and use of,
+      documents, while reserving the right to enforce its marks against misleading uses. Please see <ulink url="https://www.oasis-open.org/policies-guidelines/trademark/">https://www.oasis-open.org/policies-guidelines/trademark/</ulink> for above guidance.</para>
   </appendix>
   <!--
   <appendix id="A-TEMPORARY-ANNEX-\-\-RENDERING-PER-ISO-IEC-DIRECTIVES-PART-2" role="non-normative">
