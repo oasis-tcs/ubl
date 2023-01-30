@@ -217,7 +217,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <echo if:set="gcSigErrors"
           message="ERROR creating Signature Entities genericode file"/>
     <touch if:set="gcSigErrors"
-           file="${dir}/VALID-SIGNATURE-GC-FILE-NOT-GENERATED.txt"/>
+           file="${dir}/${UBLstage}-${UBLversion}/INVALID-SIGNATURE-GC-FILE-GENERATED.txt"/>
   
     <available property="google-library-file-exists"
                file="../UBL-Library-Google.ods"/>
@@ -297,7 +297,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <echo if:set="gcBaseErrors"
           message="ERROR problem with UBL-Entities-${UBLversion}.gc"/>
     <touch if:set="gcBaseErrors"
-           file="${dir}/VALID-BASE-GC-FILE-NOT-GENERATED.txt"/>
+           file="${dir}/${UBLstage}-${UBLversion}/INVALID-BASE-GC-FILE-GENERATED.txt"/>
 
     <condition property="gcErrors">
       <or>
@@ -1331,11 +1331,16 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
      <arg value="-s:${dir}/UBL.xml"/>
      <arg value="-o:${dir}/UBL-${UBLversion}-assembled.xml"/>
   </java>
-  <!--confirm the input file is valid-->
-  <antcallback target="-validate" return="validatedInputs">
-    <param name="source" value="${dir}/UBL-${UBLversion}-assembled.xml"/>
-  </antcallback>
-  <move file="${dir}/UBL-${UBLversion}-assembled.xml" tofile="${dir}/UBL-${UBLversion}.xml"/>
+  <available property="docAssembled"
+             file="${dir}/UBL-${UBLversion}-assembled.xml"/>
+  <sequential if:set="docAssembled">
+   <!--confirm the input file is valid-->
+   <antcallback target="-validate" return="validatedInputs">
+     <param name="source" value="${dir}/UBL-${UBLversion}-assembled.xml"/>
+   </antcallback>
+   <move file="${dir}/UBL-${UBLversion}-assembled.xml"
+         tofile="${dir}/UBL-${UBLversion}.xml"/>
+  </sequential>
   <delete file="output.txt"/>
 </target>
 
@@ -1820,7 +1825,11 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
     <arg value="${dir}/${package}-${UBLstage}-${label}"/>    
   </exec>
   <echo message="Creating: ${dir}/${package}-${UBLstage}-${label}-gentext.xml..."/>
-  <java append="true" classname="net.sf.saxon.Transform"
+  <echo unless:set="docAssembled"
+        message="XML source not assembled"
+        file="${dir}/INTEGRITY-PROBLEMS.txt"/>
+  <java if:set="docAssembled"
+        append="true" classname="net.sf.saxon.Transform"
         error="${dir}/INTEGRITY-PROBLEMS.txt">
      <arg value="-xsl:hub-integrity.xsl"/>
      <arg value="-s:${dir}/${package}-${UBLstage}-${label}-dir-listing.xml"/>
