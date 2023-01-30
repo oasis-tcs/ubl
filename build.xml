@@ -1774,6 +1774,18 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
     </fileset>
   </copy>
   
+  <echo message="Copying catalogue..."/>
+  <copy todir="${dir}/${package}-${UBLstage}-${label}/xsd" verbose="true">
+    <fileset dir="${dir}">
+      <include name="UBL-${UBLversion}-catalog.xml"/>
+    </fileset>
+  </copy>
+  <copy todir="${dir}/${package}-${UBLstage}-${label}/xsdrt" verbose="true">
+    <fileset dir="${dir}">
+      <include name="UBL-${UBLversion}-catalog.xml"/>
+    </fileset>
+  </copy>
+  
   <!--artefacts archive moved to distribution archive-->  
   <move todir="${dir}/${package}-${UBLstage}-${label}-archive-only">
     <fileset dir="${dir}/${package}-${UBLstage}-${label}/intermediate-support-files">

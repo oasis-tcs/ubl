@@ -9,6 +9,42 @@
 <xsl:param name="UBLversion" as="xs:string" required="yes"/>
 
 <xsl:template match="/">
+ <xsl:result-document href="UBL-{$UBLversion}-catalog.xml">
+   <xsl:message select="'Creating XML catalogue file'"/>
+  <xsl:comment>
+This UBL <xsl:value-of select="$UBLversion"/> catalogue conforms to XML Catalogs 1.1
+https://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html
+
+Note that "system" entries are created only for those namespaces that are
+user facing, and not for those namespaces that are used internally only by
+the schema expressions.
+</xsl:comment>
+   <xsl:text>&#xa;</xsl:text>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <xsl:text>&#xa;</xsl:text>
+  <xsl:text>&#xa;</xsl:text>
+	<system
+		systemId="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+		uri="common/UBL-CommonAggregateComponents-{$UBLversion}.xsd" />
+  <system
+		systemId="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+		uri="common/UBL-CommonBasicComponents-{$UBLversion}.xsd" />
+  <system
+		systemId="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+		uri="common/UBL-CommonExtensionComponents-{$UBLversion}.xsd" />
+  <xsl:text>&#xa;</xsl:text>
+  <xsl:text>&#xa;</xsl:text>
+  <xsl:for-each select="/schemadocs/schema">
+    <xsl:sort select="name"/>
+    <xsl:variable name="compact" select="translate(name,' ','')"/>
+    <system
+    	systemId="urn:oasis:names:specification:ubl:schema:xsd:{$compact}-2"
+    	uri="maindoc/UBL-{$compact}-{$UBLversion}.xsd" />
+  </xsl:for-each>
+  <xsl:text>&#xa;</xsl:text>
+  <xsl:text>&#xa;</xsl:text>
+</catalog>   
+ </xsl:result-document>
  <xsl:result-document href="summary-namespaces-ent.xml">
    <xsl:message select="'Creating entity with namespace summary'"/>
   <xsl:comment>
