@@ -6815,33 +6815,42 @@ No code list validation errors.</programlisting>
     <title>Acknowledgements</title>
     <para>The OASIS UBL Technical Committee thanks SyncroSoft for its contribution of oXygen licenses used in DocBook authoring of UBL documentation; Réalta Online Publishing Solutions for support in generating PDF and HTML documents from DocBook originals; and Crane Softwrights for the generation
       of the summary reports.</para>
-    <para>The following persons and companies participated as members of the OASIS UBL Technical Committee during the years of its development (2017–&pubyear;).</para>
+    <para>The following persons and companies participated as members of the OASIS UBL Technical Committee during the years of its development (2021–&pubyear;).</para>
     <simplelist lang="none">
       <member>Todd Albers, Federal Reserve Bank of Minneapolis</member>
+      <member>Poul Andersen, ClearView Trade</member>
+      <member>Dinesh Balasubramanian, IBM</member>
+      <member>Rui Barros, Individual</member>
       <member>Oriol Bausa Peris, Individual</member>
       <member>Kenneth Bengtsson, Individual</member>
-      <member>Erlend Klakegg Bergheim, Difi-Agency for Public Management and <phrase lang="none">eGovernment</phrase>
-      </member>
-      <member>Martijn van den Boogaard, Individual</member>
-      <member>Peter Borresen, ClearView Trade</member>
+      <member>Erlend Klakegg Bergheim, The Norwegian Agency for Public and Financial Management (DFO)</member>
+      <member>Peter Borresen, ebConnect</member>
       <member>Jon Bosak, Individual</member>
+      <member>Mikkel Brun, Tradeshift</member>
       <member>Andrea Caccia, Individual</member>
-      <member>Roberto Cisternino, Individual</member>
+      <member>William Chan, Individual</member>
       <member>Ger Clancy, IBM</member>
+      <member>Paul Donohoe, Publications Office of the European Union</member>
       <member>Kees Duvekot, RFS Holland Holding B.V.</member>
+      <member>Pim van der Eijk, Sonnenglanz Consulting</member>
       <member>Martin Forsberg, Swedish Association of Local Authorities &amp; Regions</member>
-      <member>Cécile Guasch, Individual</member>
+      <member>Michael Grimley, US Department of Defense (DoD)</member>
+      <member>Cecile Guasch, Individual</member>
       <member>Philip Helger, Individual</member>
-      <member>G. Ken Holman, Crane Softwrights Ltd.</member>
+      <member>Ken Holman, Crane Softwrights Ltd.</member>
       <member>Yves Jordan, Publications Office of the European Union</member>
-      <member>Matt Lewis, Individual</member>
+      <member>Wim Kok, Logius</member>
+      <member>Prasad Kona, IBM</member>
+      <member>Kari Korpela, Individual</member>
       <member>Ole Madsen, Danish Business Authority</member>
-      <member>Andre Mitchell, Individual</member>
+      <member>Marc Malone, IBM</member>
       <member>Natalie Muric, Publications Office of the European Union</member>
       <member>Levine Naidoo, IBM</member>
-      <member>Olli Pajari, Individual</member>
-      <member>Enric Staromiejski Torregrosa, everis, S.L.U.</member>
+      <member>Yasuyuki Nishioka, PSLX consortium</member>
+      <member>Amit Saini, IBM</member>
+      <member>Audun Vennesland, SINTEF</member>
       <member>Matt Vickers, Xero</member>
+      <member>Huang Yong, Tradeshift</member>
     </simplelist>
   </appendix>
   <appendix id="A-NOTICES" condition="oasis">
