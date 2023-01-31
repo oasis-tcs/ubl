@@ -5,7 +5,7 @@ directory.
 
 
 -->
-<!--a total of 91 document types-->
+<!--a total of 93 document types-->
 <legalnotice role="namespaces">
    <title>Declared XML Namespaces</title>
    <simplelist lang="none">
@@ -34,6 +34,7 @@ directory.
       <member>urn:oasis:names:specification:ubl:schema:xsd:AwardedNotification-2</member>
       <member>urn:oasis:names:specification:ubl:schema:xsd:BillOfLading-2</member>
       <member>urn:oasis:names:specification:ubl:schema:xsd:BusinessCard-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:BusinessInformation-2</member>
       <member>urn:oasis:names:specification:ubl:schema:xsd:CallForTenders-2</member>
       <member>urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2</member>
       <member>urn:oasis:names:specification:ubl:schema:xsd:CatalogueDeletion-2</member>
@@ -84,6 +85,7 @@ directory.
       <member>urn:oasis:names:specification:ubl:schema:xsd:ProofOfReexportation-2</member>
       <member>urn:oasis:names:specification:ubl:schema:xsd:ProofOfReexportationReminder-2</member>
       <member>urn:oasis:names:specification:ubl:schema:xsd:ProofOfReexportationRequest-2</member>
+      <member>urn:oasis:names:specification:ubl:schema:xsd:PurchaseReceipt-2</member>
       <member>urn:oasis:names:specification:ubl:schema:xsd:QualificationApplicationRequest-2</member>
       <member>urn:oasis:names:specification:ubl:schema:xsd:QualificationApplicationResponse-2</member>
       <member>urn:oasis:names:specification:ubl:schema:xsd:Quotation-2</member>
