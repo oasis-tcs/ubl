@@ -32,7 +32,7 @@
 	<!ENTITY this-loc "https://docs.oasis-open.org/ubl/&stage;-UBL-&version;">
 	<!ENTITY previous-loc "https://docs.oasis-open.org/ubl/&pstage;-UBL-&psversion;">
 	<!ENTITY latest-loc "https://docs.oasis-open.org/ubl">
-	<!ENTITY pubdate "28 January 2023">
+	<!ENTITY pubdate "31 January 2023">
 	<!--remove time from pub date-->
 	<!ENTITY pubyear "2023">
 	<!ENTITY pubdate-iso "ccyy-mm-dd">
@@ -83,14 +83,20 @@
 		</releaseinfo>
     <authorgroup>
       <editor>
-        <firstname>G. Ken</firstname>
-        <surname>Holman</surname>
+        <firstname>Kenneth</firstname>
+        <surname>Bengtsson</surname>
         <affiliation>
-          <orgname>
-            <ulink url="http://www.CraneSoftwrights.com/links/info-ubl21.htm" conformance="skip">Crane Softwrights Ltd.</ulink>
-          </orgname>
+          <orgname>Individual</orgname>
         </affiliation>
-        <email>gkholman@CraneSoftwrights.com</email>
+        <email>kbengtsson@efact.pe</email>
+      </editor>
+      <editor>
+        <firstname>Kees</firstname>
+        <surname>Duvekot</surname>
+        <affiliation>
+          <orgname>RFS Holland Holding B.V.</orgname>
+        </affiliation>
+        <email>kduvekot@wehkamp.nl</email>
       </editor>
       <othercredit>
         <firstname>Kenneth</firstname>
@@ -99,16 +105,6 @@
           <orgname>Individual</orgname>
         </affiliation>
         <email>kbengtsson@efact.pe</email>
-      </othercredit>
-      <othercredit>
-        <firstname>G. Ken</firstname>
-        <surname>Holman</surname>
-        <affiliation>
-          <orgname>
-            <ulink url="http://www.CraneSoftwrights.com/links/info-ubl21.htm" conformance="skip">Crane Softwrights Ltd.</ulink>
-          </orgname>
-        </affiliation>
-        <email>gkholman@CraneSoftwrights.com</email>
       </othercredit>
     </authorgroup>
     <pubdate>&pubdate;</pubdate>
@@ -484,7 +480,7 @@
         <para>The terms <emphasis>Core Component (CC), Basic Core Component (BCC), Aggregate Core Component (ACC), Association Core Component (ASCC), Business Information Entity (BIE), Basic Business Information Entity (BBIE),</emphasis> and <emphasis>Aggregate Business Information Entity
             (ABIE)</emphasis> are used in this specification with the meanings given in <xref linkend="ccts"/>.</para>
         <para>The terms <emphasis>Object Class, Property Term, Representation Term,</emphasis> and <emphasis>Qualifier</emphasis> are used in this specification with the meanings given in <xref linkend="iso11179"/>.</para>
-        <para>Within the normative text of this specification, the terms "shall", "shall not", "should", "should not", "may" and “need not” are to be interpreted as described in Annex H of <xref linkend="ISOIEC_Directives"/>.</para>
+        <para>Within the normative text of this specification, the terms "shall", "shall not", "should", "should not" and "may" are to be interpreted as described in Annex H of <xref linkend="ISOIEC_Directives"/>.</para>
       </section>
       <section id="S-SYMBOLS-AND-ABBREVIATED-TERMS" role="symbols">
         <title>Symbols and Abbreviated Terms</title>
@@ -721,7 +717,7 @@
         <para>All information items in a UBL document are specified by the sender either as they are valued or as they are determined by some manner of a calculation model. For examples, an element may contain a fixed value, such as a name, or may contain a calculated value, such as one that is
           derived as the sum of other elements’ values. The way a value is established or perhaps based upon a calculation model may or may not be documented by the sender. This imposes obligations on the sender when creating the UBL.</para>
         <para>All fixed and calculated values will be manifest in the UBL instance. The receiver cannot presume to know that the sender has omitted an absent value as an assumption or as an indication of any kind that is pertinent to how the information is processed. Moreover, the sender cannot rely
-          on the receiver deriving absent values from received values. The onus is on the sender to include all information, such as all pertinent indications and all relevant sums or calculations. The receiver need not make any assumptions nor perform any computations whatsoever when dealing with
+          on the receiver deriving absent values from received values. The onus is on the sender to include all information, such as all pertinent indications and all relevant sums or calculations. The receiver must not be required to make any assumptions nor perform any computations whatsoever when dealing with
           the sender’s information.</para>
         <para>An example receiver application is a print facility that can print any instance of a given UBL document type without having to perform any calculations nor need even know the underlying calculation model.</para>
       </section>
@@ -2061,7 +2057,7 @@
                 <para>Partial Despatch&#8212;advising the Recipient and/or Buyer that the items on the order will be, or are being, partially delivered in a consignment on a given date.</para>
               </listitem>
             </itemizedlist>
-            <para>Despatch Lines of the Despatch Advice need not correspond one-to-one with Order Lines, and are linked by a reference. The information structure of the Despatch Advice may result in multiple Despatch Lines from one Order Line. Equally, partial despatch may result in some Order Lines
+            <para>Despatch Lines of the Despatch Advice do not have to correspond one-to-one with Order Lines, and are linked by a reference. The information structure of the Despatch Advice may result in multiple Despatch Lines from one Order Line. Equally, partial despatch may result in some Order Lines
               not being matched by any Line in a Despatch Advice.</para>
             <para>Within a Despatch Advice, an Item may also indicate the Country of Origin and the Hazardous nature of the Item.</para>
           </section>
@@ -4130,7 +4126,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <bibliolist id="normbibl">
         <bibliomixed id="ISOIEC_Directives">
           <abbrev condition="oasis">ISO/IEC Directives</abbrev>
-          <citetitle>ISO/IEC Directives, Part 2 (Ninth Edition) Rules for the structure and drafting of International Standards, International Organization for Standardization and International Electrotechnical Commission, 2021. <ulink
+          <citetitle>ISO/IEC Directives, Part 2 (Ninth edition) Principles and rules for the structure and drafting of ISO and IEC documents, International Organization for Standardization and International Electrotechnical Commission, 2021.<ulink
               url="https://www.iso.org/sites/directives/current/part2/index.xhtml">https://www.iso.org/sites/directives/current/part2/index.xhtml</ulink></citetitle>
         </bibliomixed>
         <bibliomixed id="b_XAdES">
