@@ -32,7 +32,7 @@
 	<!ENTITY this-loc "https://docs.oasis-open.org/ubl/&stage;-UBL-&version;">
 	<!ENTITY previous-loc "https://docs.oasis-open.org/ubl/&pstage;-UBL-&psversion;">
 	<!ENTITY latest-loc "https://docs.oasis-open.org/ubl">
-	<!ENTITY pubdate "28 January 2023">
+	<!ENTITY pubdate "31 January 2023">
 	<!--remove time from pub date-->
 	<!ENTITY pubyear "2023">
 	<!ENTITY pubdate-iso "ccyy-mm-dd">
@@ -83,14 +83,20 @@
 		</releaseinfo>
     <authorgroup>
       <editor>
-        <firstname>G. Ken</firstname>
-        <surname>Holman</surname>
+        <firstname>Kenneth</firstname>
+        <surname>Bengtsson</surname>
         <affiliation>
-          <orgname>
-            <ulink url="http://www.CraneSoftwrights.com/links/info-ubl21.htm" conformance="skip">Crane Softwrights Ltd.</ulink>
-          </orgname>
+          <orgname>Individual</orgname>
         </affiliation>
-        <email>gkholman@CraneSoftwrights.com</email>
+        <email>kbengtsson@efact.pe</email>
+      </editor>
+      <editor>
+        <firstname>Kees</firstname>
+        <surname>Duvekot</surname>
+        <affiliation>
+          <orgname>RFS Holland Holding B.V.</orgname>
+        </affiliation>
+        <email>kduvekot@wehkamp.nl</email>
       </editor>
       <othercredit>
         <firstname>Kenneth</firstname>
@@ -99,16 +105,6 @@
           <orgname>Individual</orgname>
         </affiliation>
         <email>kbengtsson@efact.pe</email>
-      </othercredit>
-      <othercredit>
-        <firstname>G. Ken</firstname>
-        <surname>Holman</surname>
-        <affiliation>
-          <orgname>
-            <ulink url="http://www.CraneSoftwrights.com/links/info-ubl21.htm" conformance="skip">Crane Softwrights Ltd.</ulink>
-          </orgname>
-        </affiliation>
-        <email>gkholman@CraneSoftwrights.com</email>
       </othercredit>
     </authorgroup>
     <pubdate>&pubdate;</pubdate>
@@ -484,7 +480,7 @@
         <para>The terms <emphasis>Core Component (CC), Basic Core Component (BCC), Aggregate Core Component (ACC), Association Core Component (ASCC), Business Information Entity (BIE), Basic Business Information Entity (BBIE),</emphasis> and <emphasis>Aggregate Business Information Entity
             (ABIE)</emphasis> are used in this specification with the meanings given in <xref linkend="ccts"/>.</para>
         <para>The terms <emphasis>Object Class, Property Term, Representation Term,</emphasis> and <emphasis>Qualifier</emphasis> are used in this specification with the meanings given in <xref linkend="iso11179"/>.</para>
-        <para>Within the normative text of this specification, the terms "shall", "shall not", "should", "should not", "may" and “need not” are to be interpreted as described in Annex H of <xref linkend="ISOIEC_Directives"/>.</para>
+        <para>Within the normative text of this specification, the terms "shall", "shall not", "should", "should not" and "may" are to be interpreted as described in Annex H of <xref linkend="ISOIEC_Directives"/>.</para>
       </section>
       <section id="S-SYMBOLS-AND-ABBREVIATED-TERMS" role="symbols">
         <title>Symbols and Abbreviated Terms</title>
@@ -721,7 +717,7 @@
         <para>All information items in a UBL document are specified by the sender either as they are valued or as they are determined by some manner of a calculation model. For examples, an element may contain a fixed value, such as a name, or may contain a calculated value, such as one that is
           derived as the sum of other elements’ values. The way a value is established or perhaps based upon a calculation model may or may not be documented by the sender. This imposes obligations on the sender when creating the UBL.</para>
         <para>All fixed and calculated values will be manifest in the UBL instance. The receiver cannot presume to know that the sender has omitted an absent value as an assumption or as an indication of any kind that is pertinent to how the information is processed. Moreover, the sender cannot rely
-          on the receiver deriving absent values from received values. The onus is on the sender to include all information, such as all pertinent indications and all relevant sums or calculations. The receiver need not make any assumptions nor perform any computations whatsoever when dealing with
+          on the receiver deriving absent values from received values. The onus is on the sender to include all information, such as all pertinent indications and all relevant sums or calculations. The receiver must not be required to make any assumptions nor perform any computations whatsoever when dealing with
           the sender’s information.</para>
         <para>An example receiver application is a print facility that can print any instance of a given UBL document type without having to perform any calculations nor need even know the underlying calculation model.</para>
       </section>
@@ -2061,7 +2057,7 @@
                 <para>Partial Despatch&#8212;advising the Recipient and/or Buyer that the items on the order will be, or are being, partially delivered in a consignment on a given date.</para>
               </listitem>
             </itemizedlist>
-            <para>Despatch Lines of the Despatch Advice need not correspond one-to-one with Order Lines, and are linked by a reference. The information structure of the Despatch Advice may result in multiple Despatch Lines from one Order Line. Equally, partial despatch may result in some Order Lines
+            <para>Despatch Lines of the Despatch Advice do not have to correspond one-to-one with Order Lines, and are linked by a reference. The information structure of the Despatch Advice may result in multiple Despatch Lines from one Order Line. Equally, partial despatch may result in some Order Lines
               not being matched by any Line in a Despatch Advice.</para>
             <para>Within a Despatch Advice, an Item may also indicate the Country of Origin and the Hazardous nature of the Item.</para>
           </section>
@@ -4130,7 +4126,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <bibliolist id="normbibl">
         <bibliomixed id="ISOIEC_Directives">
           <abbrev condition="oasis">ISO/IEC Directives</abbrev>
-          <citetitle>ISO/IEC Directives, Part 2 (Ninth Edition) Rules for the structure and drafting of International Standards, International Organization for Standardization and International Electrotechnical Commission, 2021. <ulink
+          <citetitle>ISO/IEC Directives, Part 2 (Ninth edition) Principles and rules for the structure and drafting of ISO and IEC documents, International Organization for Standardization and International Electrotechnical Commission, 2021.<ulink
               url="https://www.iso.org/sites/directives/current/part2/index.xhtml">https://www.iso.org/sites/directives/current/part2/index.xhtml</ulink></citetitle>
         </bibliomixed>
         <bibliomixed id="b_XAdES">
@@ -5018,13 +5014,13 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
       <para>
         <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
-        </literal> will be found at line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1709</ulink> and seen to contain a number of possible BBIE children, all of them optional; and the ASBIE <literal>
+        </literal> will be found at line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1760</ulink> and seen to contain a number of possible BBIE children, all of them optional; and the ASBIE <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
         </literal> in <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
         </literal> therefore has this structure, too. From this one could conclude that instantiations of the <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
-        </literal> structure (there are more than 50 of them in UBL) might not contain any of the seven optional BBIE elements specified after line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1709</ulink>,
+        </literal> structure (there are more than 50 of them in UBL) might not contain any of the seven optional BBIE elements specified after line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1760</ulink>,
         and indeed the corresponding declaration of the complex type <literal>PeriodType</literal> in the CAC schema (<literal>
           <ulink url="xsd/common/UBL-CommonAggregateComponents-&version;.xsd">xsd/common/UBL-CommonAggregateComponents-&version;.xsd</ulink>
         </literal>) shows that an empty <literal>
@@ -5060,24 +5056,24 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-CustomerParty.Details" conformance="skip" role="DEN-Name" remap="Customer Party. Details">CustomerParty</ulink>
         </literal> ABIE. Checking in the Common Library, it is seen that both <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-SupplierParty.Details" conformance="skip" role="DEN-Name" remap="Supplier Party. Details">SupplierParty</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-SupplierParty.Details" conformance="skip" role="DEN-Row" remap="Supplier Party. Details">2348</ulink> of the Common Library) and <literal>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-SupplierParty.Details" conformance="skip" role="DEN-Row" remap="Supplier Party. Details">2418</ulink> of the Common Library) and <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-CustomerParty.Details" conformance="skip" role="DEN-Name" remap="Customer Party. Details">CustomerParty</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-CustomerParty.Details" conformance="skip" role="DEN-Row" remap="Customer Party. Details">640</ulink> of the Common Library) can contain an ASBIE named <literal>Party</literal> (as shown in lines <ulink
-          url="mod/summary/reports/UBL-Invoice-&version;.html#Table-SupplierParty.Party" conformance="skip" role="DEN-Row" remap="Supplier Party. Party">2352</ulink> and <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-CustomerParty.Party" conformance="skip" role="DEN-Row"
-          remap="Customer Party. Party">644</ulink>, respectively) and that each <literal>Party</literal> ASBIE is an instantiation of the <literal>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-CustomerParty.Details" conformance="skip" role="DEN-Row" remap="Customer Party. Details">646</ulink> of the Common Library) can contain an ASBIE named <literal>Party</literal> (as shown in lines <ulink
+          url="mod/summary/reports/UBL-Invoice-&version;.html#Table-SupplierParty.Party" conformance="skip" role="DEN-Row" remap="Supplier Party. Party">2422</ulink> and <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-CustomerParty.Party" conformance="skip" role="DEN-Row"
+          remap="Customer Party. Party">650</ulink>, respectively) and that each <literal>Party</literal> ASBIE is an instantiation of the <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.Details" conformance="skip" role="DEN-Name" remap="Party. Details">Party</ulink>
-        </literal> ABIE (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.Details" conformance="skip" role="DEN-Row" remap="Party. Details">1597</ulink>). Therefore both parties have the same structure (the BBIEs and ASBIEs following line <ulink
-          url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.Details" conformance="skip" role="DEN-Row" remap="Party. Details">1597</ulink>). Thus <literal>
+        </literal> ABIE (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.Details" conformance="skip" role="DEN-Row" remap="Party. Details">1636</ulink>). Therefore both parties have the same structure (the BBIEs and ASBIEs following line <ulink
+          url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.Details" conformance="skip" role="DEN-Row" remap="Party. Details">1636</ulink>). Thus <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Accounting_SupplierParty.SupplierParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Supplier Party. Supplier Party">AccountingSupplierParty</ulink>
         </literal> and <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Accounting_CustomerParty.CustomerParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Customer Party. Customer Party">AccountingCustomerParty</ulink>
         </literal> share the information components common to parties in general and differ in the information specific to suppliers and customers. Parties commonly have a <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.PartyName" conformance="skip" role="DEN-Name" remap="Party. Party Name">PartyName</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.PartyName" conformance="skip" role="DEN-Row" remap="Party. Party Name">1605</ulink>) that derives (the Associated Object Class column) from the ABIE <literal>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.PartyName" conformance="skip" role="DEN-Row" remap="Party. Party Name">1644</ulink>) that derives (the Associated Object Class column) from the ABIE <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Details" conformance="skip" role="DEN-Name" remap="Party Name. Details">PartyName</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Details" conformance="skip" role="DEN-Row" remap="Party Name. Details">1637</ulink>), which is a wrapper for the BBIE <literal>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Details" conformance="skip" role="DEN-Row" remap="Party Name. Details">1680</ulink>), which is a wrapper for the BBIE <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Name" conformance="skip" role="DEN-Name" remap="Party Name. Name">Name</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Name" conformance="skip" role="DEN-Row" remap="Party Name. Name">1638</ulink>). A conforming piece of the document instance might therefore look like this: </para>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Name" conformance="skip" role="DEN-Row" remap="Party Name. Name">1681</ulink>). A conforming piece of the document instance might therefore look like this: </para>
       <programlisting role="font-size-92%"><![CDATA[  <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyName>
@@ -5104,7 +5100,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         </literal> first, it is found in the Common Library to be derived from <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Details" conformance="skip" role="DEN-Name" remap="Monetary Total. Details">MonetaryTotal</ulink>
         </literal> (line <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Details" conformance="skip" role="DEN-Row" remap="Monetary Total. Details">1518</ulink>), which has a mandatory <ulink
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Details" conformance="skip" role="DEN-Row" remap="Monetary Total. Details">1549</ulink>), which has a mandatory <ulink
             url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
         </literal> BBIE. A corresponding example instance fragment might be therefore be constructed as follows:</para>
       <programlisting role="font-size-92%"><![CDATA[  <cac:LegalMonetaryTotal>
@@ -5117,7 +5113,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Legal_MonetaryTotal.MonetaryTotal" conformance="skip" role="DEN-Name" remap="Invoice. Legal_ Monetary Total. Monetary Total">LegalMonetaryTotal</ulink>
         </literal> element shown above except the <literal>currencyID</literal> attribute on <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
-        </literal>, which does not appear explicitly in the model line for that BBIE (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Row" remap="Monetary Total. Payable_ Amount. Amount">1527</ulink>). This is
+        </literal>, which does not appear explicitly in the model line for that BBIE (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Row" remap="Monetary Total. Payable_ Amount. Amount">1560</ulink>). This is
         because UBL does not define the primitive data types upon which the model is built; instead it uses standard data type definitions from <xref linkend="ccts"/> and <xref linkend="xsd2"/>. In the case of <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
         </literal>, the CCTS data type (the Data Type column) is &#8220;Amount. Type&#8221; (the space is part of the name), and that type is defined in <xref linkend="ccts"/> itself (Table 8-1 of the CCTS 2.01 specification). There it will be seen that &#8220;Amount. Type&#8221; has two
@@ -6819,33 +6815,42 @@ No code list validation errors.</programlisting>
     <title>Acknowledgements</title>
     <para>The OASIS UBL Technical Committee thanks SyncroSoft for its contribution of oXygen licenses used in DocBook authoring of UBL documentation; Réalta Online Publishing Solutions for support in generating PDF and HTML documents from DocBook originals; and Crane Softwrights for the generation
       of the summary reports.</para>
-    <para>The following persons and companies participated as members of the OASIS UBL Technical Committee during the years of its development (2017–&pubyear;).</para>
+    <para>The following persons and companies participated as members of the OASIS UBL Technical Committee during the years of its development (2021–&pubyear;).</para>
     <simplelist lang="none">
       <member>Todd Albers, Federal Reserve Bank of Minneapolis</member>
+      <member>Poul Andersen, ClearView Trade</member>
+      <member>Dinesh Balasubramanian, IBM</member>
+      <member>Rui Barros, Individual</member>
       <member>Oriol Bausa Peris, Individual</member>
       <member>Kenneth Bengtsson, Individual</member>
-      <member>Erlend Klakegg Bergheim, Difi-Agency for Public Management and <phrase lang="none">eGovernment</phrase>
-      </member>
-      <member>Martijn van den Boogaard, Individual</member>
-      <member>Peter Borresen, ClearView Trade</member>
+      <member>Erlend Klakegg Bergheim, The Norwegian Agency for Public and Financial Management (DFO)</member>
+      <member>Peter Borresen, ebConnect</member>
       <member>Jon Bosak, Individual</member>
+      <member>Mikkel Brun, Tradeshift</member>
       <member>Andrea Caccia, Individual</member>
-      <member>Roberto Cisternino, Individual</member>
+      <member>William Chan, Individual</member>
       <member>Ger Clancy, IBM</member>
+      <member>Paul Donohoe, Publications Office of the European Union</member>
       <member>Kees Duvekot, RFS Holland Holding B.V.</member>
+      <member>Pim van der Eijk, Sonnenglanz Consulting</member>
       <member>Martin Forsberg, Swedish Association of Local Authorities &amp; Regions</member>
-      <member>Cécile Guasch, Individual</member>
+      <member>Michael Grimley, US Department of Defense (DoD)</member>
+      <member>Cecile Guasch, Individual</member>
       <member>Philip Helger, Individual</member>
-      <member>G. Ken Holman, Crane Softwrights Ltd.</member>
+      <member>Ken Holman, Crane Softwrights Ltd.</member>
       <member>Yves Jordan, Publications Office of the European Union</member>
-      <member>Matt Lewis, Individual</member>
+      <member>Wim Kok, Logius</member>
+      <member>Prasad Kona, IBM</member>
+      <member>Kari Korpela, Individual</member>
       <member>Ole Madsen, Danish Business Authority</member>
-      <member>Andre Mitchell, Individual</member>
+      <member>Marc Malone, IBM</member>
       <member>Natalie Muric, Publications Office of the European Union</member>
       <member>Levine Naidoo, IBM</member>
-      <member>Olli Pajari, Individual</member>
-      <member>Enric Staromiejski Torregrosa, everis, S.L.U.</member>
+      <member>Yasuyuki Nishioka, PSLX consortium</member>
+      <member>Amit Saini, IBM</member>
+      <member>Audun Vennesland, SINTEF</member>
       <member>Matt Vickers, Xero</member>
+      <member>Huang Yong, Tradeshift</member>
     </simplelist>
   </appendix>
   <appendix id="A-NOTICES" condition="oasis">
