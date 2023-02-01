@@ -75,3 +75,4 @@ sh validate.sh ../xsdrt/maindoc/UBL-TransportationStatus-$UBLversion.xsd ../xml/
 sh validate.sh ../xsdrt/maindoc/UBL-TransportationStatusRequest-$UBLversion.xsd ../xml/UBL-TransportationStatusRequest-2.1-Example.xml
 sh validate.sh ../xsdrt/maindoc/UBL-Waybill-$UBLversion.xsd ../xml/UBL-Waybill-2.0-Example-International.xml
 sh validate.sh ../xsdrt/maindoc/UBL-WeightStatement-$UBLversion.xsd ../xml/UBL-WeightStatement-2.2-Example.xml
+sh validate.sh ../xsdrt/maindoc/UBL-PurchaseOrder-$UBLversion.xsd ../xml/UBL-PurchaseOrder-2.4-Example.xml
