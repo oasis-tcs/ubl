@@ -1133,4 +1133,20 @@
 			<example>UBL-CommonTransportationReport-2.3-Example.xml</example>
 		</examples>
 	</schema>
+	<!-- 2.4 document type-->
+	<schema>
+		<name>Business Information</name>
+		<description>A document used to provide information about a business.</description>
+		<submitterRole>Sender Party</submitterRole>
+		<receiverRole>ReceiverParty</receiverRole>
+	</schema>
+	<schema>
+		<name>Purchase Receipt</name>
+		<description>A receipt for a purchase made with cash or cash equivalents.</description>
+		<submitterRole>Accounting Supplier Party</submitterRole>
+		<receiverRole>Accounting Customer Party</receiverRole>
+		<examples>
+			<example>UBL-PurchaseReceipt-2.4-Example.xml</example>
+		</examples>
+	</schema>
 </schemadocs>
