@@ -8,6 +8,7 @@ directory.
 <!--a total of 93 document types-->
 <legalnotice role="namespaces">
    <title>Declared XML Namespaces</title>
+  <para>
    <simplelist lang="none">
       <member>
         urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2 </member>
@@ -123,4 +124,5 @@ directory.
       <member>urn:oasis:names:specification:ubl:schema:xsd:Waybill-2</member>
       <member>urn:oasis:names:specification:ubl:schema:xsd:WeightStatement-2</member>
    </simplelist>
+  </para>
 </legalnotice>
