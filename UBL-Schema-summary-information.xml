@@ -1137,12 +1137,14 @@
 	<schema>
 		<name>Business Information</name>
 		<description>A document used to provide information about a business.</description>
+		<processes/>
 		<submitterRole>Sender Party</submitterRole>
 		<receiverRole>ReceiverParty</receiverRole>
 	</schema>
 	<schema>
 		<name>Purchase Receipt</name>
 		<description>A receipt for a purchase made with cash or cash equivalents.</description>
+		<processes/>
 		<submitterRole>Accounting Supplier Party</submitterRole>
 		<receiverRole>Accounting Customer Party</receiverRole>
 		<examples>
