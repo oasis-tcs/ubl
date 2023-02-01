@@ -99,12 +99,12 @@
 		<cbc:PaymentTerminalID>7654321</cbc:PaymentTerminalID>
 	</cac:Payment>
 	<cac:PaymentMeans>
-		<cbc:PaymentMeansCode listID="UNCL4461">10</cbc:PaymentMeansCode>
+		<cbc:PaymentMeansCode listID="UN/ECE 4461">10</cbc:PaymentMeansCode>
 		<cbc:PaymentMeansDescription>Cash</cbc:PaymentMeansDescription>
 		<cbc:PaymentID>1</cbc:PaymentID>
 	</cac:PaymentMeans>
 	<cac:PaymentMeans>
-		<cbc:PaymentMeansCode listID="UNCL4461">54</cbc:PaymentMeansCode>
+		<cbc:PaymentMeansCode listID="UN/ECE 4461">54</cbc:PaymentMeansCode>
 		<cbc:PaymentMeansDescription>Credit card</cbc:PaymentMeansDescription>
 		<cbc:PaymentID>2</cbc:PaymentID>
 		<cac:CardAccount>
