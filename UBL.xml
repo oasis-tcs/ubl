@@ -4733,7 +4733,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           <!--reviewtext-->
           <para>
             <emphasis role="bold">Added two new UBL 2.4 document types: </emphasis>
-	    <link linkend="S-BUSINESS-INFORMATION-SCHEMA">Business Information</link><link linkend="S-PURCHASE-RECEIPT-SCHEMA">Purchase Receipt</link>
+	    <link linkend="S-BUSINESS-INFORMATION-SCHEMA">Business Information</link>, <link linkend="S-PURCHASE-RECEIPT-SCHEMA">Purchase Receipt</link>
 	  </para>
         </blockquote>
       </section>
