@@ -6,9 +6,8 @@
 -->
 <!DOCTYPE schemadocs [
 	<!ELEMENT schemadocs (schema+)>
-	<!ELEMENT schema (name, description, processes, submitterRole, receiverRole, examples)>
+	<!ELEMENT schema (name, processes, submitterRole, receiverRole, examples)>
 	<!ELEMENT name (#PCDATA)>
-	<!ELEMENT description (#PCDATA | link)*>
 	<!ELEMENT process (#PCDATA)>
 	<!ELEMENT link (#PCDATA)>
 	<!ATTLIST link
@@ -26,7 +25,6 @@
 <schemadocs>
    <schema>
       <name>Application Response</name>
-      <description>A document to indicate the application's response to a transaction. This may be a business response initiated by a user or a technical response sent automatically by an application.</description>
       <processes/>
       <submitterRole>Sender</submitterRole>
       <receiverRole>Receiver</receiverRole>
@@ -34,7 +32,6 @@
    </schema>
    <schema>
       <name>Attached Document</name>
-      <description>A wrapper that allows a document of any kind to be packaged with the UBL document that references it.</description>
       <processes/>
       <submitterRole>Sender</submitterRole>
       <receiverRole>Receiver</receiverRole>
@@ -42,7 +39,6 @@
    </schema>
    <schema>
       <name>Awarded Notification</name>
-      <description>The document used to communicate a contract award to the winner.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -52,7 +48,6 @@
    </schema>
    <schema>
       <name>Bill Of Lading</name>
-      <description>A document issued by the party who acts as an agent for a transportation carrier or other agents to the party who gives instructions for the transportation services (shipper, consignor, etc.) stating the details of the transportation, charges, and terms and conditions under which the transportation service is provided. The party issuing this document does not necessarily provide the physical transportation service. The information in the Bill of Lading corresponds to the information on the Forwarding Instructions. It is used for any mode of transport. A Bill of Lading can serve as a contractual document between the parties for the transportation service. The document evidences a contract of carriage by sea and the acceptance of responsibility for the goods by the carrier, by which the carrier undertakes to deliver the goods against surrender of the document. A provision in the document that the goods are to be delivered to the order of a named person, or to order, or to bearer, constitutes such an undertaking.</description>
       <processes>
          <process>Transport</process>
       </processes>
@@ -62,7 +57,6 @@
    </schema>
    <schema>
       <name>Call For Tenders</name>
-      <description>A document used by a Contracting Party to define a procurement project to buy goods, services, or works during a specified period.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -72,7 +66,6 @@
    </schema>
    <schema>
       <name>Catalogue</name>
-      <description>A document that describes items, prices, and price validity.</description>
       <processes>
          <process>Catalogue</process>
          <process>Create Catalogue</process>
@@ -92,7 +85,6 @@
    </schema>
    <schema>
       <name>Catalogue Deletion</name>
-      <description>A document used to cancel an entire Catalogue.</description>
       <processes>
          <process>Catalogue</process>
       </processes>
@@ -102,7 +94,6 @@
    </schema>
    <schema>
       <name>Catalogue Item Specification Update</name>
-      <description>A document used to update information (e.g., technical descriptions and properties) about Items in an existing Catalogue.</description>
       <processes>
          <process>Catalogue</process>
       </processes>
@@ -112,7 +103,6 @@
    </schema>
    <schema>
       <name>Catalogue Pricing Update</name>
-      <description>A document used to update information about prices in an existing Catalogue.</description>
       <processes>
          <process>Catalogue</process>
       </processes>
@@ -122,7 +112,6 @@
    </schema>
    <schema>
       <name>Catalogue Request</name>
-      <description>A document used to request a Catalogue.</description>
       <processes>
          <process>Catalogue</process>
       </processes>
@@ -132,7 +121,6 @@
    </schema>
    <schema>
       <name>Certificate Of Origin</name>
-      <description>A document that describes the Certificate of Origin.</description>
       <processes>
          <process>Certification of Origin of Goods</process>
       </processes>
@@ -142,7 +130,6 @@
    </schema>
    <schema>
       <name>Contract Award Notice</name>
-      <description>A document published by a Contracting Party to announce the awarding of a procurement project.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -152,7 +139,6 @@
    </schema>
    <schema>
       <name>Contract Notice</name>
-      <description>A document used by a Contracting party to announce a project to buy goods, services, or works.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -162,7 +148,6 @@
    </schema>
    <schema>
       <name>Credit Note</name>
-      <description>A document used to specify credits due to the Debtor from the Creditor.</description>
       <processes>
          <process>Billing</process>
       </processes>
@@ -175,7 +160,6 @@
    </schema>
    <schema>
       <name>Debit Note</name>
-      <description>A document used to specify debts incurred by the Debtor.</description>
       <processes>
          <process>Billing</process>
       </processes>
@@ -187,7 +171,6 @@
    </schema>
    <schema>
       <name>Despatch Advice</name>
-      <description>A document used to describe the despatch or delivery of goods and services.</description>
       <processes>
          <process>Logistics</process>
       </processes>
@@ -199,7 +182,6 @@
    </schema>
    <schema>
       <name>Document Status</name>
-      <description>A document used to provide information about the status of a collaboration/process associated with a document.</description>
       <processes/>
       <submitterRole>Party currently controlling Status of the collaboration</submitterRole>
       <receiverRole>Party requesting Status on collaboration</receiverRole>
@@ -207,7 +189,6 @@
    </schema>
    <schema>
       <name>Document Status Request</name>
-      <description>A document used to request the status of a collaboration/process associated with a document.</description>
       <processes/>
       <submitterRole>Party requesting Status on collaboration</submitterRole>
       <receiverRole>Party currently controlling Status of the collaboration</receiverRole>
@@ -215,7 +196,6 @@
    </schema>
    <schema>
       <name>Exception Criteria</name>
-      <description>A document used to specify the thresholds for forecast variance, product activity, and performance history beyond which exceptions will be triggered.</description>
       <processes>
          <process>Collaborative Planning, Forecasting, and Replenishment</process>
       </processes>
@@ -227,7 +207,6 @@
    </schema>
    <schema>
       <name>Exception Notification</name>
-      <description>A document used to notify an exception in forecast variance, product activity, or performance history.</description>
       <processes>
          <process>Collaborative Planning, Forecasting, and Replenishment</process>
       </processes>
@@ -239,7 +218,6 @@
    </schema>
    <schema>
       <name>Forecast</name>
-      <description>A document used to forecast sales or orders.</description>
       <processes>
          <process>Collaborative Planning, Forecasting, and Replenishment</process>
       </processes>
@@ -251,7 +229,6 @@
    </schema>
    <schema>
       <name>Forecast Revision</name>
-      <description>A document used to revise a Forecast.</description>
       <processes>
          <process>Collaborative Planning, Forecasting, and Replenishment</process>
       </processes>
@@ -263,7 +240,6 @@
    </schema>
    <schema>
       <name>Forwarding Instructions</name>
-      <description>A document issued to a forwarder, giving instructions regarding the action to be taken for the forwarding of goods described therein. Forwarding Instructions is used by any party who gives instructions for the transportation services required for a consignment of goods to any party who is contracted to provide the transportation services. The parties who issue this document are commonly referred to as the shipper or consignor, while the parties who receive this document are forwarders, carriers, shipping agents, etc. This document may also be issued by a forwarder or shipping agent in its capacity as a shipper. This document can be used to arrange for the transportation (1) of different types of goods or cargoes; (2) whether containerized or non-containerized; (3) through different modes of transport including multi-modal; and (4) from any origin to any destination.</description>
       <processes>
          <process>Transport</process>
       </processes>
@@ -275,7 +251,6 @@
    </schema>
    <schema>
       <name>Freight Invoice</name>
-      <description>A document stating the charges incurred for a logistics service.</description>
       <processes>
          <process>Freight Billing</process>
       </processes>
@@ -287,7 +262,6 @@
    </schema>
    <schema>
       <name>Fulfilment Cancellation</name>
-      <description>A document used to cancel an entire fulfilment document (Despatch Advice or Receipt Advice).</description>
       <processes>
          <process>Logistics</process>
       </processes>
@@ -299,7 +273,6 @@
    </schema>
    <schema>
       <name>Goods Item Itinerary</name>
-      <description>A document providing details relating to a transport service, such as transport movement, identification of equipment and goods, subcontracted service providers, etc.</description>
       <processes>
          <process>Intermodal Freight Management</process>
       </processes>
@@ -311,7 +284,6 @@
    </schema>
    <schema>
       <name>Guarantee Certificate</name>
-      <description>A document to notify the deposit of a bid bond guarantee.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -321,7 +293,6 @@
    </schema>
    <schema>
       <name>Instruction For Returns</name>
-      <description>A document used to initiate a return of goods. The producer is requesting the return of products that are not selling well, either to use in other places or to free up rack or shelf space.</description>
       <processes>
          <process>Cyclic Replenishment Program (CRP)</process>
       </processes>
@@ -333,7 +304,6 @@
    </schema>
    <schema>
       <name>Inventory Report</name>
-      <description>A report on the quantities of each item that are, or will be, in stock. This document is sent by a Buyer (for example a retailer) to a Seller (for example a producer).</description>
       <processes>
          <process>Cyclic Replenishment Program (CRP)</process>
       </processes>
@@ -345,7 +315,6 @@
    </schema>
    <schema>
       <name>Invoice</name>
-      <description>A document used to request payment.</description>
       <processes>
          <process>Billing</process>
       </processes>
@@ -359,7 +328,6 @@
    </schema>
    <schema>
       <name>Item Information Request</name>
-      <description>A document used to request product activity, forecast, or performance data.</description>
       <processes>
          <process>Collaborative Planning, Forecasting, and Replenishment</process>
       </processes>
@@ -369,7 +337,6 @@
    </schema>
    <schema>
       <name>Order</name>
-      <description>A document used to order goods and services.</description>
       <processes>
          <process>Ordering (post-award)</process>
       </processes>
@@ -383,7 +350,6 @@
    </schema>
    <schema>
       <name>Order Cancellation</name>
-      <description>A document used to cancel an entire Order.</description>
       <processes>
          <process>Ordering (post-award)</process>
          <process>Logistics</process>
@@ -396,7 +362,6 @@
    </schema>
    <schema>
       <name>Order Change</name>
-      <description>A document used to specify changes to an existing Order.</description>
       <processes>
          <process>Ordering (post-award)</process>
          <process>Logistics</process>
@@ -409,7 +374,6 @@
    </schema>
    <schema>
       <name>Order Response</name>
-      <description>A document used to indicate detailed acceptance or rejection of an Order or to make a counter-offer.</description>
       <processes>
          <process>Ordering (post-award)</process>
       </processes>
@@ -421,7 +385,6 @@
    </schema>
    <schema>
       <name>Order Response Simple</name>
-      <description>A document used to indicate simple acceptance or rejection of an entire Order.</description>
       <processes>
          <process>Ordering (post-award)</process>
       </processes>
@@ -434,7 +397,6 @@
    </schema>
    <schema>
       <name>Packing List</name>
-      <description>A document describing how goods are packed.</description>
       <processes>
          <process>Transport</process>
       </processes>
@@ -444,7 +406,6 @@
    </schema>
    <schema>
       <name>Prior Information Notice</name>
-      <description>A document used by a contracting party to declare the intention to buy goods, services, or works during a specified period.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -457,7 +418,6 @@
    </schema>
    <schema>
       <name>Product Activity</name>
-      <description>A document reporting the movement of goods at specified retail locations for inventory tracking purposes.</description>
       <processes>
          <process>Collaborative Planning, Forecasting, and Replenishment</process>
          <process>Vendor Managed Inventory</process>
@@ -472,7 +432,6 @@
    </schema>
    <schema>
       <name>Quotation</name>
-      <description>A document used to quote for the provision of goods and services.</description>
       <processes>
          <process>Quotation</process>
       </processes>
@@ -485,7 +444,6 @@
    </schema>
    <schema>
       <name>Receipt Advice</name>
-      <description>A document used to describe the receipt of goods and services.</description>
       <processes>
          <process>Logistics</process>
       </processes>
@@ -497,7 +455,6 @@
    </schema>
    <schema>
       <name>Reminder</name>
-      <description>A document used to remind a customer of payments past due.</description>
       <processes>
          <process>Billing</process>
       </processes>
@@ -509,7 +466,6 @@
    </schema>
    <schema>
       <name>Remittance Advice</name>
-      <description>A document that specifies details of an actual payment.</description>
       <processes>
          <process>Payment Notification</process>
       </processes>
@@ -521,7 +477,6 @@
    </schema>
    <schema>
       <name>Request For Quotation</name>
-      <description>A document used to request a Quotation for goods and services from a Seller.</description>
       <processes>
          <process>Quotation</process>
       </processes>
@@ -534,7 +489,6 @@
    </schema>
    <schema>
       <name>Retail Event</name>
-      <description>A document used to specify basic information about retail events (such as promotions, product introductions, and community or environmental events) that affect supply or demand.</description>
       <processes>
          <process>Cyclic Replenishment Program (CRP)</process>
       </processes>
@@ -546,7 +500,6 @@
    </schema>
    <schema>
       <name>Self Billed Credit Note</name>
-      <description>A credit note created by the debtor in a self billing arrangement with a creditor; Self Billed Credit Note replaces Debit Note in such arrangements.</description>
       <processes>
          <process>Billing</process>
       </processes>
@@ -558,7 +511,6 @@
    </schema>
    <schema>
       <name>Self Billed Invoice</name>
-      <description>An Invoice document created by the Customer (rather than the Supplier) in a Self Billing relationship.</description>
       <processes>
          <process>Billing</process>
       </processes>
@@ -568,7 +520,6 @@
    </schema>
    <schema>
       <name>Statement</name>
-      <description>A document used to report the status of orders, billing, and payment. This document is a statement of account, not a summary invoice.</description>
       <processes>
          <process>Billing</process>
       </processes>
@@ -580,7 +531,6 @@
    </schema>
    <schema>
       <name>Stock Availability Report</name>
-      <description>A report on the quantities of each item that are, or will be, in stock. This document is sent by a Seller (for example a producer) to a Buyer (for example a retailer).</description>
       <processes>
          <process>Cyclic Replenishment Program (CRP)</process>
       </processes>
@@ -592,7 +542,6 @@
    </schema>
    <schema>
       <name>Tender</name>
-      <description>A document whereby an economic operator (the tenderer) makes a formal offer (the tender) to a contracting authority to execute an order for the supply or purchase of goods, or for the execution of work, according to the terms of a proposed contract.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -602,7 +551,6 @@
    </schema>
    <schema>
       <name>Tender Receipt</name>
-      <description>A document sent by a contracting party to an economic operator acknowledging receipt of a Tender.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -612,7 +560,6 @@
    </schema>
    <schema>
       <name>Tenderer Qualification</name>
-      <description>A document declaring the qualifications of a tenderer.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -622,7 +569,6 @@
    </schema>
    <schema>
       <name>Tenderer Qualification Response</name>
-      <description>A document issued by a procurement organization to notify an economic operator whether it has been admitted to or excluded from the tendering process.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -632,7 +578,6 @@
    </schema>
    <schema>
       <name>Trade Item Location Profile</name>
-      <description>A document specifying trade item attributes relating to replenishment policies.</description>
       <processes>
          <process>Collaborative Planning, Forecasting, and Replenishment</process>
       </processes>
@@ -644,7 +589,6 @@
    </schema>
    <schema>
       <name>Transport Execution Plan</name>
-      <description>A document used in the negotiation of a transport service between a transport user and a transport service provider.</description>
       <processes>
          <process>Intermodal Freight Management</process>
       </processes>
@@ -656,7 +600,6 @@
    </schema>
    <schema>
       <name>Transport Execution Plan Request</name>
-      <description>A document sent by a transport user to request a transport service from a transport service provider.</description>
       <processes>
          <process>Intermodal Freight Management</process>
       </processes>
@@ -668,7 +611,6 @@
    </schema>
    <schema>
       <name>Transport Progress Status</name>
-      <description>A document sent from a Transportation Network Manager to a Transport Service Provider giving the status of the whereabouts and schedule of the transport means involved in a transport service.</description>
       <processes>
          <process>Intermodal Freight Management</process>
       </processes>
@@ -680,7 +622,6 @@
    </schema>
    <schema>
       <name>Transport Progress Status Request</name>
-      <description>A document sent from a transport service provider to a transportation network manager requesting a Transport Progress Status.</description>
       <processes>
          <process>Intermodal Freight Management</process>
       </processes>
@@ -692,7 +633,6 @@
    </schema>
    <schema>
       <name>Transport Service Description</name>
-      <description>A document sent by a transport service provider to announce the availability of a transport service.</description>
       <processes>
          <process>Intermodal Freight Management</process>
       </processes>
@@ -704,7 +644,6 @@
    </schema>
    <schema>
       <name>Transport Service Description Request</name>
-      <description>A document requesting a Transport Service Description, sent from a party with a transport demand (transport user) to a party providing transport services (transport service provider).</description>
       <processes>
          <process>Intermodal Freight Management</process>
       </processes>
@@ -716,7 +655,6 @@
    </schema>
    <schema>
       <name>Transportation Status</name>
-      <description>A document to circulate reports of transportation status or changes in status (events) among a group of participants.</description>
       <processes>
          <process>Freight Status Reporting</process>
       </processes>
@@ -728,7 +666,6 @@
    </schema>
    <schema>
       <name>Transportation Status Request</name>
-      <description>A document requesting a Transportation Status report.</description>
       <processes>
          <process>Freight Status Reporting</process>
       </processes>
@@ -740,7 +677,6 @@
    </schema>
    <schema>
       <name>Unawarded Notification</name>
-      <description>A document communicating to a tenderer that the contract has been awarded to different tenderer.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -750,7 +686,6 @@
    </schema>
    <schema>
       <name>Utility Statement</name>
-      <description>A supplement to an Invoice or Credit Note, containing information on the consumption of services provided by utility suppliers to private and public customers, including electricity, gas, water, and telephone services.</description>
       <processes>
          <process>Utility Billing</process>
       </processes>
@@ -760,7 +695,6 @@
    </schema>
    <schema>
       <name>Waybill</name>
-      <description>A transport document describing a shipment It is issued by the party who undertakes to provide transportation services, or undertakes to arrange for their provision, to the party who gives instructions for the transportation services (shipper, consignor, etc.). It states the instructions for the beneficiary and may contain the details of the transportation, charges, and terms and conditions under which the transportation service is provided.</description>
       <processes>
          <process>Transport</process>
       </processes>
@@ -773,7 +707,6 @@
    <!-- 2.2 pre-award documents-->
    <schema>
       <name>Expression Of Interest Response</name>
-      <description>An expression of interest confirmation issued by a Contracting Party in reply to an expression of interest. The purpose of this document is to inform the Economic Operator he has been registered as an interested party.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -783,7 +716,6 @@
    </schema>
    <schema>
       <name>Expression Of Interest Request</name>
-      <description>An expression of interest to a tendering process. An Economic Operator can demonstrate interest in a tendering process issuing an Expression Of Interest document to the contracting party. Upon reception, the Contracting Party registers the interest of the Economic Operator sending the relevant information for the tendering process.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -795,7 +727,6 @@
    </schema>
    <schema>
       <name>Qualification Application Request</name>
-      <description>A document issued by a procurement organization to notify an economic operator whether it has been admitted to or excluded from the tendering process.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -805,7 +736,6 @@
    </schema>
    <schema>
       <name>Qualification Application Response</name>
-      <description>A document whereby an Economic Operator (the tenderer) replies to the Qualification Application Request of the Contracting Authority.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -815,7 +745,6 @@
    </schema>
    <schema>
       <name>Tender Contract</name>
-      <description>A document published by a Contracting Party to announce the awarding of a procurement project.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -825,7 +754,6 @@
    </schema>
    <schema>
       <name>Tender Status Request</name>
-      <description>A document sent by an Economic Operator asking about the details and status of a tendering procedure.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -835,7 +763,6 @@
    </schema>
    <schema>
       <name>Tender Status</name>
-      <description>A document sent by the Contracting Party to an Economic Operator describing the status of a tendering procedure.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -845,7 +772,6 @@
    </schema>
    <schema>
       <name>Tender Withdrawal</name>
-      <description>A document sent by an Economic Operator to a Contracting Party with the intention of withdrawing a previously sent Tender document.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -855,7 +781,6 @@
    </schema>
    <schema>
       <name>Unsubscribe From Procedure Response</name>
-      <description>A document sent from a Contracting Party to the Economic Operator confirming that the latter has been unsubscribed from a tendering procedure.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -865,7 +790,6 @@
    </schema>
    <schema>
       <name>Unsubscribe From Procedure Request</name>
-      <description>A request to unsubscribe from a tendering procedure. Economic Operators can subscribe to a tendering procedure using the Expression Of Interest. Upon subscription, the Economic Operator keeps receiving relevant documentation for the tendering process. The unsubscribe to procedure document allows the Economic Operator to be removed from the list of interested parties.</description>
       <processes>
          <process>Pre-award</process>
       </processes>
@@ -876,7 +800,6 @@
    <!-- 2.2 party information exchange documents-->
    <schema>
       <name>Business Card</name>
-      <description>A document used to provide information about a business party and its business capabilities.</description>
       <processes>
          <process>Business Directory and Agreements</process>
       </processes>
@@ -888,7 +811,6 @@
    </schema>
    <schema>
       <name>Digital Capability</name>
-      <description>A document used to provide information about a business party and its digital trade capabilities.</description>
       <processes>
          <process>Business Directory and Agreements</process>
       </processes>
@@ -900,7 +822,6 @@
    </schema>
    <schema>
       <name>Digital Agreement</name>
-      <description>A document used to support business parties agreeing on a set of digital processes, terms and conditions to ensure interoperability.</description>
       <processes>
          <process>Business Directory and Agreements</process>
       </processes>
@@ -914,7 +835,6 @@
    <!-- 2.2 transport documents-->
    <schema>
       <name>Weight Statement</name>
-      <description>A document used to report weight or verified mass measurements in the transport chain.</description>
       <processes>
          <process>Transport</process>
       </processes>
@@ -927,7 +847,6 @@
    <!-- 2.2 miscellaneous documents-->
    <schema>
       <name>Enquiry</name>
-      <description>A document sent by a requestor to a responder resquesting information about a particular business process. </description>
       <processes/>
       <submitterRole>Requestor</submitterRole>
       <receiverRole>Responder</receiverRole>
@@ -935,7 +854,6 @@
    </schema>
    <schema>
       <name>Enquiry Response</name>
-      <description>A document sent by a responder to a requester answering a particular enqury.</description>
       <processes/>
       <submitterRole>Responder</submitterRole>
       <receiverRole>Requestor</receiverRole>
@@ -944,7 +862,6 @@
    <!-- 2.3 transportation documents-->
    <schema>
       <name>Export Customs Declaration</name>
-      <description>A customs declaration document for exporting goods</description>
       <processes>
          <process>Export Customs Declaration</process>
       </processes>
@@ -956,7 +873,6 @@
    </schema>
    <schema>
       <name>Import Customs Declaration</name>
-      <description>A customs declaration document for importing goods.</description>
       <processes>
          <process>Import Customs Declaration</process>
       </processes>
@@ -968,7 +884,6 @@
    </schema>
    <schema>
       <name>Transit Customs Declaration</name>
-      <description>A document that describes an import customs declaration.</description>
       <processes>
          <process>Transit Customs Declaration</process>
       </processes>
@@ -980,7 +895,6 @@
    </schema>
    <schema>
       <name>Goods Certificate</name>
-      <description>A document that describes a certificate of goods for importation and exportation</description>
       <processes>
          <process>Export Goods Certificate</process>
       </processes>
@@ -992,7 +906,6 @@
    </schema>
    <schema>
       <name>Goods Item Passport</name>
-      <description>A document providing a temporary export license, also knowned as an ATA Carnet</description>
       <processes>
          <process>Goods Item Passport (Carnet)</process>
       </processes>
@@ -1004,7 +917,6 @@
    </schema>
    <schema>
       <name>Proof Of Reexportation</name>
-      <description>A document providing a status or a proof that goods have been re-exported</description>
       <processes>
          <process>Goods Item Passport Proof of Re-exportation</process>
       </processes>
@@ -1016,7 +928,6 @@
    </schema>
    <schema>
       <name>Proof Of Reexportation Reminder</name>
-      <description>A reminder that a requested Proof of Reexportation is pending.</description>
       <processes>
          <process>Goods Item Passport Proof of Re-exportation</process>
       </processes>
@@ -1028,7 +939,6 @@
    </schema>
    <schema>
       <name>Proof Of Reexportation Request</name>
-      <description>A document requesting the status or proof that goods have been re-exported</description>
       <processes>
          <process>Goods Item Passport Proof of Re-exportation</process>
       </processes>
@@ -1040,7 +950,6 @@
    </schema>
    <schema>
       <name>Manifest</name>
-      <description>A document listing the contents, cargo, passengers and crew of an airplane, a ship, a truck or a vagon.</description>
       <processes>
          <process>Manifest</process>
       </processes>
@@ -1053,7 +962,6 @@
    </schema>
    <schema>
       <name>Common Transportation Report</name>
-      <description>A common document used for reporting transport related issues to authorities or regulators.</description>
       <processes>
          <process>Common Transportation Report</process>
       </processes>
@@ -1066,14 +974,13 @@
    <!-- 2.4 document type-->
    <schema>
       <name>Business Information</name>
-      <description>A document used to provide information about a business.</description>
       <processes/>
       <submitterRole>Sender Party</submitterRole>
       <receiverRole>ReceiverParty</receiverRole>
+      <examples/>
    </schema>
    <schema>
       <name>Purchase Receipt</name>
-      <description>A receipt for a purchase made with cash or cash equivalents.</description>
       <processes/>
       <submitterRole>Accounting Supplier Party</submitterRole>
       <receiverRole>Accounting Customer Party</receiverRole>
