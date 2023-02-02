@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PurchaseReceipt xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xmlns="urn:oasis:names:specification:ubl:schema:xsd:PurchaseReceipt-2"
- xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
- xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	xmlns="urn:oasis:names:specification:ubl:schema:xsd:PurchaseReceipt-2"
+	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 	<cbc:UBLVersionID>2.4</cbc:UBLVersionID>
 	<cbc:CustomizationID>Sample-0.9</cbc:CustomizationID>
 	<cbc:ProfileID>ShopReceipt-0.9</cbc:ProfileID>
@@ -76,42 +76,15 @@
 		<cbc:ElectronicMail>shop37@GadgetsR.us</cbc:ElectronicMail>
 	</cac:PointOfSaleContact>
 	<cac:Payment>
-		<!-- Example cash payment: buyer pays with USD 20 bill and receives EUR 3.40 in change at a 0.92 FX rate -->
 		<cbc:ID>1</cbc:ID>
-		<cbc:PaidAmount currencyID="EUR">15.00</cbc:PaidAmount>
-		<cbc:PaidCashAmount currencyID="USD">20.00</cbc:PaidCashAmount>
-		<cbc:CashChangeAmount currencyID="EUR">3.40</cbc:CashChangeAmount>
-		<cac:ExchangeRate>
-			<cbc:SourceCurrencyCode>USD</cbc:SourceCurrencyCode>
-			<cbc:TargetCurrencyCode>EUR</cbc:TargetCurrencyCode>
-			<cbc:CalculationRate>0.92</cbc:CalculationRate>
-		</cac:ExchangeRate>
-	</cac:Payment>
-	<cac:Payment>
-		<!-- Example credit card payment with "withdrawal": buyer pays EUR 20 with her credit card and receives EUR 10.00 in change -->
-		<cbc:ID>2</cbc:ID>
-		<cbc:PaidAmount currencyID="EUR">10.00</cbc:PaidAmount>
-		<cbc:PaidCashAmount currencyID="EUR">20.00</cbc:PaidCashAmount>
-		<cbc:CashChangeAmount currencyID="EUR">10.00</cbc:CashChangeAmount>
-		<cbc:MerchantID>1234567</cbc:MerchantID>
-		<cbc:AuthorizationID>314a74ea-9e79-11ed-a8fc-0242ac120002</cbc:AuthorizationID>
-		<cbc:TransactionID>75c64662-9e79-11ed-a8fc-0242ac120002</cbc:TransactionID>
-		<cbc:PaymentTerminalID>7654321</cbc:PaymentTerminalID>
+		<cbc:PaidAmount currencyID="EUR">25.00</cbc:PaidAmount>
+		<cbc:PaidCashAmount currencyID="EUR">30.00</cbc:PaidCashAmount>
+		<cbc:CashChangeAmount currencyID="EUR">5.00</cbc:CashChangeAmount>
 	</cac:Payment>
 	<cac:PaymentMeans>
-		<cbc:PaymentMeansCode listID="UN/ECE 4461">10</cbc:PaymentMeansCode>
+		<cbc:PaymentMeansCode listID="UNCL4461">10</cbc:PaymentMeansCode>
 		<cbc:PaymentMeansDescription>Cash</cbc:PaymentMeansDescription>
 		<cbc:PaymentID>1</cbc:PaymentID>
-	</cac:PaymentMeans>
-	<cac:PaymentMeans>
-		<cbc:PaymentMeansCode listID="UN/ECE 4461">54</cbc:PaymentMeansCode>
-		<cbc:PaymentMeansDescription>Credit card</cbc:PaymentMeansDescription>
-		<cbc:PaymentID>2</cbc:PaymentID>
-		<cac:CardAccount>
-			<cbc:PrimaryAccountNumberID>4558 XXXX XXXX XX01</cbc:PrimaryAccountNumberID>
-			<cbc:NetworkID>VISA</cbc:NetworkID>
-			<cbc:HolderName>Camila Customer</cbc:HolderName>
-		</cac:CardAccount>
 	</cac:PaymentMeans>
 	<cac:AllowanceCharge>
 		<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
