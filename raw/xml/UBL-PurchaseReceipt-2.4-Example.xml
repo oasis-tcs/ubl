@@ -82,7 +82,7 @@
 		<cbc:CashChangeAmount currencyID="EUR">5.00</cbc:CashChangeAmount>
 	</cac:Payment>
 	<cac:PaymentMeans>
-		<cbc:PaymentMeansCode listID="UNCL4461">10</cbc:PaymentMeansCode>
+		<cbc:PaymentMeansCode listID="UN/ECE 4461">10</cbc:PaymentMeansCode>
 		<cbc:PaymentMeansDescription>Cash</cbc:PaymentMeansDescription>
 		<cbc:PaymentID>1</cbc:PaymentID>
 	</cac:PaymentMeans>
@@ -92,9 +92,9 @@
 		<cbc:Amount currencyID="EUR">1.00</cbc:Amount>
 		<cbc:TaxInclusiveAmount currencyID="EUR">1.00</cbc:TaxInclusiveAmount>
 		<cac:TaxCategory>
-			<cbc:ID schemeID="UNCL5305">O</cbc:ID>
+			<cbc:ID schemeID="UN/ECE 5305">O</cbc:ID>
 			<cac:TaxScheme>
-				<cbc:ID schemeID="UNCL5153">VAT</cbc:ID>
+				<cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
 			</cac:TaxScheme>
 		</cac:TaxCategory>
 	</cac:AllowanceCharge>
@@ -111,10 +111,10 @@
 			<cbc:TaxAmount currencyID="EUR">5.80</cbc:TaxAmount>
 			<cbc:TaxInclusiveAmount currencyID="EUR">29.00</cbc:TaxInclusiveAmount>
 			<cac:TaxCategory>
-				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+				<cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
 				<cbc:Percent>25</cbc:Percent>
 				<cac:TaxScheme>
-					<cbc:ID schemeID="UNCL5153">VAT</cbc:ID>
+					<cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
 				</cac:TaxScheme>
 			</cac:TaxCategory>
 		</cac:TaxSubtotal>
@@ -123,9 +123,9 @@
 			<cbc:TaxAmount currencyID="EUR">0.00</cbc:TaxAmount>
 			<cbc:TaxInclusiveAmount currencyID="EUR">1.00</cbc:TaxInclusiveAmount>
 			<cac:TaxCategory>
-				<cbc:ID schemeID="UNCL5305">O</cbc:ID>
+				<cbc:ID schemeID="UN/ECE 5305">O</cbc:ID>
 				<cac:TaxScheme>
-					<cbc:ID schemeID="UNCL5153">VAT</cbc:ID>
+					<cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
 				</cac:TaxScheme>
 			</cac:TaxCategory>
 		</cac:TaxSubtotal>
@@ -151,10 +151,10 @@
 				<cbc:TaxAmount currencyID="EUR">4.00</cbc:TaxAmount>
 				<cbc:TaxInclusiveAmount currencyID="EUR">20.00</cbc:TaxInclusiveAmount>
 				<cac:TaxCategory>
-					<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+					<cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
 					<cbc:Percent>25</cbc:Percent>
 					<cac:TaxScheme>
-						<cbc:ID schemeID="UNCL5153">VAT</cbc:ID>
+						<cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
 					</cac:TaxScheme>
 				</cac:TaxCategory>
 			</cac:TaxSubtotal>
@@ -190,10 +190,10 @@
 				<cbc:TaxAmount currencyID="EUR">1.80</cbc:TaxAmount>
 				<cbc:TaxInclusiveAmount currencyID="EUR">9.00</cbc:TaxInclusiveAmount>
 				<cac:TaxCategory>
-					<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+					<cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
 					<cbc:Percent>25</cbc:Percent>
 					<cac:TaxScheme>
-						<cbc:ID schemeID="UNCL5153">VAT</cbc:ID>
+						<cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
 					</cac:TaxScheme>
 				</cac:TaxCategory>
 			</cac:TaxSubtotal>
