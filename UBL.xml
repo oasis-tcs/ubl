@@ -238,7 +238,7 @@
         <bibliomixed id="UBL" conformance="skip">
           <abbrev condition="oasis">UBL-&version;</abbrev>
           <citetitle>Universal Business Language Version &version;.</citetitle>
-          <bibliomisc>Edited by G. Ken Holman.</bibliomisc>
+          <bibliomisc>Edited by Kenneth Bengtsson and Kees Duvekot.</bibliomisc>
           <date>&pubdate;. </date>
           <releaseinfo>&standard;. </releaseinfo>
           <bibliomisc>
