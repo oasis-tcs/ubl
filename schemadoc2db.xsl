@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  exclude-result-prefixes="xs"
+  xmlns:u="urn:X-UBL"
+  exclude-result-prefixes="xs u"
   version="2.0">
 
 <xsl:output indent="yes" omit-xml-declaration="yes"/>
 
 <xsl:param name="UBLversion" as="xs:string" required="yes"/>
+  
+<xsl:param name="gc-uri" as="xs:string" required="yes"/>
 
 <xsl:template match="/">
  <xsl:result-document href="UBL-{$UBLversion}-catalog.xml">
@@ -107,6 +110,8 @@ directory.
       <title><xsl:value-of select="$normname"/> Schema</title>
       <para>
         <xsl:text>Description: </xsl:text>
+        <xsl:value-of select="
+       u:col(key('rows',concat(name,'. Details'),doc($gc-uri)),'Definition')"/>
         <xsl:apply-templates select="description/node()"/>
       </para>
       <informaltable>
@@ -256,5 +261,13 @@ directory.
 <xsl:template match="*">
   <xsl:message terminate="yes" select="'Not handled:',name(.)"/>
 </xsl:template>
+
+<xsl:key name="rows" match="Row" use="u:col(.,'DictionaryEntryName')"/>
+
+<xsl:function name="u:col" as="element(SimpleValue)?">
+  <xsl:param name="row" as="element(Row)"/>
+  <xsl:param name="col" as="xs:string+"/>
+  <xsl:sequence select="$row/Value[@ColumnRef=$col]/SimpleValue"/>
+</xsl:function>
 
 </xsl:stylesheet>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PurchaseReceipt xmlns="urn:oasis:names:specification:ubl:schema:xsd:PurchaseReceipt-2"
+	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	<cbc:UBLVersionID>2.4</cbc:UBLVersionID>
+	<cbc:CustomizationID>Sample-0.9</cbc:CustomizationID>
+	<cbc:ProfileID>ShopReceipt-0.9</cbc:ProfileID>
+	<cbc:ID>001-00010123</cbc:ID>
+	<cbc:IssueDate>2023-01-27</cbc:IssueDate>
+	<cbc:IssueTime>11:10:00Z</cbc:IssueTime>
+	<cbc:TransactionDate>2023-01-27</cbc:TransactionDate>
+	<cbc:TransactionTime>11:10:00Z</cbc:TransactionTime>
+	<cbc:PurchaseDate>2023-01-27</cbc:PurchaseDate>
+	<cbc:PurchaseTime>11:10:00Z</cbc:PurchaseTime>
+	<cbc:Note languageID="en">This is an example shop purchase receipt</cbc:Note>
+	<cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+	<cac:PurchaseReference>
+		<cbc:ID>321987</cbc:ID>
+		<cbc:Description>Customer Loyalty Number</cbc:Description>
+	</cac:PurchaseReference>
+	<cac:SalesDocumentReference>
+		<cbc:ID>PROFORMA001</cbc:ID>
+		<cbc:DocumentType>Preliminary sales receipt</cbc:DocumentType>
+	</cac:SalesDocumentReference>
+	<cac:AccountingSupplierParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="ZZZ">123456789</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Gadgets R Us, Inc.</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>High Street</cbc:StreetName>
+				<cbc:BuildingNumber>1</cbc:BuildingNumber>
+				<cbc:CityName>Copenhagen</cbc:CityName>
+				<cbc:PostalZone>1001</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID schemeID="DKVAT">DK12345</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	<cac:CashierContact>
+		<cbc:Name>John D. Salesman</cbc:Name>
+		<cbc:Department>Gadgets</cbc:Department>
+	</cac:CashierContact>
+	<cac:CashRegister>
+		<cbc:ID>7</cbc:ID>
+		<cbc:SerialNumberID>7f49b2b8-9e75-11ed-a8fc-0242ac120002</cbc:SerialNumberID>
+	</cac:CashRegister>
+	<cac:PointOfSaleLocation>
+		<cbc:ID>37</cbc:ID>
+		<cbc:Description>Shop number #37 at H.C. Andersens Boulevard, Copenhagen</cbc:Description>
+		<cbc:Name>Shop 37</cbc:Name>
+		<cac:Address>
+			<cbc:StreetName>Hans Christian Andersens Boulevard</cbc:StreetName>
+			<cbc:BuildingNumber>777</cbc:BuildingNumber>
+			<cbc:CityName>Copenhagen</cbc:CityName>
+			<cbc:PostalZone>1234</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:Address>
+	</cac:PointOfSaleLocation>
+	<cac:PointOfSaleContact>
+		<cbc:Name>Jane D.</cbc:Name>
+		<cbc:JobTitle>Store manager</cbc:JobTitle>
+		<cbc:ElectronicMail>shop37@GadgetsR.us</cbc:ElectronicMail>
+	</cac:PointOfSaleContact>
+	<cac:Payment>
+		<cbc:ID>1</cbc:ID>
+		<cbc:PaidAmount currencyID="EUR">25.00</cbc:PaidAmount>
+		<cbc:PaidCashAmount currencyID="EUR">30.00</cbc:PaidCashAmount>
+		<cbc:CashChangeAmount currencyID="EUR">5.00</cbc:CashChangeAmount>
+	</cac:Payment>
+	<cac:PaymentMeans>
+		<cbc:PaymentMeansCode listID="UN/ECE 4461">10</cbc:PaymentMeansCode>
+		<cbc:PaymentMeansDescription>Cash</cbc:PaymentMeansDescription>
+		<cbc:PaymentID>1</cbc:PaymentID>
+	</cac:PaymentMeans>
+	<cac:AllowanceCharge>
+		<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+		<cbc:AllowanceChargeReason>Donation to the Red Cross</cbc:AllowanceChargeReason>
+		<cbc:Amount currencyID="EUR">1.00</cbc:Amount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">1.00</cbc:TaxInclusiveAmount>
+		<cac:TaxCategory>
+			<cbc:ID schemeID="UN/ECE 5305">O</cbc:ID>
+			<cac:TaxScheme>
+				<cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+			</cac:TaxScheme>
+		</cac:TaxCategory>
+	</cac:AllowanceCharge>
+	<cac:AllowanceCharge>
+		<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+		<cbc:AllowanceChargeReason>Paid 10,000 loyalty points = €5</cbc:AllowanceChargeReason>
+		<cbc:Amount currencyID="EUR">5.00</cbc:Amount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">5.00</cbc:TaxInclusiveAmount>
+	</cac:AllowanceCharge>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="EUR">5.80</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="EUR">23.20</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="EUR">5.80</cbc:TaxAmount>
+			<cbc:TaxInclusiveAmount currencyID="EUR">29.00</cbc:TaxInclusiveAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
+				<cbc:Percent>25</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="EUR">1.00</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="EUR">0.00</cbc:TaxAmount>
+			<cbc:TaxInclusiveAmount currencyID="EUR">1.00</cbc:TaxInclusiveAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UN/ECE 5305">O</cbc:ID>
+				<cac:TaxScheme>
+					<cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="EUR">23.20</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="EUR">23.20</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">29.00</cbc:TaxInclusiveAmount>
+		<cbc:AllowanceTotalAmount currencyID="EUR">5.00</cbc:AllowanceTotalAmount>
+		<cbc:ChargeTotalAmount currencyID="EUR">1.00</cbc:ChargeTotalAmount>
+		<cbc:PayableAmount currencyID="EUR">25.00</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:PurchaseReceiptLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:Quantity>1</cbc:Quantity>
+		<cbc:LineExtensionAmount currencyID="EUR">16.00</cbc:LineExtensionAmount>
+		<cbc:TaxInclusiveLineExtensionAmount currencyID="EUR"
+			>20.00</cbc:TaxInclusiveLineExtensionAmount>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="EUR">4.00</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="EUR">16.00</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="EUR">4.00</cbc:TaxAmount>
+				<cbc:TaxInclusiveAmount currencyID="EUR">20.00</cbc:TaxInclusiveAmount>
+				<cac:TaxCategory>
+					<cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
+					<cbc:Percent>25</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Name>Philosophical lamp</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>PL001</cbc:ID>
+			</cac:SellersItemIdentification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">16.00</cbc:PriceAmount>
+			<cbc:TaxInclusivePriceAmount currencyID="EUR">20.00</cbc:TaxInclusivePriceAmount>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:PurchaseReceiptLine>
+	<cac:PurchaseReceiptLine>
+		<cbc:ID>2</cbc:ID>
+		<cbc:Quantity>1</cbc:Quantity>
+		<cbc:LineExtensionAmount currencyID="EUR">7.20</cbc:LineExtensionAmount>
+		<cbc:TaxInclusiveLineExtensionAmount currencyID="EUR"
+			>9.00</cbc:TaxInclusiveLineExtensionAmount>
+		<cac:AllowanceCharge>
+			<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+			<cbc:AllowanceChargeReason>Discount</cbc:AllowanceChargeReason>
+			<cbc:Amount currencyID="EUR">4.80</cbc:Amount>
+			<cbc:TaxInclusiveAmount currencyID="EUR">6.00</cbc:TaxInclusiveAmount>
+		</cac:AllowanceCharge>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="EUR">1.80</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="EUR">7.20</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="EUR">1.80</cbc:TaxAmount>
+				<cbc:TaxInclusiveAmount currencyID="EUR">9.00</cbc:TaxInclusiveAmount>
+				<cac:TaxCategory>
+					<cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
+					<cbc:Percent>25</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Name>Magic cloak</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>MC002</cbc:ID>
+			</cac:SellersItemIdentification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">12.00</cbc:PriceAmount>
+			<cbc:TaxInclusivePriceAmount currencyID="EUR">15.00</cbc:TaxInclusivePriceAmount>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:PurchaseReceiptLine>
+</PurchaseReceipt>

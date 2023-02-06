@@ -75,3 +75,4 @@ call validate  ..\xsdrt\maindoc\UBL-TransportationStatus-$UBLversion.xsd ..\xml\
 call validate  ..\xsdrt\maindoc\UBL-TransportationStatusRequest-$UBLversion.xsd ..\xml\UBL-TransportationStatusRequest-2.1-Example.xml
 call validate  ..\xsdrt\maindoc\UBL-Waybill-$UBLversion.xsd ..\xml\UBL-Waybill-2.0-Example-International.xml
 call validate  ..\xsdrt\maindoc\UBL-WeightStatement-$UBLversion.xsd ..\xml\UBL-WeightStatement-2.2-Example.xml
+call validate  ..\xsdrt\maindoc\UBL-PurchaseReceipt-$UBLversion.xsd ..\xml\UBL-PurchaseReceipt-2.4-Example.xml

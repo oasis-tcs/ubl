@@ -238,7 +238,7 @@
         <bibliomixed id="UBL" conformance="skip">
           <abbrev condition="oasis">UBL-&version;</abbrev>
           <citetitle>Universal Business Language Version &version;.</citetitle>
-          <bibliomisc>Edited by G. Ken Holman.</bibliomisc>
+          <bibliomisc>Edited by Kenneth Bengtsson and Kees Duvekot.</bibliomisc>
           <date>&pubdate;. </date>
           <releaseinfo>&standard;. </releaseinfo>
           <bibliomisc>
@@ -4728,11 +4728,13 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <title>Minor Revision: UBL 2.4</title>
       <section id="S-NEW-DOCUMENT-TYPES-IN-UBL-2.4" role="newDocumentTypes23">
         <title>New Document Types in UBL 2.4</title>
-        <para>Because it preserves backward compatibility with UBL 2.3, UBL 2.2, UBL 2.1, and UBL 2.0, UBL &version; is technically a minor release, not a major one. However, it does add ten new document types, bringing the total number of UBL business documents to 91.</para>
+        <para>Because it preserves backward compatibility with UBL 2.3, UBL 2.2, UBL 2.1, and UBL 2.0, UBL &version; is technically a minor release, not a major one. However, it does add two new document types, bringing the total number of UBL business documents to 93.</para>
         <blockquote>
           <!--reviewtext-->
           <para>
-            <emphasis role="bold">Added UBL 2.4 document types for transportation: </emphasis> ################### FILL THIS IN #################### </para>
+            <emphasis role="bold">Added two new UBL 2.4 document types: </emphasis>
+	    <link linkend="S-BUSINESS-INFORMATION-SCHEMA">Business Information</link>, <link linkend="S-PURCHASE-RECEIPT-SCHEMA">Purchase Receipt</link>
+	  </para>
         </blockquote>
       </section>
       <section id="S-SCHEMA-CHANGES-FROM-UBL-&pversion;-TO-UBL-&version;">
@@ -4745,10 +4747,16 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         </section>
         <section id="S-CHANGES-TO-LIBRARY-ELEMENTS-UBL-&pversion;-TO-UBL-&version;">
           <title>Changes to Library Elements, UBL &pversion; to UBL &version;</title>
-          <para>A number of changes related to pre-award semantic components further the support of notification documents:</para>
+          <para>UBL 2.4 introduces the following improvements to the UBL library:</para>
           <itemizedlist>
             <listitem>
-              <para>################### FILL THIS IN ################</para>
+              <para>Several changes related to retail transactions, such as improving tax structures to better express tax inclusive amounts, as well as expansion of payment structure to better support card and cash payments.</para>
+            </listitem>
+            <listitem>
+              <para>Included new structures and elements to track product carbon footprints through fuel consumption and emissions.</para>
+            </listitem>
+            <listitem>
+              <para>Minor expansions of pre-award and transportation structures.</para>
             </listitem>
           </itemizedlist>
           <para>The following table sums up the differences between the XML elements in the UBL &pversion; Common Library and those in the UBL &version; Common Library.</para>
