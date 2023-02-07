@@ -2928,6 +2928,29 @@
             </mediaobject>
           </figure>
         </section>
+	<section id="S-BUSINESS-INFORMATION">
+          <title>Business Information</title>
+          <para>The Business Information document serves two purposes:</para>
+          <orderedlist>
+            <listitem>
+              <para>It supports requesting the registration of a business to a registration authority.</para>
+            </listitem>
+            <listitem>
+              <para>It support the notification of this registration to a publication authority.</para>
+            </listitem>
+          </orderedlist>
+          <figure id="F-BUSINESS-INFORMATION-REGISTRATION-AND-NOTIFICATION-PROCESSES">
+            <title>Business Information Registration and Notification processes</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="art/UBL-2.4-BusinessInformation.png"/>
+              </imageobject>
+              <textobject>
+                <phrase>[Business Information Registration and Notification Diagram]</phrase>
+              </textobject>
+            </mediaobject>
+          </figure>
+        </section>
       </section>
     </section>
     <section id="S-PARTY-ROLES">

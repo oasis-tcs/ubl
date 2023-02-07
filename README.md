@@ -287,15 +287,15 @@ Recall that only the first declaration of a given general entity is respected. T
 There are a number of SYSTEM general entities whose content is not edited by hand. Rather, they are generated from the inputs of other configuration files `UBL-Party-summary-information.xml` and `UBL-Schema-summary-information.xml` that are the responsibility of the maintainer to make consistent with their expectations of the hub document.
 
 Source files, processing stylesheets, and resulting entities generated or used in the building of the hub document - EDIT THE XML FILES ONLY DO NOT EDIT THE ENTITIES (`-ent.xml`) DIRECTLY AS YOUR EDITS WILL BE IGNORED:
-- [`UBL.xml`](UBL.xml) is the raw main hub document that gets massaged, assembled, and processed in the final `UBL-{version}.xml`
+- [`UBL.xml`](UBL.xml) is the raw main hub document that gets massaged, assembled, and processed in the final `UBL-{version}.xml`; also the authored text in Section 2.3 of this raw file is processed by `hub2processSummary.xsl` to create the overview used in Section 2.3.1:
+  - `summary-processes-ent.xml`
 - [`UBL-Party-summary-information.xml`](UBL-Party-summary-information.xml) processed by `partydoc2db.xsl`:
   - `summary-parties-ent.xml`
 - [`UBL-Schema-summary-information.xml`](UBL-Schema-summary-information.xml) processed by `schemadoc2db.xsl`:
   - `summary-namespaces-ent.xml`
   - `summary-schemas-ent.xml`
   - `summary-examples-ent.xml`
-- `UBL-{prevVersion}.xml` is the final monolithic hub document from the previous version of UBL; this is processed by `hub2processSummary.xsl`:
-  - `summary-processes-ent.xml`
+- `UBL-{prevVersion}.xml` is the final monolithic hub document from the previous version of UBL
 - the artefacts building process creates the following four entity files for comparing current versions to old versions:
   - `old2newDoc-from-previous-version-documents-ent.xml` 
   - `old2newDoc-from-previous-version-library-ent.xml`   
@@ -331,6 +331,8 @@ Subdirectories:
     - note that when changing UBL versions there are hardwired references to the UBL version number in the `common/UBL-*.xsd` files
 - [`utilities`]( utilities ) - tools used to generate outputs
 
+### Artwork
+
 Image creation using the [`http://draw.io`](http://draw.io) tool:
 - copy [`UBL-2.3-Pre-awardProcess.drawio`](images/UBL-2.3-Pre-awardProcess.drawio ) as a starting point full-width image with your own file name
 - open the copy in [`http://draw.io`](http://draw.io) and modify it as required
@@ -345,7 +347,7 @@ Image creation using the [`http://draw.io`](http://draw.io) tool:
   - ![drawio advanced export dialogue box](drawio-export.png "drawio advanced export dialogue box")
   - save the resulting high-res PNG file into the [`art`]( art ) directory
   - copy the high-res PNG file into the [`htmlart`]( htmlart ) directory
-  - using [ GIMP ]( https://www.gimp.org/ ) or some other pixel image manipulation tool, scale the [`htmlart`]( htmlart ) copy to be a maximum of 750 pixels (or proportionally smaller) and 96 DPI
+  - using [ GIMP ]( https://www.gimp.org/ ) or some other pixel image manipulation tool, scale the [`htmlart`]( htmlart ) copy to be a maximum width of 750 pixels (or proportionally smaller if desired) and 96 DPI
 
 ### Preview results
 
