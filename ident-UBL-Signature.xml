@@ -1,6 +1,6 @@
 <!DOCTYPE Identification [
-<!ENTITY short "CSD01WD02 ">
-<!ENTITY dir   "csd01wd02">
+<!ENTITY short "CSD01">
+<!ENTITY dir   "csd01">
 <!ENTITY version "2.4">
 ]>
 <Identification>
