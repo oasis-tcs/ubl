@@ -220,7 +220,8 @@
           url="https://www.oasis-open.org/policies-guidelines/tc-process#committeeDraft">approved</ulink> as a Committee Specification Draft. The OASIS document <ulink conformance="skip" url="https://www.oasis-open.org/policies-guidelines/tc-process#standApprovProcess">Approval Process</ulink>
         begins officially with a TC vote to approve a WD as a Committee Draft. A TC may approve a Working Draft, revise it, and re-approve it any number of times as a Committee Draft.</para>
       -->
-      <para>This document was last revised or approved by the OASIS Universal Business Language TC <!-\-OASIS Members-\-> on the above date. The level of approval is also listed above. Check the &#x201c;Latest stage&#x201d; location noted above for possible later revisions of this document. Any
+      <!-- For producing OS version, replace "the OASIS Universal Business Language TC" with "OASIS Members" in this paragraph: -->
+      <para>This document was last revised or approved by the OASIS Universal Business Language TC on the above date. The level of approval is also listed above. Check the &#x201c;Latest stage&#x201d; location noted above for possible later revisions of this document. Any
         other numbered versions and other technical work produced by the Technical Committee (TC) are listed at <ulink url="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl#technical">https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl#technical</ulink>. </para>
       <!--only one of the two above paragraphs applies; comment out the other one-->
       <para>TC members should send comments on this document to the TC’s email list. Others should send comments to the TC’s public comment list, after subscribing to it by following the instructions at the “<ulink conformance="skip"
