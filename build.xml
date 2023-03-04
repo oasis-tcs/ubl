@@ -1788,8 +1788,11 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
   <mkdir   dir="${dir}/${package}-${UBLstage}-${label}"/>
   <delete  dir="${dir}/${package}-${UBLstage}-${label}-archive-only"/>
   <mkdir   dir="${dir}/${package}-${UBLstage}-${label}-archive-only"/>
+  <delete  dir="${dir}/${package}-${UBLstage}-${label}-iso-iec-19845"/>
+  <mkdir   dir="${dir}/${package}-${UBLstage}-${label}-iso-iec-19845"/>
   <delete file="${dir}/${package}-${UBLstage}-${label}.zip"/>
   <delete file="${dir}/${package}-${UBLstage}-${label}-archive-only.zip"/>
+  <delete file="${dir}/${package}-${UBLstage}-${label}-iso-iec-19845.zip"/>
   
  <!--start the distribution directory with the contents of the artefacts
      package and then the contents of the hub package-->
@@ -1839,7 +1842,6 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
   <move file="${dir}/${package}-${UBLstage}-${label}/iso-iec-19845-draft-sts"
         todir="${dir}/${package}-${UBLstage}-${label}/archive-only"
         failonerror="false"/>-->
-  <!--use "copy" to distribute ISO draft to all, "move" for only archive-->
   <move unless:true="includeISO"
         todir="${dir}/${package}-${UBLstage}-${label}-archive-only"
         failonerror="false">
@@ -1848,8 +1850,9 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
       <include name="UBL-${UBLversion}*.odt"/>
     </fileset>
   </move>
+  
   <move unless:true="includeISO"
-        todir="${dir}/${package}-${UBLstage}-${label}-archive-only/iso-iec-19845"
+        todir="${dir}/${package}-${UBLstage}-${label}-iso-iec-19845"
         failonerror="false">
     <fileset dir="${dir}/${package}-${UBLstage}-${label}">
       <include name="iso-iec-19845-draft.docx"/>

@@ -414,6 +414,7 @@ The build result (after about 30 minutes on the [GitHub Actions tab](https://git
 
 The embedded ZIP files found in the download package:
 - `UBL-2.x-{stage}-{timestamp}.zip` - distribution artefacts
+- `UBL-2.x-{stage}-{timestamp}-iso-iec-19845.zip` - publishing artefacts for ISO/IEC
 - `UBL-2.x-{stage}-{timestamp}-archive-only.zip` - archive artefacts
 
 To determine if the files are ready for sending to the project editors, look in the results in the `archive-only` ZIP for these files summarizing any problems with the submission:
