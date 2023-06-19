@@ -20,11 +20,11 @@
 	<!ENTITY psversion "2.3">
 	<!ENTITY pstage   "os">
 	<!ENTITY PSTAGE   "OS">
-	<!ENTITY stage    "csd01">
-	<!ENTITY STAGE    "CSD01">
+	<!ENTITY stage    "csd02">
+	<!ENTITY STAGE    "CSD02">
 	<!ENTITY isostage "WD">
-	<!ENTITY standard "Committee Specification Draft 01">
-	<!ENTITY stagetext "Committee Specification Draft 01">
+	<!ENTITY standard "Committee Specification Draft 02">
+	<!ENTITY stagetext "Committee Specification Draft 02">
 	<!ENTITY standard "Committee Specification 02xxxxxxx">
 	<!ENTITY stagetext "Committee Specification 02xxxxxx">
 	<!ENTITY standard "Committee Specification Draft 05xxxxxxxx">
@@ -32,7 +32,7 @@
 	<!ENTITY this-loc "https://docs.oasis-open.org/ubl/&stage;-UBL-&version;">
 	<!ENTITY previous-loc "https://docs.oasis-open.org/ubl/&pstage;-UBL-&psversion;">
 	<!ENTITY latest-loc "https://docs.oasis-open.org/ubl">
-	<!ENTITY pubdate "08 February 2023">
+	<!ENTITY pubdate "21 June 2023">
 	<!--remove time from pub date-->
 	<!ENTITY pubyear "2023">
 	<!ENTITY pubdate-iso "ccyy-mm-dd">
@@ -4278,12 +4278,12 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         <bibliomixed id="gc">
           <abbrev condition="oasis">genericode</abbrev>
           <citetitle>
-            <ulink conformance="skip" url="http://docs.oasis-open.org/codelist/approved/genericode/oasis-code-list-representation-genericode.html">OASIS Code List Representation (Genericode) Version 1.0.</ulink>
+            <ulink conformance="skip" url="https://docs.oasis-open.org/codelist/genericode/v1.0/os/genericode-v1.0-os.html">Code List Representation (genericode) Version 1.0.</ulink>
           </citetitle>
-          <date>28 December 2007. </date>
-          <releaseinfo>Committee Specification 01. </releaseinfo>
+          <date>31 January 2023.</date>
+          <releaseinfo>OASIS Standard.</releaseinfo>
           <bibliomisc>
-            <ulink url="http://docs.oasis-open.org/codelist/approved/genericode/oasis-code-list-representation-genericode.html" conformance="skip">http://docs.oasis-open.org/codelist/approved/genericode/oasis-code-list-representation-genericode.html</ulink>. </bibliomisc>
+            <ulink url="https://docs.oasis-open.org/codelist/genericode/v1.0/os/genericode-v1.0-os.html" conformance="skip">https://docs.oasis-open.org/codelist/genericode/v1.0/os/genericode-v1.0-os.html</ulink>. </bibliomisc>
         </bibliomixed>
         <bibliomixed id="governance">
           <abbrev condition="oasis">Governance</abbrev>
