@@ -10,10 +10,10 @@
   
 -->
 <!ENTITY copyrightYear      "2023">
-<!ENTITY versionDate "08 February 2023">
+<!ENTITY versionDate "28 June 2023">
 <!ENTITY version        "2.4">
-<!ENTITY versionDisplay "2.4 CSD01">
-<!ENTITY versionDirectory   "csd01-UBL-2.4">
+<!ENTITY versionDisplay "2.4 CSD02">
+<!ENTITY versionDirectory   "csd02-UBL-2.4">
 ]>
 <configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ndr>
