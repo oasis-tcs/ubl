@@ -4277,9 +4277,8 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         </bibliomixed>
         <bibliomixed id="gc">
           <abbrev condition="oasis">genericode</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="https://docs.oasis-open.org/codelist/genericode/v1.0/os/genericode-v1.0-os.html">Code List Representation (genericode) Version 1.0.</ulink>
-          </citetitle>
+          <citetitle>Code List Representation (genericode) Version 1.0.</citetitle>
+          <bibliomisc>Edited by G. Ken Holman.</bibliomisc>
           <date>31 January 2023.</date>
           <releaseinfo>OASIS Standard.</releaseinfo>
           <bibliomisc>
