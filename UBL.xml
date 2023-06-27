@@ -32,7 +32,7 @@
 	<!ENTITY this-loc "https://docs.oasis-open.org/ubl/&stage;-UBL-&version;">
 	<!ENTITY previous-loc "https://docs.oasis-open.org/ubl/&pstage;-UBL-&psversion;">
 	<!ENTITY latest-loc "https://docs.oasis-open.org/ubl">
-	<!ENTITY pubdate "28 June 2023">
+	<!ENTITY pubdate "05 July 2023">
 	<!--remove time from pub date-->
 	<!ENTITY pubyear "2023">
 	<!ENTITY pubdate-iso "ccyy-mm-dd">
