@@ -5045,13 +5045,13 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
       <para>
         <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
-        </literal> will be found at line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1760</ulink> and seen to contain a number of possible BBIE children, all of them optional; and the ASBIE <literal>
+        </literal> will be found at line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1764</ulink> and seen to contain a number of possible BBIE children, all of them optional; and the ASBIE <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Invoice_Period.Period" conformance="skip" role="DEN-Name" remap="Invoice. Invoice_ Period. Period">InvoicePeriod</ulink>
         </literal> in <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Details" conformance="skip" role="DEN-Name" remap="Invoice. Details">Invoice</ulink>
         </literal> therefore has this structure, too. From this one could conclude that instantiations of the <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Name" remap="Period. Details">Period</ulink>
-        </literal> structure (there are more than 50 of them in UBL) might not contain any of the seven optional BBIE elements specified after line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1760</ulink>,
+        </literal> structure (there are more than 50 of them in UBL) might not contain any of the seven optional BBIE elements specified after line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Period.Details" conformance="skip" role="DEN-Row" remap="Period. Details">1764</ulink>,
         and indeed the corresponding declaration of the complex type <literal>PeriodType</literal> in the CAC schema (<literal>
           <ulink url="xsd/common/UBL-CommonAggregateComponents-&version;.xsd">xsd/common/UBL-CommonAggregateComponents-&version;.xsd</ulink>
         </literal>) shows that an empty <literal>
@@ -5087,24 +5087,24 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-CustomerParty.Details" conformance="skip" role="DEN-Name" remap="Customer Party. Details">CustomerParty</ulink>
         </literal> ABIE. Checking in the Common Library, it is seen that both <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-SupplierParty.Details" conformance="skip" role="DEN-Name" remap="Supplier Party. Details">SupplierParty</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-SupplierParty.Details" conformance="skip" role="DEN-Row" remap="Supplier Party. Details">2418</ulink> of the Common Library) and <literal>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-SupplierParty.Details" conformance="skip" role="DEN-Row" remap="Supplier Party. Details">2423</ulink> of the Common Library) and <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-CustomerParty.Details" conformance="skip" role="DEN-Name" remap="Customer Party. Details">CustomerParty</ulink>
         </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-CustomerParty.Details" conformance="skip" role="DEN-Row" remap="Customer Party. Details">646</ulink> of the Common Library) can contain an ASBIE named <literal>Party</literal> (as shown in lines <ulink
-          url="mod/summary/reports/UBL-Invoice-&version;.html#Table-SupplierParty.Party" conformance="skip" role="DEN-Row" remap="Supplier Party. Party">2422</ulink> and <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-CustomerParty.Party" conformance="skip" role="DEN-Row"
+          url="mod/summary/reports/UBL-Invoice-&version;.html#Table-SupplierParty.Party" conformance="skip" role="DEN-Row" remap="Supplier Party. Party">2427</ulink> and <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-CustomerParty.Party" conformance="skip" role="DEN-Row"
           remap="Customer Party. Party">650</ulink>, respectively) and that each <literal>Party</literal> ASBIE is an instantiation of the <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.Details" conformance="skip" role="DEN-Name" remap="Party. Details">Party</ulink>
-        </literal> ABIE (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.Details" conformance="skip" role="DEN-Row" remap="Party. Details">1636</ulink>). Therefore both parties have the same structure (the BBIEs and ASBIEs following line <ulink
-          url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.Details" conformance="skip" role="DEN-Row" remap="Party. Details">1636</ulink>). Thus <literal>
+        </literal> ABIE (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.Details" conformance="skip" role="DEN-Row" remap="Party. Details">1640</ulink>). Therefore both parties have the same structure (the BBIEs and ASBIEs following line <ulink
+          url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.Details" conformance="skip" role="DEN-Row" remap="Party. Details">1640</ulink>). Thus <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Accounting_SupplierParty.SupplierParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Supplier Party. Supplier Party">AccountingSupplierParty</ulink>
         </literal> and <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Accounting_CustomerParty.CustomerParty" conformance="skip" role="DEN-Name" remap="Invoice. Accounting_ Customer Party. Customer Party">AccountingCustomerParty</ulink>
         </literal> share the information components common to parties in general and differ in the information specific to suppliers and customers. Parties commonly have a <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.PartyName" conformance="skip" role="DEN-Name" remap="Party. Party Name">PartyName</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.PartyName" conformance="skip" role="DEN-Row" remap="Party. Party Name">1644</ulink>) that derives (the Associated Object Class column) from the ABIE <literal>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Party.PartyName" conformance="skip" role="DEN-Row" remap="Party. Party Name">1648</ulink>) that derives (the Associated Object Class column) from the ABIE <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Details" conformance="skip" role="DEN-Name" remap="Party Name. Details">PartyName</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Details" conformance="skip" role="DEN-Row" remap="Party Name. Details">1680</ulink>), which is a wrapper for the BBIE <literal>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Details" conformance="skip" role="DEN-Row" remap="Party Name. Details">1684</ulink>), which is a wrapper for the BBIE <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Name" conformance="skip" role="DEN-Name" remap="Party Name. Name">Name</ulink>
-        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Name" conformance="skip" role="DEN-Row" remap="Party Name. Name">1681</ulink>). A conforming piece of the document instance might therefore look like this: </para>
+        </literal> (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-PartyName.Name" conformance="skip" role="DEN-Row" remap="Party Name. Name">1685</ulink>). A conforming piece of the document instance might therefore look like this: </para>
       <programlisting role="font-size-92%"><![CDATA[  <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyName>
@@ -5131,7 +5131,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         </literal> first, it is found in the Common Library to be derived from <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Details" conformance="skip" role="DEN-Name" remap="Monetary Total. Details">MonetaryTotal</ulink>
         </literal> (line <literal>
-          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Details" conformance="skip" role="DEN-Row" remap="Monetary Total. Details">1549</ulink>), which has a mandatory <ulink
+          <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Details" conformance="skip" role="DEN-Row" remap="Monetary Total. Details">1552</ulink>), which has a mandatory <ulink
             url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
         </literal> BBIE. A corresponding example instance fragment might be therefore be constructed as follows:</para>
       <programlisting role="font-size-92%"><![CDATA[  <cac:LegalMonetaryTotal>
@@ -5144,7 +5144,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-Invoice.Legal_MonetaryTotal.MonetaryTotal" conformance="skip" role="DEN-Name" remap="Invoice. Legal_ Monetary Total. Monetary Total">LegalMonetaryTotal</ulink>
         </literal> element shown above except the <literal>currencyID</literal> attribute on <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
-        </literal>, which does not appear explicitly in the model line for that BBIE (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Row" remap="Monetary Total. Payable_ Amount. Amount">1560</ulink>). This is
+        </literal>, which does not appear explicitly in the model line for that BBIE (line <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Row" remap="Monetary Total. Payable_ Amount. Amount">1563</ulink>). This is
         because UBL does not define the primitive data types upon which the model is built; instead it uses standard data type definitions from <xref linkend="ccts"/> and <xref linkend="xsd2"/>. In the case of <literal>
           <ulink url="mod/summary/reports/UBL-Invoice-&version;.html#Table-MonetaryTotal.Payable_Amount.Amount" conformance="skip" role="DEN-Name" remap="Monetary Total. Payable_ Amount. Amount">PayableAmount</ulink>
         </literal>, the CCTS data type (the Data Type column) is &#8220;Amount. Type&#8221; (the space is part of the name), and that type is defined in <xref linkend="ccts"/> itself (Table 8-1 of the CCTS 2.01 specification). There it will be seen that &#8220;Amount. Type&#8221; has two
