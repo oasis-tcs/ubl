@@ -18,8 +18,8 @@
 	<!ENTITY pversion "2.3">
 	<!ENTITY version  "2.4">
 	<!ENTITY psversion "2.3">
-	<!ENTITY pstage   "os">
-	<!ENTITY PSTAGE   "OS">
+	<!ENTITY pstage   "csd01">
+	<!ENTITY PSTAGE   "CSD01">
 	<!ENTITY stage    "csd02">
 	<!ENTITY STAGE    "CSD02">
 	<!ENTITY isostage "WD">
@@ -2202,7 +2202,7 @@
         </section>
         <section id="S-FREIGHT-STATUS-REPORTING">
           <title>Freight Status Reporting</title>
-          <para>Freight Status Reporting is the process by which a Transport Service Provider (such as a Carrier or Freight Forwarder) communicates the status of shipments currently under their management to the Transport Users (such as a Freight Forwarder, Consignee, or Consignor).</para>
+          <para>Freight Status Reporting is the process by which an actor in the transport service process (such as a Carrier, Freight Forwarder or Consignee) communicates the status of shipments currently under their management to another actor in the transport service process (such as a Freight Forwarder, Carrrier, Consignee or Consignor).</para>
           <para>A <link linkend="S-TRANSPORTATION-STATUS-SCHEMA">Transportation Status</link> document is provided either through a <link linkend="S-TRANSPORTATION-STATUS-REQUEST-SCHEMA"> Transportation Status Request</link> document or through an agreed status reporting procedure.</para>
           <figure id="F-FREIGHT-STATUS-REPORTING-PROCESS">
             <title>Freight Status Reporting Process</title>
