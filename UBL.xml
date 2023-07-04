@@ -17,7 +17,7 @@
 	<!ENTITY name "UBL">
 	<!ENTITY pversion "2.3">
 	<!ENTITY version  "2.4">
-	<!ENTITY psversion "2.3">
+	<!ENTITY psversion "2.4">
 	<!ENTITY pstage   "csd01">
 	<!ENTITY PSTAGE   "CSD01">
 	<!ENTITY stage    "csd02">
