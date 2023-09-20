@@ -18,13 +18,13 @@
 	<!ENTITY pversion "2.3">
 	<!ENTITY version  "2.4">
 	<!ENTITY psversion "2.4">
-	<!ENTITY pstage   "csd01">
-	<!ENTITY PSTAGE   "CSD01">
-	<!ENTITY stage    "csd02">
-	<!ENTITY STAGE    "CSD02">
+	<!ENTITY pstage   "csd02">
+	<!ENTITY PSTAGE   "CSD02">
+	<!ENTITY stage    "cs01">
+	<!ENTITY STAGE    "CS01">
 	<!ENTITY isostage "WD">
-	<!ENTITY standard "Committee Specification Draft 02">
-	<!ENTITY stagetext "Committee Specification Draft 02">
+	<!ENTITY standard "Committee Specification 01">
+	<!ENTITY stagetext "Committee Specification 01">
 	<!ENTITY standard "Committee Specification 02xxxxxxx">
 	<!ENTITY stagetext "Committee Specification 02xxxxxx">
 	<!ENTITY standard "Committee Specification Draft 05xxxxxxxx">
@@ -32,7 +32,7 @@
 	<!ENTITY this-loc "https://docs.oasis-open.org/ubl/&stage;-UBL-&version;">
 	<!ENTITY previous-loc "https://docs.oasis-open.org/ubl/&pstage;-UBL-&psversion;">
 	<!ENTITY latest-loc "https://docs.oasis-open.org/ubl">
-	<!ENTITY pubdate "26 July 2023">
+	<!ENTITY pubdate "27 September 2023">
 	<!--remove time from pub date-->
 	<!ENTITY pubyear "2023">
 	<!ENTITY pubdate-iso "ccyy-mm-dd">
@@ -6849,7 +6849,6 @@ No code list validation errors.</programlisting>
     <para>The following persons and companies participated as members of the OASIS UBL Technical Committee during the years of its development (2021–&pubyear;).</para>
     <simplelist lang="none">
       <member>Todd Albers, Federal Reserve Bank of Minneapolis</member>
-      <member>Poul Andersen, ClearView Trade</member>
       <member>Dinesh Balasubramanian, IBM</member>
       <member>Rui Barros, Individual</member>
       <member>Oriol Bausa Peris, Individual</member>
@@ -6857,7 +6856,6 @@ No code list validation errors.</programlisting>
       <member>Erlend Klakegg Bergheim, The Norwegian Agency for Public and Financial Management (DFO)</member>
       <member>Peter Borresen, ebConnect</member>
       <member>Jon Bosak, Individual</member>
-      <member>Mikkel Brun, Tradeshift</member>
       <member>Andrea Caccia, Individual</member>
       <member>William Chan, Individual</member>
       <member>Ger Clancy, IBM</member>
@@ -6877,11 +6875,8 @@ No code list validation errors.</programlisting>
       <member>Marc Malone, IBM</member>
       <member>Natalie Muric, Publications Office of the European Union</member>
       <member>Levine Naidoo, IBM</member>
-      <member>Yasuyuki Nishioka, PSLX consortium</member>
       <member>Amit Saini, IBM</member>
       <member>Audun Vennesland, SINTEF</member>
-      <member>Matt Vickers, Xero</member>
-      <member>Huang Yong, Tradeshift</member>
     </simplelist>
   </appendix>
   <appendix id="A-NOTICES" condition="oasis">
