@@ -22,8 +22,6 @@ touch                       $targetdir/$package-$UBLstage-$label-archive-only/bu
 pushd $targetdir
 if [ -f $package-$UBLstage-$label-archive-only.zip ]; then rm $package-$UBLstage-$label-archive-only.zip ; fi
 7z a $package-$UBLstage-$label-archive-only.zip $package-$UBLstage-$label-archive-only
-if [ -f $package-$UBLstage-$label-iso-iec-19845.zip ]; then rm $package-$UBLstage-$label-iso-iec-19845.zip ; fi
-7z a $package-$UBLstage-$label-iso-iec-19845.zip $package-$UBLstage-$label-iso-iec-19845
 if [ -f $package-$UBLstage-$label.zip ]; then rm $package-$UBLstage-$label.zip ; fi
 7z a $package-$UBLstage-$label.zip $package-$UBLstage-$label
 popd
@@ -39,7 +37,6 @@ then
 find . -not -name target -not -name .github -maxdepth 1 -exec rm -r -f {} \;
 
 mv $targetdir/$package-$UBLstage-$label-archive-only.zip .
-mv $targetdir/$package-$UBLstage-$label-iso-iec-19845.zip .
 mv $targetdir/$package-$UBLstage-$label.zip .
 rm -r -f $targetdir
 
