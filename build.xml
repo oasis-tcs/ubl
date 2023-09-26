@@ -1201,7 +1201,6 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
         <include name="UBL-${UBLversion}-preview.html"/>
         <include name="UBL-${UBLversion}.html"/>
         <include name="UBL-${UBLversion}.pdf"/>
-        <include name="iso-iec-19845-draft.pdf"/>
       </fileset>
     </copy>
   </sequential>
@@ -1371,7 +1370,6 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <delete file="${dir}/UBL-${UBLversion}-preview.html"/>
   <delete file="${dir}/UBL-${UBLversion}.html"/>
   <delete file="${dir}/UBL-${UBLversion}.pdf"/>
-  <delete file="${dir}/iso-iec-19845-draft.pdf"/>
   <delete file="${dir}/UBL-${UBLversion}-pub.zip"/>
   <echo   file="${dir}/missing---UBL-${UBLversion}-html---missing.txt"/>
   <echo   file="${dir}/missing---UBL-${UBLversion}-pdf---missing.txt"/>
@@ -1397,8 +1395,20 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
       <include name="UBL-${UBLversion}.xml"/>
     </srcfiles>
   </uptodate>
+  <uptodate targetfile="${dir}/iso-iec-19845-draft.docx"
+            property=  "docs-UBL-iso-docx-okay">
+    <srcfiles dir="${dir}">
+      <include name="UBL-${UBLversion}.xml"/>
+    </srcfiles>
+  </uptodate>
   <uptodate targetfile="${dir}/iso-iec-19845-draft.pdf"
-            property=  "docs-UBL-iso-okay">
+            property=  "docs-UBL-iso-pdf-okay">
+    <srcfiles dir="${dir}">
+      <include name="UBL-${UBLversion}.xml"/>
+    </srcfiles>
+  </uptodate>
+  <uptodate targetfile="${dir}/iso-iec-19845-draft.niso.zip"
+            property=  "docs-UBL-iso-xml-okay">
     <srcfiles dir="${dir}">
       <include name="UBL-${UBLversion}.xml"/>
     </srcfiles>
@@ -1408,7 +1418,9 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
       <istrue value="${docs-UBL-xml-okay}"/>
       <istrue value="${docs-UBL-html-okay}"/>
       <istrue value="${docs-UBL-pdf-okay}"/>
-      <istrue value="${docs-UBL-iso-okay}"/>
+      <istrue value="${docs-UBL-iso-docx-okay}"/>
+      <istrue value="${docs-UBL-iso-pdf-okay}"/>
+      <istrue value="${docs-UBL-iso-xml-okay}"/>
     </and>
   </condition>
 </target>
@@ -1418,7 +1430,9 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <delete file="${dir}/UBL-${UBLversion}-preview.html"/>
   <delete file="${dir}/UBL-${UBLversion}.html"/>
   <delete file="${dir}/UBL-${UBLversion}.pdf"/>
+  <delete file="${dir}/iso-iec-19845-draft.docx"/>
   <delete file="${dir}/iso-iec-19845-draft.pdf"/>
+  <delete file="${dir}/iso-iec-19845-draft.niso.zip"/>
   <delete file="${dir}/UBL-${UBLversion}-pub.zip"/>
   <!--package inputs to the publishing process-->
   <zip destfile="${dir}/UBL-${UBLversion}-pub.zip">
@@ -1444,23 +1458,35 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <available property="ready-pdf" file="${dir}/UBL-${UBLversion}.oasis.pdf"/>
   <echo unless:set="ready-pdf" message="PDF not created"/>
   <echo if:set="ready-pdf" message="PDF created"/>
-  <available property="ready-iso" file="${dir}/UBL-${UBLversion}.iso.pdf"/>
-  <echo unless:set="ready-iso" message="ISO PDF not created"/>
-  <echo if:set="ready-iso" message="ISO PDF created"/>
   <available property="ready-html" file="${dir}/UBL-${UBLversion}.oasis.html"/>
   <echo unless:set="ready-html" message="HTML not created"/>
   <echo if:set="ready-html" message="HTML created"/>
+  <available property="ready-iso-docx" file="${dir}/UBL-${UBLversion}.iso.docx"/>
+  <echo unless:set="ready-iso-docx" message="ISO DOCX not created"/>
+  <echo if:set="ready-iso-docx" message="ISO DOCX created"/>
+  <available property="ready-iso-pdf" file="${dir}/UBL-${UBLversion}.iso.pdf"/>
+  <echo unless:set="ready-iso-pdf" message="ISO PDF not created"/>
+  <echo if:set="ready-iso-pdf" message="ISO PDF created"/>
+  <available property="ready-iso-xml" file="${dir}/UBL-${UBLversion}.niso.zip"/>
+  <echo unless:set="ready-iso-xml" message="NISO XML not created"/>
+  <echo if:set="ready-iso-xml" message="NISO XML created"/>
   <!--these touches are necessary because unzip doesn't preserve time of day-->
-  <touch file="${dir}/UBL-${UBLversion}.oasis.pdf"/>
-  <touch file="${dir}/UBL-${UBLversion}.iso.pdf"/>
-  <touch file="${dir}/UBL-${UBLversion}.oasis.html"/>
+  <touch if:set="ready-pdf"      file="${dir}/UBL-${UBLversion}.oasis.pdf"/>
+  <touch if:set="ready-html"     file="${dir}/UBL-${UBLversion}.oasis.html"/>
+  <touch if:set="ready-iso-docx" file="${dir}/UBL-${UBLversion}.iso.docx"/>
+  <touch if:set="ready-iso-pdf"  file="${dir}/UBL-${UBLversion}.iso.pdf"/>
+  <touch if:set="ready-iso-xml"  file="${dir}/UBL-${UBLversion}.niso.zip"/>
   <!--the names needed are not the names created-->
   <move preservelastmodified="true" file="${dir}/UBL-${UBLversion}.oasis.pdf"
-        tofile="${dir}/UBL-${UBLversion}.pdf"/>
+        tofile="${dir}/UBL-${UBLversion}.pdf" if:set="ready-pdf"/>
   <move preservelastmodified="true" file="${dir}/UBL-${UBLversion}.oasis.html"
-        tofile="${dir}/UBL-${UBLversion}.html"/>
+        tofile="${dir}/UBL-${UBLversion}.html" if:set="ready-html"/>
+  <move preservelastmodified="true" file="${dir}/UBL-${UBLversion}.iso.docx"
+        tofile="${dir}/iso-iec-19845-draft.docx" if:set="ready-iso-docx"/>
   <move preservelastmodified="true" file="${dir}/UBL-${UBLversion}.iso.pdf"
-        tofile="${dir}/iso-iec-19845-draft.pdf"/>
+        tofile="${dir}/iso-iec-19845-draft.pdf" if:set="ready-iso-pdf"/>
+  <move preservelastmodified="true" file="${dir}/UBL-${UBLversion}.niso.zip"
+        tofile="${dir}/iso-iec-19845-draft.niso.zip" if:set="ready-iso-xml"/>
   <!--intermediate file no longer needed-->
   <delete file="${dir}/UBL-${UBLversion}-pub.zip"/>
   
@@ -1487,7 +1513,9 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <available property="xml-made" file="${dir}/UBL-${UBLversion}.xml"/>
   <available property="html-made" file="${dir}/UBL-${UBLversion}.html"/>
   <available property="pdf-made" file="${dir}/UBL-${UBLversion}.pdf"/>
-  <available property="iso-made" file="${dir}/iso-iec-19845-draft.pdf"/>
+  <available property="iso-docx-made" file="${dir}/iso-iec-19845-draft.docx"/>
+  <available property="iso-pdf-made" file="${dir}/iso-iec-19845-draft.pdf"/>
+  <available property="iso-xml-made" file="${dir}/iso-iec-19845-draft.niso.zip"/>
   <available property="odt-made" file="${dir}/UBL-${UBLversion}-${label}.odt"/>
   <condition property="docs-not-made">
     <not>
@@ -1498,7 +1526,9 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
           <and>
             <istrue value="${html-made}"/>
             <istrue value="${pdf-made}"/>
-            <!--<istrue value="${iso-made}"/>-->
+            <istrue value="${iso-docx-made}"/>
+            <istrue value="${iso-pdf-made}"/>
+            <istrue value="${iso-xml-made}"/>
             <istrue value="${odt-made}"/>
           </and>
         </or>
@@ -1509,7 +1539,9 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <property name="xml-made" value="false"/>
   <property name="html-made" value="false"/>
   <property name="pdf-made" value="false"/>
-  <property name="iso-made" value="false"/>
+  <property name="iso-docx-made" value="false"/>
+  <property name="iso-pdf-made" value="false"/>
+  <property name="iso-xml-made" value="false"/>
   <property name="odt-made" value="false"/>
   <property name="not-attempting-to-produce-necessary-results" value="false"/>
   <!--<echo message="Diagnostics:${xml-made}, HTML:${html-made}, PDF:${pdf-made}, ISO:${iso-made}, SKIP:${not-attempting-to-produce-necessary-results} validatedInputs:${validatedInputs}"/>-->
@@ -1521,7 +1553,9 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
       <include name="UBL-${UBLversion}-preview.html"/>
       <include name="UBL-${UBLversion}.html"/>
       <include name="UBL-${UBLversion}.pdf"/>
+      <include name="iso-iec-19845-draft.docx"/>
       <include name="iso-iec-19845-draft.pdf"/>
+      <include name="iso-iec-19845-draft.niso.zip"/>
       <include name="missing*missing.txt"/>
     </fileset>
   </copy>
@@ -1534,10 +1568,6 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <mkdir dir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files"/>
   <move unless:true="includeISO" preservelastmodified="true"
         todir="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files">
-    <!--the ISO file is in the docs directory only for drafts; move it to archive if not a draft-->
-    <fileset dir="${dir}/hub-${package}-${UBLstage}-${label}">
-      <include name="iso-iec-19845-draft.pdf"/>
-    </fileset>
     <fileset dir="${dir}">
       <include name="UBL-${UBLversion}*.txt"/>
     </fileset>
@@ -1758,8 +1788,11 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
   <mkdir   dir="${dir}/${package}-${UBLstage}-${label}"/>
   <delete  dir="${dir}/${package}-${UBLstage}-${label}-archive-only"/>
   <mkdir   dir="${dir}/${package}-${UBLstage}-${label}-archive-only"/>
+  <delete  dir="${dir}/${package}-${UBLstage}-${label}-iso-iec-19845"/>
+  <mkdir   dir="${dir}/${package}-${UBLstage}-${label}-iso-iec-19845"/>
   <delete file="${dir}/${package}-${UBLstage}-${label}.zip"/>
   <delete file="${dir}/${package}-${UBLstage}-${label}-archive-only.zip"/>
+  <delete file="${dir}/${package}-${UBLstage}-${label}-iso-iec-19845.zip"/>
   
  <!--start the distribution directory with the contents of the artefacts
      package and then the contents of the hub package-->
@@ -1809,16 +1842,22 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
   <move file="${dir}/${package}-${UBLstage}-${label}/iso-iec-19845-draft-sts"
         todir="${dir}/${package}-${UBLstage}-${label}/archive-only"
         failonerror="false"/>-->
-  <!--use "copy" to distribute ISO draft to all, "move" for only archive-->
   <move unless:true="includeISO"
         todir="${dir}/${package}-${UBLstage}-${label}-archive-only"
         failonerror="false">
-    <fileset dir="${dir}/hub-${package}-${UBLstage}-${label}">
-      <include name="iso-iec-19845-draft.pdf"/>
-    </fileset>
     <fileset dir="${dir}">
       <include name="UBL-${UBLversion}*.txt"/>
       <include name="UBL-${UBLversion}*.odt"/>
+    </fileset>
+  </move>
+  
+  <move unless:true="includeISO"
+        todir="${dir}/${package}-${UBLstage}-${label}-iso-iec-19845"
+        failonerror="false">
+    <fileset dir="${dir}/${package}-${UBLstage}-${label}">
+      <include name="iso-iec-19845-draft.docx"/>
+      <include name="iso-iec-19845-draft.pdf"/>
+      <include name="iso-iec-19845-draft.niso.zip"/>
     </fileset>
   </move>
 
