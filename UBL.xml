@@ -20,11 +20,11 @@
 	<!ENTITY psversion "2.4">
 	<!ENTITY pstage   "cs01">
 	<!ENTITY PSTAGE   "CS01">
-	<!ENTITY stage    "csd01">
-	<!ENTITY STAGE    "CSD01">
+	<!ENTITY stage    "wd01">
+	<!ENTITY STAGE    "WD01">
 	<!ENTITY isostage "WD">
-	<!ENTITY standard "Committee Specification Draft 01">
-	<!ENTITY stagetext "Committee Specification Draft 01">
+	<!ENTITY standard "Working Draft 01">
+	<!ENTITY stagetext "Working Draft 01">
 	<!ENTITY standard "Committee Specification 02xxxxxxx">
 	<!ENTITY stagetext "Committee Specification 02xxxxxx">
 	<!ENTITY standard "Committee Specification Draft 05xxxxxxxx">
