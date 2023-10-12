@@ -1,7 +1,7 @@
 <!DOCTYPE Identification [
-<!ENTITY short "CS01">
-<!ENTITY dir   "cs01">
-<!ENTITY version "2.4">
+<!ENTITY short "WD01">
+<!ENTITY dir   "wd01">
+<!ENTITY version "2.5">
 ]>
 <Identification>
   <ShortName>UBL-&version;-&short;</ShortName>
