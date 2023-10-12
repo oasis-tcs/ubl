@@ -4,16 +4,16 @@
 <!--
   This is the configuration of the base schema fragments for UBL 2.4 Signatures
  
-  Library:           OASIS Universal Business Language (UBL) 2.4 CS01
-                     http://docs.oasis-open.org/ubl/cs01-UBL-2.4/
-  Release Date:      27 September 2023
+  Library:           OASIS Universal Business Language (UBL) 2.5 WD01
+                     http://docs.oasis-open.org/ubl/wd01-UBL-2.5/
+  Release Date:      12 October 2023
   
 -->
 <!ENTITY copyrightYear      "2023">
-<!ENTITY versionDate "27 September 2023">
-<!ENTITY version        "2.4">
-<!ENTITY versionDisplay "2.4 CS01">
-<!ENTITY versionDirectory   "cs01-UBL-2.4">
+<!ENTITY versionDate "12 October 2023">
+<!ENTITY version        "2.5">
+<!ENTITY versionDisplay "2.5 WD01">
+<!ENTITY versionDirectory   "wd01-UBL-2.5">
 ]>
 <configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema">
  <ndr>
