@@ -8,13 +8,13 @@ export label=$3
 
 # Configuration parameters
 
-export title="UBL 2.4"
-export package=UBL-2.4
-export UBLversion=2.4
-export UBLstage=cs01
+export title="UBL 2.5"
+export package=UBL-2.5
+export UBLversion=2.5
+export UBLstage=csd01
 export UBLprevStageVersion=2.4
-export UBLprevStage=csd02
-export UBLprevVersion=2.3
+export UBLprevStage=cs01
+export UBLprevVersion=2.4
 export rawdir=raw
 export includeISO=false
 
