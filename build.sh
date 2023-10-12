@@ -18,8 +18,8 @@ export UBLprevVersion=2.3
 export rawdir=raw
 export includeISO=false
 
-export libGoogle=https://docs.google.com/spreadsheets/d/1kxlFLz2thJOlvpq2ChRAcv76SiKgEIRtoVRqsZ7OBUs
-export docGoogle=https://docs.google.com/spreadsheets/d/1GNpHCS7_QkJtP3QIOdPJWL5N3kQ1EzPznT6M8sPsA0Y
+export libGoogle=https://docs.google.com/spreadsheets/d/1p_LEqXdyMgQTq6DqbPAbNHPnwx6w9PQsAntNpxsNIHQ
+export docGoogle=https://docs.google.com/spreadsheets/d/1GCnZHVJ336Z3vOeiT40zRo6II0maTurnpt53ePqBo-o
 export sigGoogle=https://docs.google.com/spreadsheets/d/1T6z2NZ4mc69YllZOXE5TnT5Ey-FlVtaXN1oQ4AIMp7g
 
 bash build-common.sh "$1" "$2" "$3" "$4" "$5" "$6"
