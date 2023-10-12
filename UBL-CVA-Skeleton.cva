@@ -4,15 +4,15 @@ xmlns:cva="http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/"
 xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
 xmlns:c="urn:X-Crane-gc2obdndr"
 xmlns:x="http://www.w3.org/1999/xhtml"
-name="UBL-DataTypeQualifications-2.4"
-version="2021-05-28 00:30(UTC)"
+name="UBL-DataTypeQualifications-2.5"
+version="2023-10-12 00:00(UTC)"
 id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
    <Annotation>
       <Description>
          <x:p>
         This describes all of the qualified supplementary components and 
         business information entities for the OASIS Universal Business
-        Language (UBL) 2.4 vocabulary.  It includes all of the UBL 2.3, 
+        Language (UBL) 2.5 vocabulary.  It includes all of the UBL 2.4, UBL 2.3, 
         UBL 2.2, UBL 2.1, and UBL 2.0 constructs as well for backward
         compatibility.
       </x:p>
@@ -43,7 +43,7 @@ id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
       </Description>
    </Annotation>
    <Title>
-    UBL 2.0, 2.1, 2.2, 2.3 and UBL 2.4 qualified information items
+    UBL 2.0, 2.1, 2.2, 2.3, 2.4 and UBL 2.5 qualified information items
   </Title>
    <ValueLists>
       <Annotation>
