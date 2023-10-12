@@ -15,16 +15,16 @@
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "db/spec-0.8/docbook/docbookx.dtd" [
 	<!ENTITY name "UBL">
-	<!ENTITY pversion "2.3">
-	<!ENTITY version  "2.4">
+	<!ENTITY pversion "2.4">
+	<!ENTITY version  "2.5">
 	<!ENTITY psversion "2.4">
-	<!ENTITY pstage   "csd02">
-	<!ENTITY PSTAGE   "CSD02">
-	<!ENTITY stage    "cs01">
-	<!ENTITY STAGE    "CS01">
+	<!ENTITY pstage   "cs01">
+	<!ENTITY PSTAGE   "CS01">
+	<!ENTITY stage    "csd01">
+	<!ENTITY STAGE    "CSD01">
 	<!ENTITY isostage "WD">
-	<!ENTITY standard "Committee Specification 01">
-	<!ENTITY stagetext "Committee Specification 01">
+	<!ENTITY standard "Committee Specification Draft 01">
+	<!ENTITY stagetext "Committee Specification Draft 01">
 	<!ENTITY standard "Committee Specification 02xxxxxxx">
 	<!ENTITY stagetext "Committee Specification 02xxxxxx">
 	<!ENTITY standard "Committee Specification Draft 05xxxxxxxx">
@@ -32,7 +32,7 @@
 	<!ENTITY this-loc "https://docs.oasis-open.org/ubl/&stage;-UBL-&version;">
 	<!ENTITY previous-loc "https://docs.oasis-open.org/ubl/&pstage;-UBL-&psversion;">
 	<!ENTITY latest-loc "https://docs.oasis-open.org/ubl">
-	<!ENTITY pubdate "27 September 2023">
+	<!ENTITY pubdate "12 October 2023">
 	<!--remove time from pub date-->
 	<!ENTITY pubyear "2023">
 	<!ENTITY pubdate-iso "ccyy-mm-dd">
