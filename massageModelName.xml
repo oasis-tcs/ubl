@@ -6,7 +6,7 @@
   Use this expression in the mod/maindoc directory to establish which names
   need shortening to 31 characters or less:
 
-ls *.ods | sed s/UBL-// | sed s/-2.4.ods// | sed -E "s/(.{1,31})(.*)/\1    \2/"
+ls *.ods | sed s/UBL-// | sed s/-2.5.ods// | sed -E "s/(.{1,31})(.*)/\1    \2/"
 
 -->
 <!DOCTYPE modelNameMassage
@@ -20,8 +20,8 @@ ls *.ods | sed s/UBL-// | sed s/-2.4.ods// | sed -E "s/(.{1,31})(.*)/\1    \2/"
 ]>
 <modelNameMassage>
   <pass>
-    <shorten find="UBL-(.+)-2.4" replace="$1"/>
-    <lengthen find="(.+)" replace="UBL-$1-2.4"/>
+    <shorten find="UBL-(.+)-2.5" replace="$1"/>
+    <lengthen find="(.+)" replace="UBL-$1-2.5"/>
   </pass>
   <pass>
     <shorten find="Catalogue" replace="Ctlg"/>
