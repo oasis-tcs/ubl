@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Library:           OASIS Universal Business Language (UBL) 2.4 CSD01
-                     http://docs.oasis-open.org/ubl/csd01-UBL-2.4/
+  Library:           OASIS Universal Business Language (UBL) 2.5 CSD01
+                     http://docs.oasis-open.org/ubl/csd01-UBL-2.5/
   Release Date:      08 February 2023
   Module:            UBL-CommonExtensionComponents-2.4.xsd
   Generated on:      2017-01-02 17:20(UTC)
@@ -13,14 +13,14 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
 xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1"
 targetNamespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" 
             elementFormDefault="qualified" attributeFormDefault="unqualified" 
-            version="2.4">
+            version="2.5">
 <!-- ===== Imports ===== -->
   <xsd:import namespace="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1"
               schemaLocation="BDNDR-UnqualifiedDataTypes-1.1.xsd"/>
   <xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
-              schemaLocation="UBL-CommonBasicComponents-2.4.xsd"/>
+              schemaLocation="UBL-CommonBasicComponents-2.5.xsd"/>
 <!-- ===== Includes ===== -->
-<xsd:include schemaLocation="UBL-ExtensionContentDataType-2.4.xsd"/>
+<xsd:include schemaLocation="UBL-ExtensionContentDataType-2.5.xsd"/>
 <!-- ===== Aggregate Element and Type Declarations ===== -->
   <xsd:element name="UBLExtensions" type="UBLExtensionsType">
     <xsd:annotation>

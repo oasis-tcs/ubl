@@ -90,7 +90,7 @@
       <ns prefix="{$ext-prefix}" uri="{$ext-ns}"/>
       
       <xsl:comment>
-A set of Schematron rules against which UBL 2.4 document constraints are
+A set of Schematron rules against which UBL 2.5 document constraints are
 tested in the scope of a second pass validation after schema validation
 has been performed.
 
