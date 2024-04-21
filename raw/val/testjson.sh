@@ -1,4 +1,4 @@
-UBLversion=2.4
+UBLversion=2.5
 sh validatejson.sh ../json-schema/maindoc/UBL-Order-$UBLversion.json order-test-good.json
 sh validatejson.sh ../json-schema/maindoc/UBL-Order-$UBLversion.json order-test-bad1.json
 sh validatejson.sh ../json-schema/maindoc/UBL-Order-$UBLversion.json order-test-bad2.json

@@ -1,4 +1,4 @@
-UBLversion=2.4
+UBLversion=2.5
 sh validatejson.sh ../json-schema/maindoc/UBL-TransportationStatus-$UBLversion.json ../json/MyTransportationStatus.json
 sh validatejson.sh ../json-schema/maindoc/UBL-BusinessCard-$UBLversion.json ../json/UBL-BusinessCard-2.2-Example.json
 sh validatejson.sh ../json-schema/maindoc/UBL-CreditNote-$UBLversion.json ../json/UBL-CreditNote-2.0-Example.json

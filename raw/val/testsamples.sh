@@ -1,4 +1,4 @@
-UBLversion=2.4
+UBLversion=2.5
 sh validate.sh ../xsdrt/maindoc/UBL-TransportationStatus-$UBLversion.xsd ../xml/MyTransportationStatus.xml
 sh validate.sh ../xsdrt/maindoc/UBL-BusinessCard-$UBLversion.xsd ../xml/UBL-BusinessCard-2.2-Example.xml
 sh validate.sh ../xsdrt/maindoc/UBL-CommonTransportationReport-$UBLversion.xsd ../xml/UBL-CommonTransportationReport-2.3-Example.xml

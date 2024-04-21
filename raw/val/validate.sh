@@ -6,7 +6,7 @@ echo Usage: sh validate.sh ubl-schema-file ubl-xml-file
 exit 1
 fi
 
-UBLversion=2.4
+UBLversion=2.5
 DP0=$( cd "$(dirname "$0")" ; pwd -P )
 echo
 echo "############################################################"

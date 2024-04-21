@@ -1,4 +1,4 @@
-set UBLversion=2.4
+set UBLversion=2.5
 call validate  ..\xsdrt\maindoc\UBL-TransportationStatus-$UBLversion.xsd ..\xml\MyTransportationStatus.xml
 call validate  ..\xsdrt\maindoc\UBL-BusinessCard-$UBLversion.xsd ..\xml\UBL-BusinessCard-2.2-Example.xml
 call validate  ..\xsdrt\maindoc\UBL-CommonTransportationReport-$UBLversion.xsd ..\xml\UBL-CommonTransportationReport-2.3-Example.xml
