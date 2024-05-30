@@ -1,7 +1,7 @@
 <project default="-qatest" xmlns:if="ant:if" xmlns:unless="ant:unless">
 
 <!--
-  2024-05-30 13:50z
+  2024-05-30 14:20z
   
   This Ant project interacts with the Realta Server API using curl.
   
@@ -189,20 +189,20 @@
   </condition>
   <echo message="Status: ${status}"/>
 
-  <echo message="Fetching log ${fileupload}.realta.txt"/>
-  <exec executable="curl" errorproperty="errReturnLog"
-        resultproperty="returnFetchLog"
-        output="${fileupload}.log.txt">
-   <arg value="--request"/><arg value="GET"/>
-   <arg value="--url"/>
-   <arg value="https://${servername}/jobs/${jobid}/logs"/>
-   <arg value="--location"/>
-   <arg value="--header"/><arg value="authorization: Bearer ${token}"/>
-  </exec>
-  <loadfile property="returnLogDisplay" srcfile="${fileupload}.log.txt"/>
-  <echo message="${returnLogDisplay}"/>
-
   <sequential if:set="job-done">
+    <echo message="Fetching log ${fileupload}.realta.txt"/>
+    <exec executable="curl" errorproperty="errReturnLog"
+          resultproperty="returnFetchLog"
+          output="${fileupload}.log.txt">
+     <arg value="--request"/><arg value="GET"/>
+     <arg value="--url"/>
+     <arg value="https://${servername}/jobs/${jobid}/logs"/>
+     <arg value="--location"/>
+     <arg value="--header"/><arg value="authorization: Bearer ${token}"/>
+    </exec>
+    <loadfile property="returnLogDisplay" srcfile="${fileupload}.log.txt"/>
+    <echo message="${returnLogDisplay}"/>
+  
     <condition property="job-ready">
       <or>
         <equals arg1="${status}" arg2="FINISHED"/>
