@@ -1,7 +1,7 @@
 <project default="-qatest" xmlns:if="ant:if" xmlns:unless="ant:unless">
 
 <!--
-  2023-01-29 02:00z (Modified 20240530 for longer wait period)
+  2024-05-30 13:50z
   
   This Ant project interacts with the Realta Server API using curl.
   
@@ -188,9 +188,26 @@
     </and>
   </condition>
   <echo message="Status: ${status}"/>
+
+  <echo message="Fetching log ${fileupload}.realta.txt"/>
+  <exec executable="curl" errorproperty="errReturnLog"
+        resultproperty="returnFetchLog"
+        output="${fileupload}.log.txt">
+   <arg value="--request"/><arg value="GET"/>
+   <arg value="--url"/>
+   <arg value="https://${servername}/jobs/${jobid}/logs"/>
+   <arg value="--location"/>
+   <arg value="--header"/><arg value="authorization: Bearer ${token}"/>
+  </exec>
+  <loadfile property="returnLogDisplay" srcfile="${fileupload}.log.txt"/>
+  <echo message="${returnLogDisplay}"/>
+
   <sequential if:set="job-done">
     <condition property="job-ready">
-      <equals arg1="${status}" arg2="FINISHED"/>
+      <or>
+        <equals arg1="${status}" arg2="FINISHED"/>
+        <equals arg1="${status}" arg2="FINISHED_WARNING"/>
+      </or>
     </condition>
     <sequential if:set="job-ready">
       <echo message="Fetching file ${fileupload}.realta.zip"/>
