@@ -1,7 +1,7 @@
 <project default="-qatest" xmlns:if="ant:if" xmlns:unless="ant:unless">
 
 <!--
-  2023-01-29 02:00z
+  2023-01-29 02:00z (Modified 20240530 for longer wait period)
   
   This Ant project interacts with the Realta Server API using curl.
   
@@ -248,6 +248,63 @@
   <!--
     note this is particularly long in case the job gets queued before running
   -->
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
+  <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
   <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
   <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
   <antcallback target="-realta-fetch-v2" return="fetch-okay" unless:set="fetch-okay"/>
