@@ -1,7 +1,7 @@
-<project default="-qatest" xmlns:if="ant:if" xmlns:unless="ant:unless">
+<project default="-realta" xmlns:if="ant:if" xmlns:unless="ant:unless">
 
 <!--
-  2024-05-30 14:20z
+  2024-05-30 15:10z
   
   This Ant project interacts with the Realta Server API using curl.
   
@@ -11,13 +11,17 @@
   Parameters:
   ${entrypoint} = API entry point
   ${fileupload} = XML or ZIP file to publish (result in {name}.realta.zip)
-  ${realtauser} = server username
-  ${realtapass} = server password
 
   Optional parameters for remote API submission:
   ${servername} = server name (production: use target "-realta")
+  ${realtauser} = server username
+  ${realtapass} = server password
   ${dateprefix} = identifier for the job (automatically suffixed with date)
   ${skipunpack} = set this to "true" to keep results zipped and not unpacked
+  
+  Administration-use-only parameter:
+  ${tenantname} = name the tenant to use when the default tenants associated
+                  with the authentication login credentials are insufficient 
   
   These steps never signal an Ant fail as this inhibits its use in GitHub
   actions that will not return intermediate results when a script fails.
@@ -39,7 +43,10 @@
 
 <target name="-realta">
   <property name="servername" value=       "api.realtaonline.com/v2"/>
-  <property name="dateprefix" value=""/>
+  <property name="dateprefix" value="${fileupload}"/>
+  <property if:set="tenantname"
+            name="adminsuffix" value="?admin-tenant=${tenantname}"/>
+  <property name="adminsuffix" value=""/>
   
   <echo message="Realta server access initiated"/>
   <echo message="Invoking API version 2 - ${servername}"/>
@@ -55,17 +62,6 @@
     </sequential>
   </sequential>
   <antcallback target="-realta-complete-v2"/>
-</target>
-
-<!--the following is used in a local test environment; please ignore-->
-<target name="-ken-local">
-  <unzip src="${fileupload}" dest="${dir}"/>
-  <touch file="${dir}/preserve_work.txt"/>
-  <ant antfile="RealtaAPIinvoke.xml"
-       dir="/Users/admin/u/git/render/render/" inheritAll="false">
-    <property name="entrypoint" value="${entrypoint}"/>
-    <property name="fileupload" value="${dir}/${filelocal}"/>
-  </ant>
 </target>
 
 <!--========================================================================-->
@@ -126,15 +122,41 @@
     <format property="submitTime" timezone="GMT"
             pattern="YYYY-MM-dd HH:mm:ssZ"/>
   </tstamp>
-  <echo message='Submitting "${dateprefix} ${submitTime}" to "${entrypoint}" ...'/>
-<!--  <echo message='
-
-    '/>-->
+  <echo message='Submitting "${fileupload}" with "${dateprefix} ${submitTime}" to "${entrypoint}" ...'/>
+  
+  <sequential if:true="false">
+    <!--set above to if:true="true" in order to expose the following diagnostic
+        information in the log-->
+    <echo message='curl&#xa;
+      &lt;arg value="--request"/>&#xa;
+      &lt;arg value="POST"/>&#xa;
+      &lt;arg value="--url"/>&#xa;
+      &lt;arg value="https://${servername}/jobs${adminsuffix}"/>&#xa;
+      &lt;arg value="--location"/>&#xa;
+      &lt;arg value="--output"/>&#xa;
+      &lt;arg value="-"/>&#xa;
+      &lt;arg value="--header"/>&#xa;
+      &lt;arg value="authorization: Bearer ${token}"/>&#xa;
+      &lt;arg value="--header"/>&#xa;
+      &lt;arg value="accept: application/json"/>&#xa;
+      &lt;arg value="--form"/>&#xa;
+      &lt;arg value="files=@${fileupload};type=application/zip"/>&#xa;
+      &lt;arg value="--form"/>&#xa;
+      &lt;arg value="note=${dateprefix} ${submitTime}"/>&#xa;
+      &lt;arg value="--form"/>&#xa;
+      &lt;arg value="entrypoint=${entrypoint}"/>&#xa;
+      &lt;arg value="--verbose"/>&#xa;
+      '/>
+    <available file="${fileupload}" property="gotit"/>
+    <echo message="Input file available: ${gotit}"/>
+    <echo message="skipunpack=${skipunpack}"/>
+  </sequential>
+  
   <exec executable="curl" errorproperty="errSubmit"
         resultproperty="returnSubmit"
         outputproperty="jobidReturn">
     <arg value="--request"/><arg value="POST"/>
-    <arg value="--url"/><arg value="https://${servername}/jobs"/>
+    <arg value="--url"/><arg value="https://${servername}/jobs${adminsuffix}"/>
     <arg value="--location"/>
     <arg value="--output"/><arg value="-"/>
     <arg value="--header"/><arg value="authorization: Bearer ${token}"/>
@@ -171,7 +193,8 @@
         resultproperty="returnStatus"
         outputproperty="statusReturn">
     <arg value="--request"/><arg value="GET"/>
-    <arg value="--url"/><arg value="https://${servername}/jobs/${jobid}"/>
+    <arg value="--url"/>
+    <arg value="https://${servername}/jobs/${jobid}${adminsuffix}"/>
     <arg value="--location"/>
     <arg value="--header"/><arg value="authorization: Bearer ${token}"/>
   </exec>
@@ -188,7 +211,6 @@
     </and>
   </condition>
   <echo message="Status: ${status}"/>
-
   <sequential if:set="job-done">
     <echo message="Fetching log ${fileupload}.realta.txt"/>
     <exec executable="curl" errorproperty="errReturnLog"
@@ -207,6 +229,9 @@
       <or>
         <equals arg1="${status}" arg2="FINISHED"/>
         <equals arg1="${status}" arg2="FINISHED_WARNING"/>
+        <equals arg1="${status}" arg2="ERROR"/>
+        <equals arg1="${status}" arg2="ERROR_INVALID"/>
+        <equals arg1="${status}" arg2="ERROR_EXTERNAL"/>
       </or>
     </condition>
     <sequential if:set="job-ready">
@@ -216,9 +241,10 @@
             output="${fileupload}.realta.zip">
        <arg value="--request"/><arg value="GET"/>
        <arg value="--url"/>
-       <arg value="https://${servername}/jobs/${jobid}/archive"/>
+       <arg value="https://${servername}/jobs/${jobid}/archive${adminsuffix}"/>
        <arg value="--location"/>
-       <arg value="--header"/><arg value="authorization: Bearer ${token}"/>
+       <arg value="--header"/>
+       <arg value="authorization: Bearer ${token}"/>
       </exec>
     </sequential>
     <sequential unless:set="job-ready">
@@ -237,7 +263,7 @@
   </condition>
 </target>
 
-<target name="-realta-unpack-v2" unless="skipunpack">
+<target name="-realta-unpack-v2" unless="${skipunpack}">
   <echo message="Unzipping ${fileupload}.realta.zip PDF/HTML results..."/>
   <dirname property="targetdir" file="${fileupload}"/>
   <unzip src="${fileupload}.realta.zip" dest="${targetdir}"/>
@@ -251,7 +277,8 @@
         resultproperty="returnDelete"
         outputproperty="deleteReturn">
     <arg value="--request"/><arg value="DELETE"/>
-    <arg value="--url"/><arg value="https://${servername}/jobs/${jobid}"/>
+    <arg value="--url"/>
+    <arg value="https://${servername}/jobs/${jobid}${adminsuffix}"/>
     <arg value="--location"/>
     <arg value="--header"/><arg value="authorization: Bearer ${token}"/>
   </exec>
@@ -386,7 +413,8 @@
           resultproperty="returnStatus"
           outputproperty="statusReturn">
       <arg value="--request"/><arg value="GET"/>
-      <arg value="--url"/><arg value="https://${servername}/jobs/${jobid}"/>
+      <arg value="--url"/>
+      <arg value="https://${servername}/jobs/${jobid}${adminsuffix}"/>
       <arg value="--location"/>
       <arg value="--header"/><arg value="authorization: Bearer ${token}"/>
     </exec>
