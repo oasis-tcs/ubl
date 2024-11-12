@@ -2,5 +2,5 @@
   <graphic-uri-prefix originators="*"><ps:input-file-name
     xmlns:ps="https://www.realtaonline.com/ns/parameter-substitution"
     regex="^(.+?).xml$" replace="$1"/>.graphics/</graphic-uri-prefix>
-  <graphic-uri-suffix>.png</graphic-uri-suffix>
+  <graphic-uri-suffix>.svg</graphic-uri-suffix>
 </parameters>

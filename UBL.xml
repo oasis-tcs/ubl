@@ -701,7 +701,7 @@
         application of those schemas.</para>
       <para>UBL 2.2 extended the pre-award tendering processes, adds a new transportation document for the weight statement, and adds new documents for a business directory and agreements. UBL 2.1 extended the generalized supply chain processes of UBL 2.0 (including the commercial collaborations of
         international trade) to include support for collaborative planning, forecasting, and replenishment; vendor managed inventory; utility billing; tendering; and intermodal freight management. </para>
-      <!--<para>The following diagrams illustrate the business context use case covered by UBL &version;.</para><figure id="F-UBL-&version;-USE-CASE-OVERALL-VIEW"><title>UBL &version; Use Case Overall View</title><mediaobject><imageobject><imagedata fileref="art/UBL-2.2-UseCaseOverview.png"/></imageobject><textobject><phrase>[Use Case Overview Diagram]</phrase></textobject></mediaobject></figure><figure id="F-UBL-&version;-USE-CASE-DETAIL"><title>UBL &version; Use Case Detail</title><mediaobject><imageobject><imagedata fileref="art/UBL-2.2-UseCase.png"/></imageobject><textobject><phrase>[Use Case Detail Diagram]</phrase></textobject></mediaobject></figure>-->
+      <!--<para>The following diagrams illustrate the business context use case covered by UBL &version;.</para><figure id="F-UBL-&version;-USE-CASE-OVERALL-VIEW"><title>UBL &version; Use Case Overall View</title><mediaobject><imageobject><imagedata fileref="art/UBL-2.2-UseCaseOverview.svg"/></imageobject><textobject><phrase>[Use Case Overview Diagram]</phrase></textobject></mediaobject></figure><figure id="F-UBL-&version;-USE-CASE-DETAIL"><title>UBL &version; Use Case Detail</title><mediaobject><imageobject><imagedata fileref="art/UBL-2.2-UseCase.svg"/></imageobject><textobject><phrase>[Use Case Detail Diagram]</phrase></textobject></mediaobject></figure>-->
       <para>The document types included in UBL &version; are listed in <xref linkend="S-UBL-&version;-SCHEMAS"/>. It is important to note that, as with previous UBL releases, the UBL &version; library is designed to support the construction of a wide variety of document types beyond those provided
         in the &version; package. It is expected that implementers will develop their own customized document types and components and that more UBL document types will be added as the library evolves. </para>
       <para>For guidance in customizing UBL document types, see the UBL Guidelines for Customization <xref linkend="custguide"/>. </para>
@@ -843,7 +843,7 @@
           <title>Simple Fulfilment</title>
           <mediaobject>
             <imageobject>
-              <imagedata fileref="art/UBL-2.2-Fulfilment-1simple.png"/>
+              <imagedata fileref="art/UBL-2.2-Fulfilment-1simple.svg"/>
             </imageobject>
             <textobject>
               <phrase>[Simple Fulfilment Diagram]</phrase>
@@ -856,7 +856,7 @@
           <title>Split Fulfilment</title>
           <mediaobject>
             <imageobject>
-              <imagedata fileref="art/UBL-2.2-Fulfilment-2split.png"/>
+              <imagedata fileref="art/UBL-2.2-Fulfilment-2split.svg"/>
             </imageobject>
             <textobject>
               <phrase>[Split Fulfilment Diagram]</phrase>
@@ -869,7 +869,7 @@
           <title>Intermediary Fulfilment</title>
           <mediaobject>
             <imageobject>
-              <imagedata fileref="art/UBL-2.2-Fulfilment-3intermediary.png"/>
+              <imagedata fileref="art/UBL-2.2-Fulfilment-3intermediary.svg"/>
             </imageobject>
             <textobject>
               <phrase>[Intermediary Fulfilment Diagram]</phrase>
@@ -885,7 +885,7 @@
           <title>Consolidated Fulfilment</title>
           <mediaobject>
             <imageobject>
-              <imagedata fileref="art/UBL-2.2-Fulfilment-4consolidated.png"/>
+              <imagedata fileref="art/UBL-2.2-Fulfilment-4consolidated.svg"/>
             </imageobject>
             <textobject>
               <phrase>[Consolidated Fulfilment Diagram]</phrase>
@@ -996,7 +996,7 @@
               <title>Collaborative Planning, Forecasting, and Replenishment steps 1 and 2</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-CPFR-Steps1-2.png"/>
+                  <imagedata fileref="art/UBL-2.2-CPFR-Steps1-2.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Collaborative Planning, Forecasting, and Replenishment steps 1 &amp; 2 Diagram]</phrase>
@@ -1009,7 +1009,7 @@
               <title>Establish Collaborative Relationships</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-CPFR-EstablishingCollaborativeRelationships.png"/>
+                  <imagedata fileref="art/UBL-2.2-CPFR-EstablishingCollaborativeRelationships.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Establish Collaborative Relationships Diagram]</phrase>
@@ -1022,7 +1022,7 @@
               <title>Create joint business plan</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-CPFR-CreateJointBusinessPlan.png"/>
+                  <imagedata fileref="art/UBL-2.2-CPFR-CreateJointBusinessPlan.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Create joint business plan Diagram]</phrase>
@@ -1042,7 +1042,7 @@
               <title>Collaborative Planning, Forecasting, and Replenishment steps 3, 4, and 5</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-CPFR-Steps3-4-5.png"/>
+                  <imagedata fileref="art/UBL-2.2-CPFR-Steps3-4-5.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Collaborative Planning, Forecasting, and Replenishment steps 3, 4, and 5 Diagram]</phrase>
@@ -1056,7 +1056,7 @@
               <title>Create Sales Forecast</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-CPFR-CreatingSalesForecast.png"/>
+                  <imagedata fileref="art/UBL-2.2-CPFR-CreatingSalesForecast.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Create Sales Forecast Diagram]</phrase>
@@ -1072,7 +1072,7 @@
               <title>Exception Handling</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-CPFR-ExceptionHandling.png"/>
+                  <imagedata fileref="art/UBL-2.2-CPFR-ExceptionHandling.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Exception Handling Diagram]</phrase>
@@ -1090,7 +1090,7 @@
               <title>Collaborative Planning, Forecasting, and Replenishment steps 6, 7, 8 and 9</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-CPFR-Steps6-9.png"/>
+                  <imagedata fileref="art/UBL-2.2-CPFR-Steps6-9.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Collaborative Planning, Forecasting, and Replenishment steps 6, 7, 8 and 9 Diagram]</phrase>
@@ -1104,7 +1104,7 @@
               <title>Create Order Forecast</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-CPFR-CreateOrderForecast.png"/>
+                  <imagedata fileref="art/UBL-2.2-CPFR-CreateOrderForecast.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Create Order Forecast Diagram]</phrase>
@@ -1118,7 +1118,7 @@
               <title>Identifying and Resolving Exceptions for Order Forecast</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-CPFR-IdentifyResolve.png"/>
+                  <imagedata fileref="art/UBL-2.2-CPFR-IdentifyResolve.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Identifying and Resolving Exceptions for Order Forecast Diagram]</phrase>
@@ -1129,7 +1129,7 @@
               <title>Exception Monitor During Execution</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-CPFR-ExceptionMonitor.png"/>
+                  <imagedata fileref="art/UBL-2.2-CPFR-ExceptionMonitor.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Exception Monitor During Execution Diagram]</phrase>
@@ -1155,7 +1155,7 @@
               <title>Procurement Process</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.3-ProcurementProcess.png"/>
+                  <imagedata fileref="art/UBL-2.3-ProcurementProcess.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Procurement Process Diagram]</phrase>
@@ -1167,7 +1167,7 @@
               <title>Pre-award Process</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.3-Pre-awardProcess.png"/>
+                  <imagedata fileref="art/UBL-2.3-Pre-awardProcess.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Pre-award Process Diagram]</phrase>
@@ -1185,7 +1185,7 @@
               <title>Contract Information Preparation</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-Tender-ContractInfoPrep.png"/>
+                  <imagedata fileref="art/UBL-2.2-Tender-ContractInfoPrep.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Tendering Process Diagram]</phrase>
@@ -1201,7 +1201,7 @@
               <title>Contract Information Notification</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-Tender-ContractInfoNotify.png"/>
+                  <imagedata fileref="art/UBL-2.2-Tender-ContractInfoNotify.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Contract Information Notification Diagram]</phrase>
@@ -1217,7 +1217,7 @@
               <title>Invitation to Tender</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-Tender-Invitation.png"/>
+                  <imagedata fileref="art/UBL-2.2-Tender-Invitation.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Invitation to Tender Diagram]</phrase>
@@ -1233,7 +1233,7 @@
               <title>Expression of Interest</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-Tender-ExpressionOfInterest.png"/>
+                  <imagedata fileref="art/UBL-2.2-Tender-ExpressionOfInterest.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Expression of Interest Diagram]</phrase>
@@ -1249,7 +1249,7 @@
               <title>Unsubscribe from Procedure</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-Tender-UnsubscribeFromProcedure.png"/>
+                  <imagedata fileref="art/UBL-2.2-Tender-UnsubscribeFromProcedure.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Unsubscribe From Procedure Diagram]</phrase>
@@ -1266,7 +1266,7 @@
               <title>Submission of Qualification Information</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-Tender-QualificationInfo.png"/>
+                  <imagedata fileref="art/UBL-2.2-Tender-QualificationInfo.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Submission of Qualification Information Diagram]</phrase>
@@ -1282,7 +1282,7 @@
               <title>Qualification of Interest</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-Tender-QualificationApplication.png"/>
+                  <imagedata fileref="art/UBL-2.2-Tender-QualificationApplication.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Qualification Application Diagram]</phrase>
@@ -1297,7 +1297,7 @@
               <title>Enquiry</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-Enquiry.png"/>
+                  <imagedata fileref="art/UBL-2.2-Enquiry.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Enquiry Diagram]</phrase>
@@ -1313,7 +1313,7 @@
               <title>Submission of Tenders</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-Tender-SubmissionOfTenders.png"/>
+                  <imagedata fileref="art/UBL-2.2-Tender-SubmissionOfTenders.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Submission of Tenders Diagram]</phrase>
@@ -1328,7 +1328,7 @@
               <title>Tender Status</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-Tender-Status.png"/>
+                  <imagedata fileref="art/UBL-2.2-Tender-Status.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Tender Status Diagram]</phrase>
@@ -1343,7 +1343,7 @@
               <title>Tender Withdrawal</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-Tender-Withdrawal.png"/>
+                  <imagedata fileref="art/UBL-2.2-Tender-Withdrawal.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Tender Withdrawal Diagram]</phrase>
@@ -1360,7 +1360,7 @@
               <title>Award Notification</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-Tender-AwardNotification.png"/>
+                  <imagedata fileref="art/UBL-2.2-Tender-AwardNotification.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Award Notification Diagram]</phrase>
@@ -1372,7 +1372,7 @@
               <title>Award Publication</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-Tender-AwardPublication.png"/>
+                  <imagedata fileref="art/UBL-2.2-Tender-AwardPublication.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Award Publication Diagram]</phrase>
@@ -1385,7 +1385,7 @@
               <title>Guarantee Deposit</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-Tender-GuaranteeDeposit.png"/>
+                  <imagedata fileref="art/UBL-2.2-Tender-GuaranteeDeposit.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Guarantee Deposit Diagram]</phrase>
@@ -1401,7 +1401,7 @@
               <title>Tender Contract Pre-signing by Initiating Party</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.3-Tender-Contract-Pre.png"/>
+                  <imagedata fileref="art/UBL-2.3-Tender-Contract-Pre.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Tender Contract Pre-signing Diagram]</phrase>
@@ -1413,7 +1413,7 @@
               <title>Tender Contract Post-signing by Initiating Party</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.3-Tender-Contract-Post.png"/>
+                  <imagedata fileref="art/UBL-2.3-Tender-Contract-Post.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Tender Contract Post-signing Diagram]</phrase>
@@ -1514,7 +1514,7 @@
                 <title>Create Catalogue Process</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.0-CreateCatalogueProcess.png"/>
+                    <imagedata fileref="art/UBL-2.0-CreateCatalogueProcess.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Create Catalogue Diagram]</phrase>
@@ -1530,7 +1530,7 @@
                 <title>Update Item Specification Process</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.0-UpdateCatalogueItemSpecificationProcess.png"/>
+                    <imagedata fileref="art/UBL-2.0-UpdateCatalogueItemSpecificationProcess.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Update Item Specification Diagram]</phrase>
@@ -1546,7 +1546,7 @@
                 <title>Update Catalogue Pricing Process</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.0-UpdateCataloguePricingProcess.png"/>
+                    <imagedata fileref="art/UBL-2.0-UpdateCataloguePricingProcess.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Update Catalogue Pricing Diagram]</phrase>
@@ -1561,7 +1561,7 @@
                 <title>Delete Catalogue Process</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.0-DeleteCatalogueProcess.png"/>
+                    <imagedata fileref="art/UBL-2.0-DeleteCatalogueProcess.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Delete Catalogue Diagram]</phrase>
@@ -1576,7 +1576,7 @@
                 <title>Punch-out Sourcing Process</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.0-SourcingPunchoutProcess.png"/>
+                    <imagedata fileref="art/UBL-2.0-SourcingPunchoutProcess.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Punch-out Sourcing Diagram]</phrase>
@@ -1597,7 +1597,7 @@
             <title>Quotation Process</title>
             <mediaobject>
               <imageobject>
-                <imagedata fileref="art/UBL-2.0-SourcingBuyerInitiatedProcess.png"/>
+                <imagedata fileref="art/UBL-2.0-SourcingBuyerInitiatedProcess.svg"/>
               </imageobject>
               <textobject>
                 <phrase>[Quotation Diagram]</phrase>
@@ -1615,7 +1615,7 @@
               <title>Ordering Process</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.3-OrderingProcess.png"/>
+                  <imagedata fileref="art/UBL-2.3-OrderingProcess.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Ordering Diagram]</phrase>
@@ -1725,7 +1725,7 @@
                 <title>Initial Stocking of the Area by Producer</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.2-VMI-InitialStocking.png"/>
+                    <imagedata fileref="art/UBL-2.2-VMI-InitialStocking.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Initial Stocking of the Area by Producer Diagram]</phrase>
@@ -1740,7 +1740,7 @@
                 <title>Report of Sales and Inventory Movement</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.2-VMI-SalesAndInventoryMovement.png"/>
+                    <imagedata fileref="art/UBL-2.2-VMI-SalesAndInventoryMovement.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Report of Sales and Inventory Movement Diagram]</phrase>
@@ -1756,7 +1756,7 @@
                 <title>Permanent Replenishment</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.2-VMI-PermanentReplenishment.png"/>
+                    <imagedata fileref="art/UBL-2.2-VMI-PermanentReplenishment.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Permanent Replenishment Diagram]</phrase>
@@ -1771,7 +1771,7 @@
                 <title>Invoicing for Vendor Managed Inventory</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.2-VMI-Invoicing.png"/>
+                    <imagedata fileref="art/UBL-2.2-VMI-Invoicing.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Invoicing for Vendor Managed Inventory Diagram]</phrase>
@@ -1787,7 +1787,7 @@
                 <title>Returns Initiated by the Producer</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.2-VMI-ReturnsByProducer.png"/>
+                    <imagedata fileref="art/UBL-2.2-VMI-ReturnsByProducer.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Returns Initiated by the Producer Diagram]</phrase>
@@ -1802,7 +1802,7 @@
                 <title>Price Adjustments</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.2-VMI-PriceAdjustment.png"/>
+                    <imagedata fileref="art/UBL-2.2-VMI-PriceAdjustment.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Price Adjustments Diagram]</phrase>
@@ -1826,7 +1826,7 @@
                 <title>Transfer of Base Item Catalogue</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.2-CRP-BaseArticleCatalogue.png"/>
+                    <imagedata fileref="art/UBL-2.2-CRP-BaseArticleCatalogue.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Transfer of Base Item Catalogue Diagram]</phrase>
@@ -1842,7 +1842,7 @@
                 <title>Initial Stocking of the Area by Retailer</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.2-CRP-InitialStockingByRetailer.png"/>
+                    <imagedata fileref="art/UBL-2.2-CRP-InitialStockingByRetailer.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Initial Stocking of the Area by Retailer Diagram]</phrase>
@@ -1863,7 +1863,7 @@
                 <title>Report of Sales and Inventory Movements</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.2-CRP-SalesAndInventoryMovement.png"/>
+                    <imagedata fileref="art/UBL-2.2-CRP-SalesAndInventoryMovement.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Report of Sales and Inventory Movements Diagram]</phrase>
@@ -1878,7 +1878,7 @@
                 <title>Invoicing for Cyclic Replenishment Program</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.2-CRP-Invoicing.png"/>
+                    <imagedata fileref="art/UBL-2.2-CRP-Invoicing.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Invoicing for Cyclic Replenishment Program Diagram]</phrase>
@@ -1894,7 +1894,7 @@
                 <title>Synchronizing Stock Information</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.2-CRP-Synchronizing.png"/>
+                    <imagedata fileref="art/UBL-2.2-CRP-Synchronizing.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Synchronizing of Stock Information Diagram]</phrase>
@@ -1910,7 +1910,7 @@
                 <title>Changes to the Item Catalogue</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.2-CRP-ChangeArticleCatalogue.png"/>
+                    <imagedata fileref="art/UBL-2.2-CRP-ChangeArticleCatalogue.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Changes to the Item Catalogue Diagram]</phrase>
@@ -1936,7 +1936,7 @@
                 <title>Transfer of Base Article Catalogue</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.2-ROCD-BaseArticleCatalogue.png"/>
+                    <imagedata fileref="art/UBL-2.2-ROCD-BaseArticleCatalogue.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Transfer of Base Article Catalogue Diagram]</phrase>
@@ -1951,7 +1951,7 @@
                 <title>Periodic Transfer of Article Availability Information</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.2-ROCD-ArticleAvailability.png"/>
+                    <imagedata fileref="art/UBL-2.2-ROCD-ArticleAvailability.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Transfer of Article Availability Diagram]</phrase>
@@ -1968,7 +1968,7 @@
                 <title>Initial Stocking of the Area by Producer and Retailer</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.2-ROCD-InitialStocking.png"/>
+                    <imagedata fileref="art/UBL-2.2-ROCD-InitialStocking.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Initial Stocking of the Area Diagram]</phrase>
@@ -2031,7 +2031,7 @@
               <title>Fulfilment with Despatch Advice</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-FulfilmentDespatchAdviceProcess.png"/>
+                  <imagedata fileref="art/UBL-2.2-FulfilmentDespatchAdviceProcess.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Fulfilment with Despatch Advice Diagram]</phrase>
@@ -2069,7 +2069,7 @@
               <title>Fulfilment with Receipt Advice</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-FulfilmentReceiptAdviceProcess.png"/>
+                  <imagedata fileref="art/UBL-2.2-FulfilmentReceiptAdviceProcess.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Fulfilment with Receipt Advice Diagram]</phrase>
@@ -2115,7 +2115,7 @@
               <title>Initiate Freight Management Process</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-InitiateFreightMgmtProcess.png"/>
+                  <imagedata fileref="art/UBL-2.2-InitiateFreightMgmtProcess.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Initiate Freight Management Process Diagram]</phrase>
@@ -2192,7 +2192,7 @@
             <title>Manifest Process</title>
             <mediaobject>
               <imageobject>
-                <imagedata fileref="art/UBL-2.3-ManifestProcess.png"/>
+                <imagedata fileref="art/UBL-2.3-ManifestProcess.svg"/>
               </imageobject>
               <textobject>
                 <phrase>[Manifest Diagram]</phrase>
@@ -2208,7 +2208,7 @@
             <title>Freight Status Reporting Process</title>
             <mediaobject>
               <imageobject>
-                <imagedata fileref="art/UBL-2.2-FreightStatusReporting.png"/>
+                <imagedata fileref="art/UBL-2.2-FreightStatusReporting.svg"/>
               </imageobject>
               <textobject>
                 <phrase>[Freight Status Reporting Diagram]</phrase>
@@ -2227,7 +2227,7 @@
             <title>Certification of Origin of Goods Process</title>
             <mediaobject>
               <imageobject>
-                <imagedata fileref="art/UBL-2.0-CertificationOfOriginOfGoodsProcess.png"/>
+                <imagedata fileref="art/UBL-2.0-CertificationOfOriginOfGoodsProcess.svg"/>
               </imageobject>
               <textobject>
                 <phrase>[Certification of Origin of Goods Diagram]</phrase>
@@ -2264,7 +2264,7 @@
               <title>Export Customs Declaration Process</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.3-ExportCustomsDeclarationProcess.png"/>
+                  <imagedata fileref="art/UBL-2.3-ExportCustomsDeclarationProcess.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Export Customs Declaration Process Diagram]</phrase>
@@ -2282,7 +2282,7 @@
               <title>Transit Customs Declaration Process</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.3-TransitDeclarationProcess.png"/>
+                  <imagedata fileref="art/UBL-2.3-TransitDeclarationProcess.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Transit Customs Declaration Process Diagram]</phrase>
@@ -2300,7 +2300,7 @@
               <title>Import Customs Declaration Process</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.3-ImportDeclarationProcess.png"/>
+                  <imagedata fileref="art/UBL-2.3-ImportDeclarationProcess.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Import Customs Declaration Process Diagram]</phrase>
@@ -2320,7 +2320,7 @@
               <title>Goods Certificate Process</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.3-GoodsCertificateExportProcess.png"/>
+                  <imagedata fileref="art/UBL-2.3-GoodsCertificateExportProcess.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Export Customs Declaration Process Diagram]</phrase>
@@ -2383,7 +2383,7 @@
                 <title>Goods Item Passport Approval Process</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.3-GoodsItemPassportApprovalProcess.png"/>
+                    <imagedata fileref="art/UBL-2.3-GoodsItemPassportApprovalProcess.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Goods Item Passport Approval Process Diagram]</phrase>
@@ -2401,7 +2401,7 @@
                 <title>Goods Item Passport Presentation Process</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.3-GoodsItemPassportPresentationProcess.png"/>
+                    <imagedata fileref="art/UBL-2.3-GoodsItemPassportPresentationProcess.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Goods Item Passport Presentation Process Diagram]</phrase>
@@ -2418,7 +2418,7 @@
                 <title>Goods Item Passport Return Process</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.3-GoodsItemPassportReturnProcess.png"/>
+                    <imagedata fileref="art/UBL-2.3-GoodsItemPassportReturnProcess.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Goods Item Passport Return Process Diagram]</phrase>
@@ -2437,7 +2437,7 @@
                 <title>Request For Proof Of Re-exportation Process</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.3-RequestForProofOfReexportationProcess.png"/>
+                    <imagedata fileref="art/UBL-2.3-RequestForProofOfReexportationProcess.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Request For Proof Of Re-exportation Process Diagram]</phrase>
@@ -2499,7 +2499,7 @@
               <title>The Generic Freight Management Process</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-IMFM-GenericIntermodalFreightProcess.png"/>
+                  <imagedata fileref="art/UBL-2.2-IMFM-GenericIntermodalFreightProcess.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[The Generic Freight Management Process Diagram]</phrase>
@@ -2514,7 +2514,7 @@
               <title>The Intermodal Freight Management Process</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-IMFM-IntermodalFreightManagementProcess.png"/>
+                  <imagedata fileref="art/UBL-2.2-IMFM-IntermodalFreightManagementProcess.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[The Intermodal Freight Management Process Diagram]</phrase>
@@ -2530,7 +2530,7 @@
               <title>Transport Service Description</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-IMFM-TransportServiceDescription.png"/>
+                  <imagedata fileref="art/UBL-2.2-IMFM-TransportServiceDescription.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Transport Service Description Diagram]</phrase>
@@ -2564,7 +2564,7 @@
               <title>Transport Execution Plan</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-IMFM-BasicTransportExecutionPlan.png"/>
+                  <imagedata fileref="art/UBL-2.2-IMFM-BasicTransportExecutionPlan.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[TEP Diagram]</phrase>
@@ -2584,7 +2584,7 @@
               <title>Goods Item Itinerary</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-IMFM-GoodsItemItinerary.png"/>
+                  <imagedata fileref="art/UBL-2.2-IMFM-GoodsItemItinerary.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[GII Diagram]</phrase>
@@ -2604,7 +2604,7 @@
               <title>Transport Progress Status</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.2-IMFM-TransportProgressStatus.png"/>
+                  <imagedata fileref="art/UBL-2.2-IMFM-TransportProgressStatus.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[TPS Diagram]</phrase>
@@ -2620,7 +2620,7 @@
               <title>Common Transportation Report</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.3-CommonTransportationReportProcess.png"/>
+                  <imagedata fileref="art/UBL-2.3-CommonTransportationReportProcess.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Common Transportation Report Progress]</phrase>
@@ -2728,7 +2728,7 @@
                 <title>Billing with Credit Note Process</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.0-BillingwithCreditNoteProcess.png"/>
+                    <imagedata fileref="art/UBL-2.0-BillingwithCreditNoteProcess.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Billing with Credit Note Diagram]</phrase>
@@ -2744,7 +2744,7 @@
                 <title>Billing with Debit Note Process</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.0-BillingwithDebitNoteProcess.png"/>
+                    <imagedata fileref="art/UBL-2.0-BillingwithDebitNoteProcess.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Billing with Debit Note Diagram]</phrase>
@@ -2767,7 +2767,7 @@
                 <title>Self Billing with Credit Note Process</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.0-SelfBillingwithCreditNoteProcess.png"/>
+                    <imagedata fileref="art/UBL-2.0-SelfBillingwithCreditNoteProcess.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Self Billing with Credit Note Diagram]</phrase>
@@ -2785,7 +2785,7 @@
                 <title>Self Billing with Self Billed Credit Note Process</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.0-SelfBillingwithSelfBilledCreditNoteProcess.png"/>
+                    <imagedata fileref="art/UBL-2.0-SelfBillingwithSelfBilledCreditNoteProcess.svg"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Self Billing with Self Billed Credit Note Diagram]</phrase>
@@ -2802,7 +2802,7 @@
               <title>Reminder for Payment Process</title>
               <mediaobject>
                 <imageobject>
-                  <imagedata fileref="art/UBL-2.0-ReminderForPaymentProcess.png"/>
+                  <imagedata fileref="art/UBL-2.0-ReminderForPaymentProcess.svg"/>
                 </imageobject>
                 <textobject>
                   <phrase>[Reminder for Payment Diagram]</phrase>
@@ -2820,7 +2820,7 @@
             <title>Freight Billing Process</title>
             <mediaobject>
               <imageobject>
-                <imagedata fileref="art/UBL-2.0-FreightBillingProcess.png"/>
+                <imagedata fileref="art/UBL-2.0-FreightBillingProcess.svg"/>
               </imageobject>
               <textobject>
                 <phrase>[Freight Billing Diagram]</phrase>
@@ -2837,7 +2837,7 @@
             <title>Utility Billing Process</title>
             <mediaobject>
               <imageobject>
-                <imagedata fileref="art/UBL-2.2-UtilityBillingProcess.png"/>
+                <imagedata fileref="art/UBL-2.2-UtilityBillingProcess.svg"/>
               </imageobject>
               <textobject>
                 <phrase>[Utility Billing Diagram]</phrase>
@@ -2852,7 +2852,7 @@
             <title>Payment Notification Process</title>
             <mediaobject>
               <imageobject>
-                <imagedata fileref="art/UBL-2.0-PaymentNotificationProcess.png"/>
+                <imagedata fileref="art/UBL-2.0-PaymentNotificationProcess.svg"/>
               </imageobject>
               <textobject>
                 <phrase>[Payment Diagram]</phrase>
@@ -2867,7 +2867,7 @@
             <title>Statement Process</title>
             <mediaobject>
               <imageobject>
-                <imagedata fileref="art/UBL-2.0-ReportStateofAccountsProcess.png"/>
+                <imagedata fileref="art/UBL-2.0-ReportStateofAccountsProcess.svg"/>
               </imageobject>
               <textobject>
                 <phrase>[Statement Diagram]</phrase>
@@ -2890,7 +2890,7 @@
             <title>Business card process</title>
             <mediaobject>
               <imageobject>
-                <imagedata fileref="art/UBL-2.2-BusinessCard.png"/>
+                <imagedata fileref="art/UBL-2.2-BusinessCard.svg"/>
               </imageobject>
               <textobject>
                 <phrase>[Business Card Diagram]</phrase>
@@ -2905,7 +2905,7 @@
             <title>Digital capability process</title>
             <mediaobject>
               <imageobject>
-                <imagedata fileref="art/UBL-2.2-DigitalCapability.png"/>
+                <imagedata fileref="art/UBL-2.2-DigitalCapability.svg"/>
               </imageobject>
               <textobject>
                 <phrase>[Digital Capability Diagram]</phrase>
@@ -2921,7 +2921,7 @@
             <title>Bi-lateral TPA process</title>
             <mediaobject>
               <imageobject>
-                <imagedata fileref="art/UBL-2.2-DigitalAgreement.png"/>
+                <imagedata fileref="art/UBL-2.2-DigitalAgreement.svg"/>
               </imageobject>
               <textobject>
                 <phrase>[Digital Agreement Diagram]</phrase>
@@ -2944,7 +2944,7 @@
             <title>Business Information Registration and Notification processes</title>
             <mediaobject>
               <imageobject>
-                <imagedata fileref="art/UBL-2.4-BusinessInformation.png"/>
+                <imagedata fileref="art/UBL-2.4-BusinessInformation.svg"/>
               </imageobject>
               <textobject>
                 <phrase>[Business Information Registration and Notification Diagram]</phrase>
@@ -3226,7 +3226,7 @@
         <title>UBL Schema Dependencies</title>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="art/UBL-2.2-SchemaDependencies.png"/>
+            <imagedata fileref="art/UBL-2.2-SchemaDependencies.svg"/>
           </imageobject>
           <textobject>
             <phrase>[schema dependency diagram]</phrase>
@@ -4603,7 +4603,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         <title>UBL 1.0 Order-to-Invoice Business Process</title>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="art/UBL-1.0-ProcurementProcess.png"/>
+            <imagedata fileref="art/UBL-1.0-ProcurementProcess.svg"/>
           </imageobject>
           <textobject>
             <phrase>[UBL 1.0 order-to-invoice diagram]</phrase>
@@ -5780,7 +5780,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         <title>UBL Data Model Realization</title>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="art/UBL-2.3-ModelRealization.png"/>
+            <imagedata fileref="art/UBL-2.3-ModelRealization.svg"/>
           </imageobject>
           <textobject>
             <phrase>[model realization diagram]</phrase>
@@ -6277,7 +6277,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
       <title>Data Type Qualification in UBL</title>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="art/UBL-2.2-UDT-QDT.png"/>
+          <imagedata fileref="art/UBL-2.2-UDT-QDT.svg"/>
         </imageobject>
         <textobject>
           <phrase>[Data type qualification]</phrase>
@@ -6529,7 +6529,7 @@ No code list validation errors.</programlisting>
         <title>Two-phase Default UBL &version; Validation</title>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="art/UBL-2.2-DefaultValidation.png"/>
+            <imagedata fileref="art/UBL-2.2-DefaultValidation.svg"/>
           </imageobject>
           <textobject>
             <phrase>[two-phase validation]</phrase>
@@ -6806,7 +6806,7 @@ No code list validation errors.</programlisting>
       <title>Open-edi Overview</title>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="art/UBL-2.2-Open-edi-Overview.png"/>
+          <imagedata fileref="art/UBL-2.2-Open-edi-Overview.svg"/>
         </imageobject>
         <textobject>
           <phrase>[Open-edi Overview]</phrase>
@@ -6824,7 +6824,7 @@ No code list validation errors.</programlisting>
       <title>Open-edi Application</title>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="art/UBL-2.2-Open-edi-Application.png"/>
+          <imagedata fileref="art/UBL-2.2-Open-edi-Application.svg"/>
         </imageobject>
         <textobject>
           <phrase>[Open-edi Application]</phrase>
