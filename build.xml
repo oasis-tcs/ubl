@@ -341,7 +341,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   </antcallback>
   <antcallback target="-gc2ndr" return="returnVersion"><!--against UBL ${UBLversion}-->
     <param name="okay"    value="xsd-okay"/>
-    <param name="compare" value="UBL-Entities-${UBLprevVersion}.gc"/>
+    <param name="compare" value="UBL-Entities-${UBLprevVersion}-os.gc"/>
     <param name="title"
            value="Universal Business Language (UBL) ${UBLversion} ${UBLstage} to ${UBLprevVersion}"/>
     <param name="dbcmn"
@@ -350,7 +350,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
            value="old2newDocBook-UBL-${UBLversion}-${UBLstage}-UBL-${UBLprevVersion}-documents-ent.xml"/>
     <param name="dbhref"
            value="mod/summary/reports/All-UBL-${UBLversion}-Documents.html"/>
-    <param name="report"  value="${dir}/check-ubl-${UBLversion}-${UBLstage}-ubl-${UBLprevVersion}.html"/>
+    <param name="report"  value="${dir}/check-ubl-${UBLversion}-${UBLstage}-ubl-${UBLprevVersion}-os.html"/>
     <param name="change"  value="UBL"/>
     <param name="source"  value="${dir}/UBL-Entities-${UBLversion}.gc"/>
     <param name="config"  value="config-UBL.xml"/>
@@ -456,7 +456,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <antcall target="-gc2ndrExt">
     <param name="okay"    value="xsd-sig-okay"/>
     <param name="source"  value="${dir}/UBL-Signature-Entities-${UBLversion}.gc"/>
-    <param name="compare" value="UBL-Signature-Entities-${UBLprevVersion}.gc"/>
+    <param name="compare" value="UBL-Signature-Entities-${UBLprevVersion}-os.gc"/>
     <param name="config"  value="config-UBL-Signature.xml"/>
     <param name="basegc"  value="UBL-Entities-${UBLversion}.gc"/>
     <param name="basecf"  value="config-UBL.xml"/>
@@ -802,7 +802,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <touch file="${dir}/${words}"/>
   <property name="words-uri" location="${dir}/${words}"/>
   <property name="dict-uri" location="${dir}/spellcheck-UBL.txt"/>
-  <java resultproperty="${returnProperty}" append="true" classname="net.sf.saxon.Transform">
+  <java resultproperty="returnCheck" append="true" classname="net.sf.saxon.Transform">
      <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-checkgc4obdndr.xsl"/>
      <arg value="-o:${report}"/>
      <arg value="-s:${source}"/>
@@ -828,7 +828,12 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       </not>
     </and>
   </condition>
-  <touch if:set="reportCheck" file="${dir}/${UBLstage}-${UBLversion}/NDR-CHECK-WARNING.txt"/>
+  <echo if:set="reportCheck"
+        message="NDR checks have returned ${reportCheck}: ${returnCheck}"/>
+  <copy if:set="reportCheck"
+        file="${report}"
+        tofile="${dir}/${UBLstage}-${UBLversion}/NDR-CHECK-WARNING.html"/>
+  <property name="${returnProperty}" value="${returnCheck}"/>
   <echo message="Spell-checking the resulting word list into ${dir}/unexpectedWords.txt (run aspell -l EN -p ${dict-uri} check ${words-uri} if abend)..."/>
   <exec resultproperty="returnSpell" executable="sh">
     <arg value="-e"/>
