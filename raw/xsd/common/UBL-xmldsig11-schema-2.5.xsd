@@ -2,7 +2,7 @@
 <!--
   Library:           OASIS Universal Business Language (UBL) 2.5 CSD01
                      http://docs.oasis-open.org/ubl/csd01-UBL-2.5/
-  Release Date:      08 February 2023
+  Release Date:      07 April 2025
   Module:            UBL-xmldsig11-schema-2.5.xsd
   Generated on:      2016-06-24 19:50(UTC)
  
@@ -28,7 +28,7 @@
         xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
         xmlns:dsig11="http://www.w3.org/2009/xmldsig11#"
         targetNamespace="http://www.w3.org/2009/xmldsig11#"
-        version="0.1" elementFormDefault="qualified">
+        version="2.5" elementFormDefault="qualified">
 
   <import namespace="http://www.w3.org/2000/09/xmldsig#"/>
 

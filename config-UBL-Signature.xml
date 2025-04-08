@@ -6,11 +6,11 @@
  
   Library:           OASIS Universal Business Language (UBL) 2.5 CSD01
                      http://docs.oasis-open.org/ubl/csd01-UBL-2.5/
-  Release Date:      17 October 2023 TODO
+  Release Date:      07 April 2025
   
 -->
-<!ENTITY copyrightYear      "2023">
-<!ENTITY versionDate "17 October 2023">
+<!ENTITY copyrightYear      "2025">
+<!ENTITY versionDate "07 April 2025">
 <!ENTITY version        "2.5">
 <!ENTITY versionDisplay "2.5 CSD01">
 <!ENTITY versionDirectory   "csd01-UBL-2.5">

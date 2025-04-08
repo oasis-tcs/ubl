@@ -2,14 +2,14 @@
 <!--
   Library:           OASIS Universal Business Language (UBL) 2.5 CSD01
                      http://docs.oasis-open.org/ubl/csd01-UBL-2.5/
-  Release Date:      08 February 2023
+  Release Date:      07 April 2025
   Module:            UBL-XAdES01903v132-201601-2.5.xsd
   Generated on:      2016-06-24 19:50(UTC)
 
   This is a copy of http://uri.etsi.org/01903/v1.3.2/XAdES01903v132-201601.xsd
   modified only to change the importing URI for the W3C dsig schema.
 -->
-<xsd:schema targetNamespace="http://uri.etsi.org/01903/v1.3.2#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://uri.etsi.org/01903/v1.3.2#" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" elementFormDefault="qualified">
+<xsd:schema targetNamespace="http://uri.etsi.org/01903/v1.3.2#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://uri.etsi.org/01903/v1.3.2#" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" elementFormDefault="qualified" version="2.5">
 	<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="UBL-xmldsig-core-schema-2.5.xsd"/>
 	<!-- Start auxiliary types definitions: AnyType, ObjectIdentifierType, 
 EncapsulatedPKIDataType and containers for time-stamp tokens -->

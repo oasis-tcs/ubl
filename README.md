@@ -73,35 +73,15 @@ These files are archived by editors and subcommittee chairs, as needed, in the [
 
 The results in the [Actions tab](https://github.com/oasis-tcs/ubl/actions) eventually are deleted automatically by GitHub after 90 days, but if you have no need for a particular build result, you can delete it to save space. Please keep this in mind if you are using the GitHub web interface and creating results for every commit of every file.
 
-## Branches, roles, and protocol for contributions
+## Branches and protocol for contributions
 
-Three branches are restricted (by policy, not all by software so please be careful):
-
-- `main` - this is content that has been reviewed by committee members and considered acceptable to be backed up on Kavi and, if necessary, distributed for its intended purpose (which may be for testing or for production use, not necessarily for final use)
-- `review` - this is content from the editor that has not been reviewed by committee members yet, and so is not considered agreed-upon for its intended purpose, but the editor has incorporated input from other sources into a package for review; when there is consensus about the content of the `review` branch, it is snapshot in the `main` branch
-- `ubl-version-stage` - (e.g. `ubl-2.3-csd05`) this is content the editor is working on while the `review` branch is being reviewed by committee members; this is not to be considered final and may be in a state of disrepair while it is being worked on; when the editor is ready for the committee to review it, it will be checked into the review branch
-
-A `main` copy is not necessarily the final copy, but simply a copy of a `review` copy whose review has been completed.
-
-Two roles are identified.
-
-- _Editors_ are responsible for incorporating into review copies (for committee consideration) and main copies (already accepted by the committee) the suggestions made by the maintainers. 
-
-- _Maintainers_ create and maintain their own branches and are asked not to check in any changes to the `main`, `review`, or `ubl-version-stage` branches reserved for editors. 
-
-Maintainers can create and delete any number of their own branches as they see fit. Maintainers are reminded to pull the active `review` changes frequently so as not to diverge far from the work already progressed by the editor. Contributions are requested to be submitted by pull requests against the current `review` branch to be incorporated by the editor.
-
-Maintainers can use any XML editing tool to make their changes to the specification document. See "[Preview results](#Preview-results)" below regarding how they can preview their XML edits locally.
-
-Other files and directories can change however needed by the maintainer.
+At this time, branches are labeled `ubl-version-stage` - (e.g. `ubl-2.3-csd05`) and are branched off from previous versions and stages so that previous versions and stages are readily identified and (reluctantly) can be updated on its own with new commits.
 
 Become a maintainer by sending your GitHub account name and associated email address to the committee chair(s) requesting that OASIS TC Admin grant you the required privileges in the repository.
 
-
-
 ## Detailed steps
 
-This details the relationship between the `main`, `review`, and all other branches, and the roles responsible for them.
+_This historical diagram details the relationship between what used to be the `main`, `review`, and all other branches, and the former roles responsible for them. At some point the diagram will be updated, but this old diagram does reflect the role of the external document publishing service._
 
 Maintainers focus on steps 1, 2, 5, and 6. Editors focus on steps 7, 8, 9, and 10. Steps 3 and 4 are automated by GitHub Actions.
 
@@ -122,15 +102,10 @@ This push automatically triggers the GitHub Action running the complete publishi
 1. When the editor has accommodated all of the feedback from committee members regarding the review and wishes to archive a snapshot for public use, they merge their local `review` branch into their local `main` branch.
 1. The editor pushes their local `main` branch to GitHub. While this push will produce a set of artefacts, those artefacts are ignored and deleted by the editor because they may have different timestamps than the files approved by committee and uploaded to Kavi. But anyone wanting a snapshot of the source material (modulo remotely changed files such as spreadsheets) can find the last approved set from the `main` branch.
 
-If you are changing the Google spreadsheet but not any of your repository files, you cannot do a `git push` until you create a temporary file in your directory and then push the temporary file to the repository. The next time around, you can delete the temporary file in your directory and then push the deletion to the repository. Either of these steps will trigger GitHub actions that will reach out to the Google spreadsheet and run the process.
+If you are changing the Google spreadsheet but not any of your repository files, you cannot do a `git push` until you create a new commit and then push that commit to the repository. This will trigger GitHub actions that will reach out to the Google spreadsheet and run the process.
 
-Two examples of the use of temporary files in a shell script are:
-- `touch trigger.txt` - creates the temporary file
-- `rm trigger.txt` - deletes the temporary file
-
-Two examples of the use of temporary files in a DOS script are:
-- `echo >trigger.txt` - creates the temporary file
-- `del trigger.txt` - deletes the temporary file
+- `git commit --allow-empty -m "commit-reason-message-goes-here"` - creates the commit
+- `git push` - triggers the GitHub action that accesses the latest spreadsheets
 
 ## Creating a new release
 
@@ -232,25 +207,25 @@ Each revision is described by the following configuration files for the artefact
       - `  Library:           OASIS Universal Business Language (UBL) 2.x *STAGE-UPPER-CASE*`
       - `                     http://docs.oasis-open.org/ubl/*stage-lower-case*-UBL-2.x/`
       - `  Release Date:      *DATE*`
-    - IMPORTANT NOTE 2: the same eight `UBL-*.xsd` XSD schema fragments found in the directory [`raw/xsd/common`]( raw/xsd/common ) have explicit `version=` and schema references assuming the current UBL version; these need to be updated when creating a new version release but not when creating a new stage release
+    - IMPORTANT NOTE 2: the same eight `UBL-*.xsd` XSD schema fragments found in the directory [`raw/xsd/common`]( raw/xsd/common ) have explicit `version=` and schema references assuming the current UBL version; these need to be updated when creating a new version release but not when creating a new stage release; the comments can be updated at every new stage
     - IMPORTANT NOTE 3: the `UBL-*.json` JSON schema extension components fragment found in the directory [`raw/json-schema/common`]( raw/json-schema/common ) has explicit schema references assuming the current UBL version; these need to be updated when creating a new version release but not when creating a new stage release
   - [`config-UBL-Signature.xml`]( config-UBL-Signature.xml )
     - IMPORTANT NOTE: this file has the same version information as found in `config-UBL.xml` that needs to be updated as required
-- Google bug-avoidance model name massage directives
+- Google bug-avoidance model name massage directives need to be updated with a new version (but not a new stage)
   - [`massageModelName.xml`]( massageModelName.xml )
-- CVA master file for code list second-pass validation
+- CVA master file for code list second-pass validation needs to be updated either with a new version where new code lists in the new delivery are included (but not if the new delivery does not have new code lists), and/or when code lists in the previous version are being refeerenced in the new version
   - [`UBL-CVA-Skeleton.cva`]( UBL-CVA-Skeleton.cva )
-- Schematron pattern for UBL's document constraints
-  - `UBL-DocumentConstraints-{UBLversion}.sch`
-- shell wrapper for generated CVA Schematron pattern
+- shell wrapper for generated CVA Schematron pattern needs to be created for a new version, but not for a new stage
   - `UBL-DefaultDTQ-{UBLversion}.sch`
 - spell-check word list (each line is a word not in the dictionary that is allowed to be in UBL, including misspellings from previous versions of UBL that cannot be repaired due to backward compatibility)
   - [`spellcheck-UBL.txt`]( spellcheck-UBL.txt )
 - documentary ODS template skeleton for generating spreadsheet results
   - [`skeletonDisplayEditSubset.ods`]( skeletonDisplayEditSubset.ods )
   - [`raw/val`]( raw/val )
-    - note there are 10 invocations of test files, all hardwired with the current version of UBL to point to the current set of schemas; these references need to be updated when changing to a new version of UBL
-
+    - note there are four shell and batch scripts in this directory that require the first line to be edited for new versions, but not new stages
+- when starting a new version you need copies of the genericode files of the previous version with the `-os` suffix:
+  - `UBL-Entities-{UBLprevVersion}-os.gc`
+  - `UBL-Signature-Entities-{UBLprevVersion}-os.gc`
 
 
 ### Configuring the hub document
@@ -272,9 +247,6 @@ All references in the hub document `UBL.xml` to version, revision, and date info
 	<!ENTITY stagetext "Committee Specification 01xxxxxx">
 	<!ENTITY standard "Committee Specification Draft 04 / Working Draft 03xxxxx">
 	<!ENTITY stagetext "Committee Specification Draft 04 Working Draft 03xxxxx">
-	<!ENTITY this-loc "https://docs.oasis-open.org/ubl/&stage;-UBL-2.3">
-	<!ENTITY previous-loc "https://docs.oasis-open.org/ubl/&pstage;-UBL-2.3">
-	<!ENTITY latest-loc "https://docs.oasis-open.org/ubl">
 	<!ENTITY pubdate "12 May 2021">
 	<!--remove time from pub date-->
 	<!ENTITY pubyear "2021">
