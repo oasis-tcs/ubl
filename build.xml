@@ -100,13 +100,20 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <antcall target="-make-artefacts" unless:set="skip-artefacts-generation"/>
 
   <!--don't bother with hub if there are problems with the artefacts-->
-  <condition property="artefactsFailed">
-    <resourcecount when="greater" count="0">
-      <fileset file="${dir}/artefacts-${package}-${UBLstage}-${label}/*.txt"/>
-    </resourcecount>
+  <condition property="artefactsFailedMain">
+    <or>
+      <resourcecount when="greater" count="0">
+        <fileset file="${dir}/artefacts-${package}-${UBLstage}-${label}/*.txt"/>
+      </resourcecount>
+      <resourcecount when="greater" count="0">
+        <fileset file="${dir}/artefacts-${package}-${UBLstage}-${label}/*.html"/>
+      </resourcecount>
+    </or>
   </condition>
 
-  <antcall target="-make-hub" unless:set="artefactsFailed"/>
+  <touch if:set="artefactsFailedMain"
+         file="${dir}/artefacts-${package}-${UBLstage}-${label}/HUB-SKIPPED-INCOMPLETE-ARTEFACTS.txt"/>
+  <antcall target="-make-hub" unless:set="artefactsFailedMain"/>
 
   <antcall target="-package-distribution"/>
 
@@ -1350,20 +1357,26 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
 </target>
 
 <target name="-validate" depends="-validate-shell,-validate-dos">
+  <echo message="${validateOutput}"/>
   <condition property="validatedInputs">
     <equals arg1="${validateResult}" arg2="0"/>
   </condition>
+  <echo unless:set="validatedInputs"
+        message="${validateOutput}"
+file="${dir}/artefacts-${package}-${UBLstage}-${label}/INVALID-ASSEMBLED-HUB-XML.txt"/>
 </target>
 
 <target name="-validate-shell" unless="${is-dos}">
-  <exec resultproperty="validateResult" executable="sh">
+  <exec resultproperty="validateResult" executable="sh"
+        outputproperty="validateOutput">
     <arg value="db/spec-0.8/validate/validate.sh"/>
     <arg value="${source}"/>
   </exec>
 </target>
 
 <target name="-validate-dos" if="${is-dos}">
-  <exec resultproperty="validateResult" executable="cmd.exe">
+  <exec resultproperty="validateResult" executable="cmd.exe"
+        outputproperty="validateOutput">
     <arg value="/c"/>
     <arg value="db\spec-0.8\validate\validate.bat"/>
     <arg value="${source}"/>
@@ -1869,6 +1882,7 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
 <!--  <touch datetime="${datetimelocal}" pattern="yyyyMMdd-HHmm">
     <fileset dir="${dir}/${package}-${UBLstage}-${label}"/>
   </touch>-->
+  
 </target>
   
 <target name="-consistency-check">
