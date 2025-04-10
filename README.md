@@ -399,7 +399,9 @@ IMPORTANT: If there is no console log file, then the build script failed in an u
 
 There should be no "`.txt`" files in the returned base directory. Various "`.txt`" files are possible to report problems with the build. The problems should be explained in the file itself or correlated in the `build.console.{timestamp}.txt` file:
  - `ATTENTION-new-entities.txt` indicates that in the `archive-only/` subdirectory has a `new-entities/` directory with new entity files that were created by your changes to the document, schema summary, and party XML files; if there are any new entity files, you must replace your local copies with those new entities in order for the validation in your XML editor to match the validation results on the server; if the `new-entities` directory does not exist, then there is no need to update your local entity files.
+ - `HUB-SKIPPED-INCOMPLETE-ARTEFACTS.txt` indicates that producing the hub document was skipped because the results would not be meaningful due to incomplete artefact generation
  - `INTEGRITY-PROBLEMS.txt` - there are files referenced in the hub document that do not exist, or there are files that exist and are not referenced in the hub document
+ - `INVALID-ASSEMBLED-HUB-XML.txt` - the hub document could not be published because the XML that was assembled does not validate against the DocBook document model, in which case the file contains the validation errors
  - `LIST-OF-PROBLEM-CODE-LISTS.txt` - genericode files in the `cl/` directory that are not genericode-schema valid
  - `MISMATCHED-TEST-SAMPLES-SH-WARNING.txt` - the number of invocations in the `val/testsamples.sh` script does not match the number of examples
  - `MISMATCHED-TEST-SAMPLES-BAT-WARNING.txt` - the number of invocations in the `val/testsamples.bat` script does not match the number of examples
@@ -420,7 +422,9 @@ PLEASE BE CAREFUL: ANY MEMBER CAN DELETE ANY WORKFLOW SO TRY HARD NOT TO DELETE 
 
 ### To do:
 
-- _(nothing on the 'to do' list at this time)_
+- revise diagram of the publishing process
+
+<!-- - _(nothing on the 'to do' list at this time)_ -->
 
 ---
 <h3>Contributions</h3>

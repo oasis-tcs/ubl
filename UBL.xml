@@ -4738,7 +4738,6 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         <title>New Document Types in UBL 2.3</title>
         <para>Because it preserves backward compatibility with UBL 2.2, UBL 2.1, and UBL 2.0, UBL &version; is technically a minor release, not a major one. However, it does add ten new document types, bringing the total number of UBL business documents to 91.</para>
         <blockquote>
-          <!--reviewtext-->
           <para>
             <emphasis role="bold">Added UBL 2.3 document types for transportation: </emphasis>
             <link linkend="S-COMMON-TRANSPORTATION-REPORT-SCHEMA">Common Transportation Report</link>, <link linkend="S-EXPORT-CUSTOMS-DECLARATION-SCHEMA">Export Customs Declaration</link>, <link linkend="S-GOODS-CERTIFICATE-SCHEMA">Goods Certificate</link>, <link
@@ -4760,17 +4759,31 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
 	  </para>
         </blockquote>
       </section>
+    </section>
+    <section id="S-MINOR-REVISION-UBL-2.5">
+      <title>Minor Revision: UBL 2.5</title>
+      <section id="S-NEW-DOCUMENT-TYPES-IN-UBL-2.5" role="newDocumentTypes23">
+        <title>New Document Types in UBL 2.5</title>
+        <para>Because it preserves backward compatibility with UBL 2.4, UBL 2.3, UBL 2.2, UBL 2.1, and UBL 2.0, UBL &version; is technically a minor release, not a major one. However, it does add ???? new document types, bringing the total number of UBL business documents to 9????.</para>
+        <blockquote>
+          <!--reviewtext-->
+          <para>
+            <emphasis role="bold">Added ???? new UBL 2.5 document types: </emphasis>
+	    
+	  </para>
+        </blockquote>
+      </section>
       <section id="S-SCHEMA-CHANGES-FROM-UBL-&pversion;-TO-UBL-&version;">
         <title>Schema changes from UBL &pversion; to UBL &version;</title>
         <section id="S-SCHEMA-CHANGES-INTRODUCTION">
           <title>Schema Changes Introduction</title>
           <para>The following two tables show the differences between the XML elements in UBL &pversion; and those in UBL &version;.</para>
-          <para>All changes in &version; schemas are backward-compatible with valid UBL 2.3, UBL 2.2, UBL 2.1, and UBL 2.0 instances. Changes include the addition of new elements and attributes; changes in cardinality from 1 to 0..1 (i.e., making a formerly required element optional); changes in
+          <para>All changes in &version; schemas are backward-compatible with valid UBL 2.4, UBL 2.3, UBL 2.2, UBL 2.1, and UBL 2.0 instances. Changes include the addition of new elements and attributes; changes in cardinality from 1 to 0..1 (i.e., making a formerly required element optional); changes in
             cardinality from 1 to 1..n or from 0..1 to 0..n (i.e., allowing an unlimited number of occurrences instead of just one); and corrections to Dictionary Entry Names (DENs).</para>
         </section>
         <section id="S-CHANGES-TO-LIBRARY-ELEMENTS-UBL-&pversion;-TO-UBL-&version;">
           <title>Changes to Library Elements, UBL &pversion; to UBL &version;</title>
-          <para>UBL 2.4 introduces the following improvements to the UBL library:</para>
+          <para>UBL 2.5 introduces the following improvements to the UBL library:</para>
           <itemizedlist>
             <listitem>
               <para>Several changes related to retail transactions, such as improving tax structures to better express tax inclusive amounts, as well as expansion of payment structure to better support card and cash payments.</para>
@@ -5245,7 +5258,38 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>D - Definition</para>
+          <para>D - Endorsed Cardinality</para>
+          <itemizedlist>
+            <listitem>
+              <para>in light of the deprecation of components, this column reflects the revised cardinality when it is different than the standardized cardinality in such a way that it would break backwards compatibility</para>
+            </listitem>
+            <listitem>
+              <para>0=deprecated and not used and not available in future versions of UBL, 1=mandatory, 0..1=optional, 1..n=mandatory and repeatable, 0..n=optional and repeatable</para>
+            </listitem>
+            <listitem>
+              <para>the value is specified by the UBL Technical Committee</para>
+            </listitem>
+            <listitem>
+              <para>this column is not included in the HTML summary reports</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>E - Endorsed Cardinality Rationale</para>
+          <itemizedlist>
+            <listitem>
+              <para>used when using the endorsed cardinality breaks backward compatibility to explain the rationale used by the committee in deciding to take such a decision</para>
+            </listitem>
+            <listitem>
+              <para>the text is specified by the UBL Technical Committee</para>
+            </listitem>
+            <listitem>
+              <para>this column is not included in the HTML summary reports</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>F - Definition</para>
           <itemizedlist>
             <listitem>
               <para>a prose description of the semantic represented by the use of this BIE</para>
@@ -5256,7 +5300,21 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>E - Alternative Business Terms</para>
+          <para>G - Deprecated Definition</para>
+          <itemizedlist>
+            <listitem>
+              <para>when the accepted definition in the previous column is changed, this column is used to preserve the old deprecated definition</para>
+            </listitem>
+            <listitem>
+              <para>the value is specified by the UBL Technical Committee</para>
+            </listitem>
+            <listitem>
+              <para>this column is not included in the HTML summary reports</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>H - Alternative Business Terms</para>
           <itemizedlist>
             <listitem>
               <para>examples of common terms used that are synonymous with the name adopted for the BIE</para>
@@ -5267,7 +5325,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>F - Examples</para>
+          <para>I - Examples</para>
           <itemizedlist>
             <listitem>
               <para>example values that might be found when this BIE is used in a document</para>
@@ -5278,7 +5336,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>G - Dictionary Entry Name</para>
+          <para>J - Dictionary Entry Name</para>
           <itemizedlist>
             <listitem>
               <para>the unambiguous name of this BIE using the ISO/IEC 11179 classification naming scheme</para>
@@ -5292,7 +5350,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>H - Object Class Qualifier</para>
+          <para>K - Object Class Qualifier</para>
           <itemizedlist>
             <listitem>
               <para>the component of the Dictionary Entry Name that distinguishes the object class from other like-named object classes</para>
@@ -5312,7 +5370,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>I - Object Class</para>
+          <para>L - Object Class</para>
           <itemizedlist>
             <listitem>
               <para>the identification of the aggregate BIE in which this BIE resides</para>
@@ -5323,7 +5381,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>J - Property Term Qualifier</para>
+          <para>M - Property Term Qualifier</para>
           <itemizedlist>
             <listitem>
               <para>a qualification of the property term to distinguish this property term from another like-named property term used within the aggregate</para>
@@ -5337,7 +5395,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>K - Property Term Possessive Noun</para>
+          <para>N - Property Term Possessive Noun</para>
           <itemizedlist>
             <listitem>
               <para>a component of the property term that distinguishes using context this property term’s primary noun from another property term’s primary noun used within the aggregate</para>
@@ -5351,7 +5409,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>L - Property Term Primary Noun</para>
+          <para>O - Property Term Primary Noun</para>
           <itemizedlist>
             <listitem>
               <para>a component of the property term that identifies the root meaning of the semantic concept typically being context free</para>
@@ -5367,7 +5425,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>M - Property Term</para>
+          <para>P - Property Term</para>
           <itemizedlist>
             <listitem>
               <para>the CCTS-defined single-valued property term composed of the two components specified in the OASIS NDR that make up this value</para>
@@ -5381,7 +5439,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>N - Representation Term</para>
+          <para>Q - Representation Term</para>
           <itemizedlist>
             <listitem>
               <para>the semantic-free identification of the format or structure of the BIE value</para>
@@ -5398,7 +5456,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>O - Data Type Qualifier</para>
+          <para>R - Data Type Qualifier</para>
           <itemizedlist>
             <listitem>
               <para>semantically identifies a value constraint that, optionally, may be imposed by users on the value of a BBIE</para>
@@ -5418,7 +5476,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>P - Data Type</para>
+          <para>S - Data Type</para>
           <itemizedlist>
             <listitem>
               <para>identifies the lexical constraint on a BBIE value, that is, the character-level contents or structure of an atomic string value in the UBL document</para>
@@ -5429,7 +5487,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>Q - Associated Object Class Qualifier</para>
+          <para>T - Associated Object Class Qualifier</para>
           <itemizedlist>
             <listitem>
               <para>the component of the Dictionary Entry Name that distinguishes the associated object class from other like-named object classes</para>
@@ -5449,7 +5507,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>R - Associated Object Class</para>
+          <para>U - Associated Object Class</para>
           <itemizedlist>
             <listitem>
               <para>the associated object class of an ASBIE identifying the object class that describes the structured value of this BIE</para>
@@ -5460,7 +5518,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>S - Component Type</para>
+          <para>V - Component Type</para>
           <itemizedlist>
             <listitem>
               <para>identifies the CCTS type of the BIE</para>
@@ -5482,7 +5540,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>T - UN/TDED Code</para>
+          <para>W - UN/TDED Code</para>
           <itemizedlist>
             <listitem>
               <para>indicates the semantic of the BIE through the use of an identifier used in the United Nations Trade Data Element Directory (ISO 7372)</para>
@@ -5493,7 +5551,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>U - Current Version</para>
+          <para>X - Current Version</para>
           <itemizedlist>
             <listitem>
               <para>indicates the version of UBL in which this BIE was introduced into the document model</para>
@@ -5504,7 +5562,18 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           </itemizedlist>
         </listitem>
         <listitem>
-          <para>V - Editor’s notes</para>
+          <para>Y - Last Changed</para>
+          <itemizedlist>
+            <listitem>
+              <para>the version number when this BIE last was changed</para>
+            </listitem>
+            <listitem>
+              <para>the value is specified by the UBL Technical Committee</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>Z - Editor’s notes</para>
           <itemizedlist>
             <listitem>
               <para>a free-form text value of some information of record that may be useful to readers, users, or committee members</para>
