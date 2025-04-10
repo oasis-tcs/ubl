@@ -1862,7 +1862,7 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
   </move>
   <!--JSON files useful, but not yet as part of the distribution-->
   <available property="jsonLegacyFilesAvailable"
-             file="${dir}/${package}-${UBLstage}-${label}-archive-only/json-schema-legacy"/>
+             file="${dir}/${package}-${UBLstage}-${label}/json-schema-legacy"/>
   <move todir="${dir}/${package}-${UBLstage}-${label}-archive-only/json-schema-legacy"
         if:set="jsonLegacyFilesAvailable">
     <fileset dir="${dir}/${package}-${UBLstage}-${label}/json-schema-legacy">
@@ -1870,7 +1870,7 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
     </fileset>
   </move>
   <available property="jsonSchemaFilesAvailable"
-             file="${dir}/${package}-${UBLstage}-${label}-archive-only/json-schema-model"/>
+             file="${dir}/${package}-${UBLstage}-${label}/json-schema-model"/>
   <move todir="${dir}/${package}-${UBLstage}-${label}-archive-only/json-schema-model"
         if:set="jsonSchemaFilesAvailable">
     <fileset dir="${dir}/${package}-${UBLstage}-${label}/json-schema-model">
