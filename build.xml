@@ -1838,19 +1838,28 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
     </fileset>
   </copy>
   
-  <!--artefacts archive moved to distribution archive-->  
-  <move todir="${dir}/${package}-${UBLstage}-${label}-archive-only">
+  <!--artefacts archive moved to distribution archive-->
+  <available property="supportFilesAvailable"
+             file="${dir}/${package}-${UBLstage}-${label}/intermediate-support-files"/>
+  <move todir="${dir}/${package}-${UBLstage}-${label}-archive-only"
+        if:set="supportFilesAvailable">
     <fileset dir="${dir}/${package}-${UBLstage}-${label}/intermediate-support-files">
       <include name="**"/>
     </fileset>
   </move>
   <!--JSON files useful, but not yet as part of the distribution-->
-  <move todir="${dir}/${package}-${UBLstage}-${label}-archive-only/json-schema-legacy">
+  <available property="jsonLegacyFilesAvailable"
+             file="${dir}/${package}-${UBLstage}-${label}-archive-only/json-schema-legacy"/>
+  <move todir="${dir}/${package}-${UBLstage}-${label}-archive-only/json-schema-legacy"
+        if:set="jsonLegacyFilesAvailable">
     <fileset dir="${dir}/${package}-${UBLstage}-${label}/json-schema-legacy">
       <include name="**"/>
     </fileset>
   </move>
-  <move todir="${dir}/${package}-${UBLstage}-${label}-archive-only/json-schema-model">
+  <available property="jsonSchemaFilesAvailable"
+             file="${dir}/${package}-${UBLstage}-${label}-archive-only/json-schema-model"/>
+  <move todir="${dir}/${package}-${UBLstage}-${label}-archive-only/json-schema-model"
+        if:set="jsonSchemaFilesAvailable">
     <fileset dir="${dir}/${package}-${UBLstage}-${label}/json-schema-model">
       <include name="**"/>
     </fileset>
