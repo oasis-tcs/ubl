@@ -842,9 +842,16 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
         message="NDR checks have returned ${reportCheck}: ${returnCheck}"/>
   <echo if:set="reportCheck" append="true"
         message="${errorCheck}"
-        file="${dir}/${UBLstage}-${UBLversion}/NDR-CHECK-WARNING.html"/>
-  <available property="reportAvailable" file="${report}"/>
-  <copy if:set="reportAvailable" file="${report}"
+        file="${dir}/${UBLstage}-${UBLversion}/NDR-CHECK-WARNING.txt"/>
+  <condition property="reportCopyToDistributionDirectory">
+    <and>
+      <available property="reportAvailable" file="${report}"/>
+      <not>
+        <equals arg1="${errorCheck}" arg2=""/>
+      </not>
+    </and>
+  </condition>
+  <copy if:set="reportCopyToDistributionDirectory" file="${report}"
         tofile="${dir}/${UBLstage}-${UBLversion}/NDR-CHECK-WARNING.html"/>
   <property name="${returnProperty}" value="${returnCheck}"/>
   <echo message="Spell-checking the resulting word list into ${dir}/unexpectedWords.txt (run aspell -l EN -p ${dict-uri} check ${words-uri} if abend)..."/>
