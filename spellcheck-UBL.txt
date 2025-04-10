@@ -38,8 +38,10 @@ Validator
 XPath
 URI
 UUID
+Recyclability
 Reexportation
 Reimportation
+Repairability
 SME
 ISPS
 ISSC
