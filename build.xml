@@ -810,7 +810,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <property name="words-uri" location="${dir}/${words}"/>
   <property name="dict-uri" location="${dir}/spellcheck-UBL.txt"/>
   <java resultproperty="returnCheck" append="true" classname="net.sf.saxon.Transform"
-        errorproperty="errorCheck" outputproperty="outputCheck">
+        errorproperty="errorCheck">
      <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-checkgc4obdndr.xsl"/>
      <arg value="-o:${report}"/>
      <arg value="-s:${source}"/>
@@ -840,7 +840,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   </condition>
   <echo if:set="reportCheck"
         message="NDR checks have returned ${reportCheck}: ${returnCheck}"/>
-  <echo if:set="reportCheck"
+  <echo if:set="reportCheck" append="true"
         message="${errorCheck}"
         file="${dir}/${UBLstage}-${UBLversion}/NDR-CHECK-WARNING.html"/>
   <available property="reportAvailable" file="${report}"/>
