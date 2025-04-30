@@ -47,5 +47,7 @@ ISPS
 ISSC
 MMSI
 Reinspection
+Lifecycle
+
 SSP
 Cabotage
