@@ -1,0 +1,17 @@
+<!DOCTYPE Identification [
+<!ENTITY short "CSD01">
+<!ENTITY dir   "csd01">
+<!ENTITY version "2.5">
+]>
+<Identification>
+  <ShortName>UBL-&version;-&short;-Endorsed</ShortName>
+  <LongName>UBL &version; &short; Endorsed Business Entity Summary</LongName>
+  <Version>&version;</Version>
+  <CanonicalUri>urn:oasis:names:specification:ubl:BIE:ENDORSED</CanonicalUri>
+  <CanonicalVersionUri>urn:oasis:names:specification:ubl:BIE:ENDORSED:&version;</CanonicalVersionUri>
+  <LocationUri>http://docs.oasis-open.org/ubl/&dir;-UBL-&version;/mod/UBL-Entities-&version;-Endorsed.gc</LocationUri>
+  <Agency>
+     <LongName xml:lang="en">OASIS Universal Business Language</LongName>
+     <Identifier>UBL</Identifier>
+  </Agency>
+</Identification>
