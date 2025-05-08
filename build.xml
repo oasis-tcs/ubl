@@ -1976,7 +1976,10 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
     </fileset>
   </copy>
 
-  <copy todir="${dir}/${package}-${UBLstage}-${label}">
+  <available property="hub-available"
+             file="${dir}/hub-${package}-${UBLstage}-${label}"/>
+  <copy todir="${dir}/${package}-${UBLstage}-${label}"
+        if:set="hub-available">
     <fileset dir="${dir}/hub-${package}-${UBLstage}-${label}">
       <include name="**"/>
     </fileset>
