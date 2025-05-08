@@ -326,7 +326,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
           file=  "${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
     
     <copy preservelastmodified="true"
-          todir="${dir}/${UBLstage}-${UBLversion}/mod/"
+          todir="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/"
           file="${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
     <condition property="gcEndorsedErrors">
       <and>
@@ -516,7 +516,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     </antcall>
     <antcall target="-reports">
       <param name="source" value="${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
-      <param name="target" value="${dir}/${UBLstage}-${UBLversion}/endorsed/mod/summary/reports/junk.out"/>
+      <param name="target" value="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
     </antcall>
   </sequential>
   
@@ -606,7 +606,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <param name="shorten" value=""/>
   </antcall>
 
-  <uptodate targetfile="${dir}/${UBLstage}-${UBLversion}/mod/UBL-Endorsed-Entities-${UBLversion}.ods"
+  <uptodate targetfile="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/UBL-Endorsed-Entities-${UBLversion}.ods"
             property=  "display-file-endorsed-okay">
     <srcfiles dir="${dir}">
       <include name="UBL-Endorsed-Entities-${UBLversion}.gc"/>
@@ -622,7 +622,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <antcall target="-gc2ods">
     <param name="okay"   value="display-endorsed-okay"/>
     <param name="source" value="${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
-    <param name="target" value="${dir}/${UBLstage}-${UBLversion}/mod/UBL-Endorsed-Entities-${UBLversion}.ods"/>
+    <param name="target" value="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/UBL-Endorsed-Entities-${UBLversion}.ods"/>
     <param name="skeleton" value="skeletonDisplayEditSubset.ods"/>
     <param name="shorten" value=""/>
   </antcall>
@@ -684,10 +684,10 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   </antcall>
 
 
-  <uptodate targetfile="${dir}/${UBLstage}-${UBLversion}/mod/UBL-Endorsed-Entities-${UBLversion}.xls"
+  <uptodate targetfile="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/UBL-Endorsed-Entities-${UBLversion}.xls"
             property=  "xls-file-endorsed-okay">
     <srcfiles dir="${dir}">
-      <include name="${UBLstage}-${UBLversion}/mod/UBL-Endorsed-Entities-${UBLversion}.ods"/>
+      <include name="Endorsed-${UBLstage}-${UBLversion}/mod/UBL-Endorsed-Entities-${UBLversion}.ods"/>
     </srcfiles>
   </uptodate>
   <condition property="xls-endorsed-okay">
@@ -698,7 +698,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   </condition>
   <antcall target="-ods2xls">
     <param name="okay"   value="xls-endorsed-okay"/>
-    <param name="sourcedir" value="${dir}/${UBLstage}-${UBLversion}/mod"/>
+    <param name="sourcedir" value="${dir}//Endorsed-${UBLstage}-${UBLversion}/mod"/>
     <param name="sourcefilenoext" value="UBL-Endorsed-Entities-${UBLversion}"/>
   </antcall>
 
@@ -1266,13 +1266,14 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       <include name="master-code-list-*.xml"/>
     </fileset>
   </move>
-  
-  <!--remove unneeded files to reduce storage burden-->
+<!--  
+  <!-\-remove unneeded files to reduce storage burden-\->
   <delete dir="${dir}/os-UBL-2.0"/>
   <delete dir="${dir}/os-UBL-2.1"/>
   <delete dir="${dir}/os-UBL-2.2"/>
+  <delete dir="${dir}/os-UBL-2.3"/>
   <delete dir="${dir}/${UBLstage}-${UBLversion}"/>
-  
+-->  
 <!--
     Cannot create zip until console log and error exit files added to archive. 
     
@@ -1971,6 +1972,7 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
       <include name="xsdrt/**"/>
       <include name="xsd/**"/>
       <include name="cva/**"/>
+      <include name="mod/**"/>
     </fileset>
   </copy>
 
