@@ -961,7 +961,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
      <arg value="errors-are-fatal=${fatal}"/>
   </java>
   <property name="errorCheck" value=""/>
-  <echo message="${errorCheck}"/>
+  <echo message="Error check: ${errorCheck}"/>
   <condition property="reportCheck">
     <and>
       <equals arg1="${fatal}" arg2="yes"/>
@@ -974,14 +974,12 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <echo if:set="reportCheck"
         message="NDR checks have returned ${reportCheck}: ${returnCheck}"/>
   <echo if:set="reportCheck" append="true"
-        message="${errorCheck}"
+        message="Return check: ${returnCheck}"
         file="${dir}/${UBLstage}-${UBLversion}/${checkWarningName}.txt"/>
   <condition property="reportCopyToDistributionDirectory">
     <and>
       <available property="reportAvailable" file="${report}"/>
-      <not>
-        <equals arg1="${errorCheck}" arg2=""/>
-      </not>
+      <isset property="reportCheck"/>
     </and>
   </condition>
   <copy if:set="reportCopyToDistributionDirectory" file="${report}"
