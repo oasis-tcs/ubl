@@ -974,7 +974,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <echo if:set="reportCheck"
         message="NDR checks have returned ${reportCheck}: ${returnCheck}"/>
   <echo if:set="reportCheck" append="true"
-        message="Return check: ${returnCheck}"
+        message="Return check: ${returnCheck} file: ${report}"
         file="${dir}/${UBLstage}-${UBLversion}/${checkWarningName}.txt"/>
   <condition property="reportCopyToDistributionDirectory">
     <and>
@@ -982,6 +982,8 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       <isset property="reportCheck"/>
     </and>
   </condition>
+  <echo if:set="reportCopyToDistributionDirectory"
+        message="Copying ${report} to ${dir}/${UBLstage}-${UBLversion}/${checkWarningName}.html"/>
   <copy if:set="reportCopyToDistributionDirectory" file="${report}"
         tofile="${dir}/${UBLstage}-${UBLversion}/${checkWarningName}.html"/>
   <property name="${returnProperty}" value="${returnCheck}"/>
