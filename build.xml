@@ -973,12 +973,13 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   </condition>
   <echo if:set="reportCheck"
         message="NDR checks have returned ${reportCheck}: ${returnCheck}"/>
+  <available property="reportAvailable" file="${report}"/>
   <echo if:set="reportCheck" append="true"
-        message="Return check: ${returnCheck} file: ${report}"
+        message="Return check: ${returnCheck} file: ${report} available: ${reportAvailable}"
         file="${dir}/${UBLstage}-${UBLversion}/${checkWarningName}.txt"/>
   <condition property="reportCopyToDistributionDirectory">
     <and>
-      <available property="reportAvailable" file="${report}"/>
+      <isset property="reportAvailable"/>
       <isset property="reportCheck"/>
     </and>
   </condition>
