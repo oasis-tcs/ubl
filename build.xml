@@ -72,7 +72,6 @@
   <echo message="localTime=${localTime}"/>
   <echo message="Running on Java: ${java.version} from ${java.home} (${java.vendor})" />
   <echo message="Classpath: ${java.class.path}" />
-  
 
   <available property="gc2obdndr-exists"
          file="${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-gc2obdndr.xsl"/>
@@ -316,7 +315,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       <param name="returnProperty" value="returnGCE"/>
     </antcallback>
     <echo message="Converting UBL-Endorsed-Entities-${UBLversion}-raw.gc to UBL-Endorsed-Entities-${UBLversion}.gc"/>
-    <java append="true" classname="net.sf.saxon.Transform" resultproperty="returnGCEX">
+    <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true" resultproperty="returnGCEX">
       <arg value="-o:${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
       <arg value="-s:${dir}/UBL-Endorsed-Entities-${UBLversion}-raw.gc"/>
       <arg value="-xsl:gc2endorsed.xsl"/>
@@ -530,7 +529,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
 
 <target name="-artefacts">
   <echo message='Creating Schematron Additional Document Constraints from UBL-Entities-${UBLversion}.gc ...'/>
-  <java failonerror="yes" append="true" classname="net.sf.saxon.Transform">
+  <java failonerror="yes" append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
     <arg value="-o:${dir}/${UBLstage}-${UBLversion}/cva/UBL-DocumentConstraints-${UBLversion}.patterns.sch"/>
     <arg value="-s:${dir}/UBL-Entities-${UBLversion}.gc"/>
     <arg value="-xsl:gc2sch.xsl"/>
@@ -875,7 +874,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <delete file="${dir}/${UBLstage}-${UBLversion}"/>
   <delete file="${target}"/>
   <echo message='Rebuilding "${target}" GC file...'/>
-  <java append="true" classname="net.sf.saxon.Transform">
+  <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
      <arg value="-xsl:${utilitydir}Crane-ods2obdgc-${ods2obdgc}/Crane-ods2obdgc.xsl"/>
      <arg value="-o:${target}"/>
      <arg value="-it:ods-uri"/>
@@ -903,7 +902,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
 <target name="-gc2ods" unless="${okay}">
   <delete file="${target}"/>
   <echo message='Rebuilding "${target}" ODS file...'/>
-  <java append="true" classname="net.sf.saxon.Transform">
+  <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
      <arg value="-xsl:${utilitydir}Crane-gc2odsxml-${gc2odsxml}/Crane-gc2odsxml.xsl"/>
      <arg value="-o:${target}-dir/dummy"/>
      <arg value="-s:${source}"/>
@@ -947,7 +946,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <property name="dict-uri" location="${dir}/spellcheck-UBL.txt"/>
 
 
-  <java resultproperty="returnCheck" classname="net.sf.saxon.Transform"
+  <java resultproperty="returnCheck" jar="utilities/saxon9he/saxon9he.jar"
         errorproperty="errorCheck" fork="true">
 <jvmarg value="-Djava.awt.headless=true"/>
 <redirector output="${basedir}/saxon-output.log" error="${basedir}/saxon-error.log" alwayslog="true"/>
@@ -1022,7 +1021,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   
 <target name="-gc2cva" unless="${okay}">
   <echo message='Creating CVA/XSD from "${source}" GC file...'/>
-  <java append="true" classname="net.sf.saxon.Transform">
+  <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
      <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-gc2obdndr.xsl"/>
      <arg value="-s:${source}"/>
      <arg value="-o:${output}/junk.out"/>
@@ -1037,7 +1036,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <touch file="${dir}/${words}"/>
   <property name="words-uri" location="${dir}/${words}"/>
   <property name="dict-uri" location="${dir}/spellcheck-UBL.txt"/>
-  <java append="true" classname="net.sf.saxon.Transform">
+  <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
      <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-checkgc4obdndr.xsl"/>
      <arg value="-o:${report}"/>
      <arg value="-s:${source}"/>
@@ -1057,7 +1056,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <arg value='aspell -l EN -p ${dict-uri} list &lt;${words-uri} | tee ${dir}/unexpectedWordsExt.txt | wc -w | sed "s/ //g" | grep "^0$"'/>
   </exec>
   <echo message='Creating CVA/XSD extension from "${source}" GC file...'/>
-  <java append="true" classname="net.sf.saxon.Transform">
+  <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
      <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-gc2obdndr.xsl"/>
      <arg value="-s:${source}"/>
      <arg value="-o:${dir}/${UBLstage}-${UBLversion}/junk.out"/>
@@ -1093,7 +1092,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
      <arg value="${cvain}.temp.xsl"/>
   </java>
   <echo message="Creating ${xslout} from ${schin}..."/>
-  <java append="true" classname="net.sf.saxon.Transform">
+  <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
      <arg value="-o:${xslout}"/>
      <arg value="-s:${schin}"/>
      <arg value="-xsl:${utilitydir}schxslt/2.0/pipeline-for-svrl.xsl"/>
@@ -1108,7 +1107,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <property name="doAllOnly" value="no"/>
   <property name="parallelGroupCount" value="16"/>
   <echo message='Creating HTML reports (group ${group}) from "${source}" GC file...'/>
-  <java append="true" classname="net.sf.saxon.Transform">
+  <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
      <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-gc2obdsummary.xsl"/>
      <arg value="-s:${source}"/>
      <arg value="-o:${target}"/>
@@ -1494,7 +1493,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   
   <!--assemble XML-->
   <echo message="Assembling UBL-${UBLversion}.xml"/>
-  <java classname="net.sf.saxon.Transform">
+  <java jar="utilities/saxon9he/saxon9he.jar" fork="true">
      <arg value="-xsl:assembleEntities.xsl"/>
      <arg value="-s:${dir}/UBL.xml"/>
      <arg value="-o:${dir}/UBL-${UBLversion}-assembled.xml"/>
@@ -1549,7 +1548,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/INVALID-ASSEMBLED-HUB-XML
   <echo   file="${dir}/missing---UBL-${UBLversion}-pdf---missing.txt"/>
   <echo   file="${dir}/missing---iso-iec-19845-draft-pdf---missing.txt"/>
   <echo message="Preparing a preview of the content in HTML..."/>
-  <java classname="net.sf.saxon.Transform">
+  <java jar="utilities/saxon9he/saxon9he.jar" fork="true">
     <arg value="-xsl:db/spec-0.8/htmlruntime/spec-0.8/stylesheets/oasis-specification-html-offline.xsl"/>
     <arg value="-s:UBL.xml"/>
     <arg value="-o:${dir}/UBL-${UBLversion}-preview.html"/>
@@ -2079,7 +2078,7 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
         message="XML source not assembled"
         file="${dir}/INTEGRITY-PROBLEMS.txt"/>
   <java if:set="docXMLvalid"
-        append="true" classname="net.sf.saxon.Transform"
+        append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true"
         error="${dir}/INTEGRITY-PROBLEMS.txt">
      <arg value="-xsl:hub-integrity.xsl"/>
      <arg value="-s:${dir}/${package}-${UBLstage}-${label}-dir-listing.xml"/>
@@ -2138,7 +2137,7 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
     <arg value="${dir}/${package}-${UBLstage}-${label}"/>    
   </exec>
   <echo message="Creating: ${dir}/${package}-${UBLstage}-${label}-gentext.xml..."/>
-  <java append="true" classname="net.sf.saxon.Transform">
+  <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
      <arg value="-xsl:hub-integrity.xsl"/>
      <arg value="-s:${dir}/${package}-${UBLstage}-${label}-dir-listing.xml"/>
      <arg value="-o:${dir}/${package}-${UBLstage}-${label}-gentext.xml"/>
