@@ -944,12 +944,11 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <property name="words-uri" location="${dir}/${words}"/>
   <property name="dict-uri" location="${dir}/spellcheck-UBL.txt"/>
 
-<jvmarg value="-Djava.awt.headless=true"/>
-<sysproperty key="java.awt.headless" value="true"/>
-<redirector output="${basedir}/saxon-output.log" error="${basedir}/saxon-error.log" alwayslog="true"/>
 
   <java resultproperty="returnCheck" classname="net.sf.saxon.Transform"
-        errorproperty="errorCheck">
+        errorproperty="errorCheck" fork="true">
+<jvmarg value="-Djava.awt.headless=true"/>
+<redirector output="${basedir}/saxon-output.log" error="${basedir}/saxon-error.log" alwayslog="true"/>
      <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-checkgc4obdndr.xsl"/>
      <arg value="-o:${report}"/>
      <arg value="-s:${source}"/>
