@@ -71,6 +71,8 @@
   <echo message="signatureGoogle=${signatureGoogle}"/>
   <echo message="localTime=${localTime}"/>
   <echo message="Running on Java: ${java.version} from ${java.home} (${java.vendor})" />
+  <echo message="Classpath: ${java.class.path}" />
+  
 
   <available property="gc2obdndr-exists"
          file="${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-gc2obdndr.xsl"/>
