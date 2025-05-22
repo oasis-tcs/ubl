@@ -70,7 +70,8 @@
   <echo message="documentsGoogle=${documentsGoogle}"/>
   <echo message="signatureGoogle=${signatureGoogle}"/>
   <echo message="localTime=${localTime}"/>
-  
+  <echo message="Running on Java: ${java.version} from ${java.home} (${java.vendor})" />
+
   <available property="gc2obdndr-exists"
          file="${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-gc2obdndr.xsl"/>
   <echo unless:set="gc2obdndr-exists" 

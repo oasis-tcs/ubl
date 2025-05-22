@@ -28,23 +28,23 @@ if [ -f $package-$UBLstage-$label.zip ]; then rm $package-$UBLstage-$label.zip ;
 7z a $package-$UBLstage-$label.zip $package-$UBLstage-$label
 popd
 
-if [ "$targetdir" = "target" ]
-then
-if [ "$platform" = "github" ]
-then
-if [ "$6" = "DELETE-REPOSITORY-FILES-AS-WELL" ] #secret undocumented failsafe
-then
-# further reduce GitHub storage costs by deleting repository files
+#if [ "$targetdir" = "target" ]
+#then
+#if [ "$platform" = "github" ]
+#then
+#if [ "$6" = "DELETE-REPOSITORY-FILES-AS-WELL" ] #secret undocumented failsafe
+#then
+## further reduce GitHub storage costs by deleting repository files
 
-find . -not -name target -not -name .github -maxdepth 1 -exec rm -r -f {} \;
+#find . -not -name target -not -name .github -maxdepth 1 -exec rm -r -f {} \;
 
-mv $targetdir/$package-$UBLstage-$label-archive-only.zip .
-mv $targetdir/$package-$UBLstage-$label-iso-iec-19845.zip .
-mv $targetdir/$package-$UBLstage-$label.zip .
-rm -r -f $targetdir
+#mv $targetdir/$package-$UBLstage-$label-archive-only.zip .
+#mv $targetdir/$package-$UBLstage-$label-iso-iec-19845.zip .
+#mv $targetdir/$package-$UBLstage-$label.zip .
+#rm -r -f $targetdir
 
-fi
-fi
-fi
+#fi
+#fi
+#fi
 
 exit 0 # always be successful so that github returns ZIP of results
