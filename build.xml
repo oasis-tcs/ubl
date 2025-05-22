@@ -943,6 +943,11 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <touch file="${dir}/${words}"/>
   <property name="words-uri" location="${dir}/${words}"/>
   <property name="dict-uri" location="${dir}/spellcheck-UBL.txt"/>
+
+<jvmarg value="-Djava.awt.headless=true"/>
+<sysproperty key="java.awt.headless" value="true"/>
+<redirector output="${basedir}/saxon-output.log" error="${basedir}/saxon-error.log" alwayslog="true"/>
+
   <java resultproperty="returnCheck" classname="net.sf.saxon.Transform"
         errorproperty="errorCheck">
      <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-checkgc4obdndr.xsl"/>
@@ -962,6 +967,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
      <arg value="errors-are-fatal=${fatal}"/>
   </java>
   <property name="errorCheck" value=""/>
+  <echo message="Return check: ${returnCheck}"/>
   <echo message="Error check: ${errorCheck}"/>
   <condition property="reportCheck">
     <and>
