@@ -1105,7 +1105,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <delete file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports"/>
   <property name="alldocsname" value="All-UBL-${UBLversion}-Documents"/>
   <property name="doAllOnly" value="no"/>
-  <property name="parallelGroupCount" value="16"/>
+  <property name="parallelGroupCount" value="8"/>
   <echo message='Creating HTML reports (group ${group}) from "${source}" GC file...'/>
   <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
      <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-gc2obdsummary.xsl"/>
