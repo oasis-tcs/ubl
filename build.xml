@@ -943,7 +943,12 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <param name="alldocsname" value="not-used-here"/>
     <param name="group"   value="0"/>
   </antcall>
-  <move preservelastmodified="true" unless:set="html-sig-okay" tofile="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/All-UBL-${UBLversion}-SignatureExtensionComponents.html"
+  <condition property="copySignatureHTML">
+    <available
+file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/UBL-CommonSignatureComponents-${UBLversion}.html"/>
+    <isset property="html-sig-okay"/>
+  </condition>
+  <move preservelastmodified="true" if:set="copySignatureHTML" tofile="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/All-UBL-${UBLversion}-SignatureExtensionComponents.html"
     file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/UBL-CommonSignatureComponents-${UBLversion}.html"
        />
 </target>
