@@ -94,6 +94,10 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <echo unless:set="cva2sch-exists" 
         message="Cannot find cva2sch=${cva2sch}"/>
 
+<!--=========================================================================
+    Make the artefacts first to know that the results are useful.
+  -->
+
   <antcall target="-make-artefacts" unless:set="skip-artefacts-generation"/>
 
   <!--don't bother with hub if there are problems with the artefacts-->
@@ -108,24 +112,49 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     </or>
   </condition>
 
+  <!--
+    Only make the documentation if the artefacts were successfully made
+  -->
   <touch if:set="artefactsFailedMain"
          file="${dir}/artefacts-${package}-${UBLstage}-${label}/HUB-SKIPPED-INCOMPLETE-ARTEFACTS.txt"/>
   <antcall target="-make-hub" unless:set="artefactsFailedMain"/>
 
+  <!--
+    Prepare an output package with whatever was successfully created
+  -->
   <antcall target="-package-distribution"/>
 
-  <!--don't bother with hub if there are problems with the artefacts-->
+  <!--
+    Don't bother with checking the consistency of the generated documentation
+    if either the artefacts or the hub created warning .txt files for the user
+  -->
   <condition property="artefactsOrHubFailed">
     <resourcecount when="greater" count="0">
       <fileset file="${dir}/${package}-${UBLstage}-${label}/*.txt"/>
     </resourcecount>
   </condition>
-
   <antcall target="-consistency-check" unless:set="artefactsOrHubFailed"/>
 </target>
-  
+
+<!--=========================================================================
+   This is where the artefacts are generated from the raw files and from
+   Google spreadsheets. The artefacts also are tested for being able to run.
+   
+   Steps:
+    - initialize the target directory from the raw hand-edited files
+    - add the git repository files to the target directory all at once
+    - create genericode files from the Google spreadsheets
+      - Google signature spreadsheet to Signature genericode
+      - Google document/library spreadsheets + full model metadata to Model gc
+      - Google document/library spreadsheets + endorsed metadata to Endorsed gc
+    - create CVS/XSD/XSL/SCH artefacts from the genericode files
+      - do the building in the ${UBLstage}-${UBLversion}/ directory for full model
+      - do the building in Endorsed-${UBLstage}-${UBLversion}/ for endorsed subset
+    - 
+-->
+
 <target name="-make-artefacts">
-  <!--start with the raw files-->
+  <!--start with the raw hand-edited files-->
   <copy preservelastmodified="true" todir="${dir}/${UBLstage}-${UBLversion}">
     <fileset dir="${rawdir}">
       <include name="**"/>
@@ -136,7 +165,30 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       <include name="**"/>
     </fileset>
   </copy>
-  <!--and the configuration files found in the base directory-->
+  <!--most of the common XSD files also are endorsed XSD files--> 
+  <copy preservelastmodified="true" todir="${dir}/Endorsed-${UBLstage}-${UBLversion}/xsd">
+    <fileset dir="${rawdir}/xsd">
+      <include name="**"/>
+    </fileset>
+  </copy>
+  <copy preservelastmodified="true" todir="${dir}/Endorsed-${UBLstage}-${UBLversion}/xsdrt">
+    <fileset dir="${rawdir}/xsd">
+      <include name="**"/>
+    </fileset>
+  </copy>
+  <!--but there are a few files overwritten especially for endorsed XSD files-->
+  <copy preservelastmodified="true" todir="${dir}/Endorsed-${UBLstage}-${UBLversion}/xsd">
+    <fileset dir="${rawdir}/endorsed/xsd">
+      <include name="**"/>
+    </fileset>
+  </copy>
+  <copy preservelastmodified="true" todir="${dir}/Endorsed-${UBLstage}-${UBLversion}/xsdrt">
+    <fileset dir="${rawdir}/endorsed/xsd">
+      <include name="**"/>
+    </fileset>
+  </copy>
+  
+  <!--add the configuration files found in the base directory-->
   <copy preservelastmodified="true" todir="${dir}">
     <fileset dir=".">
       <include name="**"/>
@@ -150,6 +202,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
 
   <!--create GC files for business and signature-->
   <sequential if:set="skip-gc">
+    <!--rather than create the GC files, copy working versions from git-->
     <copy preservelastmodified="true"
           todir="${dir}"
           file="UBL-Signature-Entities-${UBLversion}.gc"/>
@@ -162,11 +215,18 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <copy preservelastmodified="true"
           todir="${dir}/${UBLstage}-${UBLversion}/mod/"
           file="${dir}/UBL-Entities-${UBLversion}.gc"/>
+    <copy preservelastmodified="true"
+          todir="${dir}/${UBLstage}-${UBLversion}/endorsed/mod/"
+          file="${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
   </sequential>
+  
+  <!--remove the working versions from git when creating GC files-->
   <sequential unless:set="skip-gc">
     <delete file="${dir}/UBL-Signature-Entities-${UBLversion}.gc"/>
     <delete file="${dir}/UBL-Entities-${UBLversion}.gc"/>
-    
+    <delete file="${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
+
+    <!--Signature arefacts-->
     <available property="google-sig-file-exists"
                file="../UBL-Signature-Google.ods"/>
     <echo if:set="google-sig-file-exists"
@@ -223,6 +283,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <touch if:set="gcSigErrors"
            file="${dir}/${UBLstage}-${UBLversion}/INVALID-SIGNATURE-GC-FILE-GENERATED.txt"/>
   
+    <!--full model artefacts-->
     <available property="google-library-file-exists"
                file="../UBL-Library-Google.ods"/>
     <echo if:set="google-library-file-exists"
@@ -305,7 +366,8 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <touch if:set="gcBaseErrors"
            file="${dir}/${UBLstage}-${UBLversion}/INVALID-BASE-GC-FILE-GENERATED.txt"/>
 
-    <antcallback target="-ods2gc" return="returnGC">
+    <!--Endorsed model artefacts have different identification information-->
+    <antcallback target="-ods2gc" return="returnGCE">
       <param name="okay"   value="gc-okay"/>
       <param name="source"
         value="${dir}/UBL-Library-Google.ods,${dir}/UBL-Documents-Google.ods"/>
@@ -315,18 +377,21 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       <param name="returnProperty" value="returnGCE"/>
     </antcallback>
     <echo message="Converting UBL-Endorsed-Entities-${UBLversion}-raw.gc to UBL-Endorsed-Entities-${UBLversion}.gc"/>
-    <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true" resultproperty="returnGCEX">
+    <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true" resultproperty="returnGCEX"
+          errorproperty="errorGCEX">
       <arg value="-o:${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
       <arg value="-s:${dir}/UBL-Endorsed-Entities-${UBLversion}-raw.gc"/>
       <arg value="-xsl:gc2endorsed.xsl"/>
     </java>
     <delete file="${dir}/UBL-Endorsed-Entities-${UBLversion}-raw.gc"/>
-    
+
+    <!--once UBL-2.5 CSD01 is created then this temporary file copy is not needed-->
     <echo message="Temporarily creating shadow UBL Endorsed 2.4 from UBL Endorsed 2.5 because it doesn't exist"/>
     <copy preservelastmodified="true"
           tofile="${dir}/UBL-Endorsed-Entities-2.4-os.gc"
           file=  "${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
     
+    <!--different target directory for the endorsed artefacts-->
     <copy preservelastmodified="true"
           todir="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/"
           file="${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
@@ -343,9 +408,10 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       </and>
     </condition>
     <echo if:set="gcEndorsedErrors"
-          message="ERROR problem with UBL-Entities-${UBLversion}.gc"/>
-    <touch if:set="gcEndorsedErrors"
-           file="${dir}/${UBLstage}-${UBLversion}/INVALID-ENDORSED-GC-FILE-GENERATED.txt"/>
+          message="ERROR problem with UBL-Endorsed-Entities-${UBLversion}.gc"/>
+    <echo if:set="gcEndorsedErrors"
+          message="${errorGCEX}"
+          file="${dir}/${UBLstage}-${UBLversion}/INVALID-ENDORSED-GC-FILE-GENERATED.txt"/>
 
     <condition property="gcErrors">
       <or>
@@ -356,7 +422,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     </condition>
   </sequential>
 
-  <!--create CVA/XSD/XSL/SCH files-->
+  <!--create CVA/XSD/XSL/SCH files from each of the three genericode files-->
   <sequential unless:set="gcErrors">
     
   <uptodate targetfile="${dir}/${UBLstage}-${UBLversion}/val/UBL-DefaultDTQ-${UBLversion}.xsl"
@@ -368,7 +434,8 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       <include name="UBL-CVA-Skeleton.cva"/>
     </srcfiles>
   </uptodate>
-    
+  
+  <!--main model XSDs-->
   <antcallback target="-gc2ndr-check-only" return="returnStage"><!--against ${UBLprevStageVersion}-${UBLprevStage}-->
     <param name="okay"    value="xsd-okay"/>
     <param name="compare" value="${dir}/UBL-Entities-${UBLprevStageVersion}-${UBLprevStage}.gc"/>
@@ -420,6 +487,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     </and>
   </condition>
 
+  <!--endorsed model XSDs-->
   <antcallback target="-gc2ndr-check-only" return="returnEndorsedStage"><!--against ${UBLprevStageVersion}-${UBLprevStage}-->
     <param name="okay"    value="xsd-okay"/>
     <param name="compare" value="${dir}/UBL-Endorsed-Entities-${UBLprevStageVersion}-${UBLprevStage}.gc"/>
@@ -481,8 +549,8 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     </or>
   </condition>
 
+  <!--prepare other artefacts including Schematron-->
   <sequential unless:set="processFailed">
-    <!--prepare other artefacts including Schematron-->
     <antcall target="-artefacts"/>
   </sequential>
   <condition property="artefactsFailed">
@@ -586,7 +654,17 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <param name="report"  value="${dir}/check-ubl-signature-${UBLversion}-${UBLstage}.html"/>
     <param name="library"  value="UBL-SignatureLibrary-${UBLversion}"/>
   </antcall>    
-
+  <copy todir="${dir}/Endorsed-${UBLstage}-${UBLversion}/xsdrt/common">
+    <fileset dir="${dir}/${UBLstage}-${UBLversion}/xsdrt/common">
+      <include name="UBL-Signature*"/>
+    </fileset>
+  </copy>
+  <copy todir="${dir}/Endorsed-${UBLstage}-${UBLversion}/xsd/common">
+    <fileset dir="${dir}/${UBLstage}-${UBLversion}/xsd/common">
+      <include name="UBL-Signature*"/>
+    </fileset>
+  </copy>
+        
   <uptodate targetfile="${dir}/${UBLstage}-${UBLversion}/mod/UBL-Entities-${UBLversion}.ods"
             property=  "display-file-okay">
     <srcfiles dir="${dir}">
@@ -1105,7 +1183,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <delete file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports"/>
   <property name="alldocsname" value="All-UBL-${UBLversion}-Documents"/>
   <property name="doAllOnly" value="no"/>
-  <property name="parallelGroupCount" value="1"/>
+  <property name="parallelGroupCount" value="16"/>
   <echo message='Creating HTML reports (group ${group}) from "${source}" GC file...'/>
   <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
      <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-gc2obdsummary.xsl"/>
@@ -1195,8 +1273,9 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   </condition>
   <touch if:set="mismatchedSamplesBatch" file="${dir}/${UBLstage}-${UBLversion}/MISMATCHED-TEST-SAMPLES-BAT-WARNING.txt"/>
   
-  <echo message="Testing validation error files..."/>
-  <exec executable="sh" resultproperty="returnTest" dir="${dir}/${UBLstage}-${UBLversion}/val">
+  <echo message="Testing validation error files for main files..."/>
+  <exec executable="sh" resultproperty="returnTest" dir="${dir}/${UBLstage}-${UBLversion}/val"
+        errorproperty="errorTest">
     <arg value="test.sh"/>
   </exec>
   <condition property="reportTest">
@@ -1207,10 +1286,36 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       </and>
     </not>
   </condition>
-  <touch if:set="reportTest" file="${dir}/${UBLstage}-${UBLversion}/UNEXPECTED-TEST-RESULT-WARNING.txt"/>
+  <echo if:set="reportTest" message="${errorTest}"
+        file="${dir}/${UBLstage}-${UBLversion}/UNEXPECTED-TEST-RESULT-WARNING.txt"/>
   <echo/>
   <echo/>
   
+  <echo message="Testing validation error files for endorsed files..."/>
+  <copy todir="${dir}/Endorsed-${UBLstage}-${UBLversion}/val">
+    <fileset dir="${dir}/${UBLstage}-${UBLversion}/val">
+      <include name="**"/>
+    </fileset>
+  </copy>
+  <exec executable="sh" resultproperty="returnEndorsedTest" dir="${dir}/Endorsed-${UBLstage}-${UBLversion}/val"
+        errorproperty="errorEndorsedTest">
+    <arg value="test.sh"/>
+  </exec>
+  <condition property="reportEndorsedTest">
+    <not>
+      <and>
+        <isset property="returnEndorsedTest"/>
+        <equals arg1="${returnEndorsedTest}" arg2="0"/>
+      </and>
+    </not>
+  </condition>
+  <echo if:set="reportTest" message="${errorEndorsedTest}"
+        file="${dir}/${UBLstage}-${UBLversion}/UNEXPECTED-ENDORSED-TEST-RESULT-WARNING.txt"/>
+  <echo message="Deleting the temporary endorsed val directory to reduce space"/>
+  <delete dir="${dir}/Endorsed-${UBLstage}-${UBLversion}/val"/>
+  <echo/>
+  <echo/>
+
   <echo message="Validating sample test files..."/>
   <exec executable="sh" resultproperty="returnTestSamples" dir="${dir}/${UBLstage}-${UBLversion}/val">
     <arg value="-e"/>
