@@ -378,7 +378,7 @@
           <td>listID</td>
           <td>optional</td>
           <td>xsd:normalizedString</td>
-          <td>The identification of a list of codes.</td>
+          <td>The unique identification of a code list, including identification of the version of the list if applicable.</td>
         </tr>
         <!--
         <tr valign="top">
