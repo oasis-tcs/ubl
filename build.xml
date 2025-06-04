@@ -588,6 +588,8 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       <param name="source" value="${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
       <param name="target" value="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
     </antcall>
+    <delete file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
+    <delete file="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
   </sequential>
   
   <antcall target="-package-artefacts"/>
@@ -819,6 +821,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       <param name="group"   value="1"/>
     </antcall>  
   </sequential>
+  <!--
   <sequential>
     <antcall target="-gc2html">
       <param name="okay"    value="html-okay"/>
@@ -924,6 +927,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       <param name="group"   value="16"/>
     </antcall>  
   </sequential>
+  -->
 </parallel>
   <uptodate targetfile="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/All-UBL-${UBLversion}-SignatureExtensionComponents.html"
             property=  "html-sig-file-okay">
@@ -940,7 +944,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <param name="okay"    value="html-sig-okay"/>
     <param name="source"  value="${dir}/UBL-Signature-Entities-${UBLversion}.gc"/>
     <param name="library"  value="UBL-SignatureLibrary-${UBLversion}"/>
-    <param name="alldocsname" value="not-used-here"/>
+    <param name="alldocsname" value="UBL-CommonSignatureComponents-${UBLversion}.html"/>
     <param name="group"   value="0"/>
   </antcall>
   <condition property="copySignatureHTML">
@@ -1189,8 +1193,8 @@ file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/UBL-CommonSignatureCo
 <target name="-gc2html" unless="${okay}">
   <delete file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports"/>
   <property name="alldocsname" value="All-UBL-${UBLversion}-Documents"/>
-  <property name="doAllOnly" value="yes"/>
-  <property name="parallelGroupCount" value="16"/>
+  <property name="doAllOnly" value="no"/>
+  <property name="parallelGroupCount" value="1"/>
   <echo message='Creating HTML reports (group ${group}) from "${source}" GC file...'/>
   <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
      <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-gc2obdsummary.xsl"/>
