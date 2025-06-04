@@ -22,11 +22,6 @@ export libGoogle=https://docs.google.com/spreadsheets/d/18o1YqjHWUw0-s8mb3ja4i99
 export docGoogle=https://docs.google.com/spreadsheets/d/1024Th-Uj8cqliNEJc-3pDOR7DxAAW7gCG4e-pbtarsg
 export sigGoogle=https://docs.google.com/spreadsheets/d/1T6z2NZ4mc69YllZOXE5TnT5Ey-FlVtaXN1oQ4AIMp7g
 
-# Ken test
-export libGoogle=https://docs.google.com/spreadsheets/d/1UoLO8ZQ4rxnp5Pjd9iwaqCNBkvrJA5VaixtlTMNvWsk
-export docGoogle=https://docs.google.com/spreadsheets/d/1rlKMh-WatADJjf-ZY1-ytSq284thzpvXriWIbfDUJEI
-export sigGoogle=https://docs.google.com/spreadsheets/d/1T6z2NZ4mc69YllZOXE5TnT5Ey-FlVtaXN1oQ4AIMp7g
-
 bash build-common.sh "$1" "$2" "$3" "$4" "$5" "$6"
 
 exit 0 # always be successful so that github returns ZIP of results
