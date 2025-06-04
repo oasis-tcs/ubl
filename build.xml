@@ -40,6 +40,16 @@
   <echo if:set="skip-publish" message="!!!!!!!!!!!!!! Incomplete execution requested: documentation not being generated in the absence of secret values!!!!!!!!!!!!!!!!"/>
   <!--override abieExtensions as "no" for UBL 2.2 and earlier-->
   <property name="abieExtensions" value="yes"/>
+  <!--performance locally-->
+  <if>
+    <equals arg1="${platform}" arg2="local"/>
+    <then>
+      <property name="cpuCount" value="16"/>
+    </then>
+    <else>
+      <property name="cpuCount" value="1"/>
+    </else>
+  </if>
   <!--software timestamps-->
   <property name="gc2obdndr" value="20210607-1250z"/>
   <property name="ods2obdgc" value="20200809-0140z"/>
@@ -177,6 +187,11 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     </fileset>
   </copy>
   <!--but there are a few files overwritten especially for endorsed XSD files-->
+  <copy preservelastmodified="true" todir="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod">
+    <fileset dir="${rawdir}/mod">
+      <include name="**"/>
+    </fileset>
+  </copy>
   <copy preservelastmodified="true" todir="${dir}/Endorsed-${UBLstage}-${UBLversion}/xsd">
     <fileset dir="${rawdir}/endorsed/xsd">
       <include name="**"/>
@@ -218,6 +233,9 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <copy preservelastmodified="true"
           todir="${dir}/${UBLstage}-${UBLversion}/endorsed/mod/"
           file="${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
+    <copy preservelastmodified="true"
+          todir="${dir}/${UBLstage}-${UBLversion}/endorsed/mod/"
+          file="${dir}/UBL-Signature-Entities-${UBLversion}.gc"/>
   </sequential>
   
   <!--remove the working versions from git when creating GC files-->
@@ -582,11 +600,11 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <!--prepare reports-->
     <antcall target="-reports">
       <param name="source" value="${dir}/UBL-Entities-${UBLversion}.gc"/>
-      <param name="target" value="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
+      <param name="target" value="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports"/>
     </antcall>
     <antcall target="-reports">
       <param name="source" value="${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
-      <param name="target" value="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
+      <param name="target" value="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/summary/reports"/>
     </antcall>
     <delete file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
     <delete file="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
@@ -787,21 +805,6 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
 </target>
 
 <!--create reports-->
-<target name="-report-check">
-  <uptodate targetfile="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/UBL-WeightStatement-${UBLversion}.html"
-            property=  "html-file-okay">
-    <srcfiles dir="${dir}">
-      <include name="UBL-Entities-${UBLversion}.gc"/>
-    </srcfiles>
-  </uptodate>
-  <condition property="html-okay">
-    <or>
-      <istrue value="${html-file-okay}"/>
-      <istrue value="${skip-html-generation}"/>
-    </or>
-  </condition>
-</target>
-
 <target name="-report-all-only" if="skip-html-generation" unless="skip-all-html-generation">
   <echo message='Creating "all documents" report...'/>
   <antcall target="-gc2html">
@@ -812,8 +815,12 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   </antcall>  
 </target>
 
-<target name="-reports" depends="-report-check,-report-all-only" unless="html-okay">
-<parallel>  
+<target name="-reports" depends="-report-all-only" unless="html-okay">
+  <property name="parallelGroupCount" value="${cpuCount}"/>
+  
+ <if>
+   <equals arg1="${parallelGroupCount}" arg2="1"/>
+  <then>
   <sequential>
     <antcall target="-gc2html">
       <param name="okay"    value="html-okay"/>
@@ -821,7 +828,16 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       <param name="group"   value="1"/>
     </antcall>  
   </sequential>
-  <!--
+  </then>
+  <else>
+    <parallel>
+  <sequential>
+    <antcall target="-gc2html">
+      <param name="okay"    value="html-okay"/>
+      <param name="library"  value=""/>
+      <param name="group"   value="1"/>
+    </antcall>  
+  </sequential>
   <sequential>
     <antcall target="-gc2html">
       <param name="okay"    value="html-okay"/>
@@ -927,36 +943,17 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
       <param name="group"   value="16"/>
     </antcall>  
   </sequential>
-  -->
-</parallel>
-  <uptodate targetfile="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/All-UBL-${UBLversion}-SignatureExtensionComponents.html"
-            property=  "html-sig-file-okay">
-    <srcfiles dir="${dir}">
-      <include name="UBL-Signature-Entities-${UBLversion}.gc"/>
-    </srcfiles>
-  </uptodate>
-  <condition property="html-sig-okay">
-    <or>
-      <istrue value="${html-sig-file-okay}"/>
-    </or>
-  </condition>
+    </parallel>
+  </else>
+ </if>
+  
   <antcall target="-gc2html">
     <param name="okay"    value="html-sig-okay"/>
     <param name="source"  value="${dir}/UBL-Signature-Entities-${UBLversion}.gc"/>
     <param name="library"  value="UBL-SignatureLibrary-${UBLversion}"/>
-    <param name="alldocsname" value="UBL-CommonSignatureComponents-${UBLversion}.html"/>
+    <param name="alldocsname" value="All-UBL-${UBLversion}-SignatureExtensionComponents.html"/>
     <param name="group"   value="0"/>
   </antcall>
-  <condition property="copySignatureHTML">
-    <and>
-      <available
-file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/UBL-CommonSignatureComponents-${UBLversion}.html"/>
-      <isset property="html-sig-okay"/>
-    </and>
-  </condition>
-  <move preservelastmodified="true" if:set="copySignatureHTML" tofile="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/All-UBL-${UBLversion}-SignatureExtensionComponents.html"
-    file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/UBL-CommonSignatureComponents-${UBLversion}.html"
-       />
 </target>
 
 <target name="-ods2gc" unless="${okay}">
@@ -1194,12 +1191,11 @@ file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/UBL-CommonSignatureCo
   <delete file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports"/>
   <property name="alldocsname" value="All-UBL-${UBLversion}-Documents"/>
   <property name="doAllOnly" value="no"/>
-  <property name="parallelGroupCount" value="1"/>
   <echo message='Creating HTML reports (group ${group}) from "${source}" GC file...'/>
   <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
      <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-gc2obdsummary.xsl"/>
      <arg value="-s:${source}"/>
-     <arg value="-o:${target}"/>
+     <arg value="-o:${target}/junk.out"/>
      <arg value="all-documents-base-name=${alldocsname}"/>
      <arg value="title-prefix=${title} ${UBLstage}"/>
      <arg value="date-time=${label}"/>
@@ -1213,6 +1209,8 @@ file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/UBL-CommonSignatureCo
 </target>
 
 <target name="-codelists">
+  <echo message="Skipping testing of code lists; assumed not updated from 2.4"/>
+  <!-- Since UBL 2.5 the already-tested codelists from UBL 2.4 are used
   <echo message="Testing code list files..."/>
   <exec executable="sh" resultproperty="returnCLlist" 
         dir="${dir}/${UBLstage}-${UBLversion}/cl"
@@ -1241,6 +1239,7 @@ file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/UBL-CommonSignatureCo
     </not>
   </condition>
   <delete unless:set="reportCLdiff" file="${dir}/${UBLstage}-${UBLversion}/LIST-OF-PROBLEM-CODE-LISTS.txt"/>
+  -->
 </target>
 
 <target name="-samples">
