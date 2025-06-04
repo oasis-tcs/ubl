@@ -1617,7 +1617,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
              file="${dir}/UBL-${UBLversion}-assembled.xml"/>
   <sequential if:set="docAssembled">
    <!--confirm the input file is valid-->
-   <antcallback target="-validate" return="validatedInputs">
+   <antcallback target="-validateHub" return="validatedInputs">
      <param name="source" value="${dir}/UBL-${UBLversion}-assembled.xml"/>
    </antcallback>
    <move file="${dir}/UBL-${UBLversion}-assembled.xml"
@@ -1626,7 +1626,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <delete file="output.txt"/>
 </target>
 
-<target name="-validate" depends="-validate-shell,-validate-dos">
+<target name="-validateHub" depends="-validateHub-shell,-validateHub-dos">
   <echo message="${validateOutput}"/>
   <condition property="validatedInputs">
     <equals arg1="${validateResult}" arg2="0"/>
@@ -1636,7 +1636,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
 file="${dir}/artefacts-${package}-${UBLstage}-${label}/INVALID-ASSEMBLED-HUB-XML.txt"/>
 </target>
 
-<target name="-validate-shell" unless="${is-dos}">
+<target name="-validateHub-shell" unless="${is-dos}">
   <exec resultproperty="validateResult" executable="sh"
         outputproperty="validateOutput">
     <arg value="db/spec-0.8/validate/validate.sh"/>
@@ -1644,7 +1644,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/INVALID-ASSEMBLED-HUB-XML
   </exec>
 </target>
 
-<target name="-validate-dos" if="${is-dos}">
+<target name="-validateHub-dos" if="${is-dos}">
   <exec resultproperty="validateResult" executable="cmd.exe"
         outputproperty="validateOutput">
     <arg value="/c"/>
@@ -1663,11 +1663,15 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/INVALID-ASSEMBLED-HUB-XML
   <echo   file="${dir}/missing---UBL-${UBLversion}-pdf---missing.txt"/>
   <echo   file="${dir}/missing---iso-iec-19845-draft-pdf---missing.txt"/>
   <echo message="Preparing a preview of the content in HTML..."/>
-  <java jar="utilities/saxon9he/saxon9he.jar" fork="true">
+  <java jar="utilities/saxon9he/saxon9he.jar" fork="true" resultproperty="previewHubResult"
+        errorproperty="previewHubError" outputproperty="previewHubOutput">
     <arg value="-xsl:db/spec-0.8/htmlruntime/spec-0.8/stylesheets/oasis-specification-html-offline.xsl"/>
     <arg value="-s:UBL.xml"/>
     <arg value="-o:${dir}/UBL-${UBLversion}-preview.html"/>
   </java>
+  <echo message="${previewHubOutput}"/>
+  <echo message="${previewHubError}"/>
+  <echo message="Return code: ${previewHubResult}"/>
 </target>
 
 <target name="-check-docs">

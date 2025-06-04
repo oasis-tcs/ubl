@@ -2,8 +2,13 @@
 <!--
   This is a manually-edited copy of:
       BDNDR-UnqualifiedDataTypes-1.1.xsd - 08 September 2021
-  ... created to remove deprecated attributes.  
-  
+  ... created to remove deprecated attributes as described in:
+      https://issues.oasis-open.org/browse/UBL-383
+      
+  Deprecated constructs are commented out for posterity (and comparison).
+
+===========
+
   This schema fragment implements OASIS BDNDR unqualified datatypes using core
   component types with all supplementary components as described in
   CCTS 2.01 http://www.unece.org/cefact/ebxml/CCTS_V2-01_Final.pdf tables
@@ -259,7 +264,22 @@ namespace="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModul
       </xsd:documentation>
     </xsd:annotation>
     <xsd:simpleContent>
-      <xsd:extension base="ccts-cct:CodeType"/>
+      <xsd:extension base="ccts-cct:CodeType">
+            <xsd:attribute name="listID" type="xsd:normalizedString" use="optional">
+               <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                     <ccts:UniqueID>UNDT000007-SC2</ccts:UniqueID>
+                     <ccts:CategoryCode>SC</ccts:CategoryCode>
+                     <ccts:DictionaryEntryName>Code List. Identifier</ccts:DictionaryEntryName>
+                     <ccts:Definition>The unique identification of a code list, including identification of the version of the list if applicable.</ccts:Definition>
+                     <ccts:ObjectClass>Code List</ccts:ObjectClass>
+                     <ccts:PropertyTermName>Identification</ccts:PropertyTermName>
+                     <ccts:RepresentationTermName>Identifier</ccts:RepresentationTermName>
+                     <ccts:PrimitiveType>string</ccts:PrimitiveType>
+                  </xsd:documentation>
+               </xsd:annotation>
+            </xsd:attribute>
+      </xsd:extension>
     </xsd:simpleContent>
   </xsd:complexType>
   

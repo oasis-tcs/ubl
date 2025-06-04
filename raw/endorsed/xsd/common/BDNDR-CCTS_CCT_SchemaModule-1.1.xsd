@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This is a manually-edited copy of:
+      BDNDR-CCTS_CCT_SchemaModule-1.1.xsd - 08 September 2021
+  ... created to remove deprecated attributes as described in:
+      https://issues.oasis-open.org/browse/UBL-383
+      
+  Deprecated constructs are commented out for posterity (and comparison).
+-->
+
 <!-- ====================================================================== -->
 <!-- ===== CCTS Core Component Type Schema Module ===== -->
 <!-- ====================================================================== -->
@@ -72,6 +81,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+           <!--
             <xsd:attribute name="currencyCodeListVersionID" type="xsd:normalizedString" use="optional">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -86,6 +96,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+           -->
          </xsd:extension>
       </xsd:simpleContent>
    </xsd:complexType>
@@ -105,6 +116,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
       </xsd:annotation>
       <xsd:simpleContent>
          <xsd:extension base="xsd:base64Binary">
+           <!--
             <xsd:attribute name="format" type="xsd:string" use="optional">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -119,6 +131,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+            -->
             <xsd:attribute name="mimeCode" type="xsd:normalizedString" use="optional">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -133,6 +146,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+            <!--
             <xsd:attribute name="encodingCode" type="xsd:normalizedString" use="optional">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -189,6 +203,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+           -->
          </xsd:extension>
       </xsd:simpleContent>
    </xsd:complexType>
@@ -209,6 +224,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
       </xsd:annotation>
       <xsd:simpleContent>
          <xsd:extension base="xsd:normalizedString">
+           <!--
             <xsd:attribute name="listID" type="xsd:normalizedString" use="optional">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -336,6 +352,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+            -->
          </xsd:extension>
       </xsd:simpleContent>
    </xsd:complexType>
@@ -356,6 +373,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
       </xsd:annotation>
       <xsd:simpleContent>
          <xsd:extension base="xsd:string">
+           <!--
             <xsd:attribute name="format" type="xsd:string" use="optional">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -370,6 +388,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+            -->
          </xsd:extension>
       </xsd:simpleContent>
    </xsd:complexType>
@@ -403,6 +422,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+           <!--
             <xsd:attribute name="schemeName" type="xsd:string" use="optional">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -488,6 +508,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+            -->
          </xsd:extension>
       </xsd:simpleContent>
    </xsd:complexType>
@@ -507,6 +528,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
       </xsd:annotation>
       <xsd:simpleContent>
          <xsd:extension base="xsd:string">
+           <!--
             <xsd:attribute name="format" type="xsd:string" use="optional">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -521,6 +543,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+            -->
          </xsd:extension>
       </xsd:simpleContent>
    </xsd:complexType>
@@ -555,6 +578,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+           <!--
             <xsd:attribute name="unitCodeListVersionID" type="xsd:normalizedString" use="optional">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -569,6 +593,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+            -->
          </xsd:extension>
       </xsd:simpleContent>
    </xsd:complexType>
@@ -588,6 +613,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
       </xsd:annotation>
       <xsd:simpleContent>
          <xsd:extension base="xsd:decimal">
+           <!--
             <xsd:attribute name="format" type="xsd:string" use="optional">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -602,6 +628,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+            -->
          </xsd:extension>
       </xsd:simpleContent>
    </xsd:complexType>
@@ -635,6 +662,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+           <!--
             <xsd:attribute name="unitCodeListID" type="xsd:normalizedString" use="optional">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -678,6 +706,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+            -->
          </xsd:extension>
       </xsd:simpleContent>
    </xsd:complexType>
@@ -711,6 +740,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+           <!--
             <xsd:attribute name="languageLocaleID" type="xsd:normalizedString" use="optional">
                <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -725,6 +755,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
                   </xsd:documentation>
                </xsd:annotation>
             </xsd:attribute>
+            -->
          </xsd:extension>
       </xsd:simpleContent>
    </xsd:complexType>
