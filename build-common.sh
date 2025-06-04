@@ -18,7 +18,9 @@ sleep 2
 
 if [ ! -d $targetdir/$package-$UBLstage-$label-archive-only/ ]; then mkdir $targetdir/$package-$UBLstage-$label-archive-only/ ; fi
 mv build.console.$label.txt $targetdir/$package-$UBLstage-$label-archive-only/
-if [ -f saxon*.log ]; then mv saxon*.log $targetdir/$package-$UBLstage-$label-archive-only/ ; fi
+if compgen -G "saxon*.log" > /dev/null; then
+  mv saxon*.log "$targetdir/$package-$UBLstage-$label-archive-only/"
+fi
 echo $serverReturn         >$targetdir/$package-$UBLstage-$label-archive-only/build.exitcode.$label.txt
 touch                       $targetdir/$package-$UBLstage-$label-archive-only/build.console.$label.txt
 
