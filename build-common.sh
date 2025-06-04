@@ -13,10 +13,12 @@ targetdirabs=$(cd "$targetdir" && pwd)
 echo Building package...
 java -Dant.home=utilities/ant -classpath "utilities/saxon/saxon.jar:utilities/ant/lib/ant-launcher.jar:utilities/saxon9he/saxon9he.jar" org.apache.tools.ant.launch.Launcher -buildfile build.xml "-Dtitle=$title" "-Dpackage=$package" "-DUBLversion=$UBLversion" "-DUBLprevStageVersion=$UBLprevStageVersion" "-DUBLprevStage=$UBLprevStage" "-DUBLprevVersion=$UBLprevVersion" "-Drawdir=$rawdir" "-DlibraryGoogle=$libGoogle" "-DdocumentsGoogle=$docGoogle" "-DsignatureGoogle=$sigGoogle" "-Ddir=$targetdirabs" "-DUBLstage=$UBLstage" "-Dlabel=$label" "-DisDraft=$isDraft" "-Drealtauser=$4" "-Drealtapass=$5" "-Dplatform=$platform"
 serverReturn=$?
-
 sleep 2
+
+
 if [ ! -d $targetdir/$package-$UBLstage-$label-archive-only/ ]; then mkdir $targetdir/$package-$UBLstage-$label-archive-only/ ; fi
 mv build.console.$label.txt $targetdir/$package-$UBLstage-$label-archive-only/
+if [ -f saxon*.log ]; then mv saxon*.log $targetdir/$package-$UBLstage-$label-archive-only/ ; fi
 echo $serverReturn         >$targetdir/$package-$UBLstage-$label-archive-only/build.exitcode.$label.txt
 touch                       $targetdir/$package-$UBLstage-$label-archive-only/build.console.$label.txt
 
