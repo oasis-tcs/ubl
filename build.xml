@@ -50,18 +50,7 @@
       <property name="cpuCount" value="1"/>
     </else>
   </if>
-  <!--software timestamps-->
-  <property name="gc2obdndr" value="20210607-1250z"/>
-  <property name="ods2obdgc" value="20200809-0140z"/>
-  <property name="cvagcxsl"  value="20130416-0040z"/>
-  <property name="cva2sch"   value="20130207-1940z"/>
-  <property name="gc2odsxml" value="20170727-0220z"/>
   <!--documentation-->
-  <echo message="gc2obdndr=${gc2obdndr}"/>
-  <echo message="ods2obdgc=${ods2obdgc}"/>
-  <echo message="gc2odsxml=${gc2odsxml}"/>
-  <echo message="cvagcxsl=${cvagcxsl}"/>
-  <echo message="cva2sch=${cva2sch}"/>
   <echo message="dir=${dir}"/>
   <echo message="thisdir=${thisdir}"/>
   <echo message="utilitydir=${utilitydir}"/>
@@ -84,25 +73,20 @@
   <echo message="Classpath: ${java.class.path}" />
 
   <available property="gc2obdndr-exists"
-         file="${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-gc2obdndr.xsl"/>
-  <echo unless:set="gc2obdndr-exists" 
-        message="Cannot find gc2obdndr=${gc2obdndr}"/>
+         file="${utilitydir}Crane-gc2obdndr/Crane-gc2obdndr.xsl"/>
+  <echo unless:set="gc2obdndr-exists" message="Cannot find gc2obdndr"/>
   <available property="ods2obdgc-exists"
-file="${utilitydir}Crane-ods2obdgc-${ods2obdgc}/Crane-ods2obdgc.xsl"/>
-  <echo unless:set="ods2obdgc-exists" 
-        message="Cannot find ods2obdgc=${ods2obdgc}"/>
+file="${utilitydir}Crane-ods2obdgc/Crane-ods2obdgc.xsl"/>
+  <echo unless:set="ods2obdgc-exists" message="Cannot find ods2obdgc"/>
   <available property="gc2odsxml-exists"
-file="${utilitydir}Crane-gc2odsxml-${gc2odsxml}/Crane-gc2odsxml.xsl"/>
-  <echo unless:set="gc2odsxml-exists" 
-        message="Cannot find gc2odsxml=${gc2odsxml}"/>
+file="${utilitydir}Crane-gc2odsxml/Crane-gc2odsxml.xsl"/>
+  <echo unless:set="gc2odsxml-exists" message="Cannot find gc2odsxml"/>
   <available property="cvagcxsl-exists"
-file="${utilitydir}Crane-cva-gc-xsl-${cvagcxsl}/Crane-cva2html.xsl"/>
-  <echo unless:set="cvagcxsl-exists" 
-        message="Cannot find cvagcxsl=${cvagcxsl}"/>
+file="${utilitydir}Crane-cva-gc-xsl/Crane-cva2html.xsl"/>
+  <echo unless:set="cvagcxsl-exists" message="Cannot find cvagcxsl"/>
   <available property="cva2sch-exists"
-file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"/>
-  <echo unless:set="cva2sch-exists" 
-        message="Cannot find cva2sch=${cva2sch}"/>
+file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
+  <echo unless:set="cva2sch-exists" message="Cannot find cva2sch="/>
 
 <!--=========================================================================
     Make the artefacts first to know that the results are useful.
@@ -961,7 +945,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <delete file="${target}"/>
   <echo message='Rebuilding "${target}" GC file...'/>
   <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
-     <arg value="-xsl:${utilitydir}Crane-ods2obdgc-${ods2obdgc}/Crane-ods2obdgc.xsl"/>
+     <arg value="-xsl:${utilitydir}Crane-ods2obdgc/Crane-ods2obdgc.xsl"/>
      <arg value="-o:${target}"/>
      <arg value="-it:ods-uri"/>
      <arg value="ods-uri=${source}"/>
@@ -974,7 +958,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
     <property unless:set="done" name="${returnProperty}" value="1"/>
   </sequential>
   <sequential if:set="done">
-    <property name="jarLocation" location="${utilitydir}Crane-gc2obdndr-${gc2obdndr}/ubl/val"/>
+    <property name="jarLocation" location="${utilitydir}Crane-gc2obdndr/ubl/val"/>
     <echo message='Validating "${target}" GC file...'/>
     <java resultproperty="${returnProperty}" append="true" fork="true" classname="com.nwalsh.parsers.xjparse"
           classpath="${jarLocation}/xjparse.jar;${jarLocation}/resolver.jar;${jarLocation};">
@@ -989,7 +973,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <delete file="${target}"/>
   <echo message='Rebuilding "${target}" ODS file...'/>
   <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
-     <arg value="-xsl:${utilitydir}Crane-gc2odsxml-${gc2odsxml}/Crane-gc2odsxml.xsl"/>
+     <arg value="-xsl:${utilitydir}Crane-gc2odsxml/Crane-gc2odsxml.xsl"/>
      <arg value="-o:${target}-dir/dummy"/>
      <arg value="-s:${source}"/>
      <arg value="skeleton-ods-uri=${dir}/${skeleton}"/>
@@ -1036,7 +1020,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
         errorproperty="errorCheck" fork="true">
 <jvmarg value="-Djava.awt.headless=true"/>
 <redirector output="${basedir}/saxon-output.log" error="${basedir}/saxon-error.log" alwayslog="true"/>
-     <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-checkgc4obdndr.xsl"/>
+     <arg value="-xsl:${utilitydir}Crane-gc2obdndr/Crane-checkgc4obdndr.xsl"/>
      <arg value="-o:${report}"/>
      <arg value="-s:${source}"/>
      <arg value="config-uri=${config}"/>
@@ -1108,7 +1092,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
 <target name="-gc2cva" unless="${okay}">
   <echo message='Creating CVA/XSD from "${source}" GC file...'/>
   <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
-     <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-gc2obdndr.xsl"/>
+     <arg value="-xsl:${utilitydir}Crane-gc2obdndr/Crane-gc2obdndr.xsl"/>
      <arg value="-s:${source}"/>
      <arg value="-o:${output}/junk.out"/>
      <arg value="config-uri=${config}"/>
@@ -1123,7 +1107,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <property name="words-uri" location="${dir}/${words}"/>
   <property name="dict-uri" location="${dir}/spellcheck-UBL.txt"/>
   <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
-     <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-checkgc4obdndr.xsl"/>
+     <arg value="-xsl:${utilitydir}Crane-gc2obdndr/Crane-checkgc4obdndr.xsl"/>
      <arg value="-o:${report}"/>
      <arg value="-s:${source}"/>
      <arg value="config-uri=${config}"/>
@@ -1143,7 +1127,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   </exec>
   <echo message='Creating CVA/XSD extension from "${source}" GC file...'/>
   <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
-     <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-gc2obdndr.xsl"/>
+     <arg value="-xsl:${utilitydir}Crane-gc2obdndr/Crane-gc2obdndr.xsl"/>
      <arg value="-s:${source}"/>
      <arg value="-o:${dir}/${UBLstage}-${UBLversion}/junk.out"/>
      <arg value="config-uri=${config}"/>
@@ -1162,14 +1146,14 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
      <arg value="-o"/>
      <arg value="${cvaout}"/>
      <arg value="${cvain}"/>
-     <arg value="${utilitydir}Crane-cva-gc-xsl-${cvagcxsl}/Crane-cva2html.xsl"/>
+     <arg value="${utilitydir}Crane-cva-gc-xsl/Crane-cva2html.xsl"/>
   </java>
   <echo message='Creating XSL validation from "${cvain}" CVA file...'/>
   <java append="true" classname="com.icl.saxon.StyleSheet">
      <arg value="-o"/>
      <arg value="${cvain}.temp.xsl"/>
      <arg value="${cvain}"/>
-     <arg value="${utilitydir}Crane-cva2sch-${cva2sch}/utility/Crane-cva2schXSLT.xsl"/>
+     <arg value="${utilitydir}Crane-cva2sch/utility/Crane-cva2schXSLT.xsl"/>
   </java>
   <java append="true" classname="com.icl.saxon.StyleSheet">
      <arg value="-o"/>
@@ -1193,7 +1177,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <property name="doAllOnly" value="no"/>
   <echo message='Creating HTML reports (group ${group}) from "${source}" GC file...'/>
   <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
-     <arg value="-xsl:${utilitydir}Crane-gc2obdndr-${gc2obdndr}/Crane-gc2obdsummary.xsl"/>
+     <arg value="-xsl:${utilitydir}Crane-gc2obdndr/Crane-gc2obdsummary.xsl"/>
      <arg value="-s:${source}"/>
      <arg value="-o:${target}/junk.out"/>
      <arg value="all-documents-base-name=${alldocsname}"/>
@@ -1246,7 +1230,7 @@ file="${utilitydir}Crane-cva2sch-${cva2sch}/utility/iso_schematron_assembly.xsl"
   <echo message="Checking the use of namespace URI strings and processing instructions..."/>
   <exec executable="sh" outputproperty="countBadNSPI">
     <arg value="-c"/>
-    <arg value='java -jar ${utilitydir}Crane-gc2obdndr-${gc2obdndr}/saxon9he/saxon9he.jar 
+    <arg value='java -jar ${utilitydir}Crane-gc2obdndr/saxon9he/saxon9he.jar 
 -s:namespaceCheck.xsl -xsl:namespaceCheck.xsl "dir=${dir}/${UBLstage}-${UBLversion}/xml" | grep "^ " | grep -E -v "ubl:schema:xsd:(SignatureBasicComponents|CommonExtensionComponents)-2" | tee ${dir}/${UBLstage}-${UBLversion}/UNEXPECTED-SAMPLES-NS-PI-DETAILS.txt | wc -l | sed "s/ //g"'/>
   </exec>
   <condition property="badNSPI">
