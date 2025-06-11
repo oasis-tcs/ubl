@@ -53,6 +53,7 @@ PURPOSE.</programlisting>
 
 <xsl:include href="support/ndrSubset.xsl"/>
 <xsl:include href="support/udt4html.xsl"/>
+<xsl:include href="support/udt4html-endorsed.xsl"/>
 <xsl:include href="support/Crane-commonndr.xsl"/>
 
 <!--========================================================================-->
@@ -78,13 +79,18 @@ PURPOSE.</programlisting>
 <xs:param ignore-ns="yes">
   <para>The desire to save time with only the "all" model.</para>
 </xs:param>
-<xsl:param name="do-all-only" select="'no'"/>
+<xsl:param name="do-all-only" as="xsd:string" select="'no'"/>
 
 <xs:variable>
   <para>The desire to save time with only the "all" model.</para>
 </xs:variable>
 <xsl:variable name="gu:doAllOnly" as="xsd:boolean"
               select="starts-with('yes',lower-case($do-all-only))"/>
+
+<xs:param ignore-ns="yes">
+  <para>The indication that the endorsed UDT are needed in the report.</para>
+</xs:param>
+<xsl:param name="endorsed" as="xsd:string" select="'false'"/>
 
 <xs:param ignore-ns="yes">
   <para>The relative URI to the summary report for the base model.</para>
@@ -227,8 +233,9 @@ PURPOSE.</programlisting>
                         key('gu:bie-by-abie-class',gu:col(.,'ObjectClass'))
                         [gu:isSubsetBIE(.)])"/>
   <xsl:variable name="gu:outfile" as="xsd:string"
-                select="( $gu:modelDocumentABIE/gu:col(.,'ModelName'), 
-                          $all-documents-base-name )[1]"/>
+                select="concat( ( $gu:modelDocumentABIE/gu:col(.,'ModelName'), 
+                                  $all-documents-base-name )[1],
+                     if( xsd:boolean($endorsed) ) then '-Endorsed' else '' )"/>
   <xsl:message select="concat( if( $gu:parallelGroup = 0 ) then '' else
        concat( '[',format-number($gu:parallelGroup,'00'),'] ' ),
        'Creating ',$gu:outfile,'.html',' ...')"/>
@@ -493,7 +500,8 @@ PURPOSE.</programlisting>
     
   </xsl:for-each-group>
 
-  <xsl:apply-templates mode="gu:udt" select="$udt">
+  <xsl:apply-templates mode="gu:udt"
+             select="if( xsd:boolean($endorsed) ) then $udtEndorsed else $udt">
     <xsl:with-param name="gu:thisSubsetBBIEs" tunnel="yes"
           select="$gu:thisSubsetBIEs[gu:col(.,'ComponentType')='BBIE']"/>
   </xsl:apply-templates>

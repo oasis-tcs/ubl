@@ -585,10 +585,12 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
     <antcall target="-reports">
       <param name="source" value="${dir}/UBL-Entities-${UBLversion}.gc"/>
       <param name="target" value="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports"/>
+      <param name="endorsed" value="false"/>
     </antcall>
     <antcall target="-reports">
       <param name="source" value="${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
       <param name="target" value="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/summary/reports"/>
+      <param name="endorsed" value="true"/>
     </antcall>
     <delete file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
     <delete file="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
@@ -1175,7 +1177,7 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
   <delete file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports"/>
   <property name="alldocsname" value="All-UBL-${UBLversion}-Documents"/>
   <property name="doAllOnly" value="no"/>
-  <echo message='Creating HTML reports (group ${group}) from "${source}" GC file...'/>
+  <echo message='Creating HTML reports (group ${group}) from "${source}" GC file (endorsed=${endorsed})...'/>
   <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true">
      <arg value="-xsl:${utilitydir}Crane-gc2obdndr/Crane-gc2obdsummary.xsl"/>
      <arg value="-s:${source}"/>
@@ -1189,6 +1191,7 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
      <arg value="copyright-text=Copyright &#169; OASIS Open"/>
      <arg value="--suppressXsltNamespaceCheck:on"/>
      <arg value="do-all-only=${doAllOnly}"/>
+     <arg value="endorsed=${endorsed}"/>
   </java>
 </target>
 
