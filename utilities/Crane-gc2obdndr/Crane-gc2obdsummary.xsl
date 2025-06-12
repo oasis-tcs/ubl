@@ -909,7 +909,7 @@ to the BBIE using the data type (hover to see destination)</span>
     <h><n>Cardinality</n><t>Card.</t></h>
     <xsl:if test="not(xsd:boolean($endorsed))">
       <h><n>EndorsedCardinality</n><t>End. Card.</t></h>
-      <h><n>EndorsedCardinalityRationale</n><t>End. Card. Rationale</t></h>
+      <h><n>EndorsedCardinalityRationale</n><t>Endorsed Cardinality Rationale</t></h>
     </xsl:if>
     <h><n>RepresentationTerm</n><t>Rep. Term</t></h>
     <h><n>AlternativeBusinessTerms</n><t>Alt.&nbsp;Business<br/>Terms</t></h>
