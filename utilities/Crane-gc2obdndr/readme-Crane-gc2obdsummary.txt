@@ -1,4 +1,4 @@
-Crane-gc2obdsummary.xsl 20200412-1330z
+Crane-gc2obdsummary.xsl 20250612-1350z
 
 This is a stylesheet to generate the summary HTML reports of CCTS models.
 
@@ -43,6 +43,7 @@ Optional invocation arguments (column names have no spaces):
    columns from the model
  - abbreviate the tables by removing the   abbreviate-columns=(no(default)/yes)
    detailed CCTS columns
+ - indicate an endorsed report is needed   endorsed=(false(default)/true)
 
 Optional invocation arguments for summaries of extensions (both of which
 must exist):

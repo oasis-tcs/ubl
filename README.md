@@ -48,7 +48,7 @@
 
 ## Description
 
-<p>The purpose of this repository is to support committee-member collaborative activity in developing releases of the UBL committee's flagship work product, the UBL OASIS Standard.  The initial Maintainer is <a href="mailto:gkholman@CraneSoftwrights.com">G. Ken Holman</a> (GitHub: <a href="https://github.com/gkholman">gkholman</a>) of <a href="http://www.cranesoftwrights.com/">Crane Softwrights Ltd.</a>. Until further notice, questions regarding this repository may be directed to Ken.</p>
+<p>The purpose of this repository is to support committee-member collaborative activity in developing releases of the UBL committee's flagship work product, the UBL OASIS Standard.</p>
 
 <p>The Universal Business Language (UBL) is an open library of standard electronic XML business documents for procurement and transportation such as purchase orders, invoices, transport logistics and waybills.</p>
 
@@ -413,6 +413,21 @@ There should be no "`.txt`" files in the returned base directory. Various "`.txt
 There should be no `intermediate-support-files/` subdirectory in the returned base directory. When it exists, there were problems in the build process and the intermediate files may provide some helpful information.
 
 When editors create their final edits, the results from the `git push` should be ready to be published without any modifications. If there are errant or unexpected files in the directory, the build process needs to address the discrepancies.
+
+## Other repositories
+
+Copied into the `utilities/` subdirectory of this repository are the directories of these repositories:
+
+[https://github.com/CraneSoftwrights/Crane-gc2obdndr](https://github.com/CraneSoftwrights/Crane-gc2obdndr)
+
+[https://github.com/CraneSoftwrights/Crane-cva2sch](https://github.com/CraneSoftwrights/Crane-cva2sch)
+
+[https://github.com/CraneSoftwrights/Crane-gc2odsxml](https://github.com/CraneSoftwrights/Crane-gc2odsxml)
+
+[https://github.com/CraneSoftwrights/Crane-ods2obdgc](https://github.com/CraneSoftwrights/Crane-ods2obdgc)
+
+[https://github.com/CraneSoftwrights/Crane-cva2sch](https://github.com/CraneSoftwrights/Crane-cva2sch)
+
 
 ## Housekeeping
 
