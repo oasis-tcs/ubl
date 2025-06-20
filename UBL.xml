@@ -289,7 +289,7 @@
       <para>ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) form the specialized system for worldwide standardization. National bodies that are members of ISO or IEC participate in the development of International Standards through
         technical committees established by the respective organization to deal with particular fields of technical activity. ISO and IEC technical committees collaborate in fields of mutual interest. Other international organizations, governmental and non-governmental, in liaison with ISO and IEC,
         also take part in the work. In the field of information technology, ISO and IEC have established a joint technical committee, ISO/IEC JTC 1. </para>
-      <para>International Standards are drafted in accordance with the rules given in the ISO/IEC Directives, Part 2. </para>
+      <para condition="oasis">International Standards are drafted in accordance with the rules given in the ISO/IEC Directives, Part 2. </para>
       <para>The main task of the joint technical committee is to prepare International Standards. Draft International Standards adopted by the joint technical committee are circulated to national bodies for voting. Publication as an International Standard requires approval by at least 75% of the
         national bodies casting a vote. </para>
       <para>Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. ISO and IEC shall not be held responsible for identifying any or all such patent rights. </para>
@@ -481,7 +481,7 @@
         <para>The terms <emphasis>Core Component (CC), Basic Core Component (BCC), Aggregate Core Component (ACC), Association Core Component (ASCC), Business Information Entity (BIE), Basic Business Information Entity (BBIE),</emphasis> and <emphasis>Aggregate Business Information Entity
             (ABIE)</emphasis> are used in this specification with the meanings given in <xref linkend="ccts"/>.</para>
         <para>The terms <emphasis>Object Class, Property Term, Representation Term,</emphasis> and <emphasis>Qualifier</emphasis> are used in this specification with the meanings given in <xref linkend="iso11179"/>.</para>
-        <para>Within the normative text of this specification, the terms "shall", "shall not", "should", "should not" and "may" are to be interpreted as described in Annex H of <xref linkend="ISOIEC_Directives"/>.</para>
+        <para condition="oasis">Within the normative text of this specification, the terms "shall", "shall not", "should", "should not" and "may" are to be interpreted as described in Annex H of <xref linkend="ISOIEC_Directives"/>.</para>
       </section>
       <section id="S-SYMBOLS-AND-ABBREVIATED-TERMS" role="symbols">
         <title>Symbols and Abbreviated Terms</title>
@@ -4148,7 +4148,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <title>Normative References</title>
       <para condition="oasis">The following documents are referenced in such a way that some or all of their content constitutes requirements of this document.</para>
       <bibliolist id="normbibl">
-        <bibliomixed id="ISOIEC_Directives">
+        <bibliomixed id="ISOIEC_Directives" condition="oasis">
           <abbrev condition="oasis">ISO/IEC Directives</abbrev>
           <citetitle>ISO/IEC Directives, Part 2 (Ninth edition) Principles and rules for the structure and drafting of ISO and IEC documents, International Organization for Standardization and International Electrotechnical Commission, 2021.<ulink
               url="https://www.iso.org/sites/directives/current/part2/index.xhtml">https://www.iso.org/sites/directives/current/part2/index.xhtml</ulink></citetitle>
@@ -4853,7 +4853,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           <xref linkend="A-ALTERNATIVE-REPRESENTATIONS-OF-THE-UBL-&version;-SCHEMAS"/> is unchanged other than referring to UBL &version; instead of UBL &pversion;.</para>
         <para>
           <xref linkend="A-THE-OPEN-EDI-REFERENCE-MODEL-PERSPECTIVE-OF-UBL"/> is unchanged.</para>
-        <para>
+        <para condition="oasis">
           <xref linkend="A-ACKNOWLEDGEMENTS"/> is changed to reflect the active membership of the technical committee during the development of UBL &version;.</para>
       </section>
     </section>
@@ -6842,7 +6842,7 @@ No code list validation errors.</programlisting>
     <para>The other aspects of the implemented BOV and implemented FSV of the community&#8217;s Open-edi Configuration are governed by influences outside of the scope of UBL. Those aspects guide the community in customizing UBL to suit their requirements, as outlined in <xref
         linkend="S-UBL-CUSTOMIZATION"/>. </para>
   </appendix>
-  <appendix id="A-ACKNOWLEDGEMENTS" role="non-normative">
+  <appendix id="A-ACKNOWLEDGEMENTS" role="non-normative" condition="oasis">
     <title>Acknowledgements</title>
     <para>The OASIS UBL Technical Committee thanks SyncroSoft for its contribution of oXygen licenses used in DocBook authoring of UBL documentation; Réalta Online Publishing Solutions for support in generating PDF and HTML documents from DocBook originals; and Crane Softwrights for the generation
       of the summary reports.</para>
