@@ -166,6 +166,8 @@
        <ccts:Version>Version</ccts:Version>
        <ccts:Definition>Definition</ccts:Definition>
        <ccts:Cardinality>Cardinality</ccts:Cardinality>
+       <ccts:EndorsedCardinality>EndorsedCardinality</ccts:EndorsedCardinality>
+       <ccts:EndorsedCardinalityRationale>EndorsedCardinalityRationale</ccts:EndorsedCardinalityRationale>
        <ccts:ObjectClassQualifier>ObjectClassQualifier</ccts:ObjectClassQualifier>
        <ccts:ObjectClass>ObjectClass</ccts:ObjectClass>
        <ccts:PropertyTermQualifier>PropertyTermQualifier</ccts:PropertyTermQualifier>
