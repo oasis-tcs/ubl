@@ -324,6 +324,8 @@
             <th style="border:1px solid black;vertical-align:top">&#xa0;</th>
             <th style="border:1px solid black;vertical-align:top">Component Name</th>
             <th style="border:1px solid black;vertical-align:top">Cardinality</th>
+            <th style="border:1px solid black;vertical-align:top">Endorsed Cardinality</th>
+            <th style="border:1px solid black;vertical-align:top">Endorsed Cardinality Rationale</th>
             <th style="border:1px solid black;vertical-align:top">Alternative Business Terms</th>
             <th style="border:1px solid black;vertical-align:top">Examples</th>
             <th style="border:1px solid black;vertical-align:top">Dictionary Entry Name</th>
@@ -439,6 +441,21 @@
           <xsl:with-param name="detailDEN" select="$gu:abieDEN"/>
         </xsl:call-template>
       </xsl:when>
+      <xsl:when test="exists(key('gu:abie-by-name',$gu:abieName,$new)/
+                             gu:col(.,'EndorsedCardinality')) and 
+                      empty(key('gu:abie-by-name',$gu:abieName,$old)/
+                             gu:col(.,'EndorsedCardinality'))">
+        <xsl:call-template name="gu:row">
+          <xsl:with-param name="gu:col1" select="$gu:abieName"/>
+          <xsl:with-param name="gu:col3">
+            <xsl:text>Deprecated: </xsl:text>
+            <xsl:value-of select="key('gu:abie-by-name',$gu:abieName,$new)/
+                      gu:col(.,'EndorsedCardinalityRationale')"/>
+          </xsl:with-param>
+          <xsl:with-param name="summary" select="$summary"/>
+          <xsl:with-param name="detailDEN" select="$gu:abieDEN"/>
+        </xsl:call-template>
+      </xsl:when>
       <xsl:otherwise>
         <xsl:variable name="gu:childrenOld"
                       select="key('gu:bie-by-abie-class',
@@ -480,6 +497,30 @@
                   <xsl:with-param name="gu:map2"
                         select="$gu:newChild/gu:col(.,'DictionaryEntryName')"/>
                   <xsl:with-param name="gu:col3">Added</xsl:with-param>
+                  <xsl:with-param name="summary" select="$summary"/>
+                  <xsl:with-param name="detailDEN"
+                        select="$gu:newChild/gu:col(.,'DictionaryEntryName')"/>
+                </xsl:call-template>
+              </xsl:when>
+              <xsl:when test="
+                       exists($gu:newChild/gu:col(.,'EndorsedCardinality')) and 
+                       empty($gu:oldChild/gu:col(.,'EndorsedCardinality'))">
+                <xsl:call-template name="gu:row">
+                    <xsl:with-param name="gu:col2"
+                  select="$gu:newChild/gu:col(.,$gu:names)"/>
+                    <xsl:with-param name="gu:map2"
+                  select="$gu:newChild/gu:col(.,'DictionaryEntryName')"/>
+                  <xsl:with-param name="gu:col3">
+                    <xsl:text>Deprecated: </xsl:text>
+                    <xsl:for-each select="$gu:newChild/
+                                                gu:col(.,'EndorsedCardinality')
+                                                [not(normalize-space(.)='0')]">
+                      <xsl:value-of select="."/>
+                      <xsl:text> </xsl:text>
+                    </xsl:for-each>
+                    <xsl:value-of select="$gu:newChild/
+                                    gu:col(.,'EndorsedCardinalityRationale')"/>
+                  </xsl:with-param>
                   <xsl:with-param name="summary" select="$summary"/>
                   <xsl:with-param name="detailDEN"
                         select="$gu:newChild/gu:col(.,'DictionaryEntryName')"/>
