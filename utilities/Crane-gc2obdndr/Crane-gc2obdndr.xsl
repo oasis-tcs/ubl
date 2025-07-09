@@ -1084,9 +1084,11 @@ PURPOSE.</programlisting>
         <xsl:attribute name="type"
                        select="concat($gu:moduleABIEsAndASBIEs/
                                       gu:col(.,$gu:names),'Type')"/>
-        <xsl:for-each select="(element-documentation,
-             $gu:config/combination/configuration/schema/element-documentation)
-                              [1][not($gu:runtime)]">
+        <xsl:for-each select="(
+           $gu:moduleABIEsAndASBIEs/gu:col(.,'Definition')[normalize-space(.)],
+           element-documentation,
+           $gu:config/combination/configuration/schema/element-documentation)
+                            [1][not($gu:runtime)]">
           <xsl:element name="xsd:annotation">
             <xsl:element name="xsd:documentation">
               <xsl:copy-of select="node()" copy-namespaces="no"/>
