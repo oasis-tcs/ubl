@@ -447,6 +447,7 @@
                              gu:col(.,'EndorsedCardinality'))">
         <xsl:call-template name="gu:row">
           <xsl:with-param name="gu:col1" select="$gu:abieName"/>
+          <xsl:with-param name="gu:map1" select="$gu:abieDEN"/>
           <xsl:with-param name="gu:col3">
             <xsl:text>Deprecated: </xsl:text>
             <xsl:value-of select="key('gu:abie-by-name',$gu:abieName,$new)/
