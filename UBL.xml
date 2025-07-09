@@ -4534,8 +4534,8 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <para>The goal of UBL customization is to maintain a common understanding of the meaning of information being exchanged between specific implementations. The factors governing when to customize may be business-driven, technically driven, or both. The decision ought to be based on real-world
         needs balanced against perceived economic benefits.</para>
     </section>
-    <section id="S-UPGRADING-FROM-UBL-2.0-UBL-2.1-UBL-2.2-OR-UBL-2.3-TO-UBL-&version;">
-      <title>Upgrading from UBL 2.0, UBL 2.1, UBL 2.2, or UBL 2.3 to UBL &version;</title>
+    <section id="S-UPGRADING-FROM-UBL-2.X-TO-UBL-&version;">
+      <title>Upgrading from UBL 2.x to UBL &version;</title>
       <para>For current UBL implementers, the most important thing to know about UBL &version; is that it is completely backward-compatible with earlier versions of UBL 2. In other words, any document that validates against a UBL 2 schema released before UBL &version; will validate against the UBL
         &version; version of that schema.</para>
       <para>Nonetheless, it would be unwise to simply overlay this UBL &version; release onto an existing installation, and the possible differences among existing installations are too large to allow a specific set of instructions to be provided for making the transition.</para>
