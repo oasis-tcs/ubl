@@ -236,7 +236,7 @@
    <xsl:if test="exists(key('gu:bie-by-abie-class',$gu:objectClass,$new))">
     <xsl:variable name="gu:oldMembers"
                   select="key('gu:bie-by-abie-class',$gu:objectClass,$old)/
-                         gu:col(.,$gu:names)"/>
+                 (concat(gu:col(.,'ComponentType'),' ',gu:col(.,$gu:names)))"/>
     <!--replicate the old order-->
     <xsl:variable name="gu:oldOrder" as="document-node()">
       <xsl:document>
@@ -250,7 +250,7 @@
       <xsl:document>
         <xsl:for-each
                   select="key('gu:bie-by-abie-class',$gu:objectClass,$new)/
-                          gu:col(.,$gu:names)
+                  (concat(gu:col(.,'ComponentType'),' ',gu:col(.,$gu:names)))
                           [.=$gu:oldMembers]">
           <element name="{.}"/>
         </xsl:for-each>
