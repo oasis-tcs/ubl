@@ -29,7 +29,7 @@
 	<!ENTITY stagetext "Committee Specification 01xxxxxx">
 	<!ENTITY standard "Committee Specification 02xxxxxxx">
 	<!ENTITY stagetext "Committee Specification 02xxxxxx">
-	<!ENTITY pubdate "07 April 2025">
+	<!ENTITY pubdate "06 August 2025">
 	<!--remove time from pub date-->
 	<!ENTITY pubyear "2025">
 	<!ENTITY pubdate-iso "ccyy-mm-dd">
@@ -89,14 +89,6 @@
           <orgname>Individual</orgname>
         </affiliation>
         <email>kbengtsson@efact.pe</email>
-      </editor>
-      <editor>
-        <firstname>Kees</firstname>
-        <surname>Duvekot</surname>
-        <affiliation>
-          <orgname>RFS Holland Holding B.V.</orgname>
-        </affiliation>
-        <email>kduvekot@wehkamp.nl</email>
       </editor>
       <othercredit>
         <firstname>Kenneth</firstname>
@@ -182,6 +174,16 @@
             </listitem>
           </itemizedlist>
         </listitem>
+        <listitem>
+          <para>Endorsed XSD schemas for forward validation:</para>
+          <itemizedlist>
+            <listitem>
+              <para>
+                <ulink url="&this-loc;/xsdrt/">&this-loc;/endorsed/xsd/</ulink>
+              </para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
       </itemizedlist>
       <para>The ZIP containing the complete files of this release is found in the directory:</para>
       <itemizedlist>
@@ -197,13 +199,13 @@
       <para>This specification supersedes: </para>
       <bibliolist>
         <bibliomixed conformance="skip">
-          <abbrev condition="oasis">UBL-2.3</abbrev>
-          <citetitle>Universal Business Language Version 2.3.</citetitle>
-          <bibliomisc>Edited by G. Ken Holman.</bibliomisc>
-          <date>15 June 2021.</date>
-          <releaseinfo>OASIS Standard. </releaseinfo>
+          <abbrev condition="oasis">UBL-2.4</abbrev>
+          <citetitle>Universal Business Language Version 2.4.</citetitle>
+          <bibliomisc>Edited by Kenneth Bengtsson and Kees Duvekot.</bibliomisc>
+          <date>20 June 2024.</date>
+          <releaseinfo>OASIS Standard.</releaseinfo>
           <bibliomisc>
-            <ulink url="https://docs.oasis-open.org/ubl/os-UBL-2.3/UBL-2.3.html">https://docs.oasis-open.org/ubl/os-UBL-2.3/UBL-2.3.html</ulink>. </bibliomisc>
+            <ulink url="https://docs.oasis-open.org/ubl/os-UBL-2.4/UBL-2.4.html">https://docs.oasis-open.org/ubl/os-UBL-2.4/UBL-2.4.html</ulink>. </bibliomisc>
         </bibliomixed>
       </bibliolist>
     </legalnotice>
@@ -239,7 +241,7 @@
         <bibliomixed id="UBL" conformance="skip">
           <abbrev condition="oasis">UBL-&version;</abbrev>
           <citetitle>Universal Business Language Version &version;.</citetitle>
-          <bibliomisc>Edited by Kenneth Bengtsson and Kees Duvekot.</bibliomisc>
+          <bibliomisc>Edited by Kenneth Bengtsson.</bibliomisc>
           <date>&pubdate;. </date>
           <releaseinfo>&standard;. </releaseinfo>
           <bibliomisc>
@@ -3219,6 +3221,12 @@
         </blockquote>
       </section>
     </section>
+    <section id="S-ENDORSED-SCHEMAS">
+      <title>Endorsed Schemas</title>
+      <para>To support implementers in identifying deprecated structures, UBL 2.5 introduces a set of endorsed schemas. These are derived from the normative runtime schemas by removing elements and components marked as deprecated in this version. Endorsed schemas may be used for validation or tooling purposes to ensure that a UBL instance does not include deprecated content. Their use is optional and does not affect conformance.</para>
+      <para>The endorsed schemas and associated documentation can be found in the <ulink
+          url="endorsed/">endorsed/</ulink> folder.</para>
+    </section>
     <section id="S-SCHEMA-DEPENDENCIES">
       <title>Schema Dependencies</title>
       <para>The following diagram details the dependencies among the schema modules making up a UBL &version; document schema.</para>
@@ -3526,6 +3534,34 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         ODS spreadsheet, XLS spreadsheet and the HTML document reports.</para>
       <para>To facilitate interoperability, implementations SHOULD follow these definitions to ensure the successful interchange of the business information.</para>
     </section>
+  </section>
+  <section id="S-UBL-COMPONENT-DEPRECATION">
+    <title>UBL Component Deprecation</title>
+    <para>UBL 2.5 introduces the concept of component deprecation. A deprecated component is still valid and fully supported in the UBL &version; schemas and artefacts, but it's use is discouraged due to known limitations, evolving requirements, or duplicated functionality. Deprecated components will potentially be removed in a future major version.</para>
+    <para>Deprecation is a forward-looking indication to implementers and user communities. It does not affect conformance, interoperability, or backwards compatibility for UBL instances produced using previous minor versions of UBL. Documents using deprecated components remain valid and conformant to UBL &version;.</para>
+    <para>Deprecation applies to:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Entire document types</para>
+      </listitem>
+      <listitem>
+        <para>Reusable components (ABIEs, BBIEs, ASBIEs)</para>
+      </listitem>
+      <listitem>
+        <para>Element cardinalities</para>
+      </listitem>
+      <listitem>
+        <para>Element definitions</para>
+      </listitem>
+      <listitem>
+        <para>Supplementary components (i.e., data type attributes)</para>
+      </listitem>
+    </itemizedlist>
+    <para>Deprecated components are clearly marked in the <xref linkend="S-UBL-&version;-DOCUMENT-SCHEMAS"/> and in the <xref
+        linkend="A-REVISION-HISTORY"/> of this specification. Implementers, user communities, and
+      developers of implementation profiles are encouraged to avoid deprecated structures when
+      possible.</para>
+    <para>In addition, a set of <xref linkend="S-ENDORSED-SCHEMAS"/> has been included in the UBL distribution to help implementers detect the presence of deprecated components in UBL instances. These schemas exclude all deprecated content while preserving validation integrity.</para>
   </section>
   <section id="S-UBL-DIGITAL-SIGNATURES">
     <title>UBL Digital Signatures</title>
@@ -4105,8 +4141,15 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         </listitem>
       </orderedlist>
       <note>
-        <para>Additional explanatory information regarding conformance as applied to UBL documents and schemas and their subsets, and the distinction between UBL conformance and UBL compatibility, is described in detail in the <citetitle>UBL 2 Guidelines for Customization</citetitle>
-          <xref linkend="custguide"/>. That document has no bearing or impact on the clauses of this subsection.</para>
+        <orderedlist>
+          <listitem>
+            <para>Additional explanatory information regarding conformance as applied to UBL documents and schemas and their subsets, and the distinction between UBL conformance and UBL compatibility, is described in detail in the <citetitle>UBL 2 Guidelines for Customization</citetitle>
+                <xref linkend="custguide"/>. That document has no bearing or impact on the clauses of this subsection.</para>
+          </listitem>
+          <listitem>
+            <para>The presence of deprecated components in a UBL document instance does not affect conformance. Deprecated components are fully supported in the schemas and validation artefacts. Their use is discouraged but still valid. Deprecation is a forward-looking signal to users, not a restriction.</para>
+          </listitem>
+        </orderedlist>
       </note>
     </section>
     <section id="S-DIGITAL-SIGNATURE-EXTENSION-CONFORMANCE">
@@ -4489,6 +4532,15 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           <para>&#8220;Runtime&#8221; XSD schemas; see <xref linkend="S-UBL-&version;-SCHEMAS"/>
           </para>
         </blockquote>
+        <para>
+          <emphasis role="bold">
+            <literal>endorsed/</literal>
+          </emphasis>
+        </para>
+        <blockquote>
+          <para>Schemas and documentation omitting deprecated content; see <xref linkend="S-COMPONENT-DEPRECATION"/>
+          </para>
+        </blockquote>
       </blockquote>
     </section>
     <section id="S-SUPPORT">
@@ -4538,31 +4590,49 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <title>Upgrading from UBL 2.x to UBL &version;</title>
       <para>For current UBL implementers, the most important thing to know about UBL &version; is that it is completely backward-compatible with earlier versions of UBL 2. In other words, any document that validates against a UBL 2 schema released before UBL &version; will validate against the UBL
         &version; version of that schema.</para>
-      <para>Nonetheless, it would be unwise to simply overlay this UBL &version; release onto an existing installation, and the possible differences among existing installations are too large to allow a specific set of instructions to be provided for making the transition.</para>
-      <para>The brief history of UBL document types in the next section puts the new capabilities into context and may help users of existing UBL implementations decide whether to upgrade to &version;.</para>
+      <para>Nonetheless, it would be unwise to simply overlay this UBL &version; release onto an
+        existing installation. While backwards-compatible, UBL &version; introduces component deprecation
+        and new endorsed artefacts for validation and documentation. These additions may affect
+        tooling, validation flows, or interpretation of UBL content and should be considered when
+        upgrading.</para>
+      <para>The brief history of UBL document types in the next section puts the new capabilities
+        into context and may help users of existing UBL implementations decide whether to upgrade to
+        &version;. Implementers can also use the endorsed schemas to identify deprecated elements in
+        existing instances and adjust their usage accordingly.</para>
       <para>New &version; users, on the other hand, can simply install &version; and rest assured that their software will interoperate with UBL documents generated by existing conforming UBL 2.0 installations. For more on the concept of conformance, see <xref linkend="S-CONFORMANCE"/> and <xref
           linkend="custguide"/>.</para>
     </section>
     <section id="S-KNOWN-ERRORS-IN-UBL-&version;">
       <title>Known errors in UBL &version;</title>
-      <para>During deployment the presence of errors in the UBL normative components comes to the attention of the UBL Technical Committee. Some of these are incapable of being repaired without breaking backwards compatibility to previous versions of UBL. Accordingly, they are obliged to remain in
-        UBL untouched to avoid ambiguity and to avoid problems with backwards compatibility.</para>
-      <para>The list of known errors that are not being changed is as follows:</para>
+      <para>During deployment the presence of errors in the UBL normative components comes to the attention of the UBL Technical Committee. While such issues cannot be corrected directly without compromising backwards compatibility, UBL 2.5 introduces a deprecation mechanism that allows known errors to be formally marked as deprecated and replaced by corrected components. This approach maintains compatibility with earlier versions while guiding implementers toward more accurate usage.</para>
+      <para>The list of known errors from earlier UBL versions and their treatment in UBL &version; is as follows:</para>
       <itemizedlist>
         <listitem>
-          <para>the spelling of the BBIE named <phrase lang="none">PartecipationPercent</phrase> in the ABIE named <phrase lang="none">ShareholderParty</phrase> is incorrect</para>
+          <para>the spelling of the BBIE named <phrase lang="none">PartecipationPercent</phrase> in the ABIE named <phrase lang="none">ShareholderParty</phrase> is incorrect.</para>
+          <itemizedlist>
+            <listitem>
+              <para>In UBL &version;, this BBIE is deprecated and replaced with the correctly spelled <phrase lang="none">ParticipationPercent</phrase></para>
+            </listitem>
+          </itemizedlist>
         </listitem>
         <listitem>
           <para>the spelling of the BBIE named <phrase lang="none">FirstShipmentAvailibilityDate</phrase> in the ABIE named <phrase lang="none">PromotionalEvent</phrase> is incorrect</para>
+          <itemizedlist>
+            <listitem>
+              <para>In UBL &version;, this BBIE is deprecated and replaced with the correctly spelled <phrase lang="none">FirstShipmentAvailabilityDate</phrase></para>
+            </listitem>
+          </itemizedlist>
         </listitem>
         <listitem>
           <para>the spelling of the BBIE named <phrase lang="none">OccurenceLocation</phrase> in the ABIE named <phrase lang="none">Event</phrase> is incorrect</para>
+          <itemizedlist>
+            <listitem>
+              <para>In UBL &version;, this BBIE is deprecated and replaced with the correctly spelled <phrase lang="none">OccurrenceLocation</phrase></para>
+            </listitem>
+          </itemizedlist>
         </listitem>
         <listitem>
           <para>at this time there are no ASBIEs associating the common library ABIE with the DEN “Performance Data Line. Details”</para>
-        </listitem>
-        <listitem>
-          <para>the cardinality of the BBIE named <phrase lang="none">ElectronicPaymentUsageIndicator</phrase> in the ABIE named <phrase lang="none">PostAwardProcess</phrase> is incorrectly specified as “0..n” instead of “0..1”</para>
         </listitem>
       </itemizedlist>
     </section>
@@ -4780,6 +4850,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           <para>The following two tables show the differences between the XML elements in UBL &pversion; and those in UBL &version;.</para>
           <para>All changes in &version; schemas are backward-compatible with valid UBL 2.4, UBL 2.3, UBL 2.2, UBL 2.1, and UBL 2.0 instances. Changes include the addition of new elements and attributes; changes in cardinality from 1 to 0..1 (i.e., making a formerly required element optional); changes in
             cardinality from 1 to 1..n or from 0..1 to 0..n (i.e., allowing an unlimited number of occurrences instead of just one); and corrections to Dictionary Entry Names (DENs).</para>
+          <para>As of UBL 2.5, deprecation markers have been introduced. Deprecated components are retained for backward compatibility and documented accordingly. See also <xref linkend="S-UBL-COMPONENT-DEPRECATION"/>.</para>
         </section>
         <section id="S-CHANGES-TO-LIBRARY-ELEMENTS-UBL-&pversion;-TO-UBL-&version;">
           <title>Changes to Library Elements, UBL &pversion; to UBL &version;</title>
@@ -6365,8 +6436,8 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
       XSLT stylesheet provided in the UBL distribution.</para>
     <para>Users intending to prepare a custom CVA ought to note that <literal>
         <ulink url="cva/UBL-DefaultDTQ-&version;.cva">cva/UBL-DefaultDTQ-&version;.cva</ulink>
-      </literal> contains relative URIs that expect the UBL 2.0 code lists from the UBL 2.0 Update Package in a sibling directory named <literal>os-UBL-2.0</literal>, the UBL 2.1 code lists from the UBL 2.1 distribution in a sibling directory named <literal>os-UBL-2.1</literal>, the UBL 2.2 code
-      lists from the UBL 2.2 distribution in a sibling directory named <literal>os-UBL-2.2</literal>, and the UBL 2.3 code lists from the UBL 2.3 distribution in a sibling directory named <literal>os-UBL-2.3</literal>. This is irrelevant to users of the pre-compiled <literal>
+    </literal> contains relative URIs that expect the UBL 2.0 code lists from the UBL 2.0 Update Package in a sibling directory named <literal>os-UBL-2.0</literal>, the UBL 2.1 code lists from the UBL 2.1 distribution in a sibling directory named <literal>os-UBL-2.1</literal>, the UBL 2.2 code
+      lists from the UBL 2.2 distribution in a sibling directory named <literal>os-UBL-2.2</literal>, the UBL 2.3 code lists from the UBL 2.3 distribution in a sibling directory named <literal>os-UBL-2.3</literal>, and the UBL 2.4 code lists from the UBL 2.4 distribution in a sibling directory named <literal>os-UBL-2.4</literal>. This is irrelevant to users of the pre-compiled <literal>
         <ulink url="val/UBL-DefaultDTQ-&version;.xsl">val/UBL-DefaultDTQ-&version;.xsl</ulink>
       </literal> file contained in the UBL package, but users wishing to create their own CVA file need first to install the code lists of prior releases of UBL 2.0. To properly install the update, first download and install the original UBL 2.0 release: </para>
     <blockquote>
@@ -6408,7 +6479,15 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         </literal>
       </para>
     </blockquote>
-    <para>Complete installation instructions can be found in the each package. As indicated above, the <literal>os-UBL-2.0/</literal>, <literal>os-UBL-2.1/</literal>, <literal>os-UBL-2.3/</literal>, and <literal>os-UBL-2.3/</literal> directories thus created need to be siblings directories to the
+    <para>Then download and install the UBL 2.4 release: </para>
+    <blockquote>
+      <para>
+        <literal>
+          <ulink url="https://docs.oasis-open.org/ubl/os-UBL-2.4/UBL-2.4.zip">https://docs.oasis-open.org/ubl/os-UBL-2.4/UBL-2.4.zip</ulink>
+        </literal>
+      </para>
+    </blockquote>
+    <para>Complete installation instructions can be found in the each package. As indicated above, the <literal>os-UBL-2.0/</literal>, <literal>os-UBL-2.1/</literal>, <literal>os-UBL-2.2/</literal>, <literal>os-UBL-2.3/</literal>, and <literal>os-UBL-2.4/</literal> directories thus created need to be siblings directories to the
       directory created by installing the UBL &version; package.</para>
   </appendix>
   <appendix id="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION" role="non-normative">
@@ -6913,39 +6992,41 @@ No code list validation errors.</programlisting>
   </appendix>
   <appendix id="A-ACKNOWLEDGEMENTS" role="non-normative">
     <title>Acknowledgements</title>
-    <para>The OASIS UBL Technical Committee thanks SyncroSoft for its contribution of oXygen licenses used in DocBook authoring of UBL documentation; Réalta Online Publishing Solutions for support in generating PDF and HTML documents from DocBook originals; and Crane Softwrights for the generation
-      of the summary reports.</para>
-    <para>The following persons and companies participated as members of the OASIS UBL Technical Committee during the years of its development (2021–&pubyear;).</para>
+    <para>The OASIS UBL Technical Committee thanks Réalta Online Publishing Solutions for support in
+      generating PDF and HTML documents from DocBook originals; and Crane Softwrights for the
+      generation of the summary reports.</para>
+    <para>The following persons and companies participated as members of the OASIS UBL Technical Committee during the years of its development (2024–&pubyear;).</para>
     <simplelist lang="none">
       <member>Todd Albers, Federal Reserve Bank of Minneapolis</member>
+      <member>Paloma Arillo Aranda, Publications Office of the European Union</member>
+      <member>Craig Atkinson, Individual</member>
       <member>Dinesh Balasubramanian, IBM</member>
-      <member>Rui Barros, Individual</member>
       <member>Oriol Bausa Peris, Individual</member>
       <member>Kenneth Bengtsson, Individual</member>
-      <member>Erlend Klakegg Bergheim, The Norwegian Agency for Public and Financial Management (DFO)</member>
+      <member>Erlend Klakegg Bergheim, Individual</member>
       <member>Peter Borresen, ebConnect</member>
       <member>Jon Bosak, Individual</member>
       <member>Andrea Caccia, Individual</member>
-      <member>William Chan, Individual</member>
       <member>Ger Clancy, IBM</member>
+      <member>Michael Coletta, Individual</member>
       <member>Paul Donohoe, Publications Office of the European Union</member>
-      <member>Kees Duvekot, RFS Holland Holding B.V.</member>
+      <member>Kees Duvekot, SiPiCo</member>
       <member>Pim van der Eijk, Sonnenglanz Consulting</member>
+      <member>Sander Fieten, Individual</member>
       <member>Martin Forsberg, Swedish Association of Local Authorities &amp; Regions</member>
       <member>Michael Grimley, US Department of Defense (DoD)</member>
-      <member>Cecile Guasch, Individual</member>
       <member>Philip Helger, Individual</member>
       <member>Ken Holman, Crane Softwrights Ltd.</member>
       <member>Yves Jordan, Publications Office of the European Union</member>
       <member>Wim Kok, Logius</member>
       <member>Prasad Kona, IBM</member>
-      <member>Kari Korpela, Individual</member>
       <member>Ole Madsen, Danish Business Authority</member>
       <member>Marc Malone, IBM</member>
       <member>Natalie Muric, Publications Office of the European Union</member>
       <member>Levine Naidoo, IBM</member>
       <member>Amit Saini, IBM</member>
-      <member>Audun Vennesland, SINTEF</member>
+      <member>Svante Schubert, Individual</member>
+      <member>Dragos Stoica, Publications Office of the European Union</member>
     </simplelist>
   </appendix>
   <appendix id="A-NOTICES" condition="oasis">
