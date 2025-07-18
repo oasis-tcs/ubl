@@ -4538,7 +4538,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           </emphasis>
         </para>
         <blockquote>
-          <para>Schemas and documentation omitting deprecated content; see <xref linkend="S-COMPONENT-DEPRECATION"/>
+          <para>Schemas and documentation omitting deprecated content; see <xref linkend="S-UBL-COMPONENT-DEPRECATION"/>
           </para>
         </blockquote>
       </blockquote>
