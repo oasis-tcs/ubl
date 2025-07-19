@@ -6055,7 +6055,9 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         </literal>
       </para>
     </blockquote>
-    <para><note>Some attributes in the table below are marked as deprecated. Deprecation in this context indicates that the attribute is retained for backwards compatibility but is no longer recommended for use in new implementations. Deprecated attributes are shown in italic and marked with "(deprecated)".</note></para>
+    <note>
+      <para>Some attributes in the table below are marked as deprecated. Deprecation in this context indicates that the attribute is retained for backwards compatibility but is no longer recommended for use in new implementations. Deprecated attributes are shown in italic and marked with "(deprecated)".</para>
+    </note>
     <table id="T-UBL-UNQUALIFIED-DATA-TYPES">
       <!--the following PI is required because without it the table is
           kept together in the column and overflows the page in AHF-->
