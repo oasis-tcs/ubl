@@ -6060,6 +6060,9 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
           kept together in the column and overflows the page in AHF-->
       <?dbfo keep-together="auto"?>
       <title>UBL Unqualified Data Types</title>
+      <note>
+        <para><note>Some attributes in the table below are marked as deprecated. Deprecation in this context indicates that the attribute is retained for backwards compatibility but is no longer recommended for use in new implementations. Deprecated attributes are shown in italic and marked with "(deprecated)".</note></para>
+      </note>
       <tgroup cols="3">
         <colspec colwidth="20*"/>
         <colspec colwidth="53*"/>
@@ -6090,7 +6093,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
                 <member>
                   <emphasis role="bold" lang="none">currencyID (required)</emphasis>
                 </member>
-                <member lang="none">currencyCodeListVersionID</member>
+                <member lang="none"><emphasis role="italic">currencyCodeListVersionID&#xA0;(deprecated)</emphasis></member>
               </simplelist>
             </entry>
           </row>
@@ -6103,14 +6106,14 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             </entry>
             <entry align="left">
               <simplelist>
-                <member>format</member>
+                <member><emphasis role="italic">format&#xA0;(deprecated)</emphasis></member>
                 <member>
                   <emphasis role="bold" lang="none">mimeCode (required)</emphasis>
                 </member>
-                <member lang="none">encodingCode</member>
-                <member lang="none">characterSetCode</member>
-                <member lang="none">uri</member>
-                <member lang="none">filename</member>
+                <member lang="none"><emphasis role="italic">encodingCode&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"><emphasis role="italic">characterSetCode&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"><emphasis role="italic">uri&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"><emphasis role="italic">filename&#xA0;(deprecated)</emphasis></member>
               </simplelist>
             </entry>
           </row>
@@ -6184,14 +6187,14 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             <entry align="left">
               <simplelist>
                 <member lang="none">listID</member>
-                <member lang="none">listAgencyID</member>
-                <member lang="none">listAgencyName</member>
-                <member lang="none">listName</member>
-                <member lang="none">listVersionID</member>
-                <member>name</member>
-                <member lang="none">languageID</member>
-                <member lang="none">listURI</member>
-                <member lang="none">listSchemeURI</member>
+                <member lang="none"><emphasis role="italic">listAgencyID&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"><emphasis role="italic">listAgencyName&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"><emphasis role="italic">listName&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"><emphasis role="italic">listVersionID&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"><emphasis role="italic">name&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"><emphasis role="italic">languageID&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"><emphasis role="italic">listURI&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"><emphasis role="italic">listSchemeURI&#xA0;(deprecated)</emphasis></member>
               </simplelist>
             </entry>
           </row>
@@ -6246,12 +6249,12 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             <entry align="left">
               <simplelist>
                 <member lang="none">schemeID</member>
-                <member lang="none">schemeName</member>
-                <member lang="none">schemeAgencyID</member>
-                <member lang="none">schemeAgencyName</member>
-                <member lang="none">schemeVersionID</member>
-                <member lang="none">schemeDataURI</member>
-                <member lang="none">schemeURI</member>
+                <member lang="none"><emphasis role="italic">schemeName&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"><emphasis role="italic">schemeAgencyID&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"><emphasis role="italic">schemeAgencyName&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"><emphasis role="italic">schemeVersionID&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"><emphasis role="italic">schemeDataURI&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"><emphasis role="italic">schemeURI&#xA0;(deprecated)</emphasis></member>
               </simplelist>
             </entry>
           </row>
@@ -6264,7 +6267,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             </entry>
             <entry align="left">
               <simplelist>
-                <member>format</member>
+                <member/>
               </simplelist>
             </entry>
           </row>
@@ -6280,7 +6283,8 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
                 <member>
                   <emphasis role="bold" lang="none">unitCode (required)</emphasis>
                 </member>
-                <member lang="none">unitCodeListVersionID</member>
+                <member lang="none"
+                  ><emphasis role="italic">unitCodeListVersionID&#xA0;(deprecated)</emphasis></member>
               </simplelist>
             </entry>
           </row>
@@ -6293,7 +6297,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             </entry>
             <entry align="left">
               <simplelist>
-                <member>format</member>
+                <member><emphasis role="italic">format&#xA0;(deprecated)</emphasis></member>
               </simplelist>
             </entry>
           </row>
@@ -6321,7 +6325,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             </entry>
             <entry align="left">
               <simplelist>
-                <member>format</member>
+                <member><emphasis role="italic">format&#xA0;(deprecated)</emphasis></member>
               </simplelist>
             </entry>
           </row>
@@ -6334,7 +6338,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             </entry>
             <entry align="left">
               <simplelist>
-                <member>format</member>
+                <member><emphasis role="italic">format&#xA0;(deprecated)</emphasis></member>
               </simplelist>
             </entry>
           </row>
@@ -6348,9 +6352,11 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             <entry align="left">
               <simplelist>
                 <member lang="none">unitCode</member>
-                <member lang="none">unitCodeListID</member>
-                <member lang="none">unitCodeListAgencyID</member>
-                <member lang="none">unitCodeListAgencyName</member>
+                <member lang="none"><emphasis role="italic">unitCodeListID&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"
+                  ><emphasis role="italic">unitCodeListAgencyID&#xA0;(deprecated)</emphasis></member>
+                <member lang="none"
+                  ><emphasis role="italic">unitCodeListAgencyName&#xA0;(deprecated)</emphasis></member>
               </simplelist>
             </entry>
           </row>
@@ -6364,7 +6370,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             <entry align="left">
               <simplelist>
                 <member lang="none">languageID</member>
-                <member lang="none">languageLocaleID</member>
+                <member lang="none"><emphasis role="italic">languageLocaleID&#xA0;(deprecated)</emphasis></member>
               </simplelist>
             </entry>
           </row>
@@ -6378,7 +6384,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
             <entry align="left">
               <simplelist>
                 <member lang="none">languageID</member>
-                <member lang="none">languageLocaleID</member>
+                <member lang="none"><emphasis role="italic">languageLocaleID&#xA0;(deprecated)</emphasis></member>
               </simplelist>
             </entry>
           </row>
