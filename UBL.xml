@@ -2671,6 +2671,10 @@
                 </orderedlist>
               </listitem>
             </orderedlist>
+            <note>
+              <para>Starting with UBL 2.5, the role of the Debit Note document type has been revised. Historically, UBL defined a Debit Note as a document issued by the customer to notify the supplier of a debit (e.g., for discrepancies or retroactive pricing). However, this use case has seen little to no adoption in practice.</para>
+              <para>In contrast, widespread industry use reflects the Debit Note as a supplier-issued document, functionally mirroring the Credit Note but used to increase the amount of an already issued invoice. UBL &version; aligns with this real-world usage to ensure consistency with how billing documents are used in practice.</para>
+            </note>
           </section>
           <section id="S-BILLING-BUSINESS-RULES">
             <title>Billing Business Rules</title>
@@ -2718,7 +2722,7 @@
               <para>Traditional billing is where the supplier invoices the customer when the goods are delivered or the services are provided. In this case, the invoice may be created at the time of despatch or when the Delivery Party acknowledges that the goods have been received (using a Receipt
                 Advice).</para>
               <para>When there are discrepancies between the <link linkend="S-DESPATCH-ADVICE-SCHEMA">Despatch Advice</link>, <link linkend="S-RECEIPT-ADVICE-SCHEMA">Receipt Advice</link>, or <link linkend="S-INVOICE-SCHEMA">Invoice</link> and the goods actually received, or the goods are rejected
-                for quality reasons, the customer may send an <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link> or a <link linkend="S-DEBIT-NOTE-SCHEMA">Debit Note</link> to the supplier. The supplier may then issue a <link linkend="S-CREDIT-NOTE-SCHEMA">Credit Note</link> or
+                for quality reasons, the customer may send an <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link> to the supplier. The supplier may then issue a <link linkend="S-CREDIT-NOTE-SCHEMA">Credit Note</link>, a <link linkend="S-DEBIT-NOTE-SCHEMA">Debit Note</link>, or
                 another Invoice as required.</para>
               <para>A Credit Note or Debit Note may also be issued in the case of retrospective price change.</para>
               <para>Credit Notes or Debit Notes may be also issued after the Billing collaboration (as part of the Payment collaboration).</para>
@@ -2746,14 +2750,14 @@
                 <title>Billing with Debit Note Process</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.0-BillingwithDebitNoteProcess.png"/>
+                    <imagedata fileref="art/UBL-2.5-BillingwithDebitNoteProcess.png"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Billing with Debit Note Diagram]</phrase>
                   </textobject>
                 </mediaobject>
               </figure>
-              <para>When using Debit Notes, both the Supplier (in their Accounting role) and the Customer (in their Accounting role) are responsible for providing taxation information.</para>
+              <para>When using Debit Notes, the Supplier (in their Accounting role) is responsible for specifying the tax requirements.</para>
             </section>
           </section>
           <section id="S-SELF-BILLING">
@@ -4851,6 +4855,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           <para>All changes in &version; schemas are backward-compatible with valid UBL 2.4, UBL 2.3, UBL 2.2, UBL 2.1, and UBL 2.0 instances. Changes include the addition of new elements and attributes; changes in cardinality from 1 to 0..1 (i.e., making a formerly required element optional); changes in
             cardinality from 1 to 1..n or from 0..1 to 0..n (i.e., allowing an unlimited number of occurrences instead of just one); and corrections to Dictionary Entry Names (DENs).</para>
           <para>As of UBL 2.5, deprecation markers have been introduced. Deprecated components are retained for backward compatibility and documented accordingly. See also <xref linkend="S-UBL-COMPONENT-DEPRECATION"/>.</para>
+          <para>The <link linkend="S-DEBIT-NOTE-SCHEMA">Debit Note</link> document type has been redefined to reflect its real-world use as a supplier-issued document that increases the payable amount of a previously issued invoice. For background and rationale, see <xref linkend="S-BILLING-INTRODUCTION"/>.</para>
         </section>
         <section id="S-CHANGES-TO-LIBRARY-ELEMENTS-UBL-&pversion;-TO-UBL-&version;">
           <title>Changes to Library Elements, UBL &pversion; to UBL &version;</title>
@@ -4939,6 +4944,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           <xref linkend="A-THE-OPEN-EDI-REFERENCE-MODEL-PERSPECTIVE-OF-UBL"/> is unchanged.</para>
         <para>
           <xref linkend="A-ACKNOWLEDGEMENTS"/> is changed to reflect the active membership of the technical committee during the development of UBL &version;.</para>
+        <para>The semantic role of the <link linkend="S-DEBIT-NOTE-SCHEMA">Debit Note</link>document has been updated to reflect industry practice. It is now defined as a supplier-issued document increasing the amount of a previously issued invoice. See <xref linkend="S-BILLING-INTRODUCTION"/>.</para>
       </section>
     </section>
   </appendix>
@@ -6055,9 +6061,6 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         </literal>
       </para>
     </blockquote>
-    <note>
-      <para>Some attributes in the table below are marked as deprecated. Deprecation in this context indicates that the attribute is retained for backwards compatibility but is no longer recommended for use in new implementations. Deprecated attributes are shown in italic and marked with "(deprecated)".</para>
-    </note>
     <table id="T-UBL-UNQUALIFIED-DATA-TYPES">
       <!--the following PI is required because without it the table is
           kept together in the column and overflows the page in AHF-->
@@ -6391,6 +6394,9 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         </tbody>
       </tgroup>
     </table>
+    <note>
+      <para>Some attributes in the table above are marked as deprecated. Deprecation in this context indicates that the attribute is retained for backwards compatibility but is no longer recommended for use in new implementations. Deprecated attributes are shown in italic and marked with "(deprecated)".</para>
+    </note>
     <para>Some UBL BBIEs have data type qualifications based on the unqualified UBL types. These qualified types are all code types, and their definitions are the mechanism whereby a specific set of values is associated with each code.</para>
     <para>UBL data type qualifications are expressed formally in an OASIS <xref linkend="cva"/> (Context/Value Association) file contained in the <literal>cva</literal> directory of the &version; distribution.</para>
     <blockquote>
