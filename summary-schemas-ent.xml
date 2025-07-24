@@ -1245,7 +1245,7 @@ directory.
 </section>
 <section id="S-DEBIT-NOTE-SCHEMA">
    <title>Debit Note Schema</title>
-   <para>Description: A document used to specify debts incurred by the Debtor.</para>
+   <para>Description: A document used to specify debits due to the Creditor from the Debtor.</para>
    <informaltable>
       <tgroup cols="2">
          <colspec colwidth="30*"/>
@@ -1266,7 +1266,7 @@ directory.
                   <para>Submitter role</para>
                </entry>
                <entry>
-                  <para>Customer Accounting Party</para>
+                  <para>Supplier Accounting Party</para>
                </entry>
             </row>
             <row>
@@ -1274,7 +1274,7 @@ directory.
                   <para>Receiver role</para>
                </entry>
                <entry>
-                  <para>Supplier Accounting Party</para>
+                  <para>Customer Accounting Party</para>
                </entry>
             </row>
             <row>
@@ -1320,7 +1320,7 @@ directory.
                <entry role="schemaExample">
                   <para>
                      <literal>
-                        <ulink url="xml/UBL-DebitNote-2.1-Example.xml">xml/UBL-DebitNote-2.1-Example.xml</ulink>
+                        <ulink url="xml/UBL-DebitNote-2.5-Example.xml">xml/UBL-DebitNote-2.5-Example.xml</ulink>
                      </literal>
                   </para>
                </entry>
