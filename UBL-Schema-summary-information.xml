@@ -163,10 +163,10 @@
       <processes>
          <process>Billing</process>
       </processes>
-      <submitterRole>Customer Accounting Party</submitterRole>
-      <receiverRole>Supplier Accounting Party</receiverRole>
+      <submitterRole>Supplier Accounting Party</submitterRole>
+      <receiverRole>Customer Accounting Party</receiverRole>
       <examples>
-         <example>UBL-DebitNote-2.1-Example.xml</example>
+         <example>UBL-DebitNote-2.5-Example.xml</example>
       </examples>
    </schema>
    <schema>
