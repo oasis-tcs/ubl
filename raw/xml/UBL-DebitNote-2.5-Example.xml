@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DebitNote xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="urn:oasis:names:specification:ubl:schema:xsd:DebitNote-2"
+<DebitNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:DebitNote-2"
 	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 	<cbc:UBLVersionID>2.5</cbc:UBLVersionID>
