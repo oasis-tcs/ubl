@@ -4,7 +4,7 @@ call validate  ..\xsdrt\maindoc\UBL-BusinessCard-$UBLversion.xsd ..\xml\UBL-Busi
 call validate  ..\xsdrt\maindoc\UBL-CommonTransportationReport-$UBLversion.xsd ..\xml\UBL-CommonTransportationReport-2.3-Example.xml
 call validate  ..\xsdrt\maindoc\UBL-CreditNote-$UBLversion.xsd ..\xml\UBL-CreditNote-2.0-Example.xml
 call validate  ..\xsdrt\maindoc\UBL-CreditNote-$UBLversion.xsd ..\xml\UBL-CreditNote-2.1-Example.xml
-call validate  ..\xsdrt\maindoc\UBL-DebitNote-$UBLversion.xsd ..\xml\UBL-DebitNote-2.1-Example.xml
+call validate  ..\xsdrt\maindoc\UBL-DebitNote-$UBLversion.xsd ..\xml\UBL-DebitNote-2.5-Example.xml
 call validate  ..\xsdrt\maindoc\UBL-DespatchAdvice-$UBLversion.xsd ..\xml\UBL-DespatchAdvice-2.0-Example.xml
 call validate  ..\xsdrt\maindoc\UBL-DigitalAgreement-$UBLversion.xsd ..\xml\UBL-DigitalAgreement-2.2-Example-Multilateral.xml
 call validate  ..\xsdrt\maindoc\UBL-DigitalAgreement-$UBLversion.xsd ..\xml\UBL-DigitalAgreement-2.2-Example.xml
