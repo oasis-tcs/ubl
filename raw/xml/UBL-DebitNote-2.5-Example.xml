@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DebitNote xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="urn:oasis:names:specification:ubl:schema:xsd:DebitNote-2"
+	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	<cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+	<cbc:CustomizationID>urn:oasis:names:specification:ubl:default</cbc:CustomizationID>
+	<cbc:ProfileID>ExampleProfile</cbc:ProfileID>
+	<cbc:ID>DN0001</cbc:ID>
+	<cbc:IssueDate>2025-07-24</cbc:IssueDate>
+	<cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+	<cac:BillingReference>
+		<cac:InvoiceDocumentReference>
+			<cbc:ID>INV000123</cbc:ID>
+			<cbc:IssueDate>2025-07-01</cbc:IssueDate>
+		</cac:InvoiceDocumentReference>
+	</cac:BillingReference>
+	<cac:AccountingSupplierParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="ZZZ">Supp123</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Example Supplies Ltd.</cbc:Name>
+			</cac:PartyName>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID>DK123456789</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="ZZZ">345KS5324</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>ACME Corporation</cbc:Name>
+			</cac:PartyName>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID>BE987654321</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:AllowanceCharge>
+		<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+		<cbc:AllowanceChargeReason>Remove previously granted discount</cbc:AllowanceChargeReason>
+		<cbc:Amount currencyID="EUR">5.00</cbc:Amount>
+		<cac:TaxCategory>
+			<cbc:ID>S</cbc:ID>
+			<cbc:Percent>21.00</cbc:Percent>
+			<cac:TaxScheme>
+				<cbc:ID>VAT</cbc:ID>
+			</cac:TaxScheme>
+		</cac:TaxCategory>
+	</cac:AllowanceCharge>
+	<cac:AllowanceCharge>
+		<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+		<cbc:AllowanceChargeReason>Handling fee</cbc:AllowanceChargeReason>
+		<cbc:Amount currencyID="EUR">10.00</cbc:Amount>
+		<cac:TaxCategory>
+			<cbc:ID>S</cbc:ID>
+			<cbc:Percent>21.00</cbc:Percent>
+			<cac:TaxScheme>
+				<cbc:ID>VAT</cbc:ID>
+			</cac:TaxScheme>
+		</cac:TaxCategory>
+	</cac:AllowanceCharge>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="EUR">42.55</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="EUR">202.50</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="EUR">42.55</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:Percent>21.00</cbc:Percent>
+				<cac:TaxScheme><cbc:ID>VAT</cbc:ID></cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="EUR">200.00</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="EUR">205.00</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">247.55</cbc:TaxInclusiveAmount>
+		<cbc:AllowanceTotalAmount currencyID="EUR">5.00</cbc:AllowanceTotalAmount>
+		<cbc:ChargeTotalAmount currencyID="EUR">10.00</cbc:ChargeTotalAmount>
+		<cbc:PayableAmount currencyID="EUR">247.55</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:DebitNoteLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:DebitedQuantity unitCode="EA">1</cbc:DebitedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">120.00</cbc:LineExtensionAmount>
+		<cac:Item>
+			<cbc:Name>High-grade Widget</cbc:Name>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">120.00</cbc:PriceAmount>
+		</cac:Price>
+	</cac:DebitNoteLine>
+	<cac:DebitNoteLine>
+		<cbc:ID>2</cbc:ID>
+		<cbc:DebitedQuantity unitCode="EA">2</cbc:DebitedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">80.00</cbc:LineExtensionAmount>
+		<cac:Item>
+			<cbc:Name>Auxiliary Tool</cbc:Name>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">40.00</cbc:PriceAmount>
+		</cac:Price>
+	</cac:DebitNoteLine>
+</DebitNote>
