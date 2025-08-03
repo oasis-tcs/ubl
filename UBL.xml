@@ -2672,8 +2672,9 @@
               </listitem>
             </orderedlist>
             <note>
-              <para>Starting with UBL 2.5, the role of the Debit Note document type has been revised. Historically, UBL defined a Debit Note as a document issued by the customer to notify the supplier of a debit (e.g., for discrepancies or retroactive pricing). However, this use case has seen little to no adoption in practice.</para>
-              <para>In contrast, widespread industry use reflects the Debit Note as a supplier-issued document, functionally mirroring the Credit Note but used to increase the amount of an already issued invoice. UBL &version; aligns with this real-world usage to ensure consistency with how billing documents are used in practice.</para>
+              <para>Starting with UBL 2.5, the role of the Debit Note document type has been revised. Historically, UBL defined a Debit Note as a document issued by the customer to notify the supplier of a debit (e.g., for discrepancies or retroactive pricing). However, this use case has 
+                seen little to no adoption in practice. In contrast, widespread industry use reflects the Debit Note as a supplier-issued document, functionally mirroring the Credit Note but used to increase the amount of an already issued invoice. UBL &version; aligns with this real-world 
+                usage to ensure consistency with how billing documents are used in practice.</para>
             </note>
           </section>
           <section id="S-BILLING-BUSINESS-RULES">
@@ -4549,38 +4550,36 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
     </section>
     <section id="S-SUPPORT">
       <title>Support</title>
-      <para>UBL is a volunteer project of the international business community. Inquiries regarding UBL may be posted to the unmoderated public UBL-Dev list, archives for which are located at:</para>
-      <blockquote>
-        <para>
-          <literal>
-            <ulink url="https://lists.oasis-open.org/archives/ubl-dev/">https://lists.oasis-open.org/archives/ubl-dev/</ulink>
-          </literal>
-        </para>
-      </blockquote>
-      <para>Subscriptions to UBL-Dev can be made through the OASIS list manager at:</para>
-      <blockquote>
-        <para>
-          <literal>
-            <ulink url="https://www.oasis-open.org/mlmanage/index.php">https://www.oasis-open.org/mlmanage/index.php</ulink>
-          </literal>
-        </para>
-      </blockquote>
-      <para>OASIS provides an official community gathering place and information resource for UBL at:</para>
-      <blockquote>
-        <para>
-          <literal>
-            <ulink url="http://ubl.xml.org/">http://ubl.xml.org/</ulink>
-          </literal>
-        </para>
-      </blockquote>
-      <para>The Wikipedia article for UBL has numerous related links:</para>
-      <blockquote>
-        <para>
-          <literal>
-            <ulink url="http://www.wikipedia.org/wiki/Universal_Business_Language"/>
-          </literal>
-        </para>
-      </blockquote>
+      <para>UBL is a volunteer-driven project of the international business community, maintained by the OASIS Universal Business Language Technical Committee (UBL TC). While there is no formal support channel, users and implementers may find useful information and community engagement through the following resources:</para>
+      <itemizedlist>
+        <listitem>
+          <para>UBL outreach site, general overview and community news:</para>
+          <itemizedlist>
+            <listitem>
+              <para><ulink url="https://oasis-open.org/ubl"></ulink></para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>UBL Technical Committee page:</para>
+          <itemizedlist>
+            <listitem>
+              <para><ulink url="https://oasis-open.org/committees/ubl"></ulink></para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>UBL Wikipedia article:</para>
+          <itemizedlist>
+            <listitem>
+              <para><ulink url="https://en.wikipedia.org/wiki/Universal_Business_Language"></ulink></para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </itemizedlist>
+      <para>For questions about participation or technical contributions, contact the UBL TC via the OASIS TC page listed above.</para>
+      <para>UBL is also implemented in many national and regional e-invoicing, e-procurement, and other business document exchange frameworks. Implementers are encouraged to consult both the UBL base documentation and any applicable local profiles or guidance materials.</para>
+      <para>UBL has been developed since 2001 and standardized by ISO as ISO/IEC 19845. It is continuously maintained and updated by a global community of experts.</para>
     </section>
     <section id="S-UBL-CUSTOMIZATION">
       <title>UBL Customization</title>
@@ -4944,7 +4943,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           <xref linkend="A-THE-OPEN-EDI-REFERENCE-MODEL-PERSPECTIVE-OF-UBL"/> is unchanged.</para>
         <para>
           <xref linkend="A-ACKNOWLEDGEMENTS"/> is changed to reflect the active membership of the technical committee during the development of UBL &version;.</para>
-        <para>The semantic role of the <link linkend="S-DEBIT-NOTE-SCHEMA">Debit Note</link>document has been updated to reflect industry practice. It is now defined as a supplier-issued document increasing the amount of a previously issued invoice. See <xref linkend="S-BILLING-INTRODUCTION"/>.</para>
+        <para>The semantic role of the <link linkend="S-DEBIT-NOTE-SCHEMA">Debit Note</link> document has been updated to reflect industry practice. It is now defined as a supplier-issued document increasing the amount of a previously issued invoice. See <xref linkend="S-BILLING-INTRODUCTION"/>.</para>
       </section>
     </section>
   </appendix>
