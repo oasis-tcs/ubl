@@ -327,6 +327,22 @@
       </examples>
    </schema>
    <schema>
+      <name>Invoice Status Request</name>
+      <processes/>
+      <submitterRole>Party requesting the status of the referenced invoice(s)</submitterRole>
+      <receiverRole>Party currently managing the status of the referenced invoice(s)</receiverRole>
+      <examples/>
+   </schema>
+   <schema>
+      <name>Invoice Status Response</name>
+      <processes>
+         <process>Billing</process>
+      </processes>
+      <submitterRole>Party currently managing the status of the referenced invoice(s)</submitterRole>
+      <receiverRole>Party requesting the status of the referenced invoice(s)</receiverRole>
+      <examples/>
+   </schema>
+   <schema>
       <name>Item Information Request</name>
       <processes>
          <process>Collaborative Planning, Forecasting, and Replenishment</process>
