@@ -4835,15 +4835,20 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
     </section>
     <section id="S-MINOR-REVISION-UBL-2.5">
       <title>Minor Revision: UBL 2.5</title>
+      <section id="S-OVERVIEW-OF-UBL-2.5-UPDATES">
+        <title>Overview of UBL 2.5 Updates</title>
+        <para>Because it preserves backward compatibility with earlier versions of UBL 2.X, UBL &version; is technically a minor release, not a major one. However, it does introduce several important enhancements that significantly improve the usability, interoperability, and business alignment of the standard.</para>
+        <para>Key updates include support for collections on behalf of third parties, improved invoice status tracking, and enhanced payment referencing. Additionally, UBL 2.5 also introduces element deprecation, allowing for cleaner evolution of the standard without breaking existing implementations.</para>
+      </section>
       <section id="S-NEW-DOCUMENT-TYPES-IN-UBL-2.5" role="newDocumentTypes23">
         <title>New Document Types in UBL 2.5</title>
-        <para>Because it preserves backward compatibility with UBL 2.4, UBL 2.3, UBL 2.2, UBL 2.1, and UBL 2.0, UBL &version; is technically a minor release, not a major one. However, it does add ???? new document types, bringing the total number of UBL business documents to 9????.</para>
+        <para>UBL &version; adds the following new document types, bringing the total number of UBL business documents to 97:</para>
         <blockquote>
           <!--reviewtext-->
           <para>
-            <emphasis role="bold">Added ???? new UBL 2.5 document types: </emphasis>
-	    
-	  </para>
+            <emphasis role="bold">Added four new UBL 2.5 document types: </emphasis>
+            <!--<link linkend="S-DELIVERY-NOTE-SCHEMA">-->Delivery Note<!--</link>-->, <link linkend="S-INVOICE-STATUS-REQUEST-SCHEMA">Invoice Status Request</link>, <link linkend="S-INVOICE-STATUS-RESPONSE-SCHEMA">Invoice Status Response</link>, <!--<link linkend="S-WORK-REPORT-SCHEMA">-->Work Report<!--</link>-->
+          </para>
         </blockquote>
       </section>
       <section id="S-SCHEMA-CHANGES-FROM-UBL-&pversion;-TO-UBL-&version;">
@@ -4918,21 +4923,27 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
         <para>
           <xref linkend="S-UBL-&version;-BUSINESS-OBJECTS"/> is unchanged from UBL &pversion;.</para>
         <para>
-          <xref linkend="S-UBL-&version;-SCHEMAS"/> is unchanged from UBL &pversion;.</para>
+          <xref linkend="S-UBL-&version;-SCHEMAS"/> now includes endorsed external schemas as part of UBL, offering forward-compatible extensibility.</para>
         <para>
           <xref linkend="S-ADDITIONAL-DOCUMENT-CONSTRAINTS"/> is unchanged from UBL &pversion;.</para>
         <para>
+          <xref linkend="S-UBL-COMPONENT-DEPRECATION"/> is a new section introduced in UBL &version;, which introduces a new policy layer for marking UBL components for deprecation.</para>
+        <para>
           <xref linkend="S-UBL-DIGITAL-SIGNATURES"/> is unchanged from UBL &pversion;.</para>
         <para>
-          <xref linkend="S-CONFORMANCE"/> is unchanged from UBL &pversion;.</para>
+          <xref linkend="S-CONFORMANCE"/> clarifies that the introduction of element deprecation does not change conformance rules.</para>
         <para>
-          <xref linkend="A-RELEASE-NOTES"/> is unchanged with the exception of adding UBL &version; to the section on upgrading, and enumerating the known errors in the document models.</para>
+          <xref linkend="A-RELEASE-NOTES"/> adds UBL &version; to the section on upgrading, adds
+          critical information about component deprecation and using endorsed schemas, and
+          enumerates the known errors in the document models.</para>
         <para>
           <xref linkend="A-REVISION-HISTORY"/> adds details of the changes from UBL &pversion; to UBL &version;.</para>
         <para>
-          <xref linkend="A-THE-UBL-&version;-DATA-MODEL"/> is unchanged from UBL &pversion;.</para>
+          <xref linkend="A-THE-UBL-&version;-DATA-MODEL"/> adds additional columns and information
+          about deprecated elements and endorsed cardinalities.</para>
         <para>
-          <xref linkend="A-DATA-TYPE-QUALIFICATIONS-IN-UBL"/> is unchanged from UBL &pversion;.</para>
+          <xref linkend="A-DATA-TYPE-QUALIFICATIONS-IN-UBL"/> has been updated to document
+          attributes that are now deprecated in UBL.</para>
         <para>
           <xref linkend="A-UBL-&version;-CODE-LISTS-AND-TWO-PHASE-VALIDATION"/> is unchanged from UBL &pversion;.</para>
         <para>
