@@ -633,4 +633,19 @@
           <receives/>
    </entry>  
 
+   <!-- UBL 2.5 -->
+<entry>
+    <actor>Party</actor>
+    <role>Beneficiary</role>
+    <description>
+        The party for whom a transaction is ultimately intended or who derives benefit from it. The Beneficiary Party may be distinct from the Buyer or Accounting Customer, particularly in scenarios involving third-party billing, grants, donations, or delegated procurement. This party may be referenced for informational or audit purposes but is not necessarily involved in the commercial or logistical execution of the transaction.
+    </description>
+    <example>
+        A national health authority procures vaccines on behalf of regional health centers. While the health authority acts as Buyer and Accounting Customer, each regional center is a Beneficiary Party — the vaccines are intended for them, even if they don’t issue or receive the invoice directly.
+    </example>
+    <synonyms>Ultimate Recipient, End Beneficiary, Final Beneficiary</synonyms>
+    <sends/>
+    <receives/>
+</entry>
+	
 </roletable>
