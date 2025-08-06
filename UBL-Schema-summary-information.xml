@@ -328,7 +328,9 @@
    </schema>
    <schema>
       <name>Invoice Status Request</name>
-      <processes/>
+      <processes>
+         <process>Billing</process>
+      </processes>
       <submitterRole>Party requesting the status of the referenced invoice(s)</submitterRole>
       <receiverRole>Party currently managing the status of the referenced invoice(s)</receiverRole>
       <examples/>
