@@ -2644,8 +2644,7 @@
           <section id="S-BILLING-INTRODUCTION">
             <title>Billing Introduction</title>
             <para>In the Billing process, a request is made for payment for goods or services that have been ordered, received, or consumed. In practice, there are several ways in which goods or services may be billed.</para>
-            <para>Document types in these processes are <link linkend="S-INVOICE-SCHEMA">Invoice</link>, <link linkend="S-CREDIT-NOTE-SCHEMA">Credit Note</link>, <link linkend="S-DEBIT-NOTE-SCHEMA">Debit Note</link>, and <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application
-              Response</link>.</para>
+            <para>Document types in these processes are <link linkend="S-INVOICE-SCHEMA">Invoice</link>, <link linkend="S-CREDIT-NOTE-SCHEMA">Credit Note</link>, <link linkend="S-DEBIT-NOTE-SCHEMA">Debit Note</link>, <link linkend="S-INVOICE-STATUS-RESPONSE-SCHEMA">Invocie Status Response</link>, <link linkend="S-INVOICE-STATUS-REQUEST-SCHEMA">Invoice Status Request</link>, and <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link>.</para>
             <para>For UBL we assume the following billing methods:</para>
             <orderedlist numeration="arabic">
               <listitem>
@@ -2723,7 +2722,7 @@
               <para>Traditional billing is where the supplier invoices the customer when the goods are delivered or the services are provided. In this case, the invoice may be created at the time of despatch or when the Delivery Party acknowledges that the goods have been received (using a Receipt
                 Advice).</para>
               <para>When there are discrepancies between the <link linkend="S-DESPATCH-ADVICE-SCHEMA">Despatch Advice</link>, <link linkend="S-RECEIPT-ADVICE-SCHEMA">Receipt Advice</link>, or <link linkend="S-INVOICE-SCHEMA">Invoice</link> and the goods actually received, or the goods are rejected
-                for quality reasons, the customer may send an <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link> to the supplier. The supplier may then issue a <link linkend="S-CREDIT-NOTE-SCHEMA">Credit Note</link>, a <link linkend="S-DEBIT-NOTE-SCHEMA">Debit Note</link>, or
+                for quality reasons, the customer may send an <link linkend="S-INVOICE-STATUS-RESPONSE-SCHEMA">Invoice Status Response</link> to the supplier. The supplier may then issue a <link linkend="S-CREDIT-NOTE-SCHEMA">Credit Note</link>, a <link linkend="S-DEBIT-NOTE-SCHEMA">Debit Note</link>, or
                 another Invoice as required.</para>
               <para>A Credit Note or Debit Note may also be issued in the case of retrospective price change.</para>
               <para>Credit Notes or Debit Notes may be also issued after the Billing collaboration (as part of the Payment collaboration).</para>
@@ -2735,7 +2734,7 @@
                 <title>Billing with Credit Note Process</title>
                 <mediaobject>
                   <imageobject>
-                    <imagedata fileref="art/UBL-2.0-BillingwithCreditNoteProcess.png"/>
+                    <imagedata fileref="art/UBL-2.5-BillingwithCreditNoteProcess.png"/>
                   </imageobject>
                   <textobject>
                     <phrase>[Billing with Credit Note Diagram]</phrase>
@@ -2844,7 +2843,7 @@
             <title>Utility Billing Process</title>
             <mediaobject>
               <imageobject>
-                <imagedata fileref="art/UBL-2.2-UtilityBillingProcess.png"/>
+                <imagedata fileref="art/UBL-2.5-UtilityBillingProcess.png"/>
               </imageobject>
               <textobject>
                 <phrase>[Utility Billing Diagram]</phrase>
