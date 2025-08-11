@@ -16,7 +16,6 @@ call validate  ..\xsdrt\maindoc\UBL-ExpressionOfInterestRequest-$UBLversion.xsd 
 call validate  ..\xsdrt\maindoc\UBL-Forecast-$UBLversion.xsd ..\xml\UBL-Forecast-2.1-Example.xml
 call validate  ..\xsdrt\maindoc\UBL-ForecastRevision-$UBLversion.xsd ..\xml\UBL-ForecastRevision-2.1-Example.xml
 call validate  ..\xsdrt\maindoc\UBL-ForwardingInstructions-$UBLversion.xsd ..\xml\UBL-ForwardingInstructions-2.0-Example-International.xml
-call validate  ..\xsdrt\maindoc\UBL-FreightInvoice-$UBLversion.xsd ..\xml\UBL-FreightInvoice-2.1-Example.xml
 call validate  ..\xsdrt\maindoc\UBL-FulfilmentCancellation-$UBLversion.xsd ..\xml\UBL-FulfilmentCancellation-2.1-Example.xml
 call validate  ..\xsdrt\maindoc\UBL-GoodsCertificate-$UBLversion.xsd ..\xml\UBL-GoodsCertificate-2.3-Example.xml
 call validate  ..\xsdrt\maindoc\UBL-GoodsItemItinerary-$UBLversion.xsd ..\xml\UBL-GoodsItemItinerary-2.1-Example.xml
@@ -76,3 +75,4 @@ call validate  ..\xsdrt\maindoc\UBL-TransportationStatusRequest-$UBLversion.xsd 
 call validate  ..\xsdrt\maindoc\UBL-Waybill-$UBLversion.xsd ..\xml\UBL-Waybill-2.0-Example-International.xml
 call validate  ..\xsdrt\maindoc\UBL-WeightStatement-$UBLversion.xsd ..\xml\UBL-WeightStatement-2.2-Example.xml
 call validate  ..\xsdrt\maindoc\UBL-PurchaseReceipt-$UBLversion.xsd ..\xml\UBL-PurchaseReceipt-2.4-Example.xml
+
