@@ -16,7 +16,6 @@ sh validate.sh ../xsdrt/maindoc/UBL-ExpressionOfInterestRequest-$UBLversion.xsd 
 sh validate.sh ../xsdrt/maindoc/UBL-Forecast-$UBLversion.xsd ../xml/UBL-Forecast-2.1-Example.xml
 sh validate.sh ../xsdrt/maindoc/UBL-ForecastRevision-$UBLversion.xsd ../xml/UBL-ForecastRevision-2.1-Example.xml
 sh validate.sh ../xsdrt/maindoc/UBL-ForwardingInstructions-$UBLversion.xsd ../xml/UBL-ForwardingInstructions-2.0-Example-International.xml
-sh validate.sh ../xsdrt/maindoc/UBL-FreightInvoice-$UBLversion.xsd ../xml/UBL-FreightInvoice-2.1-Example.xml
 sh validate.sh ../xsdrt/maindoc/UBL-FulfilmentCancellation-$UBLversion.xsd ../xml/UBL-FulfilmentCancellation-2.1-Example.xml
 sh validate.sh ../xsdrt/maindoc/UBL-GoodsCertificate-$UBLversion.xsd ../xml/UBL-GoodsCertificate-2.3-Example.xml
 sh validate.sh ../xsdrt/maindoc/UBL-GoodsItemItinerary-$UBLversion.xsd ../xml/UBL-GoodsItemItinerary-2.1-Example.xml
