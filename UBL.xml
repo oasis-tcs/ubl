@@ -29,7 +29,7 @@
 	<!ENTITY stagetext "Committee Specification 01xxxxxx">
 	<!ENTITY standard "Committee Specification 02xxxxxxx">
 	<!ENTITY stagetext "Committee Specification 02xxxxxx">
-	<!ENTITY pubdate "06 August 2025">
+	<!ENTITY pubdate "20 August 2025">
 	<!--remove time from pub date-->
 	<!ENTITY pubyear "2025">
 	<!ENTITY pubdate-iso "ccyy-mm-dd">
@@ -2817,23 +2817,6 @@
             </figure>
           </section>
         </section>
-        <section id="S-FREIGHT-BILLING">
-          <title>Freight Billing</title>
-          <para>An extension of the Billing process is that of Freight Billing. This represents the billing process between the Transport Service Buyer (e.g., the Consignor) and Transport Service Provider (e.g., a Freight Forwarder) through the use of an invoice for freight charges.</para>
-          <para>The Transport Service Provider initiates the process of billing the Transport Service Buyer for logistic services.</para>
-          <para>The <link linkend="S-FREIGHT-INVOICE-SCHEMA">Freight Invoice</link> lists the charges incurred in order to fulfil the agreed service.</para>
-          <figure id="F-FREIGHT-BILLING-PROCESS">
-            <title>Freight Billing Process</title>
-            <mediaobject>
-              <imageobject>
-                <imagedata fileref="art/UBL-2.0-FreightBillingProcess.png"/>
-              </imageobject>
-              <textobject>
-                <phrase>[Freight Billing Diagram]</phrase>
-              </textobject>
-            </mediaobject>
-          </figure>
-        </section>
         <section id="S-UTILITY-BILLING">
           <title>Utility Billing</title>
           <para>This process defines the billing process for invoicing between suppliers of utilities (including electricity, gas, water, and telephony services) and private and public customers.</para>
@@ -4846,7 +4829,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           <!--reviewtext-->
           <para>
             <emphasis role="bold">Added four new UBL 2.5 document types: </emphasis>
-            <!--<link linkend="S-DELIVERY-NOTE-SCHEMA">-->Delivery Note<!--</link>-->, <link linkend="S-INVOICE-STATUS-REQUEST-SCHEMA">Invoice Status Request</link>, <link linkend="S-INVOICE-STATUS-RESPONSE-SCHEMA">Invoice Status Response</link>, <!--<link linkend="S-WORK-REPORT-SCHEMA">-->Work Report<!--</link>-->
+            <link linkend="S-DELIVERY-NOTE-SCHEMA">Delivery Note</link>, <link linkend="S-INVOICE-STATUS-REQUEST-SCHEMA">Invoice Status Request</link>, <link linkend="S-INVOICE-STATUS-RESPONSE-SCHEMA">Invoice Status Response</link>, <link linkend="S-WORK-REPORT-SCHEMA">Work Report</link>
           </para>
         </blockquote>
       </section>
