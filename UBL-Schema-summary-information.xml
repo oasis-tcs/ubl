@@ -327,24 +327,6 @@
       </examples>
    </schema>
    <schema>
-      <name>Invoice Status Request</name>
-      <processes>
-         <process>Billing</process>
-      </processes>
-      <submitterRole>Party requesting the status of the referenced invoice(s)</submitterRole>
-      <receiverRole>Party currently managing the status of the referenced invoice(s)</receiverRole>
-      <examples/>
-   </schema>
-   <schema>
-      <name>Invoice Status Response</name>
-      <processes>
-         <process>Billing</process>
-      </processes>
-      <submitterRole>Party currently managing the status of the referenced invoice(s)</submitterRole>
-      <receiverRole>Party requesting the status of the referenced invoice(s)</receiverRole>
-      <examples/>
-   </schema>
-   <schema>
       <name>Item Information Request</name>
       <processes>
          <process>Collaborative Planning, Forecasting, and Replenishment</process>
@@ -1005,5 +987,40 @@
       <examples>
          <example>UBL-PurchaseReceipt-2.4-Example.xml</example>
       </examples>
+   </schema>
+   <!-- 2.5 document types-->
+   <schema>
+      <name>Delivery Note</name>
+      <processes>
+         <process>Logistics</process>
+      </processes>
+      <submitterRole>Despatch</submitterRole>
+      <receiverRole>Delivery</receiverRole>
+      <examples/>
+   </schema>
+   <schema>
+      <name>Invoice Status Request</name>
+      <processes>
+         <process>Billing</process>
+      </processes>
+      <submitterRole>Party requesting the status of the referenced invoice(s)</submitterRole>
+      <receiverRole>Party currently managing the status of the referenced invoice(s)</receiverRole>
+      <examples/>
+   </schema>
+   <schema>
+      <name>Invoice Status Response</name>
+      <processes>
+         <process>Billing</process>
+      </processes>
+      <submitterRole>Party currently managing the status of the referenced invoice(s)</submitterRole>
+      <receiverRole>Party requesting the status of the referenced invoice(s)</receiverRole>
+      <examples/>
+   </schema>
+   <schema>
+      <name>Work Report</name>
+      <processes/>
+      <submitterRole>Seller Supplier Party</submitterRole>
+      <receiverRole>Buyer Customer Party</receiverRole>
+      <examples/>
    </schema>
 </schemadocs>
