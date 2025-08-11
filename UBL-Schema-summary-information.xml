@@ -251,14 +251,10 @@
    </schema>
    <schema>
       <name>Freight Invoice</name>
-      <processes>
-         <process>Freight Billing</process>
-      </processes>
+      <processes/>
       <submitterRole>Freight Forwarder</submitterRole>
       <receiverRole>Consignor or Consignee</receiverRole>
-      <examples>
-         <example>UBL-FreightInvoice-2.1-Example.xml</example>
-      </examples>
+      <examples/>
    </schema>
    <schema>
       <name>Fulfilment Cancellation</name>
