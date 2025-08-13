@@ -105,8 +105,7 @@
           key('dir','endorsed')/ ( (.,.//directory) except
                 (:we don't want any of the endorsed subtree except for the
                   schema files which are referenced in the schema summary:)
-                (.//directory[ends-with(@absolutePath,'/xsd') or
-                              ends-with(@absolutePath,'/xsdrt')]//directory) ),
+                (.//directory[ends-with(@absolutePath,'/maindoc')] ) ),
           key('dir','xsdrt/common')
          )"/>
   <xsl:variable name="allfiles" 

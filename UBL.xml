@@ -3212,7 +3212,7 @@
       <title>Endorsed Schemas</title>
       <para>To support implementers in identifying deprecated structures, UBL 2.5 introduces a set of endorsed schemas. These are derived from the normative runtime schemas by removing elements and components marked as deprecated in this version. Endorsed schemas may be used for validation or tooling purposes to ensure that a UBL instance does not include deprecated content. Their use is optional and does not affect conformance.</para>
       <para>The endorsed schemas and associated documentation can be found in the <ulink
-          url="endorsed/">endorsed/</ulink> folder.</para>
+          url="endorsed">endorsed</ulink> folder.</para>
     </section>
     <section id="S-SCHEMA-DEPENDENCIES">
       <title>Schema Dependencies</title>

@@ -108,10 +108,11 @@ directory.
     <xsl:variable name="compname" select="translate($normname,' ','')"/>
     <section id="S-{translate(upper-case($normname),' ,()','-')}-SCHEMA">
       <title><xsl:value-of select="$normname"/> Schema</title>
+      <xsl:variable name="definition" select="normalize-space(
+      u:col(key('rows',concat(name,'. Details'),doc($gc-uri)),'Definition'))"/>
       <para>
         <xsl:text>Description: </xsl:text>
-        <xsl:value-of select="
-       u:col(key('rows',concat(name,'. Details'),doc($gc-uri)),'Definition')"/>
+        <xsl:value-of select="$definition"/>
         <xsl:apply-templates select="description/node()"/>
       </para>
       <informaltable>
@@ -179,30 +180,32 @@ directory.
                 </para>
               </entry>
             </row>
-            <row>
-              <entry><para>Endorsed schema (non-normative)</para></entry>
-              <entry>
-                <para>
-                  <literal>
-                    <ulink url="endorsed/xsd/maindoc/UBL-{$compname}-{$UBLversion}.xsd"
-                            >endorsed/xsd/maindoc/UBL-<xsl:value-of select="$compname"
-                            />-<xsl:value-of select="$UBLversion"/>.xsd</ulink>
-                  </literal>
-                </para>
-              </entry>
-            </row>
-            <row>
-              <entry><para>Endorsed runtime schema (non-normative)</para></entry>
-              <entry>
-                <para>
-                  <literal>
-                   <ulink url="endorsed/xsdrt/maindoc/UBL-{$compname}-{$UBLversion}.xsd"
-                            >endorsed/xsdrt/maindoc/UBL-<xsl:value-of select="$compname"
-                            />-<xsl:value-of select="$UBLversion"/>.xsd</ulink>
-                  </literal>
-                </para>
-              </entry>
-            </row>
+            <xsl:if test="not(contains(lower-case($definition),'deprecated'))">
+              <row>
+                <entry><para>Endorsed schema (non-normative)</para></entry>
+                <entry>
+                  <para>
+                    <literal>
+                      <ulink url="endorsed/xsd/maindoc/UBL-{$compname}-{$UBLversion}.xsd"
+                              >endorsed/xsd/maindoc/UBL-<xsl:value-of select="$compname"
+                              />-<xsl:value-of select="$UBLversion"/>.xsd</ulink>
+                    </literal>
+                  </para>
+                </entry>
+              </row>
+              <row>
+                <entry><para>Endorsed runtime schema (non-normative)</para></entry>
+                <entry>
+                  <para>
+                    <literal>
+                     <ulink url="endorsed/xsdrt/maindoc/UBL-{$compname}-{$UBLversion}.xsd"
+                              >endorsed/xsdrt/maindoc/UBL-<xsl:value-of select="$compname"
+                              />-<xsl:value-of select="$UBLversion"/>.xsd</ulink>
+                    </literal>
+                  </para>
+                </entry>
+              </row>
+            </xsl:if>
             <row>
               <entry><para>Summary report</para></entry>
               <entry>
