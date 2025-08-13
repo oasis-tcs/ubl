@@ -184,7 +184,7 @@ directory.
               <entry>
                 <para>
                   <literal>
-                    <ulink url="xsd/maindoc/UBL-{$compname}-{$UBLversion}.xsd"
+                    <ulink url="endorsed/xsd/maindoc/UBL-{$compname}-{$UBLversion}.xsd"
                             >endorsed/xsd/maindoc/UBL-<xsl:value-of select="$compname"
                             />-<xsl:value-of select="$UBLversion"/>.xsd</ulink>
                   </literal>
@@ -196,7 +196,7 @@ directory.
               <entry>
                 <para>
                   <literal>
-                   <ulink url="xsdrt/maindoc/UBL-{$compname}-{$UBLversion}.xsd"
+                   <ulink url="endorsed/xsdrt/maindoc/UBL-{$compname}-{$UBLversion}.xsd"
                             >endorsed/xsdrt/maindoc/UBL-<xsl:value-of select="$compname"
                             />-<xsl:value-of select="$UBLversion"/>.xsd</ulink>
                   </literal>
