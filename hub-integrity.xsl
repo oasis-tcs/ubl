@@ -102,7 +102,7 @@
           key('dir','art/artpdf')/(.,.//directory),
           key('dir','db')/(.,.//directory),
           key('dir','val/lib'),
-          key('dir','endorsed')/ ( (.,.//directory) except
+          key('dir','endorsed')/ ( (.//directory) except
                 (:we don't want any of the endorsed subtree except for the
                   schema files which are referenced in the schema summary:)
                 (.//directory[ends-with(@absolutePath,'/maindoc')] ) ),
@@ -125,7 +125,8 @@
                 select="$hub//*/(@url,@fileref,@arch)
                                  [not(starts-with(.,'http') or
                                       starts-with(.,'mailto') or
-                                      starts-with(.,'ftp'))]"/>
+                                      starts-with(.,'ftp'))]
+                                 [not(ends-with(.,'/'))]"/>
   <xsl:variable name="hubreferences"
                 select="for $each in $hubreferences return
                         if( contains($each,'#') )
