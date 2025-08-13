@@ -102,6 +102,7 @@
           key('dir','art/artpdf')/(.,.//directory),
           key('dir','db')/(.,.//directory),
           key('dir','val/lib'),
+          key('dir','endorsed')/(.,.//directory),
           key('dir','xsdrt/common')
          )"/>
   <xsl:variable name="allfiles" 
@@ -417,6 +418,7 @@
           <xsl:message select="'DEBUG',string($thisReference),$referencedSchemas/concat('''',.,'. Details'''),exists($thisReference/ancestor::emphasis),$referencedSchemas/count(key('rows',concat(.,'. Details'),$gc)),$referencedSchemas/key('rows',concat(.,'. Details'),$gc)/concat(Value[@ColumnRef='ComponentName']/SimpleValue,'=',
                         Value[@ColumnRef='CurrentVersion']/SimpleValue)"/>-->
           <xsl:choose>
+            <xsl:when test="true()"><!--disabled test--></xsl:when>
             <xsl:when test="exists($thisReference/ancestor::emphasis)">
               <!--there must be at least one of the current pub version-->
              <xsl:if test="not( some $den in $referencedSchemaDENs

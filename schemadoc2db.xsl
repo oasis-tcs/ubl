@@ -180,6 +180,30 @@ directory.
               </entry>
             </row>
             <row>
+              <entry><para>Endorsed schema (non-normative)</para></entry>
+              <entry>
+                <para>
+                  <literal>
+                    <ulink url="xsd/maindoc/UBL-{$compname}-{$UBLversion}.xsd"
+                            >endorsed/xsd/maindoc/UBL-<xsl:value-of select="$compname"
+                            />-<xsl:value-of select="$UBLversion"/>.xsd</ulink>
+                  </literal>
+                </para>
+              </entry>
+            </row>
+            <row>
+              <entry><para>Endorsed runtime schema (non-normative)</para></entry>
+              <entry>
+                <para>
+                  <literal>
+                   <ulink url="xsdrt/maindoc/UBL-{$compname}-{$UBLversion}.xsd"
+                            >endorsed/xsdrt/maindoc/UBL-<xsl:value-of select="$compname"
+                            />-<xsl:value-of select="$UBLversion"/>.xsd</ulink>
+                  </literal>
+                </para>
+              </entry>
+            </row>
+            <row>
               <entry><para>Summary report</para></entry>
               <entry>
                 <para>

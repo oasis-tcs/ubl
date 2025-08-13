@@ -3524,7 +3524,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
   </section>
   <section id="S-UBL-COMPONENT-DEPRECATION">
     <title>UBL Component Deprecation</title>
-    <para>UBL 2.5 introduces the concept of component deprecation. A deprecated component is still valid and fully supported in the UBL &version; schemas and artefacts, but it's use is discouraged due to known limitations, evolving requirements, or duplicated functionality. Deprecated components will potentially be removed in a future major version.</para>
+    <para>UBL 2.5 introduces the concept of component deprecation. A deprecated component is still valid and fully supported in the UBL &version; schemas and artefacts, but it&#8217;s use is discouraged due to known limitations, evolving requirements, or duplicated functionality. Deprecated components will potentially be removed in a future major version.</para>
     <para>Deprecation is a forward-looking indication to implementers and user communities. It does not affect conformance, interoperability, or backwards compatibility for UBL instances produced using previous minor versions of UBL. Documents using deprecated components remain valid and conformant to UBL &version;.</para>
     <para>Deprecation applies to:</para>
     <itemizedlist>
@@ -3939,7 +3939,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
             <simplelist>
               <member>
                 <literal>
-                  <ulink url="mod/summary/reports/All-UBL-&version;-SignatureExtensionComponents.html">mod/summary/reports/All-UBL-&version;-SignatureExtensionComponents.html</ulink>
+                  <ulink url="mod/summary/reports/UBL-CommonSignatureComponents-&version;.html">mod/summary/reports/UBL-CommonSignatureComponents-&version;.html</ulink>
                 </literal>
               </member>
             </simplelist>
@@ -6387,7 +6387,7 @@ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
       </tgroup>
     </table>
     <note>
-      <para>Some attributes in the table above are marked as deprecated. Deprecation in this context indicates that the attribute is retained for backwards compatibility but is no longer recommended for use in new implementations. Deprecated attributes are shown in italic and marked with "(deprecated)".</para>
+      <para>Some attributes in the table above are marked as deprecated. Deprecation in this context indicates that the attribute is retained for backwards compatibility but is no longer recommended for use in new implementations. Deprecated attributes are shown in italic and marked with “(deprecated)”.</para>
     </note>
     <para>Some UBL BBIEs have data type qualifications based on the unqualified UBL types. These qualified types are all code types, and their definitions are the mechanism whereby a specific set of values is associated with each code.</para>
     <para>UBL data type qualifications are expressed formally in an OASIS <xref linkend="cva"/> (Context/Value Association) file contained in the <literal>cva</literal> directory of the &version; distribution.</para>
@@ -6779,72 +6779,72 @@ No code list validation errors.</programlisting>
           <simplelist role="codelists">
             <member>
               <literal>
-                <ulink url="cl/gc/default/AllowanceChargeReasonCode-&version;.gc">cl/gc/default/AllowanceChargeReasonCode-&version;.gc</ulink>
+                <ulink url="cl/gc/default/AllowanceChargeReasonCode-2.4.gc">cl/gc/default/AllowanceChargeReasonCode-2.4.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/BinaryObjectMimeCode-&version;.gc">cl/gc/default/BinaryObjectMimeCode-&version;.gc</ulink>
+                <ulink url="cl/gc/default/BinaryObjectMimeCode-2.4.gc">cl/gc/default/BinaryObjectMimeCode-2.4.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/BinaryObjectMimeCode-&version;-incl-deprecated.gc">cl/gc/default/BinaryObjectMimeCode-&version;-incl-deprecated.gc</ulink>
+                <ulink url="cl/gc/default/BinaryObjectMimeCode-2.4-incl-deprecated.gc">cl/gc/default/BinaryObjectMimeCode-2.4-incl-deprecated.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/ChannelCode-&version;.gc">cl/gc/default/ChannelCode-&version;.gc</ulink>
+                <ulink url="cl/gc/default/ChannelCode-2.4.gc">cl/gc/default/ChannelCode-2.4.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/CountryIdentificationCode-&version;.gc">cl/gc/default/CountryIdentificationCode-&version;.gc</ulink>
+                <ulink url="cl/gc/default/CountryIdentificationCode-2.4.gc">cl/gc/default/CountryIdentificationCode-2.4.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/CurrencyCode-&version;.gc">cl/gc/default/CurrencyCode-&version;.gc</ulink>
+                <ulink url="cl/gc/default/CurrencyCode-2.4.gc">cl/gc/default/CurrencyCode-2.4.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/LanguageCode-&version;.gc">cl/gc/default/LanguageCode-&version;.gc</ulink>
+                <ulink url="cl/gc/default/LanguageCode-2.4.gc">cl/gc/default/LanguageCode-2.4.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/PackagingTypeCode-&version;.gc">cl/gc/default/PackagingTypeCode-&version;.gc</ulink>
+                <ulink url="cl/gc/default/PackagingTypeCode-2.4.gc">cl/gc/default/PackagingTypeCode-2.4.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/PackagingTypeCode-&version;-incl-deleted.gc">cl/gc/default/PackagingTypeCode-&version;-incl-deleted.gc</ulink>
+                <ulink url="cl/gc/default/PackagingTypeCode-2.4-incl-deleted.gc">cl/gc/default/PackagingTypeCode-2.4-incl-deleted.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/PaymentMeansCode-&version;.gc">cl/gc/default/PaymentMeansCode-&version;.gc</ulink>
+                <ulink url="cl/gc/default/PaymentMeansCode-2.4.gc">cl/gc/default/PaymentMeansCode-2.4.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/TransportEquipmentTypeCode-&version;.gc">cl/gc/default/TransportEquipmentTypeCode-&version;.gc</ulink>
+                <ulink url="cl/gc/default/TransportEquipmentTypeCode-2.4.gc">cl/gc/default/TransportEquipmentTypeCode-2.4.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/TransportModeCode-&version;.gc">cl/gc/default/TransportModeCode-&version;.gc</ulink>
+                <ulink url="cl/gc/default/TransportModeCode-2.4.gc">cl/gc/default/TransportModeCode-2.4.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/UnitOfMeasureCode-&version;.gc">cl/gc/default/UnitOfMeasureCode-&version;.gc</ulink>
+                <ulink url="cl/gc/default/UnitOfMeasureCode-2.4.gc">cl/gc/default/UnitOfMeasureCode-2.4.gc</ulink>
               </literal>
             </member>
             <member>
               <literal>
-                <ulink url="cl/gc/default/UnitOfMeasureCode-&version;-incl-deleted.gc">cl/gc/default/UnitOfMeasureCode-&version;-incl-deleted.gc</ulink>
+                <ulink url="cl/gc/default/UnitOfMeasureCode-2.4-incl-deleted.gc">cl/gc/default/UnitOfMeasureCode-2.4-incl-deleted.gc</ulink>
               </literal>
             </member>
           </simplelist>
