@@ -5004,7 +5004,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           </member>
           <member>
             <literal>
-              <ulink url="mod/summary/reports/All-UBL-&version;-SignatureExtensionComponents.html">mod/summary/reports/All-UBL-&version;-SignatureExtensionComponents.html</ulink>
+              <ulink url="mod/summary/reports/UBL-CommonSignatureComponents-&version;.html">mod/summary/reports/UBL-CommonSignatureComponents-&version;.html</ulink>
             </literal>
           </member>
         </simplelist>
