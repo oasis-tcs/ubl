@@ -27,11 +27,11 @@ touch                       $targetdir/$package-$UBLstage-$label-archive-only/bu
 # reduce GitHub storage costs by zipping results and deleting intermediate files
 pushd $targetdir
 if [ -f $package-$UBLstage-$label-archive-only.zip ]; then rm $package-$UBLstage-$label-archive-only.zip ; fi
-7z a $package-$UBLstage-$label-archive-only.zip $package-$UBLstage-$label-archive-only
+7z a -t7z -mx=9 -mfb=128 -md=64m -mqs=on -aoa $package-$UBLstage-$label-archive-only.zip $package-$UBLstage-$label-archive-only
 if [ -f $package-$UBLstage-$label-iso-iec-19845.zip ]; then rm $package-$UBLstage-$label-iso-iec-19845.zip ; fi
-7z a $package-$UBLstage-$label-iso-iec-19845.zip $package-$UBLstage-$label-iso-iec-19845
+7z a -t7z -mx=9 -mfb=128 -md=64m -mqs=on -aoa $package-$UBLstage-$label-iso-iec-19845.zip $package-$UBLstage-$label-iso-iec-19845
 if [ -f $package-$UBLstage-$label.zip ]; then rm $package-$UBLstage-$label.zip ; fi
-7z a $package-$UBLstage-$label.zip $package-$UBLstage-$label
+7z a -t7z -mx=9 -mfb=128 -md=64m -mqs=on -aoa $package-$UBLstage-$label.zip $package-$UBLstage-$label
 popd
 
 if [ "$targetdir" = "target" ]
