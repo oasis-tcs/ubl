@@ -44,7 +44,7 @@ jobs:
         #path: ./*
 
   build-py:
-   if: github.ref == 'refs/heads/ubl-2.5-python'
+    if: github.ref == 'refs/heads/ubl-2.5-python'
     runs-on: ubuntu-latest
 
     steps:
