@@ -35,6 +35,9 @@ def create_directories(target_dir, package, UBLstage, label):
     Path(intermediate_dir).mkdir(parents=True, exist_ok=True)
     Path(archive_dir).mkdir(parents=True, exist_ok=True)
 
+    targetdirabs = os.path.abspath(target_dir)
+    os.environ["targetdirabs"] = targetdirabs
+
 def run_ant_script(target_dir, platform, label, realta_username, realta_password):
     """Run the ANT script."""
     command = [
@@ -53,8 +56,10 @@ def run_ant_script(target_dir, platform, label, realta_username, realta_password
         f"-DlibraryGoogle={os.environ.get('libGoogle', '')}",
         f"-DdocumentsGoogle={os.environ.get('docGoogle', '')}",
         f"-DsignatureGoogle={os.environ.get('sigGoogle', '')}",
+        f"-Ddir={os.environ.get('targetdirabs', '')}",
         f"-DUBLstage={os.environ.get('UBLstage', '')}",
         f"-Dlabel={label}",
+        f"-DisDraft={os.environ.get('isDraft', '')}",
         f"-Dplatform={platform}",
         f"-Drealtauser={realta_username}",
         f"-Drealtapass={realta_password}"
