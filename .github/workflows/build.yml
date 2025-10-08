@@ -44,7 +44,7 @@ jobs:
         #path: ./*
 
   build-py:
-   if: github.ref == 'refs/heads/ubl-2.5-python'
+    if: github.ref == 'refs/heads/ubl-2.5-python'
     runs-on: ubuntu-latest
 
     steps:
@@ -60,10 +60,10 @@ jobs:
         java-version: 8
         java-package: jdk
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.12' 
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12' 
 
     - name: Dependencies
       run: |
