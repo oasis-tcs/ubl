@@ -52,7 +52,7 @@ def run_ant_script(target_dir, platform, label, realta_username, realta_password
         f"-Drawdir={os.environ.get('rawdir', '')}",
         f"-DlibraryGoogle={os.environ.get('libGoogle', '')}",
         f"-DdocumentsGoogle={os.environ.get('docGoogle', '')}",
-        f"-DsignaturesGoogle={os.environ.get('sigGoogle', '')}",
+        f"-DsignatureGoogle={os.environ.get('sigGoogle', '')}",
         f"-DUBLstage={os.environ.get('UBLstage', '')}",
         f"-Dlabel={label}",
         f"-Dplatform={platform}",
