@@ -1019,4 +1019,18 @@
       <receiverRole>Buyer Customer Party</receiverRole>
       <examples/>
    </schema>
+   <schema>
+      <name>Procurement Status Request</name>
+      <processes/>
+      <submitterRole>Requestor</submitterRole>
+      <receiverRole>Responder</receiverRole>
+      <examples/>
+   </schema>
+   <schema>
+      <name>Procurement Status</name>
+      <processes/>
+      <submitterRole>Responder</submitterRole>
+      <receiverRole>Requestor</receiverRole>
+      <examples/>
+   </schema>
 </schemadocs>
