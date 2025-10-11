@@ -952,7 +952,7 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
      <arg value="-it:ods-uri"/>
      <arg value="ods-uri=${source}"/>
      <arg value="identification-uri=${identification-uri}"/>
-     <arg value="included-sheet-name-regex='^(?!Logs).+$'"/> 
+     <arg value="included-sheet-name-regex='^[^Ll][^Oo][^Gg][^Ss].+$'"/> 
      <arg value="lengthen-model-name-uri=${lengthen-model-name-uri}"/>
   </java>
   <available property="done" file="${target}"/>
