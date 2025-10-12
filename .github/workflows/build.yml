@@ -10,6 +10,16 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Display Machine Details
+      run: |
+        echo "--- Runner Machine Details (Job: build) ---"
+        echo "Hostname: $(hostname)"
+        echo "OS/Kernel: $(uname -a)"
+        echo "CPU Cores: $(nproc)"
+        echo "CPU Model: $(lscpu | grep 'Model name' | sed 's/Model name:[[:space:]]*//')"
+        echo "Total Memory: $(free -h | grep Mem | awk '{print $2}')"
+        echo "------------------------------------------"
+
     - name: Confirm Saxon CLI class is in the JAR
       run: jar tf utilities/saxon9he/saxon9he.jar | grep net/sf/saxon/Transform.class || echo "Transform.class not found"
 
@@ -49,6 +59,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    - name: Display Machine Details
+      run: |
+        echo "--- Runner Machine Details (Job: build) ---"
+        echo "Hostname: $(hostname)"
+        echo "OS/Kernel: $(uname -a)"
+        echo "CPU Cores: $(nproc)"
+        echo "CPU Model: $(lscpu | grep 'Model name' | sed 's/Model name:[[:space:]]*//')"
+        echo "Total Memory: $(free -h | grep Mem | awk '{print $2}')"
+        echo "------------------------------------------"
 
     - name: Confirm Saxon CLI class is in the JAR
       run: jar tf utilities/saxon9he/saxon9he.jar | grep net/sf/saxon/Transform.class || echo "Transform.class not found"
