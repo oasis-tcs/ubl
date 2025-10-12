@@ -109,7 +109,18 @@ directory.
     <section id="S-{translate(upper-case($normname),' ,()','-')}-SCHEMA">
       <title><xsl:value-of select="$normname"/> Schema</title>
       <xsl:variable name="definition" select="normalize-space(
-      u:col(key('rows',concat(name,'. Details'),doc($gc-uri)),'Definition'))"/>
+                       u:col(key('rows',concat(name,'. Details'),doc($gc-uri)),
+                             'Definition'))"/>
+      <xsl:variable name="endorsedCardlinality" select="normalize-space(
+                       u:col(key('rows',concat(name,'. Details'),doc($gc-uri)),
+                             'EndorsedCardinality'))"/>
+      <xsl:variable name="endorsedCardlinalityRationale"
+                    select="normalize-space(
+                       u:col(key('rows',concat(name,'. Details'),doc($gc-uri)),
+                             'EndorsedCardinalityRationale'))"/>
+      <xsl:variable name="deprecatedDefinition" select="normalize-space(
+                       u:col(key('rows',concat(name,'. Details'),doc($gc-uri)),
+                             'DeprecatedDefinition'))"/>
       <para>
         <xsl:text>Description: </xsl:text>
         <xsl:value-of select="$definition"/>
@@ -180,7 +191,17 @@ directory.
                 </para>
               </entry>
             </row>
-            <xsl:if test="not(contains(lower-case($definition),'deprecated'))">
+            <xsl:if test="normalize-space($deprecatedDefinition)">
+              <row>
+                <entry><para>Deprecated definition</para></entry>
+                <entry>
+                  <para>
+                    <xsl:value-of select="$deprecatedDefinition"/>
+                  </para>
+                </entry>
+              </row>
+            </xsl:if>
+            <xsl:if test="not($endorsedCardlinality)">
               <row>
                 <entry><para>Endorsed schema (non-normative)</para></entry>
                 <entry>
@@ -202,6 +223,16 @@ directory.
                               >endorsed/xsdrt/maindoc/UBL-<xsl:value-of select="$compname"
                               />-<xsl:value-of select="$UBLversion"/>.xsd</ulink>
                     </literal>
+                  </para>
+                </entry>
+              </row>
+            </xsl:if>
+            <xsl:if test="normalize-space($endorsedCardlinalityRationale)">
+              <row>
+                <entry><para>Endorsed cardinality rationale</para></entry>
+                <entry>
+                  <para>
+                    <xsl:value-of select="$endorsedCardlinalityRationale"/>
                   </para>
                 </entry>
               </row>
