@@ -102,7 +102,7 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
-        name: UBL-package-github-${{ env.TIMESTAMP }}z
+        name: UBL-package-py-github-${{ env.TIMESTAMP }}z
         path: ./*
         #path: target/artefacts-UBL-2.3-github-${{ env.TIMESTAMP }}z/*
         #name: all-UBL-2.3-github-${{ env.TIMESTAMP }}z
