@@ -47,7 +47,7 @@
       <property name="cpuCount" value="16"/>
     </then>
     <else>
-      <property name="cpuCount" value="3"/>
+      <property name="cpuCount" value="2"/>
     </else>
   </if>
   <!--documentation-->
