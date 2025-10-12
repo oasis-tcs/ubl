@@ -4829,7 +4829,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           <!--reviewtext-->
           <para>
             <emphasis role="bold">Added four new UBL 2.5 document types: </emphasis>
-            <link linkend="S-DELIVERY-NOTE-SCHEMA">Delivery Note</link>, <link linkend="S-INVOICE-STATUS-REQUEST-SCHEMA">Invoice Status Request</link>, <link linkend="S-INVOICE-STATUS-RESPONSE-SCHEMA">Invoice Status Response</link>, <link linkend="S-WORK-REPORT-SCHEMA">Work Report</link>
+            <link linkend="S-DELIVERY-NOTE-SCHEMA">Delivery Note</link>, <link linkend="S-INVOICE-STATUS-REQUEST-SCHEMA">Invoice Status Request</link>, <link linkend="S-INVOICE-STATUS-RESPONSE-SCHEMA">Invoice Status Response</link>, <link linkend="S-WORK-REPORT-SCHEMA">Work Report</link>, <link linkend="S-PROCUREMENT-STATUS-SCHEMA">Procurement Status</link>, <link linkend="S-PROCUREMENT-STATUS-REQUEST-SCHEMA">Procurement Status Request</link>
           </para>
         </blockquote>
       </section>
