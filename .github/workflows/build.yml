@@ -45,6 +45,28 @@ jobs:
         echo "TIMESTAMP=${timestamp}" >>$GITHUB_ENV
         bash build.sh target github ${timestamp}z "${REALTA_USERNAME:-}" "${REALTA_PASSWORD:-}" DELETE-REPOSITORY-FILES-AS-WELL
 
+    - name: List Shell Build Directory Structure
+      if: always()
+      run: |
+        echo "=== Shell Build Directory Structure ==="
+        echo "Current directory: $(pwd)"
+        echo ""
+        echo "--- Root directory contents ---"
+        ls -lah
+        echo ""
+        echo "--- Tree view of all directories (if target exists) ---"
+        if [ -d target ]; then
+          find target -type d | sort
+          echo ""
+          echo "--- File count in each directory ---"
+          find target -type d -exec sh -c 'echo "{}": $(find "{}" -maxdepth 1 -type f | wc -l) files' \;
+        else
+          echo "target directory does not exist (expected after cleanup)"
+        fi
+        echo ""
+        echo "--- Zip files in root ---"
+        ls -lh *.zip 2>/dev/null || echo "No zip files found"
+
     - uses: actions/upload-artifact@v4
       with:
         name: UBL-package-github-${{ env.TIMESTAMP }}z
@@ -99,6 +121,38 @@ jobs:
         timestamp=$(date -u +%Y%m%d-%H%M)
         echo "TIMESTAMP=${timestamp}" >>$GITHUB_ENV
         python build.py target-py github ${timestamp}z "${REALTA_USERNAME:-}" "${REALTA_PASSWORD:-}" DELETE-REPOSITORY-FILES-AS-WELL
+
+    - name: List Python Build Directory Structure
+      if: always()
+      run: |
+        echo "=== Python Build Directory Structure ==="
+        echo "Current directory: $(pwd)"
+        echo ""
+        echo "--- Root directory contents ---"
+        ls -lah
+        echo ""
+        echo "--- Tree view of all directories (if target-py exists) ---"
+        if [ -d target-py ]; then
+          find target-py -type d | sort
+          echo ""
+          echo "--- File count in each directory ---"
+          find target-py -type d -exec sh -c 'echo "{}": $(find "{}" -maxdepth 1 -type f | wc -l) files' \;
+        else
+          echo "target-py directory does not exist (expected after cleanup)"
+        fi
+        echo ""
+        echo "--- Zip files in root ---"
+        ls -lh *.7z 2>/dev/null || echo "No zip files found"
+        echo ""
+        echo "--- Check what 7z thinks is in the ISO 7z ---"
+        if [ -f "UBL-2.5-csd01-${TIMESTAMP}z-iso-iec-19845.7z" ]; then
+          7z l "UBL-2.5-csd01-${TIMESTAMP}z-iso-iec-19845.7z"
+        fi
+        echo ""
+        echo "--- Check what 7z thinks is in the main 7z ---"
+        if [ -f "UBL-2.5-csd01-${TIMESTAMP}z.7z" ]; then
+          7z l "UBL-2.5-csd01-${TIMESTAMP}z.7z" | head -50
+        fi
 
     - uses: actions/upload-artifact@v4
       with:
