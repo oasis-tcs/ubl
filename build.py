@@ -106,9 +106,9 @@ def archive_and_cleanup(target_dir, package, UBLstage, label, platform, delete_o
     
     try:
         # Remove existing zip files if they exist
-        archive_zip = f"{package}-{UBLstage}-{label}-archive-only.zip"
-        iso_zip = f"{package}-{UBLstage}-{label}-iso-iec-19845.zip"
-        main_zip = f"{package}-{UBLstage}-{label}.zip"
+        archive_zip = f"{package}-{UBLstage}-{label}-archive-only.7z"
+        iso_zip = f"{package}-{UBLstage}-{label}-iso-iec-19845.7z"
+        main_zip = f"{package}-{UBLstage}-{label}.7z"
         
         if os.path.exists(archive_zip):
             os.remove(archive_zip)
