@@ -2,6 +2,8 @@
 import os
 import sys
 import subprocess
+import time
+import glob
 from pathlib import Path
 
 def parse_arguments():
@@ -65,27 +67,92 @@ def run_ant_script(target_dir, platform, label, realta_username, realta_password
         f"-Drealtapass={realta_password}"
     ]
 
-    try:
-        subprocess.run(command, check=True)
-    except subprocess.CalledProcessError as e:
-        print(f"Error running ANT script: {e}")
-        sys.exit(1)
+    print("Building package...")
+    result = subprocess.run(command)
+    server_return = result.returncode
+    
+    # Sleep 2 seconds like the shell script
+    time.sleep(2)
+    
+    return server_return
 
-def archive_and_cleanup(target_dir, package, UBLstage, label, platform, delete_option):
+def archive_and_cleanup(target_dir, package, UBLstage, label, platform, delete_option, server_return):
     """Archive files and clean up."""
     archive_dir = f"{target_dir}/{package}-{UBLstage}-{label}-archive-only"
-    os.rename(f"build.console.{label}.txt", f"{archive_dir}/build.console.{label}.txt")
-
-    # Zip directories
-    subprocess.run(f"7z a -t7z -mx=9 -mfb=128 -md=64m -mqs=on -aoa {package}-{UBLstage}-{label}-archive-only.zip {package}-{UBLstage}-{label}-archive-only", shell=True)
-    subprocess.run(f"7z a -t7z -mx=9 -mfb=128 -md=64m -mqs=on -aoa {package}-{UBLstage}-{label}-iso-iec-19845.zip {package}-{UBLstage}-{label}-iso-iec-19845", shell=True)
-    subprocess.run(f"7z a -t7z -mx=9 -mfb=128 -md=64m -mqs=on -aoa {package}-{UBLstage}-{label}.zip {package}-{UBLstage}-{label}", shell=True)
-
+    
+    # Create archive directory if it doesn't exist
+    Path(archive_dir).mkdir(parents=True, exist_ok=True)
+    
+    # Move build console log
+    console_log = f"build.console.{label}.txt"
+    if os.path.exists(console_log):
+        os.rename(console_log, f"{archive_dir}/{console_log}")
+    
+    # Move Saxon log files if they exist
+    saxon_logs = glob.glob("saxon*.log")
+    for log_file in saxon_logs:
+        os.rename(log_file, f"{archive_dir}/{log_file}")
+    
+    # Write exit code
+    with open(f"{archive_dir}/build.exitcode.{label}.txt", 'w') as f:
+        f.write(str(server_return) + '\n')
+    
+    # Touch the console log file to ensure it exists
+    Path(f"{archive_dir}/build.console.{label}.txt").touch()
+    
+    # Change to target directory for zipping
+    original_dir = os.getcwd()
+    os.chdir(target_dir)
+    
+    try:
+        # Remove existing zip files if they exist
+        archive_zip = f"{package}-{UBLstage}-{label}-archive-only.zip"
+        iso_zip = f"{package}-{UBLstage}-{label}-iso-iec-19845.zip"
+        main_zip = f"{package}-{UBLstage}-{label}.zip"
+        
+        if os.path.exists(archive_zip):
+            os.remove(archive_zip)
+        if os.path.exists(iso_zip):
+            os.remove(iso_zip)
+        if os.path.exists(main_zip):
+            os.remove(main_zip)
+        
+        # Zip directories
+        subprocess.run([
+            "7z", "a", "-t7z", "-mx=9", "-mfb=128", "-md=64m", "-mqs=on", "-aoa",
+            archive_zip,
+            f"{package}-{UBLstage}-{label}-archive-only"
+        ])
+        
+        subprocess.run([
+            "7z", "a", "-t7z", "-mx=9", "-mfb=128", "-md=64m", "-mqs=on", "-aoa",
+            iso_zip,
+            f"{package}-{UBLstage}-{label}-iso-iec-19845"
+        ])
+        
+        subprocess.run([
+            "7z", "a", "-t7z", "-mx=9", "-mfb=128", "-md=64m", "-mqs=on", "-aoa",
+            main_zip,
+            f"{package}-{UBLstage}-{label}"
+        ])
+    finally:
+        # Return to original directory
+        os.chdir(original_dir)
+    
+    # Conditional cleanup for GitHub
     if target_dir == "target" and platform == "github" and delete_option == "DELETE-REPOSITORY-FILES-AS-WELL":
-        subprocess.run("find . -not -name target -not -name .github -maxdepth 1 -exec rm -r -f {} \\;", shell=True)
+        # Delete repository files except target and .github
+        subprocess.run(
+            "find . -not -name target -not -name .github -maxdepth 1 -exec rm -r -f {} \\;",
+            shell=True
+        )
+        
+        # Move zip files to root
         subprocess.run(f"mv {target_dir}/{package}-{UBLstage}-{label}-archive-only.zip .", shell=True)
         subprocess.run(f"mv {target_dir}/{package}-{UBLstage}-{label}-iso-iec-19845.zip .", shell=True)
         subprocess.run(f"mv {target_dir}/{package}-{UBLstage}-{label}.zip .", shell=True)
+        
+        # Remove target directory
         subprocess.run(f"rm -r -f {target_dir}", shell=True)
 
 def main():
@@ -100,14 +167,18 @@ def main():
     os.environ["UBLprevStage"] = "os"
     os.environ["UBLprevVersion"] = "2.4"
     os.environ["rawdir"] = "raw"
+    os.environ["isDraft"] = os.environ.get("isDraft", "")  # Use existing or empty
     os.environ["libGoogle"] = "https://docs.google.com/spreadsheets/d/18o1YqjHWUw0-s8mb3ja4i99obOUhs-4zpgso6RZrGaY"
     os.environ["docGoogle"] = "https://docs.google.com/spreadsheets/d/1024Th-Uj8cqliNEJc-3pDOR7DxAAW7gCG4e-pbtarsg"
     os.environ["sigGoogle"] = "https://docs.google.com/spreadsheets/d/1T6z2NZ4mc69YllZOXE5TnT5Ey-FlVtaXN1oQ4AIMp7g"
 
     setup_environment()
     create_directories(target_dir, os.environ["package"], os.environ["UBLstage"], label)
-    run_ant_script(target_dir, platform, label, realta_username, realta_password)
-    archive_and_cleanup(target_dir, os.environ["package"], os.environ["UBLstage"], label, platform, delete_option)
+    server_return = run_ant_script(target_dir, platform, label, realta_username, realta_password)
+    archive_and_cleanup(target_dir, os.environ["package"], os.environ["UBLstage"], label, platform, delete_option, server_return)
+    
+    # Always exit successfully like the shell script
+    sys.exit(0)
 
 if __name__ == "__main__":
     main()
