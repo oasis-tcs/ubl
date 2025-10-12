@@ -70,6 +70,7 @@
   <echo message="signatureGoogle=${signatureGoogle}"/>
   <echo message="localTime=${localTime}"/>
   <echo message="Running on Java: ${java.version} from ${java.home} (${java.vendor})" />
+  <echo message="Using Apache Ant version: ${ant.version}"/>
   <echo message="Classpath: ${java.class.path}" />
 
   <available property="gc2obdndr-exists"
