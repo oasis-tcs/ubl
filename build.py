@@ -23,9 +23,9 @@ def parse_arguments():
 
 def setup_environment():
     """Set up environment variables and paths."""
-    os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-8-openjdk-amd64"
-    os.environ["ANT_HOME"] = "/usr/share/ant"
-    os.environ["PATH"] = f"{os.environ['ANT_HOME']}/bin:{os.environ['PATH']}"
+    # os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-8-openjdk-amd64"
+    # os.environ["ANT_HOME"] = "/usr/share/ant"
+    # os.environ["PATH"] = f"{os.environ['ANT_HOME']}/bin:{os.environ['PATH']}"
 
 def create_directories(target_dir, package, UBLstage, label):
     """Create necessary directories."""
@@ -121,19 +121,19 @@ def archive_and_cleanup(target_dir, package, UBLstage, label, platform, delete_o
         subprocess.run([
             "7z", "a", "-t7z", "-mx=9", "-mfb=128", "-md=64m", "-mqs=on", "-aoa",
             archive_zip,
-            f"{package}-{UBLstage}-{label}-archive-only"
+            archive_dir
         ])
         
         subprocess.run([
             "7z", "a", "-t7z", "-mx=9", "-mfb=128", "-md=64m", "-mqs=on", "-aoa",
             iso_zip,
-            f"{package}-{UBLstage}-{label}-iso-iec-19845"
+            iso_dir
         ])
         
         subprocess.run([
             "7z", "a", "-t7z", "-mx=9", "-mfb=128", "-md=64m", "-mqs=on", "-aoa",
             main_zip,
-            f"{package}-{UBLstage}-{label}"
+            package_dir
         ])
     finally:
         # Return to original directory
@@ -148,9 +148,9 @@ def archive_and_cleanup(target_dir, package, UBLstage, label, platform, delete_o
         )
         
         # Move zip files to root
-        subprocess.run(f"mv {target_dir}/{package}-{UBLstage}-{label}-archive-only.zip .", shell=True)
-        subprocess.run(f"mv {target_dir}/{package}-{UBLstage}-{label}-iso-iec-19845.zip .", shell=True)
-        subprocess.run(f"mv {target_dir}/{package}-{UBLstage}-{label}.zip .", shell=True)
+        subprocess.run(f"mv {target_dir}/{package}-{UBLstage}-{label}-archive-only.7z .", shell=True)
+        subprocess.run(f"mv {target_dir}/{package}-{UBLstage}-{label}-iso-iec-19845.7z .", shell=True)
+        subprocess.run(f"mv {target_dir}/{package}-{UBLstage}-{label}.7z .", shell=True)
         
         # Remove target directory
         subprocess.run(f"rm -r -f {target_dir}", shell=True)
