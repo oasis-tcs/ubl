@@ -175,7 +175,10 @@ def main():
     setup_environment()
     create_directories(target_dir, os.environ["package"], os.environ["UBLstage"], label)
     server_return = run_ant_script(target_dir, platform, label, realta_username, realta_password)
-    archive_and_cleanup(target_dir, os.environ["package"], os.environ["UBLstage"], label, platform, delete_option, server_return)
+    #
+    # just leave everything in place ... so we can see what is there.
+    #
+    # archive_and_cleanup(target_dir, os.environ["package"], os.environ["UBLstage"], label, platform, delete_option, server_return)
     
     # Always exit successfully like the shell script
     sys.exit(0)
