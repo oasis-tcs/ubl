@@ -82,9 +82,9 @@ def run_ant_script(target_dir, platform, label, realta_username, realta_password
 
 def archive_and_cleanup(target_dir, package, UBLstage, label, platform, delete_option, server_return):
     """Archive files and clean up."""
-    archive_dir = f"{target_dir}/{package}-{UBLstage}-{label}-archive-only"
-    iso_dir = f"{target_dir}/{package}-{UBLstage}-{label}-iso-iec-19845"
-    package_dir = f"{target_dir}/{package}-{UBLstage}-{label}"
+    archive_dir = f"/home/runner/work/ubl/ubl/{target_dir}/{package}-{UBLstage}-{label}-archive-only"
+    iso_dir = f"/home/runner/work/ubl/ubl/{target_dir}/{package}-{UBLstage}-{label}-iso-iec-19845"
+    package_dir = f"/home/runner/work/ubl/ubl/{target_dir}/{package}-{UBLstage}-{label}"
 
     # Create archive directory if it doesn't exist
     Path(archive_dir).mkdir(parents=True, exist_ok=True)
