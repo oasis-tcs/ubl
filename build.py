@@ -146,10 +146,10 @@ def archive_and_cleanup(target_dir, package, UBLstage, label, platform, delete_o
         os.chdir(original_dir)
 
     # Conditional cleanup for GitHub
-    if target_dir == "target-py" and platform == "github" and delete_option == "DELETE-REPOSITORY-FILES-AS-WELL":
+    if target_dir == "target" and platform == "github" and delete_option == "DELETE-REPOSITORY-FILES-AS-WELL":
         # Delete repository files except target and .github
         subprocess.run(
-            "find . -not -name target-py -not -name .github -maxdepth 1 -exec rm -r -f {} \\;",
+            "find . -not -name target -not -name .github -maxdepth 1 -exec rm -r -f {} \\;",
             shell=True
         )
 
