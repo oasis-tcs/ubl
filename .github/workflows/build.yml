@@ -120,6 +120,7 @@ jobs:
       run: |
         sudo apt update
         sudo apt install -y aspell libreoffice pandoc
+        pip install py7zr
 
     - name: Build
       env:
