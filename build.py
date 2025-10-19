@@ -146,10 +146,14 @@ def create_7z_archive(archive_path: Path, source_dir: Path) -> None:
     """Create a 7z archive from a source directory, preserving the directory name in the archive."""
     print(f"Creating {archive_path.name}...")
     try:
-        with py7zr.SevenZipFile(str(archive_path), 'w') as archive:
+        # Convert to absolute paths to match working version behavior
+        source_dir_abs = source_dir.resolve()
+        archive_path_abs = archive_path.resolve()
+        
+        with py7zr.SevenZipFile(str(archive_path_abs), 'w') as archive:
             # Archive the directory itself (not just its contents)
             # This preserves the directory name in the archive, matching shell script behavior
-            archive.writeall(str(source_dir), arcname=source_dir.name)
+            archive.writeall(str(source_dir_abs), arcname=source_dir_abs.name)
         print(f"  Successfully created {archive_path.name}")
     except Exception as e:
         print(f"  Warning: Failed to create {archive_path.name}: {e}")
