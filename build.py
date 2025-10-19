@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 UBL Build Script - Python implementation matching shell script behavior.
-Builds UBL packages and creates 7z archives with identical compression settings.
+Builds UBL packages and creates 7z archives.
 """
 
 import os
@@ -16,6 +16,7 @@ from typing import Optional
 
 try:
     import py7zr
+    from py7zr import FILTER_LZMA2
 except ImportError:
     print("Error: py7zr is not installed. Install it with: pip install py7zr", file=sys.stderr)
     sys.exit(1)
@@ -143,37 +144,26 @@ def ensure_console_log_exists(config: BuildConfig, archive_dir: Path) -> None:
 
 
 def create_7z_archive(archive_path: Path, source_dir: Path) -> None:
-    """Create a 7z archive matching shell script behavior exactly.
-    
-    Matches shell command:
-    7z a -t7z -mx=9 -mfb=128 -md=64m -mqs=on -aoa <archive> <source_dir>
-    
-    Compression settings:
-    - LZMA2 filter (same as -t7z)
-    - Preset 9 (same as -mx=9: maximum compression)
-    - 64 MB dictionary (same as -md=64m)
-    - No BCJ filter (shell version doesn't use it)
-    """
+    """Create a 7z archive from a source directory, preserving the directory name in the archive."""
     print(f"Creating {archive_path.name}...")
     try:
+        # Convert to absolute paths to match working version behavior
         source_dir_abs = source_dir.resolve()
         archive_path_abs = archive_path.resolve()
         
-        # Define compression filters matching shell script parameters
-        compression_filters = [{
-            "id": py7zr.FILTER_LZMA2,
-            "preset": 9,                    # -mx=9: maximum compression
-            "dict_size": 64 * 1024 * 1024,  # -md=64m: 64 MB dictionary
+        # Match shell script compression parameters: -mx=9 -mfb=128 -md=64m -mqs=on -aoa
+        filters = [{
+            "id": FILTER_LZMA2,
+            "preset": 9,                    # -mx=9 (maximum compression)
+            "dict_size": 64 * 1024 * 1024,  # -md=64m (64 MB dictionary)
+            "mf": "bt4",                    # match finder (bt4 is default for high compression)
+            "nice_len": 128,                # -mfb=128 (fast bytes)
         }]
         
-        with py7zr.SevenZipFile(
-            str(archive_path_abs), 
-            'w',
-            filters=compression_filters
-        ) as archive:
-            # Archive preserves directory name in the archive
+        with py7zr.SevenZipFile(str(archive_path_abs), 'w', filters=filters) as archive:
+            # Archive the directory itself (not just its contents)
+            # This preserves the directory name in the archive, matching shell script behavior
             archive.writeall(str(source_dir_abs), arcname=source_dir_abs.name)
-        
         print(f"  Successfully created {archive_path.name}")
     except Exception as e:
         print(f"  Warning: Failed to create {archive_path.name}: {e}")
