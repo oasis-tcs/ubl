@@ -20,16 +20,16 @@
 	<!ENTITY psversion "2.4">
 	<!ENTITY pstage   "os">
 	<!ENTITY PSTAGE   "OS">
-	<!ENTITY stage    "csd01">
-	<!ENTITY STAGE    "CSD01">
+	<!ENTITY stage    "csd02>
+	<!ENTITY STAGE    "CSD02">
 	<!ENTITY isostage "WD">
-	<!ENTITY standard "Committee Specification Draft 01">
-	<!ENTITY stagetext "Committee Specification Draft 01">
+	<!ENTITY standard "Committee Specification Draft 02">
+	<!ENTITY stagetext "Committee Specification Draft 02">
 	<!ENTITY standard "Committee Specification 01xxxxx">
 	<!ENTITY stagetext "Committee Specification 01xxxxxx">
 	<!ENTITY standard "Committee Specification 02xxxxxxx">
 	<!ENTITY stagetext "Committee Specification 02xxxxxx">
-	<!ENTITY pubdate "20 August 2025">
+	<!ENTITY pubdate "31 Oktober 2025">
 	<!--remove time from pub date-->
 	<!ENTITY pubyear "2025">
 	<!ENTITY pubdate-iso "ccyy-mm-dd">
