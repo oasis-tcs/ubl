@@ -80,7 +80,7 @@ def build_ant_command(config: BuildConfig) -> list[str]:
         f"-Dant.home=utilities/ant",
         "-classpath", "utilities/saxon/saxon.jar:utilities/ant/lib/ant-launcher.jar:utilities/saxon9he/saxon9he.jar",
         "org.apache.tools.ant.launch.Launcher",
-        "-buildfile", "build.xml",
+        "-buildfile", "build-py.xml",
         f"-Dtitle={config.title}",
         f"-Dpackage={config.package}",
         f"-DUBLversion={config.ubl_version}",
