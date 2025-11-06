@@ -1,6 +1,10 @@
 name: Build
 
-on: [push, workflow_dispatch]
+on:
+  push:
+    branches-ignore:
+      - 'claude/**'
+  workflow_dispatch
 
 jobs:
   staging:
@@ -84,7 +88,7 @@ jobs:
         path: ./*
 
   build-py:
-    if: github.ref == 'refs/heads/ubl-2.5-python'
+    if: github.ref == 'refs/heads/ubl-2.5-python' && !startsWith(github.ref, 'refs/heads/claude/')
     needs: staging
     runs-on: ubuntu-latest
 
