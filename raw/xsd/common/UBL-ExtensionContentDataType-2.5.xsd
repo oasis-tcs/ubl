@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Library:           OASIS Universal Business Language (UBL) 2.5 CSD01
-                     http://docs.oasis-open.org/ubl/csd01-UBL-2.5/
-  Release Date:      07 April 2025
+  Library:           OASIS Universal Business Language (UBL) 2.5 CSD02
+                     http://docs.oasis-open.org/ubl/csd02-UBL-2.5/
+  Release Date:      19 November 2025
   Module:            UBL-ExtensionContentDataType-2.5.xsd
   Generated on:      2016-06-24 19:50(UTC)
   Copyright (c) OASIS Open 2023. All Rights Reserved.
-  
+
   Release Note: This is a module that can be modified by users, typically
   only to add extension schema fragments for lax detection when encountered.
   Changes to the complex type should not be required for typical use.
