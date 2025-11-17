@@ -1,10 +1,27 @@
 name: Build
 
-on: [push ,workflow_dispatch]
+on:
+  push:
+    branches-ignore:
+      - 'claude/**'
+  workflow_dispatch:
 
 jobs:
-  build:
+  staging:
+    runs-on: ubuntu-latest
+    outputs:
+      timestamp: ${{ steps.timestamp.outputs.timestamp }}
+    
+    steps:
+    - name: Generate Timestamp
+      id: timestamp
+      run: |
+        timestamp=$(date -u +%Y%m%d-%H%M)
+        echo "timestamp=${timestamp}" >> $GITHUB_OUTPUT
+        echo "Generated timestamp: ${timestamp}"
 
+  build:
+    needs: staging
     runs-on: ubuntu-latest
 
     steps:
@@ -41,9 +58,7 @@ jobs:
         REALTA_PASSWORD: ${{ secrets.REALTA_PASSWORD }}
       run: |
         mkdir target
-        timestamp=$(date -u +%Y%m%d-%H%M)
-        echo "TIMESTAMP=${timestamp}" >>$GITHUB_ENV
-        bash build.sh target github ${timestamp}z "${REALTA_USERNAME:-}" "${REALTA_PASSWORD:-}" DELETE-REPOSITORY-FILES-AS-WELL
+        bash build.sh target github ${{ needs.staging.outputs.timestamp }}z "${REALTA_USERNAME:-}" "${REALTA_PASSWORD:-}" DELETE-REPOSITORY-FILES-AS-WELL
 
     - name: List Shell Build Directory Structure
       if: always()
@@ -65,18 +80,16 @@ jobs:
         fi
         echo ""
         echo "--- Zip files in root ---"
-        ls -lh *.zip 2>/dev/null || echo "No zip files found"
+        ls -lh *.7z 2>/dev/null || echo "No zip files found"
 
     - uses: actions/upload-artifact@v4
       with:
-        name: UBL-package-github-${{ env.TIMESTAMP }}z
+        name: UBL-package-github-${{ needs.staging.outputs.timestamp }}z
         path: ./*
-        #path: target/artefacts-UBL-2.3-github-${{ env.TIMESTAMP }}z/*
-        #name: all-UBL-2.3-github-${{ env.TIMESTAMP }}z
-        #path: ./*
 
   build-py:
-    if: github.ref == 'refs/heads/ubl-2.5-python'
+    if: github.ref == 'refs/heads/ubl-2.5-python' && !startsWith(github.ref, 'refs/heads/claude/')
+    needs: staging
     runs-on: ubuntu-latest
 
     steps:
@@ -84,7 +97,7 @@ jobs:
 
     - name: Display Machine Details
       run: |
-        echo "--- Runner Machine Details (Job: build) ---"
+        echo "--- Runner Machine Details (Job: build-py) ---"
         echo "Hostname: $(hostname)"
         echo "OS/Kernel: $(uname -a)"
         echo "CPU Cores: $(nproc)"
@@ -105,22 +118,21 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.12' 
+        python-version: '3.12'
 
     - name: Dependencies
       run: |
         sudo apt update
         sudo apt install -y aspell libreoffice pandoc
+        pip install py7zr
 
     - name: Build
       env:
         REALTA_USERNAME: ${{ secrets.REALTA_USERNAME }}
         REALTA_PASSWORD: ${{ secrets.REALTA_PASSWORD }}
       run: |
-        mkdir target-py
-        timestamp=$(date -u +%Y%m%d-%H%M)
-        echo "TIMESTAMP=${timestamp}" >>$GITHUB_ENV
-        python build.py target-py github ${timestamp}z "${REALTA_USERNAME:-}" "${REALTA_PASSWORD:-}" DELETE-REPOSITORY-FILES-AS-WELL
+        mkdir target
+        python build.py target github ${{ needs.staging.outputs.timestamp }}z "${REALTA_USERNAME:-}" "${REALTA_PASSWORD:-}" DELETE-REPOSITORY-FILES-AS-WELL
 
     - name: List Python Build Directory Structure
       if: always()
@@ -131,33 +143,30 @@ jobs:
         echo "--- Root directory contents ---"
         ls -lah
         echo ""
-        echo "--- Tree view of all directories (if target-py exists) ---"
-        if [ -d target-py ]; then
-          find target-py -type d | sort
+        echo "--- Tree view of all directories (if target exists) ---"
+        if [ -d target ]; then
+          find target -type d | sort
           echo ""
           echo "--- File count in each directory ---"
-          find target-py -type d -exec sh -c 'echo "{}": $(find "{}" -maxdepth 1 -type f | wc -l) files' \;
+          find target -type d -exec sh -c 'echo "{}": $(find "{}" -maxdepth 1 -type f | wc -l) files' \;
         else
-          echo "target-py directory does not exist (expected after cleanup)"
+          echo "target directory does not exist (expected after cleanup)"
         fi
         echo ""
         echo "--- Zip files in root ---"
         ls -lh *.7z 2>/dev/null || echo "No zip files found"
         echo ""
         echo "--- Check what 7z thinks is in the ISO 7z ---"
-        if [ -f "UBL-2.5-csd01-${TIMESTAMP}z-iso-iec-19845.7z" ]; then
-          7z l "UBL-2.5-csd01-${TIMESTAMP}z-iso-iec-19845.7z"
+        if [ -f "UBL-2.5-csd01-${{ needs.staging.outputs.timestamp }}z-iso-iec-19845.7z" ]; then
+          7z l "UBL-2.5-csd01-${{ needs.staging.outputs.timestamp }}z-iso-iec-19845.7z"
         fi
         echo ""
         echo "--- Check what 7z thinks is in the main 7z ---"
-        if [ -f "UBL-2.5-csd01-${TIMESTAMP}z.7z" ]; then
-          7z l "UBL-2.5-csd01-${TIMESTAMP}z.7z" | head -50
+        if [ -f "UBL-2.5-csd01-${{ needs.staging.outputs.timestamp }}z.7z" ]; then
+          7z l "UBL-2.5-csd01-${{ needs.staging.outputs.timestamp }}z.7z" | head -50
         fi
 
     - uses: actions/upload-artifact@v4
       with:
-        name: UBL-package-py-github-${{ env.TIMESTAMP }}z
+        name: UBL-package-py-github-${{ needs.staging.outputs.timestamp }}z
         path: ./*
-        #path: target/artefacts-UBL-2.3-github-${{ env.TIMESTAMP }}z/*
-        #name: all-UBL-2.3-github-${{ env.TIMESTAMP }}z
-        #path: ./*
