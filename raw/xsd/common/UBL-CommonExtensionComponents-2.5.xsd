@@ -2,10 +2,10 @@
 <!--
   Library:           OASIS Universal Business Language (UBL) 2.5 CSD02
                      http://docs.oasis-open.org/ubl/csd02-UBL-2.5/
-  Release Date:      19 November 2025
+  Release Date:      26 November 2025
   Module:            UBL-CommonExtensionComponents-2.4.xsd
   Generated on:      2017-01-02 17:20(UTC)
-  Copyright (c) OASIS Open 2023. All Rights Reserved.
+  Copyright (c) OASIS Open 2025. All Rights Reserved.
 -->
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" 
