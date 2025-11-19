@@ -3040,7 +3040,7 @@
                 <ulink url="xsd/common/BDNDR-CCTS_CCT_SchemaModule-1.1.xsd">xsd/common/BDNDR-CCTS_CCT_SchemaModule-1.1.xsd</ulink>
               </literal>
             </para>
-            <para>This schema provides Core Component Types as defined by <xref linkend="ccts"/>. This schema provides Core Component Types as defined by [CCTS]. These types are used to construct higher-level data types in a standardized and consistent manner. The normative UBL version of this BDNDR schema is defined by UN/CEFACT. The endorsed UBL revision of this schema has been created by the UBL committee to reflect deprecated secondary components going forward. Neither file should be modified by the user. These files are imported by the UBL Unqualified
+            <para>This schema provides Core Component Types as defined by <xref linkend="ccts"/>. These types are used to construct higher-level data types in a standardized and consistent manner. The normative UBL version of this BDNDR schema is defined by UN/CEFACT. The endorsed UBL revision of this schema has been created by the UBL committee to reflect deprecated secondary components going forward. Neither file should be modified by the user. These files are imported by the UBL Unqualified
               Data Type Schema, and their types are the basis upon which UBL&#8217;s unqualified data types are defined.</para>
           </blockquote>
           <para>
@@ -3517,9 +3517,13 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
     </section>
     <section id="S-SEMANTIC-DEFINITIONS">
       <title>Semantic definitions</title>
-      <para>The UBL Technical Committee has ascribed a definition to each of the business objects in UBL. These definitions provide important semantic context for the interpretation of the content. These definitions are found in the normative XSD Schemas. They are also transcribed into the XML model
-        ODS spreadsheet, XLS spreadsheet and the HTML document reports.</para>
-      <para>To facilitate interoperability, implementations SHOULD follow these definitions to ensure the successful interchange of the business information.</para>
+      <para>The UBL Technical Committee has ascribed a definition to each of the business objects in UBL. These definitions provide important semantic context for the interpretation of the content. They are found in the normative XSD Schemas and are transcribed into the XML model ODS spreadsheet, XLS spreadsheet, and HTML documentation.</para>
+      <para>From UBL 2.5 onward, these definitions form the basis for an optional semantic
+        conformance level, as defined in the <xref linkend="S-DOCUMENT-AND-SCHEMA-CONFORMANCE"/>
+        section. Implementations that declare semantic conformance shall ensure that the business
+        content of UBL document instances aligns with the intended meaning of each component as
+        described in these definitions.</para>
+      <para>Implementations that declare only syntactical conformance should also follow these semantic definitions to support meaningful interoperability and consistent interpretation of business data.</para>
     </section>
   </section>
   <section id="S-UBL-COMPONENT-DEPRECATION">
@@ -4138,6 +4142,19 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
           </listitem>
         </orderedlist>
       </note>
+    </section>
+    <section id="S-SEMANTIC-CONFORMANCE">
+      <title>Semantic Conformance</title>
+      <para>A UBL document instance is considered semantically conformant when it correctly represents business information in accordance with the semantic definitions of the UBL data model as described in <xref linkend="S-SEMANTIC-DEFINITIONS"/>.</para>
+      <para>Semantic conformance to UBL therefore requires that:</para>
+      <orderedlist>
+        <listitem>
+          <para>Each UBL element and component is used in a manner consistent with its normative definition in the UBL schemas and accompanying documentation; and</para>
+        </listitem>
+        <listitem>
+          <para>The instance conveys information that is consistent with the business semantics intended by the UBL data model.</para>
+        </listitem>
+      </orderedlist>
     </section>
     <section id="S-DIGITAL-SIGNATURE-EXTENSION-CONFORMANCE">
       <title>Digital Signature Extension Conformance</title>
