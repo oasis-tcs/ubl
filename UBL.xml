@@ -2185,6 +2185,34 @@
             <para>A <link linkend="S-WEIGHT-STATEMENT-SCHEMA">Weight Statement</link> is a transport document verifying the declared true gross mass of a packed container. Working with this knowledge avoids injury, container loss, damage to cargo, etc. Formally verifying the gross mass may be a
               condition for transport.</para>
           </section>
+          <section id="S-WASTE-SHIPMENT-MANAGEMENT">
+            <title>Waste Shipment Management</title>
+            <para>Waste shipment management is a transport-related process used to control the movement of regulated waste, such as contaminated soil, which consists of a pre-transport notification phase (required for cross-border movements) and the execution of one or more waste movements for each consignment.</para>
+            <para>For cross-border movements, the competent authorities must be notified before transport may begin. The <link linkend="S-WASTE-NOTIFICATION-SCHEMA">Waste Notification</link> is used to provide the required information to the authorities. The notification is sent by a Sender Party, and the receiving authority reviews it, prepares a reply, and transmits an <link linkend="S-APPLICATION-RESPONSE-SCHEMA">Application Response</link> providing consent or rejection. All required consents must be received before transport can commence. The below diagram illustrates the notification and response process:</para>
+            <figure id="F-WASTE-NOTIFICATION-PROCESS">
+              <title>Waste Notification Process</title>
+              <mediaobject>
+                <imageobject>
+                  <imagedata fileref="art/UBL-2.5-WasteNotificationProcess.png"/>
+                </imageobject>
+                <textobject>
+                  <phrase>[Waste Notification Process Diagram]</phrase>
+                </textobject>
+              </mediaobject>
+            </figure>
+            <para>Once any required consents have been obtained, or for domestic movements where no notification is required, a <link linkend="S-WASTE-MOVEMENT-SCHEMA">Waste Movement</link> document is issued for each consignment of waste. The Waste Movement document may reference a related <link linkend="S-WASTE-NOTIFICATION-SCHEMA">Waste Notification</link> and accompanies the consignment throughout its transport. The Sender Party (typically the waste producer or a carrier acting on its behalf) prepares and issues the Waste Movement document and transmits it to the next party in the chain. The Receiver Party receives the document and may endorse it according to regulatory requirements. The diagram below illustrates the basic steps of issuing and receiving a Waste Movement document:</para>
+            <figure id="F-WASTE-NOTIFICATION-PROCESS">
+              <title>Waste Notification Process</title>
+              <mediaobject>
+                <imageobject>
+                  <imagedata fileref="art/UBL-2.5-WasteMovementProcess.png"/>
+                </imageobject>
+                <textobject>
+                  <phrase>[Waste Movement Process Diagram]</phrase>
+                </textobject>
+              </mediaobject>
+            </figure>
+          </section>
         </section>
         <section id="S-MANIFEST">
           <title>Manifest</title>
