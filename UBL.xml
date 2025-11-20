@@ -3519,7 +3519,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <title>Semantic definitions</title>
       <para>The UBL Technical Committee has ascribed a definition to each of the business objects in UBL. These definitions provide important semantic context for the interpretation of the content. They are found in the normative XSD Schemas and are transcribed into the XML model ODS spreadsheet, XLS spreadsheet, and HTML documentation.</para>
       <para>From UBL 2.5 onward, these definitions form the basis for an optional semantic
-        conformance level, as defined in <xref linkend="S-CONFORMANCE"/>. Implementations that
+        conformance level, as defined in <xref linkend="S-SEMANTIC-CONFORMANCE"/>. Implementations that
         declare semantic conformance shall ensure that the business content of UBL document
         instances aligns with the intended meaning of each component as described in these
         definitions.</para>
