@@ -4869,12 +4869,19 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       </section>
       <section id="S-NEW-DOCUMENT-TYPES-IN-UBL-2.5" role="newDocumentTypes23">
         <title>New Document Types in UBL 2.5</title>
-        <para>UBL &version; adds the following new document types, bringing the total number of UBL business documents to 97:</para>
+        <para>UBL &version; adds the following new document types, bringing the total number of UBL business documents to 99:</para>
         <blockquote>
           <!--reviewtext-->
           <para>
-            <emphasis role="bold">Added four new UBL 2.5 document types: </emphasis>
-            <link linkend="S-DELIVERY-NOTE-SCHEMA">Delivery Note</link>, <link linkend="S-INVOICE-STATUS-REQUEST-SCHEMA">Invoice Status Request</link>, <link linkend="S-INVOICE-STATUS-RESPONSE-SCHEMA">Invoice Status Response</link>, <link linkend="S-WORK-REPORT-SCHEMA">Work Report</link>, <link linkend="S-PROCUREMENT-STATUS-SCHEMA">Procurement Status</link>, <link linkend="S-PROCUREMENT-STATUS-REQUEST-SCHEMA">Procurement Status Request</link>
+            <emphasis role="bold">Added six new UBL 2.5 document types: </emphasis>
+            <link linkend="S-DELIVERY-NOTE-SCHEMA">Delivery Note</link>, <link
+              linkend="S-INVOICE-STATUS-REQUEST-SCHEMA">Invoice Status Request</link>, <link
+              linkend="S-INVOICE-STATUS-RESPONSE-SCHEMA">Invoice Status Response</link>, <link
+              linkend="S-WORK-REPORT-SCHEMA">Work Report</link>, <link
+              linkend="S-PROCUREMENT-STATUS-SCHEMA">Procurement Status</link>, <link
+              linkend="S-PROCUREMENT-STATUS-REQUEST-SCHEMA">Procurement Status Request</link>, <link
+              linkend="S-WASTE-MOVEMENT-SCHEMA">Waste Movement</link>, <link
+              linkend="S-WASTE-NOTIFICATION-SCHEMA">Waste Notification</link>
           </para>
         </blockquote>
       </section>
