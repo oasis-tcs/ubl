@@ -4144,7 +4144,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       </note>
     </section>
     <section id="S-SEMANTIC-CONFORMANCE">
-      <title>Semantic conformance</title>
+      <title>Semantic Conformance</title>
       <para>A UBL document instance is considered semantically conformant when it correctly represents business information in accordance with the semantic definitions of the UBL data model as described in <xref linkend="S-SEMANTIC-DEFINITIONS"/>.</para>
       <para>Semantic conformance to UBL therefore requires that:</para>
       <orderedlist>
