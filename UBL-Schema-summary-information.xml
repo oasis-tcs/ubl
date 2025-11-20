@@ -1035,14 +1035,18 @@
    </schema>
    <schema>
       <name>Waste Movement</name>
-      <processes/>
+      <processes>
+         <process>Waste Shipment Management</process>
+      </processes>
       <submitterRole>Sender</submitterRole>
       <receiverRole>Receiver</receiverRole>
       <examples/>
    </schema>
    <schema>
       <name>Waste Notification</name>
-      <processes/>
+      <processes>
+         <process>Waste Shipment Management</process>
+      </processes>
       <submitterRole>Sender</submitterRole>
       <receiverRole>Receiver</receiverRole>
       <examples/>
