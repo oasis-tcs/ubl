@@ -2201,8 +2201,8 @@
               </mediaobject>
             </figure>
             <para>Once any required consents have been obtained, or for domestic movements where no notification is required, a <link linkend="S-WASTE-MOVEMENT-SCHEMA">Waste Movement</link> document is issued for each consignment of waste. The Waste Movement document may reference a related <link linkend="S-WASTE-NOTIFICATION-SCHEMA">Waste Notification</link> and accompanies the consignment throughout its transport. The Sender Party (typically the waste producer or a carrier acting on its behalf) prepares and issues the Waste Movement document and transmits it to the next party in the chain. The Receiver Party receives the document and may endorse it according to regulatory requirements. The diagram below illustrates the basic steps of issuing and receiving a Waste Movement document:</para>
-            <figure id="F-WASTE-NOTIFICATION-PROCESS">
-              <title>Waste Notification Process</title>
+            <figure id="F-WASTE-MOVEMENT-PROCESS">
+              <title>Waste Movement Process</title>
               <mediaobject>
                 <imageobject>
                   <imagedata fileref="art/UBL-2.5-WasteMovementProcess.png"/>
