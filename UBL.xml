@@ -4865,15 +4865,19 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <section id="S-OVERVIEW-OF-UBL-2.5-UPDATES">
         <title>Overview of UBL 2.5 Updates</title>
         <para>Because it preserves backward compatibility with earlier versions of UBL 2.X, UBL &version; is technically a minor release, not a major one. However, it does introduce several important enhancements that significantly improve the usability, interoperability, and business alignment of the standard.</para>
-        <para>Key updates include support for collections on behalf of third parties, improved invoice status tracking, and enhanced payment referencing. Additionally, UBL 2.5 also introduces element deprecation, allowing for cleaner evolution of the standard without breaking existing implementations.</para>
+        <para>Key updates include support for collections on behalf of third parties, improved
+          invoice status tracking, waste transport management, and enhanced payment referencing.
+          Additionally, UBL 2.5 also introduces element deprecation, allowing for cleaner evolution
+          of the standard without breaking existing implementations.</para>
       </section>
       <section id="S-NEW-DOCUMENT-TYPES-IN-UBL-2.5" role="newDocumentTypes23">
         <title>New Document Types in UBL 2.5</title>
-        <para>UBL &version; adds the following new document types, bringing the total number of UBL business documents to 99:</para>
+        <para>UBL &version; adds the following new document types, bringing the total number of UBL
+          business documents to 101:</para>
         <blockquote>
           <!--reviewtext-->
           <para>
-            <emphasis role="bold">Added six new UBL 2.5 document types: </emphasis>
+            <emphasis role="bold">Added 8 new UBL 2.5 document types: </emphasis>
             <link linkend="S-DELIVERY-NOTE-SCHEMA">Delivery Note</link>, <link
               linkend="S-INVOICE-STATUS-REQUEST-SCHEMA">Invoice Status Request</link>, <link
               linkend="S-INVOICE-STATUS-RESPONSE-SCHEMA">Invoice Status Response</link>, <link
