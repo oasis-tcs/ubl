@@ -29,11 +29,11 @@
 	<!ENTITY stagetext "Committee Specification 01xxxxxx">
 	<!ENTITY standard "Committee Specification 02xxxxxxx">
 	<!ENTITY stagetext "Committee Specification 02xxxxxx">
-	<!ENTITY pubdate "26 November 2025">
+	<!ENTITY pubdate "03 December 2025">
 	<!--remove time from pub date-->
 	<!ENTITY pubyear "2025">
-	<!ENTITY pubdate-iso "2025-11-26">
-	<!ENTITY reldate-iso "2025-11">
+	<!ENTITY pubdate-iso "2025-12-03">
+	<!ENTITY reldate-iso "2025-12">
 	<!ENTITY this-loc "https://docs.oasis-open.org/ubl/&stage;-UBL-&version;">
 	<!ENTITY previous-loc "https://docs.oasis-open.org/ubl/&pstage;-UBL-&psversion;">
 	<!ENTITY latest-loc "https://docs.oasis-open.org/ubl">
