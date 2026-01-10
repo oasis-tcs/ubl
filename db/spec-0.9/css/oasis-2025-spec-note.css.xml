@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE style
+[
+<!ENTITY css SYSTEM "oasis-2025-spec-note.css">
+]>
+<style>&css;</style>

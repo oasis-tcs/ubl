@@ -1881,7 +1881,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/INVALID-ASSEMBLED-HUB-XML
     <mkdir dir="${dir}/hub-${package}-${UBLstage}-${label}/db"/>
     <copy preservelastmodified="true"
           todir="${dir}/hub-${package}-${UBLstage}-${label}/db">
-      <fileset dir="db/spec-0.8/htmlruntime">
+      <fileset dir="db/spec-0.9/htmlruntime">
        <include name="**"/>
       </fileset>
     </copy>
