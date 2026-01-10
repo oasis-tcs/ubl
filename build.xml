@@ -1546,7 +1546,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
     </fileset>
   </copy>
   <available property="db-ready"
-             file="${dir}/db/spec-0.8/docbook/docbookx.dtd"/>
+             file="${dir}/db/spec-0.9/docbook/docbookx.dtd"/>
   <copy unless:set="db-ready" todir="${dir}/db">
     <fileset dir="db">
       <include name="**"/>
@@ -1575,7 +1575,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
     <arg value="-o:summary-processes-ent.xml"/>
     <arg value="old=UBL-${UBLprevVersion}.xml"/>
   </java>
-  <java jar="db/spec-0.8/validate/xjparse.jar" fork="true">
+  <java jar="db/spec-0.9/validate/xjparse.jar" fork="true">
     <arg value="-v"/>
     <arg value="UBL-Party-summary-information.xml"/>
   </java>
@@ -1584,7 +1584,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
     <arg value="-s:UBL-Party-summary-information.xml"/>
     <arg value="-o:summary-parties-ent.xml"/>
   </java>
-  <java jar="db/spec-0.8/validate/xjparse.jar" fork="true">
+  <java jar="db/spec-0.9/validate/xjparse.jar" fork="true">
     <arg value="-v"/>
     <arg value="UBL-Schema-summary-information.xml"/>
   </java>
@@ -1628,7 +1628,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/INVALID-ASSEMBLED-HUB-XML
 <target name="-validateHub-shell" unless="${is-dos}">
   <exec resultproperty="validateResult" executable="sh"
         outputproperty="validateOutput">
-    <arg value="db/spec-0.8/validate/validate.sh"/>
+    <arg value="db/spec-0.9/validate/validate.sh"/>
     <arg value="${source}"/>
   </exec>
 </target>
@@ -1637,7 +1637,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/INVALID-ASSEMBLED-HUB-XML
   <exec resultproperty="validateResult" executable="cmd.exe"
         outputproperty="validateOutput">
     <arg value="/c"/>
-    <arg value="db\spec-0.8\validate\validate.bat"/>
+    <arg value="db\spec-0.9\validate\validate.bat"/>
     <arg value="${source}"/>
   </exec>
 </target>
@@ -1654,7 +1654,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/INVALID-ASSEMBLED-HUB-XML
   <echo message="Preparing a preview of the content in HTML..."/>
   <java jar="utilities/saxon9he/saxon9he.jar" fork="true" resultproperty="previewHubResult"
         errorproperty="previewHubError" outputproperty="previewHubOutput">
-    <arg value="-xsl:db/spec-0.8/htmlruntime/spec-0.8/stylesheets/oasis-specification-html-offline.xsl"/>
+    <arg value="-xsl:db/spec-0.9/htmlruntime/spec-0.9/stylesheets/oasis-specification-html-offline.xsl"/>
     <arg value="-s:UBL.xml"/>
     <arg value="-o:${dir}/UBL-${UBLversion}-preview.html"/>
   </java>
