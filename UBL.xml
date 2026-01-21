@@ -4836,7 +4836,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <title>Minor Revision: UBL 2.3</title>
       <section id="S-NEW-DOCUMENT-TYPES-IN-UBL-2.3" role="newDocumentTypes23">
         <title>New Document Types in UBL 2.3</title>
-        <para>Because it preserves backward compatibility with UBL 2.2, UBL 2.1, and UBL 2.0, UBL &version; is technically a minor release, not a major one. However, it does add ten new document types, bringing the total number of UBL business documents to 91.</para>
+        <para>Because it preserves backward compatibility with UBL 2.2, UBL 2.1, and UBL 2.0, UBL 2.3 is technically a minor release, not a major one. However, it does add ten new document types, bringing the total number of UBL business documents to 91.</para>
         <blockquote>
           <para>
             <emphasis role="bold">Added UBL 2.3 document types for transportation: </emphasis>
@@ -4850,7 +4850,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <title>Minor Revision: UBL 2.4</title>
       <section id="S-NEW-DOCUMENT-TYPES-IN-UBL-2.4" role="newDocumentTypes23">
         <title>New Document Types in UBL 2.4</title>
-        <para>Because it preserves backward compatibility with UBL 2.3, UBL 2.2, UBL 2.1, and UBL 2.0, UBL &version; is technically a minor release, not a major one. However, it does add two new document types, bringing the total number of UBL business documents to 93.</para>
+        <para>Because it preserves backward compatibility with UBL 2.3, UBL 2.2, UBL 2.1, and UBL 2.0, UBL 2.4 is technically a minor release, not a major one. However, it does add two new document types, bringing the total number of UBL business documents to 93.</para>
         <blockquote>
           <!--reviewtext-->
           <para>
@@ -4864,7 +4864,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <title>Minor Revision: UBL 2.5</title>
       <section id="S-OVERVIEW-OF-UBL-2.5-UPDATES">
         <title>Overview of UBL 2.5 Updates</title>
-        <para>Because it preserves backward compatibility with earlier versions of UBL 2.X, UBL &version; is technically a minor release, not a major one. However, it does introduce several important enhancements that significantly improve the usability, interoperability, and business alignment of the standard.</para>
+        <para>Because it preserves backward compatibility with earlier versions of UBL 2.X, UBL 2.5 is technically a minor release, not a major one. However, it does introduce several important enhancements that significantly improve the usability, interoperability, and business alignment of the standard.</para>
         <para>Key updates include support for collections on behalf of third parties, improved
           invoice status tracking, waste transport management, and enhanced payment referencing.
           Additionally, UBL 2.5 also introduces element deprecation, allowing for cleaner evolution
