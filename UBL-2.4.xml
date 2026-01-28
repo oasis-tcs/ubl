@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" 
-  href="db/spec-0.8/stylesheets/oasis-2020-specification-html-offline.xsl"?>
-<?oasis-spec-base-uri db/spec-0.8/?>
+<!--This is a hacked version of UBL 2.4 to point to 0.9 DTD, not deleted 0.8 DTD-->
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-  "db/spec-0.8/docbook/docbookx.dtd" >
+  "db/spec-0.9/docbook/docbookx.dtd" >
 <article status="Committee Specification 01" conformance="ids quotes ebuzzwords"><articleinfo><productname class="trade">UBL</productname><productnumber>2.4</productnumber><releaseinfo role="track">Standards Track Work Product</releaseinfo><releaseinfo role="OASIS-specification-this">https://docs.oasis-open.org/ubl/cs01-UBL-2.4/UBL-2.4.html</releaseinfo><releaseinfo role="OASIS-specification-this" lang="none">https://docs.oasis-open.org/ubl/cs01-UBL-2.4/UBL-2.4.pdf</releaseinfo><releaseinfo role="OASIS-specification-this-authoritative" lang="none">https://docs.oasis-open.org/ubl/cs01-UBL-2.4/UBL-2.4.xml</releaseinfo><!-- --><releaseinfo role="OASIS-specification-previous">https://docs.oasis-open.org/ubl/csd02-UBL-2.4/UBL-2.4.html</releaseinfo><releaseinfo role="OASIS-specification-previous">https://docs.oasis-open.org/ubl/csd02-UBL-2.4/UBL-2.4.pdf</releaseinfo><releaseinfo role="OASIS-specification-previous-authoritative">https://docs.oasis-open.org/ubl/csd02-UBL-2.4/UBL-2.4.xml</releaseinfo><!-- --><!-- generic form of above
       <releaseinfo role="OASIS-specification-previous"
          >&previous-loc;/&name;-&version;.html</releaseinfo>

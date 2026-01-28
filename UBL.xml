@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" 
-  href="db/spec-0.8/stylesheets/oasis-2020-specification-html-offline.xsl"?>
+  href="db/spec-0.9/stylesheets/oasis-2025-spec-note-html.xsl"?>
 <!--
   Search strings: 
   - use "reviewtext" to find:
@@ -11,9 +11,8 @@
      - old release version to current version (library and documents)
      - old development version to current version (library and document)
 -->
-<?oasis-spec-base-uri db/spec-0.8/?>
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-  "db/spec-0.8/docbook/docbookx.dtd" [
+  "db/spec-0.9/docbook/docbookx.dtd" [
 	<!ENTITY name "UBL">
 	<!ENTITY pversion "2.4">
 	<!ENTITY version  "2.5">
@@ -214,26 +213,6 @@
     <abstract>
       <para>This specification defines the Universal Business Language, version&#xa0;&version;.</para>
     </abstract>
-    <legalnotice role="status" id="STATUS">
-      <title>Status</title>
-      <!--only one of the two below paragraphs applies; comment out the other one-->
-      <!--
-      <para>This <ulink conformance="skip" url="https://www.oasis-open.org/policies-guidelines/tc-process#dWorkingDraft">Working Draft</ulink> (WD) has been produced by one or more TC Members; it has not yet been voted on by the TC or <ulink conformance="skip"
-          url="https://www.oasis-open.org/policies-guidelines/tc-process#committeeDraft">approved</ulink> as a Committee Specification Draft. The OASIS document <ulink conformance="skip" url="https://www.oasis-open.org/policies-guidelines/tc-process#standApprovProcess">Approval Process</ulink>
-        begins officially with a TC vote to approve a WD as a Committee Draft. A TC may approve a Working Draft, revise it, and re-approve it any number of times as a Committee Draft.</para>
-      -->
-      <!-- For producing OS version, replace "the OASIS Universal Business Language TC" with "OASIS Members" in this paragraph: -->
-      <para>This document was last revised or approved by the OASIS Universal Business Language TC on the above date. The level of approval is also listed above. Check the &#x201c;Latest stage&#x201d; location noted above for possible later revisions of this document. Any
-        other numbered versions and other technical work produced by the Technical Committee (TC) are listed at <ulink url="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl#technical">https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl#technical</ulink>. </para>
-      <!--only one of the two above paragraphs applies; comment out the other one-->
-      <para>TC members should send comments on this document to the TC’s email list. Others should send comments to the TC’s public comment list, after subscribing to it by following the instructions at the “<ulink conformance="skip"
-          url="https://www.oasis-open.org/committees/comments/index.php?wg_abbrev=ubl">Send A Comment</ulink>&#8221; button on the TC&#8217;s web page at <ulink url="https://www.oasis-open.org/committees/ubl/">https://www.oasis-open.org/committees/ubl/</ulink>.</para>
-      <para>This specification is provided under the <ulink url="https://www.oasis-open.org/policies-guidelines/ipr/#RF-on-Limited-Mode" conformance="skip">RF on Limited Terms Mode</ulink> of the <ulink url="https://www.oasis-open.org/policies-guidelines/ipr/" conformance="skip">OASIS IPR
-          Policy</ulink>, the mode chosen when the Technical Committee was established. For information on whether any patents have been disclosed that may be essential to implementing this specification, and any offers of patent licensing terms, please refer to the Intellectual Property Rights
-        section of the Technical Committee web page (<ulink url="https://www.oasis-open.org/committees/ubl/ipr.php">https://www.oasis-open.org/committees/ubl/ipr.php</ulink>).</para>
-      <para>Note that any machine-readable content (<ulink url="https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26#wpComponentsCompLang" conformance="skip">Computer Language Definitions</ulink>) declared Normative for this Work Product is provided in separate plain text files. In
-        the event of a discrepancy between any such plain text file and display content in the Work Product’s prose narrative document(s), the content in the separate plain text file prevails.</para>
-    </legalnotice>
     <legalnotice role="citation" id="CITATION">
       <title>Citation format</title>
       <para>When referencing this specification the following citation format should be used:</para>
@@ -251,8 +230,27 @@
       </bibliolist>
     </legalnotice>
     <legalnotice role="notices">
-      <title>Notices</title>
+      <title>License, document status, and notices</title>
       <para>Copyright &#169; OASIS Open 2001-&pubyear;. All Rights Reserved. </para>
+
+      <!--only one of the two below paragraphs applies; comment out the other one-->
+      <!--
+      <para>This <ulink conformance="skip" url="https://www.oasis-open.org/policies-guidelines/tc-process#dWorkingDraft">Working Draft</ulink> (WD) has been produced by one or more TC Members; it has not yet been voted on by the TC or <ulink conformance="skip"
+          url="https://www.oasis-open.org/policies-guidelines/tc-process#committeeDraft">approved</ulink> as a Committee Specification Draft. The OASIS document <ulink conformance="skip" url="https://www.oasis-open.org/policies-guidelines/tc-process#standApprovProcess">Approval Process</ulink>
+        begins officially with a TC vote to approve a WD as a Committee Draft. A TC may approve a Working Draft, revise it, and re-approve it any number of times as a Committee Draft.</para>
+      -->
+      <!-- For producing OS version, replace "the OASIS Universal Business Language TC" with "OASIS Members" in this paragraph: -->
+      <para>This document was last revised or approved by the OASIS Universal Business Language TC on the above date. The level of approval is also listed above. Check the &#x201c;Latest stage&#x201d; location noted above for possible later revisions of this document. Any
+        other numbered versions and other technical work produced by the Technical Committee (TC) are listed at <ulink url="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl#technical">https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl#technical</ulink>. </para>
+      <!--only one of the two above paragraphs applies; comment out the other one-->
+      <para>TC members should send comments on this document to the TC’s email list. Others should send comments to the TC’s public comment list, after subscribing to it by following the instructions at the “<ulink conformance="skip"
+          url="https://www.oasis-open.org/committees/comments/index.php?wg_abbrev=ubl">Send A Comment</ulink>&#8221; button on the TC&#8217;s web page at <ulink url="https://www.oasis-open.org/committees/ubl/">https://www.oasis-open.org/committees/ubl/</ulink>.</para>
+      <para>This specification is provided under the <ulink url="https://www.oasis-open.org/policies-guidelines/ipr/#RF-on-Limited-Mode" conformance="skip">RF on Limited Terms Mode</ulink> of the <ulink url="https://www.oasis-open.org/policies-guidelines/ipr/" conformance="skip">OASIS IPR
+          Policy</ulink>, the mode chosen when the Technical Committee was established. For information on whether any patents have been disclosed that may be essential to implementing this specification, and any offers of patent licensing terms, please refer to the Intellectual Property Rights
+        section of the Technical Committee web page (<ulink url="https://www.oasis-open.org/committees/ubl/ipr.php">https://www.oasis-open.org/committees/ubl/ipr.php</ulink>).</para>
+      <para>Note that any machine-readable content (<ulink url="https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26#wpComponentsCompLang" conformance="skip">Computer Language Definitions</ulink>) declared Normative for this Work Product is provided in separate plain text files. In
+        the event of a discrepancy between any such plain text file and display content in the Work Product’s prose narrative document(s), the content in the separate plain text file prevails.</para>
+
       <para>Distributed under the terms of the OASIS IPR Policy, [<ulink url="https://www.oasis-open.org/policies-guidelines/ipr/">https://www.oasis-open.org/policies-guidelines/ipr/</ulink>]. For complete copyright information please see the full Notices section in <xref linkend="A-NOTICES"
         />.</para>
     </legalnotice>
