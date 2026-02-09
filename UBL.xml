@@ -17,22 +17,22 @@
 	<!ENTITY pversion "2.4">
 	<!ENTITY version  "2.5">
 	<!ENTITY psversion "2.5">
-	<!ENTITY pstage   "csd01">
-	<!ENTITY PSTAGE   "CSD01">
-	<!ENTITY stage    "csd02">
-	<!ENTITY STAGE    "CSD02">
+	<!ENTITY pstage   "csd02">
+	<!ENTITY PSTAGE   "CSD02">
+	<!ENTITY stage    "csd03">
+	<!ENTITY STAGE    "CSD03">
 	<!ENTITY isostage "WD">
-	<!ENTITY standard "Committee Specification Draft 02">
-	<!ENTITY stagetext "Committee Specification Draft 02">
+	<!ENTITY standard "Committee Specification Draft 03">
+	<!ENTITY stagetext "Committee Specification Draft 03">
 	<!ENTITY standard "Committee Specification 01xxxxx">
 	<!ENTITY stagetext "Committee Specification 01xxxxxx">
 	<!ENTITY standard "Committee Specification 02xxxxxxx">
 	<!ENTITY stagetext "Committee Specification 02xxxxxx">
-	<!ENTITY pubdate "03 December 2025">
+	<!ENTITY pubdate "11 February 2026">
 	<!--remove time from pub date-->
-	<!ENTITY pubyear "2025">
-	<!ENTITY pubdate-iso "2025-12-03">
-	<!ENTITY reldate-iso "2025-12">
+	<!ENTITY pubyear "2026">
+	<!ENTITY pubdate-iso "2026-02-11">
+	<!ENTITY reldate-iso "2026-02">
 	<!ENTITY this-loc "https://docs.oasis-open.org/ubl/&stage;-UBL-&version;">
 	<!ENTITY previous-loc "https://docs.oasis-open.org/ubl/&pstage;-UBL-&psversion;">
 	<!ENTITY latest-loc "https://docs.oasis-open.org/ubl">
@@ -82,12 +82,12 @@
 		</releaseinfo>
     <authorgroup>
       <editor>
-        <firstname>TBD</firstname>
-        <surname>(to be confirmed by TC)</surname>
+        <firstname>Kenneth</firstname>
+        <surname>Bengtsson</surname>
         <affiliation>
-          <orgname>OASIS UBL TC</orgname>
+          <orgname>Individual</orgname>
         </affiliation>
-        <email>oasis-ubl@ConnectedCommunity.org</email>
+        <email>kbengtsson@efact.pe</email>
       </editor>
       <othercredit>
         <firstname>Kenneth</firstname>
