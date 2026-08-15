@@ -1,6 +1,6 @@
 <!DOCTYPE Identification [
-<!ENTITY short "CS01">
-<!ENTITY dir   "cs01">
+<!ENTITY short "OS">
+<!ENTITY dir   "os">
 <!ENTITY version "2.5">
 ]>
 <Identification>
