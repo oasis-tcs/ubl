@@ -1709,7 +1709,7 @@
               </listitem>
             </itemizedlist>
             <para>These processes are described in more detail below. It ought to be noted that the particular semantics used here come from a large-scale UBL application developed for the Italian textile and clothing industry by ENEA, the Italian National Agency for New Technologies, Energy, and
-              Sustainable Economic Development (see <xref linkend="ebiz"/>). These models are applicable to the implementation of vendor-managed relationships in a broad range of retail sectors, but for the sake of simplicity, and in keeping with the model application, the two principal parties in
+              Sustainable Economic Development. These models are applicable to the implementation of vendor-managed relationships in a broad range of retail sectors, but for the sake of simplicity, and in keeping with the model application, the two principal parties in
               the VMI relationship (the Seller Supplier Party and the Retailer Customer Party) are referred to as &#8220;producer&#8221; and &#8220;retailer&#8221; in the descriptions that follow; more generically, they are vendor and customer.</para>
           </section>
           <section id="S-BASIC-VENDOR-MANAGED-INVENTORY">
@@ -4321,12 +4321,6 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
             <ulink url="https://docs.oasis-open.org/dss-x/dss-core/v2.0/csprd02/dss-core-v2.0-csprd02.html"/>. </bibliomisc>
           <bibliomisc> Latest version: <ulink url="https://docs.oasis-open.org/dss-x/dss-core/v2.0/dss-core-v2.0.html">https://docs.oasis-open.org/dss-x/dss-core/v2.0/dss-core-v2.0.html</ulink>.</bibliomisc>
         </bibliomixed>
-        <bibliomixed id="ebiz">
-          <abbrev condition="oasis">eBiz-TCF</abbrev>
-          <citetitle>
-            <ulink conformance="skip" url="http://spring.bologna.enea.it/ebiz/defaultebiz.asp?versione=DOWNSTREAM">Reference Architecture of <phrase lang="none">eBusiness</phrase> in Textile Clothing and Footwear Sector</ulink>
-          </citetitle>
-        </bibliomixed>
         <bibliomixed id="b_eIDAS">
           <abbrev condition="oasis">eIDAS</abbrev>
           <citetitle>
@@ -4474,7 +4468,7 @@ xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2">
       <itemizedlist>
         <listitem>
           <para>
-            <ulink conformance="skip" url="http://standards.iso.org/ittf/PubliclyAvailableStandards/"/>
+            <ulink conformance="skip" url="https://www.iso.org/standards.html"/>
           </para>
         </listitem>
       </itemizedlist>
