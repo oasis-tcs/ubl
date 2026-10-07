@@ -1,0 +1,70 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-VMI-Invoicing" name="UBL-2.2-VMI-Invoicing">
+    <mxGraphModel dx="516" dy="230" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="545" pageHeight="258" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="14" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="228" width="515" x="15" y="15" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Producer" ubl-kind="lane" id="lane-producer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=23;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=1;" vertex="1">
+            <mxGeometry height="228" width="248" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-producer">
+          <mxCell parent="lane-producer" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="26" width="26" x="59" y="28" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Raise Invoice" ubl-kind="action" id="action-raise-invoice">
+          <mxCell parent="lane-producer" style="rounded=1;absoluteArcSize=1;arcSize=24;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingBottom=1;" vertex="1">
+            <mxGeometry height="28" width="120" x="12" y="102" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-producer-to-raise-invoice">
+          <mxCell edge="1" parent="lane-producer" source="initial-producer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.5;exitY=0.8456;" target="action-raise-invoice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Retailer" ubl-kind="lane" id="lane-retailer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=24;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=13;" vertex="1">
+            <mxGeometry height="228" width="267" x="248" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Invoice" ubl-kind="object" ubl-between="[&quot;lane-producer&quot;, &quot;lane-retailer&quot;]" ubl-lane="null" id="object-invoice">
+          <mxCell parent="lane-retailer" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="32" width="76" x="-38" y="100" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Invoice" ubl-kind="action" id="action-receive-invoice">
+          <mxCell parent="lane-retailer" style="rounded=1;absoluteArcSize=1;arcSize=24;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=1;" vertex="1">
+            <mxGeometry height="28" width="121" x="134" y="103" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-retailer">
+          <mxCell parent="lane-retailer" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="17" width="17" x="186" y="202" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-invoice-to-receive-invoice">
+          <mxCell edge="1" parent="lane-retailer" source="object-invoice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.472;entryPerimeter=0;exitX=1;exitY=0.50675;" target="action-receive-invoice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-invoice-to-final-retailer">
+          <mxCell edge="1" parent="lane-retailer" source="action-receive-invoice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.5;entryY=0;" target="final-retailer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-raise-invoice-to-invoice">
+          <mxCell edge="1" parent="frame" source="action-raise-invoice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-invoice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

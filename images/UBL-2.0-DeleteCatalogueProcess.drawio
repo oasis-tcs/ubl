@@ -1,0 +1,168 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.0-DeleteCatalogueProcess" name="UBL-2.0-DeleteCatalogueProcess">
+    <mxGraphModel dx="866" dy="695" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="903" pageHeight="731" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="18" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="693" width="864" x="19" y="19" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receiver Party" ubl-kind="lane" id="lane-receiver-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=20;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=38;" vertex="1">
+            <mxGeometry height="693" width="412" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Identify Catalogue" ubl-kind="action" id="action-identify-catalogue">
+          <mxCell parent="lane-receiver-party" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=4;" vertex="1">
+            <mxGeometry height="36" width="170" x="18" y="109" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Decide on Action" ubl-kind="decision" id="decision-decide-on-action">
+          <mxCell parent="lane-receiver-party" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingBottom=3;" vertex="1">
+            <mxGeometry height="109" width="108" x="49" y="294" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Acknowledge&lt;br&gt;Cancelation" ubl-kind="action" id="action-acknowledge-cancelation">
+          <mxCell parent="lane-receiver-party" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=1;align=right;verticalAlign=middle;spacing=0;spacingRight=30;" vertex="1">
+            <mxGeometry height="43" width="126" x="40" y="534" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Delete Catalogue" ubl-kind="action" id="action-delete-catalogue">
+          <mxCell parent="lane-receiver-party" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=2;" vertex="1">
+            <mxGeometry height="43" width="126" x="42" y="637" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-receiver-party">
+          <mxCell parent="lane-receiver-party" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="23" width="22" x="283" y="650" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-identify-catalogue-to-decide-on-action">
+          <mxCell edge="1" parent="lane-receiver-party" source="action-identify-catalogue" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="decision-decide-on-action">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="[accept catalogue deletion]" ubl-kind="flow" ubl-guard="text-accept-catalogue-deletion" ubl-flow="control" ubl-text="text-accept-catalogue-deletion" ubl-text-text-accept-catalogue-deletion-labels="flow-decide-on-action-to-acknowledge-cancelation" id="flow-decide-on-action-to-acknowledge-cancelation">
+          <mxCell edge="1" parent="lane-receiver-party" source="decision-decide-on-action" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;" target="action-acknowledge-cancelation">
+            <mxGeometry relative="1" x="0.17" as="geometry">
+              <mxPoint x="76" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-acknowledge-cancelation-to-delete-catalogue">
+          <mxCell edge="1" parent="lane-receiver-party" source="action-acknowledge-cancelation" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.515873;exitY=1;" target="action-delete-catalogue">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-delete-catalogue-to-final-receiver-party">
+          <mxCell edge="1" parent="lane-receiver-party" source="action-delete-catalogue" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4781;entryPerimeter=0;exitX=1;exitY=0.558053;" target="final-receiver-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Provider Party" ubl-kind="lane" id="lane-provider-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=20;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=28;" vertex="1">
+            <mxGeometry height="693" width="452" x="412" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-provider-party">
+          <mxCell parent="lane-provider-party" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="32" width="32" x="342" y="19" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Catalogue&lt;br&gt;Deletion" ubl-kind="object" ubl-between="[&quot;lane-receiver-party&quot;, &quot;lane-provider-party&quot;]" ubl-lane="null" id="object-catalogue-deletion">
+          <mxCell parent="lane-provider-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="59" width="106" x="-55" y="96" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Notify of Catalogue&lt;br&gt;Deletion" ubl-kind="action" id="action-notify-of-catalogue-deletion">
+          <mxCell parent="lane-provider-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=4;" vertex="1">
+            <mxGeometry height="51" width="160" x="277" y="99" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Review Deletion&lt;br&gt;of Catalogue" ubl-kind="decision" id="decision-review-deletion-of-catalogue">
+          <mxCell parent="lane-provider-party" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=30;spacingBottom=1;" vertex="1">
+            <mxGeometry height="92" width="140" x="294" y="298" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application&lt;br&gt;Response&lt;br&gt;(negative)" ubl-kind="object" ubl-between="[&quot;lane-receiver-party&quot;, &quot;lane-provider-party&quot;]" ubl-lane="null" id="object-application-response-negative">
+          <mxCell parent="lane-provider-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="106" x="-48" y="315" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application&lt;br&gt;Response&lt;br&gt;(positive)" ubl-kind="object" ubl-between="[&quot;lane-receiver-party&quot;, &quot;lane-provider-party&quot;]" ubl-lane="null" id="object-application-response-positive">
+          <mxCell parent="lane-provider-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="107" x="-58" y="528" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Cancel Catalogue" ubl-kind="action" id="action-cancel-catalogue">
+          <mxCell parent="lane-provider-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=3;spacingBottom=4;" vertex="1">
+            <mxGeometry height="47" width="167" x="123" y="536" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-provider-party">
+          <mxCell parent="lane-provider-party" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="24" width="25" x="351" y="549" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-provider-party-to-notify-of-catalogue-deletion">
+          <mxCell edge="1" parent="lane-provider-party" source="initial-provider-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.46875;exitY=0.875;" target="action-notify-of-catalogue-deletion">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-notify-of-catalogue-deletion-to-catalogue-deletion">
+          <mxCell edge="1" parent="lane-provider-party" source="action-notify-of-catalogue-deletion" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4872;entryPerimeter=0;exitX=0;exitY=0.5048;" target="object-catalogue-deletion">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="[insist on deletion]" ubl-kind="flow" ubl-guard="text-insist-on-deletion" ubl-flow="control" ubl-text="text-insist-on-deletion" ubl-text-text-insist-on-deletion-labels="flow-review-deletion-of-catalogue-to-notify-of-catalogue-deletion" id="flow-review-deletion-of-catalogue-to-notify-of-catalogue-deletion">
+          <mxCell edge="1" parent="lane-provider-party" source="decision-review-deletion-of-catalogue" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=0;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;entryX=0.54375;entryY=1;" target="action-notify-of-catalogue-deletion">
+            <mxGeometry relative="1" x="-0.39" as="geometry">
+              <mxPoint x="-67" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-negative-to-review-deletion-of-catalogue">
+          <mxCell edge="1" parent="lane-provider-party" source="object-application-response-negative" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="decision-review-deletion-of-catalogue">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="[cancel deletion]" ubl-kind="flow" ubl-guard="text-cancel-deletion" ubl-flow="control" ubl-text="text-cancel-deletion" ubl-text-text-cancel-deletion-labels="flow-review-deletion-of-catalogue-to-final-provider-party" id="flow-review-deletion-of-catalogue-to-final-provider-party">
+          <mxCell edge="1" parent="lane-provider-party" source="decision-review-deletion-of-catalogue" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4637;entryY=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=0.489946;exitY=1;" target="final-provider-party">
+            <mxGeometry relative="1" x="-0.73" as="geometry">
+              <mxPoint x="-65" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-positive-to-cancel-catalogue">
+          <mxCell edge="1" parent="lane-provider-party" source="object-application-response-positive" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.514;entryPerimeter=0;exitX=1;exitY=0.554448;" target="action-cancel-catalogue">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-cancel-catalogue-to-final-provider-party">
+          <mxCell edge="1" parent="lane-provider-party" source="action-cancel-catalogue" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4816;entryPerimeter=0;exitX=1;exitY=0.522519;" target="final-provider-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-catalogue-deletion-to-identify-catalogue">
+          <mxCell edge="1" parent="frame" source="object-catalogue-deletion" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4706;entryPerimeter=0;exitX=0;exitY=0.507485;" target="action-identify-catalogue">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="[query catalogue deletion]" ubl-kind="flow" ubl-guard="text-query-catalogue-deletion" ubl-flow="object" ubl-text="text-query-catalogue-deletion" ubl-text-text-query-catalogue-deletion-labels="flow-decide-on-action-to-application-response-negative" id="flow-decide-on-action-to-application-response-negative">
+          <mxCell edge="1" parent="frame" source="decision-decide-on-action" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;entryX=0;entryY=0.577586;" target="object-application-response-negative">
+            <mxGeometry relative="1" x="-0.05" as="geometry">
+              <mxPoint y="10" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-acknowledge-cancelation-to-application-response-positive">
+          <mxCell edge="1" parent="frame" source="action-acknowledge-cancelation" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4855;entryPerimeter=0;exitX=1;exitY=0.515326;" target="object-application-response-positive">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

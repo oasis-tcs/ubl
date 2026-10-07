@@ -52,6 +52,19 @@ jobs:
         sudo apt update
         sudo apt install -y aspell libreoffice pandoc
 
+    - name: Set up Node
+      continue-on-error: true
+      uses: actions/setup-node@v7
+      with:
+        node-version: 22
+
+    - name: Artwork tools
+      continue-on-error: true
+      run: |
+        npm install -g playwright@1.56.1
+        playwright install --with-deps chromium
+        sudo apt install -y fonts-liberation python3-pil
+
     - name: Build
       env:
         REALTA_USERNAME: ${{ secrets.REALTA_USERNAME }}

@@ -1,0 +1,415 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-1.0-ProcurementProcess" name="UBL-1.0-ProcurementProcess">
+    <mxGraphModel dx="1278" dy="600" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1316" pageHeight="670" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-unstated="{&quot;start&quot;: &quot;Fig C.1 draws no start node: the process begins with the Buyer&#39;s &#39;place order&#39;.&quot;}" ubl-offset="19" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="627" width="1274" x="21" y="21" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Delivery Recipient" ubl-kind="lane" id="lane-delivery-recipient">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=24;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;spacingRight=6;" vertex="1">
+            <mxGeometry height="627" width="264" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="receive advice" ubl-kind="action" id="action-receive-advice-in-delivery-recipient">
+          <mxCell parent="lane-delivery-recipient" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingTop=2;" vertex="1">
+            <mxGeometry height="31" width="128" x="52" y="427" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="receive goods" ubl-kind="action" id="action-receive-goods">
+          <mxCell parent="lane-delivery-recipient" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=1;" vertex="1">
+            <mxGeometry height="31" width="126" x="53" y="488" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="advise receipt" ubl-kind="action" id="action-advise-receipt">
+          <mxCell parent="lane-delivery-recipient" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=1;" vertex="1">
+            <mxGeometry height="30" width="126" x="53" y="549" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-advice-in-delivery-recipient-to-receive-goods">
+          <mxCell edge="1" parent="lane-delivery-recipient" source="action-receive-advice-in-delivery-recipient" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-receive-goods">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-goods-to-advise-receipt">
+          <mxCell edge="1" parent="lane-delivery-recipient" source="action-receive-goods" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-advise-receipt">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Buyer" ubl-kind="lane" id="lane-buyer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=25;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;spacingLeft=14;" vertex="1">
+            <mxGeometry height="627" width="473" x="264" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="place order" ubl-kind="action" ubl-unstated="{&quot;wayIn&quot;: &quot;The process begins at this step: Fig C.1 draws no start.&quot;}" id="action-place-order">
+          <mxCell parent="lane-buyer" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=1;" vertex="1">
+            <mxGeometry height="30" width="108" x="241" y="38" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="receive response" ubl-kind="action" id="action-receive-response">
+          <mxCell parent="lane-buyer" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingTop=3;" vertex="1">
+            <mxGeometry height="30" width="145" x="110" y="155" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="decision" ubl-unstated="{&quot;question&quot;: &quot;Fig C.1 draws its four decisions as plain diamonds with no question and no guards; what each branch means is said by the step it leads to (reject order, accept order, add detail, change order; cancel order).&quot;}" id="decision-buyer">
+          <mxCell parent="lane-buyer" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="13" width="13" x="224" y="221" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="change order" ubl-kind="action" id="action-change-order-in-buyer">
+          <mxCell parent="lane-buyer" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="30" width="121" x="240" y="261" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="cancel order" ubl-kind="action" id="action-cancel-order-in-buyer">
+          <mxCell parent="lane-buyer" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=1;" vertex="1">
+            <mxGeometry height="31" width="116" x="36" y="273" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="receive advice" ubl-kind="action" id="action-receive-advice-in-buyer">
+          <mxCell parent="lane-buyer" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;" vertex="1">
+            <mxGeometry height="31" width="128" x="189" y="329" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="ReceiptAdvice" ubl-kind="object" ubl-between="[&quot;lane-delivery-recipient&quot;, &quot;lane-seller&quot;]" ubl-lane="null" id="object-receiptadvice">
+          <mxCell parent="lane-buyer" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="30" width="123" x="-60" y="487" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="reconcile invoice" ubl-kind="action" id="action-reconcile-invoice">
+          <mxCell parent="lane-buyer" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=3;spacingBottom=1;" vertex="1">
+            <mxGeometry height="31" width="145" x="168" y="576" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-buyer">
+          <mxCell parent="lane-buyer" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="11" width="11" x="39" y="586" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;Fig C.1 draws its four decisions as plain diamonds with no question and no guards; what each branch means is said by the step it leads to (reject order, accept order, add detail, change order; cancel order).&quot;}" id="flow-decision-buyer-to-cancel-order-in-buyer">
+          <mxCell edge="1" parent="lane-buyer" source="decision-buyer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.903;exitPerimeter=0;entryX=1;entryY=0.1026;entryPerimeter=0;" target="action-cancel-order-in-buyer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-response-to-decision-buyer">
+          <mxCell edge="1" parent="lane-buyer" source="action-receive-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.6961;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="decision-buyer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;Fig C.1 draws its four decisions as plain diamonds with no question and no guards; what each branch means is said by the step it leads to (reject order, accept order, add detail, change order; cancel order).&quot;}" id="flow-decision-buyer-to-change-order-in-buyer">
+          <mxCell edge="1" parent="lane-buyer" source="decision-buyer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.8806;exitY=1;exitPerimeter=0;entryX=0.0718;entryY=0;entryPerimeter=0;" target="action-change-order-in-buyer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-change-order-in-buyer-to-receive-advice-in-buyer">
+          <mxCell edge="1" parent="lane-buyer" source="action-change-order-in-buyer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.4843;exitY=1;exitPerimeter=0;entryX=0.6528;entryY=0;entryPerimeter=0;" target="action-receive-advice-in-buyer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-advice-in-buyer-to-reconcile-invoice">
+          <mxCell edge="1" parent="lane-buyer" source="action-receive-advice-in-buyer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5349;entryY=0;entryPerimeter=0;exitX=0.441879;exitY=1;" target="action-reconcile-invoice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-reconcile-invoice-to-final-buyer">
+          <mxCell edge="1" parent="lane-buyer" source="action-reconcile-invoice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=1;entryY=0.5;" target="final-buyer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-response-to-receive-advice-in-buyer">
+          <mxCell edge="1" parent="lane-buyer" source="action-receive-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.4156;exitY=1;exitPerimeter=0;entryX=0.25;entryY=0;entryPerimeter=0;jumpStyle=arc;jumpSize=13;" target="action-receive-advice-in-buyer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Seller" ubl-kind="lane" id="lane-seller">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=25;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;spacingLeft=3;" vertex="1">
+            <mxGeometry height="627" width="537" x="737" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Order" ubl-kind="object" ubl-between="[&quot;lane-buyer&quot;, &quot;lane-seller&quot;]" ubl-lane="null" id="object-order">
+          <mxCell parent="lane-seller" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="31" width="72" x="-36" y="37" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="receive order" ubl-kind="action" id="action-receive-order">
+          <mxCell parent="lane-seller" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingTop=1;" vertex="1">
+            <mxGeometry height="30" width="121" x="292" y="38" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="decision" ubl-unstated="{&quot;question&quot;: &quot;Fig C.1 draws its four decisions as plain diamonds with no question and no guards; what each branch means is said by the step it leads to (reject order, accept order, add detail, change order; cancel order).&quot;}" id="decision-seller">
+          <mxCell parent="lane-seller" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="13" width="14" x="350" y="98" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="reject order" ubl-kind="action" id="action-reject-order">
+          <mxCell parent="lane-seller" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;" vertex="1">
+            <mxGeometry height="30" width="112" x="148" y="101" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="OrderResponseSimple" ubl-kind="object" ubl-between="[&quot;lane-buyer&quot;, &quot;lane-seller&quot;]" ubl-lane="null" id="object-orderresponsesimple-between-buyer-and-seller">
+          <mxCell parent="lane-seller" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=5;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="30" width="184" x="-91" y="102" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="accept order" ubl-kind="action" id="action-accept-order">
+          <mxCell parent="lane-seller" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;" vertex="1">
+            <mxGeometry height="31" width="124" x="287" y="153" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="OrderResponseSimple" ubl-kind="object" ubl-between="[&quot;lane-buyer&quot;, &quot;lane-seller&quot;]" ubl-lane="null" id="object-orderresponsesimple-between-buyer-and-seller-2">
+          <mxCell parent="lane-seller" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="30" width="181" x="-91" y="154" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="add detail" ubl-kind="action" id="action-add-detail">
+          <mxCell parent="lane-seller" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;" vertex="1">
+            <mxGeometry height="30" width="99" x="420" y="206" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="OrderResponse (detailed)" ubl-kind="object" ubl-between="[&quot;lane-buyer&quot;, &quot;lane-seller&quot;]" ubl-lane="null" id="object-orderresponse-detailed">
+          <mxCell parent="lane-seller" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="30" width="193" x="-96" y="206" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="change order" ubl-kind="action" id="action-change-order-in-seller">
+          <mxCell parent="lane-seller" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="31" width="121" x="118" y="245" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="decision" ubl-unstated="{&quot;question&quot;: &quot;Fig C.1 draws its four decisions as plain diamonds with no question and no guards; what each branch means is said by the step it leads to (reject order, accept order, add detail, change order; cancel order).&quot;}" id="decision-seller-2">
+          <mxCell parent="lane-seller" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="14" width="14" x="317" y="246" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="OrderChange" ubl-kind="object" ubl-between="[&quot;lane-buyer&quot;, &quot;lane-seller&quot;]" ubl-lane="null" id="object-orderchange">
+          <mxCell parent="lane-seller" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="30" width="120" x="-60" y="261" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="decision" ubl-unstated="{&quot;question&quot;: &quot;Fig C.1 draws its four decisions as plain diamonds with no question and no guards; what each branch means is said by the step it leads to (reject order, accept order, add detail, change order; cancel order).&quot;}" id="decision-seller-3">
+          <mxCell parent="lane-seller" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="13" width="14" x="433" y="263" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="cancel order" ubl-kind="action" ubl-unstated="{&quot;wayOut&quot;: &quot;The path ends at this step: the artwork draws no end after it.&quot;}" id="action-cancel-order-in-seller">
+          <mxCell parent="lane-seller" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=2;" vertex="1">
+            <mxGeometry height="30" width="115" x="127" y="312" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="OrderCancellation" ubl-kind="object" ubl-between="[&quot;lane-buyer&quot;, &quot;lane-seller&quot;]" ubl-lane="null" id="object-ordercancellation">
+          <mxCell parent="lane-seller" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="30" width="148" x="-74" y="314" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="fork" id="fork-seller">
+          <mxCell parent="lane-seller" style="html=1;points=[[0.2059,0],[0.3971,1],[0.7132,0]];perimeter=orthogonalPerimeter;fillColor=#000000;strokeColor=none;" vertex="1">
+            <mxGeometry height="3" width="27" x="387" y="328" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="despatch order item(s)" ubl-kind="action" id="action-despatch-order-item-s">
+          <mxCell parent="lane-seller" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=9;spacingBottom=1;" vertex="1">
+            <mxGeometry height="30" width="186" x="218" y="422" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="DespatchAdvice" ubl-kind="object" ubl-between="[&quot;lane-delivery-recipient&quot;, &quot;lane-buyer&quot;, &quot;lane-seller&quot;]" ubl-lane="null" id="object-despatchadvice">
+          <mxCell parent="lane-seller" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="30" width="129" x="-63" y="424" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="decision if item(s) rejected" ubl-kind="action" id="action-decision-if-item-s-rejected">
+          <mxCell parent="lane-seller" style="rounded=1;absoluteArcSize=1;arcSize=25;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=14;spacingBottom=2;" vertex="1">
+            <mxGeometry height="30" width="212" x="29" y="484" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="fork" id="fork-seller-2">
+          <mxCell parent="lane-seller" style="html=1;points=[[0.1568,0],[0.5714,0],[0.6899,1]];perimeter=orthogonalPerimeter;fillColor=#000000;strokeColor=none;" vertex="1">
+            <mxGeometry height="4" width="28" x="232" y="542" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="raise invoice" ubl-kind="action" id="action-raise-invoice">
+          <mxCell parent="lane-seller" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingTop=1;" vertex="1">
+            <mxGeometry height="31" width="116" x="220" y="576" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Invoice" ubl-kind="object" ubl-between="[&quot;lane-buyer&quot;, &quot;lane-seller&quot;]" ubl-lane="null" id="object-invoice">
+          <mxCell parent="lane-seller" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="30" width="72" x="-37" y="577" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-order-to-receive-order">
+          <mxCell edge="1" parent="lane-seller" source="object-order" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4503;entryPerimeter=0;dashed=1;dashPattern=6 6;noJump=1;exitX=1;exitY=0.468032;" target="action-receive-order">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-order-to-decision-seller">
+          <mxCell edge="1" parent="lane-seller" source="action-receive-order" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.53719;exitY=1;" target="decision-seller">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;Fig C.1 draws its four decisions as plain diamonds with no question and no guards; what each branch means is said by the step it leads to (reject order, accept order, add detail, change order; cancel order).&quot;}" id="flow-decision-seller-to-reject-order">
+          <mxCell edge="1" parent="lane-seller" source="decision-seller" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.4216;entryPerimeter=0;" target="action-reject-order">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;Fig C.1 draws its four decisions as plain diamonds with no question and no guards; what each branch means is said by the step it leads to (reject order, accept order, add detail, change order; cancel order).&quot;}" id="flow-decision-seller-to-add-detail">
+          <mxCell edge="1" parent="lane-seller" source="decision-seller" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.8731;exitPerimeter=0;entryX=0.4247;entryY=0;entryPerimeter=0;" target="action-add-detail">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;Fig C.1 draws its four decisions as plain diamonds with no question and no guards; what each branch means is said by the step it leads to (reject order, accept order, add detail, change order; cancel order).&quot;}" id="flow-change-order-in-seller-to-decision-seller">
+          <mxCell edge="1" parent="lane-seller" source="action-change-order-in-seller" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=0;exitPerimeter=0;entryX=0;entryY=0.9627;entryPerimeter=0;" target="decision-seller">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-reject-order-to-orderresponsesimple-between-buyer-and-seller">
+          <mxCell edge="1" parent="lane-seller" source="action-reject-order" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4768;entryPerimeter=0;dashed=1;dashPattern=6 6;noJump=1;exitX=0;exitY=0.510133;" target="object-orderresponsesimple-between-buyer-and-seller">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;Fig C.1 draws its four decisions as plain diamonds with no question and no guards; what each branch means is said by the step it leads to (reject order, accept order, add detail, change order; cancel order).&quot;}" id="flow-decision-seller-to-accept-order">
+          <mxCell edge="1" parent="lane-seller" source="decision-seller" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-accept-order">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-accept-order-to-orderresponsesimple-between-buyer-and-seller-2">
+          <mxCell edge="1" parent="lane-seller" source="action-accept-order" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4768;entryPerimeter=0;dashed=1;dashPattern=6 7;noJump=1;exitX=0;exitY=0.493677;" target="object-orderresponsesimple-between-buyer-and-seller-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-accept-order-to-decision-seller-2">
+          <mxCell edge="1" parent="lane-seller" source="action-accept-order" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="decision-seller-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-add-detail-to-orderresponse-detailed">
+          <mxCell edge="1" parent="lane-seller" source="action-add-detail" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;dashed=1;dashPattern=6 7;noJump=1;" target="object-orderresponse-detailed">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-add-detail-to-decision-seller-3">
+          <mxCell edge="1" parent="lane-seller" source="action-add-detail" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.3464;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="decision-seller-3">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;Fig C.1 draws its four decisions as plain diamonds with no question and no guards; what each branch means is said by the step it leads to (reject order, accept order, add detail, change order; cancel order).&quot;}" id="flow-decision-seller-2-to-cancel-order-in-seller">
+          <mxCell edge="1" parent="lane-seller" source="decision-seller-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=1;exitPerimeter=0;entryX=1;entryY=0;entryPerimeter=0;" target="action-cancel-order-in-seller">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;Fig C.1 draws its four decisions as plain diamonds with no question and no guards; what each branch means is said by the step it leads to (reject order, accept order, add detail, change order; cancel order).&quot;}" id="flow-decision-seller-3-to-cancel-order-in-seller">
+          <mxCell edge="1" parent="lane-seller" source="decision-seller-3" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-cancel-order-in-seller">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-orderchange-to-change-order-in-seller">
+          <mxCell edge="1" parent="lane-seller" source="object-orderchange" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.6405;entryPerimeter=0;dashed=1;dashPattern=6 6;noJump=1;" target="action-change-order-in-seller">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;Fig C.1 draws its four decisions as plain diamonds with no question and no guards; what each branch means is said by the step it leads to (reject order, accept order, add detail, change order; cancel order).&quot;}" id="flow-decision-seller-3-to-fork-seller">
+          <mxCell edge="1" parent="lane-seller" source="decision-seller-3" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.1269;exitY=1;exitPerimeter=0;entryX=0.7132;entryY=0;entryPerimeter=0;" target="fork-seller">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-ordercancellation-to-cancel-order-in-seller">
+          <mxCell edge="1" parent="lane-seller" source="object-ordercancellation" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;dashed=1;dashPattern=6 7;noJump=1;exitX=1;exitY=0.433333;" target="action-cancel-order-in-seller">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-fork-seller-to-despatch-order-item-s">
+          <mxCell edge="1" parent="lane-seller" source="fork-seller" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.3971;exitY=1;exitPerimeter=0;entryX=0.8244;entryY=0;entryPerimeter=0;" target="action-despatch-order-item-s">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-despatch-order-item-s-to-despatchadvice">
+          <mxCell edge="1" parent="lane-seller" source="action-despatch-order-item-s" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.9954;entryY=0.4832;entryPerimeter=0;dashed=1;dashPattern=6 7;noJump=1;exitX=0;exitY=0.549867;" target="object-despatchadvice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-despatch-order-item-s-to-fork-seller-2">
+          <mxCell edge="1" parent="lane-seller" source="action-despatch-order-item-s" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5977;exitY=1;exitPerimeter=0;entryX=0.5714;entryY=0;entryPerimeter=0;" target="fork-seller-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-decision-if-item-s-rejected-to-fork-seller-2">
+          <mxCell edge="1" parent="lane-seller" source="action-decision-if-item-s-rejected" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.8759;exitY=1;exitPerimeter=0;entryX=0.1568;entryY=0;entryPerimeter=0;" target="fork-seller-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-fork-seller-2-to-raise-invoice">
+          <mxCell edge="1" parent="lane-seller" source="fork-seller-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.6899;exitY=1;exitPerimeter=0;entryX=0.3737;entryY=0;entryPerimeter=0;" target="action-raise-invoice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-raise-invoice-to-invoice">
+          <mxCell edge="1" parent="lane-seller" source="action-raise-invoice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4346;entryPerimeter=0;dashed=1;dashPattern=6 6;noJump=1;exitX=0;exitY=0.452839;" target="object-invoice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;Fig C.1 draws its four decisions as plain diamonds with no question and no guards; what each branch means is said by the step it leads to (reject order, accept order, add detail, change order; cancel order).&quot;}" id="flow-decision-seller-2-to-fork-seller">
+          <mxCell edge="1" parent="lane-seller" source="decision-seller-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=1;exitPerimeter=0;entryX=0.2059;entryY=0;entryPerimeter=0;jumpStyle=arc;jumpSize=13;" target="fork-seller">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-place-order-to-order">
+          <mxCell edge="1" parent="frame" source="action-place-order" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;dashed=1;dashPattern=6 7;noJump=1;exitX=1;exitY=0.483333;" target="object-order">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-orderresponsesimple-between-buyer-and-seller-to-receive-response">
+          <mxCell edge="1" parent="frame" source="object-orderresponsesimple-between-buyer-and-seller" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.1159;entryPerimeter=0;dashed=1;dashPattern=6 6;noJump=1;" target="action-receive-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-orderresponsesimple-between-buyer-and-seller-2-to-receive-response">
+          <mxCell edge="1" parent="frame" source="object-orderresponsesimple-between-buyer-and-seller-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4371;entryPerimeter=0;dashed=1;dashPattern=6 6;noJump=1;exitX=0;exitY=0.470433;" target="action-receive-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-orderresponse-detailed-to-receive-response">
+          <mxCell edge="1" parent="frame" source="object-orderresponse-detailed" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.8079;entryPerimeter=0;dashed=1;dashPattern=6 6;noJump=1;" target="action-receive-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-change-order-in-buyer-to-orderchange">
+          <mxCell edge="1" parent="frame" source="action-change-order-in-buyer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;dashed=1;dashPattern=6 7;noJump=1;" target="object-orderchange">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-cancel-order-in-buyer-to-ordercancellation">
+          <mxCell edge="1" parent="frame" source="action-cancel-order-in-buyer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.6225;exitPerimeter=0;entryX=0;entryY=0.25;entryPerimeter=0;dashed=1;dashPattern=6 7;noJump=1;" target="object-ordercancellation">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-despatchadvice-to-receive-advice-in-buyer">
+          <mxCell edge="1" parent="frame" source="object-despatchadvice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.1812;exitPerimeter=0;entryX=1;entryY=0.9085;entryPerimeter=0;dashed=1;dashPattern=7 6;noJump=1;" target="action-receive-advice-in-buyer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-despatchadvice-to-receive-advice-in-delivery-recipient">
+          <mxCell edge="1" parent="frame" source="object-despatchadvice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;dashed=1;dashPattern=6 6;noJump=1;exitX=0;exitY=0.616667;" target="action-receive-advice-in-delivery-recipient">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-receiptadvice-to-decision-if-item-s-rejected">
+          <mxCell edge="1" parent="frame" source="object-receiptadvice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;dashed=1;dashPattern=6 7;noJump=1;exitX=1;exitY=0.4;" target="action-decision-if-item-s-rejected">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-advise-receipt-to-receiptadvice">
+          <mxCell edge="1" parent="frame" source="action-advise-receipt" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0;exitPerimeter=0;entryX=0;entryY=0.9934;entryPerimeter=0;dashed=1;dashPattern=6 6;noJump=1;" target="object-receiptadvice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-invoice-to-reconcile-invoice">
+          <mxCell edge="1" parent="frame" source="object-invoice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5065;entryPerimeter=0;dashed=1;dashPattern=6 6;noJump=1;exitX=0;exitY=0.49005;" target="action-reconcile-invoice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,115 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-FreightStatusReporting" name="UBL-2.2-FreightStatusReporting">
+    <mxGraphModel dx="719" dy="258" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="750" pageHeight="300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="15" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="264" width="717" x="16" y="18" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Sender Party" ubl-kind="lane" id="lane-sender-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=19;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=34;" vertex="1">
+            <mxGeometry height="264" width="246" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-sender-party">
+          <mxCell parent="lane-sender-party" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="29" width="28" x="89" y="22" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Request status" ubl-kind="action" id="action-request-status">
+          <mxCell parent="lane-sender-party" style="rounded=1;absoluteArcSize=1;arcSize=27;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=4;" vertex="1">
+            <mxGeometry height="30" width="129" x="35" y="78" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Status Report" ubl-kind="action" id="action-receive-status-report">
+          <mxCell parent="lane-sender-party" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingTop=1;" vertex="1">
+            <mxGeometry height="30" width="129" x="35" y="170" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-sender-party">
+          <mxCell parent="lane-sender-party" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="20" width="20" x="91" y="231" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-sender-party-to-request-status">
+          <mxCell edge="1" parent="lane-sender-party" source="initial-sender-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5266;entryY=0;entryPerimeter=0;exitX=0.49755;exitY=0.8621;" target="action-request-status">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-status-report-to-final-sender-party">
+          <mxCell edge="1" parent="lane-sender-party" source="action-receive-status-report" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5025;entryY=0;entryPerimeter=0;exitX=0.512016;exitY=1;" target="final-sender-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receiver Party" ubl-kind="lane" id="lane-receiver-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=23;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=94;" vertex="1">
+            <mxGeometry height="264" width="471" x="246" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="lane-divider" id="divider1">
+          <mxCell parent="lane-receiver-party" style="shape=line;direction=south;html=1;connectable=0;" vertex="1">
+            <mxGeometry height="265" width="10" x="331" y="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transportation&lt;br&gt;Status Request" ubl-kind="object" ubl-between="[&quot;lane-sender-party&quot;, &quot;lane-receiver-party&quot;]" ubl-lane="null" id="object-transportation-status-request">
+          <mxCell parent="lane-receiver-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=4;spacingTop=6;strokeWidth=2;" vertex="1">
+            <mxGeometry height="61" width="106" x="-42" y="63" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Status Request" ubl-kind="action" id="action-receive-status-request">
+          <mxCell parent="lane-receiver-party" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=6;spacingBottom=2;" vertex="1">
+            <mxGeometry height="32" width="162" x="125" y="74" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transportation&lt;br&gt;Status" ubl-kind="object" ubl-between="[&quot;lane-sender-party&quot;, &quot;lane-receiver-party&quot;]" ubl-lane="null" id="object-transportation-status">
+          <mxCell parent="lane-receiver-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=8;strokeWidth=2;" vertex="1">
+            <mxGeometry height="61" width="105" x="-42" y="154" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Report status" ubl-kind="action" id="action-report-status">
+          <mxCell parent="lane-receiver-party" style="rounded=1;absoluteArcSize=1;arcSize=25;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=2;" vertex="1">
+            <mxGeometry height="32" width="113" x="148" y="171" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Trigger reporting&lt;br&gt;procedure" ubl-kind="initial" ubl-trigger="the agreed status reporting procedure: the Receiver Party reports status on its own initiative, without a request (in BPMN a timer start)" ubl-label="" ubl-text="text-trigger-reporting-procedure" ubl-text-text-trigger-reporting-procedure-labels="initial-receiver-party" id="initial-receiver-party">
+          <mxCell parent="lane-receiver-party" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=-26;spacingBottom=86;" vertex="1">
+            <mxGeometry height="28" width="28" x="389" y="173" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-transportation-status-request-to-receive-status-request">
+          <mxCell edge="1" parent="lane-receiver-party" source="object-transportation-status-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5455;entryPerimeter=0;exitX=1;exitY=0.466492;" target="action-receive-status-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-status-request-to-report-status">
+          <mxCell edge="1" parent="lane-receiver-party" source="action-receive-status-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4712;entryY=0;entryPerimeter=0;exitX=0.470652;exitY=1;" target="action-report-status">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-receiver-party-to-report-status">
+          <mxCell edge="1" parent="lane-receiver-party" source="initial-receiver-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0.1455;exitY=0.5;" target="action-report-status">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-report-status-to-transportation-status">
+          <mxCell edge="1" parent="lane-receiver-party" source="action-report-status" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5603;entryPerimeter=0;exitX=0;exitY=0.536822;" target="object-transportation-status">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-request-status-to-transportation-status-request">
+          <mxCell edge="1" parent="frame" source="action-request-status" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.491803;" target="object-transportation-status-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-transportation-status-to-receive-status-report">
+          <mxCell edge="1" parent="frame" source="object-transportation-status" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5367;entryPerimeter=0;exitX=0;exitY=0.526246;" target="action-receive-status-report">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

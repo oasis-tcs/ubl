@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 159 342" width="159" height="342">
+<title>Exception</title>
+ <!-- A clipboard with an exclamation mark: an exception (the Visio work-flow shape of the UBL CPFR figures),
+      redrawn in grey from the prd1 master: the board, the sheet inset in it, the clip with its ring tab over the
+      top edge, the mark slanted with the board. Isometric, 30 degrees. -->
+ <defs>
+  <linearGradient id="cb-board" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f4f4f4"/><stop offset=".8" stop-color="#dcdcdc"/><stop offset="1" stop-color="#b4b4b4"/></linearGradient>
+  <linearGradient id="cb-sheet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fcfcfc"/><stop offset="1" stop-color="#e2e2e2"/></linearGradient>
+  <linearGradient id="cb-clip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6f6f6"/><stop offset=".55" stop-color="#d4d4d4"/><stop offset="1" stop-color="#a2a2a2"/></linearGradient>
+  <linearGradient id="cb-mark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#868686"/><stop offset="1" stop-color="#626262"/></linearGradient>
+ </defs>
+ <g transform="translate(-26,-18)">
+  <!-- the board: its face, the dark edge on the left and the right, the light bevel inside the left edge -->
+  <path d="M34,60 L178,138 L177,352 L34,270 Z" fill="url(#cb-board)" stroke="#262626" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M40,66 L40,268" fill="none" stroke="#ffffff" stroke-width="4"/>
+  <path d="M172,137 L172,346" fill="none" stroke="#8c8c8c" stroke-width="5"/>
+  <!-- the sheet, its rim -->
+  <path d="M50,103 L157,163 L157,316 L50,256 Z" fill="url(#cb-sheet)" stroke="#a6a6a6" stroke-width="3" stroke-linejoin="round"/>
+  <!-- the exclamation mark -->
+  <path d="M86,149 C88,141 106,147 109,158 L106,224 C105,230 101,230 100,225 Z" fill="url(#cb-mark)"/>
+  <ellipse cx="102" cy="256" rx="12" ry="9" transform="rotate(48 102 256)" fill="url(#cb-mark)"/>
+  <!-- the clip: a band over the top edge, a tab with a ring rising from it -->
+  <path d="M47,62 L60,56 L76,53 L79,40 Q86,24 97,23 Q110,25 120,38 L131,52 L134,88 L144,97 L158,110 L164,122 L162,131 L152,134 L110,111 L70,90 L50,79 Z"
+        fill="url(#cb-clip)" stroke="#262626" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M52,70 L150,124" fill="none" stroke="#9a9a9a" stroke-width="1.6"/>
+  <ellipse cx="104" cy="63" rx="7.5" ry="12" fill="#ffffff" stroke="#262626" stroke-width="5"/>
+ </g>
+</svg>

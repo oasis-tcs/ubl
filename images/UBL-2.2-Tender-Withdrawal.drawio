@@ -1,0 +1,80 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-Tender-Withdrawal" name="UBL-2.2-Tender-Withdrawal">
+    <mxGraphModel dx="623" dy="230" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="658" pageHeight="281" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="17" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="245" width="621" x="18" y="18" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="ECONOMIC OPERATOR" ubl-kind="lane" ubl-label="Economic Operator" id="lane-economic-operator">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=21;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=22;" vertex="1">
+            <mxGeometry height="245" width="309" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-economic-operator">
+          <mxCell parent="lane-economic-operator" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="30" width="30" x="97" y="24" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Prepare tender withdrawal request" ubl-kind="action" id="action-prepare-tender-withdrawal-request">
+          <mxCell parent="lane-economic-operator" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=5;spacingTop=1;" vertex="1">
+            <mxGeometry height="32" width="201" x="18" y="81" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Submit tender withdrawal request" ubl-kind="action" id="action-submit-tender-withdrawal-request">
+          <mxCell parent="lane-economic-operator" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=2;" vertex="1">
+            <mxGeometry height="35" width="199" x="17" y="143" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-economic-operator-to-prepare-tender-withdrawal-request">
+          <mxCell edge="1" parent="lane-economic-operator" source="initial-economic-operator" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4657;entryY=0;entryPerimeter=0;exitX=0.486857;exitY=0.8693;" target="action-prepare-tender-withdrawal-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-prepare-tender-withdrawal-request-to-submit-tender-withdrawal-request">
+          <mxCell edge="1" parent="lane-economic-operator" source="action-prepare-tender-withdrawal-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4749;entryY=0;entryPerimeter=0;exitX=0.4652;exitY=1;" target="action-submit-tender-withdrawal-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="CONTRACTING AUTHORITY" ubl-kind="lane" ubl-label="Contracting Authority" id="lane-contracting-authority">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=23;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=23;" vertex="1">
+            <mxGeometry height="245" width="312" x="309" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Tender&lt;br&gt;Withdrawal" ubl-kind="object" ubl-between="[&quot;lane-economic-operator&quot;, &quot;lane-contracting-authority&quot;]" ubl-lane="null" id="object-tender-withdrawal">
+          <mxCell parent="lane-contracting-authority" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=9;spacingBottom=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="65" width="95" x="-46" y="127" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive tender withdrawal request" ubl-kind="action" id="action-receive-tender-withdrawal-request">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=6;spacingBottom=1;" vertex="1">
+            <mxGeometry height="34" width="203" x="91" y="142" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-contracting-authority">
+          <mxCell parent="lane-contracting-authority" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="21" width="21" x="182" y="209" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-tender-withdrawal-to-receive-tender-withdrawal-request">
+          <mxCell edge="1" parent="lane-contracting-authority" source="object-tender-withdrawal" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4794;entryPerimeter=0;exitX=1;exitY=0.481532;" target="action-receive-tender-withdrawal-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-tender-withdrawal-request-to-final-contracting-authority">
+          <mxCell edge="1" parent="lane-contracting-authority" source="action-receive-tender-withdrawal-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.5;entryY=0;" target="final-contracting-authority">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-submit-tender-withdrawal-request-to-tender-withdrawal">
+          <mxCell edge="1" parent="frame" source="action-submit-tender-withdrawal-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4769;entryPerimeter=0;exitX=1;exitY=0.428529;" target="object-tender-withdrawal">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

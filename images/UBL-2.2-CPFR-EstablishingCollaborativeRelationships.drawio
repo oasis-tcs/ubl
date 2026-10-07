@@ -1,0 +1,192 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-CPFR-EstablishingCollaborativeRelationships" name="UBL-2.2-CPFR-EstablishingCollaborativeRelationships">
+    <mxGraphModel dx="906" dy="787" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="946" pageHeight="822" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="17" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="785" width="909" x="18" y="18" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Establishing Collaborative Relationship" ubl-kind="phase-boundary" ubl-members="[&quot;initial-seller-party&quot;, &quot;object-exception-criteria&quot;, &quot;action-receive-exception-criteria-in-buyer-party&quot;, &quot;action-send-exception-criteria-in-seller-party&quot;, &quot;action-revise-exception-criteria&quot;, &quot;object-exception-criteria-revision&quot;, &quot;action-receive-revision&quot;, &quot;action-send-revision&quot;, &quot;action-review-and-resend-revision&quot;, &quot;decision-buyer-party&quot;, &quot;action-send-exception-criteria-in-buyer-party&quot;, &quot;action-receive-exception-criteria-in-seller-party&quot;, &quot;object-exception-criteria-response-positive&quot;]" id="phase-establishing-collaborative-relationship">
+          <mxCell parent="frame" style="rounded=1;absoluteArcSize=1;arcSize=67;fillColor=none;dashed=1;dashPattern=3 2;connectable=0;pointerEvents=0;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=top;spacing=0;spacingTop=1;spacingRight=12;movable=0;" vertex="1">
+            <mxGeometry height="705" width="867" x="21" y="37" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Buyer Party" ubl-kind="lane" id="lane-buyer-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=34;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=22;" vertex="1">
+            <mxGeometry height="785" width="455" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Exception&lt;br&gt;Criteria" ubl-kind="action" id="action-receive-exception-criteria-in-buyer-party">
+          <mxCell parent="lane-buyer-party" style="rounded=1;absoluteArcSize=1;arcSize=37;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=6;spacingBottom=4;" vertex="1">
+            <mxGeometry height="59" width="152" x="99" y="186" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Revise Exception&lt;br&gt;Criteria" ubl-kind="action" id="action-revise-exception-criteria">
+          <mxCell parent="lane-buyer-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=6;spacingBottom=6;" vertex="1">
+            <mxGeometry height="63" width="152" x="99" y="279" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Revision" ubl-kind="action" id="action-send-revision">
+          <mxCell parent="lane-buyer-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=7;spacingBottom=6;" vertex="1">
+            <mxGeometry height="50" width="154" x="152" y="389" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Exception Criteria Accepted?" ubl-kind="decision" ubl-question="Exception Criteria Accepted?" ubl-label="" ubl-text="text-exception-criteria-accepted" ubl-text-text-exception-criteria-accepted-labels="decision-buyer-party" id="decision-buyer-party">
+          <mxCell parent="lane-buyer-party" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=22;spacingBottom=74;" vertex="1">
+            <mxGeometry height="47" width="51" x="102" y="501" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Exception Criteria" ubl-kind="action" id="action-send-exception-criteria-in-buyer-party">
+          <mxCell parent="lane-buyer-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=7;spacingBottom=5;" vertex="1">
+            <mxGeometry height="49" width="160" x="198" y="608" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-exception-criteria-in-buyer-party-to-revise-exception-criteria">
+          <mxCell edge="1" parent="lane-buyer-party" source="action-receive-exception-criteria-in-buyer-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4931;entryY=0;entryPerimeter=0;exitX=0.4931;exitY=1;" target="action-revise-exception-criteria">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="No" ubl-kind="flow" ubl-guard="text-no" ubl-flow="control" ubl-text="text-no" ubl-text-text-no-labels="flow-decision-buyer-party-to-revise-exception-criteria" id="flow-decision-buyer-party-to-revise-exception-criteria">
+          <mxCell edge="1" parent="lane-buyer-party" source="decision-buyer-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.1782;entryY=1;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=0.472282;exitY=0;" target="action-revise-exception-criteria">
+            <mxGeometry relative="1" x="0.82" as="geometry">
+              <mxPoint x="-17" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-revise-exception-criteria-to-send-revision">
+          <mxCell edge="1" parent="lane-buyer-party" source="action-revise-exception-criteria" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4113;entryY=0;entryPerimeter=0;exitX=0.765396;exitY=1;" target="action-send-revision">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Yes" ubl-kind="flow" ubl-guard="text-yes" ubl-flow="control" ubl-text="text-yes" ubl-text-text-yes-labels="flow-decision-buyer-party-to-send-exception-criteria-in-buyer-party" id="flow-decision-buyer-party-to-send-exception-criteria-in-buyer-party">
+          <mxCell edge="1" parent="lane-buyer-party" source="decision-buyer-party" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=0.470588;exitY=1;entryX=0.25625;entryY=0;" target="action-send-exception-criteria-in-buyer-party">
+            <mxGeometry relative="1" x="0.34" as="geometry">
+              <mxPoint y="21" as="offset" />
+              <Array as="points">
+                <mxPoint x="126" y="571" />
+                <mxPoint x="239" y="571" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="Seller Party" ubl-kind="lane" id="lane-seller-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=34;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=54;" vertex="1">
+            <mxGeometry height="785" width="454" x="455" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-seller-party">
+          <mxCell parent="lane-seller-party" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="47" width="47" x="280" y="73" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Exception Criteria" ubl-kind="object" ubl-between="[&quot;lane-buyer-party&quot;, &quot;lane-seller-party&quot;]" ubl-lane="null" id="object-exception-criteria">
+          <mxCell parent="lane-seller-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=5;spacingBottom=7;strokeWidth=2;" vertex="1">
+            <mxGeometry height="63" width="139" x="-70" y="185" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Exception Criteria" ubl-kind="action" id="action-send-exception-criteria-in-seller-party">
+          <mxCell parent="lane-seller-party" style="rounded=1;absoluteArcSize=1;arcSize=37;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=5;spacingBottom=8;" vertex="1">
+            <mxGeometry height="55" width="162" x="222" y="190" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Exception Criteria&lt;br&gt;(revision)" ubl-kind="object" ubl-between="[&quot;lane-buyer-party&quot;, &quot;lane-seller-party&quot;]" ubl-lane="null" id="object-exception-criteria-revision">
+          <mxCell parent="lane-seller-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=6;spacingBottom=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="64" width="133" x="-58" y="381" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Revision" ubl-kind="action" id="action-receive-revision">
+          <mxCell parent="lane-seller-party" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=10;spacingBottom=7;" vertex="1">
+            <mxGeometry height="59" width="148" x="166" y="382" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Review and Resend&lt;br&gt;Revision" ubl-kind="action" id="action-review-and-resend-revision">
+          <mxCell parent="lane-seller-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=8;spacingBottom=6;" vertex="1">
+            <mxGeometry height="57" width="162" x="158" y="494" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Exception&lt;br&gt;Criteria" ubl-kind="action" id="action-receive-exception-criteria-in-seller-party">
+          <mxCell parent="lane-seller-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=8;spacingBottom=5;" vertex="1">
+            <mxGeometry height="55" width="161" x="159" y="630" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Exception Criteria&lt;br&gt;(response positive)" ubl-kind="object" ubl-between="[&quot;lane-buyer-party&quot;, &quot;lane-seller-party&quot;]" ubl-lane="null" id="object-exception-criteria-response-positive">
+          <mxCell parent="lane-seller-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=19;spacingBottom=7;strokeWidth=2;" vertex="1">
+            <mxGeometry height="67" width="148" x="-67" y="634" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-seller-party-to-send-exception-criteria-in-seller-party">
+          <mxCell edge="1" parent="lane-seller-party" source="initial-seller-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.489362;exitY=0.9147;" target="action-send-exception-criteria-in-seller-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-exception-criteria-in-seller-party-to-exception-criteria">
+          <mxCell edge="1" parent="lane-seller-party" source="action-send-exception-criteria-in-seller-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.481818;" target="object-exception-criteria">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-exception-criteria-revision-to-receive-revision">
+          <mxCell edge="1" parent="lane-seller-party" source="object-exception-criteria-revision" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.476562;" target="action-receive-revision">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-revision-to-review-and-resend-revision">
+          <mxCell edge="1" parent="lane-seller-party" source="action-receive-revision" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4988;entryY=0;entryPerimeter=0;exitX=0.49193;exitY=1;" target="action-review-and-resend-revision">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" ubl-passes-to="flow-exception-criteria-revision-to-decision-buyer-party" id="flow-review-and-resend-revision-to-exception-criteria-revision">
+          <mxCell edge="1" parent="lane-seller-party" source="action-review-and-resend-revision" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;exitX=0;exitY=0.526316;entryX=0.857143;entryY=1;" target="object-exception-criteria-revision">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="56" y="524" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-exception-criteria-response-positive-to-receive-exception-criteria-in-seller-party">
+          <mxCell edge="1" parent="lane-seller-party" source="object-exception-criteria-response-positive" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.6129;entryPerimeter=0;exitX=1;exitY=0.443425;" target="action-receive-exception-criteria-in-seller-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="off-page-flow" ubl-continues="UBL-2.2-CPFR-CreateJointBusinessPlan" ubl-counterpart="offpage-action-create-retail-event" ubl-port="1" ubl-direction="out" id="offpage-action-receive-exception-criteria-in-seller-party">
+          <mxCell edge="1" parent="lane-seller-party" source="action-receive-exception-criteria-in-seller-party" style="edgeStyle=none;rounded=0;html=1;endArrow=none;endFill=0;endSize=13;exitPerimeter=0;exitX=0.10559;exitY=1;">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="176" y="763" />
+                <mxPoint x="-267" y="763" />
+              </Array>
+              <mxPoint x="-267" y="783" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-exception-criteria-to-receive-exception-criteria-in-buyer-party">
+          <mxCell edge="1" parent="frame" source="object-exception-criteria" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4975;entryPerimeter=0;exitX=0;exitY=0.481786;" target="action-receive-exception-criteria-in-buyer-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" ubl-passes-to="flow-exception-criteria-revision-to-receive-revision" id="flow-send-revision-to-exception-criteria-revision">
+          <mxCell edge="1" parent="frame" source="action-send-revision" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.48;" target="object-exception-criteria-revision">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-exception-criteria-revision-to-decision-buyer-party">
+          <mxCell edge="1" parent="frame" source="object-exception-criteria-revision" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=1;entryY=0.489362;" target="decision-buyer-party">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="395" y="524" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-exception-criteria-in-buyer-party-to-exception-criteria-response-positive">
+          <mxCell edge="1" parent="frame" source="action-send-exception-criteria-in-buyer-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5996;exitPerimeter=0;entryX=0;entryY=0.1469;entryPerimeter=0;" target="object-exception-criteria-response-positive">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

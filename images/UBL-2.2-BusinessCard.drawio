@@ -1,0 +1,88 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-BusinessCard" name="UBL-2.2-BusinessCard">
+    <mxGraphModel dx="807" dy="291" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="844" pageHeight="327" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="18" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="289" width="805" x="19" y="19" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="BUSINESS PARTY 1" ubl-kind="lane" ubl-label="Business Party 1" id="lane-business-party-1">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=30;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=12;" vertex="1">
+            <mxGeometry height="289" width="405" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-business-party-1">
+          <mxCell parent="lane-business-party-1" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="33" width="33" x="207" y="35" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Publish business card" ubl-kind="action" id="action-publish-business-card">
+          <mxCell parent="lane-business-party-1" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=6;spacingBottom=1;" vertex="1">
+            <mxGeometry height="32" width="156" x="145" y="97" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-business-party-1-to-publish-business-card">
+          <mxCell edge="1" parent="lane-business-party-1" source="initial-business-party-1" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.484848;exitY=0.8788;" target="action-publish-business-card">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="BUSINESS PARTY 0..n" ubl-kind="lane" ubl-label="Business Party 0..n" id="lane-business-party-0-n">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=30;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=18;" vertex="1">
+            <mxGeometry height="289" width="400" x="405" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Business&lt;br&gt;Card" ubl-kind="object" ubl-between="[&quot;lane-business-party-1&quot;, &quot;lane-business-party-0-n&quot;]" ubl-lane="null" id="object-business-card">
+          <mxCell parent="lane-business-party-0-n" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingTop=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="44" width="106" x="-55" y="91" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Download business card" ubl-kind="action" id="action-download-business-card">
+          <mxCell parent="lane-business-party-0-n" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingTop=1;" vertex="1">
+            <mxGeometry height="31" width="196" x="88" y="174" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-business-party-0-n">
+          <mxCell parent="lane-business-party-0-n" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="24" width="24" x="174" y="249" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-download-business-card-to-final-business-party-0-n">
+          <mxCell edge="1" parent="lane-business-party-0-n" source="action-download-business-card" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.5;entryY=0;" target="final-business-party-0-n">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-business-card-to-download-business-card">
+          <mxCell edge="1" parent="lane-business-party-0-n" source="object-business-card" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;exitX=0.528302;exitY=1;entryX=0;entryY=0.483871;" target="action-download-business-card">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1" y="189" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="mark" ubl-mark="cross-mark" ubl-rule="v" ubl-on="flow-business-card-to-download-business-card" ubl-meaning="break" id="mark-1">
+          <mxCell connectable="0" parent="flow-business-card-to-download-business-card" style="shape=line;html=1;rotation=146.58;resizable=0;" vertex="1">
+            <mxGeometry height="10" relative="1" width="36" x="-0.68" as="geometry">
+              <mxPoint x="-21" y="-5" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="mark" ubl-mark="cross-mark" ubl-rule="v" ubl-on="flow-business-card-to-download-business-card" ubl-meaning="break" id="mark-2">
+          <mxCell connectable="0" parent="flow-business-card-to-download-business-card" style="shape=line;html=1;rotation=146.31;resizable=0;" vertex="1">
+            <mxGeometry height="10" relative="1" width="36" x="-0.56" as="geometry">
+              <mxPoint x="-21" y="-5" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-publish-business-card-to-business-card">
+          <mxCell edge="1" parent="frame" source="action-publish-business-card" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4966;entryPerimeter=0;exitX=1;exitY=0.495325;" target="object-business-card">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

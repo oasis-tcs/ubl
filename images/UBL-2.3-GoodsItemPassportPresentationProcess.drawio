@@ -1,0 +1,281 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.3-GoodsItemPassportPresentationProcess" name="UBL-2.3-GoodsItemPassportPresentationProcess">
+    <mxGraphModel dx="826" dy="792" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="883" pageHeight="829" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="13" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="800" width="853" x="14" y="14" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Exporting Customs Party" ubl-kind="lane" id="lane-exporting-customs-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=29;swimlaneLine=1;spacingTop=2;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;spacingLeft=2;" vertex="1">
+            <mxGeometry height="800" width="267" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive and Verify&lt;br&gt;Goodsitem Passport" ubl-kind="action" id="action-receive-and-verify-goodsitem-passport-in-exporting-customs-party">
+          <mxCell parent="lane-exporting-customs-party" style="rounded=1;absoluteArcSize=1;arcSize=14;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=2;" vertex="1">
+            <mxGeometry height="47" width="118" x="59" y="95" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Valid?" ubl-kind="decision" id="decision-valid-in-exporting-customs-party">
+          <mxCell parent="lane-exporting-customs-party" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingTop=1;" vertex="1">
+            <mxGeometry height="55" width="76" x="80" y="172" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Declined" ubl-kind="action" id="action-send-declined">
+          <mxCell parent="lane-exporting-customs-party" style="rounded=1;absoluteArcSize=1;arcSize=17;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;" vertex="1">
+            <mxGeometry height="51" width="93" x="71" y="258" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Apply Stamps&lt;br&gt;And Signature" ubl-kind="action" id="action-apply-stamps-and-signature-in-exporting-customs-party">
+          <mxCell parent="lane-exporting-customs-party" style="rounded=1;absoluteArcSize=1;arcSize=16;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=4;spacingBottom=2;" vertex="1">
+            <mxGeometry height="50" width="93" x="72" y="337" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-and-verify-goodsitem-passport-in-exporting-customs-party-to-valid-in-exporting-customs-party">
+          <mxCell edge="1" parent="lane-exporting-customs-party" source="action-receive-and-verify-goodsitem-passport-in-exporting-customs-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="decision-valid-in-exporting-customs-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Yes" ubl-kind="flow" ubl-guard="text-yes" ubl-flow="control" ubl-text="text-yes" ubl-text-text-yes-labels="flow-valid-in-exporting-customs-party-to-apply-stamps-and-signature-in-exporting-customs-party" id="flow-valid-in-exporting-customs-party-to-apply-stamps-and-signature-in-exporting-customs-party">
+          <mxCell edge="1" parent="lane-exporting-customs-party" source="decision-valid-in-exporting-customs-party" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=0;exitY=0.527273;entryX=0;entryY=0.52;" target="action-apply-stamps-and-signature-in-exporting-customs-party">
+            <mxGeometry relative="1" x="0.08" as="geometry">
+              <mxPoint x="-14" as="offset" />
+              <Array as="points">
+                <mxPoint x="42" y="201" />
+                <mxPoint x="42" y="363" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="No" ubl-kind="flow" ubl-guard="text-no" ubl-flow="control" ubl-text="text-no" ubl-text-text-no-labels="flow-valid-in-exporting-customs-party-to-send-declined" id="flow-valid-in-exporting-customs-party-to-send-declined">
+          <mxCell edge="1" parent="lane-exporting-customs-party" source="decision-valid-in-exporting-customs-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;entryX=0.505376;entryY=0;" target="action-send-declined">
+            <mxGeometry relative="1" x="-0.38" as="geometry">
+              <mxPoint x="-21" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="Representative Party" ubl-kind="lane" id="lane-representative-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=29;swimlaneLine=1;spacingTop=3;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;spacingRight=13;" vertex="1">
+            <mxGeometry height="800" width="301" x="267" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-representative-party">
+          <mxCell parent="lane-representative-party" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="30" width="30" x="136" y="32" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Goodsitem&lt;br&gt;Passport&lt;br&gt;(Approved)" ubl-kind="object" ubl-between="[&quot;lane-exporting-customs-party&quot;, &quot;lane-representative-party&quot;]" ubl-lane="null" id="object-goodsitem-passport-approved">
+          <mxCell parent="lane-representative-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="118" x="-60" y="89" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Present Goods&lt;br&gt;To Leave Country" ubl-kind="action" id="action-present-goods-to-leave-country">
+          <mxCell parent="lane-representative-party" style="rounded=1;absoluteArcSize=1;arcSize=17;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=3;" vertex="1">
+            <mxGeometry height="58" width="118" x="92" y="89" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-representative-party">
+          <mxCell parent="lane-representative-party" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="29" width="29" x="137" y="196" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application response" ubl-kind="object" ubl-between="[&quot;lane-exporting-customs-party&quot;, &quot;lane-representative-party&quot;]" ubl-lane="null" id="object-application-response-between-exporting-customs-party-and-representative-party">
+          <mxCell parent="lane-representative-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="130" x="-66" y="255" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Declined" ubl-kind="action" id="action-receive-declined">
+          <mxCell parent="lane-representative-party" style="rounded=1;absoluteArcSize=1;arcSize=16;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="51" width="102" x="100" y="257" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="GoodsItem&lt;br&gt;Passport&lt;br&gt;(Exported)" ubl-kind="object" ubl-between="[&quot;lane-exporting-customs-party&quot;, &quot;lane-representative-party&quot;]" ubl-lane="null" id="object-goodsitem-passport-exported-between-exporting-customs-party-and-representative-party">
+          <mxCell parent="lane-representative-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="118" x="-60" y="333" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive&lt;br&gt;Goodsitem Passport" ubl-kind="action" id="action-receive-goodsitem-passport-in-representative-party">
+          <mxCell parent="lane-representative-party" style="rounded=1;absoluteArcSize=1;arcSize=15;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=2;" vertex="1">
+            <mxGeometry height="50" width="118" x="88" y="337" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Present Goods&lt;br&gt;To Enter Country" ubl-kind="action" id="action-present-goods-to-enter-country">
+          <mxCell parent="lane-representative-party" style="rounded=1;absoluteArcSize=1;arcSize=17;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=2;" vertex="1">
+            <mxGeometry height="58" width="117" x="90" y="426" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-representative-party-2">
+          <mxCell parent="lane-representative-party" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="29" width="29" x="134" y="533" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Reject" ubl-kind="action" id="action-receive-reject">
+          <mxCell parent="lane-representative-party" style="rounded=1;absoluteArcSize=1;arcSize=16;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=2;" vertex="1">
+            <mxGeometry height="51" width="103" x="97" y="595" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive&lt;br&gt;Goodsitem Passport" ubl-kind="action" id="action-receive-goodsitem-passport-in-representative-party-2">
+          <mxCell parent="lane-representative-party" style="rounded=1;absoluteArcSize=1;arcSize=16;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=1;" vertex="1">
+            <mxGeometry height="51" width="118" x="86" y="673" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-representative-party-3">
+          <mxCell parent="lane-representative-party" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="29" width="29" x="134" y="760" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-representative-party-to-present-goods-to-leave-country">
+          <mxCell edge="1" parent="lane-representative-party" source="initial-representative-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=0.8675;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-present-goods-to-leave-country">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-present-goods-to-leave-country-to-goodsitem-passport-approved">
+          <mxCell edge="1" parent="lane-representative-party" source="action-present-goods-to-leave-country" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-goodsitem-passport-approved">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-declined-to-final-representative-party">
+          <mxCell edge="1" parent="lane-representative-party" source="action-receive-declined" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=0;exitPerimeter=0;entryPerimeter=0;entryX=0.482759;entryY=1;" target="final-representative-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-between-exporting-customs-party-and-representative-party-to-receive-declined">
+          <mxCell edge="1" parent="lane-representative-party" source="object-application-response-between-exporting-customs-party-and-representative-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.474138;" target="action-receive-declined">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-goodsitem-passport-exported-between-exporting-customs-party-and-representative-party-to-receive-goodsitem-passport-in-representative-party">
+          <mxCell edge="1" parent="lane-representative-party" source="object-goodsitem-passport-exported-between-exporting-customs-party-and-representative-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-receive-goodsitem-passport-in-representative-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-goodsitem-passport-in-representative-party-to-present-goods-to-enter-country">
+          <mxCell edge="1" parent="lane-representative-party" source="action-receive-goodsitem-passport-in-representative-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5111;entryY=0;entryPerimeter=0;exitX=0.523718;exitY=1;" target="action-present-goods-to-enter-country">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-reject-to-final-representative-party-2">
+          <mxCell edge="1" parent="lane-representative-party" source="action-receive-reject" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=0;exitPerimeter=0;entryPerimeter=0;entryX=0.5;entryY=1;" target="final-representative-party-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-goodsitem-passport-in-representative-party-2-to-final-representative-party-3">
+          <mxCell edge="1" parent="lane-representative-party" source="action-receive-goodsitem-passport-in-representative-party-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4932;entryY=0;entryPerimeter=0;exitX=0.527989;exitY=1;" target="final-representative-party-3">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Importing Customs Party" ubl-kind="lane" id="lane-importing-customs-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=29;swimlaneLine=1;spacingTop=3;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;spacingLeft=12;" vertex="1">
+            <mxGeometry height="800" width="285" x="568" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Goodsitem&lt;br&gt;Passport&lt;br&gt;(Exported)" ubl-kind="object" ubl-between="[&quot;lane-representative-party&quot;, &quot;lane-importing-customs-party&quot;]" ubl-lane="null" id="object-goodsitem-passport-exported-between-representative-party-and-importing-customs-party">
+          <mxCell parent="lane-importing-customs-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="117" x="-64" y="426" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive and Verify&lt;br&gt;Goodsitem Passport" ubl-kind="action" id="action-receive-and-verify-goodsitem-passport-in-importing-customs-party">
+          <mxCell parent="lane-importing-customs-party" style="rounded=1;absoluteArcSize=1;arcSize=14;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=2;" vertex="1">
+            <mxGeometry height="47" width="118" x="83" y="431" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Valid?" ubl-kind="decision" id="decision-valid-in-importing-customs-party">
+          <mxCell parent="lane-importing-customs-party" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingTop=1;" vertex="1">
+            <mxGeometry height="56" width="77" x="104" y="508" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application response" ubl-kind="object" ubl-between="[&quot;lane-representative-party&quot;, &quot;lane-importing-customs-party&quot;]" ubl-lane="null" id="object-application-response-between-representative-party-and-importing-customs-party">
+          <mxCell parent="lane-importing-customs-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingTop=3;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="131" x="-67" y="591" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Reject" ubl-kind="action" id="action-send-reject">
+          <mxCell parent="lane-importing-customs-party" style="rounded=1;absoluteArcSize=1;arcSize=13;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=1;" vertex="1">
+            <mxGeometry height="51" width="93" x="96" y="595" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="GoodsItem&lt;br&gt;Passport&lt;br&gt;(Imported)" ubl-kind="object" ubl-between="[&quot;lane-representative-party&quot;, &quot;lane-importing-customs-party&quot;]" ubl-lane="null" id="object-goodsitem-passport-imported">
+          <mxCell parent="lane-importing-customs-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingTop=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="59" width="117" x="-60" y="669" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Apply Stamps&lt;br&gt;And Signature" ubl-kind="action" id="action-apply-stamps-and-signature-in-importing-customs-party">
+          <mxCell parent="lane-importing-customs-party" style="rounded=1;absoluteArcSize=1;arcSize=15;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=4;spacingBottom=4;" vertex="1">
+            <mxGeometry height="51" width="93" x="96" y="673" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-goodsitem-passport-exported-between-representative-party-and-importing-customs-party-to-receive-and-verify-goodsitem-passport-in-importing-customs-party">
+          <mxCell edge="1" parent="lane-importing-customs-party" source="object-goodsitem-passport-exported-between-representative-party-and-importing-customs-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.491379;" target="action-receive-and-verify-goodsitem-passport-in-importing-customs-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-and-verify-goodsitem-passport-in-importing-customs-party-to-valid-in-importing-customs-party">
+          <mxCell edge="1" parent="lane-importing-customs-party" source="action-receive-and-verify-goodsitem-passport-in-importing-customs-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.504237;exitY=1;" target="decision-valid-in-importing-customs-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Yes" ubl-kind="flow" ubl-guard="text-yes-2" ubl-flow="control" ubl-text="text-yes-2" ubl-text-text-yes-2-labels="flow-valid-in-importing-customs-party-to-apply-stamps-and-signature-in-importing-customs-party" id="flow-valid-in-importing-customs-party-to-apply-stamps-and-signature-in-importing-customs-party">
+          <mxCell edge="1" parent="lane-importing-customs-party" source="decision-valid-in-importing-customs-party" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=1;exitY=0.517857;entryX=1;entryY=0.529412;" target="action-apply-stamps-and-signature-in-importing-customs-party">
+            <mxGeometry relative="1" x="0.09" as="geometry">
+              <mxPoint x="11" as="offset" />
+              <Array as="points">
+                <mxPoint x="219" y="537" />
+                <mxPoint x="219" y="700" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="No" ubl-kind="flow" ubl-guard="text-no-2" ubl-flow="control" ubl-text="text-no-2" ubl-text-text-no-2-labels="flow-valid-in-importing-customs-party-to-send-reject" id="flow-valid-in-importing-customs-party-to-send-reject">
+          <mxCell edge="1" parent="lane-importing-customs-party" source="decision-valid-in-importing-customs-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;" target="action-send-reject">
+            <mxGeometry relative="1" x="-0.41" as="geometry">
+              <mxPoint x="-21" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-reject-to-application-response-between-representative-party-and-importing-customs-party">
+          <mxCell edge="1" parent="lane-importing-customs-party" source="action-send-reject" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=1;entryY=0.508621;" target="object-application-response-between-representative-party-and-importing-customs-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-apply-stamps-and-signature-in-importing-customs-party-to-goodsitem-passport-imported">
+          <mxCell edge="1" parent="lane-importing-customs-party" source="action-apply-stamps-and-signature-in-importing-customs-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-goodsitem-passport-imported">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-goodsitem-passport-approved-to-receive-and-verify-goodsitem-passport-in-exporting-customs-party">
+          <mxCell edge="1" parent="frame" source="object-goodsitem-passport-approved" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.508621;" target="action-receive-and-verify-goodsitem-passport-in-exporting-customs-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-declined-to-application-response-between-exporting-customs-party-and-representative-party">
+          <mxCell edge="1" parent="frame" source="action-send-declined" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.491379;" target="object-application-response-between-exporting-customs-party-and-representative-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-apply-stamps-and-signature-in-exporting-customs-party-to-goodsitem-passport-exported-between-exporting-customs-party-and-representative-party">
+          <mxCell edge="1" parent="frame" source="action-apply-stamps-and-signature-in-exporting-customs-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-goodsitem-passport-exported-between-exporting-customs-party-and-representative-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-present-goods-to-enter-country-to-goodsitem-passport-exported-between-representative-party-and-importing-customs-party">
+          <mxCell edge="1" parent="frame" source="action-present-goods-to-enter-country" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-goodsitem-passport-exported-between-representative-party-and-importing-customs-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-between-representative-party-and-importing-customs-party-to-receive-reject">
+          <mxCell edge="1" parent="frame" source="object-application-response-between-representative-party-and-importing-customs-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.508621;" target="action-receive-reject">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-goodsitem-passport-imported-to-receive-goodsitem-passport-in-representative-party-2">
+          <mxCell edge="1" parent="frame" source="object-goodsitem-passport-imported" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-receive-goodsitem-passport-in-representative-party-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

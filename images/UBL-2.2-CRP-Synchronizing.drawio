@@ -1,0 +1,70 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-CRP-Synchronizing" name="UBL-2.2-CRP-Synchronizing">
+    <mxGraphModel dx="600" dy="211" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="628" pageHeight="240" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="14" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="209" width="598" x="15" y="15" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Producer" ubl-kind="lane" id="lane-producer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=23;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=9;" vertex="1">
+            <mxGeometry height="209" width="299" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Synchronize stock information" ubl-kind="action" id="action-synchronize-stock-information">
+          <mxCell parent="lane-producer" style="rounded=1;absoluteArcSize=1;arcSize=23;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=1;" vertex="1">
+            <mxGeometry height="29" width="184" x="10" y="99" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-producer">
+          <mxCell parent="lane-producer" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="16" width="17" x="94" y="185" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-synchronize-stock-information-to-final-producer">
+          <mxCell edge="1" parent="lane-producer" source="action-synchronize-stock-information" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.470588;entryY=0;" target="final-producer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Retailer" ubl-kind="lane" id="lane-retailer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=23;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=5;" vertex="1">
+            <mxGeometry height="209" width="299" x="299" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-retailer">
+          <mxCell parent="lane-retailer" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="25" width="26" x="180" y="26" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Inventory Report" ubl-kind="object" ubl-between="[&quot;lane-producer&quot;, &quot;lane-retailer&quot;]" ubl-lane="null" id="object-inventory-report">
+          <mxCell parent="lane-retailer" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=4;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="31" width="107" x="-53" y="98" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send information about stock" ubl-kind="action" id="action-send-information-about-stock">
+          <mxCell parent="lane-retailer" style="rounded=1;absoluteArcSize=1;arcSize=27;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=1;" vertex="1">
+            <mxGeometry height="29" width="184" x="101" y="99" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-retailer-to-send-information-about-stock">
+          <mxCell edge="1" parent="lane-retailer" source="initial-retailer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.5;exitY=0.8444;" target="action-send-information-about-stock">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-information-about-stock-to-inventory-report">
+          <mxCell edge="1" parent="lane-retailer" source="action-send-information-about-stock" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-inventory-report">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-inventory-report-to-synchronize-stock-information">
+          <mxCell edge="1" parent="frame" source="object-inventory-report" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-synchronize-stock-information">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

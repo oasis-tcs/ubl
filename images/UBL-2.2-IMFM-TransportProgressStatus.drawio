@@ -1,0 +1,100 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-IMFM-TransportProgressStatus" name="UBL-2.2-IMFM-TransportProgressStatus">
+    <mxGraphModel dx="567" dy="392" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="604" pageHeight="428" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="18" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="390" width="566" x="19" y="19" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transport Service Provider" ubl-kind="lane" id="lane-transport-service-provider">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=29;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;" vertex="1">
+            <mxGeometry height="390" width="282" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-transport-service-provider">
+          <mxCell parent="lane-transport-service-provider" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="31" width="31" x="75" y="26" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Request Transport&lt;br&gt;Progress Status" ubl-kind="action" id="action-request-transport-progress-status">
+          <mxCell parent="lane-transport-service-provider" style="rounded=1;absoluteArcSize=1;arcSize=37;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=4;" vertex="1">
+            <mxGeometry height="54" width="157" x="13" y="108" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Transport&lt;br&gt;Progress Status" ubl-kind="action" id="action-receive-transport-progress-status-in-transport-service-provider">
+          <mxCell parent="lane-transport-service-provider" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingBottom=2;" vertex="1">
+            <mxGeometry height="56" width="157" x="13" y="253" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-transport-service-provider">
+          <mxCell parent="lane-transport-service-provider" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="22" width="22" x="75" y="354" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-transport-service-provider-to-request-transport-progress-status">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="initial-transport-service-provider" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4946;entryY=0;entryPerimeter=0;exitX=0.50491;exitY=0.8718;" target="action-request-transport-progress-status">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-transport-progress-status-in-transport-service-provider-to-final-transport-service-provider">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="action-receive-transport-progress-status-in-transport-service-provider" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5045;entryY=0;entryPerimeter=0;exitX=0.465599;exitY=1;" target="final-transport-service-provider">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transportation Network Manager" ubl-kind="lane" id="lane-transportation-network-manager">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=29;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=3;" vertex="1">
+            <mxGeometry height="390" width="284" x="282" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transport&lt;br&gt;Progress Status&lt;br&gt;Request" ubl-kind="object" ubl-between="[&quot;lane-transport-service-provider&quot;, &quot;lane-transportation-network-manager&quot;]" ubl-lane="null" id="object-transport-progress-status-request">
+          <mxCell parent="lane-transportation-network-manager" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="120" x="-60" y="106" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Transport&lt;br&gt;Progress Status Request" ubl-kind="action" id="action-receive-transport-progress-status-in-transportation-network-manager">
+          <mxCell parent="lane-transportation-network-manager" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingBottom=4;" vertex="1">
+            <mxGeometry height="53" width="156" x="113" y="109" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Transport Progress&lt;br&gt;Status" ubl-kind="action" id="action-send-transport-progress-status">
+          <mxCell parent="lane-transportation-network-manager" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=2;" vertex="1">
+            <mxGeometry height="55" width="157" x="113" y="253" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transport&lt;br&gt;Progress Status" ubl-kind="object" ubl-between="[&quot;lane-transport-service-provider&quot;, &quot;lane-transportation-network-manager&quot;]" ubl-lane="null" id="object-transport-progress-status">
+          <mxCell parent="lane-transportation-network-manager" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=5;spacingBottom=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="120" x="-61" y="252" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-transport-progress-status-request-to-receive-transport-progress-status-in-transportation-network-manager">
+          <mxCell edge="1" parent="lane-transportation-network-manager" source="object-transport-progress-status-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4991;entryPerimeter=0;exitX=1;exitY=0.516707;" target="action-receive-transport-progress-status-in-transportation-network-manager">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-transport-progress-status-in-transportation-network-manager-to-send-transport-progress-status">
+          <mxCell edge="1" parent="lane-transportation-network-manager" source="action-receive-transport-progress-status-in-transportation-network-manager" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.503205;exitY=1;" target="action-send-transport-progress-status">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-transport-progress-status-to-transport-progress-status">
+          <mxCell edge="1" parent="lane-transportation-network-manager" source="action-send-transport-progress-status" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4913;entryPerimeter=0;exitX=0;exitY=0.499916;" target="object-transport-progress-status">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-request-transport-progress-status-to-transport-progress-status-request">
+          <mxCell edge="1" parent="frame" source="action-request-transport-progress-status" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5052;entryPerimeter=0;exitX=1;exitY=0.49623;" target="object-transport-progress-status-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-transport-progress-status-to-receive-transport-progress-status-in-transport-service-provider">
+          <mxCell edge="1" parent="frame" source="object-transport-progress-status" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-receive-transport-progress-status-in-transport-service-provider">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

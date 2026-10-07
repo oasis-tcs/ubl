@@ -1,0 +1,220 @@
+<mxfile host="UBL-TC" agent="UBL artwork, Group B (history/group-b/build_openedi_application.py)">
+  <diagram id="UBL-2.2-Open-edi-Application" name="UBL-2.2-Open-edi-Application">
+    <mxGraphModel grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="622.73" pageHeight="578.91" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object label="" ubl-kind="frame" ubl-notation="overview" id="frame">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1.8;" vertex="1">
+            <mxGeometry height="577.09" width="620.91" x="0.91" y="0.91" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="frame" id="column-model">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=11;whiteSpace=wrap;html=1;fillColor=none;dashed=1;dashPattern=2.5 4.8;strokeWidth=1;" vertex="1">
+            <mxGeometry height="561.27" width="131" x="45.55" y="8.09" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="frame" id="column-community">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=11;whiteSpace=wrap;html=1;fillColor=none;dashed=1;dashPattern=2.5 4.8;strokeWidth=1;" vertex="1">
+            <mxGeometry height="561.27" width="172.18" x="255.27" y="8.09" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="frame" id="column-ubl">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=11;whiteSpace=wrap;html=1;fillColor=none;dashed=1;dashPattern=2.5 4.8;strokeWidth=1;" vertex="1">
+            <mxGeometry height="561.27" width="123.73" x="483" y="8.09" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="frame" id="row-bov">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=11;whiteSpace=wrap;html=1;fillColor=none;dashed=1;dashPattern=2.5 4.8;strokeWidth=1;" vertex="1">
+            <mxGeometry height="207.27" width="603.82" x="9.27" y="77.27" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="frame" id="row-fsv">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=11;whiteSpace=wrap;html=1;fillColor=none;dashed=1;dashPattern=2.5 4.8;strokeWidth=1;" vertex="1">
+            <mxGeometry height="235.18" width="603.82" x="9.27" y="328.18" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="implemented-bov">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=1;" vertex="1">
+            <mxGeometry height="173.27" width="146.73" x="268" y="94.18" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="implemented-fsv">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=1;" vertex="1">
+            <mxGeometry height="145.45" width="146.73" x="268" y="375.45" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="environment">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=11;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=1;" vertex="1">
+            <mxGeometry height="23.09" width="114" x="284.36" y="123.09" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="scenarios">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=11;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=1;" vertex="1">
+            <mxGeometry height="23" width="114" x="284.36" y="156.27" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="roles">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=11;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=1;" vertex="1">
+            <mxGeometry height="23" width="114" x="284.36" y="189.45" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="information-bundles">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=11;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=1;" vertex="1">
+            <mxGeometry height="35.18" width="114" x="284.36" y="222.64" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="user-data">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=11;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=1;" vertex="1">
+            <mxGeometry height="35.18" width="114" x="284.36" y="406.91" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="choreographies">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=11;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=1;" vertex="1">
+            <mxGeometry height="23.09" width="114" x="284.36" y="452.36" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="transport">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=11;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=1;" vertex="1">
+            <mxGeometry height="22.91" width="114" x="284.36" y="485.82" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="open-edi-implementation">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=1;" vertex="1">
+            <mxGeometry height="347.82" width="27.91" x="202" y="142.73" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="ubl-customization">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=1;" vertex="1">
+            <mxGeometry height="271.45" width="27.91" x="444.45" y="194.91" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="arrow" id="model-to-bov">
+          <mxCell parent="1" style="shape=stencil(nVLbEoIgEP0aXhkFtXw2+w9USkYEB0zr78NW89I4TT2x5+w5y7ILooktWcMR8RSrOaInRAgzRvfudGQJDPVwGALTAxMTgMw2PG+B65gRLJMcMrY1uuK9KNqxiFAlN6IdsjRFNMm1Us4rtLKInIHLWF5djb6pAnDDBvcQ1boburyvr38A9ENMDi9mrCOFWqhpjKNgZfD2xUE81ZrEMfaP+3rvby3xMY1+aeSL4fOZ895GQy615W/kgnnADmynf9GGr7CQEta6LLFVOQr+FE2f);fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="30.55" width="92" x="175.64" y="165.64" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="arrow" id="model-to-fsv">
+          <mxCell parent="1" style="shape=stencil(nVLbEoIgEP0aXhkFtXw2+w9USkYEB0zr78NW89I4TT2x5+w5y7ILooktWcMR8RSrOaInRAgzRvfudGQJDPVwGALTAxMTgMw2PG+B65gRLJMcMrY1uuK9KNqxiFAlN6IdsjRFNMm1Us4rtLKInIHLWF5djb6pAnDDBvcQ1boburyvr38A9ENMDi9mrCOFWqhpjKNgZfD2xUE81ZrEMfaP+3rvby3xMY1+aeSL4fOZ895GQy615W/kgnnADmynf9GGr7CQEta6LLFVOQr+FE2f);fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="30.55" width="92" x="175.64" y="432.91" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="arrow" id="ubl-to-bov">
+          <mxCell parent="1" style="shape=stencil(nZLdEoIgEIWfhltGIdOurd4DlZIRwQHSevuw1fyppqYrOR/nLAsroqktWcMRCRSrOaJ7RAgzRnf+62EJhAY4ioB0QJIEhwkQZhueO8AtM4JlksOOdUZXvBOFG+oIVXIjXL9LD4imuVbKZ4VWFpEjsIzl1dnoiypAN6xP96tat32jV6gVwBk3UGGESfwgQxkp1MwcEUy3i0Dw2bwhOKYL82687Fv/7C3+9JNwbO/Hhr4EXq87TXAI5FJb/lR+Mb2zF+shnLThCy2khOnOS6xdHsHfRQ93);fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="30.55" width="88.18" x="398.18" y="225.64" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="arrow" id="ubl-to-fsv">
+          <mxCell parent="1" style="shape=stencil(nZLdEoIgEIWfhltGIdOurd4DlZIRwQHSevuw1fyppqYrOR/nLAsroqktWcMRCRSrOaJ7RAgzRnf+62EJhAY4ioB0QJIEhwkQZhueO8AtM4JlksOOdUZXvBOFG+oIVXIjXL9LD4imuVbKZ4VWFpEjsIzl1dnoiypAN6xP96tat32jV6gVwBk3UGGESfwgQxkp1MwcEUy3i0Dw2bwhOKYL82687Fv/7C3+9JNwbO/Hhr4EXq87TXAI5FJb/lR+Mb2zF+shnLThCy2khOnOS6xdHsHfRQ93);fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="30.55" width="88.18" x="398.18" y="411.09" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="bracket" id="brace">
+          <mxCell parent="1" style="shape=curlyBracket;rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=2.4;flipH=1;size=0.5;" vertex="1">
+            <mxGeometry height="140.18" width="16" x="489.27" y="356.45" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 124%&quot;&gt;ISO/IEC 14662&lt;br&gt;Open-edi&lt;br&gt;Reference&lt;br&gt;Model&lt;/div&gt;" ubl-kind="text" id="t-title-model">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;align=left;" vertex="1">
+            <mxGeometry height="59.64" width="272.73" x="71.64" y="11.8" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 124%&quot;&gt;User&lt;br&gt;Community&lt;br&gt;Open-edi&lt;br&gt;Configuration&lt;/div&gt;" ubl-kind="text" id="t-title-community">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;align=left;" vertex="1">
+            <mxGeometry height="59.64" width="272.73" x="302.91" y="11.8" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 124%&quot;&gt;Universal&lt;br&gt;Business&lt;br&gt;Language&lt;br&gt;Specification&lt;/div&gt;" ubl-kind="text" id="t-title-ubl">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;align=left;" vertex="1">
+            <mxGeometry height="59.64" width="106.55" x="512.55" y="11.8" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 124%&quot;&gt;Perspective of&lt;br&gt;business&lt;br&gt;transactions limited&lt;br&gt;to those aspects&lt;br&gt;regarding the&lt;br&gt;making of business&lt;br&gt;decisions and&lt;br&gt;commitments&lt;br&gt;among Persons,&lt;br&gt;which are needed&lt;br&gt;for the description&lt;br&gt;of a business&lt;br&gt;transaction&lt;/div&gt;" ubl-kind="text" id="t-bov">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;align=left;" vertex="1">
+            <mxGeometry height="193.82" width="272.73" x="59.82" y="84.57" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 124%&quot;&gt;Perspective of&lt;br&gt;business&lt;br&gt;transactions limited&lt;br&gt;to those information&lt;br&gt;technology&lt;br&gt;interoperability&lt;br&gt;aspects of&lt;br&gt;Information&lt;br&gt;Technology&lt;br&gt;Systems needed to&lt;br&gt;support the&lt;br&gt;execution of&lt;br&gt;transactions among&lt;br&gt;Open-edi&lt;br&gt;Community parties.&lt;/div&gt;" ubl-kind="text" id="t-fsv">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;align=left;" vertex="1">
+            <mxGeometry height="223.64" width="272.73" x="58" y="333.12" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Implemented BOV" ubl-kind="text" id="t-impl-bov">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;align=center;" vertex="1">
+            <mxGeometry height="13.8" width="272.73" x="203.64" y="100.76" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Implemented FSV" ubl-kind="text" id="t-impl-fsv">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;align=center;" vertex="1">
+            <mxGeometry height="13.8" width="272.73" x="206.36" y="384.58" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Environment" ubl-kind="text" id="t-environment">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;align=center;" vertex="1">
+            <mxGeometry height="13.8" width="272.73" x="204.91" y="128.76" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Scenarios" ubl-kind="text" id="t-scenarios">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;align=center;" vertex="1">
+            <mxGeometry height="13.8" width="272.73" x="204.91" y="161.85" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Roles" ubl-kind="text" id="t-roles">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;align=center;" vertex="1">
+            <mxGeometry height="13.8" width="272.73" x="204.91" y="195.13" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 124%&quot;&gt;Information&lt;br&gt;Bundles&lt;/div&gt;" ubl-kind="text" id="t-information-bundles">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;align=center;" vertex="1">
+            <mxGeometry height="29.82" width="272.73" x="204.91" y="226.21" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 124%&quot;&gt;User&lt;br&gt;Data&lt;/div&gt;" ubl-kind="text" id="t-user-data">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;align=center;" vertex="1">
+            <mxGeometry height="29.82" width="272.73" x="204.91" y="410.57" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Choreographies" ubl-kind="text" id="t-choreographies">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;align=center;" vertex="1">
+            <mxGeometry height="13.8" width="272.73" x="204.91" y="456.76" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transport" ubl-kind="text" id="t-transport">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;align=center;" vertex="1">
+            <mxGeometry height="13.8" width="272.73" x="204.91" y="490.22" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 124%&quot;&gt;Section 2. UBL&lt;br&gt;Business Objects&lt;/div&gt;" ubl-kind="text" id="t-section-2">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;align=left;" vertex="1">
+            <mxGeometry height="29.82" width="116.18" x="502.91" y="227.48" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 124%&quot;&gt;Section 3. UBL&lt;br&gt;Schemas&lt;br&gt;&lt;br&gt;Section 4. Addi-&lt;br&gt;tional Document&lt;br&gt;Constraints&lt;br&gt;&lt;br&gt;Section 5. UBL&lt;br&gt;Digital Signatures&lt;/div&gt;" ubl-kind="text" id="t-sections">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;align=left;" vertex="1">
+            <mxGeometry height="134.18" width="111.64" x="507.45" y="358.39" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="BOV - Business Operational View" ubl-kind="text" id="t-label-bov">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;horizontal=0;align=center;" vertex="1">
+            <mxGeometry height="209.45" width="13.8" x="19.28" y="77.82" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="FSV - Functional Services View" ubl-kind="text" id="t-label-fsv">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;horizontal=0;align=center;" vertex="1">
+            <mxGeometry height="196.91" width="13.8" x="20.55" y="343.82" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Open-edi Implementation" ubl-kind="text" id="t-open-edi-implementation">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;horizontal=0;align=center;" vertex="1">
+            <mxGeometry height="163.64" width="13.8" x="209.83" y="235.64" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="UBL Customization" ubl-kind="text" id="t-ubl-customization">
+          <mxCell parent="1" style="text;html=1;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;horizontal=0;align=center;" vertex="1">
+            <mxGeometry height="134.55" width="13.8" x="452.74" y="266.91" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

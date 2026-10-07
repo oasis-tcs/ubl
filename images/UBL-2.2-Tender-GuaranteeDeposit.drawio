@@ -1,0 +1,80 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-Tender-GuaranteeDeposit" name="UBL-2.2-Tender-GuaranteeDeposit">
+    <mxGraphModel dx="507" dy="234" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="536" pageHeight="292" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="14" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="262" width="506" x="15" y="15" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="TENDERER" ubl-kind="lane" ubl-label="Tenderer" id="lane-tenderer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=28;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=12;" vertex="1">
+            <mxGeometry height="262" width="221" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-tenderer">
+          <mxCell parent="lane-tenderer" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="27" width="27" x="69" y="27" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Get Guarantee from&lt;br&gt;financial institution" ubl-kind="action" id="action-get-guarantee-from-financial-institution">
+          <mxCell parent="lane-tenderer" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=3;" vertex="1">
+            <mxGeometry height="48" width="141" x="12" y="80" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Submit Certificate" ubl-kind="action" id="action-submit-certificate">
+          <mxCell parent="lane-tenderer" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=1;" vertex="1">
+            <mxGeometry height="33" width="125" x="20" y="158" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-tenderer-to-get-guarantee-from-financial-institution">
+          <mxCell edge="1" parent="lane-tenderer" source="initial-tenderer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=0.8485;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-get-guarantee-from-financial-institution">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-get-guarantee-from-financial-institution-to-submit-certificate">
+          <mxCell edge="1" parent="lane-tenderer" source="action-get-guarantee-from-financial-institution" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-submit-certificate">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="CONTRACTING AUTHORITY" ubl-kind="lane" ubl-label="Contracting Authority" id="lane-contracting-authority">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=29;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=3;" vertex="1">
+            <mxGeometry height="262" width="285" x="221" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Guarantee&lt;br&gt;Certificate" ubl-kind="object" ubl-between="[&quot;lane-tenderer&quot;, &quot;lane-contracting-authority&quot;]" ubl-lane="null" id="object-guarantee-certificate">
+          <mxCell parent="lane-contracting-authority" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=14;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="38" width="88" x="-38" y="156" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive guarantee certificate" ubl-kind="action" id="action-receive-guarantee-certificate">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=1;" vertex="1">
+            <mxGeometry height="34" width="192" x="80" y="158" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-contracting-authority">
+          <mxCell parent="lane-contracting-authority" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="27" width="28" x="162" y="222" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-guarantee-certificate-to-receive-guarantee-certificate">
+          <mxCell edge="1" parent="lane-contracting-authority" source="object-guarantee-certificate" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-receive-guarantee-certificate">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-guarantee-certificate-to-final-contracting-authority">
+          <mxCell edge="1" parent="lane-contracting-authority" source="action-receive-guarantee-certificate" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.5;entryY=0;" target="final-contracting-authority">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-submit-certificate-to-guarantee-certificate">
+          <mxCell edge="1" parent="frame" source="action-submit-certificate" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4933;entryPerimeter=0;exitX=1;exitY=0.507436;" target="object-guarantee-certificate">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

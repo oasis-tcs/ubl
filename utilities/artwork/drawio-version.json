@@ -1,0 +1,4 @@
+{
+  "version": "32.2.0",
+  "note": "The draw.io release whose viewer draws every export and render (a tag of jgraph/drawio). The one place it is set; change it only through tools/drawio_upgrade.py's report, see the README (\"Upgrading draw.io\"). DRAWIO_VERSION in the environment overrides it, for a trial."
+}

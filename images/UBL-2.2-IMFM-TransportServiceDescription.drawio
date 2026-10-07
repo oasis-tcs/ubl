@@ -1,0 +1,100 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-IMFM-TransportServiceDescription" name="UBL-2.2-IMFM-TransportServiceDescription">
+    <mxGraphModel dx="586" dy="344" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="623" pageHeight="381" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="18" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="343" width="584" x="19" y="19" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transport User" ubl-kind="lane" id="lane-transport-user">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=33;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=7;" vertex="1">
+            <mxGeometry height="343" width="293" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-transport-user">
+          <mxCell parent="lane-transport-user" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="32" width="33" x="78" y="32" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Request Transport&lt;br&gt;Service Description" ubl-kind="action" id="action-request-transport-service-description">
+          <mxCell parent="lane-transport-user" style="rounded=1;absoluteArcSize=1;arcSize=38;html=1;whiteSpace=nowrap;fontStyle=1;align=right;verticalAlign=middle;spacing=0;spacingRight=26;spacingBottom=3;" vertex="1">
+            <mxGeometry height="62" width="162" x="14" y="98" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Transport&lt;br&gt;Service Description" ubl-kind="action" id="action-receive-transport-service-description-in-transport-user">
+          <mxCell parent="lane-transport-user" style="rounded=1;absoluteArcSize=1;arcSize=38;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=3;" vertex="1">
+            <mxGeometry height="61" width="162" x="15" y="201" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-transport-user">
+          <mxCell parent="lane-transport-user" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="23" width="23" x="79" y="304" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-transport-user-to-request-transport-service-description">
+          <mxCell edge="1" parent="lane-transport-user" source="initial-transport-user" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.515152;exitY=0.8754;" target="action-request-transport-service-description">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-transport-service-description-in-transport-user-to-final-transport-user">
+          <mxCell edge="1" parent="lane-transport-user" source="action-receive-transport-service-description-in-transport-user" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5022;entryY=0;entryPerimeter=0;exitX=0.466362;exitY=1;" target="final-transport-user">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transport Service Provider" ubl-kind="lane" id="lane-transport-service-provider">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=33;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;" vertex="1">
+            <mxGeometry height="343" width="291" x="293" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transport Service&lt;br&gt;Description&lt;br&gt;Request" ubl-kind="object" ubl-between="[&quot;lane-transport-user&quot;, &quot;lane-transport-service-provider&quot;]" ubl-lane="null" id="object-transport-service-description-request">
+          <mxCell parent="lane-transport-service-provider" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=6;strokeWidth=2;" vertex="1">
+            <mxGeometry height="68" width="121" x="-61" y="94" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Transport&lt;br&gt;Service Description&lt;br&gt;Request" ubl-kind="action" id="action-receive-transport-service-description-in-transport-service-provider">
+          <mxCell parent="lane-transport-service-provider" style="rounded=1;absoluteArcSize=1;arcSize=38;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=2;" vertex="1">
+            <mxGeometry height="63" width="162" x="114" y="97" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transport Service&lt;br&gt;Description" ubl-kind="object" ubl-between="[&quot;lane-transport-user&quot;, &quot;lane-transport-service-provider&quot;]" ubl-lane="null" id="object-transport-service-description">
+          <mxCell parent="lane-transport-service-provider" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=6;strokeWidth=2;" vertex="1">
+            <mxGeometry height="68" width="121" x="-61" y="198" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Transport Service&lt;br&gt;Description" ubl-kind="action" id="action-send-transport-service-description">
+          <mxCell parent="lane-transport-service-provider" style="rounded=1;absoluteArcSize=1;arcSize=37;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=6;" vertex="1">
+            <mxGeometry height="60" width="162" x="115" y="201" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-transport-service-description-request-to-receive-transport-service-description-in-transport-service-provider">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="object-transport-service-description-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.507353;" target="action-receive-transport-service-description-in-transport-service-provider">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-transport-service-description-in-transport-service-provider-to-send-transport-service-description">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="action-receive-transport-service-description-in-transport-service-provider" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.506173;exitY=1;" target="action-send-transport-service-description">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-transport-service-description-to-transport-service-description">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="action-send-transport-service-description" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=1;entryY=0.485294;" target="object-transport-service-description">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-request-transport-service-description-to-transport-service-description-request">
+          <mxCell edge="1" parent="frame" source="action-request-transport-service-description" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.514706;" target="object-transport-service-description-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-transport-service-description-to-receive-transport-service-description-in-transport-user">
+          <mxCell edge="1" parent="frame" source="object-transport-service-description" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.492647;" target="action-receive-transport-service-description-in-transport-user">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

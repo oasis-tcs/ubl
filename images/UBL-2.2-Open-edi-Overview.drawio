@@ -1,0 +1,155 @@
+<mxfile host="UBL-TC" agent="UBL artwork, Group B (history/group-b/build_openedi_overview.py)">
+  <diagram id="UBL-2.2-Open-edi-Overview" name="UBL-2.2-Open-edi-Overview">
+    <mxGraphModel grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="518.94" pageHeight="404.09" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object label="" ubl-kind="frame" ubl-notation="overview" id="frame">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1.5;" vertex="1">
+            <mxGeometry height="402.58" width="517.42" x="0.76" y="0.76" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="transactions">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1;" vertex="1">
+            <mxGeometry height="372.48" width="21.42" x="29.89" y="15.8" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="bov">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1;" vertex="1">
+            <mxGeometry height="73.55" width="161.73" x="136.26" y="70.2" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="bov-standards">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1;" vertex="1">
+            <mxGeometry height="56.88" width="107.79" x="381.11" y="81.41" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="fsv">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1;" vertex="1">
+            <mxGeometry height="75.06" width="161.73" x="136.26" y="287.92" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="fsv-standards">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1;" vertex="1">
+            <mxGeometry height="56.88" width="107.79" x="381.11" y="293.68" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="reference-model">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1.5;dashed=1;dashPattern=3.1 3.1;" vertex="1">
+            <mxGeometry height="335.76" width="180.68" x="125.3" y="44.47" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="arrow" id="comply-bov">
+          <mxCell parent="1" style="shape=stencil(nVLbEoIgEP0aXhmE8vJs9h+olIwIDpjW34etk5emmnpiz9mzh2UXxFJX8VYgSjRvBGIHRCm31gz+9GQFTLDDLAFmACYmOAqB4a4VRQd0z63kuRKQcZ01tRhk2U0+UlfCym7MsgyxtDBa+1pptEP0CFzOi/pszUWXgFs+Vo9RY/qx0St4EbjjBijC9IEnEyX1QkpjzNhKTj6ICU6ClXiPw/i9fjGJP/UxjoJf+vmif3nsvL2poFDGiSfywTxjD7YLOBkrVlgqBZtdWmxVnoKfxbI7);fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="14.39" width="80.76" x="299.24" y="86.21" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="arrow" id="covered-bov">
+          <mxCell parent="1" style="shape=stencil(nZLdEoIgEIWfhltGQVOvzd4DlZIRwQHTevuwdfJvqqkr9nx7dmdZQDS1FWs5Ip5iDUf0iAhhxujBnQ5WQPwA0wTIACT2cBACYbblRQe4Z0awXHLI2M7omg+i7KY+QlXciG7M0gzRtNBKuVqhlUXkBCxnRX0x+qpK0C0bq8eo0f046G03wR1IhMlTT42kUAt7SLBPVnbvgznB4bp3iA/xe7/3tzfGkf/LHF/8u0vOLzcVFFJb/lIumPfrxHb5Z234Sgsp4VWXLbYuh+BX0ewB);fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="14.39" width="80.45" x="299.24" y="118.94" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="arrow" id="comply-fsv">
+          <mxCell parent="1" style="shape=stencil(nVLbEoIgEP0aXhmESny2+g9USkYEB0zr78PWyUtTTT2x5+zZw7ILYqkvRSMRJUbUErE9olQ4Z/twBrIEJtpglgDTA8MJQOEbmbfAdcIpkWkJGd86W8leFe1ookwpnWqHLDsglubWmFCrrPGIHoHLRF6dnb2YAnAjhuohqm03dHkFr/H2G6AY0wceTbQyMynlmLGFnHwQE5xEC/EW7/h7PSf/izmOo186+aJ/eea0tLEg19bLJwrBNN0A1qM/WScXWGkNO51brFWBgg/FDnc=);fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="14.39" width="80" x="299.24" y="300.38" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="arrow" id="covered-fsv">
+          <mxCell parent="1" style="shape=stencil(nZLdEoIgEIWfhltGQVOvzd4DlZIRwQHTevuwdfJvqqkr9nx7dmdZQDS1FWs5Ip5iDUf0iAhhxujBnQ5WQPwA0wTIACT2sB8CYbblRQe4Z0awXHLI2M7omg+i7KY+QlXciG7M0gzRtNBKuVqhlUXkBCxnRX0x+qpK0C0bq8eo0f046G03wR1IhMlTT42kUAt76OOYrOzeB3OCSbAyh/gQv/d7f3tjHPm/zPHFv7vk/HJTQSG15S/lgnm/TmyXf9aGr7SQEl512WLrcgh+Fc0e);fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="14.39" width="80.15" x="299.09" y="333.03" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="arrow" id="viewed-as">
+          <mxCell parent="1" style="shape=stencil(nZLREoIgEEW/hlcGWc16NvsPUkpGBAdM6+/D1im1qZl6Yu/ZuzvLAoHMV6KVhDMjGklgTzgXztkhnAFWSKKYwg7JgCSNKGyQCN/KokPcC6fEUUvM+M7ZWg6q7KY+ylTSqW7MQk4gK6wxoVZZ4wk/IDuKoj47ezEl6laM1WPU2H4c9Po2wW0ilD/01EgrM7PHQBks7OyzOWE0ThbmhG62n/3sb++WptEvc3z3v1/y9XJTQaGtl08Vgtd+g1gv/2SdXGilNb7qvMXaFRD+Ksjv);fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="14.39" width="71.36" x="54.85" y="204.85" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="arrow" id="bov-to-fsv">
+          <mxCell parent="1" style="shape=stencil(nVLbEoIgEP0aXhmF8vJs9h+olIwIDpDW34ezVmo5TT2xe/bs4bALopmtWccRCRRrOaIHRAgzRg/+9GANSBjGOKYADRO0wzQFhNmOlw7gnhnBCsmhYp3RDR9E5SYhoWpuhBurNEc0K7VSvldoZRE5AlawsjkbfVEV5B0bu8eo1f3o9ApaMSZwy+3N5KQkhZrxgwU7SR/+P5L3OEoW/DTCCfmBH2xzExyHf3O/+JitZeuhpdSWPzMfvAbsk/X0T9rwRS6khLXOJdYsD8G/ovkd);fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="117.73" width="14.39" x="160" y="147.27" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="arrow" id="fsv-to-bov">
+          <mxCell parent="1" style="shape=stencil(pVLRDoIwDPyavS6wqsAz4n8MmLIwNrIh6N87LFEgEmN8Wu96vXXtCKSu4q0gLNC8EQSOhDFurRn86ckKmTCMaARIDRO1o5Agw10rig7pnlvJcyUw4zprajHIspuMpK6Eld2YhYxAWhitfa002hF2Qi7nRX2x5qpLxC0fq8eoMf3Y6Q29Isrwljvi4IkmEyX1TBoshCymANviPT3ES31Ak/AH/WxaHwtiGoX/FXzpaLabrScXyjjxQj54T9mD9QrOxooFlkrhbucWa5Wn8HNB9gA=);fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="117.73" width="14.39" x="250.91" y="147.58" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="arrow" id="interrelated">
+          <mxCell parent="1" style="shape=stencil(lVLbEoIgEP0aXhmBSnwu+w8ySiYEByzr74O2i5ea9Ik9Z8/e2EVs7UtRS0QTIyqJ2AZRKpyzbXgDWQJDFhwTDlT7ojDLgBG+lkUD9EU4JXZagsc3zp5kq/bNM5EypXSqiV6WI7YurDEhVlnjEd0CtxPF6ejs2ewB1yJGR6uyl9jpFXKlmEKVG+DkgZ5JtDIdadITUo4Z+y1e4hXv6xOckRl6EltLp3ZDSIb58rd6OGZnF1/1ncVMrMBxSmYNMAr480PjlkYrKLT18o2C8dl6AMOTOFgne1hpDbfWTTFUBQqOneV3);fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="148.18" width="14.39" x="419.09" y="142.12" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Open-edi Reference Model" ubl-kind="text" id="t-model">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="13.8" width="227.27" x="103.41" y="21.07" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Business Operational View" ubl-kind="text" id="t-bov">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="13.8" width="227.27" x="103.33" y="50.31" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 152%&quot;&gt;Business aspects&lt;br&gt;of&lt;br&gt;business transactions&lt;/div&gt;" ubl-kind="text" id="t-bov-box">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="54.55" width="227.27" x="103.48" y="80.85" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Functional Service View" ubl-kind="text" id="t-fsv">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="13.8" width="227.27" x="103.33" y="272.13" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 152%&quot;&gt;Information technology&lt;br&gt;aspects of&lt;br&gt;business transactions&lt;/div&gt;" ubl-kind="text" id="t-fsv-box">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="54.55" width="227.27" x="103.33" y="299.18" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 152%&quot;&gt;BOV RELATED&lt;br&gt;STANDARDS&lt;/div&gt;" ubl-kind="text" id="t-bov-std">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="36.36" width="163.33" x="352.58" y="91.6" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 152%&quot;&gt;FSV RELATED&lt;br&gt;STANDARDS&lt;/div&gt;" ubl-kind="text" id="t-fsv-std">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="36.36" width="163.03" x="352.88" y="304.79" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Comply with" ubl-kind="text" id="t-comply-bov">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="13.8" width="227.27" x="230.3" y="73.64" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Covered by" ubl-kind="text" id="t-covered-bov">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="13.8" width="227.27" x="230.3" y="105.61" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Comply with" ubl-kind="text" id="t-comply-fsv">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="13.8" width="227.27" x="230.3" y="287.73" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Covered by" ubl-kind="text" id="t-covered-fsv">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="13.8" width="227.27" x="230.3" y="319.7" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Viewed as" ubl-kind="text" id="t-viewed">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="13.8" width="165.76" x="3.03" y="188.95" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Inter-related" ubl-kind="text" id="t-interrelated">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=#ffffff;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="13.8" width="90.91" x="385.23" y="209.1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 101%&quot;&gt;B&lt;br&gt;U&lt;br&gt;S&lt;br&gt;I&lt;br&gt;N&lt;br&gt;E&lt;br&gt;S&lt;br&gt;S&lt;br&gt;&lt;br&gt;T&lt;br&gt;R&lt;br&gt;A&lt;br&gt;N&lt;br&gt;S&lt;br&gt;A&lt;br&gt;C&lt;br&gt;T&lt;br&gt;I&lt;br&gt;O&lt;br&gt;N&lt;br&gt;S&lt;/div&gt;" ubl-kind="text" id="t-transactions">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=16;spacing=0;" vertex="1">
+            <mxGeometry height="339.18" width="76.36" x="3.03" y="32.39" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

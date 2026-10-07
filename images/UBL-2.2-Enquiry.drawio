@@ -1,0 +1,110 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-Enquiry" name="UBL-2.2-Enquiry">
+    <mxGraphModel dx="615" dy="323" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="647" pageHeight="375" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="16" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="341" width="612" x="17" y="17" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="REQUESTER" ubl-kind="lane" ubl-label="Requester" id="lane-requester">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=25;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=19;" vertex="1">
+            <mxGeometry height="341" width="305" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-requester">
+          <mxCell parent="lane-requester" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="30" width="30" x="94" y="23" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Prepare enquiry" ubl-kind="action" id="action-prepare-enquiry">
+          <mxCell parent="lane-requester" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingBottom=3;" vertex="1">
+            <mxGeometry height="32" width="181" x="18" y="80" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Submit enquiry" ubl-kind="action" id="action-submit-enquiry">
+          <mxCell parent="lane-requester" style="rounded=1;absoluteArcSize=1;arcSize=31;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingBottom=1;" vertex="1">
+            <mxGeometry height="33" width="183" x="17" y="142" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive enquiry response" ubl-kind="action" id="action-receive-enquiry-response">
+          <mxCell parent="lane-requester" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingTop=2;" vertex="1">
+            <mxGeometry height="34" width="173" x="22" y="236" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-requester">
+          <mxCell parent="lane-requester" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="21" width="21" x="98" y="304" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-requester-to-prepare-enquiry">
+          <mxCell edge="1" parent="lane-requester" source="initial-requester" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.483333;exitY=0.868;" target="action-prepare-enquiry">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-prepare-enquiry-to-submit-enquiry">
+          <mxCell edge="1" parent="lane-requester" source="action-prepare-enquiry" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-submit-enquiry">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-enquiry-response-to-final-requester">
+          <mxCell edge="1" parent="lane-requester" source="action-receive-enquiry-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="final-requester">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="RESPONDER" ubl-kind="lane" ubl-label="Responder" id="lane-responder">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=23;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=9;" vertex="1">
+            <mxGeometry height="341" width="307" x="305" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Enquiry" ubl-kind="object" ubl-between="[&quot;lane-requester&quot;, &quot;lane-responder&quot;]" ubl-lane="null" id="object-enquiry">
+          <mxCell parent="lane-responder" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=32;strokeWidth=2;" vertex="1">
+            <mxGeometry height="64" width="94" x="-46" y="127" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive enquiry" ubl-kind="action" id="action-receive-enquiry">
+          <mxCell parent="lane-responder" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=8;spacingBottom=5;" vertex="1">
+            <mxGeometry height="33" width="188" x="99" y="143" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Enquiry&lt;br&gt;Response" ubl-kind="object" ubl-between="[&quot;lane-requester&quot;, &quot;lane-responder&quot;]" ubl-lane="null" id="object-enquiry-response">
+          <mxCell parent="lane-responder" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=6;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="75" width="94" x="-46" y="218" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Submit enquiry response" ubl-kind="action" id="action-submit-enquiry-response">
+          <mxCell parent="lane-responder" style="rounded=1;absoluteArcSize=1;arcSize=30;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingBottom=3;" vertex="1">
+            <mxGeometry height="35" width="188" x="99" y="237" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-enquiry-to-receive-enquiry">
+          <mxCell edge="1" parent="lane-responder" source="object-enquiry" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.484848;" target="action-receive-enquiry">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-enquiry-to-submit-enquiry-response">
+          <mxCell edge="1" parent="lane-responder" source="action-receive-enquiry" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-submit-enquiry-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-submit-enquiry-response-to-enquiry-response">
+          <mxCell edge="1" parent="lane-responder" source="action-submit-enquiry-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.528571;" target="object-enquiry-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-submit-enquiry-to-enquiry">
+          <mxCell edge="1" parent="frame" source="action-submit-enquiry" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.492188;" target="object-enquiry">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-enquiry-response-to-receive-enquiry-response">
+          <mxCell edge="1" parent="frame" source="object-enquiry-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=1;entryY=0.573529;" target="action-receive-enquiry-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

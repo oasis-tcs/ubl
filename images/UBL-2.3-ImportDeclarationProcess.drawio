@@ -1,0 +1,140 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.3-ImportDeclarationProcess" name="UBL-2.3-ImportDeclarationProcess">
+    <mxGraphModel dx="731" dy="437" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="755" pageHeight="463" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="12" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="435" width="728" x="14" y="14" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Importer Party" ubl-kind="lane" id="lane-importer-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=41;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=20;" vertex="1">
+            <mxGeometry height="435" width="364" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-importer-party">
+          <mxCell parent="lane-importer-party" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="29" width="29" x="162" y="46" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Issue Import&lt;br&gt;Declaration" ubl-kind="action" id="action-issue-import-declaration">
+          <mxCell parent="lane-importer-party" style="rounded=1;absoluteArcSize=1;arcSize=11;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="40" width="111" x="121" y="102" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive accept" ubl-kind="action" id="action-receive-accept">
+          <mxCell parent="lane-importer-party" style="rounded=1;absoluteArcSize=1;arcSize=11;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="41" width="111" x="121" y="213" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive reject" ubl-kind="action" id="action-receive-reject">
+          <mxCell parent="lane-importer-party" style="rounded=1;absoluteArcSize=1;arcSize=12;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="41" width="111" x="121" y="314" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-importer-party">
+          <mxCell parent="lane-importer-party" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="30" width="30" x="40" y="385" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-importer-party-to-issue-import-declaration">
+          <mxCell edge="1" parent="lane-importer-party" source="initial-importer-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.5;exitY=0.8625;" target="action-issue-import-declaration">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-accept-to-final-importer-party">
+          <mxCell edge="1" parent="lane-importer-party" source="action-receive-accept" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;exitX=0;exitY=0.512195;entryX=0.533333;entryY=0;" target="final-importer-party">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="56" y="234" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-reject-to-final-importer-party">
+          <mxCell edge="1" parent="lane-importer-party" source="action-receive-reject" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;exitX=0.504505;exitY=1;entryX=1;entryY=0.533333;" target="final-importer-party">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="177" y="401" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="Customs&lt;br&gt;Party" ubl-kind="lane" ubl-label="Customs Party" id="lane-customs-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=43;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=20;" vertex="1">
+            <mxGeometry height="435" width="364" x="364" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Import Customs&lt;br&gt;Declarations" ubl-kind="object" ubl-between="[&quot;lane-importer-party&quot;, &quot;lane-customs-party&quot;]" ubl-lane="null" id="object-import-customs-declarations">
+          <mxCell parent="lane-customs-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="60" width="122" x="-61" y="92" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Import&lt;br&gt;Declaration" ubl-kind="action" id="action-receive-import-declaration">
+          <mxCell parent="lane-customs-party" style="rounded=1;absoluteArcSize=1;arcSize=11;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="40" width="111" x="152" y="102" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application response&lt;br&gt;(approved)" ubl-kind="object" ubl-between="[&quot;lane-importer-party&quot;, &quot;lane-customs-party&quot;]" ubl-lane="null" id="object-application-response-approved">
+          <mxCell parent="lane-customs-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="61" width="122" x="-61" y="203" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Is valid?" ubl-kind="decision" id="decision-is-valid">
+          <mxCell parent="lane-customs-party" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingTop=1;" vertex="1">
+            <mxGeometry height="51" width="100" x="157" y="208" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application response&lt;br&gt;(rejected)" ubl-kind="object" ubl-between="[&quot;lane-importer-party&quot;, &quot;lane-customs-party&quot;]" ubl-lane="null" id="object-application-response-rejected">
+          <mxCell parent="lane-customs-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="61" width="122" x="-61" y="304" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-import-customs-declarations-to-receive-import-declaration">
+          <mxCell edge="1" parent="lane-customs-party" source="object-import-customs-declarations" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-receive-import-declaration">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-import-declaration-to-is-valid">
+          <mxCell edge="1" parent="lane-customs-party" source="action-receive-import-declaration" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.495495;exitY=1;" target="decision-is-valid">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Yes" ubl-kind="flow" ubl-guard="text-yes" ubl-flow="object" ubl-text="text-yes" ubl-text-text-yes-labels="flow-is-valid-to-application-response-approved" id="flow-is-valid-to-application-response-approved">
+          <mxCell edge="1" parent="lane-customs-party" source="decision-is-valid" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;" target="object-application-response-approved">
+            <mxGeometry relative="1" x="0.02" as="geometry">
+              <mxPoint y="-11" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="No" ubl-kind="flow" ubl-guard="text-no" ubl-flow="object" ubl-text="text-no" ubl-text-text-no-labels="flow-is-valid-to-application-response-rejected" id="flow-is-valid-to-application-response-rejected">
+          <mxCell edge="1" parent="lane-customs-party" source="decision-is-valid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=0.5;exitY=1;entryX=1;entryY=0.540984;" target="object-application-response-rejected">
+            <mxGeometry relative="1" x="-0.03" as="geometry">
+              <mxPoint y="-11" as="offset" />
+              <Array as="points">
+                <mxPoint x="207" y="337" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-issue-import-declaration-to-import-customs-declarations">
+          <mxCell edge="1" parent="frame" source="action-issue-import-declaration" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-import-customs-declarations">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-approved-to-receive-accept">
+          <mxCell edge="1" parent="frame" source="object-application-response-approved" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-receive-accept">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-rejected-to-receive-reject">
+          <mxCell edge="1" parent="frame" source="object-application-response-rejected" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-receive-reject">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

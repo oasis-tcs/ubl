@@ -1,0 +1,104 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-CRP-ChangeArticleCatalogue" name="UBL-2.2-CRP-ChangeArticleCatalogue">
+    <mxGraphModel dx="719" dy="398" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="748" pageHeight="426" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="14" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="396" width="717" x="15" y="15" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Producer" ubl-kind="lane" id="lane-producer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=27;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=123;" vertex="1">
+            <mxGeometry height="396" width="396" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-producer">
+          <mxCell parent="lane-producer" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="27" width="27" x="120" y="29" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Catalogue update is&lt;br&gt;needed?" ubl-kind="decision" ubl-question="Catalogue update is needed?" ubl-label="" ubl-text="text-catalogue-update-is-needed" ubl-text-text-catalogue-update-is-needed-labels="decision-producer" id="decision-producer">
+          <mxCell parent="lane-producer" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=28;spacingTop=5;spacingBottom=12;" vertex="1">
+            <mxGeometry height="19" width="22" x="121" y="85" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-producer">
+          <mxCell parent="lane-producer" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="17" width="16" x="27" y="86" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Inform about changes inside the&lt;br&gt;catalogue" ubl-kind="action" id="action-inform-about-changes-inside-the">
+          <mxCell parent="lane-producer" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=4;spacingBottom=3;" vertex="1">
+            <mxGeometry height="37" width="232" x="16" y="185" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-producer-to-decision-producer">
+          <mxCell edge="1" parent="lane-producer" source="initial-producer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.444444;exitY=0.8513;" target="decision-producer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="False" ubl-kind="flow" ubl-guard="text-false" ubl-flow="control" ubl-text="text-false" ubl-text-text-false-labels="flow-decision-producer-to-final-producer" id="flow-decision-producer-to-final-producer">
+          <mxCell edge="1" parent="lane-producer" source="decision-producer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;entryX=1;entryY=0.5;" target="final-producer">
+            <mxGeometry relative="1" x="-0.25" as="geometry">
+              <mxPoint y="-8" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="True" ubl-kind="flow" ubl-guard="text-true" ubl-flow="control" ubl-text="text-true" ubl-text-text-true-labels="flow-decision-producer-to-inform-about-changes-inside-the" id="flow-decision-producer-to-inform-about-changes-inside-the">
+          <mxCell edge="1" parent="lane-producer" source="decision-producer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;" target="action-inform-about-changes-inside-the">
+            <mxGeometry relative="1" x="-0.72" as="geometry">
+              <mxPoint x="17" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="Retailer" ubl-kind="lane" id="lane-retailer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=28;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=28;" vertex="1">
+            <mxGeometry height="396" width="321" x="396" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Catalogue" ubl-kind="object" ubl-between="[&quot;lane-producer&quot;, &quot;lane-retailer&quot;]" ubl-lane="null" id="object-catalogue">
+          <mxCell parent="lane-retailer" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="32" width="135" x="-68" y="186" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive information" ubl-kind="action" id="action-receive-information">
+          <mxCell parent="lane-retailer" style="rounded=1;absoluteArcSize=1;arcSize=27;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=3;" vertex="1">
+            <mxGeometry height="27" width="162" x="138" y="189" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Update Product database" ubl-kind="action" id="action-update-product-database">
+          <mxCell parent="lane-retailer" style="rounded=1;absoluteArcSize=1;arcSize=23;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=1;" vertex="1">
+            <mxGeometry height="29" width="172" x="133" y="282" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-retailer">
+          <mxCell parent="lane-retailer" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="18" width="17" x="210" y="367" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-catalogue-to-receive-information">
+          <mxCell edge="1" parent="lane-retailer" source="object-catalogue" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4839;entryPerimeter=0;exitX=1;exitY=0.502041;" target="action-receive-information">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-information-to-update-product-database">
+          <mxCell edge="1" parent="lane-retailer" source="action-receive-information" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-update-product-database">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-update-product-database-to-final-retailer">
+          <mxCell edge="1" parent="lane-retailer" source="action-update-product-database" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.529412;entryY=0;" target="final-retailer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-inform-about-changes-inside-the-to-catalogue">
+          <mxCell edge="1" parent="frame" source="action-inform-about-changes-inside-the" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.45946;" target="object-catalogue">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
