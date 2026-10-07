@@ -3,6 +3,7 @@
     build.xml - build script for UBL package
 -->
 <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+<taskdef name="for" classname="net.sf.antcontrib.logic.ForTask"/>
 
 <target name="make">
   <tstamp>
@@ -40,14 +41,17 @@
   <echo if:set="skip-publish" message="!!!!!!!!!!!!!! Incomplete execution requested: documentation not being generated in the absence of secret values!!!!!!!!!!!!!!!!"/>
   <!--override abieExtensions as "no" for UBL 2.2 and earlier-->
   <property name="abieExtensions" value="yes"/>
-  <!--performance locally-->
+  <!--performance: cpuCount is the number of Saxon processes that make each
+      of the two sets of HTML reports, the full and the endorsed. The two sets
+      are made side by side, so twice cpuCount processes run at once: four on
+      a GitHub runner, which has four processors, and sixteen locally.-->
   <if>
     <equals arg1="${platform}" arg2="local"/>
     <then>
-      <property name="cpuCount" value="16"/>
+      <property name="cpuCount" value="8"/>
     </then>
     <else>
-      <property name="cpuCount" value="1"/>
+      <property name="cpuCount" value="2"/>
     </else>
   </if>
   <!--documentation-->
@@ -874,135 +878,19 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
 
 <target name="-reports" depends="-report-all-only" unless="html-okay">
   <property name="parallelGroupCount" value="${cpuCount}"/>
-  
- <if>
-   <equals arg1="${parallelGroupCount}" arg2="1"/>
-  <then>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="1"/>
-    </antcall>  
-  </sequential>
-  </then>
-  <else>
-    <parallel>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="1"/>
-    </antcall>  
-  </sequential>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="2"/>
-    </antcall>  
-  </sequential>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="3"/>
-    </antcall>  
-  </sequential>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="4"/>
-    </antcall>  
-  </sequential>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="5"/>
-    </antcall>  
-  </sequential>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="6"/>
-    </antcall>  
-  </sequential>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="7"/>
-    </antcall>  
-  </sequential>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="8"/>
-    </antcall>  
-  </sequential>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="9"/>
-    </antcall>  
-  </sequential>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="10"/>
-    </antcall>  
-  </sequential>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="11"/>
-    </antcall>  
-  </sequential>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="12"/>
-    </antcall>  
-  </sequential>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="13"/>
-    </antcall>  
-  </sequential>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="14"/>
-    </antcall>  
-  </sequential>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="15"/>
-    </antcall>  
-  </sequential>
-  <sequential>
-    <antcall target="-gc2html">
-      <param name="okay"    value="html-okay"/>
-      <param name="library"  value=""/>
-      <param name="group"   value="16"/>
-    </antcall>  
-  </sequential>
-    </parallel>
-  </else>
- </if>
+  <!--Split the documents into parallelGroupCount groups and make the reports
+      of each group in its own Saxon process, all groups side by side. The
+      stylesheet adds the all-documents report to the last group.-->
+  <for param="group" begin="1" end="${parallelGroupCount}"
+       parallel="true" threadCount="${parallelGroupCount}">
+    <sequential>
+      <antcall target="-gc2html">
+        <param name="okay"    value="html-okay"/>
+        <param name="library" value=""/>
+        <param name="group"   value="@{group}"/>
+      </antcall>
+    </sequential>
+  </for>
   
   <antcall target="-gc2html">
     <param name="okay"    value="html-sig-okay"/>
