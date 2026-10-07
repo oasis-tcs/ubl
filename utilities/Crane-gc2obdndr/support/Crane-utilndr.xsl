@@ -111,11 +111,13 @@ PURPOSE.</programlisting>
 </xs:variable>
 <xsl:variable name="gu:thisCommonLibraryModel" as="xsd:string?">
   <xsl:variable name="gu:models" as="element(model)+">
+   <!--each group holds exactly the rows of one model, so counting the
+       group gives the same numbers as counting the whole file per model-->
    <xsl:for-each-group
-                    select="$gu:gc/*/*/Row/gu:col(.,'ModelName')" group-by=".">
-     <model name="{.}"
-      count-bies="{count($gu:gc/*/*/Row[gu:col(.,'ModelName')=current()])}"
-      count-abies="{count($gu:gc/*/*/Row[gu:col(.,'ModelName')=current()]
+                select="$gu:gc/*/*/Row" group-by="gu:col(.,'ModelName')">
+     <model name="{current-grouping-key()}"
+      count-bies="{count(current-group())}"
+      count-abies="{count(current-group()
                                         [gu:col(.,'ComponentType')='ABIE'])}"/>
             
    </xsl:for-each-group>
