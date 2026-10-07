@@ -281,7 +281,11 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
     <delete file="${dir}/UBL-Entities-${UBLversion}.gc"/>
     <delete file="${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
 
-    <!--Signature arefacts-->
+    <!--Get the three spreadsheets: a local copy next to the repository is used
+        when there is one, otherwise the spreadsheet is downloaded from Google.
+        The downloads do not depend on each other, so they run side by side;
+        Google takes about half a minute to export the documents spreadsheet
+        alone.-->
     <available property="google-sig-file-exists"
                file="../UBL-Signature-Google.ods"/>
     <echo if:set="google-sig-file-exists"
@@ -289,15 +293,54 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
     <copy if:set="google-sig-file-exists"
           file="../UBL-Signature-Google.ods"
           tofile="${dir}/UBL-Signature-Google.ods"/>
-    <sequential unless:set="google-sig-file-exists">
-      <echo file="${dir}/wget-signature-time.txt" message="${localTime}"/>
-      <echo file="${dir}/wget-signature-uri.txt" message="${signatureGoogle}"/>
-      <exec executable="wget">
+    <echo unless:set="google-sig-file-exists"
+          file="${dir}/wget-signature-time.txt" message="${localTime}"/>
+    <echo unless:set="google-sig-file-exists"
+          file="${dir}/wget-signature-uri.txt" message="${signatureGoogle}"/>
+
+    <available property="google-library-file-exists"
+               file="../UBL-Library-Google.ods"/>
+    <echo if:set="google-library-file-exists"
+ message="Using local copy of library Google spreadsheet; no online access"/>
+    <copy if:set="google-library-file-exists"
+          file="../UBL-Library-Google.ods"
+          tofile="${dir}/UBL-Library-Google.ods"/>
+    <echo unless:set="google-library-file-exists"
+          file="${dir}/wget-model-time.txt" message="${localTime}"/>
+    <echo unless:set="google-library-file-exists"
+          file="${dir}/wget-model-library-uri.txt" message="${libraryGoogle}"/>
+
+    <available property="google-documents-file-exists"
+               file="../UBL-Documents-Google.ods"/>
+    <echo if:set="google-documents-file-exists"
+ message="Using local copy of documents Google spreadsheet; no online access"/>
+    <copy if:set="google-documents-file-exists"
+          file="../UBL-Documents-Google.ods"
+          tofile="${dir}/UBL-Documents-Google.ods"/>
+    <!--as before, whether the documents spreadsheet is downloaded follows
+        whether there is a local copy of the library spreadsheet-->
+    <echo unless:set="google-library-file-exists"
+          file="${dir}/wget-model-documents-uri.txt" message="${documentsGoogle}"/>
+
+    <parallel>
+      <exec unless:set="google-sig-file-exists" executable="wget">
         <arg value="--no-check-certificate"/>
         <arg value="-O"/><arg value="${dir}/UBL-Signature-Google.ods"/>
         <arg value="${signatureGoogle}/export?format=ods"/>
       </exec>
-    </sequential>
+      <exec unless:set="google-library-file-exists" executable="wget">
+        <arg value="--no-check-certificate"/>
+        <arg value="-O"/><arg value="${dir}/UBL-Library-Google.ods"/>
+        <arg value="${libraryGoogle}/export?format=ods"/>
+      </exec>
+      <exec unless:set="google-library-file-exists" executable="wget">
+        <arg value="--no-check-certificate"/>
+        <arg value="-O"/><arg value="${dir}/UBL-Documents-Google.ods"/>
+        <arg value="${documentsGoogle}/export?format=ods"/>
+      </exec>
+    </parallel>
+
+    <!--Signature arefacts-->
     <uptodate targetfile="${dir}/UBL-Signature-Entities-${UBLversion}.gc"
               property=  "gc-sig-files-okay">
       <srcfiles dir="${dir}">
@@ -339,42 +382,6 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
            file="${dir}/${UBLstage}-${UBLversion}/INVALID-SIGNATURE-GC-FILE-GENERATED.txt"/>
   
     <!--full model artefacts-->
-    <available property="google-library-file-exists"
-               file="../UBL-Library-Google.ods"/>
-    <echo if:set="google-library-file-exists"
- message="Using local copy of library Google spreadsheet; no online access"/>
-    <copy if:set="google-library-file-exists"
-          file="../UBL-Library-Google.ods"
-          tofile="${dir}/UBL-Library-Google.ods"/>
-    <sequential unless:set="google-library-file-exists">
-      <echo file="${dir}/wget-model-time.txt" message="${localTime}"/>
-      <echo file="${dir}/wget-model-library-uri.txt"
-            message="${libraryGoogle}"/>
-      <exec executable="wget">
-        <arg value="--no-check-certificate"/>
-        <arg value="-O"/><arg value="${dir}/UBL-Library-Google.ods"/>
-        <arg value="${libraryGoogle}/export?format=ods"/>
-      </exec>
-    </sequential>
-    
-    <available property="google-documents-file-exists"
-               file="../UBL-Documents-Google.ods"/>
-    <echo if:set="google-documents-file-exists"
- message="Using local copy of documents Google spreadsheet; no online access"/>
-    <copy if:set="google-documents-file-exists"
-          file="../UBL-Documents-Google.ods"
-          tofile="${dir}/UBL-Documents-Google.ods"/>
-    <sequential unless:set="google-library-file-exists">
-      <echo file="${dir}/wget-model-time.txt" message="${localTime}"/>
-      <echo file="${dir}/wget-model-documents-uri.txt"
-            message="${documentsGoogle}"/>
-      <exec executable="wget">
-        <arg value="--no-check-certificate"/>
-        <arg value="-O"/><arg value="${dir}/UBL-Documents-Google.ods"/>
-        <arg value="${documentsGoogle}/export?format=ods"/>
-      </exec>
-    </sequential>
-    
     <uptodate targetfile="${dir}/UBL-Entities-${UBLversion}.gc"
               property=  "gc-files-okay">
       <srcfiles dir="${dir}">
@@ -396,6 +403,10 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
               location="${dir}/ident-UBL.xml"/>
     <property name="ident-uri-endorsed"
               location="${dir}/ident-UBL-Endorsed.xml"/>
+    <!--The full and the endorsed genericode files are made from the same two
+        spreadsheets into different files, so they are made side by side. The
+        endorsed one has different identification information.-->
+    <parallel threadCount="2">
     <antcallback target="-ods2gc" return="returnGC">
       <param name="okay"   value="gc-okay"/>
       <param name="source"
@@ -405,6 +416,16 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
       <param name="lengthen-model-name-uri" value="${lengthen-uri}"/>
       <param name="returnProperty" value="returnGC"/>
     </antcallback>
+    <antcallback target="-ods2gc" return="returnGCE">
+      <param name="okay"   value="gc-okay"/>
+      <param name="source"
+        value="${dir}/UBL-Library-Google.ods,${dir}/UBL-Documents-Google.ods"/>
+      <param name="target" value="${dir}/UBL-Endorsed-Entities-${UBLversion}-raw.gc"/>
+      <param name="identification-uri" value="${ident-uri-endorsed}"/>
+      <param name="lengthen-model-name-uri" value="${lengthen-uri}"/>
+      <param name="returnProperty" value="returnGCE"/>
+    </antcallback>
+    </parallel>
     <copy preservelastmodified="true"
           todir="${dir}/${UBLstage}-${UBLversion}/mod/"
           file="${dir}/UBL-Entities-${UBLversion}.gc"/>
@@ -421,16 +442,6 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
     <touch if:set="gcBaseErrors"
            file="${dir}/${UBLstage}-${UBLversion}/INVALID-BASE-GC-FILE-GENERATED.txt"/>
 
-    <!--Endorsed model artefacts have different identification information-->
-    <antcallback target="-ods2gc" return="returnGCE">
-      <param name="okay"   value="gc-okay"/>
-      <param name="source"
-        value="${dir}/UBL-Library-Google.ods,${dir}/UBL-Documents-Google.ods"/>
-      <param name="target" value="${dir}/UBL-Endorsed-Entities-${UBLversion}-raw.gc"/>
-      <param name="identification-uri" value="${ident-uri-endorsed}"/>
-      <param name="lengthen-model-name-uri" value="${lengthen-uri}"/>
-      <param name="returnProperty" value="returnGCE"/>
-    </antcallback>
     <echo message="Converting UBL-Endorsed-Entities-${UBLversion}-raw.gc to UBL-Endorsed-Entities-${UBLversion}.gc"/>
     <java append="true" jar="utilities/saxon9he/saxon9he.jar" fork="true" resultproperty="returnGCEX"
           errorproperty="errorGCEX">
@@ -660,6 +671,9 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
     <arg value="-xsl:gc2sch.xsl"/>
   </java>
   
+  <!--the full and the endorsed schemas are written to different directories,
+      so they are made side by side-->
+  <parallel threadCount="2">
   <antcall target="-gc2cva">
     <param name="source"  value="${dir}/UBL-Entities-${UBLversion}.gc"/>
     <param name="output"  value="${dir}/${UBLstage}-${UBLversion}"/>
@@ -671,6 +685,7 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
     <param name="output"  value="${dir}/Endorsed-${UBLstage}-${UBLversion}"/>
     <param name="config"  value="${dir}/config-UBL.xml"/>
   </antcall>
+  </parallel>
 
   <copy preservelastmodified="true" todir="${dir}">
     <fileset dir=".">
@@ -735,13 +750,6 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
       <istrue value="${skip-spreadsheet-generation}"/>
     </or>
   </condition>
-  <antcall target="-gc2ods">
-    <param name="okay"   value="display-okay"/>
-    <param name="source" value="${dir}/UBL-Entities-${UBLversion}.gc"/>
-    <param name="target" value="${dir}/${UBLstage}-${UBLversion}/mod/UBL-Entities-${UBLversion}.ods"/>
-    <param name="skeleton" value="skeletonDisplayEditSubset.ods"/>
-    <param name="shorten" value=""/>
-  </antcall>
 
   <uptodate targetfile="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/UBL-Endorsed-Entities-${UBLversion}.ods"
             property=  "display-file-endorsed-okay">
@@ -756,13 +764,6 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
       <istrue value="${skip-spreadsheet-generation}"/>
     </or>
   </condition>
-  <antcall target="-gc2ods">
-    <param name="okay"   value="display-endorsed-okay"/>
-    <param name="source" value="${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
-    <param name="target" value="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/UBL-Endorsed-Entities-${UBLversion}.ods"/>
-    <param name="skeleton" value="skeletonDisplayEditSubset.ods"/>
-    <param name="shorten" value=""/>
-  </antcall>
 
   <uptodate targetfile="${dir}/${UBLstage}-${UBLversion}/mod/UBL-Signature-Entities-${UBLversion}.ods"
             property=  "display-sig-file-okay">
@@ -777,12 +778,31 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
       <istrue value="${skip-spreadsheet-generation}"/>
     </or>
   </condition>
+
+  <!--the three ODS files are separate files made with separate working
+      directories, so they are made side by side-->
+  <parallel threadCount="3">
+  <antcall target="-gc2ods">
+    <param name="okay"   value="display-okay"/>
+    <param name="source" value="${dir}/UBL-Entities-${UBLversion}.gc"/>
+    <param name="target" value="${dir}/${UBLstage}-${UBLversion}/mod/UBL-Entities-${UBLversion}.ods"/>
+    <param name="skeleton" value="skeletonDisplayEditSubset.ods"/>
+    <param name="shorten" value=""/>
+  </antcall>
+  <antcall target="-gc2ods">
+    <param name="okay"   value="display-endorsed-okay"/>
+    <param name="source" value="${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
+    <param name="target" value="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/UBL-Endorsed-Entities-${UBLversion}.ods"/>
+    <param name="skeleton" value="skeletonDisplayEditSubset.ods"/>
+    <param name="shorten" value=""/>
+  </antcall>
   <antcall target="-gc2ods">
     <param name="okay"   value="display-sig-okay"/>
     <param name="source" value="${dir}/UBL-Signature-Entities-${UBLversion}.gc"/>
     <param name="target" value="${dir}/${UBLstage}-${UBLversion}/mod/UBL-Signature-Entities-${UBLversion}.ods"/>
     <param name="skeleton" value="skeletonDisplayEditSubset.ods"/>
   </antcall>
+  </parallel>
 
   <uptodate targetfile="${dir}/${UBLstage}-${UBLversion}/mod/UBL-Signature-Entities-${UBLversion}.xls"
             property=  "xls-sig-file-okay">
