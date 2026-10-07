@@ -628,7 +628,10 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
   </condition>
     
   <sequential unless:set="samplesFailed">
-    <!--prepare reports-->
+    <!--prepare reports; the full and endorsed sets read different genericode
+        files and write to different directories, so they are built side by
+        side, one Saxon process each-->
+    <parallel threadCount="2">
     <antcall target="-reports">
       <param name="source" value="${dir}/UBL-Entities-${UBLversion}.gc"/>
       <param name="target" value="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports"/>
@@ -639,6 +642,7 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
       <param name="target" value="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/summary/reports"/>
       <param name="endorsed" value="true"/>
     </antcall>
+    </parallel>
     <delete file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
     <delete file="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
   </sequential>
