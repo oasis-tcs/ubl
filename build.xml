@@ -15,6 +15,17 @@
   <echo message=""/>
   <mkdir dir="${dir}"/>
   <property name="utilitydir" value="${thisdir}/utilities/"/>
+  <!--The two copies of the repository files exclude the working directory
+      ${dir}. Exclude patterns are matched against paths relative to the
+      repository, but build-common.sh passes ${dir} as an absolute path, which
+      never matches: the whole working directory was then copied along, and
+      ended up in the archive-only package. dirInRepo is the path of ${dir}
+      relative to the repository, e.g. "target"; when ${dir} is outside the
+      repository it stays absolute and, rightly, excludes nothing.-->
+  <pathconvert property="dirInRepo" dirsep="/">
+    <path location="${dir}"/>
+    <map from="${basedir}${file.separator}" to=""/>
+  </pathconvert>
   <!--test skip-gc.txt to preserve the old genericode model file-->
   <available property="skip-gc" file="skip-gc.txt"/>
   <echo if:set="skip-gc" message="!!!!!!!!!!!!!! Incomplete execution requested: UBL-Entities-2.3.gc not being generated from the given spreadsheets; delete skip-gc.txt to restore normal operation!!!!!!!!!!!!!!!!"/>
@@ -236,7 +247,7 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
       <exclude name="**/.git/**"/>
       <exclude name="**/.github/**"/>
       <exclude name="**/utilities/**"/>
-      <exclude name="**/${dir}/**"/>
+      <exclude name="**/${dirInRepo}/**"/>
       <exclude name="**/${rawdir}/**"/>
     </fileset>
   </copy>
@@ -1399,7 +1410,7 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
       <exclude name="**/.github/**"/>
       <exclude name="**/utilities/**"/>
       <exclude name="**/raw/**"/>
-      <exclude name="**/${dir}/**"/>
+      <exclude name="**/${dirInRepo}/**"/>
     </fileset>
   </copy>
   <move preservelastmodified="true" includeEmptyDirs="false" todir="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files">
@@ -2200,6 +2211,24 @@ file2="${dir}/hub-${package}-${UBLstage}-${label}/intermediate-support-files/new
       <include name="**"/>
     </fileset>
   </move>
+  <!--the endorsed subset's JSON files likewise, under endorsed/ as the endorsed
+      files are in the distribution-->
+  <available property="jsonEndorsedLegacyFilesAvailable"
+             file="${dir}/Endorsed-${UBLstage}-${UBLversion}/json-schema-legacy"/>
+  <copy preservelastmodified="true" if:set="jsonEndorsedLegacyFilesAvailable"
+        todir="${dir}/${package}-${UBLstage}-${label}-archive-only/endorsed/json-schema-legacy">
+    <fileset dir="${dir}/Endorsed-${UBLstage}-${UBLversion}/json-schema-legacy">
+      <include name="**"/>
+    </fileset>
+  </copy>
+  <available property="jsonEndorsedSchemaFilesAvailable"
+             file="${dir}/Endorsed-${UBLstage}-${UBLversion}/json-schema-model"/>
+  <copy preservelastmodified="true" if:set="jsonEndorsedSchemaFilesAvailable"
+        todir="${dir}/${package}-${UBLstage}-${label}-archive-only/endorsed/json-schema-model">
+    <fileset dir="${dir}/Endorsed-${UBLstage}-${UBLversion}/json-schema-model">
+      <include name="**"/>
+    </fileset>
+  </copy>
   
   <!--peel off the STS results into the archive
   <move file="${dir}/${package}-${UBLstage}-${label}/iso-iec-19845-draft-sts"
