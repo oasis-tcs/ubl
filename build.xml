@@ -1365,10 +1365,18 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
   <echo/>
   <echo/>
 
+  <!--testsamples.sh validates one sample per line and the samples do not
+      depend on each other, so its command lines (all lines other than
+      comments, blank lines and the UBLversion setting) are run four at a time,
+      one per processor of the build machine, rather than one after the other.
+      Each sample's report is printed in one piece when it finishes. The
+      result is not zero if any sample fails, so a failure is reported as
+      before; unlike the script run on its own, every failing sample is
+      reported rather than only the first.-->
   <echo message="Validating sample test files..."/>
   <exec executable="sh" resultproperty="returnTestSamples" dir="${dir}/${UBLstage}-${UBLversion}/val">
-    <arg value="-e"/>
-    <arg value="testsamples.sh"/>
+    <arg value="-c"/>
+    <arg value="eval &quot;$(grep '^UBLversion=' testsamples.sh)&quot;; export UBLversion; grep -v -e '^[[:space:]]*#' -e '^[[:space:]]*$' -e '^UBLversion=' testsamples.sh | xargs -P 4 -I {} sh -c 'out=$({} 2&gt;&amp;1); rc=$?; echo &quot;$out&quot;; exit $rc'"/>
   </exec>
   <condition property="reportTestSamples">
     <not>
