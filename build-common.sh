@@ -10,10 +10,20 @@ fi
 
 targetdirabs=$(cd "$targetdir" && pwd)
 
+artworkProblems=$(mktemp)
+bash utilities/artwork/render.sh "$artworkProblems"
+
 echo Building package...
 java -Dant.home=utilities/ant -classpath "utilities/saxon/saxon.jar:utilities/ant/lib/ant-launcher.jar:utilities/saxon9he/saxon9he.jar" org.apache.tools.ant.launch.Launcher -buildfile build.xml "-Dtitle=$title" "-Dpackage=$package" "-DUBLversion=$UBLversion" "-DUBLprevStageVersion=$UBLprevStageVersion" "-DUBLprevStage=$UBLprevStage" "-DUBLprevVersion=$UBLprevVersion" "-Drawdir=$rawdir" "-DlibraryGoogle=$libGoogle" "-DdocumentsGoogle=$docGoogle" "-DsignatureGoogle=$sigGoogle" "-Ddir=$targetdirabs" "-DUBLstage=$UBLstage" "-DUBLstageText=$UBLstageText" "-DUBLstageUC=$UBLstageUC" "-DUBLreleaseDate=$UBLreleaseDate" "-Dlabel=$label" "-DisDraft=$isDraft" "-Drealtauser=$4" "-Drealtapass=$5" "-Dplatform=$platform"
 serverReturn=$?
 sleep 2
+
+# the artwork's problems, if any, at the top of the package, as the build's own (INTEGRITY-PROBLEMS.txt)
+if [ -s "$artworkProblems" ]; then
+mkdir -p "$targetdir"/"$package"-"$UBLstage"-"$label"
+cat "$artworkProblems" >"$targetdir"/"$package"-"$UBLstage"-"$label"/ARTWORK-PROBLEMS.txt
+fi
+rm -f "$artworkProblems"
 
 if [ ! -d "$targetdir"/"$package"-"$UBLstage"-"$label"-archive-only/ ]; then mkdir "$targetdir"/"$package"-"$UBLstage"-"$label"-archive-only/ ; fi
 mv build.console."$label".txt "$targetdir"/"$package"-"$UBLstage"-"$label"-archive-only/

@@ -1,0 +1,179 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.5-UtilityBillingProcess" name="UBL-2.5-UtilityBillingProcess">
+    <mxGraphModel dx="976" dy="522" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1012" pageHeight="558" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="18" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="519" width="973" x="19" y="19" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Accounting Customer" ubl-kind="lane" id="lane-accounting-customer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=20;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=7;" vertex="1">
+            <mxGeometry height="519" width="480" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Invoice" ubl-kind="action" id="action-receive-invoice">
+          <mxCell parent="lane-accounting-customer" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=6;spacingBottom=1;" vertex="1">
+            <mxGeometry height="33" width="156" x="37" y="82" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Utility Statement" ubl-kind="action" id="action-receive-utility-statement">
+          <mxCell parent="lane-accounting-customer" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=1;" vertex="1">
+            <mxGeometry height="38" width="157" x="202" y="191" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Reconcile&lt;br&gt;Charges" ubl-kind="decision" id="decision-reconcile-charges-in-accounting-customer">
+          <mxCell parent="lane-accounting-customer" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=27;spacingBottom=3;" vertex="1">
+            <mxGeometry height="58" width="101" x="63" y="278" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Account Response" ubl-kind="action" id="action-send-account-response">
+          <mxCell parent="lane-accounting-customer" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=2;" vertex="1">
+            <mxGeometry height="33" width="156" x="223" y="291" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-accounting-customer">
+          <mxCell parent="lane-accounting-customer" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="28" width="28" x="101" y="445" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-invoice-to-reconcile-charges-in-accounting-customer">
+          <mxCell edge="1" parent="lane-accounting-customer" source="action-receive-invoice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.490385;exitY=1;" target="decision-reconcile-charges-in-accounting-customer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-utility-statement-to-reconcile-charges-in-accounting-customer">
+          <mxCell edge="1" parent="lane-accounting-customer" source="action-receive-utility-statement" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.25;exitY=1;exitPerimeter=0;entryX=0.5626;entryY=0;entryPerimeter=0;" target="decision-reconcile-charges-in-accounting-customer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;The artwork guards one branch of each &#39;Reconcile Charges&#39;; the other (&#39;Send Account Response&#39;, &#39;Raise Invoice&#39;) is the otherwise case, unlabelled.&quot;}" id="flow-reconcile-charges-in-accounting-customer-to-send-account-response">
+          <mxCell edge="1" parent="lane-accounting-customer" source="decision-reconcile-charges-in-accounting-customer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.508621;" target="action-send-account-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="[agree to&lt;br&gt;charges]" ubl-kind="flow" ubl-guard="text-agree-to-charges" ubl-flow="control" ubl-text="text-agree-to-charges" ubl-text-text-agree-to-charges-labels="flow-reconcile-charges-in-accounting-customer-to-final-accounting-customer" id="flow-reconcile-charges-in-accounting-customer-to-final-accounting-customer">
+          <mxCell edge="1" parent="lane-accounting-customer" source="decision-reconcile-charges-in-accounting-customer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=left;verticalAlign=middle;labelBackgroundColor=none;entryX=0.446429;entryY=0;" target="final-accounting-customer">
+            <mxGeometry relative="1" x="0.46" as="geometry">
+              <mxPoint x="-67" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="(from Business&lt;br&gt;Processes)" ubl-kind="text" ubl-labels="object-invoice" id="text-from-business-processes">
+          <mxCell parent="lane-accounting-customer" style="text;html=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=2;" vertex="1">
+            <mxGeometry height="24" width="84" x="432" y="141" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="(from Business&lt;br&gt;Processes)" ubl-kind="text" ubl-labels="object-invoice-status-response" id="text-from-business-processes-2">
+          <mxCell parent="lane-accounting-customer" style="text;html=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=2;" vertex="1">
+            <mxGeometry height="24" width="84" x="437" y="346" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Accounting Supplier" ubl-kind="lane" id="lane-accounting-supplier">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=20;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=6;" vertex="1">
+            <mxGeometry height="519" width="493" x="480" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-accounting-supplier">
+          <mxCell parent="lane-accounting-supplier" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="34" width="34" x="390" y="44" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Invoice" ubl-kind="object" ubl-defined-in="Business Processes" ubl-between="[&quot;lane-accounting-customer&quot;, &quot;lane-accounting-supplier&quot;]" ubl-lane="null" id="object-invoice">
+          <mxCell parent="lane-accounting-supplier" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="104" x="-56" y="75" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Raise Invoice" ubl-kind="action" id="action-raise-invoice">
+          <mxCell parent="lane-accounting-supplier" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=4;spacingBottom=4;" vertex="1">
+            <mxGeometry height="36" width="156" x="118" y="88" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Utility Statement" ubl-kind="object" ubl-between="[&quot;lane-accounting-customer&quot;, &quot;lane-accounting-supplier&quot;]" ubl-lane="null" id="object-utility-statement">
+          <mxCell parent="lane-accounting-supplier" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=5;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="104" x="-61" y="182" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Report usage" ubl-kind="action" ubl-unstated="{&quot;wayIn&quot;: &quot;Not connected to the supplier&#39;s other steps: the artwork draws no start or step before it, though its Utility Statement goes with the invoice.&quot;}" id="action-report-usage">
+          <mxCell parent="lane-accounting-supplier" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=6;spacingBottom=1;" vertex="1">
+            <mxGeometry height="34" width="188" x="103" y="193" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Reconcile&lt;br&gt;Charges" ubl-kind="decision" id="decision-reconcile-charges-in-accounting-supplier">
+          <mxCell parent="lane-accounting-supplier" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=30;spacingBottom=5;" vertex="1">
+            <mxGeometry height="82" width="110" x="352" y="265" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Invoice Status&lt;br&gt;Response" ubl-kind="object" ubl-defined-in="Business Processes" ubl-between="[&quot;lane-accounting-customer&quot;, &quot;lane-accounting-supplier&quot;]" ubl-lane="null" id="object-invoice-status-response">
+          <mxCell parent="lane-accounting-supplier" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="121" x="-60" y="279" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Account Response" ubl-kind="action" id="action-receive-account-response">
+          <mxCell parent="lane-accounting-supplier" style="rounded=1;absoluteArcSize=1;arcSize=23;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=6;" vertex="1">
+            <mxGeometry height="44" width="184" x="104" y="284" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-accounting-supplier">
+          <mxCell parent="lane-accounting-supplier" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="21" width="22" x="396" y="480" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-accounting-supplier-to-reconcile-charges-in-accounting-supplier">
+          <mxCell edge="1" parent="lane-accounting-supplier" source="initial-accounting-supplier" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.495;entryY=0;entryPerimeter=0;exitX=0.483824;exitY=0.882;" target="decision-reconcile-charges-in-accounting-supplier">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-raise-invoice-to-invoice">
+          <mxCell edge="1" parent="lane-accounting-supplier" source="action-raise-invoice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5201;entryPerimeter=0;exitX=0;exitY=0.476828;" target="object-invoice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;The artwork guards one branch of each &#39;Reconcile Charges&#39;; the other (&#39;Send Account Response&#39;, &#39;Raise Invoice&#39;) is the otherwise case, unlabelled.&quot;}" id="flow-reconcile-charges-in-accounting-supplier-to-raise-invoice">
+          <mxCell edge="1" parent="lane-accounting-supplier" source="decision-reconcile-charges-in-accounting-supplier" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.464;exitY=0;exitPerimeter=0;entryX=0.6279;entryY=1;entryPerimeter=0;" target="action-raise-invoice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-report-usage-to-utility-statement">
+          <mxCell edge="1" parent="lane-accounting-supplier" source="action-report-usage" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=1;entryY=0.491228;" target="object-utility-statement">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-account-response-to-reconcile-charges-in-accounting-supplier">
+          <mxCell edge="1" parent="lane-accounting-supplier" source="action-receive-account-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="decision-reconcile-charges-in-accounting-supplier">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-invoice-status-response-to-receive-account-response">
+          <mxCell edge="1" parent="lane-accounting-supplier" source="object-invoice-status-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.534091;" target="action-receive-account-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="[no action&lt;br&gt;required]" ubl-kind="flow" ubl-guard="text-no-action-required" ubl-flow="control" ubl-text="text-no-action-required" ubl-text-text-no-action-required-labels="flow-reconcile-charges-in-accounting-supplier-to-final-accounting-supplier" id="flow-reconcile-charges-in-accounting-supplier-to-final-accounting-supplier">
+          <mxCell edge="1" parent="lane-accounting-supplier" source="decision-reconcile-charges-in-accounting-supplier" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.473;entryY=0;entryPerimeter=0;fontStyle=0;align=left;verticalAlign=middle;labelBackgroundColor=none;exitX=0.4946;exitY=1;" target="final-accounting-supplier">
+            <mxGeometry relative="1" x="0.09" as="geometry">
+              <mxPoint x="16" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-invoice-to-receive-invoice">
+          <mxCell edge="1" parent="frame" source="object-invoice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.6037;entryPerimeter=0;exitX=0;exitY=0.464174;" target="action-receive-invoice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-utility-statement-to-receive-utility-statement">
+          <mxCell edge="1" parent="frame" source="object-utility-statement" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4947;entryPerimeter=0;exitX=0;exitY=0.487695;" target="action-receive-utility-statement">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-account-response-to-invoice-status-response">
+          <mxCell edge="1" parent="frame" source="action-send-account-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-invoice-status-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

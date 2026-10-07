@@ -1,0 +1,100 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.0-SourcingBuyerInitiatedProcess" name="UBL-2.0-SourcingBuyerInitiatedProcess">
+    <mxGraphModel dx="680" dy="401" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="719" pageHeight="440" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="19" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="399" width="679" x="20" y="20" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Originator Customer Party" ubl-kind="lane" id="lane-originator-customer-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=29;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=128;" vertex="1">
+            <mxGeometry height="399" width="349" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-originator-customer-party">
+          <mxCell parent="lane-originator-customer-party" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="32" width="33" x="90" y="29" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send request for Quotation" ubl-kind="action" id="action-send-request-for-quotation">
+          <mxCell parent="lane-originator-customer-party" style="rounded=1;absoluteArcSize=1;arcSize=38;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=4;" vertex="1">
+            <mxGeometry height="50" width="164" x="25" y="127" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive quotation" ubl-kind="action" id="action-receive-quotation">
+          <mxCell parent="lane-originator-customer-party" style="rounded=1;absoluteArcSize=1;arcSize=37;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=2;" vertex="1">
+            <mxGeometry height="50" width="145" x="32" y="240" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-originator-customer-party">
+          <mxCell parent="lane-originator-customer-party" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="22" width="22" x="93" y="361" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-originator-customer-party-to-send-request-for-quotation">
+          <mxCell edge="1" parent="lane-originator-customer-party" source="initial-originator-customer-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.515152;exitY=0.8758;" target="action-send-request-for-quotation">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-quotation-to-final-originator-customer-party">
+          <mxCell edge="1" parent="lane-originator-customer-party" source="action-receive-quotation" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.522727;entryY=0;" target="final-originator-customer-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Seller Supplier Party" ubl-kind="lane" id="lane-seller-supplier-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=29;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=53;" vertex="1">
+            <mxGeometry height="399" width="330" x="349" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Request for&lt;br&gt;Quotation" ubl-kind="object" ubl-between="[&quot;lane-originator-customer-party&quot;, &quot;lane-seller-supplier-party&quot;]" ubl-lane="null" id="object-request-for-quotation">
+          <mxCell parent="lane-seller-supplier-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=6;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="106" x="-59" y="123" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive request for&lt;br&gt;quotation" ubl-kind="action" id="action-receive-request-for-quotation">
+          <mxCell parent="lane-seller-supplier-party" style="rounded=1;absoluteArcSize=1;arcSize=37;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=6;" vertex="1">
+            <mxGeometry height="65" width="139" x="143" y="124" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Quotation" ubl-kind="object" ubl-between="[&quot;lane-originator-customer-party&quot;, &quot;lane-seller-supplier-party&quot;]" ubl-lane="null" id="object-quotation">
+          <mxCell parent="lane-seller-supplier-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=8;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="106" x="-52" y="236" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send quotation" ubl-kind="action" id="action-send-quotation">
+          <mxCell parent="lane-seller-supplier-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=11;" vertex="1">
+            <mxGeometry height="43" width="153" x="147" y="244" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-request-for-quotation-to-receive-request-for-quotation">
+          <mxCell edge="1" parent="lane-seller-supplier-party" source="object-request-for-quotation" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4345;entryPerimeter=0;exitX=1;exitY=0.504181;" target="action-receive-request-for-quotation">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-request-for-quotation-to-send-quotation">
+          <mxCell edge="1" parent="lane-seller-supplier-party" source="action-receive-request-for-quotation" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.428105;entryY=0;" target="action-send-quotation">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-quotation-to-quotation">
+          <mxCell edge="1" parent="lane-seller-supplier-party" source="action-send-quotation" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5017;entryPerimeter=0;exitX=0;exitY=0.490665;" target="object-quotation">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-request-for-quotation-to-request-for-quotation">
+          <mxCell edge="1" parent="frame" source="action-send-request-for-quotation" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5086;entryPerimeter=0;exitX=1;exitY=0.509976;" target="object-request-for-quotation">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-quotation-to-receive-quotation">
+          <mxCell edge="1" parent="frame" source="object-quotation" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.497;entryPerimeter=0;exitX=0;exitY=0.497414;" target="action-receive-quotation">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

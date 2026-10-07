@@ -1,0 +1,236 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.3-GoodsCertificateExportProcess" name="UBL-2.3-GoodsCertificateExportProcess">
+    <mxGraphModel dx="818" dy="611" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="865" pageHeight="645" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="13" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="616" width="836" x="14" y="14" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Export party" ubl-kind="lane" ubl-label="Export Party" id="lane-export-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=29;swimlaneLine=1;spacingTop=6;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;spacingLeft=2;" vertex="1">
+            <mxGeometry height="616" width="274" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-export-party">
+          <mxCell parent="lane-export-party" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="29" width="30" x="80" y="51" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Draft Goods Certificate" ubl-kind="action" id="action-draft-goods-certificate">
+          <mxCell parent="lane-export-party" style="rounded=1;absoluteArcSize=1;arcSize=15;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingTop=3;" vertex="1">
+            <mxGeometry height="57" width="132" x="28" y="115" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive&lt;br&gt;Goods Certificate" ubl-kind="action" id="action-receive-goods-certificate">
+          <mxCell parent="lane-export-party" style="rounded=1;absoluteArcSize=1;arcSize=13;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=6;" vertex="1">
+            <mxGeometry height="51" width="101" x="78" y="382" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive reject" ubl-kind="action" id="action-receive-reject">
+          <mxCell parent="lane-export-party" style="rounded=1;absoluteArcSize=1;arcSize=13;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingTop=3;" vertex="1">
+            <mxGeometry height="50" width="101" x="78" y="479" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-export-party">
+          <mxCell parent="lane-export-party" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="29" width="29" x="36" y="566" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-export-party-to-draft-goods-certificate">
+          <mxCell edge="1" parent="lane-export-party" source="initial-export-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.466667;exitY=0.8644;" target="action-draft-goods-certificate">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-goods-certificate-to-final-export-party">
+          <mxCell edge="1" parent="lane-export-party" source="action-receive-goods-certificate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;exitX=0;exitY=0.490196;entryX=0.482759;entryY=0;" target="final-export-party">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="50" y="407" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-reject-to-final-export-party">
+          <mxCell edge="1" parent="lane-export-party" source="action-receive-reject" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;exitX=0.50495;exitY=1;entryX=1;entryY=0.482759;" target="final-export-party">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="129" y="580" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="Preparation party" ubl-kind="lane" ubl-label="Preparation Party" id="lane-preparation-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=29;swimlaneLine=1;spacingTop=6;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;spacingRight=2;" vertex="1">
+            <mxGeometry height="616" width="286" x="274" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Goods Certificate" ubl-kind="object" ubl-between="[&quot;lane-export-party&quot;, &quot;lane-preparation-party&quot;]" ubl-lane="null" id="object-goods-certificate-between-export-party-and-preparation-party">
+          <mxCell parent="lane-preparation-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="116" x="-58" y="115" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Prepare for export" ubl-kind="action" id="action-prepare-for-export">
+          <mxCell parent="lane-preparation-party" style="rounded=1;absoluteArcSize=1;arcSize=17;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingTop=3;" vertex="1">
+            <mxGeometry height="56" width="106" x="88" y="115" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Issue Trade&lt;br&gt;Certificates for&lt;br&gt;export as bundle" ubl-kind="action" id="action-issue-trade-certificates-for-export-as">
+          <mxCell parent="lane-preparation-party" style="rounded=1;absoluteArcSize=1;arcSize=14;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=2;" vertex="1">
+            <mxGeometry height="52" width="109" x="88" y="206" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Goods Certificate" ubl-kind="object" ubl-between="[&quot;lane-export-party&quot;, &quot;lane-preparation-party&quot;]" ubl-lane="null" id="object-goods-certificate-between-export-party-and-preparation-party-2">
+          <mxCell parent="lane-preparation-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="116" x="-58" y="379" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send&lt;br&gt;authorized&lt;br&gt;copy" ubl-kind="action" id="action-send-authorized-copy">
+          <mxCell parent="lane-preparation-party" style="rounded=1;absoluteArcSize=1;arcSize=15;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=3;spacingBottom=1;" vertex="1">
+            <mxGeometry height="53" width="82" x="100" y="381" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application response" ubl-kind="object" ubl-between="[&quot;lane-export-party&quot;, &quot;lane-preparation-party&quot;]" ubl-lane="null" id="object-application-response-between-export-party-and-preparation-party">
+          <mxCell parent="lane-preparation-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingTop=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="130" x="-65" y="475" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send reject" ubl-kind="action" id="action-send-reject-in-preparation-party">
+          <mxCell parent="lane-preparation-party" style="rounded=1;absoluteArcSize=1;arcSize=16;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingTop=3;" vertex="1">
+            <mxGeometry height="50" width="92" x="99" y="479" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-goods-certificate-between-export-party-and-preparation-party-to-prepare-for-export">
+          <mxCell edge="1" parent="lane-preparation-party" source="object-goods-certificate-between-export-party-and-preparation-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.491228;" target="action-prepare-for-export">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-prepare-for-export-to-issue-trade-certificates-for-export-as">
+          <mxCell edge="1" parent="lane-preparation-party" source="action-prepare-for-export" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.514151;exitY=1;" target="action-issue-trade-certificates-for-export-as">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-authorized-copy-to-goods-certificate-between-export-party-and-preparation-party-2">
+          <mxCell edge="1" parent="lane-preparation-party" source="action-send-authorized-copy" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-goods-certificate-between-export-party-and-preparation-party-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-reject-in-preparation-party-to-application-response-between-export-party-and-preparation-party">
+          <mxCell edge="1" parent="lane-preparation-party" source="action-send-reject-in-preparation-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-application-response-between-export-party-and-preparation-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Certification party" ubl-kind="lane" ubl-label="Certification Party" id="lane-certification-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=29;swimlaneLine=1;spacingTop=6;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;spacingRight=2;" vertex="1">
+            <mxGeometry height="616" width="276" x="560" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Goods Certificate" ubl-kind="object" ubl-between="[&quot;lane-preparation-party&quot;, &quot;lane-certification-party&quot;]" ubl-lane="null" id="object-goods-certificate-between-preparation-party-and-certification-party">
+          <mxCell parent="lane-certification-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="116" x="-58" y="203" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Validate Trade&lt;br&gt;Certificate" ubl-kind="action" id="action-validate-trade-certificate">
+          <mxCell parent="lane-certification-party" style="rounded=1;absoluteArcSize=1;arcSize=16;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;" vertex="1">
+            <mxGeometry height="46" width="93" x="114" y="209" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="OK?" ubl-kind="decision" id="decision-ok">
+          <mxCell parent="lane-certification-party" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingTop=2;" vertex="1">
+            <mxGeometry height="55" width="76" x="123" y="285" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Goods Certificate" ubl-kind="object" ubl-between="[&quot;lane-preparation-party&quot;, &quot;lane-certification-party&quot;]" ubl-lane="null" id="object-goods-certificate-between-preparation-party-and-certification-party-2">
+          <mxCell parent="lane-certification-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="116" x="-58" y="379" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Apply stamps&lt;br&gt;and signature" ubl-kind="action" id="action-apply-stamps-and-signature">
+          <mxCell parent="lane-certification-party" style="rounded=1;absoluteArcSize=1;arcSize=15;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=10;spacingBottom=2;" vertex="1">
+            <mxGeometry height="51" width="93" x="115" y="382" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application response" ubl-kind="object" ubl-between="[&quot;lane-preparation-party&quot;, &quot;lane-certification-party&quot;]" ubl-lane="null" id="object-application-response-between-preparation-party-and-certification-party">
+          <mxCell parent="lane-certification-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingTop=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="130" x="-65" y="474" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send reject" ubl-kind="action" id="action-send-reject-in-certification-party">
+          <mxCell parent="lane-certification-party" style="rounded=1;absoluteArcSize=1;arcSize=16;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingTop=3;" vertex="1">
+            <mxGeometry height="50" width="92" x="116" y="478" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-goods-certificate-between-preparation-party-and-certification-party-to-validate-trade-certificate">
+          <mxCell edge="1" parent="lane-certification-party" source="object-goods-certificate-between-preparation-party-and-certification-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-validate-trade-certificate">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-validate-trade-certificate-to-ok">
+          <mxCell edge="1" parent="lane-certification-party" source="action-validate-trade-certificate" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4961;entryY=0;entryPerimeter=0;exitX=0.502189;exitY=1;" target="decision-ok">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="No" ubl-kind="flow" ubl-guard="text-no" ubl-flow="control" ubl-text="text-no" ubl-text-text-no-labels="flow-ok-to-send-reject-in-certification-party" id="flow-ok-to-send-reject-in-certification-party">
+          <mxCell edge="1" parent="lane-certification-party" source="decision-ok" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=1;exitY=0.490909;entryX=1;entryY=0.48;" target="action-send-reject-in-certification-party">
+            <mxGeometry relative="1" x="-0.05" as="geometry">
+              <mxPoint x="12" as="offset" />
+              <Array as="points">
+                <mxPoint x="238" y="312" />
+                <mxPoint x="238" y="502" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="Yes" ubl-kind="flow" ubl-guard="text-yes" ubl-flow="control" ubl-text="text-yes" ubl-text-text-yes-labels="flow-ok-to-apply-stamps-and-signature" id="flow-ok-to-apply-stamps-and-signature">
+          <mxCell edge="1" parent="lane-certification-party" source="decision-ok" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;entryX=0.494624;entryY=0;" target="action-apply-stamps-and-signature">
+            <mxGeometry relative="1" x="-0.2" as="geometry">
+              <mxPoint x="-22" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-apply-stamps-and-signature-to-goods-certificate-between-preparation-party-and-certification-party-2">
+          <mxCell edge="1" parent="lane-certification-party" source="action-apply-stamps-and-signature" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-goods-certificate-between-preparation-party-and-certification-party-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-reject-in-certification-party-to-application-response-between-preparation-party-and-certification-party">
+          <mxCell edge="1" parent="lane-certification-party" source="action-send-reject-in-certification-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-application-response-between-preparation-party-and-certification-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-draft-goods-certificate-to-goods-certificate-between-export-party-and-preparation-party">
+          <mxCell edge="1" parent="frame" source="action-draft-goods-certificate" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-goods-certificate-between-export-party-and-preparation-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-issue-trade-certificates-for-export-as-to-goods-certificate-between-preparation-party-and-certification-party">
+          <mxCell edge="1" parent="frame" source="action-issue-trade-certificates-for-export-as" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-goods-certificate-between-preparation-party-and-certification-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-goods-certificate-between-export-party-and-preparation-party-2-to-receive-goods-certificate">
+          <mxCell edge="1" parent="frame" source="object-goods-certificate-between-export-party-and-preparation-party-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-receive-goods-certificate">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-goods-certificate-between-preparation-party-and-certification-party-2-to-send-authorized-copy">
+          <mxCell edge="1" parent="frame" source="object-goods-certificate-between-preparation-party-and-certification-party-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-send-authorized-copy">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-between-export-party-and-preparation-party-to-receive-reject">
+          <mxCell edge="1" parent="frame" source="object-application-response-between-export-party-and-preparation-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-receive-reject">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-between-preparation-party-and-certification-party-to-send-reject-in-preparation-party">
+          <mxCell edge="1" parent="frame" source="object-application-response-between-preparation-party-and-certification-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.517241;" target="action-send-reject-in-preparation-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

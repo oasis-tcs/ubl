@@ -1,0 +1,281 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-CPFR-CreateJointBusinessPlan" name="UBL-2.2-CPFR-CreateJointBusinessPlan">
+    <mxGraphModel dx="920" dy="884" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="955" pageHeight="927" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="17" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="890" width="918" x="18" y="18" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Creating Joint Business Plan" ubl-kind="phase-boundary" ubl-members="[&quot;action-create-retail-event&quot;, &quot;action-receive-retail-event-in-seller-party&quot;, &quot;object-retail-event&quot;, &quot;action-send-retail-event-in-buyer-party&quot;, &quot;action-revise-retail-event-and-send-revision&quot;, &quot;object-retail-event-revision&quot;, &quot;action-receive-retail-event-revision&quot;, &quot;decision-buyer-party&quot;, &quot;object-retail-event-response-positive&quot;, &quot;action-send-retail-event-in-buyer-party-2&quot;, &quot;action-receive-retail-event-in-seller-party-2&quot;, &quot;action-create-trade-item-location-profile&quot;, &quot;object-trade-item-location-profile&quot;, &quot;action-receive-trade-item-location-profile&quot;, &quot;action-send-trade-item-location-profile&quot;, &quot;action-revise-trade-item-location-profile-and&quot;, &quot;object-trade-item-location-profile-revision&quot;, &quot;action-receive-tilp-in-seller-party&quot;, &quot;decision-seller-party&quot;, &quot;object-tilp-response-positive&quot;, &quot;action-send-tilp&quot;, &quot;action-receive-tilp-in-buyer-party&quot;]" id="phase-creating-joint-business-plan">
+          <mxCell parent="frame" style="rounded=1;absoluteArcSize=1;arcSize=70;fillColor=none;dashed=1;dashPattern=3 2;connectable=0;pointerEvents=0;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=top;spacing=0;spacingTop=2;spacingRight=8;movable=0;" vertex="1">
+            <mxGeometry height="841" width="873" x="24" y="24" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="lane" ubl-title-shown="false" ubl-title-source="text" ubl-label="Buyer Party" id="lane-buyer-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=22;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=2;" vertex="1">
+            <mxGeometry height="890" width="453" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Create Retail Event" ubl-kind="action" id="action-create-retail-event">
+          <mxCell parent="lane-buyer-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=9;spacingBottom=2;" vertex="1">
+            <mxGeometry height="51" width="161" x="56" y="67" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Retail Event" ubl-kind="action" id="action-send-retail-event-in-buyer-party">
+          <mxCell parent="lane-buyer-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=6;spacingBottom=1;" vertex="1">
+            <mxGeometry height="50" width="161" x="100" y="153" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Retail Event&lt;br&gt;Revision" ubl-kind="action" id="action-receive-retail-event-revision">
+          <mxCell parent="lane-buyer-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=9;spacingTop=2;" vertex="1">
+            <mxGeometry height="46" width="162" x="198" y="247" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Retail Event Accepted ?" ubl-kind="decision" ubl-question="Retail Event Accepted ?" ubl-label="" ubl-text="text-retail-event-accepted" ubl-text-text-retail-event-accepted-labels="decision-buyer-party" id="decision-buyer-party">
+          <mxCell parent="lane-buyer-party" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=4;spacingBottom=73;" vertex="1">
+            <mxGeometry height="45" width="46" x="49" y="252" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Retail Event" ubl-kind="action" id="action-send-retail-event-in-buyer-party-2">
+          <mxCell parent="lane-buyer-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=10;spacingBottom=2;" vertex="1">
+            <mxGeometry height="44" width="162" x="132" y="364" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Trade Item&lt;br&gt;Location Profile" ubl-kind="action" id="action-receive-trade-item-location-profile">
+          <mxCell parent="lane-buyer-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=7;spacingBottom=9;" vertex="1">
+            <mxGeometry height="64" width="162" x="126" y="489" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Revise Trade Item&lt;br&gt;Location Profile and Send&lt;br&gt;Revision" ubl-kind="action" id="action-revise-trade-item-location-profile-and">
+          <mxCell parent="lane-buyer-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=8;spacingBottom=14;" vertex="1">
+            <mxGeometry height="78" width="161" x="125" y="602" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive TILP" ubl-kind="action" id="action-receive-tilp-in-buyer-party">
+          <mxCell parent="lane-buyer-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=6;spacingBottom=9;" vertex="1">
+            <mxGeometry height="42" width="142" x="189" y="767" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="No" ubl-kind="flow" ubl-guard="text-no" ubl-flow="control" ubl-text="text-no" ubl-text-text-no-labels="flow-decision-buyer-party-to-create-retail-event" id="flow-decision-buyer-party-to-create-retail-event">
+          <mxCell edge="1" parent="lane-buyer-party" source="decision-buyer-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=0;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;entryX=0.099379;entryY=1;" target="action-create-retail-event">
+            <mxGeometry relative="1" x="0.78" as="geometry">
+              <mxPoint x="-18" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-create-retail-event-to-send-retail-event-in-buyer-party">
+          <mxCell edge="1" parent="lane-buyer-party" source="action-create-retail-event" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.3584;entryY=0;entryPerimeter=0;exitX=0.631692;exitY=1;" target="action-send-retail-event-in-buyer-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-retail-event-revision-to-decision-buyer-party">
+          <mxCell edge="1" parent="lane-buyer-party" source="action-receive-retail-event-revision" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.597826;" target="decision-buyer-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Yes" ubl-kind="flow" ubl-guard="text-yes" ubl-flow="control" ubl-text="text-yes" ubl-text-text-yes-labels="flow-decision-buyer-party-to-send-retail-event-in-buyer-party-2" id="flow-decision-buyer-party-to-send-retail-event-in-buyer-party-2">
+          <mxCell edge="1" parent="lane-buyer-party" source="decision-buyer-party" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=0.478261;exitY=1;entryX=0.407407;entryY=0;" target="action-send-retail-event-in-buyer-party-2">
+            <mxGeometry relative="1" x="0.21" as="geometry">
+              <mxPoint y="23" as="offset" />
+              <Array as="points">
+                <mxPoint x="71" y="323" />
+                <mxPoint x="198" y="323" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-trade-item-location-profile-to-revise-trade-item-location-profile-and">
+          <mxCell edge="1" parent="lane-buyer-party" source="action-receive-trade-item-location-profile" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.496;entryY=0;entryPerimeter=0;exitX=0.486765;exitY=1;" target="action-revise-trade-item-location-profile-and">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="off-page-flow" ubl-continues="UBL-2.2-CPFR-EstablishingCollaborativeRelationships" ubl-counterpart="offpage-action-receive-exception-criteria-in-seller-party" ubl-port="1" ubl-direction="in" id="offpage-action-create-retail-event">
+          <mxCell edge="1" parent="lane-buyer-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;entryPerimeter=0;entryX=0.826087;entryY=0;" target="action-create-retail-event">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="189" y="2" as="sourcePoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="off-page-flow" ubl-continues="UBL-2.2-CPFR-CreatingSalesForecast" ubl-counterpart="offpage-action-create-product-activity-pos-data" ubl-port="1" ubl-direction="out" id="offpage-action-receive-tilp-in-buyer-party">
+          <mxCell edge="1" parent="lane-buyer-party" source="action-receive-tilp-in-buyer-party" style="edgeStyle=none;rounded=0;html=1;endArrow=none;endFill=0;endSize=13;exitPerimeter=0;exitX=0.492958;exitY=1;">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="259" y="888" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="lane" ubl-title-shown="false" ubl-title-source="text" ubl-label="Seller Party" id="lane-seller-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=22;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=1;" vertex="1">
+            <mxGeometry height="890" width="465" x="453" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Retail Event" ubl-kind="action" id="action-receive-retail-event-in-seller-party">
+          <mxCell parent="lane-seller-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=10;spacingBottom=3;" vertex="1">
+            <mxGeometry height="63" width="164" x="229" y="137" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Retail Event" ubl-kind="object" ubl-between="[&quot;lane-buyer-party&quot;, &quot;lane-seller-party&quot;]" ubl-lane="null" id="object-retail-event">
+          <mxCell parent="lane-seller-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=4;spacingBottom=3;strokeWidth=2;" vertex="1">
+            <mxGeometry height="61" width="115" x="-49" y="140" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Revise Retail Event and&lt;br&gt;Send Revision" ubl-kind="action" id="action-revise-retail-event-and-send-revision">
+          <mxCell parent="lane-seller-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=10;spacingBottom=11;" vertex="1">
+            <mxGeometry height="61" width="165" x="228" y="235" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Retail Event&lt;br&gt;(revision)" ubl-kind="object" ubl-between="[&quot;lane-buyer-party&quot;, &quot;lane-seller-party&quot;]" ubl-lane="null" id="object-retail-event-revision">
+          <mxCell parent="lane-seller-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=4;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="60" width="118" x="-54" y="235" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Retail Event (response&lt;br&gt;positive)" ubl-kind="object" ubl-between="[&quot;lane-buyer-party&quot;, &quot;lane-seller-party&quot;]" ubl-lane="null" id="object-retail-event-response-positive">
+          <mxCell parent="lane-seller-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=6;spacingBottom=8;strokeWidth=2;" vertex="1">
+            <mxGeometry height="66" width="149" x="-61" y="353" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Retail Event" ubl-kind="action" id="action-receive-retail-event-in-seller-party-2">
+          <mxCell parent="lane-seller-party" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=9;spacingBottom=2;" vertex="1">
+            <mxGeometry height="43" width="156" x="231" y="367" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Create Trade Item&lt;br&gt;Location Profile" ubl-kind="action" id="action-create-trade-item-location-profile">
+          <mxCell parent="lane-seller-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=4;spacingBottom=10;" vertex="1">
+            <mxGeometry height="65" width="159" x="235" y="440" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Trade Item Location&lt;br&gt;Profile" ubl-kind="object" ubl-between="[&quot;lane-buyer-party&quot;, &quot;lane-seller-party&quot;]" ubl-lane="null" id="object-trade-item-location-profile">
+          <mxCell parent="lane-seller-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=5;spacingBottom=11;strokeWidth=2;" vertex="1">
+            <mxGeometry height="67" width="143" x="-67" y="481" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Trade Item Location&lt;br&gt;Profile" ubl-kind="action" id="action-send-trade-item-location-profile">
+          <mxCell parent="lane-seller-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=5;spacingBottom=1;" vertex="1">
+            <mxGeometry height="54" width="161" x="196" y="535" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Trade Item Location&lt;br&gt;Profile (revision)" ubl-kind="object" ubl-between="[&quot;lane-buyer-party&quot;, &quot;lane-seller-party&quot;]" ubl-lane="null" id="object-trade-item-location-profile-revision">
+          <mxCell parent="lane-seller-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;strokeWidth=2;" vertex="1">
+            <mxGeometry height="61" width="128" x="-61" y="610" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive TILP" ubl-kind="action" id="action-receive-tilp-in-seller-party">
+          <mxCell parent="lane-seller-party" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=6;spacingBottom=1;" vertex="1">
+            <mxGeometry height="41" width="122" x="161" y="662" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="TILP Accepted ?" ubl-kind="decision" ubl-question="TILP Accepted ?" ubl-label="" ubl-text="text-tilp-accepted" ubl-text-text-tilp-accepted-labels="decision-seller-party" id="decision-seller-party">
+          <mxCell parent="lane-seller-party" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=11;spacingBottom=77;" vertex="1">
+            <mxGeometry height="43" width="43" x="345" y="676" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="TILP (response&lt;br&gt;positive)" ubl-kind="object" ubl-between="[&quot;lane-buyer-party&quot;, &quot;lane-seller-party&quot;]" ubl-lane="null" id="object-tilp-response-positive">
+          <mxCell parent="lane-seller-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="60" width="108" x="-53" y="760" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send TILP" ubl-kind="action" id="action-send-tilp">
+          <mxCell parent="lane-seller-party" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=3;" vertex="1">
+            <mxGeometry height="36" width="119" x="271" y="765" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-retail-event-to-receive-retail-event-in-seller-party">
+          <mxCell edge="1" parent="lane-seller-party" source="object-retail-event" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.467213;" target="action-receive-retail-event-in-seller-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-retail-event-in-seller-party-to-revise-retail-event-and-send-revision">
+          <mxCell edge="1" parent="lane-seller-party" source="action-receive-retail-event-in-seller-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4991;entryY=0;entryPerimeter=0;exitX=0.496046;exitY=1;" target="action-revise-retail-event-and-send-revision">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-revise-retail-event-and-send-revision-to-retail-event-revision">
+          <mxCell edge="1" parent="lane-seller-party" source="action-revise-retail-event-and-send-revision" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4992;entryPerimeter=0;exitX=0;exitY=0.491016;" target="object-retail-event-revision">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-retail-event-response-positive-to-receive-retail-event-in-seller-party-2">
+          <mxCell edge="1" parent="lane-seller-party" source="object-retail-event-response-positive" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4093;entryPerimeter=0;exitX=1;exitY=0.478786;" target="action-receive-retail-event-in-seller-party-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-retail-event-in-seller-party-2-to-create-trade-item-location-profile">
+          <mxCell edge="1" parent="lane-seller-party" source="action-receive-retail-event-in-seller-party-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.465409;entryY=0;" target="action-create-trade-item-location-profile">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-create-trade-item-location-profile-to-send-trade-item-location-profile">
+          <mxCell edge="1" parent="lane-seller-party" source="action-create-trade-item-location-profile" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.6172;entryY=0;entryPerimeter=0;exitX=0.379681;exitY=1;" target="action-send-trade-item-location-profile">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="No" ubl-kind="flow" ubl-guard="text-no-2" ubl-flow="control" ubl-text="text-no-2" ubl-text-text-no-2-labels="flow-decision-seller-party-to-create-trade-item-location-profile" id="flow-decision-seller-party-to-create-trade-item-location-profile">
+          <mxCell edge="1" parent="lane-seller-party" source="decision-seller-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=0;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;entryX=0.827044;entryY=1;" target="action-create-trade-item-location-profile">
+            <mxGeometry relative="1" x="0.82" as="geometry">
+              <mxPoint x="-17" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-trade-item-location-profile-to-trade-item-location-profile">
+          <mxCell edge="1" parent="lane-seller-party" source="action-send-trade-item-location-profile" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.25;exitPerimeter=0;entryX=1;entryY=0.760778;entryPerimeter=0;" target="object-trade-item-location-profile">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-trade-item-location-profile-revision-to-receive-tilp-in-seller-party">
+          <mxCell edge="1" parent="lane-seller-party" source="object-trade-item-location-profile-revision" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.7143;exitPerimeter=0;entryX=0;entryY=0.1675;entryPerimeter=0;" target="action-receive-tilp-in-seller-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-tilp-in-seller-party-to-decision-seller-party">
+          <mxCell edge="1" parent="lane-seller-party" source="action-receive-tilp-in-seller-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.6379;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="decision-seller-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Yes" ubl-kind="flow" ubl-guard="text-yes-2" ubl-flow="control" ubl-text="text-yes-2" ubl-text-text-yes-2-labels="flow-decision-seller-party-to-send-tilp" id="flow-decision-seller-party-to-send-tilp">
+          <mxCell edge="1" parent="lane-seller-party" source="decision-seller-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.8236;entryY=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=0.558335;exitY=1;" target="action-send-tilp">
+            <mxGeometry relative="1" x="0.24" as="geometry">
+              <mxPoint x="-20" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-tilp-to-tilp-response-positive">
+          <mxCell edge="1" parent="lane-seller-party" source="action-send-tilp" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=1;entryY=0.383333;" target="object-tilp-response-positive">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-retail-event-in-buyer-party-to-retail-event">
+          <mxCell edge="1" parent="frame" source="action-send-retail-event-in-buyer-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.6033;entryPerimeter=0;exitX=1;exitY=0.476026;" target="object-retail-event">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-retail-event-revision-to-receive-retail-event-revision">
+          <mxCell edge="1" parent="frame" source="object-retail-event-revision" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=1;entryY=0.391304;" target="action-receive-retail-event-revision">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-retail-event-in-buyer-party-2-to-retail-event-response-positive">
+          <mxCell edge="1" parent="frame" source="action-send-retail-event-in-buyer-party-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-retail-event-response-positive">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-trade-item-location-profile-to-receive-trade-item-location-profile">
+          <mxCell edge="1" parent="frame" source="object-trade-item-location-profile" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.381125;entryPerimeter=0;exitX=0;exitY=0.483463;" target="action-receive-trade-item-location-profile">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-revise-trade-item-location-profile-and-to-trade-item-location-profile-revision">
+          <mxCell edge="1" parent="frame" source="action-revise-trade-item-location-profile-and" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.495;entryPerimeter=0;exitX=1;exitY=0.489679;" target="object-trade-item-location-profile-revision">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-tilp-response-positive-to-receive-tilp-in-buyer-party">
+          <mxCell edge="1" parent="frame" source="object-tilp-response-positive" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4272;entryPerimeter=0;exitX=0;exitY=0.415707;" target="action-receive-tilp-in-buyer-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

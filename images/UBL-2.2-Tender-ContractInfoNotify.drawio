@@ -1,0 +1,132 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-Tender-ContractInfoNotify" name="UBL-2.2-Tender-ContractInfoNotify">
+    <mxGraphModel dx="483" dy="377" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="525" pageHeight="417" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="14" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="387" width="495" x="15" y="15" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="CONTRACTING AUTHORITY" ubl-kind="lane" ubl-label="Contracting Authority" id="lane-contracting-authority">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=26;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;" vertex="1">
+            <mxGeometry height="387" width="254" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-contracting-authority">
+          <mxCell parent="lane-contracting-authority" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="26" width="26" x="78" y="22" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Prepare Contract Notice" ubl-kind="action" id="action-prepare-contract-notice">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=4;spacingBottom=1;" vertex="1">
+            <mxGeometry height="33" width="158" x="12" y="76" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Above&lt;br&gt;Thresholds?" ubl-kind="decision" ubl-question="Above Thresholds?" ubl-label="" ubl-text="text-above-thresholds" ubl-text-text-above-thresholds-labels="decision-contracting-authority" id="decision-contracting-authority">
+          <mxCell parent="lane-contracting-authority" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=-63;spacingTop=13;" vertex="1">
+            <mxGeometry height="35" width="36" x="73" y="143" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Publish in Buyer Profile" ubl-kind="action" id="action-publish-in-buyer-profile">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=3;spacingBottom=1;" vertex="1">
+            <mxGeometry height="33" width="152" x="15" y="275" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-contracting-authority">
+          <mxCell parent="lane-contracting-authority" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="28" width="28" x="77" y="347" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-contracting-authority-to-prepare-contract-notice">
+          <mxCell edge="1" parent="lane-contracting-authority" source="initial-contracting-authority" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.5;exitY=0.8473;" target="action-prepare-contract-notice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-prepare-contract-notice-to-decision-contracting-authority">
+          <mxCell edge="1" parent="lane-contracting-authority" source="action-prepare-contract-notice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="decision-contracting-authority">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="No" ubl-kind="flow" ubl-guard="text-no" ubl-flow="control" ubl-text="text-no" ubl-text-text-no-labels="flow-decision-contracting-authority-to-publish-in-buyer-profile" id="flow-decision-contracting-authority-to-publish-in-buyer-profile">
+          <mxCell edge="1" parent="lane-contracting-authority" source="decision-contracting-authority" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;" target="action-publish-in-buyer-profile">
+            <mxGeometry relative="1" x="-0.57" as="geometry">
+              <mxPoint x="15" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-publish-in-buyer-profile-to-final-contracting-authority">
+          <mxCell edge="1" parent="lane-contracting-authority" source="action-publish-in-buyer-profile" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="final-contracting-authority">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="PUBLICATION OFFICE" ubl-kind="lane" ubl-label="Publication Office" id="lane-publication-office">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=26;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=3;" vertex="1">
+            <mxGeometry height="387" width="241" x="254" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Contract&lt;br&gt;Notice" ubl-kind="object" ubl-between="[&quot;lane-contracting-authority&quot;, &quot;lane-publication-office&quot;]" ubl-lane="null" id="object-contract-notice">
+          <mxCell parent="lane-publication-office" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="59" x="-30" y="132" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Validate Contract Notice" ubl-kind="action" id="action-validate-contract-notice">
+          <mxCell parent="lane-publication-office" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=3;spacingBottom=1;" vertex="1">
+            <mxGeometry height="33" width="160" x="59" y="144" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="OK?" ubl-kind="decision" id="decision-ok">
+          <mxCell parent="lane-publication-office" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingTop=2;" vertex="1">
+            <mxGeometry height="36" width="36" x="121" y="207" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Publish Contract Notice" ubl-kind="action" id="action-publish-contract-notice">
+          <mxCell parent="lane-publication-office" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingBottom=1;" vertex="1">
+            <mxGeometry height="33" width="154" x="62" y="275" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-contract-notice-to-validate-contract-notice">
+          <mxCell edge="1" parent="lane-publication-office" source="object-contract-notice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-validate-contract-notice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-validate-contract-notice-to-ok">
+          <mxCell edge="1" parent="lane-publication-office" source="action-validate-contract-notice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="decision-ok">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Yes" ubl-kind="flow" ubl-guard="text-yes-2" ubl-flow="control" ubl-text="text-yes-2" ubl-text-text-yes-2-labels="flow-ok-to-publish-contract-notice" id="flow-ok-to-publish-contract-notice">
+          <mxCell edge="1" parent="lane-publication-office" source="decision-ok" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;" target="action-publish-contract-notice">
+            <mxGeometry relative="1" x="0.01" as="geometry">
+              <mxPoint x="16" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="No" ubl-kind="flow" ubl-guard="text-no-2" ubl-flow="control" ubl-text="text-no-2" ubl-text-text-no-2-labels="flow-ok-to-prepare-contract-notice" id="flow-ok-to-prepare-contract-notice">
+          <mxCell edge="1" parent="frame" source="decision-ok" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=1;exitY=0.527778;entryX=1;entryY=0.515152;" target="action-prepare-contract-notice">
+            <mxGeometry relative="1" x="-0.94" as="geometry">
+              <mxPoint y="-7" as="offset" />
+              <Array as="points">
+                <mxPoint x="483" y="226" />
+                <mxPoint x="483" y="93" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="Yes" ubl-kind="flow" ubl-guard="text-yes" ubl-flow="object" ubl-text="text-yes" ubl-text-text-yes-labels="flow-decision-contracting-authority-to-contract-notice" id="flow-decision-contracting-authority-to-contract-notice">
+          <mxCell edge="1" parent="frame" source="decision-contracting-authority" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4965;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=1;exitY=0.4943;" target="object-contract-notice">
+            <mxGeometry relative="1" x="-0.47" as="geometry">
+              <mxPoint y="-8" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-publish-contract-notice-to-publish-in-buyer-profile">
+          <mxCell edge="1" parent="frame" source="action-publish-contract-notice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-publish-in-buyer-profile">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

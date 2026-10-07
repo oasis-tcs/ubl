@@ -1,0 +1,479 @@
+<mxfile host="UBL-TC" agent="UBL artwork, Group C (history/group-c/build_udt_qdt.py)">
+  <diagram id="UBL-2.2-UDT-QDT" name="UBL-2.2-UDT-QDT">
+    <mxGraphModel grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="580.51" pageHeight="372.88" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object label="" ubl-kind="frame" ubl-notation="reference" ubl-art="grey" id="frame">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1.69;" vertex="1">
+            <mxGeometry height="371.19" width="578.81" x="0.85" y="0.85" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="line" id="rule-1">
+          <mxCell edge="1" parent="1" style="html=1;rounded=0;endArrow=none;startArrow=none;strokeWidth=0.51;dashed=1;dashPattern=5.4 1.82;">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="57.46" y="8.14" as="sourcePoint" />
+              <mxPoint x="409.49" y="8.14" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="line" id="rule-2a">
+          <mxCell edge="1" parent="1" style="html=1;rounded=0;endArrow=none;startArrow=none;strokeWidth=0.51;dashed=1;dashPattern=5.4 1.82;">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="57.46" y="71.86" as="sourcePoint" />
+              <mxPoint x="206.44" y="71.86" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="line" id="rule-2b">
+          <mxCell edge="1" parent="1" style="html=1;rounded=0;endArrow=none;startArrow=none;strokeWidth=0.51;dashed=1;dashPattern=1.67 1.67;">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="207.46" y="71.86" as="sourcePoint" />
+              <mxPoint x="476.44" y="71.86" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="line" id="rule-3">
+          <mxCell edge="1" parent="1" style="html=1;rounded=0;endArrow=none;startArrow=none;strokeWidth=0.51;dashed=1;dashPattern=1.67 1.67;">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="170.51" y="114.24" as="sourcePoint" />
+              <mxPoint x="362.2" y="114.24" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="line" id="rule-4">
+          <mxCell edge="1" parent="1" style="html=1;rounded=0;endArrow=none;startArrow=none;strokeWidth=0.51;dashed=1;dashPattern=5.4 1.82;">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="57.46" y="217.8" as="sourcePoint" />
+              <mxPoint x="414.92" y="217.8" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="line" id="rule-5">
+          <mxCell edge="1" parent="1" style="html=1;rounded=0;endArrow=none;startArrow=none;strokeWidth=0.51;dashed=1;dashPattern=1.67 1.67;">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="170" y="254.92" as="sourcePoint" />
+              <mxPoint x="476.27" y="254.92" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="line" id="rule-6a">
+          <mxCell edge="1" parent="1" style="html=1;rounded=0;endArrow=none;startArrow=none;strokeWidth=0.51;dashed=1;dashPattern=5.4 1.82;">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="60.17" y="365.93" as="sourcePoint" />
+              <mxPoint x="209.15" y="365.93" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="line" id="rule-6b">
+          <mxCell edge="1" parent="1" style="html=1;rounded=0;endArrow=none;startArrow=none;strokeWidth=0.51;dashed=1;dashPattern=1.67 1.67;">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="345.76" y="365.93" as="sourcePoint" />
+              <mxPoint x="477.29" y="365.93" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="brace" id="brace-bbie">
+          <mxCell parent="1" style="shape=curlyBracket;rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1.19;size=0.46;" vertex="1">
+            <mxGeometry height="64.07" width="15.59" x="34.58" y="8.14" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="brace" id="brace-qdt">
+          <mxCell parent="1" style="shape=curlyBracket;rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1.19;size=0.5;" vertex="1">
+            <mxGeometry height="145.93" width="16.95" x="35.93" y="71.86" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="brace" id="brace-udt">
+          <mxCell parent="1" style="shape=curlyBracket;rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1.19;size=0.5;" vertex="1">
+            <mxGeometry height="148.14" width="14.92" x="36.95" y="217.8" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="brace" id="brace-other">
+          <mxCell parent="1" style="shape=curlyBracket;rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1.19;size=0.5;flipH=1;" vertex="1">
+            <mxGeometry height="42.37" width="16.95" x="477.97" y="71.86" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="brace" id="brace-codelists">
+          <mxCell parent="1" style="shape=curlyBracket;rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1.19;size=0.5;flipH=1;" vertex="1">
+            <mxGeometry height="140.68" width="16.95" x="477.97" y="114.24" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="brace" id="brace-xml">
+          <mxCell parent="1" style="shape=curlyBracket;rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1.19;size=0.5;flipH=1;" vertex="1">
+            <mxGeometry height="111.02" width="16.95" x="477.97" y="254.92" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="A">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeWidth=0.47;" vertex="1">
+            <mxGeometry height="42.92" width="100.71" x="52.44" y="18.37" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="B">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeWidth=0.47;" vertex="1">
+            <mxGeometry height="42.41" width="76.81" x="227.02" y="18.88" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="C">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeWidth=0.47;" vertex="1">
+            <mxGeometry height="42.41" width="55.63" x="57.69" y="122.44" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="D">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeWidth=0.47;" vertex="1">
+            <mxGeometry height="42.41" width="55.63" x="128.03" y="122.44" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="E">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeWidth=0.47;" vertex="1">
+            <mxGeometry height="42.41" width="55.8" x="215.49" y="122.44" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="F">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeWidth=0.47;" vertex="1">
+            <mxGeometry height="42.41" width="55.8" x="285.15" y="122.44" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="G">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeWidth=0.47;" vertex="1">
+            <mxGeometry height="42.41" width="55.8" x="285.15" y="170.07" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="H">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeWidth=0.47;" vertex="1">
+            <mxGeometry height="92.75" width="55.63" x="361.93" y="74.64" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="J">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeWidth=0.47;" vertex="1">
+            <mxGeometry height="92.75" width="55.8" x="422.78" y="74.64" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="K">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeWidth=0.47;" vertex="1">
+            <mxGeometry height="42.92" width="100.71" x="52.44" y="228.54" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="M">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeWidth=0.47;" vertex="1">
+            <mxGeometry height="42.41" width="76.81" x="227.02" y="264.64" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="N">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeWidth=0.47;" vertex="1">
+            <mxGeometry height="43.08" width="119.19" x="205.83" y="320.58" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" id="f-A-C">
+          <mxCell edge="1" parent="1" source="A" style="html=1;rounded=0;endArrow=block;endFill=1;strokeWidth=0.44;endSize=5.4;exitX=0.33;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="C">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="85.93" y="91.69" />
+                <mxPoint x="85.42" y="92.03" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" id="f-A-K">
+          <mxCell edge="1" parent="1" source="A" style="html=1;rounded=0;endArrow=block;endFill=1;strokeWidth=0.44;endSize=5.4;exitX=0.67;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.67;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="K">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" id="f-C-K">
+          <mxCell edge="1" parent="1" source="C" style="html=1;rounded=0;endArrow=block;endFill=1;strokeWidth=0.44;endSize=5.4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.33;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="K">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" id="f-B-E">
+          <mxCell edge="1" parent="1" source="B" style="html=1;rounded=0;endArrow=block;endFill=1;strokeWidth=0.44;endSize=5.4;exitX=0.33;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.66;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="E">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" id="f-B-M">
+          <mxCell edge="1" parent="1" source="B" style="html=1;rounded=0;endArrow=block;endFill=1;strokeWidth=0.44;endSize=5.4;exitX=0.66;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.66;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="M">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" id="f-E-M">
+          <mxCell edge="1" parent="1" source="E" style="html=1;rounded=0;endArrow=block;endFill=1;strokeWidth=0.44;endSize=5.4;exitX=0.66;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.33;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="M">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" id="f-M-N">
+          <mxCell edge="1" parent="1" source="M" style="html=1;rounded=0;endArrow=block;endFill=1;strokeWidth=0.44;endSize=5.4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="N">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="c-A">
+          <mxCell parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.51;" vertex="1">
+            <mxGeometry height="11.02" width="11.02" x="139.32" y="34.24" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="c-B">
+          <mxCell parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.51;" vertex="1">
+            <mxGeometry height="11.02" width="11.02" x="289.66" y="36.1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="c-C">
+          <mxCell parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.51;" vertex="1">
+            <mxGeometry height="11.02" width="11.02" x="100.25" y="139.92" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="c-D">
+          <mxCell parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.51;" vertex="1">
+            <mxGeometry height="11.02" width="11.02" x="171.1" y="137.54" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="c-E">
+          <mxCell parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.51;" vertex="1">
+            <mxGeometry height="11.02" width="11.02" x="258.56" y="138.56" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="c-F">
+          <mxCell parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.51;" vertex="1">
+            <mxGeometry height="11.02" width="11.02" x="328.39" y="138.39" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="c-G">
+          <mxCell parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.51;" vertex="1">
+            <mxGeometry height="11.02" width="11.02" x="328.39" y="185.17" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="c-H">
+          <mxCell parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.51;" vertex="1">
+            <mxGeometry height="11.02" width="11.02" x="404.07" y="152.12" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="c-J">
+          <mxCell parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.51;" vertex="1">
+            <mxGeometry height="11.02" width="11.02" x="465.08" y="152.12" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="c-K">
+          <mxCell parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.51;" vertex="1">
+            <mxGeometry height="11.02" width="11.02" x="139.41" y="257.03" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="c-M">
+          <mxCell parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.51;" vertex="1">
+            <mxGeometry height="11.02" width="11.02" x="289.92" y="279.92" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="c-N">
+          <mxCell parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.51;" vertex="1">
+            <mxGeometry height="11.02" width="11.02" x="311.27" y="348.56" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="A" ubl-kind="text" id="l-A">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=9.5;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="10.92" width="10.85" x="139.58" y="34.53" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="B" ubl-kind="text" id="l-B">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=9.5;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="10.92" width="10.85" x="290.08" y="36.9" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="C" ubl-kind="text" id="l-C">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=9.5;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="10.92" width="10.85" x="100.34" y="139.95" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="D" ubl-kind="text" id="l-D">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=9.5;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="10.92" width="10.85" x="171.69" y="138.26" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="E" ubl-kind="text" id="l-E">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=9.5;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="10.92" width="10.85" x="259.07" y="139.1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="F" ubl-kind="text" id="l-F">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=9.5;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="10.92" width="10.85" x="328.98" y="139.1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="G" ubl-kind="text" id="l-G">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=9.5;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="10.92" width="10.85" x="328.39" y="185.54" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="H" ubl-kind="text" id="l-H">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=9.5;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="10.92" width="10.85" x="404.32" y="152.32" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="J" ubl-kind="text" id="l-J">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=9.5;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="10.92" width="10.85" x="465.17" y="152.66" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="K" ubl-kind="text" id="l-K">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=9.5;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="10.92" width="10.85" x="140" y="257.58" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="M" ubl-kind="text" id="l-M">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=9.5;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="10.92" width="10.85" x="290" y="280.46" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="N" ubl-kind="text" id="l-N">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=9.5;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="10.92" width="10.85" x="311.1" y="349.27" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 117%&quot;&gt;UBL 2.0&lt;br&gt;BBIE&lt;br&gt;XSD&lt;/div&gt;" ubl-kind="text" id="t-A">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="42.2" width="55.42" x="75" y="18.8" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 117%&quot;&gt;UBL 2.x&lt;br&gt;BBIE&lt;br&gt;XSD&lt;/div&gt;" ubl-kind="text" id="t-B">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="42.2" width="55.42" x="237.54" y="18.97" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="UBL 2.0" ubl-kind="text" id="t-C-1">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="55.42" x="64.58" y="122.67" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="QDT" ubl-kind="text" id="t-C-2">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="26.61" x="73.56" y="136.73" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="XSD" ubl-kind="text" id="t-C-3">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="26.61" x="73.39" y="150.8" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="UBL 2.0" ubl-kind="text" id="t-D-1">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="55.42" x="134.92" y="122.67" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="DTQ" ubl-kind="text" id="t-D-2">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="26.61" x="144.24" y="136.73" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="XSLT" ubl-kind="text" id="t-D-3">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="33.9" x="141.19" y="150.8" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="UBL 2.x" ubl-kind="text" id="t-E-1">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="55.42" x="222.37" y="122.67" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="QDT" ubl-kind="text" id="t-E-2">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="26.61" x="231.53" y="136.73" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="XSD" ubl-kind="text" id="t-E-3">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="26.61" x="231.36" y="150.8" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="UBL 2.x" ubl-kind="text" id="t-F-1">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="55.42" x="292.2" y="122.67" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="DTQ" ubl-kind="text" id="t-F-2">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="26.61" x="301.53" y="136.73" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="CVA" ubl-kind="text" id="t-F-3">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="26.61" x="301.69" y="150.8" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="UBL 2.x" ubl-kind="text" id="t-G-1">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="55.42" x="292.2" y="170.29" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="DTQ" ubl-kind="text" id="t-G-2">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="26.61" x="301.53" y="184.36" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="XSLT" ubl-kind="text" id="t-G-3">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="33.9" x="298.47" y="198.6" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 117%&quot;&gt;Custom&lt;br&gt;DTQ&lt;br&gt;CVA&lt;/div&gt;" ubl-kind="text" id="t-H">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="42.2" width="48.31" x="365.51" y="99.82" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 117%&quot;&gt;Custom&lt;br&gt;DTQ&lt;br&gt;XSLT&lt;/div&gt;" ubl-kind="text" id="t-J">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="42.2" width="48.31" x="426.36" y="99.82" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 117%&quot;&gt;UN/CEFACT UDT&lt;br&gt;XSD 1.1 Rev A&lt;/div&gt;" ubl-kind="text" id="t-K">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="28.14" width="98.64" x="53.22" y="228.8" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="16 Feb 2005" ubl-kind="text" id="t-K-3">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="84.24" x="70.17" y="257.07" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 117%&quot;&gt;UBL 2.x&lt;br&gt;UDT&lt;br&gt;XSD&lt;/div&gt;" ubl-kind="text" id="t-M">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="42.2" width="55.42" x="237.71" y="264.91" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 117%&quot;&gt;UN/CEFACT&lt;br&gt;CCTS CCT Schema&lt;/div&gt;" ubl-kind="text" id="t-N">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="28.14" width="113.05" x="208.73" y="321.01" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="XSD 1.1 050114" ubl-kind="text" id="t-N-3">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="105.93" x="224.24" y="349.28" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="BBIE" ubl-kind="text" id="t-bbie">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="33.9" x="7.29" y="33.34" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 117%&quot;&gt;QDT&lt;br&gt;DTQ&lt;/div&gt;" ubl-kind="text" id="t-qdt">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="28.14" width="26.61" x="13.9" y="130.84" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="UDT" ubl-kind="text" id="t-udt">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="26.61" x="13.9" y="285.04" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 119%&quot;&gt;Other&lt;br&gt;Qualifications&lt;/div&gt;" ubl-kind="text" id="t-other">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="28.47" width="81.69" x="497.12" y="78.89" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Code Lists" ubl-kind="text" id="t-codelists">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="77.12" x="493.39" y="177.92" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="XML Types" ubl-kind="text" id="t-xml">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;fontStyle=1;" vertex="1">
+            <mxGeometry height="13.8" width="69.83" x="496.95" y="303.68" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -306,21 +306,10 @@ Subdirectories:
 
 ### Artwork
 
-Image creation using the [`http://draw.io`](http://draw.io) tool:
-- copy [`UBL-2.3-Pre-awardProcess.drawio`](images/UBL-2.3-Pre-awardProcess.drawio ) as a starting point full-width image with your own file name
-- open the copy in [`http://draw.io`](http://draw.io) and modify it as required
-- save the vector file in the [`images`]( images ) directory
-- using the menu item File / Export as / Advanced...
-  - select PNG format
-  - set the DPI to 600 using "Custom"
-  - set the width of the image to a maximum 3425 pixels
-    - the zoom should be less than or equal to 100%
-    - of course if the image is not the full width of the page the width count can be less to proportionally less than 3425
-  - turn off the transparent background and any border width
-  - ![drawio advanced export dialogue box](drawio-export.png "drawio advanced export dialogue box")
-  - save the resulting high-res PNG file into the [`art`]( art ) directory
-  - copy the high-res PNG file into the [`htmlart`]( htmlart ) directory
-  - using [ GIMP ]( https://www.gimp.org/ ) or some other pixel image manipulation tool, scale the [`htmlart`]( htmlart ) copy to be a maximum width of 750 pixels (or proportionally smaller if desired) and 96 DPI
+Each figure is drawn in [draw.io](https://www.drawio.com): `images/<figure>.drawio` is its
+source, and every build renders it into `images/<figure>.svg`, `art/<figure>.png` and
+`htmlart/<figure>.png`. How to edit a figure, or add one:
+[`utilities/artwork/README.md`](utilities/artwork/README.md).
 
 ### Preview results
 

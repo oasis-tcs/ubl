@@ -1,0 +1,70 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.0-ReportStateofAccountsProcess" name="UBL-2.0-ReportStateofAccountsProcess">
+    <mxGraphModel dx="653" dy="224" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="689" pageHeight="260" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="18" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="222" width="651" x="19" y="19" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Accounting Customer" ubl-kind="lane" id="lane-accounting-customer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=25;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=18;" vertex="1">
+            <mxGeometry height="222" width="332" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Statement" ubl-kind="action" id="action-receive-statement">
+          <mxCell parent="lane-accounting-customer" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=2;" vertex="1">
+            <mxGeometry height="40" width="153" x="11" y="98" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-accounting-customer">
+          <mxCell parent="lane-accounting-customer" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="21" width="22" x="77" y="184" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-statement-to-final-accounting-customer">
+          <mxCell edge="1" parent="lane-accounting-customer" source="action-receive-statement" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.477273;entryY=0;" target="final-accounting-customer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Accounting Supplier" ubl-kind="lane" id="lane-accounting-supplier">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=25;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=17;" vertex="1">
+            <mxGeometry height="222" width="319" x="332" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-accounting-supplier">
+          <mxCell parent="lane-accounting-supplier" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="31" width="31" x="216" y="27" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Statement" ubl-kind="object" ubl-between="[&quot;lane-accounting-customer&quot;, &quot;lane-accounting-supplier&quot;]" ubl-lane="null" id="object-statement">
+          <mxCell parent="lane-accounting-supplier" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=3;strokeWidth=2;" vertex="1">
+            <mxGeometry height="66" width="125" x="-69" y="87" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Generate Statement" ubl-kind="action" id="action-generate-statement">
+          <mxCell parent="lane-accounting-supplier" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=3;spacingBottom=5;" vertex="1">
+            <mxGeometry height="48" width="151" x="158" y="98" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-accounting-supplier-to-generate-statement">
+          <mxCell edge="1" parent="lane-accounting-supplier" source="initial-accounting-supplier" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4868;entryY=0;entryPerimeter=0;exitX=0.500219;exitY=0.8706;" target="action-generate-statement">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-generate-statement-to-statement">
+          <mxCell edge="1" parent="lane-accounting-supplier" source="action-generate-statement" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.458333;" target="object-statement">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-statement-to-receive-statement">
+          <mxCell edge="1" parent="frame" source="object-statement" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5101;entryPerimeter=0;exitX=0;exitY=0.475818;" target="action-receive-statement">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

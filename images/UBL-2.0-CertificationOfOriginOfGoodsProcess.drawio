@@ -1,0 +1,275 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.0-CertificationOfOriginOfGoodsProcess" name="UBL-2.0-CertificationOfOriginOfGoodsProcess">
+    <mxGraphModel dx="1153" dy="854" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1196" pageHeight="891" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="18" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="851" width="1156" x="20" y="20" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Exporter" ubl-kind="lane" id="lane-exporter">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=18;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=1;" vertex="1">
+            <mxGeometry height="851" width="269" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Apply for CoO" ubl-kind="action" id="action-apply-for-coo">
+          <mxCell parent="lane-exporter" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingBottom=3;" vertex="1">
+            <mxGeometry height="39" width="91" x="106" y="87" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Initiate&lt;br&gt;Transport&lt;br&gt;Process" ubl-kind="initial" ubl-linked-process="{&quot;name&quot;: &quot;Initiate Transport&quot;, &quot;how&quot;: &quot;starts-from&quot;, &quot;source&quot;: &quot;written beside the node in the artwork&quot;}" ubl-label="" ubl-text="text-initiate-transport-process" ubl-text-text-initiate-transport-process-labels="initial-exporter" id="initial-exporter">
+          <mxCell parent="lane-exporter" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=18;spacingBottom=100;" vertex="1">
+            <mxGeometry height="32" width="32" x="6" y="91" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Request&lt;br&gt;Status" ubl-kind="action" id="action-request-status">
+          <mxCell parent="lane-exporter" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingTop=3;" vertex="1">
+            <mxGeometry height="38" width="88" x="32" y="208" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Response" ubl-kind="action" id="action-receive-response">
+          <mxCell parent="lane-exporter" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=5;spacingBottom=4;" vertex="1">
+            <mxGeometry height="46" width="131" x="24" y="339" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Endorsement&lt;br&gt;Required?" ubl-kind="decision" ubl-question="Endorsement Required?" ubl-label="" ubl-text="text-endorsement-required" ubl-text-text-endorsement-required-labels="decision-exporter" id="decision-exporter">
+          <mxCell parent="lane-exporter" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=47;spacingBottom=2;" vertex="1">
+            <mxGeometry height="38" width="29" x="55" y="545" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Apply for Endorsement" ubl-kind="action" id="action-apply-for-endorsement">
+          <mxCell parent="lane-exporter" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingBottom=4;" vertex="1">
+            <mxGeometry height="44" width="153" x="108" y="679" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send CoO" ubl-kind="action" id="action-send-coo">
+          <mxCell parent="lane-exporter" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=4;" vertex="1">
+            <mxGeometry height="34" width="156" x="10" y="786" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-exporter-to-apply-for-coo">
+          <mxCell edge="1" parent="lane-exporter" source="initial-exporter" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=0.8758;exitY=0.484375;" target="action-apply-for-coo">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-response-to-request-status">
+          <mxCell edge="1" parent="lane-exporter" source="action-receive-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4663;entryY=1;entryPerimeter=0;exitX=0.374308;exitY=0;" target="action-request-status">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-response-to-decision-exporter">
+          <mxCell edge="1" parent="lane-exporter" source="action-receive-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.347328;exitY=1;" target="decision-exporter">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;The branches are drawn without guards; the step each leads to says which answer it is (Reject CoO, Endorse CoO, Query CoO; Apply for Endorsement, Send CoO).&quot;}" id="flow-decision-exporter-to-apply-for-endorsement">
+          <mxCell edge="1" parent="lane-exporter" source="decision-exporter" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.6074;exitPerimeter=0;entryX=0.3702;entryY=0;entryPerimeter=0;" target="action-apply-for-endorsement">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;The branches are drawn without guards; the step each leads to says which answer it is (Reject CoO, Endorse CoO, Query CoO; Apply for Endorsement, Send CoO).&quot;}" id="flow-decision-exporter-to-send-coo">
+          <mxCell edge="1" parent="lane-exporter" source="decision-exporter" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.38141;entryY=0;" target="action-send-coo">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Issuer" ubl-kind="lane" id="lane-issuer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=18;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=4;" vertex="1">
+            <mxGeometry height="851" width="341" x="269" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Certificate Of&lt;br&gt;Origin" ubl-kind="object" ubl-between="[&quot;lane-exporter&quot;, &quot;lane-issuer&quot;]" ubl-lane="null" id="object-certificate-of-origin-between-exporter-and-issuer">
+          <mxCell parent="lane-issuer" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=5;strokeWidth=2;" vertex="1">
+            <mxGeometry height="50" width="87" x="-33" y="82" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive CoO" ubl-kind="action" id="action-receive-coo-in-issuer">
+          <mxCell parent="lane-issuer" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=4;spacingBottom=3;" vertex="1">
+            <mxGeometry height="39" width="86" x="121" y="86" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Endorse CoO" ubl-kind="action" ubl-unstated="{&quot;wayOut&quot;: &quot;The path ends at this step: the artwork draws no end after it.&quot;}" id="action-endorse-coo-in-issuer">
+          <mxCell parent="lane-issuer" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingBottom=2;" vertex="1">
+            <mxGeometry height="40" width="88" x="210" y="209" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Accept&lt;br&gt;application?" ubl-kind="decision" ubl-question="Accept application?" ubl-label="" ubl-text="text-accept-application" ubl-text-text-accept-application-labels="decision-issuer" id="decision-issuer">
+          <mxCell parent="lane-issuer" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=76;spacingBottom=94;" vertex="1">
+            <mxGeometry height="38" width="29" x="151" y="210" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Reject CoO" ubl-kind="action" id="action-reject-coo-in-issuer">
+          <mxCell parent="lane-issuer" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=8;" vertex="1">
+            <mxGeometry height="40" width="87" x="34" y="209" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application&lt;br&gt;Response" ubl-kind="object" ubl-between="[&quot;lane-exporter&quot;, &quot;lane-issuer&quot;]" ubl-lane="null" id="object-application-response-between-exporter-and-issuer">
+          <mxCell parent="lane-issuer" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=7;strokeWidth=2;" vertex="1">
+            <mxGeometry height="52" width="74" x="-31" y="332" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Query CoO" ubl-kind="action" id="action-query-coo">
+          <mxCell parent="lane-issuer" style="rounded=1;absoluteArcSize=1;arcSize=37;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="39" width="87" x="121" y="337" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-certificate-of-origin-between-exporter-and-issuer-to-receive-coo-in-issuer">
+          <mxCell edge="1" parent="lane-issuer" source="object-certificate-of-origin-between-exporter-and-issuer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4987;entryPerimeter=0;exitX=1;exitY=0.468986;" target="action-receive-coo-in-issuer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-coo-in-issuer-to-decision-issuer">
+          <mxCell edge="1" parent="lane-issuer" source="action-receive-coo-in-issuer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.517442;exitY=1;" target="decision-issuer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;The branches are drawn without guards; the step each leads to says which answer it is (Reject CoO, Endorse CoO, Query CoO; Apply for Endorsement, Send CoO).&quot;}" id="flow-decision-issuer-to-reject-coo-in-issuer">
+          <mxCell edge="1" parent="lane-issuer" source="decision-issuer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-reject-coo-in-issuer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;The branches are drawn without guards; the step each leads to says which answer it is (Reject CoO, Endorse CoO, Query CoO; Apply for Endorsement, Send CoO).&quot;}" id="flow-decision-issuer-to-endorse-coo-in-issuer">
+          <mxCell edge="1" parent="lane-issuer" source="decision-issuer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-endorse-coo-in-issuer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;The branches are drawn without guards; the step each leads to says which answer it is (Reject CoO, Endorse CoO, Query CoO; Apply for Endorsement, Send CoO).&quot;}" id="flow-decision-issuer-to-query-coo">
+          <mxCell edge="1" parent="lane-issuer" source="decision-issuer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.511494;entryY=0;" target="action-query-coo">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-reject-coo-in-issuer-to-application-response-between-exporter-and-issuer">
+          <mxCell edge="1" parent="lane-issuer" source="action-reject-coo-in-issuer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.3624;exitY=1;exitPerimeter=0;entryX=0.766189;entryY=0;entryPerimeter=0;" target="object-application-response-between-exporter-and-issuer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-query-coo-to-application-response-between-exporter-and-issuer">
+          <mxCell edge="1" parent="lane-issuer" source="action-query-coo" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.6011;entryPerimeter=0;exitX=0;exitY=0.673262;" target="object-application-response-between-exporter-and-issuer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Endorser" ubl-kind="lane" id="lane-endorser">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=18;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=3;" vertex="1">
+            <mxGeometry height="851" width="312" x="610" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application&lt;br&gt;Response" ubl-kind="object" ubl-between="[&quot;lane-exporter&quot;, &quot;lane-endorser&quot;]" ubl-lane="null" id="object-application-response-between-exporter-and-endorser">
+          <mxCell parent="lane-endorser" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=6;strokeWidth=2;" vertex="1">
+            <mxGeometry height="56" width="102" x="-41" y="481" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Reject CoO" ubl-kind="action" id="action-reject-coo-in-endorser">
+          <mxCell parent="lane-endorser" style="rounded=1;absoluteArcSize=1;arcSize=26;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingTop=3;" vertex="1">
+            <mxGeometry height="40" width="125" x="142" y="490" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Endorse&lt;br&gt;Application?" ubl-kind="decision" ubl-question="Endorse Application?" ubl-label="" ubl-text="text-endorse-application" ubl-text-text-endorse-application-labels="decision-endorser" id="decision-endorser">
+          <mxCell parent="lane-endorser" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=41;spacingBottom=28;" vertex="1">
+            <mxGeometry height="38" width="37" x="180" y="575" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Endorse CoO" ubl-kind="action" ubl-unstated="{&quot;wayOut&quot;: &quot;The path ends at this step: the artwork draws no end after it.&quot;}" id="action-endorse-coo-in-endorser">
+          <mxCell parent="lane-endorser" style="rounded=1;absoluteArcSize=1;arcSize=22;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingTop=2;" vertex="1">
+            <mxGeometry height="38" width="85" x="56" y="575" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Certificate Of&lt;br&gt;Origin" ubl-kind="object" ubl-between="[&quot;lane-exporter&quot;, &quot;lane-endorser&quot;]" ubl-lane="null" id="object-certificate-of-origin-between-exporter-and-endorser">
+          <mxCell parent="lane-endorser" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=3;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="104" x="-46" y="681" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Certificate Of&lt;br&gt;Origin" ubl-kind="action" id="action-receive-certificate-of-origin">
+          <mxCell parent="lane-endorser" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=4;spacingTop=1;" vertex="1">
+            <mxGeometry height="45" width="160" x="120" y="687" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-reject-coo-in-endorser-to-application-response-between-exporter-and-endorser">
+          <mxCell edge="1" parent="lane-endorser" source="action-reject-coo-in-endorser" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.475;" target="object-application-response-between-exporter-and-endorser">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;The branches are drawn without guards; the step each leads to says which answer it is (Reject CoO, Endorse CoO, Query CoO; Apply for Endorsement, Send CoO).&quot;}" id="flow-decision-endorser-to-reject-coo-in-endorser">
+          <mxCell edge="1" parent="lane-endorser" source="decision-endorser" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=0;exitPerimeter=0;entryPerimeter=0;entryX=0.452;entryY=1;" target="action-reject-coo-in-endorser">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" ubl-unstated="{&quot;guard&quot;: &quot;The branches are drawn without guards; the step each leads to says which answer it is (Reject CoO, Endorse CoO, Query CoO; Apply for Endorsement, Send CoO).&quot;}" id="flow-decision-endorser-to-endorse-coo-in-endorser">
+          <mxCell edge="1" parent="lane-endorser" source="decision-endorser" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-endorse-coo-in-endorser">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-certificate-of-origin-to-decision-endorser">
+          <mxCell edge="1" parent="lane-endorser" source="action-receive-certificate-of-origin" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4866;entryY=1;entryPerimeter=0;exitX=0.487526;exitY=0;" target="decision-endorser">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-certificate-of-origin-between-exporter-and-endorser-to-receive-certificate-of-origin">
+          <mxCell edge="1" parent="lane-endorser" source="object-certificate-of-origin-between-exporter-and-endorser" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.491379;" target="action-receive-certificate-of-origin">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Importer" ubl-kind="lane" id="lane-importer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=18;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=1;" vertex="1">
+            <mxGeometry height="851" width="234" x="922" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="End of CoO&lt;br&gt;Process" ubl-kind="final" ubl-label="" ubl-text="text-end-of-coo-process" ubl-text-text-end-of-coo-process-labels="final-importer" id="final-importer">
+          <mxCell parent="lane-importer" style="ellipse;shape=endState;fillColor=#000000;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=55;spacingBottom=66;" vertex="1">
+            <mxGeometry height="25" width="24" x="138" y="667" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Certificate Of&lt;br&gt;Origin" ubl-kind="object" ubl-between="[&quot;lane-exporter&quot;, &quot;lane-importer&quot;]" ubl-lane="null" id="object-certificate-of-origin-between-exporter-and-importer">
+          <mxCell parent="lane-importer" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="55" width="104" x="-54" y="778" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive CoO" ubl-kind="action" id="action-receive-coo-in-importer">
+          <mxCell parent="lane-importer" style="rounded=1;absoluteArcSize=1;arcSize=22;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=2;" vertex="1">
+            <mxGeometry height="39" width="84" x="108" y="786" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-coo-in-importer-to-final-importer">
+          <mxCell edge="1" parent="lane-importer" source="action-receive-coo-in-importer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=0;exitPerimeter=0;entryPerimeter=0;entryX=0.5;entryY=1;" target="final-importer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-certificate-of-origin-between-exporter-and-importer-to-receive-coo-in-importer">
+          <mxCell edge="1" parent="lane-importer" source="object-certificate-of-origin-between-exporter-and-importer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-receive-coo-in-importer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-apply-for-coo-to-certificate-of-origin-between-exporter-and-issuer">
+          <mxCell edge="1" parent="frame" source="action-apply-for-coo" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.49;" target="object-certificate-of-origin-between-exporter-and-issuer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-request-status-to-certificate-of-origin-between-exporter-and-issuer">
+          <mxCell edge="1" parent="frame" source="action-request-status" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.9314;exitY=0;exitPerimeter=0;entryX=0;entryY=1;entryPerimeter=0;" target="object-certificate-of-origin-between-exporter-and-issuer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-between-exporter-and-issuer-to-receive-response">
+          <mxCell edge="1" parent="frame" source="object-application-response-between-exporter-and-issuer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.576923;" target="action-receive-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-between-exporter-and-endorser-to-receive-response">
+          <mxCell edge="1" parent="frame" source="object-application-response-between-exporter-and-endorser" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.1886;exitPerimeter=0;entryX=1;entryY=0.8603;entryPerimeter=0;" target="action-receive-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-apply-for-endorsement-to-certificate-of-origin-between-exporter-and-endorser">
+          <mxCell edge="1" parent="frame" source="action-apply-for-endorsement" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.344828;" target="object-certificate-of-origin-between-exporter-and-endorser">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-coo-to-certificate-of-origin-between-exporter-and-importer">
+          <mxCell edge="1" parent="frame" source="action-send-coo" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.454545;" target="object-certificate-of-origin-between-exporter-and-importer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

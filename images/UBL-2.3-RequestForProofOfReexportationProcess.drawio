@@ -1,0 +1,236 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.3-RequestForProofOfReexportationProcess" name="UBL-2.3-RequestForProofOfReexportationProcess">
+    <mxGraphModel dx="818" dy="611" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="865" pageHeight="656" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="13" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="627" width="836" x="14" y="14" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Importing Customs Party" ubl-kind="lane" id="lane-importing-customs-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=29;swimlaneLine=1;spacingTop=6;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;spacingLeft=2;" vertex="1">
+            <mxGeometry height="627" width="275" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-importing-customs-party">
+          <mxCell parent="lane-importing-customs-party" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="30" width="30" x="114" y="64" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Query if goods have&lt;br&gt;left the country" ubl-kind="action" id="action-query-if-goods-have-left-the-country">
+          <mxCell parent="lane-importing-customs-party" style="rounded=1;absoluteArcSize=1;arcSize=14;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingBottom=3;" vertex="1">
+            <mxGeometry height="57" width="117" x="70" y="132" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Proof&lt;br&gt;of Reexportation" ubl-kind="action" id="action-receive-proof-of-reexportation">
+          <mxCell parent="lane-importing-customs-party" style="rounded=1;absoluteArcSize=1;arcSize=13;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=6;" vertex="1">
+            <mxGeometry height="51" width="101" x="78" y="393" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Declined" ubl-kind="action" id="action-receive-declined">
+          <mxCell parent="lane-importing-customs-party" style="rounded=1;absoluteArcSize=1;arcSize=13;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingTop=3;" vertex="1">
+            <mxGeometry height="50" width="103" x="77" y="490" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-importing-customs-party">
+          <mxCell parent="lane-importing-customs-party" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="29" width="29" x="36" y="577" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-importing-customs-party-to-query-if-goods-have-left-the-country">
+          <mxCell edge="1" parent="lane-importing-customs-party" source="initial-importing-customs-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.483333;exitY=0.8667;" target="action-query-if-goods-have-left-the-country">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-proof-of-reexportation-to-final-importing-customs-party">
+          <mxCell edge="1" parent="lane-importing-customs-party" source="action-receive-proof-of-reexportation" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;exitX=0;exitY=0.490196;entryX=0.482759;entryY=0;" target="final-importing-customs-party">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="50" y="418" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-declined-to-final-importing-customs-party">
+          <mxCell edge="1" parent="lane-importing-customs-party" source="action-receive-declined" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;exitX=0.504854;exitY=1;entryX=1;entryY=0.482759;" target="final-importing-customs-party">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="129" y="591" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="Importing Guarantor Party" ubl-kind="lane" id="lane-importing-guarantor-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=29;swimlaneLine=1;spacingTop=5;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;spacingRight=2;" vertex="1">
+            <mxGeometry height="627" width="285" x="275" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Request For Proof&lt;br&gt;Of Reexportation" ubl-kind="object" ubl-between="[&quot;lane-importing-customs-party&quot;, &quot;lane-importing-guarantor-party&quot;]" ubl-lane="null" id="object-request-for-proof-of-reexportation-between-importing-customs-party-and-importing-guarantor-party">
+          <mxCell parent="lane-importing-guarantor-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="116" x="-58" y="132" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Issue to&lt;br&gt;Relevant Chamber&lt;br&gt;of Commerce" ubl-kind="action" id="action-issue-to-relevant-chamber-of-commerce">
+          <mxCell parent="lane-importing-guarantor-party" style="rounded=1;absoluteArcSize=1;arcSize=13;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;" vertex="1">
+            <mxGeometry height="53" width="109" x="88" y="134" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Proof&lt;br&gt;Of Reexportation" ubl-kind="object" ubl-between="[&quot;lane-importing-customs-party&quot;, &quot;lane-importing-guarantor-party&quot;]" ubl-lane="null" id="object-proof-of-reexportation-between-importing-customs-party-and-importing-guarantor-party">
+          <mxCell parent="lane-importing-guarantor-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="116" x="-58" y="390" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Issue&lt;br&gt;to&lt;br&gt;Customs" ubl-kind="action" id="action-issue-to-customs-in-importing-guarantor-party">
+          <mxCell parent="lane-importing-guarantor-party" style="rounded=1;absoluteArcSize=1;arcSize=12;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="53" width="82" x="101" y="392" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application response" ubl-kind="object" ubl-between="[&quot;lane-importing-customs-party&quot;, &quot;lane-importing-guarantor-party&quot;]" ubl-lane="null" id="object-application-response-between-importing-customs-party-and-importing-guarantor-party">
+          <mxCell parent="lane-importing-guarantor-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingTop=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="130" x="-65" y="486" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Issue&lt;br&gt;to&lt;br&gt;Customs" ubl-kind="action" id="action-issue-to-customs-in-importing-guarantor-party-2">
+          <mxCell parent="lane-importing-guarantor-party" style="rounded=1;absoluteArcSize=1;arcSize=16;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="52" width="84" x="100" y="489" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-request-for-proof-of-reexportation-between-importing-customs-party-and-importing-guarantor-party-to-issue-to-relevant-chamber-of-commerce">
+          <mxCell edge="1" parent="lane-importing-guarantor-party" source="object-request-for-proof-of-reexportation-between-importing-customs-party-and-importing-guarantor-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-issue-to-relevant-chamber-of-commerce">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-issue-to-customs-in-importing-guarantor-party-to-proof-of-reexportation-between-importing-customs-party-and-importing-guarantor-party">
+          <mxCell edge="1" parent="lane-importing-guarantor-party" source="action-issue-to-customs-in-importing-guarantor-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-proof-of-reexportation-between-importing-customs-party-and-importing-guarantor-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-issue-to-customs-in-importing-guarantor-party-2-to-application-response-between-importing-customs-party-and-importing-guarantor-party">
+          <mxCell edge="1" parent="lane-importing-guarantor-party" source="action-issue-to-customs-in-importing-guarantor-party-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-application-response-between-importing-customs-party-and-importing-guarantor-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Exporting Guarantor Party" ubl-kind="lane" id="lane-exporting-guarantor-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=29;swimlaneLine=1;spacingTop=5;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;spacingRight=1;" vertex="1">
+            <mxGeometry height="627" width="276" x="560" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Request For Proof&lt;br&gt;Of Reexportation" ubl-kind="object" ubl-between="[&quot;lane-importing-guarantor-party&quot;, &quot;lane-exporting-guarantor-party&quot;]" ubl-lane="null" id="object-request-for-proof-of-reexportation-between-importing-guarantor-party-and-exporting-guarantor-party">
+          <mxCell parent="lane-exporting-guarantor-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="116" x="-58" y="132" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Create&lt;br&gt;Case Number" ubl-kind="action" id="action-create-case-number">
+          <mxCell parent="lane-exporting-guarantor-party" style="rounded=1;absoluteArcSize=1;arcSize=14;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;" vertex="1">
+            <mxGeometry height="47" width="93" x="114" y="137" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Get Status From&lt;br&gt;Goods Item&lt;br&gt;Passport" ubl-kind="action" id="action-get-status-from-goods-item-passport">
+          <mxCell parent="lane-exporting-guarantor-party" style="rounded=1;absoluteArcSize=1;arcSize=16;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=2;" vertex="1">
+            <mxGeometry height="52" width="97" x="112" y="214" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Item&lt;br&gt;Returned?" ubl-kind="decision" id="decision-item-returned">
+          <mxCell parent="lane-exporting-guarantor-party" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=9;" vertex="1">
+            <mxGeometry height="55" width="76" x="123" y="296" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Proof&lt;br&gt;Of Reexportation" ubl-kind="object" ubl-between="[&quot;lane-importing-guarantor-party&quot;, &quot;lane-exporting-guarantor-party&quot;]" ubl-lane="null" id="object-proof-of-reexportation-between-importing-guarantor-party-and-exporting-guarantor-party">
+          <mxCell parent="lane-exporting-guarantor-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="116" x="-58" y="390" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Apply Stamps&lt;br&gt;And Signature" ubl-kind="action" id="action-apply-stamps-and-signature">
+          <mxCell parent="lane-exporting-guarantor-party" style="rounded=1;absoluteArcSize=1;arcSize=15;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=3;" vertex="1">
+            <mxGeometry height="51" width="93" x="115" y="393" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application response" ubl-kind="object" ubl-between="[&quot;lane-importing-guarantor-party&quot;, &quot;lane-exporting-guarantor-party&quot;]" ubl-lane="null" id="object-application-response-between-importing-guarantor-party-and-exporting-guarantor-party">
+          <mxCell parent="lane-exporting-guarantor-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingTop=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="130" x="-65" y="485" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Declined" ubl-kind="action" id="action-send-declined">
+          <mxCell parent="lane-exporting-guarantor-party" style="rounded=1;absoluteArcSize=1;arcSize=16;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingTop=3;" vertex="1">
+            <mxGeometry height="50" width="92" x="116" y="489" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-request-for-proof-of-reexportation-between-importing-guarantor-party-and-exporting-guarantor-party-to-create-case-number">
+          <mxCell edge="1" parent="lane-exporting-guarantor-party" source="object-request-for-proof-of-reexportation-between-importing-guarantor-party-and-exporting-guarantor-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-create-case-number">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-create-case-number-to-get-status-from-goods-item-passport">
+          <mxCell edge="1" parent="lane-exporting-guarantor-party" source="action-create-case-number" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-get-status-from-goods-item-passport">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-get-status-from-goods-item-passport-to-item-returned">
+          <mxCell edge="1" parent="lane-exporting-guarantor-party" source="action-get-status-from-goods-item-passport" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4961;entryY=0;entryPerimeter=0;exitX=0.502099;exitY=1;" target="decision-item-returned">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="No" ubl-kind="flow" ubl-guard="text-no" ubl-flow="control" ubl-text="text-no" ubl-text-text-no-labels="flow-item-returned-to-send-declined" id="flow-item-returned-to-send-declined">
+          <mxCell edge="1" parent="lane-exporting-guarantor-party" source="decision-item-returned" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=1;exitY=0.490909;entryX=1;entryY=0.48;" target="action-send-declined">
+            <mxGeometry relative="1" x="-0.05" as="geometry">
+              <mxPoint x="12" as="offset" />
+              <Array as="points">
+                <mxPoint x="238" y="323" />
+                <mxPoint x="238" y="513" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="Yes" ubl-kind="flow" ubl-guard="text-yes" ubl-flow="control" ubl-text="text-yes" ubl-text-text-yes-labels="flow-item-returned-to-apply-stamps-and-signature" id="flow-item-returned-to-apply-stamps-and-signature">
+          <mxCell edge="1" parent="lane-exporting-guarantor-party" source="decision-item-returned" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;entryX=0.494624;entryY=0;" target="action-apply-stamps-and-signature">
+            <mxGeometry relative="1" x="-0.2" as="geometry">
+              <mxPoint x="-22" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-apply-stamps-and-signature-to-proof-of-reexportation-between-importing-guarantor-party-and-exporting-guarantor-party">
+          <mxCell edge="1" parent="lane-exporting-guarantor-party" source="action-apply-stamps-and-signature" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-proof-of-reexportation-between-importing-guarantor-party-and-exporting-guarantor-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-declined-to-application-response-between-importing-guarantor-party-and-exporting-guarantor-party">
+          <mxCell edge="1" parent="lane-exporting-guarantor-party" source="action-send-declined" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-application-response-between-importing-guarantor-party-and-exporting-guarantor-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-query-if-goods-have-left-the-country-to-request-for-proof-of-reexportation-between-importing-customs-party-and-importing-guarantor-party">
+          <mxCell edge="1" parent="frame" source="action-query-if-goods-have-left-the-country" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-request-for-proof-of-reexportation-between-importing-customs-party-and-importing-guarantor-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-issue-to-relevant-chamber-of-commerce-to-request-for-proof-of-reexportation-between-importing-guarantor-party-and-exporting-guarantor-party">
+          <mxCell edge="1" parent="frame" source="action-issue-to-relevant-chamber-of-commerce" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-request-for-proof-of-reexportation-between-importing-guarantor-party-and-exporting-guarantor-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-proof-of-reexportation-between-importing-customs-party-and-importing-guarantor-party-to-receive-proof-of-reexportation">
+          <mxCell edge="1" parent="frame" source="object-proof-of-reexportation-between-importing-customs-party-and-importing-guarantor-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-receive-proof-of-reexportation">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-proof-of-reexportation-between-importing-guarantor-party-and-exporting-guarantor-party-to-issue-to-customs-in-importing-guarantor-party">
+          <mxCell edge="1" parent="frame" source="object-proof-of-reexportation-between-importing-guarantor-party-and-exporting-guarantor-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-issue-to-customs-in-importing-guarantor-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-between-importing-customs-party-and-importing-guarantor-party-to-receive-declined">
+          <mxCell edge="1" parent="frame" source="object-application-response-between-importing-customs-party-and-importing-guarantor-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-receive-declined">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-between-importing-guarantor-party-and-exporting-guarantor-party-to-issue-to-customs-in-importing-guarantor-party-2">
+          <mxCell edge="1" parent="frame" source="object-application-response-between-importing-guarantor-party-and-exporting-guarantor-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.517241;" target="action-issue-to-customs-in-importing-guarantor-party-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

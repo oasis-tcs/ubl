@@ -1,0 +1,282 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-DigitalAgreement" name="UBL-2.2-DigitalAgreement">
+    <mxGraphModel dx="826" dy="792" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="869" pageHeight="829" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="18" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="790" width="830" x="19" y="19" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="PARTICIPANT PARTY 1" ubl-kind="lane" ubl-label="Participant Party 1" id="lane-participant-party-1">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=31;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=14;" vertex="1">
+            <mxGeometry height="790" width="421" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-participant-party-1">
+          <mxCell parent="lane-participant-party-1" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="33" width="33" x="212" y="36" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send digital capabilities" ubl-kind="action" id="action-send-digital-capabilities">
+          <mxCell parent="lane-participant-party-1" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=1;" vertex="1">
+            <mxGeometry height="32" width="159" x="149" y="100" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive application response" ubl-kind="action" ubl-unstated="{&quot;wayOut&quot;: &quot;The path ends at this step: the artwork draws no end after it.&quot;}" id="action-receive-application-response-in-participant-party-1">
+          <mxCell parent="lane-participant-party-1" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingBottom=2;" vertex="1">
+            <mxGeometry height="34" width="212" x="123" y="176" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive digital agreement" ubl-kind="action" id="action-receive-digital-agreement-in-participant-party-1">
+          <mxCell parent="lane-participant-party-1" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=1;" vertex="1">
+            <mxGeometry height="32" width="212" x="123" y="260" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send application response" ubl-kind="action" id="action-send-application-response-in-participant-party-1">
+          <mxCell parent="lane-participant-party-1" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=1;" vertex="1">
+            <mxGeometry height="33" width="186" x="136" y="334" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Reconcile digital&lt;br&gt;agreement with own&lt;br&gt;digital capabilities" ubl-kind="decision" id="decision-reconcile-digital-agreement-with-own">
+          <mxCell parent="lane-participant-party-1" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=5;" vertex="1">
+            <mxGeometry height="108" width="161" x="5" y="358" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send digital agreement" ubl-kind="action" id="action-send-digital-agreement-in-participant-party-1">
+          <mxCell parent="lane-participant-party-1" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=4;spacingBottom=5;" vertex="1">
+            <mxGeometry height="36" width="169" x="144" y="455" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive application response" ubl-kind="action" id="action-receive-application-response-in-participant-party-1-2">
+          <mxCell parent="lane-participant-party-1" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;" vertex="1">
+            <mxGeometry height="31" width="224" x="115" y="664" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-participant-party-1">
+          <mxCell parent="lane-participant-party-1" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="24" width="24" x="73" y="748" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-participant-party-1-to-send-digital-capabilities">
+          <mxCell edge="1" parent="lane-participant-party-1" source="initial-participant-party-1" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=0.881;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-send-digital-capabilities">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-digital-agreement-in-participant-party-1-to-reconcile-digital-agreement-with-own">
+          <mxCell edge="1" parent="lane-participant-party-1" source="action-receive-digital-agreement-in-participant-party-1" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="decision-reconcile-digital-agreement-with-own">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-digital-agreement-in-participant-party-1-to-send-application-response-in-participant-party-1">
+          <mxCell edge="1" parent="lane-participant-party-1" source="action-receive-digital-agreement-in-participant-party-1" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5134;entryY=0;entryPerimeter=0;exitX=0.511757;exitY=1;" target="action-send-application-response-in-participant-party-1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Y" ubl-kind="flow" ubl-guard="text-y-2" ubl-flow="control" ubl-text="text-y-2" ubl-text-text-y-2-labels="flow-reconcile-digital-agreement-with-own-to-send-digital-agreement-in-participant-party-1" id="flow-reconcile-digital-agreement-with-own-to-send-digital-agreement-in-participant-party-1">
+          <mxCell edge="1" parent="lane-participant-party-1" source="decision-reconcile-digital-agreement-with-own" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5223;exitPerimeter=0;entryX=0.25;entryY=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;" target="action-send-digital-agreement-in-participant-party-1">
+            <mxGeometry relative="1" x="-0.57" as="geometry">
+              <mxPoint x="-8" y="4" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="N" ubl-kind="flow" ubl-guard="text-n-2" ubl-flow="control" ubl-text="text-n-2" ubl-text-text-n-2-labels="flow-reconcile-digital-agreement-with-own-to-final-participant-party-1" id="flow-reconcile-digital-agreement-with-own-to-final-participant-party-1">
+          <mxCell edge="1" parent="lane-participant-party-1" source="decision-reconcile-digital-agreement-with-own" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;entryX=0.520833;entryY=0;" target="final-participant-party-1">
+            <mxGeometry relative="1" x="-0.97" as="geometry">
+              <mxPoint x="11" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-application-response-in-participant-party-1-2-to-final-participant-party-1">
+          <mxCell edge="1" parent="lane-participant-party-1" source="action-receive-application-response-in-participant-party-1-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=1;entryY=0.2594;entryPerimeter=0;" target="final-participant-party-1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="PARTICIPANT PARTY 2" ubl-kind="lane" ubl-label="Participant Party 2" id="lane-participant-party-2">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=31;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=24;" vertex="1">
+            <mxGeometry height="790" width="409" x="421" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Digital&lt;br&gt;Capabilities" ubl-kind="object" ubl-between="[&quot;lane-participant-party-1&quot;, &quot;lane-participant-party-2&quot;]" ubl-lane="null" id="object-digital-capabilities">
+          <mxCell parent="lane-participant-party-2" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="46" width="107" x="-56" y="93" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive digital capabilities" ubl-kind="action" id="action-receive-digital-capabilities">
+          <mxCell parent="lane-participant-party-2" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="31" width="200" x="90" y="101" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application&lt;br&gt;Response" ubl-kind="object" ubl-between="[&quot;lane-participant-party-1&quot;, &quot;lane-participant-party-2&quot;]" ubl-lane="null" id="object-application-response-between-participant-party-1-and-participant-party-2">
+          <mxCell parent="lane-participant-party-2" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingTop=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="46" width="108" x="-55" y="170" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send application response" ubl-kind="action" id="action-send-application-response-in-participant-party-2">
+          <mxCell parent="lane-participant-party-2" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;" vertex="1">
+            <mxGeometry height="31" width="190" x="95" y="177" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Match&lt;br&gt;digital&lt;br&gt;capabilities" ubl-kind="decision" id="decision-match-digital-capabilities">
+          <mxCell parent="lane-participant-party-2" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=12;" vertex="1">
+            <mxGeometry height="80" width="109" x="297" y="195" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Digital&lt;br&gt;Agreement" ubl-kind="object" ubl-between="[&quot;lane-participant-party-1&quot;, &quot;lane-participant-party-2&quot;]" ubl-lane="null" id="object-digital-agreement-between-participant-party-1-and-participant-party-2">
+          <mxCell parent="lane-participant-party-2" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="46" width="108" x="-55" y="253" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send digital agreement" ubl-kind="action" id="action-send-digital-agreement-in-participant-party-2">
+          <mxCell parent="lane-participant-party-2" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=3;" vertex="1">
+            <mxGeometry height="34" width="160" x="110" y="259" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application&lt;br&gt;Response" ubl-kind="object" ubl-between="[&quot;lane-participant-party-1&quot;, &quot;lane-participant-party-2&quot;]" ubl-lane="null" id="object-application-response-between-participant-party-1-and-participant-party-2-2">
+          <mxCell parent="lane-participant-party-2" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="47" width="108" x="-55" y="327" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive application response" ubl-kind="action" ubl-unstated="{&quot;wayOut&quot;: &quot;The path ends at this step: the artwork draws no end after it.&quot;}" id="action-receive-application-response-in-participant-party-2">
+          <mxCell parent="lane-participant-party-2" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingBottom=3;" vertex="1">
+            <mxGeometry height="35" width="205" x="87" y="333" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Digital&lt;br&gt;Agreement" ubl-kind="object" ubl-between="[&quot;lane-participant-party-1&quot;, &quot;lane-participant-party-2&quot;]" ubl-lane="null" id="object-digital-agreement-between-participant-party-1-and-participant-party-2-2">
+          <mxCell parent="lane-participant-party-2" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=11;strokeWidth=2;" vertex="1">
+            <mxGeometry height="45" width="107" x="-50" y="451" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive digital agreement" ubl-kind="action" id="action-receive-digital-agreement-in-participant-party-2">
+          <mxCell parent="lane-participant-party-2" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=1;" vertex="1">
+            <mxGeometry height="32" width="191" x="95" y="457" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Validate&lt;br&gt;digital&lt;br&gt;agreement" ubl-kind="decision" id="decision-validate-digital-agreement">
+          <mxCell parent="lane-participant-party-2" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=4;" vertex="1">
+            <mxGeometry height="81" width="116" x="132" y="537" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application&lt;br&gt;Response" ubl-kind="object" ubl-between="[&quot;lane-participant-party-1&quot;, &quot;lane-participant-party-2&quot;]" ubl-lane="null" id="object-application-response-between-participant-party-1-and-participant-party-2-3">
+          <mxCell parent="lane-participant-party-2" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=8;spacingBottom=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="60" width="108" x="-52" y="649" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send application response" ubl-kind="action" id="action-send-application-response-in-participant-party-2-2">
+          <mxCell parent="lane-participant-party-2" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=1;" vertex="1">
+            <mxGeometry height="33" width="209" x="86" y="663" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-participant-party-2">
+          <mxCell parent="lane-participant-party-2" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="24" width="24" x="338" y="748" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-digital-capabilities-to-receive-digital-capabilities">
+          <mxCell edge="1" parent="lane-participant-party-2" source="object-digital-capabilities" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.51087;" target="action-receive-digital-capabilities">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-digital-capabilities-to-match-digital-capabilities">
+          <mxCell edge="1" parent="lane-participant-party-2" source="action-receive-digital-capabilities" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5595;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="decision-match-digital-capabilities">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-digital-capabilities-to-send-application-response-in-participant-party-2">
+          <mxCell edge="1" parent="lane-participant-party-2" source="action-receive-digital-capabilities" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-send-application-response-in-participant-party-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-application-response-in-participant-party-2-to-application-response-between-participant-party-1-and-participant-party-2">
+          <mxCell edge="1" parent="lane-participant-party-2" source="action-send-application-response-in-participant-party-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=1;entryY=0.48913;" target="object-application-response-between-participant-party-1-and-participant-party-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Y" ubl-kind="flow" ubl-guard="text-y" ubl-flow="control" ubl-text="text-y" ubl-text-text-y-labels="flow-match-digital-capabilities-to-send-digital-agreement-in-participant-party-2" id="flow-match-digital-capabilities-to-send-digital-agreement-in-participant-party-2">
+          <mxCell edge="1" parent="lane-participant-party-2" source="decision-match-digital-capabilities" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=0.9241;entryY=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;" target="action-send-digital-agreement-in-participant-party-2">
+            <mxGeometry relative="1" x="-0.44" as="geometry">
+              <mxPoint x="6" y="9" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-digital-agreement-in-participant-party-2-to-digital-agreement-between-participant-party-1-and-participant-party-2">
+          <mxCell edge="1" parent="lane-participant-party-2" source="action-send-digital-agreement-in-participant-party-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4893;entryPerimeter=0;exitX=0;exitY=0.485524;" target="object-digital-agreement-between-participant-party-1-and-participant-party-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="N" ubl-kind="flow" ubl-guard="text-n" ubl-flow="control" ubl-text="text-n" ubl-text-text-n-labels="flow-match-digital-capabilities-to-final-participant-party-2" id="flow-match-digital-capabilities-to-final-participant-party-2">
+          <mxCell edge="1" parent="lane-participant-party-2" source="decision-match-digital-capabilities" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;entryX=0.5625;entryY=0;" target="final-participant-party-2">
+            <mxGeometry relative="1" x="-0.97" as="geometry">
+              <mxPoint x="-9" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-between-participant-party-1-and-participant-party-2-2-to-receive-application-response-in-participant-party-2">
+          <mxCell edge="1" parent="lane-participant-party-2" source="object-application-response-between-participant-party-1-and-participant-party-2-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-receive-application-response-in-participant-party-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-digital-agreement-between-participant-party-1-and-participant-party-2-2-to-receive-digital-agreement-in-participant-party-2">
+          <mxCell edge="1" parent="lane-participant-party-2" source="object-digital-agreement-between-participant-party-1-and-participant-party-2-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.488889;" target="action-receive-digital-agreement-in-participant-party-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-digital-agreement-in-participant-party-2-to-validate-digital-agreement">
+          <mxCell edge="1" parent="lane-participant-party-2" source="action-receive-digital-agreement-in-participant-party-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5017;entryY=0;entryPerimeter=0;exitX=0.498415;exitY=1;" target="decision-validate-digital-agreement">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Y" ubl-kind="flow" ubl-guard="text-y-3" ubl-flow="control" ubl-text="text-y-3" ubl-text-text-y-3-labels="flow-validate-digital-agreement-to-final-participant-party-2" id="flow-validate-digital-agreement-to-final-participant-party-2">
+          <mxCell edge="1" parent="lane-participant-party-2" source="decision-validate-digital-agreement" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5235;exitPerimeter=0;entryX=0.1632;entryY=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;" target="final-participant-party-2">
+            <mxGeometry relative="1" x="-0.89" as="geometry">
+              <mxPoint x="-8" y="4" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="N" ubl-kind="flow" ubl-guard="text-n-3" ubl-flow="control" ubl-text="text-n-3" ubl-text-text-n-3-labels="flow-validate-digital-agreement-to-send-application-response-in-participant-party-2-2" id="flow-validate-digital-agreement-to-send-application-response-in-participant-party-2-2">
+          <mxCell edge="1" parent="lane-participant-party-2" source="decision-validate-digital-agreement" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;entryX=0.497608;entryY=0;" target="action-send-application-response-in-participant-party-2-2">
+            <mxGeometry relative="1" x="-0.74" as="geometry">
+              <mxPoint x="8" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-application-response-in-participant-party-2-2-to-application-response-between-participant-party-1-and-participant-party-2-3">
+          <mxCell edge="1" parent="lane-participant-party-2" source="action-send-application-response-in-participant-party-2-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=1;entryY=0.508333;" target="object-application-response-between-participant-party-1-and-participant-party-2-3">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-digital-capabilities-to-digital-capabilities">
+          <mxCell edge="1" parent="frame" source="action-send-digital-capabilities" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4978;entryPerimeter=0;exitX=1;exitY=0.496837;" target="object-digital-capabilities">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-between-participant-party-1-and-participant-party-2-to-receive-application-response-in-participant-party-1">
+          <mxCell edge="1" parent="frame" source="object-application-response-between-participant-party-1-and-participant-party-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-receive-application-response-in-participant-party-1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-digital-agreement-between-participant-party-1-and-participant-party-2-to-receive-digital-agreement-in-participant-party-1">
+          <mxCell edge="1" parent="frame" source="object-digital-agreement-between-participant-party-1-and-participant-party-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-receive-digital-agreement-in-participant-party-1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-application-response-in-participant-party-1-to-application-response-between-participant-party-1-and-participant-party-2-2">
+          <mxCell edge="1" parent="frame" source="action-send-application-response-in-participant-party-1" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-application-response-between-participant-party-1-and-participant-party-2-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-digital-agreement-in-participant-party-1-to-digital-agreement-between-participant-party-1-and-participant-party-2-2">
+          <mxCell edge="1" parent="frame" source="action-send-digital-agreement-in-participant-party-1" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.488889;" target="object-digital-agreement-between-participant-party-1-and-participant-party-2-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-between-participant-party-1-and-participant-party-2-3-to-receive-application-response-in-participant-party-1-2">
+          <mxCell edge="1" parent="frame" source="object-application-response-between-participant-party-1-and-participant-party-2-3" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.508333;" target="action-receive-application-response-in-participant-party-1-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

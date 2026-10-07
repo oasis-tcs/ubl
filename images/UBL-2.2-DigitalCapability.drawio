@@ -1,0 +1,88 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-DigitalCapability" name="UBL-2.2-DigitalCapability">
+    <mxGraphModel dx="818" dy="295" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="855" pageHeight="331" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="18" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="293" width="816" x="19" y="19" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="BUSINESS PARTY 1" ubl-kind="lane" ubl-label="Business Party 1" id="lane-business-party-1">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=31;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=12;" vertex="1">
+            <mxGeometry height="293" width="411" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-business-party-1">
+          <mxCell parent="lane-business-party-1" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="34" width="33" x="209" y="35" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Publish digital capabilities" ubl-kind="action" id="action-publish-digital-capabilities">
+          <mxCell parent="lane-business-party-1" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingBottom=1;" vertex="1">
+            <mxGeometry height="32" width="172" x="139" y="98" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-business-party-1-to-publish-digital-capabilities">
+          <mxCell edge="1" parent="lane-business-party-1" source="initial-business-party-1" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.484848;exitY=0.8799;" target="action-publish-digital-capabilities">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="BUSINESS PARTY 0..n" ubl-kind="lane" ubl-label="Business Party 0..n" id="lane-business-party-0-n">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=31;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=18;" vertex="1">
+            <mxGeometry height="293" width="405" x="411" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Digital&lt;br&gt;Capability" ubl-kind="object" ubl-between="[&quot;lane-business-party-1&quot;, &quot;lane-business-party-0-n&quot;]" ubl-lane="null" id="object-digital-capability">
+          <mxCell parent="lane-business-party-0-n" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=5;spacingTop=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="45" width="107" x="-56" y="92" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Download digital capabilities" ubl-kind="action" id="action-download-digital-capabilities">
+          <mxCell parent="lane-business-party-0-n" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=6;spacingTop=1;" vertex="1">
+            <mxGeometry height="31" width="198" x="89" y="177" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-business-party-0-n">
+          <mxCell parent="lane-business-party-0-n" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="24" width="24" x="176" y="252" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-download-digital-capabilities-to-final-business-party-0-n">
+          <mxCell edge="1" parent="lane-business-party-0-n" source="action-download-digital-capabilities" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5063;entryY=0;entryPerimeter=0;exitX=0.500764;exitY=1;" target="final-business-party-0-n">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-digital-capability-to-download-digital-capabilities">
+          <mxCell edge="1" parent="lane-business-party-0-n" source="object-digital-capability" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;exitX=0.53271;exitY=1;entryX=0;entryY=0.451613;" target="action-download-digital-capabilities">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1" y="191" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="mark" ubl-mark="cross-mark" ubl-rule="v" ubl-on="flow-digital-capability-to-download-digital-capabilities" ubl-meaning="break" id="mark-1">
+          <mxCell connectable="0" parent="flow-digital-capability-to-download-digital-capabilities" style="shape=line;html=1;rotation=146.66;resizable=0;" vertex="1">
+            <mxGeometry height="10" relative="1" width="36" x="-0.68" as="geometry">
+              <mxPoint x="-21" y="-5" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="mark" ubl-mark="cross-mark" ubl-rule="v" ubl-on="flow-digital-capability-to-download-digital-capabilities" ubl-meaning="break" id="mark-2">
+          <mxCell connectable="0" parent="flow-digital-capability-to-download-digital-capabilities" style="shape=line;html=1;rotation=146.27;resizable=0;" vertex="1">
+            <mxGeometry height="10" relative="1" width="36" x="-0.55" as="geometry">
+              <mxPoint x="-21" y="-5" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-publish-digital-capabilities-to-digital-capability">
+          <mxCell edge="1" parent="frame" source="action-publish-digital-capabilities" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.488889;" target="object-digital-capability">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

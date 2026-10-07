@@ -1,0 +1,110 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-Tender-Status" name="UBL-2.2-Tender-Status">
+    <mxGraphModel dx="572" dy="301" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="602" pageHeight="352" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="15" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="319" width="570" x="16" y="16" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="ECONOMIC OPERATOR" ubl-kind="lane" ubl-label="Economic Operator" id="lane-economic-operator">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=24;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=11;" vertex="1">
+            <mxGeometry height="319" width="284" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-economic-operator">
+          <mxCell parent="lane-economic-operator" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="29" width="28" x="87" y="21" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Prepare tender status request" ubl-kind="action" id="action-prepare-tender-status-request">
+          <mxCell parent="lane-economic-operator" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=3;" vertex="1">
+            <mxGeometry height="29" width="168" x="17" y="76" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Submit tender status request" ubl-kind="action" id="action-submit-tender-status-request">
+          <mxCell parent="lane-economic-operator" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingBottom=1;" vertex="1">
+            <mxGeometry height="30" width="171" x="16" y="135" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive tender status" ubl-kind="action" id="action-receive-tender-status">
+          <mxCell parent="lane-economic-operator" style="rounded=1;absoluteArcSize=1;arcSize=26;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=6;spacingBottom=1;" vertex="1">
+            <mxGeometry height="30" width="160" x="21" y="222" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-economic-operator">
+          <mxCell parent="lane-economic-operator" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="19" width="20" x="91" y="285" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-economic-operator-to-prepare-tender-status-request">
+          <mxCell edge="1" parent="lane-economic-operator" source="initial-economic-operator" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.5;exitY=0.8606;" target="action-prepare-tender-status-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-prepare-tender-status-request-to-submit-tender-status-request">
+          <mxCell edge="1" parent="lane-economic-operator" source="action-prepare-tender-status-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.497076;entryY=0;" target="action-submit-tender-status-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-tender-status-to-final-economic-operator">
+          <mxCell edge="1" parent="lane-economic-operator" source="action-receive-tender-status" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.5;entryY=0;" target="final-economic-operator">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="CONTRACTING AUTHORITY" ubl-kind="lane" ubl-label="Contracting Authority" id="lane-contracting-authority">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=24;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=3;" vertex="1">
+            <mxGeometry height="319" width="286" x="284" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Tender&lt;br&gt;Status&lt;br&gt;Request" ubl-kind="object" ubl-between="[&quot;lane-economic-operator&quot;, &quot;lane-contracting-authority&quot;]" ubl-lane="null" id="object-tender-status-request">
+          <mxCell parent="lane-contracting-authority" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=6;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="60" width="88" x="-43" y="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive tender status request" ubl-kind="action" id="action-receive-tender-status-request">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingBottom=1;" vertex="1">
+            <mxGeometry height="31" width="175" x="92" y="135" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Tender&lt;br&gt;Status" ubl-kind="object" ubl-between="[&quot;lane-economic-operator&quot;, &quot;lane-contracting-authority&quot;]" ubl-lane="null" id="object-tender-status">
+          <mxCell parent="lane-contracting-authority" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=7;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="70" width="88" x="-43" y="205" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Submit tender status" ubl-kind="action" id="action-submit-tender-status">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=26;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=1;" vertex="1">
+            <mxGeometry height="28" width="175" x="92" y="223" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-tender-status-request-to-receive-tender-status-request">
+          <mxCell edge="1" parent="lane-contracting-authority" source="object-tender-status-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.483871;" target="action-receive-tender-status-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-tender-status-request-to-submit-tender-status">
+          <mxCell edge="1" parent="lane-contracting-authority" source="action-receive-tender-status-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-submit-tender-status">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-submit-tender-status-to-tender-status">
+          <mxCell edge="1" parent="lane-contracting-authority" source="action-submit-tender-status" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.607143;" target="object-tender-status">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-submit-tender-status-request-to-tender-status-request">
+          <mxCell edge="1" parent="frame" source="action-submit-tender-status-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-tender-status-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-tender-status-to-receive-tender-status">
+          <mxCell edge="1" parent="frame" source="object-tender-status" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=1;entryY=0.6;" target="action-receive-tender-status">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

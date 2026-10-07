@@ -1,74 +1,109 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" scale="1" border="0" version="29.1.0">
-  <diagram name="MovementStatement" id="ofikLJ-izxZZsxhpgBGH">
-    <mxGraphModel dx="969" dy="655" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.5-WasteNotificationProcess" name="UBL-2.5-WasteNotificationProcess">
+    <mxGraphModel dx="512" dy="423" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="532" pageHeight="444" math="0" shadow="0">
       <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="-xvB-RYJLi5VmxvFcRkU-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
-          <mxGeometry height="430" width="260" x="370" y="220" as="geometry" />
-        </mxCell>
-        <mxCell id="-xvB-RYJLi5VmxvFcRkU-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
-          <mxGeometry height="430" width="260" x="110" y="220" as="geometry" />
-        </mxCell>
-        <mxCell id="-xvB-RYJLi5VmxvFcRkU-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=1" value="Senderparty" vertex="1">
-          <mxGeometry height="30" width="60" x="190" y="240" as="geometry" />
-        </mxCell>
-        <mxCell id="-xvB-RYJLi5VmxvFcRkU-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=1" value="ReceiverParty" vertex="1">
-          <mxGeometry height="30" width="60" x="470" y="240" as="geometry" />
-        </mxCell>
-        <mxCell id="-xvB-RYJLi5VmxvFcRkU-14" edge="1" parent="1" source="-xvB-RYJLi5VmxvFcRkU-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=open;endFill=0;" target="-xvB-RYJLi5VmxvFcRkU-10">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="-xvB-RYJLi5VmxvFcRkU-8" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#000000;" value="" vertex="1">
-          <mxGeometry height="10" width="10" x="220" y="280" as="geometry" />
-        </mxCell>
-        <mxCell id="-xvB-RYJLi5VmxvFcRkU-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#FFFFFF;strokeColor=#000000;" value="Prepare notification of waste movement" vertex="1">
-          <mxGeometry height="40" width="130" x="160" y="334" as="geometry" />
-        </mxCell>
-        <mxCell id="-xvB-RYJLi5VmxvFcRkU-11" edge="1" parent="1" source="-xvB-RYJLi5VmxvFcRkU-10" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#000000;rounded=0;entryX=0.551;entryY=0.003;entryDx=0;entryDy=0;entryPerimeter=0;" target="-xvB-RYJLi5VmxvFcRkU-12" value="">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="220" y="420" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="-xvB-RYJLi5VmxvFcRkU-17" edge="1" parent="1" source="-xvB-RYJLi5VmxvFcRkU-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" target="-xvB-RYJLi5VmxvFcRkU-16">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="-xvB-RYJLi5VmxvFcRkU-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#FFFFFF;strokeColor=#000000;" value="Send Waste Notification&amp;nbsp;" vertex="1">
-          <mxGeometry height="40" width="120" x="158" y="420" as="geometry" />
-        </mxCell>
-        <mxCell id="-xvB-RYJLi5VmxvFcRkU-23" edge="1" parent="1" source="-xvB-RYJLi5VmxvFcRkU-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;" target="-xvB-RYJLi5VmxvFcRkU-18">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="-xvB-RYJLi5VmxvFcRkU-16" parent="1" style="html=1;whiteSpace=wrap;" value="Waste Notification" vertex="1">
-          <mxGeometry height="50" width="110" x="320" y="415" as="geometry" />
-        </mxCell>
-        <mxCell id="HOKDyX335TYdUuvz2k64-4" edge="1" parent="1" source="-xvB-RYJLi5VmxvFcRkU-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=open;endFill=0;" target="HOKDyX335TYdUuvz2k64-2">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="-xvB-RYJLi5VmxvFcRkU-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#FFFFFF;strokeColor=#000000;" value="Receive Waste Notification&amp;nbsp;" vertex="1">
-          <mxGeometry height="40" width="120" x="470" y="420" as="geometry" />
-        </mxCell>
-        <mxCell id="-xvB-RYJLi5VmxvFcRkU-21" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
-          <mxGeometry height="20" width="20" x="210" y="600" as="geometry" />
-        </mxCell>
-        <mxCell id="HOKDyX335TYdUuvz2k64-5" edge="1" parent="1" source="HOKDyX335TYdUuvz2k64-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;" target="HOKDyX335TYdUuvz2k64-3">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="HOKDyX335TYdUuvz2k64-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#FFFFFF;strokeColor=#000000;" value="Prepare and send response" vertex="1">
-          <mxGeometry height="40" width="120" x="470" y="510" as="geometry" />
-        </mxCell>
-        <mxCell id="HOKDyX335TYdUuvz2k64-8" edge="1" parent="1" source="HOKDyX335TYdUuvz2k64-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;" target="HOKDyX335TYdUuvz2k64-6">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="HOKDyX335TYdUuvz2k64-3" parent="1" style="html=1;whiteSpace=wrap;" value="Application Response" vertex="1">
-          <mxGeometry height="50" width="100" x="320" y="505" as="geometry" />
-        </mxCell>
-        <mxCell id="HOKDyX335TYdUuvz2k64-7" edge="1" parent="1" source="HOKDyX335TYdUuvz2k64-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=open;endFill=0;" target="-xvB-RYJLi5VmxvFcRkU-21">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="HOKDyX335TYdUuvz2k64-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#FFFFFF;strokeColor=#000000;" value="Receive Waste Notification Response" vertex="1">
-          <mxGeometry height="40" width="140" x="150" y="510" as="geometry" />
-        </mxCell>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="10" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="423" width="511" x="10" y="10" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Senderparty" ubl-kind="lane" ubl-label="Sender Party" id="lane-sender-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=67;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;spacingRight=40;" vertex="1">
+            <mxGeometry height="423" width="256" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-sender-party">
+          <mxCell parent="lane-sender-party" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="18" width="18" x="104" y="55" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Prepare notification of&lt;br&gt;waste movement" ubl-kind="action" id="action-prepare-notification-of-waste-movement">
+          <mxCell parent="lane-sender-party" style="rounded=1;absoluteArcSize=1;arcSize=30;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=1;" vertex="1">
+            <mxGeometry height="39" width="127" x="50" y="113" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Waste&lt;br&gt;Notification" ubl-kind="action" id="action-send-waste-notification">
+          <mxCell parent="lane-sender-party" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=28;spacingBottom=1;" vertex="1">
+            <mxGeometry height="39" width="117" x="49" y="197" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Waste&lt;br&gt;Notification Response" ubl-kind="action" id="action-receive-waste-notification-response">
+          <mxCell parent="lane-sender-party" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=1;" vertex="1">
+            <mxGeometry height="39" width="137" x="40" y="285" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-sender-party">
+          <mxCell parent="lane-sender-party" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="19" width="19" x="99" y="374" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-sender-party-to-prepare-notification-of-waste-movement">
+          <mxCell edge="1" parent="lane-sender-party" source="initial-sender-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.527778;exitY=0.7938;" target="action-prepare-notification-of-waste-movement">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-prepare-notification-of-waste-movement-to-send-waste-notification">
+          <mxCell edge="1" parent="lane-sender-party" source="action-prepare-notification-of-waste-movement" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.551282;entryY=0;" target="action-send-waste-notification">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-waste-notification-response-to-final-sender-party">
+          <mxCell edge="1" parent="lane-sender-party" source="action-receive-waste-notification-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="final-sender-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="ReceiverParty" ubl-kind="lane" ubl-label="Receiver Party" id="lane-receiver-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=67;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;" vertex="1">
+            <mxGeometry height="423" width="255" x="256" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Waste Notification" ubl-kind="object" ubl-between="[&quot;lane-sender-party&quot;, &quot;lane-receiver-party&quot;]" ubl-lane="null" id="object-waste-notification">
+          <mxCell parent="lane-receiver-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="49" width="108" x="-49" y="192" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Waste&lt;br&gt;Notification" ubl-kind="action" id="action-receive-waste-notification">
+          <mxCell parent="lane-receiver-party" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=2;" vertex="1">
+            <mxGeometry height="39" width="118" x="98" y="197" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application&lt;br&gt;Response" ubl-kind="object" ubl-between="[&quot;lane-sender-party&quot;, &quot;lane-receiver-party&quot;]" ubl-lane="null" id="object-application-response">
+          <mxCell parent="lane-receiver-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="49" width="98" x="-49" y="280" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Prepare and send&lt;br&gt;response" ubl-kind="action" id="action-prepare-and-send-response">
+          <mxCell parent="lane-receiver-party" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingTop=2;" vertex="1">
+            <mxGeometry height="39" width="118" x="98" y="285" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-waste-notification-to-receive-waste-notification">
+          <mxCell edge="1" parent="lane-receiver-party" source="object-waste-notification" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-receive-waste-notification">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-waste-notification-to-prepare-and-send-response">
+          <mxCell edge="1" parent="lane-receiver-party" source="action-receive-waste-notification" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-prepare-and-send-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-prepare-and-send-response-to-application-response">
+          <mxCell edge="1" parent="lane-receiver-party" source="action-prepare-and-send-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-application-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-waste-notification-to-waste-notification">
+          <mxCell edge="1" parent="frame" source="action-send-waste-notification" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-waste-notification">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-to-receive-waste-notification-response">
+          <mxCell edge="1" parent="frame" source="object-application-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-receive-waste-notification-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
       </root>
     </mxGraphModel>
   </diagram>

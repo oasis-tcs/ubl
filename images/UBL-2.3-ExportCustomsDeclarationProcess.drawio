@@ -1,0 +1,161 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.3-ExportCustomsDeclarationProcess" name="UBL-2.3-ExportCustomsDeclarationProcess">
+    <mxGraphModel dx="552" dy="510" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="581" pageHeight="548" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="13" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="519" width="552" x="14" y="14" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Exporter party" ubl-kind="lane" ubl-label="Exporter Party" id="lane-exporter-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=30;swimlaneLine=1;spacingTop=6;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;spacingLeft=2;" vertex="1">
+            <mxGeometry height="519" width="277" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-exporter-party">
+          <mxCell parent="lane-exporter-party" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="31" width="30" x="115" y="39" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Draft&lt;br&gt;Export Customs&lt;br&gt;Declaration" ubl-kind="action" id="action-draft-export-customs-declaration">
+          <mxCell parent="lane-exporter-party" style="rounded=1;absoluteArcSize=1;arcSize=12;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=4;" vertex="1">
+            <mxGeometry height="53" width="110" x="75" y="102" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive&lt;br&gt;Export Customs&lt;br&gt;Declaration" ubl-kind="action" id="action-receive-export-customs-declaration">
+          <mxCell parent="lane-exporter-party" style="rounded=1;absoluteArcSize=1;arcSize=14;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="52" width="102" x="79" y="284" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive reject" ubl-kind="action" id="action-receive-reject">
+          <mxCell parent="lane-exporter-party" style="rounded=1;absoluteArcSize=1;arcSize=16;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingTop=3;" vertex="1">
+            <mxGeometry height="51" width="102" x="79" y="382" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-exporter-party">
+          <mxCell parent="lane-exporter-party" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="29" width="29" x="37" y="470" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-exporter-party-to-draft-export-customs-declaration">
+          <mxCell edge="1" parent="lane-exporter-party" source="initial-exporter-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.5;exitY=0.8675;" target="action-draft-export-customs-declaration">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-export-customs-declaration-to-final-exporter-party">
+          <mxCell edge="1" parent="lane-exporter-party" source="action-receive-export-customs-declaration" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;exitX=0;exitY=0.480769;entryX=0.482759;entryY=0;" target="final-exporter-party">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="51" y="309" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-reject-to-final-exporter-party">
+          <mxCell edge="1" parent="lane-exporter-party" source="action-receive-reject" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;exitX=0.5;exitY=1;entryX=1;entryY=0.482759;" target="final-exporter-party">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="130" y="484" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="CustomsParty" ubl-kind="lane" ubl-label="Customs Party" id="lane-customs-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=30;swimlaneLine=1;spacingTop=6;collapsible=0;html=1;fillColor=none;fontStyle=1;spacing=0;spacingRight=3;" vertex="1">
+            <mxGeometry height="519" width="275" x="277" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Export Customs&lt;br&gt;Declaration" ubl-kind="object" ubl-between="[&quot;lane-exporter-party&quot;, &quot;lane-customs-party&quot;]" ubl-lane="null" id="object-export-customs-declaration-between-exporter-party-and-customs-party">
+          <mxCell parent="lane-customs-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;strokeWidth=2;" vertex="1">
+            <mxGeometry height="59" width="117" x="-59" y="99" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Validate&lt;br&gt;Export Customs&lt;br&gt;Declaration" ubl-kind="action" id="action-validate-export-customs-declaration">
+          <mxCell parent="lane-customs-party" style="rounded=1;absoluteArcSize=1;arcSize=14;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="53" width="94" x="94" y="102" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="OK?" ubl-kind="decision" id="decision-ok">
+          <mxCell parent="lane-customs-party" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingTop=2;" vertex="1">
+            <mxGeometry height="56" width="77" x="103" y="185" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Export Customs&lt;br&gt;Declaration" ubl-kind="object" ubl-between="[&quot;lane-exporter-party&quot;, &quot;lane-customs-party&quot;]" ubl-lane="null" id="object-export-customs-declaration-between-exporter-party-and-customs-party-2">
+          <mxCell parent="lane-customs-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="117" x="-59" y="281" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Apply stamps&lt;br&gt;and signature" ubl-kind="action" id="action-apply-stamps-and-signature">
+          <mxCell parent="lane-customs-party" style="rounded=1;absoluteArcSize=1;arcSize=15;html=1;whiteSpace=nowrap;fontStyle=0;align=right;verticalAlign=middle;spacing=0;spacingRight=12;spacingBottom=2;" vertex="1">
+            <mxGeometry height="50" width="93" x="95" y="285" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Application response" ubl-kind="object" ubl-between="[&quot;lane-exporter-party&quot;, &quot;lane-customs-party&quot;]" ubl-lane="null" id="object-application-response">
+          <mxCell parent="lane-customs-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingTop=3;strokeWidth=2;" vertex="1">
+            <mxGeometry height="59" width="131" x="-66" y="378" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send reject" ubl-kind="action" id="action-send-reject">
+          <mxCell parent="lane-customs-party" style="rounded=1;absoluteArcSize=1;arcSize=17;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingTop=2;" vertex="1">
+            <mxGeometry height="51" width="93" x="95" y="382" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-export-customs-declaration-between-exporter-party-and-customs-party-to-validate-export-customs-declaration">
+          <mxCell edge="1" parent="lane-customs-party" source="object-export-customs-declaration-between-exporter-party-and-customs-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-validate-export-customs-declaration">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-validate-export-customs-declaration-to-ok">
+          <mxCell edge="1" parent="lane-customs-party" source="action-validate-export-customs-declaration" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4974;entryY=0;entryPerimeter=0;exitX=0.503189;exitY=1;" target="decision-ok">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="No" ubl-kind="flow" ubl-guard="text-no" ubl-flow="control" ubl-text="text-no" ubl-text-text-no-labels="flow-ok-to-send-reject" id="flow-ok-to-send-reject">
+          <mxCell edge="1" parent="lane-customs-party" source="decision-ok" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=1;exitY=0.5;entryX=1;entryY=0.509804;" target="action-send-reject">
+            <mxGeometry relative="1" x="-0.05" as="geometry">
+              <mxPoint x="13" as="offset" />
+              <Array as="points">
+                <mxPoint x="218" y="213" />
+                <mxPoint x="218" y="408" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="Yes" ubl-kind="flow" ubl-guard="text-yes" ubl-flow="control" ubl-text="text-yes" ubl-text-text-yes-labels="flow-ok-to-apply-stamps-and-signature" id="flow-ok-to-apply-stamps-and-signature">
+          <mxCell edge="1" parent="lane-customs-party" source="decision-ok" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;" target="action-apply-stamps-and-signature">
+            <mxGeometry relative="1" x="-0.19" as="geometry">
+              <mxPoint x="-21" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-apply-stamps-and-signature-to-export-customs-declaration-between-exporter-party-and-customs-party-2">
+          <mxCell edge="1" parent="lane-customs-party" source="action-apply-stamps-and-signature" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-export-customs-declaration-between-exporter-party-and-customs-party-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-reject-to-application-response">
+          <mxCell edge="1" parent="lane-customs-party" source="action-send-reject" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-application-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-draft-export-customs-declaration-to-export-customs-declaration-between-exporter-party-and-customs-party">
+          <mxCell edge="1" parent="frame" source="action-draft-export-customs-declaration" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-export-customs-declaration-between-exporter-party-and-customs-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-export-customs-declaration-between-exporter-party-and-customs-party-2-to-receive-export-customs-declaration">
+          <mxCell edge="1" parent="frame" source="object-export-customs-declaration-between-exporter-party-and-customs-party-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-receive-export-customs-declaration">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-application-response-to-receive-reject">
+          <mxCell edge="1" parent="frame" source="object-application-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-receive-reject">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

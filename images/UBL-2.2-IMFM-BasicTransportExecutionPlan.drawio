@@ -1,0 +1,316 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-IMFM-BasicTransportExecutionPlan" name="UBL-2.2-IMFM-BasicTransportExecutionPlan">
+    <mxGraphModel dx="1192" dy="767" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1228" pageHeight="804" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="18" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="763" width="1188" x="20" y="20" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transport User" ubl-kind="lane" id="lane-transport-user">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=46;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=10;" vertex="1">
+            <mxGeometry height="763" width="597" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-transport-user">
+          <mxCell parent="lane-transport-user" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="32" width="32" x="364" y="52" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Create/Update&lt;br&gt;Transport Execution&lt;br&gt;Plan Request" ubl-kind="action" id="action-create-update-transport-execution-plan">
+          <mxCell parent="lane-transport-user" style="rounded=1;absoluteArcSize=1;arcSize=37;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=3;spacingBottom=9;" vertex="1">
+            <mxGeometry height="79" width="135" x="66" y="101" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Request Transport&lt;br&gt;Service" ubl-kind="action" id="action-request-transport-service">
+          <mxCell parent="lane-transport-user" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=3;" vertex="1">
+            <mxGeometry height="50" width="135" x="316" y="115" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Rejected&lt;br&gt;Transport Execution&lt;br&gt;Plan" ubl-kind="action" id="action-receive-rejected-transport-execution-in-transport-user">
+          <mxCell parent="lane-transport-user" style="rounded=1;absoluteArcSize=1;arcSize=38;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingTop=2;" vertex="1">
+            <mxGeometry height="59" width="134" x="318" y="206" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Update Transport&lt;br&gt;Execution Plan Request?" ubl-kind="decision" ubl-question="Update Transport Execution Plan Request?" ubl-label="" ubl-text="text-update-transport-execution-plan-request" ubl-text-text-update-transport-execution-plan-request-labels="decision-transport-user" id="decision-transport-user">
+          <mxCell parent="lane-transport-user" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=29;spacingBottom=62;" vertex="1">
+            <mxGeometry height="40" width="30" x="118" y="217" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-transport-user">
+          <mxCell parent="lane-transport-user" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="22" width="23" x="122" y="296" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Proposed&lt;br&gt;Transport Execution&lt;br&gt;Plan" ubl-kind="action" id="action-receive-proposed-transport-execution">
+          <mxCell parent="lane-transport-user" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingTop=2;" vertex="1">
+            <mxGeometry height="56" width="134" x="317" y="297" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Evaluate Transport&lt;br&gt;Execution Plan" ubl-kind="action" id="action-evaluate-transport-execution-plan-in-transport-user">
+          <mxCell parent="lane-transport-user" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingBottom=3;" vertex="1">
+            <mxGeometry height="52" width="135" x="316" y="395" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transport Execution Plan&lt;br&gt;Acceptable?" ubl-kind="decision" ubl-question="Transport Execution Plan Acceptable?" ubl-label="" ubl-text="text-transport-execution-plan-acceptable" ubl-text-text-transport-execution-plan-acceptable-labels="decision-transport-user-2" id="decision-transport-user-2">
+          <mxCell parent="lane-transport-user" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=41;spacingBottom=18;" vertex="1">
+            <mxGeometry height="40" width="30" x="369" y="490" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Confirm Transport&lt;br&gt;Execution Plan" ubl-kind="action" id="action-confirm-transport-execution-plan">
+          <mxCell parent="lane-transport-user" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=6;" vertex="1">
+            <mxGeometry height="53" width="135" x="316" y="569" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Update Transport Execution&lt;br&gt;Plan Request?" ubl-kind="decision" ubl-question="Update Transport Execution Plan Request?" ubl-label="" ubl-text="text-update-transport-execution-plan-request-2" ubl-text-text-update-transport-execution-plan-request-2-labels="decision-transport-user-3" id="decision-transport-user-3">
+          <mxCell parent="lane-transport-user" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=29;spacingBottom=46;" vertex="1">
+            <mxGeometry height="39" width="30" x="121" y="589" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Reject Transport&lt;br&gt;Execution Plan" ubl-kind="action" id="action-reject-transport-execution-plan">
+          <mxCell parent="lane-transport-user" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=3;spacingBottom=5;" vertex="1">
+            <mxGeometry height="58" width="128" x="72" y="674" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-transport-user-to-request-transport-service">
+          <mxCell edge="1" parent="lane-transport-user" source="initial-transport-user" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4729;entryY=0;entryPerimeter=0;exitX=0.495047;exitY=0.8738;" target="action-request-transport-service">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="[yes]" ubl-kind="flow" ubl-guard="text-yes-4" ubl-flow="control" ubl-text="text-yes-4" ubl-text-text-yes-4-labels="flow-decision-transport-user-3-to-create-update-transport-execution-plan" id="flow-decision-transport-user-3-to-create-update-transport-execution-plan">
+          <mxCell edge="1" parent="lane-transport-user" source="decision-transport-user-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=0;exitY=0.512821;entryX=0;entryY=0.443038;" target="action-create-update-transport-execution-plan">
+            <mxGeometry relative="1" x="-0.92" as="geometry">
+              <mxPoint y="11" as="offset" />
+              <Array as="points">
+                <mxPoint x="28" y="609" />
+                <mxPoint x="28" y="136" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-create-update-transport-execution-plan-to-request-transport-service">
+          <mxCell edge="1" parent="lane-transport-user" source="action-create-update-transport-execution-plan" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.496;entryPerimeter=0;exitX=1;exitY=0.491139;" target="action-request-transport-service">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="[yes]" ubl-kind="flow" ubl-guard="text-yes" ubl-flow="control" ubl-text="text-yes" ubl-text-text-yes-labels="flow-decision-transport-user-to-create-update-transport-execution-plan" id="flow-decision-transport-user-to-create-update-transport-execution-plan">
+          <mxCell edge="1" parent="lane-transport-user" source="decision-transport-user" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=0;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;entryX=0.496296;entryY=1;" target="action-create-update-transport-execution-plan">
+            <mxGeometry relative="1" x="-0.52" as="geometry">
+              <mxPoint x="-18" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-rejected-transport-execution-in-transport-user-to-decision-transport-user">
+          <mxCell edge="1" parent="lane-transport-user" source="action-receive-rejected-transport-execution-in-transport-user" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4707;entryPerimeter=0;exitX=0;exitY=0.505559;" target="decision-transport-user">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="[no]" ubl-kind="flow" ubl-guard="text-no-2" ubl-flow="control" ubl-text="text-no-2" ubl-text-text-no-2-labels="flow-decision-transport-user-to-final-transport-user" id="flow-decision-transport-user-to-final-transport-user">
+          <mxCell edge="1" parent="lane-transport-user" source="decision-transport-user" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;entryX=0.478261;entryY=0;" target="final-transport-user">
+            <mxGeometry relative="1" x="-0.74" as="geometry">
+              <mxPoint x="24" y="1" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-proposed-transport-execution-to-evaluate-transport-execution-plan-in-transport-user">
+          <mxCell edge="1" parent="lane-transport-user" source="action-receive-proposed-transport-execution" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.503704;entryY=0;" target="action-evaluate-transport-execution-plan-in-transport-user">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-evaluate-transport-execution-plan-in-transport-user-to-decision-transport-user-2">
+          <mxCell edge="1" parent="lane-transport-user" source="action-evaluate-transport-execution-plan-in-transport-user" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.503704;exitY=1;" target="decision-transport-user-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="[no]" ubl-kind="flow" ubl-guard="text-no-3" ubl-flow="control" ubl-text="text-no-3" ubl-text-text-no-3-labels="flow-decision-transport-user-2-to-decision-transport-user-3" id="flow-decision-transport-user-2-to-decision-transport-user-3">
+          <mxCell edge="1" parent="lane-transport-user" source="decision-transport-user-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" target="decision-transport-user-3">
+            <mxGeometry relative="1" x="-0.91" as="geometry">
+              <mxPoint y="16" as="offset" />
+              <Array as="points">
+                <mxPoint x="136" y="510" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="[yes]" ubl-kind="flow" ubl-guard="text-yes-3" ubl-flow="control" ubl-text="text-yes-3" ubl-text-text-yes-3-labels="flow-decision-transport-user-2-to-confirm-transport-execution-plan" id="flow-decision-transport-user-2-to-confirm-transport-execution-plan">
+          <mxCell edge="1" parent="lane-transport-user" source="decision-transport-user-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5004;entryY=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=0.485133;exitY=1;" target="action-confirm-transport-execution-plan">
+            <mxGeometry relative="1" x="-0.57" as="geometry">
+              <mxPoint x="25" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="[no]" ubl-kind="flow" ubl-guard="text-no-4" ubl-flow="control" ubl-text="text-no-4" ubl-text-text-no-4-labels="flow-decision-transport-user-3-to-reject-transport-execution-plan" id="flow-decision-transport-user-3-to-reject-transport-execution-plan">
+          <mxCell edge="1" parent="lane-transport-user" source="decision-transport-user-3" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;" target="action-reject-transport-execution-plan">
+            <mxGeometry relative="1" x="-0.32" as="geometry">
+              <mxPoint x="15" y="-1" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="Transport Service Provider" ubl-kind="lane" id="lane-transport-service-provider">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=46;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=1;" vertex="1">
+            <mxGeometry height="763" width="591" x="597" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Evaluate Transport&lt;br&gt;Execution Plan&lt;br&gt;Request" ubl-kind="action" id="action-evaluate-transport-execution-plan-in-transport-service-provider">
+          <mxCell parent="lane-transport-service-provider" style="rounded=1;absoluteArcSize=1;arcSize=38;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=5;spacingBottom=6;" vertex="1">
+            <mxGeometry height="80" width="134" x="358" y="100" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="«NotConfirmed»&lt;br&gt;Transport Execution&lt;br&gt;Plan Request" ubl-kind="object" ubl-between="[&quot;lane-transport-user&quot;, &quot;lane-transport-service-provider&quot;]" ubl-lane="null" id="object-notconfirmed-transport-execution-plan">
+          <mxCell parent="lane-transport-service-provider" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=8;strokeWidth=2;" vertex="1">
+            <mxGeometry height="69" width="126" x="-64" y="105" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Transport&lt;br&gt;Service Request" ubl-kind="action" id="action-receive-transport-service-request">
+          <mxCell parent="lane-transport-service-provider" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=5;spacingBottom=3;" vertex="1">
+            <mxGeometry height="50" width="131" x="193" y="114" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="«Rejected»&lt;br&gt;Transport Execution&lt;br&gt;Plan" ubl-kind="object" ubl-between="[&quot;lane-transport-user&quot;, &quot;lane-transport-service-provider&quot;]" ubl-lane="null" id="object-rejected-transport-execution-plan-between-transport-user-and-transport-service-provider">
+          <mxCell parent="lane-transport-service-provider" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=10;strokeWidth=2;" vertex="1">
+            <mxGeometry height="70" width="126" x="-64" y="201" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Reject Transport&lt;br&gt;Service Request" ubl-kind="action" id="action-reject-transport-service-request">
+          <mxCell parent="lane-transport-service-provider" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=4;spacingBottom=5;" vertex="1">
+            <mxGeometry height="59" width="127" x="196" y="205" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transport Execution&lt;br&gt;Plan Request&lt;br&gt;Acceptable?" ubl-kind="decision" ubl-question="Transport Execution Plan Request Acceptable?" ubl-label="" ubl-text="text-transport-execution-plan-request" ubl-text-text-transport-execution-plan-request-labels="decision-transport-service-provider" id="decision-transport-service-provider">
+          <mxCell parent="lane-transport-service-provider" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=54;spacingBottom=4;" vertex="1">
+            <mxGeometry height="49" width="40" x="405" y="210" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="«Confirmed»&lt;br&gt;Transport Execution&lt;br&gt;Plan" ubl-kind="object" ubl-between="[&quot;lane-transport-user&quot;, &quot;lane-transport-service-provider&quot;]" ubl-lane="null" id="object-confirmed-transport-execution-plan-between-transport-user-and-transport-service-provider">
+          <mxCell parent="lane-transport-service-provider" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=5;strokeWidth=2;" vertex="1">
+            <mxGeometry height="65" width="126" x="-64" y="296" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Confirm Transport&lt;br&gt;Service Request" ubl-kind="action" id="action-confirm-transport-service-request">
+          <mxCell parent="lane-transport-service-provider" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=6;" vertex="1">
+            <mxGeometry height="58" width="129" x="195" y="298" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Confirmed&lt;br&gt;Transport Execution&lt;br&gt;Plan" ubl-kind="action" id="action-receive-confirmed-transport-execution">
+          <mxCell parent="lane-transport-service-provider" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=2;" vertex="1">
+            <mxGeometry height="66" width="127" x="203" y="562" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="«Confirmed»&lt;br&gt;Transport Execution&lt;br&gt;Plan" ubl-kind="object" ubl-between="[&quot;lane-transport-user&quot;, &quot;lane-transport-service-provider&quot;]" ubl-lane="null" id="object-confirmed-transport-execution-plan-between-transport-user-and-transport-service-provider-2">
+          <mxCell parent="lane-transport-service-provider" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=3;strokeWidth=2;" vertex="1">
+            <mxGeometry height="67" width="126" x="-62" y="562" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transport Service Ready&lt;br&gt;For Execution" ubl-kind="final" ubl-label="" ubl-text="text-transport-service-ready-for-execution" ubl-text-text-transport-service-ready-for-execution-labels="final-transport-service-provider" id="final-transport-service-provider">
+          <mxCell parent="lane-transport-service-provider" style="ellipse;shape=endState;fillColor=#000000;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=-26;spacingTop=65;" vertex="1">
+            <mxGeometry height="23" width="22" x="425" y="584" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="«Rejected»&lt;br&gt;Transport Execution&lt;br&gt;Plan" ubl-kind="object" ubl-between="[&quot;lane-transport-user&quot;, &quot;lane-transport-service-provider&quot;]" ubl-lane="null" id="object-rejected-transport-execution-plan-between-transport-user-and-transport-service-provider-2">
+          <mxCell parent="lane-transport-service-provider" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=7;strokeWidth=2;" vertex="1">
+            <mxGeometry height="70" width="126" x="-65" y="669" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Rejected&lt;br&gt;Transport Execution&lt;br&gt;Plan" ubl-kind="action" id="action-receive-rejected-transport-execution-in-transport-service-provider">
+          <mxCell parent="lane-transport-service-provider" style="rounded=1;absoluteArcSize=1;arcSize=37;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=1;" vertex="1">
+            <mxGeometry height="66" width="134" x="209" y="672" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-transport-service-provider-2">
+          <mxCell parent="lane-transport-service-provider" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="22" width="23" x="430" y="696" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-transport-service-request-to-evaluate-transport-execution-plan-in-transport-service-provider">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="action-receive-transport-service-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4437;entryPerimeter=0;exitX=1;exitY=0.42992;" target="action-evaluate-transport-execution-plan-in-transport-service-provider">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-notconfirmed-transport-execution-plan-to-receive-transport-service-request">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="object-notconfirmed-transport-execution-plan" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5301;entryPerimeter=0;exitX=1;exitY=0.514565;" target="action-receive-transport-service-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-evaluate-transport-execution-plan-in-transport-service-provider-to-decision-transport-service-provider">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="action-evaluate-transport-execution-plan-in-transport-service-provider" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="decision-transport-service-provider">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-reject-transport-service-request-to-rejected-transport-execution-plan-between-transport-user-and-transport-service-provider">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="action-reject-transport-service-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5043;entryPerimeter=0;exitX=0;exitY=0.530525;" target="object-rejected-transport-execution-plan-between-transport-user-and-transport-service-provider">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="[no]" ubl-kind="flow" ubl-guard="text-no" ubl-flow="control" ubl-text="text-no" ubl-text-text-no-labels="flow-decision-transport-service-provider-to-reject-transport-service-request" id="flow-decision-transport-service-provider-to-reject-transport-service-request">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="decision-transport-service-provider" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;" target="action-reject-transport-service-request">
+            <mxGeometry relative="1" x="-0.22" as="geometry">
+              <mxPoint y="-14" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="[yes]" ubl-kind="flow" ubl-guard="text-yes-2" ubl-flow="control" ubl-text="text-yes-2" ubl-text-text-yes-2-labels="flow-decision-transport-service-provider-to-confirm-transport-service-request" id="flow-decision-transport-service-provider-to-confirm-transport-service-request">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="decision-transport-service-provider" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" target="action-confirm-transport-service-request">
+            <mxGeometry relative="1" x="-0.89" as="geometry">
+              <mxPoint x="-22" as="offset" />
+              <Array as="points">
+                <mxPoint x="425" y="327" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-confirm-transport-service-request-to-confirmed-transport-execution-plan-between-transport-user-and-transport-service-provider">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="action-confirm-transport-service-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.51;entryPerimeter=0;exitX=0;exitY=0.537069;" target="object-confirmed-transport-execution-plan-between-transport-user-and-transport-service-provider">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-confirmed-transport-execution-plan-between-transport-user-and-transport-service-provider-2-to-receive-confirmed-transport-execution">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="object-confirmed-transport-execution-plan-between-transport-user-and-transport-service-provider-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4786;entryPerimeter=0;exitX=1;exitY=0.471457;" target="action-receive-confirmed-transport-execution">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-confirmed-transport-execution-to-final-transport-service-provider">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="action-receive-confirmed-transport-execution" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.478261;" target="final-transport-service-provider">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-rejected-transport-execution-plan-between-transport-user-and-transport-service-provider-2-to-receive-rejected-transport-execution-in-transport-service-provider">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="object-rejected-transport-execution-plan-between-transport-user-and-transport-service-provider-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4909;entryPerimeter=0;exitX=1;exitY=0.505706;" target="action-receive-rejected-transport-execution-in-transport-service-provider">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-rejected-transport-execution-in-transport-service-provider-to-final-transport-service-provider-2">
+          <mxCell edge="1" parent="lane-transport-service-provider" source="action-receive-rejected-transport-execution-in-transport-service-provider" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4912;entryPerimeter=0;exitX=1;exitY=0.52737;" target="final-transport-service-provider-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-request-transport-service-to-notconfirmed-transport-execution-plan">
+          <mxCell edge="1" parent="frame" source="action-request-transport-service" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.507246;" target="object-notconfirmed-transport-execution-plan">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-rejected-transport-execution-plan-between-transport-user-and-transport-service-provider-to-receive-rejected-transport-execution-in-transport-user">
+          <mxCell edge="1" parent="frame" source="object-rejected-transport-execution-plan-between-transport-user-and-transport-service-provider" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.492857;" target="action-receive-rejected-transport-execution-in-transport-user">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-confirmed-transport-execution-plan-between-transport-user-and-transport-service-provider-to-receive-proposed-transport-execution">
+          <mxCell edge="1" parent="frame" source="object-confirmed-transport-execution-plan-between-transport-user-and-transport-service-provider" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4911;entryPerimeter=0;exitX=0;exitY=0.438486;" target="action-receive-proposed-transport-execution">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-confirm-transport-execution-plan-to-confirmed-transport-execution-plan-between-transport-user-and-transport-service-provider-2">
+          <mxCell edge="1" parent="frame" source="action-confirm-transport-execution-plan" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-confirmed-transport-execution-plan-between-transport-user-and-transport-service-provider-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-reject-transport-execution-plan-to-rejected-transport-execution-plan-between-transport-user-and-transport-service-provider-2">
+          <mxCell edge="1" parent="frame" source="action-reject-transport-execution-plan" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4886;entryPerimeter=0;exitX=1;exitY=0.503483;" target="object-rejected-transport-execution-plan-between-transport-user-and-transport-service-provider-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

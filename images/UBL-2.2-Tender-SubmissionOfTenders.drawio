@@ -1,0 +1,110 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-Tender-SubmissionOfTenders" name="UBL-2.2-Tender-SubmissionOfTenders">
+    <mxGraphModel dx="535" dy="333" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="563" pageHeight="370" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="14" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="340" width="533" x="15" y="15" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="TENDERER" ubl-kind="lane" ubl-label="Tenderer" id="lane-tenderer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=30;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=2;" vertex="1">
+            <mxGeometry height="340" width="280" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-tenderer">
+          <mxCell parent="lane-tenderer" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="26" width="26" x="87" y="29" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Prepare tender documents" ubl-kind="action" id="action-prepare-tender-documents">
+          <mxCell parent="lane-tenderer" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=3;spacingBottom=1;" vertex="1">
+            <mxGeometry height="33" width="174" x="13" y="82" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Submit tender documents" ubl-kind="action" id="action-submit-tender-documents">
+          <mxCell parent="lane-tenderer" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=1;" vertex="1">
+            <mxGeometry height="33" width="171" x="14" y="145" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive receipt" ubl-kind="action" id="action-receive-receipt">
+          <mxCell parent="lane-tenderer" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=5;spacingBottom=1;" vertex="1">
+            <mxGeometry height="33" width="109" x="45" y="226" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-tenderer">
+          <mxCell parent="lane-tenderer" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="27" width="27" x="86" y="301" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-tenderer-to-prepare-tender-documents">
+          <mxCell edge="1" parent="lane-tenderer" source="initial-tenderer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.5;exitY=0.8479;" target="action-prepare-tender-documents">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-prepare-tender-documents-to-submit-tender-documents">
+          <mxCell edge="1" parent="lane-tenderer" source="action-prepare-tender-documents" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.497126;exitY=1;" target="action-submit-tender-documents">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-receipt-to-final-tenderer">
+          <mxCell edge="1" parent="lane-tenderer" source="action-receive-receipt" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.5;entryY=0;" target="final-tenderer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="CONTRACTING AUTHORITY" ubl-kind="lane" ubl-label="Contracting Authority" id="lane-contracting-authority">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=31;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=2;" vertex="1">
+            <mxGeometry height="340" width="253" x="280" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Tender" ubl-kind="object" ubl-between="[&quot;lane-tenderer&quot;, &quot;lane-contracting-authority&quot;]" ubl-lane="null" id="object-tender">
+          <mxCell parent="lane-contracting-authority" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=6;strokeWidth=2;" vertex="1">
+            <mxGeometry height="63" width="60" x="-33" y="130" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive tender documents" ubl-kind="action" id="action-receive-tender-documents">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingBottom=1;" vertex="1">
+            <mxGeometry height="33" width="175" x="65" y="145" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Tender&lt;br&gt;Receipt" ubl-kind="object" ubl-between="[&quot;lane-tenderer&quot;, &quot;lane-contracting-authority&quot;]" ubl-lane="null" id="object-tender-receipt">
+          <mxCell parent="lane-contracting-authority" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=10;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="56" x="-33" y="214" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Submit tender&lt;br&gt;receipt" ubl-kind="action" id="action-submit-tender-receipt">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=5;spacingBottom=1;" vertex="1">
+            <mxGeometry height="47" width="105" x="100" y="219" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-tender-to-receive-tender-documents">
+          <mxCell edge="1" parent="lane-contracting-authority" source="object-tender" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-receive-tender-documents">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-tender-documents-to-submit-tender-receipt">
+          <mxCell edge="1" parent="lane-contracting-authority" source="action-receive-tender-documents" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-submit-tender-receipt">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-submit-tender-receipt-to-tender-receipt">
+          <mxCell edge="1" parent="lane-contracting-authority" source="action-submit-tender-receipt" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=1;entryY=0.491379;" target="object-tender-receipt">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-submit-tender-documents-to-tender">
+          <mxCell edge="1" parent="frame" source="action-submit-tender-documents" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="object-tender">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-tender-receipt-to-receive-receipt">
+          <mxCell edge="1" parent="frame" source="object-tender-receipt" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.491379;" target="action-receive-receipt">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

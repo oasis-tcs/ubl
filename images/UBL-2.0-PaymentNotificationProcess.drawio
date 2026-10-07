@@ -1,0 +1,120 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.0-PaymentNotificationProcess" name="UBL-2.0-PaymentNotificationProcess">
+    <mxGraphModel dx="920" dy="568" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="957" pageHeight="604" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="18" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="565" width="918" x="19" y="19" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Accounting Customer" ubl-kind="lane" id="lane-accounting-customer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=19;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=6;" vertex="1">
+            <mxGeometry height="565" width="333" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="From Billing" ubl-kind="initial" ubl-linked-process="{&quot;name&quot;: &quot;Billing&quot;, &quot;how&quot;: &quot;starts-from&quot;}" ubl-label="" ubl-text="text-from-billing" ubl-text-text-from-billing-labels="initial-accounting-customer" id="initial-accounting-customer">
+          <mxCell parent="lane-accounting-customer" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=109;spacingBottom=10;" vertex="1">
+            <mxGeometry height="32" width="32" x="99" y="37" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Authorize Payment" ubl-kind="action" id="action-authorize-payment">
+          <mxCell parent="lane-accounting-customer" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=2;" vertex="1">
+            <mxGeometry height="34" width="156" x="37" y="122" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Notify of Payment" ubl-kind="action" id="action-notify-of-payment">
+          <mxCell parent="lane-accounting-customer" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=2;" vertex="1">
+            <mxGeometry height="32" width="156" x="44" y="371" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-accounting-customer-to-authorize-payment">
+          <mxCell edge="1" parent="lane-accounting-customer" source="initial-accounting-customer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.5;exitY=0.8726;" target="action-authorize-payment">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-authorize-payment-to-notify-of-payment">
+          <mxCell edge="1" parent="lane-accounting-customer" source="action-authorize-payment" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.544872;exitY=1;" target="action-notify-of-payment">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Accounting Supplier" ubl-kind="lane" id="lane-accounting-supplier">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=19;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=7;" vertex="1">
+            <mxGeometry height="565" width="305" x="333" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Remittance&lt;br&gt;Advice" ubl-kind="object" ubl-between="[&quot;lane-accounting-customer&quot;, &quot;lane-accounting-supplier&quot;]" ubl-lane="null" id="object-remittance-advice-between-accounting-customer-and-accounting-supplier">
+          <mxCell parent="lane-accounting-supplier" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=3;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="104" x="-60" y="207" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Advice" ubl-kind="action" id="action-receive-advice-in-accounting-supplier">
+          <mxCell parent="lane-accounting-supplier" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=5;spacingBottom=3;" vertex="1">
+            <mxGeometry height="35" width="155" x="78" y="218" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Notify Payee" ubl-kind="action" id="action-notify-payee">
+          <mxCell parent="lane-accounting-supplier" style="rounded=1;absoluteArcSize=1;arcSize=24;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingTop=1;" vertex="1">
+            <mxGeometry height="40" width="143" x="86" y="295" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-remittance-advice-between-accounting-customer-and-accounting-supplier-to-receive-advice-in-accounting-supplier">
+          <mxCell edge="1" parent="lane-accounting-supplier" source="object-remittance-advice-between-accounting-customer-and-accounting-supplier" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-receive-advice-in-accounting-supplier">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-advice-in-accounting-supplier-to-notify-payee">
+          <mxCell edge="1" parent="lane-accounting-supplier" source="action-receive-advice-in-accounting-supplier" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5042;entryY=0;entryPerimeter=0;exitX=0.516778;exitY=1;" target="action-notify-payee">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Payee Party" ubl-kind="lane" id="lane-payee-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=19;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=2;" vertex="1">
+            <mxGeometry height="565" width="280" x="638" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Remittance&lt;br&gt;Advice" ubl-kind="object" ubl-between="[&quot;lane-accounting-customer&quot;, &quot;lane-accounting-supplier&quot;, &quot;lane-payee-party&quot;]" ubl-lane="null" id="object-remittance-advice-between-accounting-customer-and-accounting-supplier-and-payee-party">
+          <mxCell parent="lane-payee-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="103" x="-53" y="429" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive advice" ubl-kind="action" id="action-receive-advice-in-payee-party">
+          <mxCell parent="lane-payee-party" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=6;spacingBottom=3;" vertex="1">
+            <mxGeometry height="40" width="139" x="115" y="437" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-payee-party">
+          <mxCell parent="lane-payee-party" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="22" width="22" x="174" y="525" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-remittance-advice-between-accounting-customer-and-accounting-supplier-and-payee-party-to-receive-advice-in-payee-party">
+          <mxCell edge="1" parent="lane-payee-party" source="object-remittance-advice-between-accounting-customer-and-accounting-supplier-and-payee-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.491228;" target="action-receive-advice-in-payee-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-advice-in-payee-party-to-final-payee-party">
+          <mxCell edge="1" parent="lane-payee-party" source="action-receive-advice-in-payee-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5182;entryY=0;entryPerimeter=0;exitX=0.506478;exitY=1;" target="final-payee-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-notify-of-payment-to-remittance-advice-between-accounting-customer-and-accounting-supplier">
+          <mxCell edge="1" parent="frame" source="action-notify-of-payment" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.654;exitY=0;exitPerimeter=0;entryX=0.1153;entryY=1;entryPerimeter=0;" target="object-remittance-advice-between-accounting-customer-and-accounting-supplier">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-notify-payee-to-remittance-advice-between-accounting-customer-and-accounting-supplier-and-payee-party">
+          <mxCell edge="1" parent="frame" source="action-notify-payee" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.889;exitY=1;exitPerimeter=0;entryX=0.2718;entryY=0;entryPerimeter=0;" target="object-remittance-advice-between-accounting-customer-and-accounting-supplier-and-payee-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-notify-of-payment-to-remittance-advice-between-accounting-customer-and-accounting-supplier-and-payee-party">
+          <mxCell edge="1" parent="frame" source="action-notify-of-payment" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.8123;exitPerimeter=0;entryX=0;entryY=0.381;entryPerimeter=0;" target="object-remittance-advice-between-accounting-customer-and-accounting-supplier-and-payee-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

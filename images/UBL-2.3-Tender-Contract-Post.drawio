@@ -1,0 +1,175 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.3-Tender-Contract-Post" name="UBL-2.3-Tender-Contract-Post">
+    <mxGraphModel dx="543" dy="450" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="574" pageHeight="538" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="15" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="504" width="539" x="17" y="17" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="INITIATING PARTY" ubl-kind="lane" ubl-label="Initiating Party" id="lane-initiating-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=31;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=65;" vertex="1">
+            <mxGeometry height="504" width="268" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Prior exchange of public keys" ubl-kind="action" ubl-scope="external" ubl-reference="{&quot;what&quot;: &quot;Prior exchange of public keys: a precondition of the contract process, outside its scope&quot;, &quot;source&quot;: &quot;UBL.xml, after the Tender Contract figures: &#39;provided for the general understanding of the business choreography&#39;; detailed under UBL Digital Signatures&quot;}" ubl-unstated="{&quot;wayIn&quot;: &quot;A precondition between the parties (the exchange of public keys), not a step in the sequence: nothing leads into it or out of it.&quot;, &quot;wayOut&quot;: &quot;A precondition between the parties (the exchange of public keys), not a step in the sequence: nothing leads into it or out of it.&quot;}" id="action-prior-exchange-of-public-keys-in-initiating-party">
+          <mxCell parent="lane-initiating-party" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingBottom=2;" vertex="1">
+            <mxGeometry height="31" width="173" x="15" y="35" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-initiating-party">
+          <mxCell parent="lane-initiating-party" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="28" width="27" x="84" y="73" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Prepare tender contract" ubl-kind="action" id="action-prepare-tender-contract">
+          <mxCell parent="lane-initiating-party" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=4;" vertex="1">
+            <mxGeometry height="28" width="174" x="16" y="127" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Submit tender contract" ubl-kind="action" id="action-submit-tender-contract">
+          <mxCell parent="lane-initiating-party" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=2;" vertex="1">
+            <mxGeometry height="31" width="173" x="14" y="185" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive tender contract" ubl-kind="action" id="action-receive-tender-contract-in-initiating-party">
+          <mxCell parent="lane-initiating-party" style="rounded=1;absoluteArcSize=1;arcSize=30;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=8;spacingBottom=2;" vertex="1">
+            <mxGeometry height="30" width="173" x="16" y="303" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Add W3C Digital Signature" ubl-kind="action" id="action-add-w3c-digital-signature-in-initiating-party">
+          <mxCell parent="lane-initiating-party" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingBottom=1;" vertex="1">
+            <mxGeometry height="28" width="174" x="16" y="363" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Return tender contract" ubl-kind="action" id="action-return-tender-contract-in-initiating-party">
+          <mxCell parent="lane-initiating-party" style="rounded=1;absoluteArcSize=1;arcSize=30;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=2;" vertex="1">
+            <mxGeometry height="30" width="173" x="14" y="421" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-initiating-party-to-prepare-tender-contract">
+          <mxCell edge="1" parent="lane-initiating-party" source="initial-initiating-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4662;entryY=0;entryPerimeter=0;exitX=0.485881;exitY=0.8545;" target="action-prepare-tender-contract">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-prepare-tender-contract-to-submit-tender-contract">
+          <mxCell edge="1" parent="lane-initiating-party" source="action-prepare-tender-contract" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4754;entryY=0;entryPerimeter=0;exitX=0.461174;exitY=1;" target="action-submit-tender-contract">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-tender-contract-in-initiating-party-to-add-w3c-digital-signature-in-initiating-party">
+          <mxCell edge="1" parent="lane-initiating-party" source="action-receive-tender-contract-in-initiating-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4662;entryY=0;entryPerimeter=0;exitX=0.468895;exitY=1;" target="action-add-w3c-digital-signature-in-initiating-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-add-w3c-digital-signature-in-initiating-party-to-return-tender-contract-in-initiating-party">
+          <mxCell edge="1" parent="lane-initiating-party" source="action-add-w3c-digital-signature-in-initiating-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4754;entryY=0;entryPerimeter=0;exitX=0.461174;exitY=1;" target="action-return-tender-contract-in-initiating-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="RESPONDING PARTY" ubl-kind="lane" ubl-label="Responding Party" id="lane-responding-party">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=32;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=62;" vertex="1">
+            <mxGeometry height="504" width="271" x="268" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Prior exchange of public keys" ubl-kind="action" ubl-scope="external" ubl-reference="{&quot;what&quot;: &quot;Prior exchange of public keys: a precondition of the contract process, outside its scope&quot;, &quot;source&quot;: &quot;UBL.xml, after the Tender Contract figures: &#39;provided for the general understanding of the business choreography&#39;; detailed under UBL Digital Signatures&quot;}" ubl-unstated="{&quot;wayIn&quot;: &quot;A precondition between the parties (the exchange of public keys), not a step in the sequence: nothing leads into it or out of it.&quot;, &quot;wayOut&quot;: &quot;A precondition between the parties (the exchange of public keys), not a step in the sequence: nothing leads into it or out of it.&quot;}" id="action-prior-exchange-of-public-keys-in-responding-party">
+          <mxCell parent="lane-responding-party" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="30" width="176" x="79" y="34" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Tender&lt;br&gt;Contract" ubl-kind="object" ubl-between="[&quot;lane-initiating-party&quot;, &quot;lane-responding-party&quot;]" ubl-lane="null" id="object-tender-contract-between-initiating-party-and-responding-party">
+          <mxCell parent="lane-responding-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=7;spacingBottom=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="83" x="-40" y="172" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive tender contract" ubl-kind="action" id="action-receive-tender-contract-in-responding-party">
+          <mxCell parent="lane-responding-party" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=4;spacingBottom=1;" vertex="1">
+            <mxGeometry height="29" width="176" x="79" y="185" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Add W3C Digital Signature" ubl-kind="action" id="action-add-w3c-digital-signature-in-responding-party">
+          <mxCell parent="lane-responding-party" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="28" width="175" x="79" y="245" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Tender&lt;br&gt;Contract" ubl-kind="object" ubl-between="[&quot;lane-initiating-party&quot;, &quot;lane-responding-party&quot;]" ubl-lane="null" id="object-tender-contract-between-initiating-party-and-responding-party-2">
+          <mxCell parent="lane-responding-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=7;spacingBottom=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="56" width="83" x="-40" y="290" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Return tender contract" ubl-kind="action" id="action-return-tender-contract-in-responding-party">
+          <mxCell parent="lane-responding-party" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=4;spacingBottom=1;" vertex="1">
+            <mxGeometry height="29" width="176" x="79" y="303" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Tender&lt;br&gt;Contract" ubl-kind="object" ubl-between="[&quot;lane-initiating-party&quot;, &quot;lane-responding-party&quot;]" ubl-lane="null" id="object-tender-contract-between-initiating-party-and-responding-party-3">
+          <mxCell parent="lane-responding-party" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=7;spacingBottom=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="56" width="83" x="-40" y="407" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive tender contract" ubl-kind="action" id="action-receive-tender-contract-in-responding-party-2">
+          <mxCell parent="lane-responding-party" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=4;spacingBottom=1;" vertex="1">
+            <mxGeometry height="29" width="176" x="79" y="420" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-responding-party">
+          <mxCell parent="lane-responding-party" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="18" width="18" x="158" y="479" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-tender-contract-between-initiating-party-and-responding-party-to-receive-tender-contract-in-responding-party">
+          <mxCell edge="1" parent="lane-responding-party" source="object-tender-contract-between-initiating-party-and-responding-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.482456;" target="action-receive-tender-contract-in-responding-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-tender-contract-in-responding-party-to-add-w3c-digital-signature-in-responding-party">
+          <mxCell edge="1" parent="lane-responding-party" source="action-receive-tender-contract-in-responding-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.497159;exitY=1;" target="action-add-w3c-digital-signature-in-responding-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-add-w3c-digital-signature-in-responding-party-to-return-tender-contract-in-responding-party">
+          <mxCell edge="1" parent="lane-responding-party" source="action-add-w3c-digital-signature-in-responding-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.497159;entryY=0;" target="action-return-tender-contract-in-responding-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-return-tender-contract-in-responding-party-to-tender-contract-between-initiating-party-and-responding-party-2">
+          <mxCell edge="1" parent="lane-responding-party" source="action-return-tender-contract-in-responding-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.517241;" target="object-tender-contract-between-initiating-party-and-responding-party-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-tender-contract-between-initiating-party-and-responding-party-3-to-receive-tender-contract-in-responding-party-2">
+          <mxCell edge="1" parent="lane-responding-party" source="object-tender-contract-between-initiating-party-and-responding-party-3" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.491071;" target="action-receive-tender-contract-in-responding-party-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-tender-contract-in-responding-party-2-to-final-responding-party">
+          <mxCell edge="1" parent="lane-responding-party" source="action-receive-tender-contract-in-responding-party-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5027;entryY=0;entryPerimeter=0;exitX=0.500276;exitY=1;" target="final-responding-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="precondition" ubl-both-ends="true" id="flow-prior-exchange-of-public-keys-in-responding-party-to-prior-exchange-of-public-keys-in-initiating-party">
+          <mxCell edge="1" parent="frame" source="action-prior-exchange-of-public-keys-in-responding-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;startArrow=open;startFill=0;startSize=10;dashed=1;dashPattern=12 9;noJump=1;entryX=1;entryY=0.451613;" target="action-prior-exchange-of-public-keys-in-initiating-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-submit-tender-contract-to-tender-contract-between-initiating-party-and-responding-party">
+          <mxCell edge="1" parent="frame" source="action-submit-tender-contract" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.476;entryPerimeter=0;exitX=1;exitY=0.455871;" target="object-tender-contract-between-initiating-party-and-responding-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-tender-contract-between-initiating-party-and-responding-party-2-to-receive-tender-contract-in-initiating-party">
+          <mxCell edge="1" parent="frame" source="object-tender-contract-between-initiating-party-and-responding-party-2" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4545;entryPerimeter=0;exitX=0;exitY=0.475625;" target="action-receive-tender-contract-in-initiating-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-return-tender-contract-in-initiating-party-to-tender-contract-between-initiating-party-and-responding-party-3">
+          <mxCell edge="1" parent="frame" source="action-return-tender-contract-in-initiating-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4777;entryPerimeter=0;exitX=1;exitY=0.42504;" target="object-tender-contract-between-initiating-party-and-responding-party-3">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

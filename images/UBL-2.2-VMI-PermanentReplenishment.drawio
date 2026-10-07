@@ -1,0 +1,228 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-VMI-PermanentReplenishment" name="UBL-2.2-VMI-PermanentReplenishment">
+    <mxGraphModel dx="826" dy="774" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="855" pageHeight="803" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="14" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="772" width="824" x="15" y="15" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Producer" ubl-kind="lane" id="lane-producer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=30;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=21;" vertex="1">
+            <mxGeometry height="772" width="339" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-producer">
+          <mxCell parent="lane-producer" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="28" width="28" x="144" y="31" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Is there a new item to&lt;br&gt;be delivered?" ubl-kind="decision" ubl-question="Is there a new item to be delivered?" ubl-label="" ubl-text="text-is-there-a-new-item-to-be-delivered" ubl-text-text-is-there-a-new-item-to-be-delivered="Is there a new item to be delivered?" ubl-text-text-is-there-a-new-item-to-be-delivered-labels="decision-producer" id="decision-producer">
+          <mxCell parent="lane-producer" style="rhombus;html=1;whiteSpace=nowrap;fontStyle=0;align=left;verticalAlign=middle;spacing=0;spacingLeft=30;spacingTop=6;spacingBottom=12;" vertex="1">
+            <mxGeometry height="20" width="23" x="146" y="87" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Catalogue" ubl-kind="action" id="action-send-catalogue">
+          <mxCell parent="lane-producer" style="rounded=1;absoluteArcSize=1;arcSize=22;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=4;" vertex="1">
+            <mxGeometry height="28" width="122" x="93" y="191" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Despatch&lt;br&gt;Advice" ubl-kind="action" id="action-send-despatch-advice">
+          <mxCell parent="lane-producer" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingTop=2;" vertex="1">
+            <mxGeometry height="38" width="125" x="95" y="270" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Despatch item(s)" ubl-kind="action" id="action-despatch-item-s">
+          <mxCell parent="lane-producer" style="rounded=1;absoluteArcSize=1;arcSize=22;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=1;" vertex="1">
+            <mxGeometry height="29" width="139" x="88" y="363" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Receipt Advice" ubl-kind="action" id="action-receive-receipt-advice">
+          <mxCell parent="lane-producer" style="rounded=1;absoluteArcSize=1;arcSize=21;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;" vertex="1">
+            <mxGeometry height="28" width="144" x="95" y="592" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Adjust supply status" ubl-kind="action" id="action-adjust-supply-status">
+          <mxCell parent="lane-producer" style="rounded=1;absoluteArcSize=1;arcSize=22;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=2;" vertex="1">
+            <mxGeometry height="30" width="140" x="97" y="663" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-producer">
+          <mxCell parent="lane-producer" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="17" width="17" x="159" y="748" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-producer-to-decision-producer">
+          <mxCell edge="1" parent="lane-producer" source="initial-producer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.482143;exitY=0.8535;" target="decision-producer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="False" ubl-kind="flow" ubl-guard="text-false" ubl-flow="control" ubl-text="text-false" ubl-text-text-false-labels="flow-decision-producer-to-send-despatch-advice" id="flow-decision-producer-to-send-despatch-advice">
+          <mxCell edge="1" parent="lane-producer" source="decision-producer" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" target="action-send-despatch-advice">
+            <mxGeometry relative="1" x="-0.85" as="geometry">
+              <mxPoint y="-8" as="offset" />
+              <Array as="points">
+                <mxPoint x="19" y="97" />
+                <mxPoint x="19" y="289" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="True" ubl-kind="flow" ubl-guard="text-true" ubl-flow="control" ubl-text="text-true" ubl-text-text-true-labels="flow-decision-producer-to-send-catalogue" id="flow-decision-producer-to-send-catalogue">
+          <mxCell edge="1" parent="lane-producer" source="decision-producer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;fontStyle=0;align=center;verticalAlign=middle;labelBackgroundColor=none;entryX=0.528689;entryY=0;" target="action-send-catalogue">
+            <mxGeometry relative="1" x="-0.72" as="geometry">
+              <mxPoint x="17" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-send-catalogue-to-send-despatch-advice">
+          <mxCell edge="1" parent="lane-producer" source="action-send-catalogue" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4901;entryY=0;entryPerimeter=0;exitX=0.518545;exitY=1;" target="action-send-despatch-advice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-send-despatch-advice-to-despatch-item-s">
+          <mxCell edge="1" parent="lane-producer" source="action-send-despatch-advice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4849;entryY=0;entryPerimeter=0;exitX=0.483209;exitY=1;" target="action-despatch-item-s">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-receipt-advice-to-adjust-supply-status">
+          <mxCell edge="1" parent="lane-producer" source="action-receive-receipt-advice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-adjust-supply-status">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-adjust-supply-status-to-final-producer">
+          <mxCell edge="1" parent="lane-producer" source="action-adjust-supply-status" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.470588;entryY=0;" target="final-producer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Retailer" ubl-kind="lane" id="lane-retailer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=31;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=12;" vertex="1">
+            <mxGeometry height="772" width="485" x="339" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Catalogue" ubl-kind="object" ubl-between="[&quot;lane-producer&quot;, &quot;lane-retailer&quot;]" ubl-lane="null" id="object-catalogue">
+          <mxCell parent="lane-retailer" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="31" width="78" x="-40" y="190" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Update products database" ubl-kind="action" id="action-update-products-database">
+          <mxCell parent="lane-retailer" style="rounded=1;absoluteArcSize=1;arcSize=21;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingBottom=1;" vertex="1">
+            <mxGeometry height="29" width="169" x="297" y="193" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Catalogue" ubl-kind="action" id="action-receive-catalogue">
+          <mxCell parent="lane-retailer" style="rounded=1;absoluteArcSize=1;arcSize=24;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=4;spacingBottom=1;" vertex="1">
+            <mxGeometry height="30" width="122" x="131" y="193" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Despatch Advice" ubl-kind="object" ubl-between="[&quot;lane-producer&quot;, &quot;lane-retailer&quot;]" ubl-lane="null" id="object-despatch-advice">
+          <mxCell parent="lane-retailer" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="32" width="106" x="-53" y="272" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Despatch Advice" ubl-kind="action" id="action-receive-despatch-advice">
+          <mxCell parent="lane-retailer" style="rounded=1;absoluteArcSize=1;arcSize=23;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=1;" vertex="1">
+            <mxGeometry height="29" width="182" x="116" y="273" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive item(s)" ubl-kind="action" id="action-receive-item-s">
+          <mxCell parent="lane-retailer" style="rounded=1;absoluteArcSize=1;arcSize=21;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=2;" vertex="1">
+            <mxGeometry height="29" width="140" x="122" y="364" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="fork" id="fork-retailer">
+          <mxCell parent="lane-retailer" style="html=1;points=[[0.164286,0],[0.464,0],[0.496429,1],[0.841071,0]];perimeter=orthogonalPerimeter;fillColor=#000000;strokeColor=none;" vertex="1">
+            <mxGeometry height="6" width="280" x="146" y="446" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Check status of item(s)" ubl-kind="action" id="action-check-status-of-item-s">
+          <mxCell parent="lane-retailer" style="rounded=1;absoluteArcSize=1;arcSize=22;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=2;" vertex="1">
+            <mxGeometry height="30" width="142" x="214" y="518" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receipt Advice" ubl-kind="object" ubl-between="[&quot;lane-producer&quot;, &quot;lane-retailer&quot;]" ubl-lane="null" id="object-receipt-advice">
+          <mxCell parent="lane-retailer" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=3;strokeWidth=2;" vertex="1">
+            <mxGeometry height="33" width="103" x="-52" y="590" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Receipt Advice" ubl-kind="action" id="action-send-receipt-advice">
+          <mxCell parent="lane-retailer" style="rounded=1;absoluteArcSize=1;arcSize=22;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=3;spacingBottom=1;" vertex="1">
+            <mxGeometry height="29" width="140" x="214" y="591" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-catalogue-to-receive-catalogue">
+          <mxCell edge="1" parent="lane-retailer" source="object-catalogue" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.416667;" target="action-receive-catalogue">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-catalogue-to-update-products-database">
+          <mxCell edge="1" parent="lane-retailer" source="action-receive-catalogue" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4966;entryPerimeter=0;exitX=1;exitY=0.480047;" target="action-update-products-database">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-update-products-database-to-fork-retailer">
+          <mxCell edge="1" parent="lane-retailer" source="action-update-products-database" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.841071;entryY=0;" target="fork-retailer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-catalogue-to-receive-despatch-advice">
+          <mxCell edge="1" parent="lane-retailer" source="action-receive-catalogue" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.417582;entryY=0;" target="action-receive-despatch-advice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-despatch-advice-to-receive-despatch-advice">
+          <mxCell edge="1" parent="lane-retailer" source="object-despatch-advice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.484375;" target="action-receive-despatch-advice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-despatch-advice-to-fork-retailer">
+          <mxCell edge="1" parent="lane-retailer" source="action-receive-despatch-advice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.464;entryY=0;entryPerimeter=0;exitX=0.878681;exitY=1;" target="fork-retailer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-item-s-to-fork-retailer">
+          <mxCell edge="1" parent="lane-retailer" source="action-receive-item-s" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.164286;entryY=0;" target="fork-retailer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-fork-retailer-to-check-status-of-item-s">
+          <mxCell edge="1" parent="lane-retailer" source="fork-retailer" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.496429;exitY=1;" target="action-check-status-of-item-s">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-check-status-of-item-s-to-send-receipt-advice">
+          <mxCell edge="1" parent="lane-retailer" source="action-check-status-of-item-s" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4989;entryY=0;entryPerimeter=0;exitX=0.491873;exitY=1;" target="action-send-receipt-advice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-receipt-advice-to-receipt-advice">
+          <mxCell edge="1" parent="lane-retailer" source="action-send-receipt-advice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4695;entryPerimeter=0;exitX=0;exitY=0.499776;" target="object-receipt-advice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-catalogue-to-catalogue">
+          <mxCell edge="1" parent="frame" source="action-send-catalogue" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4843;entryPerimeter=0;exitX=1;exitY=0.500475;" target="object-catalogue">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-despatch-advice-to-despatch-advice">
+          <mxCell edge="1" parent="frame" source="action-send-despatch-advice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.473684;" target="object-despatch-advice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="goods" id="flow-despatch-item-s-to-receive-item-s">
+          <mxCell edge="1" parent="frame" source="action-despatch-item-s" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4623;entryPerimeter=0;exitX=1;exitY=0.496783;" target="action-receive-item-s">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-receipt-advice-to-receive-receipt-advice">
+          <mxCell edge="1" parent="frame" source="object-receipt-advice" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.484848;" target="action-receive-receipt-advice">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

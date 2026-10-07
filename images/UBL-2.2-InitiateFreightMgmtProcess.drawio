@@ -1,0 +1,330 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-InitiateFreightMgmtProcess" name="UBL-2.2-InitiateFreightMgmtProcess">
+    <mxGraphModel dx="1117" dy="829" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1155" pageHeight="866" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="18" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="826" width="1115" x="20" y="20" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Consignee" ubl-kind="lane" id="lane-consignee">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=18;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=3;" vertex="1">
+            <mxGeometry height="826" width="208" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Request Logistic&lt;br&gt;Service" ubl-kind="action" id="action-request-logistic-service-in-consignee">
+          <mxCell parent="lane-consignee" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=4;" vertex="1">
+            <mxGeometry height="43" width="146" x="16" y="57" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Bill of Lading" ubl-kind="action" ubl-unstated="{&quot;wayOut&quot;: &quot;The path ends at this step: the artwork draws no end after it.&quot;}" id="action-receive-bill-of-lading-in-consignee">
+          <mxCell parent="lane-consignee" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=1;" vertex="1">
+            <mxGeometry height="42" width="143" x="32" y="281" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Waybill" ubl-kind="action" ubl-unstated="{&quot;wayOut&quot;: &quot;The path ends at this step: the artwork draws no end after it.&quot;}" id="action-receive-waybill-in-consignee">
+          <mxCell parent="lane-consignee" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=3;spacingBottom=4;" vertex="1">
+            <mxGeometry height="41" width="143" x="28" y="456" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Status&lt;br&gt;Report" ubl-kind="action" ubl-unstated="{&quot;wayOut&quot;: &quot;The path ends at this step: the artwork draws no end after it.&quot;}" id="action-receive-status-report-in-consignee">
+          <mxCell parent="lane-consignee" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=1;" vertex="1">
+            <mxGeometry height="39" width="120" x="28" y="748" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Consignor" ubl-kind="lane" id="lane-consignor">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=18;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=2;" vertex="1">
+            <mxGeometry height="826" width="305" x="208" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Request Logistic&lt;br&gt;Service" ubl-kind="action" id="action-request-logistic-service-in-consignor">
+          <mxCell parent="lane-consignor" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=5;spacingBottom=2;" vertex="1">
+            <mxGeometry height="42" width="144" x="82" y="154" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Ordering&lt;br&gt;Process" ubl-kind="initial" ubl-linked-process="{&quot;name&quot;: &quot;Ordering&quot;, &quot;how&quot;: &quot;starts-from&quot;, &quot;source&quot;: &quot;written beside the node in the artwork&quot;}" ubl-between="[&quot;lane-consignee&quot;, &quot;lane-consignor&quot;]" ubl-label="" ubl-lane="null" ubl-text="text-ordering-process" ubl-text-text-ordering-process-labels="initial" id="initial">
+          <mxCell parent="lane-consignor" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;whiteSpace=nowrap;fontStyle=0;align=right;verticalAlign=middle;spacing=0;spacingRight=34;spacingTop=53;" vertex="1">
+            <mxGeometry height="34" width="34" x="-19" y="157" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Bill of Lading" ubl-kind="action" ubl-unstated="{&quot;wayOut&quot;: &quot;The path ends at this step: the artwork draws no end after it.&quot;}" id="action-receive-bill-of-lading-in-consignor">
+          <mxCell parent="lane-consignor" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingBottom=5;" vertex="1">
+            <mxGeometry height="42" width="143" x="50" y="326" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Waybill" ubl-kind="action" ubl-unstated="{&quot;wayOut&quot;: &quot;The path ends at this step: the artwork draws no end after it.&quot;}" id="action-receive-waybill-in-consignor">
+          <mxCell parent="lane-consignor" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=3;spacingBottom=1;" vertex="1">
+            <mxGeometry height="42" width="143" x="49" y="395" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Status&lt;br&gt;Report" ubl-kind="action" ubl-unstated="{&quot;wayOut&quot;: &quot;The path ends at this step: the artwork draws no end after it.&quot;}" id="action-receive-status-report-in-consignor">
+          <mxCell parent="lane-consignor" style="rounded=1;absoluteArcSize=1;arcSize=34;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=2;" vertex="1">
+            <mxGeometry height="39" width="121" x="58" y="576" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-to-request-logistic-service-in-consignor">
+          <mxCell edge="1" parent="lane-consignor" source="initial" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=0.8817;exitY=0.529412;" target="action-request-logistic-service-in-consignor">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Freight Forwarder" ubl-kind="lane" id="lane-freight-forwarder">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=18;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;" vertex="1">
+            <mxGeometry height="826" width="316" x="513" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Forwarding&lt;br&gt;Instructions" ubl-kind="object" ubl-between="[&quot;lane-consignee&quot;, &quot;lane-consignor&quot;, &quot;lane-freight-forwarder&quot;]" ubl-lane="null" id="object-forwarding-instructions-between-consignee-and-consignor-and-freight-forwarder">
+          <mxCell parent="lane-freight-forwarder" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=10;spacingBottom=3;strokeWidth=2;" vertex="1">
+            <mxGeometry height="50" width="85" x="-44" y="54" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Request Transport&lt;br&gt;Service" ubl-kind="action" id="action-request-transport-service">
+          <mxCell parent="lane-freight-forwarder" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingBottom=1;" vertex="1">
+            <mxGeometry height="43" width="144" x="108" y="89" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Packing List" ubl-kind="object" ubl-between="[&quot;lane-consignor&quot;, &quot;lane-freight-forwarder&quot;]" ubl-lane="null" id="object-packing-list">
+          <mxCell parent="lane-freight-forwarder" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="50" width="88" x="-37" y="184" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Bill of Lading" ubl-kind="object" ubl-between="[&quot;lane-consignee&quot;, &quot;lane-consignor&quot;, &quot;lane-freight-forwarder&quot;]" ubl-lane="null" id="object-bill-of-lading-between-consignee-and-consignor-and-freight-forwarder">
+          <mxCell parent="lane-freight-forwarder" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=3;strokeWidth=2;" vertex="1">
+            <mxGeometry height="51" width="85" x="-44" y="296" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Bill of Lading to&lt;br&gt;Consignor" ubl-kind="action" id="action-send-bill-of-lading-to-consignor">
+          <mxCell parent="lane-freight-forwarder" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="42" width="144" x="95" y="300" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Waybill" ubl-kind="object" ubl-between="[&quot;lane-consignee&quot;, &quot;lane-consignor&quot;, &quot;lane-freight-forwarder&quot;]" ubl-lane="null" id="object-waybill-between-consignee-and-consignor-and-freight-forwarder">
+          <mxCell parent="lane-freight-forwarder" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=5;strokeWidth=2;" vertex="1">
+            <mxGeometry height="50" width="85" x="-45" y="452" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Waybill to&lt;br&gt;Consignor" ubl-kind="action" id="action-send-waybill-to-consignor">
+          <mxCell parent="lane-freight-forwarder" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=1;" vertex="1">
+            <mxGeometry height="42" width="144" x="92" y="456" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transportation&lt;br&gt;Status" ubl-kind="object" ubl-between="[&quot;lane-consignor&quot;, &quot;lane-freight-forwarder&quot;]" ubl-lane="null" id="object-transportation-status-between-consignor-and-freight-forwarder">
+          <mxCell parent="lane-freight-forwarder" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=5;strokeWidth=2;" vertex="1">
+            <mxGeometry height="58" width="105" x="-48" y="568" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Report Status" ubl-kind="action" id="action-report-status-in-freight-forwarder">
+          <mxCell parent="lane-freight-forwarder" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=2;" vertex="1">
+            <mxGeometry height="39" width="116" x="73" y="643" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transportation&lt;br&gt;Status" ubl-kind="object" ubl-between="[&quot;lane-consignee&quot;, &quot;lane-freight-forwarder&quot;]" ubl-lane="null" id="object-transportation-status-between-consignee-and-freight-forwarder">
+          <mxCell parent="lane-freight-forwarder" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=5;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="104" x="-57" y="733" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-forwarding-instructions-between-consignee-and-consignor-and-freight-forwarder-to-request-transport-service">
+          <mxCell edge="1" parent="lane-freight-forwarder" source="object-forwarding-instructions-between-consignee-and-consignor-and-freight-forwarder" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.6434;exitPerimeter=0;entryX=0;entryY=0.25;entryPerimeter=0;" target="action-request-transport-service">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-packing-list-to-request-transport-service">
+          <mxCell edge="1" parent="lane-freight-forwarder" source="object-packing-list" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0;exitPerimeter=0;entryX=0.2225;entryY=1;entryPerimeter=0;" target="action-request-transport-service">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-bill-of-lading-to-consignor-to-bill-of-lading-between-consignee-and-consignor-and-freight-forwarder">
+          <mxCell edge="1" parent="lane-freight-forwarder" source="action-send-bill-of-lading-to-consignor" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=1;entryY=0.490196;" target="object-bill-of-lading-between-consignee-and-consignor-and-freight-forwarder">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-waybill-to-consignor-to-waybill-between-consignee-and-consignor-and-freight-forwarder">
+          <mxCell edge="1" parent="lane-freight-forwarder" source="action-send-waybill-to-consignor" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-waybill-between-consignee-and-consignor-and-freight-forwarder">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-report-status-in-freight-forwarder-to-transportation-status-between-consignor-and-freight-forwarder">
+          <mxCell edge="1" parent="lane-freight-forwarder" source="action-report-status-in-freight-forwarder" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.1295;exitY=0;exitPerimeter=0;entryX=1;entryY=0.9948;entryPerimeter=0;" target="object-transportation-status-between-consignor-and-freight-forwarder">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-report-status-in-freight-forwarder-to-transportation-status-between-consignee-and-freight-forwarder">
+          <mxCell edge="1" parent="lane-freight-forwarder" source="action-report-status-in-freight-forwarder" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.1857;exitY=1;exitPerimeter=0;entryX=0.8372;entryY=0;entryPerimeter=0;" target="object-transportation-status-between-consignee-and-freight-forwarder">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Carrier" ubl-kind="lane" id="lane-carrier">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=19;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=1;" vertex="1">
+            <mxGeometry height="826" width="286" x="829" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Forwarding&lt;br&gt;Instructions" ubl-kind="object" ubl-between="[&quot;lane-freight-forwarder&quot;, &quot;lane-carrier&quot;]" ubl-lane="null" id="object-forwarding-instructions-between-freight-forwarder-and-carrier">
+          <mxCell parent="lane-carrier" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=10;spacingBottom=3;strokeWidth=2;" vertex="1">
+            <mxGeometry height="50" width="86" x="-34" y="86" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive Transport&lt;br&gt;Service Request" ubl-kind="action" id="action-receive-transport-service-request">
+          <mxCell parent="lane-carrier" style="rounded=1;absoluteArcSize=1;arcSize=37;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=2;" vertex="1">
+            <mxGeometry height="42" width="144" x="94" y="90" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Bill of Lading" ubl-kind="object" ubl-between="[&quot;lane-freight-forwarder&quot;, &quot;lane-carrier&quot;]" ubl-lane="null" id="object-bill-of-lading-between-freight-forwarder-and-carrier">
+          <mxCell parent="lane-carrier" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=4;strokeWidth=2;" vertex="1">
+            <mxGeometry height="50" width="86" x="-34" y="296" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Bill of Lading" ubl-kind="action" id="action-send-bill-of-lading">
+          <mxCell parent="lane-carrier" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=3;" vertex="1">
+            <mxGeometry height="41" width="145" x="123" y="301" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Waybill" ubl-kind="object" ubl-between="[&quot;lane-freight-forwarder&quot;, &quot;lane-carrier&quot;]" ubl-lane="null" id="object-waybill-between-freight-forwarder-and-carrier">
+          <mxCell parent="lane-carrier" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=6;strokeWidth=2;" vertex="1">
+            <mxGeometry height="50" width="86" x="-34" y="452" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send Waybill" ubl-kind="action" id="action-send-waybill">
+          <mxCell parent="lane-carrier" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=4;" vertex="1">
+            <mxGeometry height="42" width="144" x="123" y="456" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transport Goods Items&lt;br&gt;to Delivery Party" ubl-kind="action" id="action-transport-goods-items-to-delivery-party">
+          <mxCell parent="lane-carrier" style="rounded=1;absoluteArcSize=1;arcSize=35;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;" vertex="1">
+            <mxGeometry height="42" width="143" x="123" y="540" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Transportation&lt;br&gt;Status" ubl-kind="object" ubl-between="[&quot;lane-freight-forwarder&quot;, &quot;lane-carrier&quot;]" ubl-lane="null" id="object-transportation-status-between-freight-forwarder-and-carrier">
+          <mxCell parent="lane-carrier" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingBottom=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="57" width="104" x="-56" y="634" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Report Status" ubl-kind="action" id="action-report-status-in-carrier">
+          <mxCell parent="lane-carrier" style="rounded=1;absoluteArcSize=1;arcSize=36;html=1;whiteSpace=nowrap;fontStyle=1;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=6;" vertex="1">
+            <mxGeometry height="41" width="116" x="95" y="642" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Fulfillment&lt;br&gt;Process" ubl-kind="final" ubl-linked-process="{&quot;name&quot;: &quot;Fulfilment&quot;, &quot;how&quot;: &quot;leads-into&quot;, &quot;source&quot;: &quot;written beside the node in the artwork&quot;}" ubl-label="" ubl-text="text-fulfillment-process" ubl-text-text-fulfillment-process-labels="final-carrier" id="final-carrier">
+          <mxCell parent="lane-carrier" style="ellipse;shape=endState;fillColor=#000000;html=1;whiteSpace=nowrap;fontStyle=0;align=right;verticalAlign=middle;spacing=0;spacingRight=36;spacingBottom=11;" vertex="1">
+            <mxGeometry height="22" width="22" x="210" y="786" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-forwarding-instructions-between-freight-forwarder-and-carrier-to-receive-transport-service-request">
+          <mxCell edge="1" parent="lane-carrier" source="object-forwarding-instructions-between-freight-forwarder-and-carrier" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-receive-transport-service-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-transport-service-request-to-send-bill-of-lading">
+          <mxCell edge="1" parent="lane-carrier" source="action-receive-transport-service-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.3977;entryY=0;entryPerimeter=0;exitX=0.601851;exitY=1;" target="action-send-bill-of-lading">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-bill-of-lading-to-bill-of-lading-between-freight-forwarder-and-carrier">
+          <mxCell edge="1" parent="lane-carrier" source="action-send-bill-of-lading" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=1;entryY=0.51;" target="object-bill-of-lading-between-freight-forwarder-and-carrier">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-send-bill-of-lading-to-send-waybill">
+          <mxCell edge="1" parent="lane-carrier" source="action-send-bill-of-lading" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5035;entryY=0;entryPerimeter=0;exitX=0.500028;exitY=1;" target="action-send-waybill">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-send-waybill-to-waybill-between-freight-forwarder-and-carrier">
+          <mxCell edge="1" parent="lane-carrier" source="action-send-waybill" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-waybill-between-freight-forwarder-and-carrier">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-send-waybill-to-transport-goods-items-to-delivery-party">
+          <mxCell edge="1" parent="lane-carrier" source="action-send-waybill" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.496528;exitY=1;" target="action-transport-goods-items-to-delivery-party">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-transport-goods-items-to-delivery-party-to-report-status-in-carrier">
+          <mxCell edge="1" parent="lane-carrier" source="action-transport-goods-items-to-delivery-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.20979;exitY=1;" target="action-report-status-in-carrier">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-transport-goods-items-to-delivery-party-to-final-carrier">
+          <mxCell edge="1" parent="lane-carrier" source="action-transport-goods-items-to-delivery-party" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.7207;entryY=0;entryPerimeter=0;exitX=0.719269;exitY=1;" target="final-carrier">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-report-status-in-carrier-to-transportation-status-between-freight-forwarder-and-carrier">
+          <mxCell edge="1" parent="lane-carrier" source="action-report-status-in-carrier" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-transportation-status-between-freight-forwarder-and-carrier">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-request-logistic-service-in-consignee-to-forwarding-instructions-between-consignee-and-consignor-and-freight-forwarder">
+          <mxCell edge="1" parent="frame" source="action-request-logistic-service-in-consignee" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.49;" target="object-forwarding-instructions-between-consignee-and-consignor-and-freight-forwarder">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-request-transport-service-to-forwarding-instructions-between-freight-forwarder-and-carrier">
+          <mxCell edge="1" parent="frame" source="action-request-transport-service" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.49;" target="object-forwarding-instructions-between-freight-forwarder-and-carrier">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-to-request-logistic-service-in-consignee">
+          <mxCell edge="1" parent="frame" source="initial" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.1183;exitY=0.1173;exitPerimeter=0;entryX=0.6926;entryY=1;entryPerimeter=0;" target="action-request-logistic-service-in-consignee">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-request-logistic-service-in-consignor-to-forwarding-instructions-between-consignee-and-consignor-and-freight-forwarder">
+          <mxCell edge="1" parent="frame" source="action-request-logistic-service-in-consignor" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.75;exitY=0;exitPerimeter=0;entryX=0.0117;entryY=1;entryPerimeter=0;" target="object-forwarding-instructions-between-consignee-and-consignor-and-freight-forwarder">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-request-logistic-service-in-consignor-to-packing-list">
+          <mxCell edge="1" parent="frame" source="action-request-logistic-service-in-consignor" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.8599;exitPerimeter=0;entryX=0;entryY=0.3024;entryPerimeter=0;" target="object-packing-list">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-bill-of-lading-between-consignee-and-consignor-and-freight-forwarder-to-receive-bill-of-lading-in-consignee">
+          <mxCell edge="1" parent="frame" source="object-bill-of-lading-between-consignee-and-consignor-and-freight-forwarder" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.117647;" target="action-receive-bill-of-lading-in-consignee">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-bill-of-lading-between-freight-forwarder-and-carrier-to-send-bill-of-lading-to-consignor">
+          <mxCell edge="1" parent="frame" source="object-bill-of-lading-between-freight-forwarder-and-carrier" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-send-bill-of-lading-to-consignor">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-bill-of-lading-between-consignee-and-consignor-and-freight-forwarder-to-receive-bill-of-lading-in-consignor">
+          <mxCell edge="1" parent="frame" source="object-bill-of-lading-between-consignee-and-consignor-and-freight-forwarder" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.6198;exitPerimeter=0;entryX=1;entryY=0.25;entryPerimeter=0;" target="action-receive-bill-of-lading-in-consignor">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-waybill-between-consignee-and-consignor-and-freight-forwarder-to-receive-waybill-in-consignor">
+          <mxCell edge="1" parent="frame" source="object-waybill-between-consignee-and-consignor-and-freight-forwarder" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.2012;exitPerimeter=0;entryX=0.9986;entryY=1;entryPerimeter=0;" target="action-receive-waybill-in-consignor">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-waybill-between-consignee-and-consignor-and-freight-forwarder-to-receive-waybill-in-consignee">
+          <mxCell edge="1" parent="frame" source="object-waybill-between-consignee-and-consignor-and-freight-forwarder" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5012;entryPerimeter=0;exitX=0;exitY=0.490984;" target="action-receive-waybill-in-consignee">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-waybill-between-freight-forwarder-and-carrier-to-send-waybill-to-consignor">
+          <mxCell edge="1" parent="frame" source="object-waybill-between-freight-forwarder-and-carrier" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-send-waybill-to-consignor">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-transportation-status-between-consignor-and-freight-forwarder-to-receive-status-report-in-consignor">
+          <mxCell edge="1" parent="frame" source="object-transportation-status-between-consignor-and-freight-forwarder" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.474138;" target="action-receive-status-report-in-consignor">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-transportation-status-between-freight-forwarder-and-carrier-to-report-status-in-freight-forwarder">
+          <mxCell edge="1" parent="frame" source="object-transportation-status-between-freight-forwarder-and-carrier" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-report-status-in-freight-forwarder">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-transportation-status-between-consignee-and-freight-forwarder-to-receive-status-report-in-consignee">
+          <mxCell edge="1" parent="frame" source="object-transportation-status-between-consignee-and-freight-forwarder" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.605263;" target="action-receive-status-report-in-consignee">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

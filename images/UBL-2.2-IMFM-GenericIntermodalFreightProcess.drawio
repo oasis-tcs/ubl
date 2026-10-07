@@ -1,0 +1,60 @@
+<mxfile host="UBL-TC" agent="UBL artwork, Group B (history/group-b/build_imfm.py)">
+  <diagram id="UBL-2.2-IMFM-GenericIntermodalFreightProcess" name="UBL-2.2-IMFM-GenericIntermodalFreightProcess">
+    <mxGraphModel grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="518.94" pageHeight="120.91" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object label="" ubl-kind="frame" ubl-notation="phase-map" id="frame">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1.5;" vertex="1">
+            <mxGeometry height="120.91" width="518.94" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="phase" id="phase-plan">
+          <mxCell parent="1" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=14.24;fillColor=#ffffff;gradientColor=none;" vertex="1">
+            <mxGeometry height="51.82" width="168.48" x="12.88" y="12.95" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Plan" ubl-kind="text" id="title-plan">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;fontSize=15;strokeColor=none;fillColor=none;" vertex="1">
+            <mxGeometry height="18.18" width="90.91" x="45.38" y="28.79" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Select transport chain&lt;br&gt;Organize transport" ubl-kind="text" id="lines-plan">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=nowrap;fontSize=12;strokeColor=none;fillColor=none;spacing=0;spacingLeft=0;" vertex="1">
+            <mxGeometry height="30.45" width="151.52" x="13.64" y="68.18" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="phase" id="phase-execute">
+          <mxCell parent="1" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=14.24;fillColor=#ffffff;gradientColor=none;" vertex="1">
+            <mxGeometry height="51.82" width="168.48" x="175.3" y="12.95" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Execute" ubl-kind="text" id="title-execute">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;fontSize=15;strokeColor=none;fillColor=none;" vertex="1">
+            <mxGeometry height="18.18" width="90.91" x="210.38" y="28.79" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Issue transport instructions&lt;br&gt;Monitor (detect deviations)" ubl-kind="text" id="lines-execute">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=nowrap;fontSize=12;strokeColor=none;fillColor=none;spacing=0;spacingLeft=0;" vertex="1">
+            <mxGeometry height="30.45" width="151.52" x="181.82" y="68.18" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="phase" id="phase-complete">
+          <mxCell parent="1" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=14.24;fillColor=#ffffff;gradientColor=none;" vertex="1">
+            <mxGeometry height="51.82" width="168.48" x="337.88" y="12.95" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Complete" ubl-kind="text" id="title-complete">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;fontSize=15;strokeColor=none;fillColor=none;" vertex="1">
+            <mxGeometry height="18.18" width="90.91" x="375.83" y="28.79" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Issue proof of delivery&lt;br&gt;Handle invoices and payments&lt;br&gt;Handle claims" ubl-kind="text" id="lines-complete">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=nowrap;fontSize=12;strokeColor=none;fillColor=none;spacing=0;spacingLeft=0;" vertex="1">
+            <mxGeometry height="44.62" width="151.52" x="340" y="68.18" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

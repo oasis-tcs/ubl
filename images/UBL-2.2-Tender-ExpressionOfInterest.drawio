@@ -1,0 +1,110 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-Tender-ExpressionOfInterest" name="UBL-2.2-Tender-ExpressionOfInterest">
+    <mxGraphModel dx="615" dy="324" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="647" pageHeight="378" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="16" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="342" width="612" x="17" y="17" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="ECONOMIC OPERATOR" ubl-kind="lane" ubl-label="Economic Operator" id="lane-economic-operator">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=26;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=12;" vertex="1">
+            <mxGeometry height="342" width="305" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-economic-operator">
+          <mxCell parent="lane-economic-operator" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="30" width="30" x="94" y="23" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Prepare expression of interest" ubl-kind="action" id="action-prepare-expression-of-interest">
+          <mxCell parent="lane-economic-operator" style="rounded=1;absoluteArcSize=1;arcSize=31;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=3;" vertex="1">
+            <mxGeometry height="32" width="181" x="18" y="80" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Submit expression of interest" ubl-kind="action" id="action-submit-expression-of-interest-in-economic-operator">
+          <mxCell parent="lane-economic-operator" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=4;spacingBottom=4;" vertex="1">
+            <mxGeometry height="33" width="183" x="17" y="142" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive expression of interest&lt;br&gt;confirmation" ubl-kind="action" id="action-receive-expression-of-interest-in-economic-operator">
+          <mxCell parent="lane-economic-operator" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="42" width="172" x="23" y="234" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-economic-operator">
+          <mxCell parent="lane-economic-operator" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="21" width="21" x="98" y="306" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-economic-operator-to-prepare-expression-of-interest">
+          <mxCell edge="1" parent="lane-economic-operator" source="initial-economic-operator" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.483333;exitY=0.8675;" target="action-prepare-expression-of-interest">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-prepare-expression-of-interest-to-submit-expression-of-interest-in-economic-operator">
+          <mxCell edge="1" parent="lane-economic-operator" source="action-prepare-expression-of-interest" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-submit-expression-of-interest-in-economic-operator">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-expression-of-interest-in-economic-operator-to-final-economic-operator">
+          <mxCell edge="1" parent="lane-economic-operator" source="action-receive-expression-of-interest-in-economic-operator" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.497093;exitY=1;" target="final-economic-operator">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="CONTRACTING AUTHORITY" ubl-kind="lane" ubl-label="Contracting Authority" id="lane-contracting-authority">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=26;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=4;" vertex="1">
+            <mxGeometry height="342" width="307" x="305" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Expression&lt;br&gt;Of Interest&lt;br&gt;Request" ubl-kind="object" ubl-between="[&quot;lane-economic-operator&quot;, &quot;lane-contracting-authority&quot;]" ubl-lane="null" id="object-expression-of-interest-request">
+          <mxCell parent="lane-contracting-authority" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=7;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="64" width="94" x="-46" y="127" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive expression of interest" ubl-kind="action" id="action-receive-expression-of-interest-in-contracting-authority">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=3;spacingBottom=5;" vertex="1">
+            <mxGeometry height="34" width="188" x="99" y="142" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Expression&lt;br&gt;Of Interest&lt;br&gt;Response" ubl-kind="object" ubl-between="[&quot;lane-economic-operator&quot;, &quot;lane-contracting-authority&quot;]" ubl-lane="null" id="object-expression-of-interest-response">
+          <mxCell parent="lane-contracting-authority" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=7;spacingTop=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="60" width="94" x="-46" y="224" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Submit expression of interest&lt;br&gt;confirmation" ubl-kind="action" id="action-submit-expression-of-interest-in-contracting-authority">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingTop=2;" vertex="1">
+            <mxGeometry height="40" width="188" x="99" y="235" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-expression-of-interest-request-to-receive-expression-of-interest-in-contracting-authority">
+          <mxCell edge="1" parent="lane-contracting-authority" source="object-expression-of-interest-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4716;entryPerimeter=0;exitX=1;exitY=0.484913;" target="action-receive-expression-of-interest-in-contracting-authority">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-expression-of-interest-in-contracting-authority-to-submit-expression-of-interest-in-contracting-authority">
+          <mxCell edge="1" parent="lane-contracting-authority" source="action-receive-expression-of-interest-in-contracting-authority" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-submit-expression-of-interest-in-contracting-authority">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-submit-expression-of-interest-in-contracting-authority-to-expression-of-interest-response">
+          <mxCell edge="1" parent="lane-contracting-authority" source="action-submit-expression-of-interest-in-contracting-authority" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=1;entryY=0.516667;" target="object-expression-of-interest-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-submit-expression-of-interest-in-economic-operator-to-expression-of-interest-request">
+          <mxCell edge="1" parent="frame" source="action-submit-expression-of-interest-in-economic-operator" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.492188;" target="object-expression-of-interest-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-expression-of-interest-response-to-receive-expression-of-interest-in-economic-operator">
+          <mxCell edge="1" parent="frame" source="object-expression-of-interest-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;exitX=0;exitY=0.516667;" target="action-receive-expression-of-interest-in-economic-operator">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

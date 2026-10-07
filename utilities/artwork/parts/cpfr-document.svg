@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 169 327" width="169" height="327">
+<title>Document</title>
+ <!-- A document (the Visio work-flow shape of the UBL CPFR figures), redrawn in grey. Isometric, 30 degrees. -->
+ <defs>
+  <linearGradient id="sheet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbfbfb"/><stop offset="1" stop-color="#d6d6d6"/></linearGradient>
+  <linearGradient id="fold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#bdbdbd"/></linearGradient>
+ </defs>
+ <g stroke="#262626" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M7,8 L118,72 L160,146 L162,321 L8,232 Z" fill="url(#sheet)"/>
+  <path d="M118,72 L119,124 L160,146 Z" fill="url(#fold)" stroke-width="4"/>
+ </g>
+ <g stroke="#55595c" stroke-width="7" stroke-linecap="round">
+  <line x1="34" y1="75" x2="103" y2="114"/>
+  <line x1="33" y1="103" x2="112" y2="148"/>
+  <line x1="34" y1="137" x2="134" y2="195"/>
+  <line x1="33" y1="170" x2="135" y2="228"/>
+  <line x1="33" y1="202" x2="134" y2="259"/>
+ </g>
+</svg>

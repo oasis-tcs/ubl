@@ -1,0 +1,110 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-Tender-UnsubscribeFromProcedure" name="UBL-2.2-Tender-UnsubscribeFromProcedure">
+    <mxGraphModel dx="535" dy="282" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="565" pageHeight="367" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="15" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="334" width="533" x="16" y="16" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="ECONOMIC OPERATOR" ubl-kind="lane" ubl-label="Economic Operator" id="lane-economic-operator">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=21;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=5;" vertex="1">
+            <mxGeometry height="334" width="265" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-economic-operator">
+          <mxCell parent="lane-economic-operator" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="27" width="27" x="81" y="20" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Prepare unsubscribe&lt;br&gt;from procedure" ubl-kind="action" id="action-prepare-unsubscribe-from-procedure">
+          <mxCell parent="lane-economic-operator" style="rounded=1;absoluteArcSize=1;arcSize=27;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingBottom=1;" vertex="1">
+            <mxGeometry height="37" width="157" x="16" y="74" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Submit unsubscribe&lt;br&gt;from procedure" ubl-kind="action" id="action-submit-unsubscribe-from-procedure-in-economic-operator">
+          <mxCell parent="lane-economic-operator" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=1;" vertex="1">
+            <mxGeometry height="37" width="159" x="15" y="141" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive unsubscribe&lt;br&gt;from procedure&lt;br&gt;confirmation" ubl-kind="action" id="action-receive-unsubscribe-from-procedure-in-economic-operator">
+          <mxCell parent="lane-economic-operator" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=8;spacingTop=1;" vertex="1">
+            <mxGeometry height="53" width="151" x="19" y="219" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-economic-operator">
+          <mxCell parent="lane-economic-operator" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="18" width="18" x="86" y="302" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-economic-operator-to-prepare-unsubscribe-from-procedure">
+          <mxCell edge="1" parent="lane-economic-operator" source="initial-economic-operator" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=0.854;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-prepare-unsubscribe-from-procedure">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-prepare-unsubscribe-from-procedure-to-submit-unsubscribe-from-procedure-in-economic-operator">
+          <mxCell edge="1" parent="lane-economic-operator" source="action-prepare-unsubscribe-from-procedure" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-submit-unsubscribe-from-procedure-in-economic-operator">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-unsubscribe-from-procedure-in-economic-operator-to-final-economic-operator">
+          <mxCell edge="1" parent="lane-economic-operator" source="action-receive-unsubscribe-from-procedure-in-economic-operator" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.472222;entryY=0;" target="final-economic-operator">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="CONTRACTING AUTHORITY" ubl-kind="lane" ubl-label="Contracting Authority" id="lane-contracting-authority">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=21;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=2;" vertex="1">
+            <mxGeometry height="334" width="268" x="265" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Unsubscribe&lt;br&gt;From&lt;br&gt;Procedure&lt;br&gt;Request" ubl-kind="object" ubl-between="[&quot;lane-economic-operator&quot;, &quot;lane-contracting-authority&quot;]" ubl-lane="null" id="object-unsubscribe-from-procedure-request">
+          <mxCell parent="lane-contracting-authority" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=6;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="67" width="82" x="-39" y="125" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive unsubscribe&lt;br&gt;from procedure" ubl-kind="action" id="action-receive-unsubscribe-from-procedure-in-contracting-authority">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;spacingBottom=5;" vertex="1">
+            <mxGeometry height="37" width="163" x="87" y="141" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Unsubscribe&lt;br&gt;From&lt;br&gt;Procedure&lt;br&gt;Response" ubl-kind="object" ubl-between="[&quot;lane-economic-operator&quot;, &quot;lane-contracting-authority&quot;]" ubl-lane="null" id="object-unsubscribe-from-procedure-response">
+          <mxCell parent="lane-contracting-authority" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=6;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="66" width="82" x="-40" y="212" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Submit unsubscribe&lt;br&gt;from procedure&lt;br&gt;confirmation" ubl-kind="action" id="action-submit-unsubscribe-from-procedure-in-contracting-authority">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=28;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=3;spacingTop=2;" vertex="1">
+            <mxGeometry height="52" width="163" x="87" y="219" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-unsubscribe-from-procedure-request-to-receive-unsubscribe-from-procedure-in-contracting-authority">
+          <mxCell edge="1" parent="lane-contracting-authority" source="object-unsubscribe-from-procedure-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;exitX=1;exitY=0.514926;" target="action-receive-unsubscribe-from-procedure-in-contracting-authority">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-unsubscribe-from-procedure-in-contracting-authority-to-submit-unsubscribe-from-procedure-in-contracting-authority">
+          <mxCell edge="1" parent="lane-contracting-authority" source="action-receive-unsubscribe-from-procedure-in-contracting-authority" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-submit-unsubscribe-from-procedure-in-contracting-authority">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-submit-unsubscribe-from-procedure-in-contracting-authority-to-unsubscribe-from-procedure-response">
+          <mxCell edge="1" parent="lane-contracting-authority" source="action-submit-unsubscribe-from-procedure-in-contracting-authority" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.4985;entryPerimeter=0;exitX=0;exitY=0.498096;" target="object-unsubscribe-from-procedure-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-submit-unsubscribe-from-procedure-in-economic-operator-to-unsubscribe-from-procedure-request">
+          <mxCell edge="1" parent="frame" source="action-submit-unsubscribe-from-procedure-in-economic-operator" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryPerimeter=0;entryX=0;entryY=0.514926;" target="object-unsubscribe-from-procedure-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-unsubscribe-from-procedure-response-to-receive-unsubscribe-from-procedure-in-economic-operator">
+          <mxCell edge="1" parent="frame" source="object-unsubscribe-from-procedure-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=1;entryY=0.486596;entryPerimeter=0;exitX=0;exitY=0.496812;" target="action-receive-unsubscribe-from-procedure-in-economic-operator">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

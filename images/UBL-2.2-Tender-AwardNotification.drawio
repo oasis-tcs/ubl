@@ -1,0 +1,80 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-Tender-AwardNotification" name="UBL-2.2-Tender-AwardNotification">
+    <mxGraphModel dx="535" dy="225" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="563" pageHeight="271" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="14" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="241" width="533" x="15" y="15" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="TENDERER" ubl-kind="lane" ubl-label="Tenderer" id="lane-tenderer">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=31;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=19;" vertex="1">
+            <mxGeometry height="241" width="251" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive notification" ubl-kind="action" id="action-receive-notification">
+          <mxCell parent="lane-tenderer" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingBottom=1;" vertex="1">
+            <mxGeometry height="32" width="132" x="13" y="141" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-tenderer">
+          <mxCell parent="lane-tenderer" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="28" width="28" x="65" y="203" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-notification-to-final-tenderer">
+          <mxCell edge="1" parent="lane-tenderer" source="action-receive-notification" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryPerimeter=0;entryX=0.5;entryY=0;" target="final-tenderer">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="CONTRACTING AUTHORITY" ubl-kind="lane" ubl-label="Contracting Authority" id="lane-contracting-authority">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=32;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=4;" vertex="1">
+            <mxGeometry height="241" width="282" x="251" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-contracting-authority">
+          <mxCell parent="lane-contracting-authority" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="26" width="26" x="162" y="25" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Prepare awarding notification" ubl-kind="action" id="action-prepare-awarding-notification">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=32;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=2;spacingBottom=1;" vertex="1">
+            <mxGeometry height="33" width="188" x="81" y="78" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Unawarded&lt;br&gt;Notification" ubl-kind="object" ubl-between="[&quot;lane-tenderer&quot;, &quot;lane-contracting-authority&quot;]" ubl-lane="null" id="object-unawarded-notification">
+          <mxCell parent="lane-contracting-authority" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=center;verticalAlign=middle;spacing=0;spacingLeft=2;strokeWidth=2;" vertex="1">
+            <mxGeometry height="37" width="91" x="-47" y="117" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Send awarding notification" ubl-kind="action" id="action-send-awarding-notification">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=33;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=1;" vertex="1">
+            <mxGeometry height="32" width="174" x="88" y="141" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Awarded&lt;br&gt;Notification" ubl-kind="object" ubl-between="[&quot;lane-tenderer&quot;, &quot;lane-contracting-authority&quot;]" ubl-lane="null" id="object-awarded-notification">
+          <mxCell parent="lane-contracting-authority" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=15;strokeWidth=2;" vertex="1">
+            <mxGeometry height="38" width="91" x="-47" y="161" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-contracting-authority-to-prepare-awarding-notification">
+          <mxCell edge="1" parent="lane-contracting-authority" source="initial-contracting-authority" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;exitX=0.5;exitY=0.8467;" target="action-prepare-awarding-notification">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-prepare-awarding-notification-to-send-awarding-notification">
+          <mxCell edge="1" parent="lane-contracting-authority" source="action-prepare-awarding-notification" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;" target="action-send-awarding-notification">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-draws="[{&quot;id&quot;: &quot;flow-send-awarding-notification-to-awarded-notification&quot;, &quot;kind&quot;: &quot;object&quot;, &quot;alternative&quot;: {&quot;group&quot;: &quot;award-outcome&quot;, &quot;when&quot;: &quot;the tenderer won the contract&quot;}, &quot;from&quot;: &quot;action-send-awarding-notification&quot;, &quot;to&quot;: &quot;object-awarded-notification&quot;}, {&quot;id&quot;: &quot;flow-awarded-notification-to-receive-notification&quot;, &quot;kind&quot;: &quot;object&quot;, &quot;from&quot;: &quot;object-awarded-notification&quot;, &quot;to&quot;: &quot;action-receive-notification&quot;}, {&quot;id&quot;: &quot;flow-send-awarding-notification-to-unawarded-notification&quot;, &quot;kind&quot;: &quot;object&quot;, &quot;alternative&quot;: {&quot;group&quot;: &quot;award-outcome&quot;, &quot;when&quot;: &quot;the contract went to another tenderer&quot;}, &quot;from&quot;: &quot;action-send-awarding-notification&quot;, &quot;to&quot;: &quot;object-unawarded-notification&quot;}, {&quot;id&quot;: &quot;flow-unawarded-notification-to-receive-notification&quot;, &quot;kind&quot;: &quot;object&quot;, &quot;from&quot;: &quot;object-unawarded-notification&quot;, &quot;to&quot;: &quot;action-receive-notification&quot;}]" id="flow-send-awarding-notification-to-receive-notification">
+          <mxCell edge="1" parent="frame" source="action-send-awarding-notification" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-receive-notification">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

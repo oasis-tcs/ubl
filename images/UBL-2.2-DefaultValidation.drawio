@@ -1,0 +1,155 @@
+<mxfile host="UBL-TC" agent="UBL artwork, Group C (history/group-c/build_defaultvalidation.py)">
+  <diagram id="UBL-2.2-DefaultValidation" name="UBL-2.2-DefaultValidation">
+    <mxGraphModel grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="580.51" pageHeight="381.02" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object label="" ubl-kind="frame" ubl-notation="reference" id="frame">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=1.53;" vertex="1">
+            <mxGeometry height="379.49" width="578.98" x="0.76" y="0.76" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="instance">
+          <mxCell parent="1" style="triangle;direction=west;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.85;" vertex="1">
+            <mxGeometry height="79.49" width="95.25" x="238.22" y="12.97" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="schema">
+          <mxCell parent="1" style="triangle;direction=west;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.85;" vertex="1">
+            <mxGeometry height="79.32" width="95.25" x="107.54" y="108.39" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="qualifications">
+          <mxCell parent="1" style="triangle;direction=west;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.85;" vertex="1">
+            <mxGeometry height="79.15" width="95.25" x="107.54" y="210.42" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="validator">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=31;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.85;" vertex="1">
+            <mxGeometry height="47.12" width="93.39" x="250.08" y="124.32" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="xslt">
+          <mxCell parent="1" style="rounded=1;absoluteArcSize=1;arcSize=31;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.85;" vertex="1">
+            <mxGeometry height="47.29" width="93.39" x="250.08" y="226.36" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="error-1">
+          <mxCell parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.85;" vertex="1">
+            <mxGeometry height="47.97" width="47.8" x="390.25" y="123.98" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="error-2">
+          <mxCell parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.85;" vertex="1">
+            <mxGeometry height="47.8" width="47.8" x="390.25" y="226.02" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="box" id="downstream">
+          <mxCell parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeWidth=0.85;" vertex="1">
+            <mxGeometry height="47.46" width="47.46" x="272.97" y="320.25" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" id="f-instance">
+          <mxCell edge="1" parent="1" source="instance" style="html=1;rounded=0;endArrow=block;endFill=1;strokeWidth=1.36;endSize=7.7;exitX=0.39;exitY=0.19;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="validator">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" id="f-schema">
+          <mxCell edge="1" parent="1" source="schema" style="html=1;rounded=0;endArrow=block;endFill=1;strokeWidth=1.36;endSize=7.7;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="validator">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" id="f-validator-xslt">
+          <mxCell edge="1" parent="1" source="validator" style="html=1;rounded=0;endArrow=block;endFill=1;strokeWidth=1.36;endSize=7.7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="xslt">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" id="f-qualifications">
+          <mxCell edge="1" parent="1" source="qualifications" style="html=1;rounded=0;endArrow=block;endFill=1;strokeWidth=1.36;endSize=7.7;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="xslt">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" id="f-error-1">
+          <mxCell edge="1" parent="1" source="validator" style="html=1;rounded=0;endArrow=block;endFill=1;strokeWidth=1.36;endSize=7.7;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="error-1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" id="f-error-2">
+          <mxCell edge="1" parent="1" source="xslt" style="html=1;rounded=0;endArrow=block;endFill=1;strokeWidth=1.36;endSize=7.7;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="error-2">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" id="f-downstream">
+          <mxCell edge="1" parent="1" source="xslt" style="html=1;rounded=0;endArrow=block;endFill=1;strokeWidth=1.36;endSize=7.7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="downstream">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 98%&quot;&gt;UBL&lt;br&gt;document&lt;br&gt;instance&lt;br&gt;.xml file&lt;/div&gt;" ubl-kind="text" id="t-instance">
+          <mxCell parent="1" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="47.12" width="61.19" x="267.8" y="26.39" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 98%&quot;&gt;UBL&lt;br&gt;document&lt;br&gt;schema&lt;br&gt;.xsd file&lt;/div&gt;" ubl-kind="text" id="t-schema">
+          <mxCell parent="1" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="47.12" width="61.19" x="136.44" y="121.47" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 98%&quot;&gt;UBL&lt;br&gt;Data Type&lt;br&gt;Qualifications&lt;br&gt;.xsl file&lt;/div&gt;" ubl-kind="text" id="t-qualifications">
+          <mxCell parent="1" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="47.12" width="92.37" x="105.25" y="224.35" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 98%&quot;&gt;Generic&lt;br&gt;schema&lt;br&gt;validator&lt;/div&gt;" ubl-kind="text" id="t-validator">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="35.34" width="61.19" x="266.27" y="130.12" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 98%&quot;&gt;Generic&lt;br&gt;XSLT&lt;br&gt;processor&lt;/div&gt;" ubl-kind="text" id="t-xslt">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="35.34" width="61.19" x="266.27" y="232.15" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 98%&quot;&gt;Error&lt;br&gt;report&lt;/div&gt;" ubl-kind="text" id="t-error-1">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="23.56" width="42.54" x="393.47" y="136.22" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 98%&quot;&gt;Error&lt;br&gt;report&lt;/div&gt;" ubl-kind="text" id="t-error-2">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=12;spacing=0;" vertex="1">
+            <mxGeometry height="23.56" width="42.54" x="393.47" y="238.08" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 101%&quot;&gt;Down-&lt;br&gt;stream&lt;br&gt;process&lt;/div&gt;" ubl-kind="text" id="t-downstream">
+          <mxCell parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=10.5;spacing=0;" vertex="1">
+            <mxGeometry height="31.78" width="43.22" x="275.42" y="326.59" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="error" ubl-kind="text" id="t-error-label-1">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=11;spacing=0;" vertex="1">
+            <mxGeometry height="12.65" width="33.73" x="349.83" y="133.89" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="error" ubl-kind="text" id="t-error-label-2">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=11;spacing=0;" vertex="1">
+            <mxGeometry height="12.65" width="33.73" x="349.83" y="235.75" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 114%&quot;&gt;First phase checks standard UBL structure,&lt;br&gt;vocabulary, and data typing against the&lt;br&gt;appropriate UBL schema&lt;/div&gt;" ubl-kind="text" id="n-first">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=10.3;spacing=0;fontStyle=2;" vertex="1">
+            <mxGeometry height="35.34" width="225.59" x="353.22" y="178.8" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 114%&quot;&gt;Second phase checks code list values against&lt;br&gt;the default values provided in the UBL release&lt;br&gt;package&lt;/div&gt;" ubl-kind="text" id="n-second">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=10.3;spacing=0;fontStyle=2;" vertex="1">
+            <mxGeometry height="35.34" width="226.27" x="352.54" y="279.48" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;line-height: 114%&quot;&gt;The default .xsl file can easily be&lt;br&gt;replaced with a customized version to&lt;br&gt;manage code lists or add more data checking&lt;/div&gt;" ubl-kind="text" id="n-default">
+          <mxCell parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=nowrap;strokeColor=none;fillColor=none;fontSize=10.3;spacing=0;fontStyle=2;" vertex="1">
+            <mxGeometry height="35.34" width="235.42" x="13.9" y="280.67" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

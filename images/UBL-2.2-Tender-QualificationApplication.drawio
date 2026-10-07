@@ -1,0 +1,110 @@
+<mxfile host="UBL-TC" agent="UBL artwork pipeline, JSON to draw.io">
+  <diagram id="UBL-2.2-Tender-QualificationApplication" name="UBL-2.2-Tender-QualificationApplication">
+    <mxGraphModel dx="560" dy="295" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="591" pageHeight="364" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style="" />
+        <mxCell id="1" parent="0" style="" />
+        <object label="" ubl-kind="frame" ubl-offset="15" id="frame">
+          <mxCell parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=0;whiteSpace=wrap;collapsible=0;fillColor=none;strokeWidth=2;" vertex="1">
+            <mxGeometry height="332" width="558" x="16" y="16" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="CONTRACTING AUTHORITY" ubl-kind="lane" ubl-label="Contracting Authority" id="lane-contracting-authority">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=21;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingRight=16;" vertex="1">
+            <mxGeometry height="332" width="278" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="initial" id="initial-contracting-authority">
+          <mxCell parent="lane-contracting-authority" style="ellipse;shape=startState;fillColor=#000000;strokeColor=none;html=1;" vertex="1">
+            <mxGeometry height="28" width="28" x="87" y="21" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Prepare qualification&lt;br&gt;application request" ubl-kind="action" id="action-prepare-qualification-application">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;" vertex="1">
+            <mxGeometry height="38" width="180" x="17" y="76" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Submit qualification&lt;br&gt;application request" ubl-kind="action" id="action-submit-qualification-application-request">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=30;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=4;spacingBottom=1;" vertex="1">
+            <mxGeometry height="37" width="179" x="15" y="144" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive qualification&lt;br&gt;application response" ubl-kind="action" id="action-receive-qualification-application-in-contracting-authority">
+          <mxCell parent="lane-contracting-authority" style="rounded=1;absoluteArcSize=1;arcSize=27;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=1;spacingBottom=2;" vertex="1">
+            <mxGeometry height="37" width="185" x="16" y="231" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="final" id="final-contracting-authority">
+          <mxCell parent="lane-contracting-authority" style="ellipse;shape=endState;fillColor=#000000;html=1;" vertex="1">
+            <mxGeometry height="20" width="20" x="90" y="298" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-initial-contracting-authority-to-prepare-qualification-application">
+          <mxCell edge="1" parent="lane-contracting-authority" source="initial-contracting-authority" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4657;entryY=0;entryPerimeter=0;exitX=0.493786;exitY=0.8587;" target="action-prepare-qualification-application">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-prepare-qualification-application-to-submit-qualification-application-request">
+          <mxCell edge="1" parent="lane-contracting-authority" source="action-prepare-qualification-application" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.4749;entryY=0;entryPerimeter=0;exitX=0.461151;exitY=1;" target="action-submit-qualification-application-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-qualification-application-in-contracting-authority-to-final-contracting-authority">
+          <mxCell edge="1" parent="lane-contracting-authority" source="action-receive-qualification-application-in-contracting-authority" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.5026;entryY=0;entryPerimeter=0;exitX=0.454335;exitY=1;" target="final-contracting-authority">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="ECONOMIC OPERATOR" ubl-kind="lane" ubl-label="Economic Operator" id="lane-economic-operator">
+          <mxCell parent="frame" style="swimlane;expand=0;horizontal=1;startSize=25;swimlaneLine=0;collapsible=0;html=1;fillColor=none;fontStyle=0;spacing=0;spacingLeft=19;" vertex="1">
+            <mxGeometry height="332" width="280" x="278" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Qualification&lt;br&gt;Application&lt;br&gt;Request" ubl-kind="object" ubl-between="[&quot;lane-contracting-authority&quot;, &quot;lane-economic-operator&quot;]" ubl-lane="null" id="object-qualification-application-request">
+          <mxCell parent="lane-economic-operator" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=6;spacingBottom=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="59" width="86" x="-42" y="132" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Receive qualification&lt;br&gt;application request" ubl-kind="action" id="action-receive-qualification-application-in-economic-operator">
+          <mxCell parent="lane-economic-operator" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingRight=4;spacingBottom=2;" vertex="1">
+            <mxGeometry height="37" width="182" x="82" y="143" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Qualification&lt;br&gt;Application&lt;br&gt;Response" ubl-kind="object" ubl-between="[&quot;lane-contracting-authority&quot;, &quot;lane-economic-operator&quot;]" ubl-lane="null" id="object-qualification-application-response">
+          <mxCell parent="lane-economic-operator" style="rounded=0;html=1;whiteSpace=nowrap;fontStyle=3;align=left;verticalAlign=middle;spacing=0;spacingLeft=6;spacingBottom=3;strokeWidth=2;" vertex="1">
+            <mxGeometry height="69" width="86" x="-42" y="215" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Submit qualification&lt;br&gt;application response" ubl-kind="action" id="action-submit-qualification-application">
+          <mxCell parent="lane-economic-operator" style="rounded=1;absoluteArcSize=1;arcSize=29;html=1;whiteSpace=nowrap;fontStyle=0;align=center;verticalAlign=middle;spacing=0;spacingLeft=1;spacingBottom=1;" vertex="1">
+            <mxGeometry height="37" width="181" x="82" y="231" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-qualification-application-request-to-receive-qualification-application-in-economic-operator">
+          <mxCell edge="1" parent="lane-economic-operator" source="object-qualification-application-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;" target="action-receive-qualification-application-in-economic-operator">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="control" id="flow-receive-qualification-application-in-economic-operator-to-submit-qualification-application">
+          <mxCell edge="1" parent="lane-economic-operator" source="action-receive-qualification-application-in-economic-operator" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0.505;entryY=0;entryPerimeter=0;exitX=0.502225;exitY=1;" target="action-submit-qualification-application">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-submit-qualification-application-to-qualification-application-response">
+          <mxCell edge="1" parent="lane-economic-operator" source="action-submit-qualification-application" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="object-qualification-application-response">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-submit-qualification-application-request-to-qualification-application-request">
+          <mxCell edge="1" parent="frame" source="action-submit-qualification-application-request" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitPerimeter=0;entryX=0;entryY=0.4871;entryPerimeter=0;exitX=1;exitY=0.452402;" target="object-qualification-application-request">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" ubl-kind="flow" ubl-flow="object" id="flow-qualification-application-response-to-receive-qualification-application-in-contracting-authority">
+          <mxCell edge="1" parent="frame" source="object-qualification-application-response" style="edgeStyle=none;rounded=0;html=1;endArrow=open;endFill=0;endSize=10;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;" target="action-receive-qualification-application-in-contracting-authority">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
