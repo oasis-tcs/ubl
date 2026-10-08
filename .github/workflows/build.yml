@@ -7,8 +7,14 @@ on:
   workflow_dispatch:
 
 jobs:
+  # Every job runs on Ubuntu 24.04, chosen on purpose rather than ubuntu-latest: what the build
+  # installs (LibreOffice, fonts, pandoc, Playwright for the artwork) comes with the Ubuntu version,
+  # and a newer one can change the output or stop a step. Playwright 1.56.1, for one, cannot install
+  # its browser on Ubuntu 26.04, which ubuntu-latest becomes from 19 October 2026, so the figures
+  # would no longer be rendered from their drawings. Move to a newer Ubuntu deliberately, after
+  # comparing the packages built on both.
   staging:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     outputs:
       timestamp: ${{ steps.timestamp.outputs.timestamp }}
     
@@ -22,7 +28,7 @@ jobs:
 
   build:
     needs: staging
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
     - uses: actions/checkout@v7
@@ -174,7 +180,7 @@ jobs:
   build-py:
     if: github.ref == 'refs/heads/ubl-2.5-python' && !startsWith(github.ref, 'refs/heads/claude/')
     needs: staging
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
     - uses: actions/checkout@v7

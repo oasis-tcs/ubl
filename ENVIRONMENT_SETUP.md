@@ -141,7 +141,9 @@ sudo apt install -y aspell pandoc libreoffice-calc-nogui \
 - The fonts are the ones the full `libreoffice` package brings. The column widths in the XLS files
   are worked out from font measurements, so with other fonts the XLS files come out differently.
   To get the same XLS files in a local build, install the same fonts.
-- 7-Zip comes with GitHub's build machines (`ubuntu-latest`) and is not installed separately.
+- The jobs run on Ubuntu 24.04 (`ubuntu-24.04`), chosen on purpose: what the build installs comes
+  with the Ubuntu version, so a newer one is a deliberate step, after comparing the packages built
+  on both. 7-Zip comes with these build machines and is not installed separately.
 - The step stops after 10 minutes: it normally takes under a minute, but when an Ubuntu package
   mirror stops answering, `apt` would otherwise wait without end.
 
