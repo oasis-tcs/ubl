@@ -622,29 +622,17 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
     </or>
   </condition>
 
-  <!--prepare other artefacts including Schematron-->
-  <sequential unless:set="processFailed">
-    <antcall target="-artefacts"/>
-  </sequential>
-  <condition property="artefactsFailed">
-    <or>
-      <isset property="processFailed"/>
-      <resourcecount when="greater" count="0">
-        <fileset file="${dir}/${UBLstage}-${UBLversion}/*.txt"/>
-      </resourcecount>
-    </or>
-  </condition>
-
   <!--performance: Realta renders the documentation on its own server, which
-      takes two to three minutes of waiting. When the documentation is going
-      to be made, -early-realta sends that job now, while this machine checks
-      the code lists and the samples and makes the reports; see -early-realta.
+      takes two to three minutes of waiting. Everything it is sent is ready
+      now, so when the documentation is going to be made, -early-realta sends
+      that job now, while this machine makes the other artefacts, checks the
+      code lists and the samples and makes the reports; see -early-realta.
       The documentation is not made without publishing access, after a
       problem with the artefacts, or when parts of the artefacts were skipped
       on request (-package-artefacts then leaves a .txt file).-->
   <condition property="early-realta">
     <and>
-      <not><isset property="artefactsFailed"/></not>
+      <not><isset property="processFailed"/></not>
       <not><isset property="skip-publish"/></not>
       <not><isset property="skip-gc"/></not>
       <not><isset property="skip-spreadsheet-generation"/></not>
@@ -663,6 +651,19 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
       </catch>
     </trycatch>
     <sequential>
+      <!--prepare other artefacts including Schematron-->
+      <sequential unless:set="processFailed">
+        <antcall target="-artefacts"/>
+      </sequential>
+      <condition property="artefactsFailed">
+        <or>
+          <isset property="processFailed"/>
+          <resourcecount when="greater" count="0">
+            <fileset file="${dir}/${UBLstage}-${UBLversion}/*.txt"/>
+          </resourcecount>
+        </or>
+      </condition>
+
       <sequential unless:set="artefactsFailed">
         <!--check code lists-->
         <antcall target="-codelists"/>
@@ -1320,8 +1321,35 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
       result is not zero if any sample fails, so a failure is reported as
       before; unlike the script run on its own, every failing sample is
       reported rather than only the first.-->
-  <echo message="Validating sample test files..."/>
+  <!--performance: each sample check starts Java three times, and starting
+      takes longer than the check. A "java" that is the same Java told to
+      start quickly (only its quick compiler, -XX:TieredStopAtLevel=1, and
+      simple memory cleanup, -XX:+UseSerialGC) halves the time of the checks
+      and changes nothing in their results: measured on five of GitHub's
+      machines, each running both ways, 134-146 seconds became 68-77, with
+      the same output for every sample.
+      It is used only here, for the build's own run of testsamples.sh, and
+      only when it works; it is kept outside the repository and ${dir}.-->
+  <property name="quickJavaDir" location="${java.io.tmpdir}/ubl-quick-java-${label}"/>
+  <property environment="env"/>
+  <delete dir="${quickJavaDir}" quiet="true"/>
+  <mkdir dir="${quickJavaDir}"/>
+  <echo file="${quickJavaDir}/java">#!/bin/sh
+exec "${java.home}/bin/java" -XX:TieredStopAtLevel=1 -XX:+UseSerialGC "$@"
+</echo>
+  <chmod file="${quickJavaDir}/java" perm="755"/>
+  <exec executable="${quickJavaDir}/java" resultproperty="quickJavaResult"
+        failifexecutionfails="false" outputproperty="quickJavaOutput"
+        errorproperty="quickJavaError">
+    <arg value="-version"/>
+  </exec>
+  <condition property="quickJava">
+    <equals arg1="${quickJavaResult}" arg2="0"/>
+  </condition>
+  <echo if:set="quickJava" message="Validating sample test files (Java told to start quickly)..."/>
+  <echo unless:set="quickJava" message="Validating sample test files..."/>
   <exec executable="sh" resultproperty="returnTestSamples" dir="${dir}/${UBLstage}-${UBLversion}/val">
+    <env if:set="quickJava" key="PATH" path="${quickJavaDir}${path.separator}${env.PATH}"/>
     <arg value="-c"/>
     <arg value="eval &quot;$(grep '^UBLversion=' testsamples.sh)&quot;; export UBLversion; grep -v -e '^[[:space:]]*#' -e '^[[:space:]]*$' -e '^UBLversion=' testsamples.sh | xargs -P 4 -I {} sh -c 'out=$({} 2&gt;&amp;1); rc=$?; echo &quot;$out&quot;; exit $rc'"/>
   </exec>
@@ -1335,6 +1363,7 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
   </condition>
   <touch if:set="reportTestSamples" file="${dir}/${UBLstage}-${UBLversion}/UNEXPECTED-TEST-SAMPLES-RESULT-WARNING.txt"/>
   <delete file="${dir}/${UBLstage}-${UBLversion}/val/output.txt"/>
+  <delete dir="${quickJavaDir}" quiet="true"/>
   
 </target>
 

@@ -137,7 +137,7 @@ jobs:
             }
             printf "| **Whole Build step** | | **%s** |\n\n", mmss(last - first)
             for (k = 1; k <= jobs; k++) {
-              what = (k == early) ? (used ? "sent early, during the sample checks and reports; its results were used" : "sent early; its results were not used") : "sent at the usual time"
+              what = (k == early) ? (used ? "sent early, while the artefacts were made and checked; its results were used" : "sent early; its results were not used") : "sent at the usual time"
               printf "Realta job %d: %s after it was sent (%s).\n\n", k, ((k in back) ? mmss(back[k] - sent[k]) : "no answer"), what
             }
             print "The run page lists the time of every other step."
