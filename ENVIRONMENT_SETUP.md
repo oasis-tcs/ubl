@@ -94,9 +94,9 @@ If the Google Sheets download fails with "403 Forbidden":
 
 ### Build Exit Code Always Returns 0
 
-The build scripts are configured to always return exit code 0 (`exit 0` at end of build-common.sh) to ensure GitHub Actions can retrieve the build artifacts even on failure. Check the actual build status in:
-- `target/UBL-2.5-<stage>-<label>-archive-only/build.exitcode.<label>.txt`
-- `target/UBL-2.5-<stage>-<label>-archive-only/build.console.<label>.txt`
+The build scripts are configured to always return exit code 0 (`exit 0` at end of build-common.sh) to ensure GitHub Actions can retrieve the build artifacts even on failure. Check the actual build status in (with the version and stage set in `build.sh`):
+- `target/UBL-<version>-<stage>-<label>-archive-only/build.exitcode.<label>.txt`
+- `target/UBL-<version>-<stage>-<label>-archive-only/build.console.<label>.txt`
 
 ## Installation Success Confirmation
 
@@ -113,7 +113,7 @@ Building package...
 Running on Java: 1.8.0_462 from /usr/lib/jvm/java-8-openjdk-amd64/jre
 ...
 7-Zip 23.01 (x64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20
-Creating archive: UBL-2.5-csd01-<label>-archive-only.7z
+Creating archive: UBL-<version>-<stage>-<label>-archive-only.7z
 Everything is Ok
 ```
 
