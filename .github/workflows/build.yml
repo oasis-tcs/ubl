@@ -81,7 +81,68 @@ jobs:
         REALTA_PASSWORD: ${{ secrets.REALTA_PASSWORD }}
       run: |
         mkdir target
-        bash build.sh target github ${{ needs.staging.outputs.timestamp }}z "${REALTA_USERNAME:-}" "${REALTA_PASSWORD:-}" DELETE-REPOSITORY-FILES-AS-WELL
+        # every line of the output also goes, with the second it appeared, to a
+        # file outside the repository for the "Timing summary" step below
+        set -o pipefail
+        bash build.sh target github ${{ needs.staging.outputs.timestamp }}z "${REALTA_USERNAME:-}" "${REALTA_PASSWORD:-}" DELETE-REPOSITORY-FILES-AS-WELL 2>&1 |
+          while IFS= read -r line || [ -n "$line" ]; do
+            printf '%s\n' "$line"
+            printf '%s %s\n' "$EPOCHSECONDS" "$line" >&3
+          done 3>"$RUNNER_TEMP/build-times.log"
+
+    - name: Timing summary
+      if: always()
+      run: |
+        # A table of where the Build step spent its time, on the run's summary
+        # page. A row starts at the first line of the build's output that is
+        # (or, when it does not start with "-", begins with) the text before
+        # the "|", and ends where the next row starts. To add a row, add a
+        # line in the order the build does it.
+        log="$RUNNER_TEMP/build-times.log"
+        [ -s "$log" ] || exit 0
+        cat > "$RUNNER_TEMP/build-rows.txt" <<'EOF'
+        Artwork: rendering|Render the artwork from the draw.io drawings
+        -make-artefacts:|Download the spreadsheets, make the genericode files
+        -gc2ndr-check-only:|Check the models against the naming and design rules
+        -artefacts:|Make the schemas, CVA files and spreadsheets
+        -codelists:|Check the code lists, validate the samples
+        -reports:|Make the HTML reports
+        -package-artefacts:|Gather the artefacts
+        -make-hub:|Assemble the documentation
+        -make-docs:|Have Realta render the documentation
+        -package-docs:|Package the documentation
+        -package-distribution:|Package the distribution
+        -consistency-check:|Check the consistency of the packages
+        Total time:|Compress the packages (7z)
+        EOF
+        awk '
+          function mmss(s) { return sprintf("%d:%02d", int(s / 60), s % 60) }
+          NR == FNR { sub(/^ +/, ""); split($0, f, "|"); n++; text[n] = f[1]; name[n] = f[2]; next }
+          {
+            t = substr($0, 1, index($0, " ") - 1) + 0; line = substr($0, index($0, " ") + 1)
+            if (!first) first = t; last = t
+            for (i = 1; i <= n; i++)
+              if (!(i in at) && (line == text[i] || (substr(text[i], 1, 1) != "-" && index(line, text[i]) == 1))) at[i] = t
+            if (line ~ /^ *\[echo\] Submitting "/) { jobs++; sent[jobs] = t }
+            if (index(line, "Realta server access ended")) back[jobs] = t
+            if (index(line, "Early Realta job: submitting")) early = jobs + 1
+            if (index(line, "Using the Realta results of the job sent earlier")) used = 1
+          }
+          END {
+            print "### Where the Build step spent its time\n"
+            print "| Step | Started | Took |"; print "|---|---:|---:|"
+            for (i = 1; i <= n; i++) if (i in at) {
+              end = last; for (j = i + 1; j <= n; j++) if ((j in at) && at[j] >= at[i]) { end = at[j]; break }
+              printf "| %s | %s | %s |\n", name[i], mmss(at[i] - first), mmss(end - at[i])
+            }
+            printf "| **Whole Build step** | | **%s** |\n\n", mmss(last - first)
+            for (k = 1; k <= jobs; k++) {
+              what = (k == early) ? (used ? "sent early, during the sample checks and reports; its results were used" : "sent early; its results were not used") : "sent at the usual time"
+              printf "Realta job %d: %s after it was sent (%s).\n\n", k, ((k in back) ? mmss(back[k] - sent[k]) : "no answer"), what
+            }
+            print "The run page lists the time of every other step."
+          }
+        ' "$RUNNER_TEMP/build-rows.txt" "$log" >> "$GITHUB_STEP_SUMMARY"
 
     - name: List Shell Build Directory Structure
       if: always()
