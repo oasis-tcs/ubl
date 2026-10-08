@@ -54,6 +54,13 @@
       <property name="cpuCount" value="2"/>
     </else>
   </if>
+  <!--performance: the folder where -early-realta works; it is outside the
+      repository and outside ${dir}, so nothing made there can end up in a
+      package-->
+  <property name="earlyRealtaDir"
+            location="${java.io.tmpdir}/ubl-early-realta-${label}"/>
+  <!--only what this build sends counts-->
+  <delete dir="${earlyRealtaDir}" quiet="true"/>
   <!--documentation-->
   <echo message="dir=${dir}"/>
   <echo message="thisdir=${thisdir}"/>
@@ -117,6 +124,8 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
   <touch if:set="artefactsFailedMain"
          file="${dir}/artefacts-${package}-${UBLstage}-${label}/HUB-SKIPPED-INCOMPLETE-ARTEFACTS.txt"/>
   <antcall target="-make-hub" unless:set="artefactsFailedMain"/>
+  <!--whatever -early-realta made has been used by now, or is not wanted-->
+  <delete dir="${earlyRealtaDir}" quiet="true"/>
 
   <!--
     Prepare an output package with whatever was successfully created
@@ -626,42 +635,72 @@ file="${utilitydir}Crane-cva2sch/utility/iso_schematron_assembly.xsl"/>
     </or>
   </condition>
 
-  <sequential unless:set="artefactsFailed">
-    <!--check code lists-->
-    <antcall target="-codelists"/>
-
-    <!--check samples-->
-    <antcall target="-samples" unless:set="skip-samples"/>
-  </sequential>
-  <condition property="samplesFailed">
-    <or>
-      <isset property="artefactsFailed"/>
-      <resourcecount when="greater" count="0">
-        <fileset file="${dir}/${UBLstage}-${UBLversion}/*.txt"/>
-      </resourcecount>
-    </or>
+  <!--performance: Realta renders the documentation on its own server, which
+      takes two to three minutes of waiting. When the documentation is going
+      to be made, -early-realta sends that job now, while this machine checks
+      the code lists and the samples and makes the reports; see -early-realta.
+      The documentation is not made without publishing access, after a
+      problem with the artefacts, or when parts of the artefacts were skipped
+      on request (-package-artefacts then leaves a .txt file).-->
+  <condition property="early-realta">
+    <and>
+      <not><isset property="artefactsFailed"/></not>
+      <not><isset property="skip-publish"/></not>
+      <not><isset property="skip-gc"/></not>
+      <not><isset property="skip-spreadsheet-generation"/></not>
+      <not><isset property="skip-html-generation"/></not>
+      <not><os family="windows"/></not>
+    </and>
   </condition>
-    
-  <sequential unless:set="samplesFailed">
-    <!--prepare reports; the full and endorsed sets read different genericode
-        files and write to different directories, so they are built side by
-        side, one Saxon process each-->
-    <parallel threadCount="2">
-    <antcall target="-reports">
-      <param name="source" value="${dir}/UBL-Entities-${UBLversion}.gc"/>
-      <param name="target" value="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports"/>
-      <param name="endorsed" value="false"/>
-    </antcall>
-    <antcall target="-reports">
-      <param name="source" value="${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
-      <param name="target" value="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/summary/reports"/>
-      <param name="endorsed" value="true"/>
-    </antcall>
-    </parallel>
-    <delete file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
-    <delete file="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
-  </sequential>
-  
+  <parallel threadCount="2">
+    <!--whatever goes wrong here, the build goes on as it always has-->
+    <trycatch property="early-realta-problem" if:set="early-realta">
+      <try>
+        <antcall target="-early-realta"/>
+      </try>
+      <catch>
+        <echo message="Early Realta job abandoned: ${early-realta-problem}"/>
+      </catch>
+    </trycatch>
+    <sequential>
+      <sequential unless:set="artefactsFailed">
+        <!--check code lists-->
+        <antcall target="-codelists"/>
+
+        <!--check samples-->
+        <antcall target="-samples" unless:set="skip-samples"/>
+      </sequential>
+      <condition property="samplesFailed">
+        <or>
+          <isset property="artefactsFailed"/>
+          <resourcecount when="greater" count="0">
+            <fileset file="${dir}/${UBLstage}-${UBLversion}/*.txt"/>
+          </resourcecount>
+        </or>
+      </condition>
+
+      <sequential unless:set="samplesFailed">
+        <!--prepare reports; the full and endorsed sets read different
+            genericode files and write to different directories, so they are
+            built side by side, one Saxon process each-->
+        <parallel threadCount="2">
+        <antcall target="-reports">
+          <param name="source" value="${dir}/UBL-Entities-${UBLversion}.gc"/>
+          <param name="target" value="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports"/>
+          <param name="endorsed" value="false"/>
+        </antcall>
+        <antcall target="-reports">
+          <param name="source" value="${dir}/UBL-Endorsed-Entities-${UBLversion}.gc"/>
+          <param name="target" value="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/summary/reports"/>
+          <param name="endorsed" value="true"/>
+        </antcall>
+        </parallel>
+        <delete file="${dir}/${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
+        <delete file="${dir}/Endorsed-${UBLstage}-${UBLversion}/mod/summary/reports/junk.out"/>
+      </sequential>
+    </sequential>
+  </parallel>
+
   <antcall target="-package-artefacts"/>
 </target>
 
@@ -1504,9 +1543,17 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
 </target>
 
 <target name="-make-xml" unless="docs-UBL-xml-okay">
-  <delete file="${dir}/UBL-${UBLversion}.xml"/>
-  <delete file="${dir}/UBL-${UBLversion}-assembled.xml"/>
-  <copy todir="${dir}">
+  <!--The documentation is assembled in hubDir, normally ${dir}.
+      -early-realta assembles it a second time, earlier, in a folder of its
+      own; it passes hubDir, the genericode file hubGC, and hubEarly, which
+      keeps that run from leaving anything in ${dir} or the repository.-->
+  <property name="hubDir" value="${dir}"/>
+  <property name="hubGC"
+value="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/UBL-Entities-${UBLversion}.gc"/>
+  <property name="hubWorkDir" location="."/>
+  <delete file="${hubDir}/UBL-${UBLversion}.xml"/>
+  <delete file="${hubDir}/UBL-${UBLversion}-assembled.xml"/>
+  <copy todir="${hubDir}">
     <fileset dir=".">
       <include name="UBL*.xml"/>
     </fileset>
@@ -1516,15 +1563,15 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
       the stamping done in -make-artefacts. Re-stamp here, after the copy that
       would otherwise win.-->
   <echo message="Stamping hub XML: stage=${UBLstage} (${UBLstageUC}) date=${UBLreleaseDate}"/>
-  <replace dir="${dir}" includes="UBL*.xml" summary="true">
+  <replace dir="${hubDir}" includes="UBL*.xml" summary="true">
     <replacefilter token="@@UBLSTAGEUC@@"     value="${UBLstageUC}"/>
     <replacefilter token="@@UBLSTAGETEXT@@"   value="${UBLstageText}"/>
     <replacefilter token="@@UBLSTAGE@@"       value="${UBLstage}"/>
     <replacefilter token="@@UBLRELEASEDATE@@" value="${UBLreleaseDate}"/>
   </replace>
   <available property="db-ready"
-             file="${dir}/db/spec-0.9/docbook/docbookx.dtd"/>
-  <copy unless:set="db-ready" todir="${dir}/db">
+             file="${hubDir}/db/spec-0.9/docbook/docbookx.dtd"/>
+  <copy unless:set="db-ready" todir="${hubDir}/db">
     <fileset dir="db">
       <include name="**"/>
     </fileset>
@@ -1534,19 +1581,19 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <echo message="Distilling entities from various inputs"/>
   <!--empty all entity replacements in case last generation was faulty, but
       save the files for comparison-->
-  <delete file="${dir}/summary-processes-ent.xml"/>
-  <delete file="${dir}/summary-parties-ent.xml"/>
-  <delete file="${dir}/summary-namespaces-ent.xml"/>
-  <delete file="${dir}/summary-schemas-ent.xml"/>
-  <delete file="${dir}/summary-examples-ent.xml"/>
+  <delete file="${hubDir}/summary-processes-ent.xml"/>
+  <delete file="${hubDir}/summary-parties-ent.xml"/>
+  <delete file="${hubDir}/summary-namespaces-ent.xml"/>
+  <delete file="${hubDir}/summary-schemas-ent.xml"/>
+  <delete file="${hubDir}/summary-examples-ent.xml"/>
   <!--reconstitute them so that the XML file can be validated without subs-->
-  <touch  file="${dir}/summary-processes-ent.xml"/>
-  <touch  file="${dir}/summary-parties-ent.xml"/>
-  <touch  file="${dir}/summary-namespaces-ent.xml"/>
-  <touch  file="${dir}/summary-schemas-ent.xml"/>
-  <touch  file="${dir}/summary-examples-ent.xml"/>
+  <touch  file="${hubDir}/summary-processes-ent.xml"/>
+  <touch  file="${hubDir}/summary-parties-ent.xml"/>
+  <touch  file="${hubDir}/summary-namespaces-ent.xml"/>
+  <touch  file="${hubDir}/summary-schemas-ent.xml"/>
+  <touch  file="${hubDir}/summary-examples-ent.xml"/>
   <!--now the UBL.xml file should be able to parse provided old2new are okay-->
-  <java jar="utilities/saxon9he/saxon9he.jar" dir="${dir}" fork="true">
+  <java jar="utilities/saxon9he/saxon9he.jar" dir="${hubDir}" fork="true">
      <arg value="-xsl:${thisdir}/hub2processSummary.xsl"/>
     <arg value="-s:UBL.xml"/>
     <arg value="-o:summary-processes-ent.xml"/>
@@ -1556,7 +1603,7 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
     <arg value="-v"/>
     <arg value="UBL-Party-summary-information.xml"/>
   </java>
-  <java jar="utilities/saxon9he/saxon9he.jar" dir="${dir}" fork="true">
+  <java jar="utilities/saxon9he/saxon9he.jar" dir="${hubDir}" fork="true">
     <arg value="-xsl:${thisdir}/partydoc2db.xsl"/>
     <arg value="-s:UBL-Party-summary-information.xml"/>
     <arg value="-o:summary-parties-ent.xml"/>
@@ -1565,31 +1612,31 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
     <arg value="-v"/>
     <arg value="UBL-Schema-summary-information.xml"/>
   </java>
-  <java jar="utilities/saxon9he/saxon9he.jar" dir="${dir}" fork="true">
+  <java jar="utilities/saxon9he/saxon9he.jar" dir="${hubDir}" fork="true">
     <arg value="-xsl:${thisdir}/schemadoc2db.xsl"/>
     <arg value="-s:UBL-Schema-summary-information.xml"/>
     <arg value="UBLversion=${UBLversion}"/>
-    <arg value="gc-uri=${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-files/UBL-Entities-${UBLversion}.gc"/>
+    <arg value="gc-uri=${hubGC}"/>
   </java>
   
   <!--assemble XML-->
   <echo message="Assembling UBL-${UBLversion}.xml"/>
   <java jar="utilities/saxon9he/saxon9he.jar" fork="true">
      <arg value="-xsl:assembleEntities.xsl"/>
-     <arg value="-s:${dir}/UBL.xml"/>
-     <arg value="-o:${dir}/UBL-${UBLversion}-assembled.xml"/>
+     <arg value="-s:${hubDir}/UBL.xml"/>
+     <arg value="-o:${hubDir}/UBL-${UBLversion}-assembled.xml"/>
   </java>
   <available property="docAssembled"
-             file="${dir}/UBL-${UBLversion}-assembled.xml"/>
+             file="${hubDir}/UBL-${UBLversion}-assembled.xml"/>
   <sequential if:set="docAssembled">
    <!--confirm the input file is valid-->
    <antcallback target="-validateHub" return="validatedInputs">
-     <param name="source" value="${dir}/UBL-${UBLversion}-assembled.xml"/>
+     <param name="source" value="${hubDir}/UBL-${UBLversion}-assembled.xml"/>
    </antcallback>
-   <move file="${dir}/UBL-${UBLversion}-assembled.xml"
-         tofile="${dir}/UBL-${UBLversion}.xml"/>
+   <move file="${hubDir}/UBL-${UBLversion}-assembled.xml"
+         tofile="${hubDir}/UBL-${UBLversion}.xml"/>
   </sequential>
-  <delete file="output.txt"/>
+  <delete file="output.txt" unless:set="hubEarly"/>
 </target>
 
 <target name="-validateHub" depends="-validateHub-shell,-validateHub-dos">
@@ -1597,13 +1644,15 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/intermediate-support-file
   <condition property="validatedInputs">
     <equals arg1="${validateResult}" arg2="0"/>
   </condition>
+  <sequential unless:set="hubEarly">
   <echo unless:set="validatedInputs"
         message="${validateOutput}"
 file="${dir}/artefacts-${package}-${UBLstage}-${label}/INVALID-ASSEMBLED-HUB-XML.txt"/>
+  </sequential>
 </target>
 
 <target name="-validateHub-shell" unless="${is-dos}">
-  <exec resultproperty="validateResult" executable="sh"
+  <exec resultproperty="validateResult" executable="sh" dir="${hubWorkDir}"
         outputproperty="validateOutput">
     <arg value="db/spec-0.9/validate/validate.sh"/>
     <arg value="${source}"/>
@@ -1693,26 +1742,29 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/INVALID-ASSEMBLED-HUB-XML
   <delete file="${dir}/iso-iec-19845-draft.niso.zip"/>
   <delete file="${dir}/UBL-${UBLversion}-pub.zip"/>
   <!--package inputs to the publishing process-->
-  <zip destfile="${dir}/UBL-${UBLversion}-pub.zip">
-    <fileset dir="${dir}">
-      <include name="UBL-${UBLversion}.xml"/>
-    </fileset>
-    <fileset dir=".">
-      <include name="realta-user-parameters.xml"/>
-      <include name="art/**"/>
-    </fileset>
-  </zip>
-  <!--create publishing outputs-->
-  <echo message="Submitting print job..."/>
-  <property name="serverScript" location="RealtaServerAnt.xml"/> 
-  <ant antfile="${serverScript}" dir="${dir}">
-    <property name="entrypoint" value="OASIS-2025-specnote2pdfhtml-ISO-pdfdocx"/>
-    <!--<property name="entrypoint" value="OASIS-2020-spec2pdfhtml-ISO-pdfdocx"/>-->
-    <!--<property name="entrypoint" value="OASIS-spec2pdfhtml-ISO-pdf"/>-->
-    <property name="fileupload" value="UBL-${UBLversion}-pub.zip"/>
-    <property name="dateprefix" value="UBL ${UBLversion}"/>
-    <property name="filelocal"  value="UBL-${UBLversion}.xml"/><!--diagnostic-->
-  </ant>
+  <antcall target="-pub-zip">
+    <param name="pubXmlDir" value="${dir}"/>
+    <param name="pubZip" value="${dir}/UBL-${UBLversion}-pub.zip"/>
+  </antcall>
+  <!--performance: -early-realta may have sent this very job already-->
+  <antcallback target="-early-realta-check" return="early-realta-same"/>
+  <sequential unless:set="early-realta-same">
+    <!--create publishing outputs-->
+    <echo message="Submitting print job..."/>
+    <antcall target="-realta-render">
+      <param name="realtaJobDir" value="${dir}"/>
+    </antcall>
+  </sequential>
+  <sequential if:set="early-realta-same">
+    <!--what Realta left in its folder, it would have left here-->
+    <echo message="Using the Realta results of the job sent earlier in this build with these same files"/>
+    <copy todir="${dir}" preservelastmodified="true" overwrite="true">
+      <fileset dir="${earlyRealtaDir}/realta" defaultexcludes="no">
+        <exclude name="UBL-${UBLversion}-pub.zip"/>
+      </fileset>
+    </copy>
+  </sequential>
+  <delete dir="${earlyRealtaDir}" quiet="true"/>
   <echo message="Check and cleanup..."/>
   <available property="ready-pdf" file="${dir}/UBL-${UBLversion}.oasis.pdf"/>
   <echo unless:set="ready-pdf" message="PDF not created"/>
@@ -1765,6 +1817,132 @@ file="${dir}/artefacts-${package}-${UBLstage}-${label}/INVALID-ASSEMBLED-HUB-XML
   <available property="ready-odt" file="${dir}/UBL-${UBLversion}-${label}.odt"/>
   <echo unless:set="ready-odt" message="ODT not created"/>
   <echo if:set="ready-odt" message="ODT created"/>
+</target>
+
+<!--the file Realta renders: the assembled documentation and its artwork
+    (pubXmlDir has UBL-${UBLversion}.xml; the zip is made at pubZip)-->
+<target name="-pub-zip">
+  <zip destfile="${pubZip}">
+    <fileset dir="${pubXmlDir}">
+      <include name="UBL-${UBLversion}.xml"/>
+    </fileset>
+    <fileset dir=".">
+      <include name="realta-user-parameters.xml"/>
+      <include name="art/**"/>
+    </fileset>
+  </zip>
+</target>
+
+<!--send UBL-${UBLversion}-pub.zip in realtaJobDir to Realta; the results
+    are unpacked in realtaJobDir-->
+<target name="-realta-render">
+  <property name="serverScript" location="RealtaServerAnt.xml"/> 
+  <ant antfile="${serverScript}" dir="${realtaJobDir}">
+    <property name="entrypoint" value="OASIS-2025-specnote2pdfhtml-ISO-pdfdocx"/>
+    <!--<property name="entrypoint" value="OASIS-2020-spec2pdfhtml-ISO-pdfdocx"/>-->
+    <!--<property name="entrypoint" value="OASIS-spec2pdfhtml-ISO-pdf"/>-->
+    <property name="fileupload" value="UBL-${UBLversion}-pub.zip"/>
+    <property name="dateprefix" value="UBL ${UBLversion}"/>
+    <property name="filelocal"  value="UBL-${UBLversion}.xml"/><!--diagnostic-->
+  </ant>
+</target>
+
+<!--=========================================================================
+    performance: send the documentation to Realta early
+
+    Realta renders the documentation on its own server and the build waits
+    for it, two to three minutes. Everything Realta is sent (the assembled
+    UBL-${UBLversion}.xml and the artwork) is ready once the artefacts are
+    made, so -make-artefacts runs this target while the code lists and
+    samples are checked and the reports are made.
+
+    It assembles the documentation with the same -make-xml, in a folder of its
+    own (earlyRealtaDir, outside the repository and outside ${dir}), and sends
+    it with the same -pub-zip and -realta-render, only when it validates.
+    The results stay in that folder. -make-docs uses them only when the zip it
+    is about to send has exactly the same files with exactly the same
+    contents as the zip sent here, and Realta returned all five results;
+    otherwise -make-docs sends its own job, as it always has. When the
+    documentation is not made after all (a problem with the code lists,
+    samples or reports), the results are thrown away.
+-->
+<target name="-early-realta">
+  <property name="earlyXmlDir" location="${earlyRealtaDir}/xml"/>
+  <property name="earlyJobDir" location="${earlyRealtaDir}/realta"/>
+  <delete dir="${earlyRealtaDir}" quiet="true"/>
+  <mkdir dir="${earlyXmlDir}"/>
+  <mkdir dir="${earlyJobDir}"/>
+  <echo message="Early Realta job: assembling the documentation in ${earlyXmlDir}"/>
+  <!--the generated entity files and the genericode file, as -make-hub and
+      -make-xml take them from the artefacts; they are still in ${dir} now-->
+  <copy tofile="${earlyXmlDir}/old2newDoc-from-previous-version-documents-ent.xml"
+        failonerror="false"
+        file="${dir}/old2newDocBook-UBL-${UBLversion}-${UBLstage}-UBL-${UBLprevVersion}-documents-ent.xml"/>
+  <copy tofile="${earlyXmlDir}/old2newDoc-from-previous-version-library-ent.xml"
+        failonerror="false"
+        file="${dir}/old2newDocBook-UBL-${UBLversion}-${UBLstage}-UBL-${UBLprevVersion}-library-ent.xml"/>
+  <copy tofile="${earlyXmlDir}/old2newDoc-from-previous-stage-documents-ent.xml"
+        failonerror="false"
+        file="${dir}/old2newDocBook-UBL-${UBLversion}-${UBLstage}-UBL-${UBLprevStageVersion}-${UBLprevStage}-documents-ent.xml"/>
+  <copy tofile="${earlyXmlDir}/old2newDoc-from-previous-stage-library-ent.xml"
+        failonerror="false"
+        file="${dir}/old2newDocBook-UBL-${UBLversion}-${UBLstage}-UBL-${UBLprevStageVersion}-${UBLprevStage}-library-ent.xml"/>
+  <copy todir="${earlyXmlDir}" file="${dir}/UBL-Entities-${UBLversion}.gc"/>
+  <antcallback target="-make-xml" return="validatedInputs">
+    <param name="hubDir" value="${earlyXmlDir}"/>
+    <param name="hubGC" value="${earlyXmlDir}/UBL-Entities-${UBLversion}.gc"/>
+    <param name="hubWorkDir" value="${earlyXmlDir}"/>
+    <param name="hubEarly" value="true"/>
+  </antcallback>
+  <echo unless:set="validatedInputs"
+        message="Early Realta job not sent: the assembled documentation did not validate"/>
+  <sequential if:set="validatedInputs">
+    <antcall target="-pub-zip">
+      <param name="pubXmlDir" value="${earlyXmlDir}"/>
+      <param name="pubZip" value="${earlyJobDir}/UBL-${UBLversion}-pub.zip"/>
+    </antcall>
+    <echo message="Early Realta job: submitting print job..."/>
+    <antcall target="-realta-render">
+      <param name="realtaJobDir" value="${earlyJobDir}"/>
+    </antcall>
+  </sequential>
+</target>
+
+<!--are the results of -early-realta those of the zip -make-docs just made?
+    (sets early-realta-same)-->
+<target name="-early-realta-check">
+  <property name="earlyJobDir" location="${earlyRealtaDir}/realta"/>
+  <property name="earlyCompareDir" location="${earlyRealtaDir}/compare"/>
+  <available property="early-zip" file="${earlyJobDir}/UBL-${UBLversion}-pub.zip"/>
+  <sequential if:set="early-zip">
+    <delete dir="${earlyCompareDir}" quiet="true"/>
+    <unzip src="${earlyJobDir}/UBL-${UBLversion}-pub.zip" dest="${earlyCompareDir}/sent"/>
+    <unzip src="${dir}/UBL-${UBLversion}-pub.zip" dest="${earlyCompareDir}/now"/>
+    <condition property="early-realta-same">
+      <and>
+        <!--all five results came back-->
+        <available file="${earlyJobDir}/UBL-${UBLversion}.oasis.pdf"/>
+        <available file="${earlyJobDir}/UBL-${UBLversion}.oasis.html"/>
+        <available file="${earlyJobDir}/UBL-${UBLversion}.iso.docx"/>
+        <available file="${earlyJobDir}/UBL-${UBLversion}.iso.pdf"/>
+        <available file="${earlyJobDir}/UBL-${UBLversion}.niso.zip"/>
+        <!--every file in the zip now is in the zip sent, with the same contents-->
+        <resourcecount when="equal" count="0">
+          <fileset dir="${earlyCompareDir}/now" defaultexcludes="no">
+            <different targetdir="${earlyCompareDir}/sent" ignoreFileTimes="true"/>
+          </fileset>
+        </resourcecount>
+        <!--and the zip sent has no other files-->
+        <resourcecount when="equal" count="0">
+          <fileset dir="${earlyCompareDir}/sent" defaultexcludes="no">
+            <present present="srconly" targetdir="${earlyCompareDir}/now"/>
+          </fileset>
+        </resourcecount>
+      </and>
+    </condition>
+    <echo unless:set="early-realta-same"
+          message="The results of the early Realta job are not used: they are incomplete, or the files sent then are not the files to send now"/>
+  </sequential>
 </target>
 
 <target name="-package-docs">
