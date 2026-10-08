@@ -145,7 +145,7 @@ def create_7z_archive(archive_path: Path, source_dir: Path) -> None:
     source_dir_relative = source_dir.name  # e.g., 'UBL-2.5-csd01-20251020-0832z'
     archive_path_relative = archive_path.name  # e.g., 'UBL-2.5-csd01-20251020-0832z.7z'
     subprocess.run([
-        "7z", "a", "-t7z", "-mx=9", "-mfb=128", "-md=64m", "-mqs=on", "-aoa",
+        "7z", "a", "-t7z", "-mx=9", "-md=64m", "-mqs=on", "-aoa",
         archive_path_relative,
         source_dir_relative,
     ], cwd=work_dir, check=False)
