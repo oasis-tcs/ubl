@@ -1,6 +1,46 @@
 <project default="make" xmlns:if="ant:if" xmlns:unless="ant:unless">
 <!--
     build.xml - build script for UBL package
+
+    Steps that run side by side
+    ===========================
+    A GitHub build machine has four processors, so steps that do not depend on
+    each other run side by side. The order of the main steps is as it always
+    was; within them:
+
+    -make-artefacts
+      the three spreadsheet downloads ................ side by side
+      the full and the endorsed genericode files ...... side by side
+      the checks of the models against earlier versions, one after the other
+      then two lines of work at the same time:
+        1. -early-realta: assemble the documentation and send it to Realta,
+           mostly waiting for Realta's server (two to three minutes)
+        2. -artefacts (the full and endorsed CVA files side by side, the three
+           ODS spreadsheets side by side), -codelists, -samples (four sample
+           checks at a time, with Java told to start quickly) and -reports
+           (the full and endorsed sets side by side, each in cpuCount
+           processes)
+      -package-artefacts, once both lines have finished
+    -make-hub: -make-docs uses the results of -early-realta only when they
+      were made from the very same files (-early-realta-check); otherwise it
+      sends the job to Realta itself, as it always did
+    -package-distribution, -consistency-check
+
+    Rules for steps side by side:
+    - They must not write the same files, and one must not read what another
+      is still writing. The comment at each <parallel> says why this holds
+      for its steps: check it again when changing them.
+    - About four Java processes working at once at most: each takes memory,
+      and an earlier attempt with sixteen ran out of it.
+    - A property set in an <antcall> stays there; one that the rest of the
+      build needs must come back with <antcallback>.
+    - When one step fails, <parallel> lets the others finish before the build
+      stops. -early-realta never stops the build: its <trycatch> catches any
+      problem, and the build then goes on as it always did.
+    - Their lines are interleaved in the console log.
+
+    The summary page of each GitHub run has a table of where the time went
+    (the "Timing summary" step of .github/workflows/build.yml).
 -->
 <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
 <taskdef name="for" classname="net.sf.antcontrib.logic.ForTask"/>

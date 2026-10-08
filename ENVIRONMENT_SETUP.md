@@ -10,7 +10,7 @@ The following packages are required to run the full UBL build process:
 2. **aspell** - For spell checking documentation
 3. **pandoc** - For document format conversion
 4. **OpenJDK 8** - Java Development Kit version 8 (required, not optional)
-5. **libreoffice** - For ODS to XLS conversion (optional, used when converting spreadsheets)
+5. **libreoffice** - For ODS to XLS conversion (optional, used when converting spreadsheets; see "The GitHub workflow" below for the fonts the XLS files depend on)
 
 ## Installation Instructions
 
@@ -125,15 +125,26 @@ Everything is Ok
 - Aspell: 0.60.8.1
 - Pandoc: 3.1.3
 
-## Updating GitHub Workflow
+## The GitHub workflow
 
-The `.github/workflows/build.yml` file should include `p7zip-full` in the dependencies section:
+`.github/workflows/build.yml` installs, in its `Dependencies` step:
 
 ```yaml
-- name: Dependencies
-  run: |
-    sudo apt update
-    sudo apt install -y aspell libreoffice pandoc p7zip-full
+sudo apt install -y aspell pandoc libreoffice-calc-nogui \
+  fonts-crosextra-caladea fonts-crosextra-carlito fonts-liberation-sans-narrow \
+  fonts-linuxlibertine fonts-noto-core fonts-noto-extra fonts-noto-mono \
+  fonts-noto-ui-core fonts-opensymbol fonts-sil-gentium fonts-sil-gentium-basic
 ```
 
-**Note:** The current workflow is missing `p7zip-full`, which causes the build to fail during the archive creation step.
+- LibreOffice is used only to convert the spreadsheets from ODS to XLS, so only its spreadsheet
+  part is installed, without the rest of the office suite.
+- The fonts are the ones the full `libreoffice` package brings. The column widths in the XLS files
+  are worked out from font measurements, so with other fonts the XLS files come out differently.
+  To get the same XLS files in a local build, install the same fonts.
+- 7-Zip comes with GitHub's build machines (`ubuntu-latest`) and is not installed separately.
+- The step stops after 10 minutes: it normally takes under a minute, but when an Ubuntu package
+  mirror stops answering, `apt` would otherwise wait without end.
+
+The `Artwork tools` step installs what renders the figures from their drawings
+(`utilities/artwork/README.md`). After the build, the `Timing summary` step puts a table of where
+the build spent its time on the run's summary page.
