@@ -34,13 +34,14 @@ echo $serverReturn         >"$targetdir"/"$package"-"$UBLstage"-"$label"-archive
 touch                       "$targetdir"/"$package"-"$UBLstage"-"$label"-archive-only/build.console."$label".txt
 
 # reduce GitHub storage costs by zipping results and deleting intermediate files
+# (-mfb=128 is left out: it doubled the compression time for archives under 2% smaller)
 pushd "$targetdir" || return
 if [ -f "$package"-"$UBLstage"-"$label"-archive-only.7z ]; then rm "$package"-"$UBLstage"-"$label"-archive-only.7z ; fi
-7z a -t7z -mx=9 -mfb=128 -md=64m -mqs=on -aoa "$package"-"$UBLstage"-"$label"-archive-only.7z "$package"-"$UBLstage"-"$label"-archive-only
+7z a -t7z -mx=9 -md=64m -mqs=on -aoa "$package"-"$UBLstage"-"$label"-archive-only.7z "$package"-"$UBLstage"-"$label"-archive-only
 if [ -f "$package"-"$UBLstage"-"$label"-iso-iec-19845.7z ]; then rm "$package"-"$UBLstage"-"$label"-iso-iec-19845.7z ; fi
-7z a -t7z -mx=9 -mfb=128 -md=64m -mqs=on -aoa "$package"-"$UBLstage"-"$label"-iso-iec-19845.7z "$package"-"$UBLstage"-"$label"-iso-iec-19845
+7z a -t7z -mx=9 -md=64m -mqs=on -aoa "$package"-"$UBLstage"-"$label"-iso-iec-19845.7z "$package"-"$UBLstage"-"$label"-iso-iec-19845
 if [ -f "$package"-"$UBLstage"-"$label".7z ]; then rm "$package"-"$UBLstage"-"$label".7z ; fi
-7z a -t7z -mx=9 -mfb=128 -md=64m -mqs=on -aoa "$package"-"$UBLstage"-"$label".7z "$package"-"$UBLstage"-"$label"
+7z a -t7z -mx=9 -md=64m -mqs=on -aoa "$package"-"$UBLstage"-"$label".7z "$package"-"$UBLstage"-"$label"
 popd || return
 
 if [ "$targetdir" = "target" ]
