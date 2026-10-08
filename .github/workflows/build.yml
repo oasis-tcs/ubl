@@ -48,9 +48,19 @@ jobs:
         java-package: jdk
 
     - name: Dependencies
+      # normally under a minute; when an Ubuntu package mirror stops answering,
+      # apt waits without end, so stop it rather than hold the runner for hours
+      timeout-minutes: 10
       run: |
         sudo apt update
-        sudo apt install -y aspell libreoffice pandoc
+        # LibreOffice is only used to convert spreadsheets from ODS to XLS, so
+        # only its spreadsheet part is installed, without the desktop. The fonts
+        # are the ones the full LibreOffice installs: XLS column widths are
+        # worked out from font measurements, so the same fonts must be there.
+        sudo apt install -y aspell pandoc libreoffice-calc-nogui \
+          fonts-crosextra-caladea fonts-crosextra-carlito fonts-liberation-sans-narrow \
+          fonts-linuxlibertine fonts-noto-core fonts-noto-extra fonts-noto-mono \
+          fonts-noto-ui-core fonts-opensymbol fonts-sil-gentium fonts-sil-gentium-basic
 
     - name: Set up Node
       continue-on-error: true
