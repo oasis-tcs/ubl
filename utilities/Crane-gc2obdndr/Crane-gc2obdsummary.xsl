@@ -371,8 +371,8 @@ PURPOSE.</programlisting>
         <xsl:variable name="gu:type"
                       select="gu:col($gu:row,'ComponentType')"/>
         <xsl:variable name="gu:inSubset" select="gu:isSubsetBIE(.)"/>
-        <xsl:variable name="gu:pos" select="
-  count(preceding-sibling::Row[gu:col(.,'ModelName')=$gu:thisModelName]) + 2"/>
+        <xsl:variable name="gu:pos"
+                      select="gu:lineInModel(.,$gu:thisModelName)"/>
         <xsl:variable name="gu:card"
                       select="gu:col($gu:row,'Cardinality')"/>
         <xsl:variable name="gu:background-color"
@@ -653,6 +653,63 @@ PURPOSE.</programlisting>
   </xsl:result-document>
 </xsl:template>
 
+<xs:key>
+  <para>Rows indexed by the model they belong to.</para>
+</xs:key>
+<xsl:key name="gu:rows-by-model" match="Row" use="gu:col(.,'ModelName')"/>
+
+<xs:variable>
+  <para>
+    The line number of every row of the genericode file within the table of
+    its own model, worked out once. A row's line number is the number of
+    preceding sibling rows in the same model, plus two.
+  </para>
+</xs:variable>
+<xsl:variable name="gu:linesInModel" as="document-node()">
+  <xsl:document>
+    <xsl:for-each-group select="$gu:gc/*/*/Row[string(gu:col(.,'ModelName'))]"
+             group-by="concat(generate-id(..),' ',gu:col(.,'ModelName'))">
+      <xsl:for-each select="current-group()">
+        <line row="{generate-id(.)}" n="{position() + 1}"/>
+      </xsl:for-each>
+    </xsl:for-each-group>
+  </xsl:document>
+</xsl:variable>
+
+<xs:key>
+  <para>The precomputed line numbers indexed by row.</para>
+</xs:key>
+<xsl:key name="gu:line-by-row" match="line" use="@row"/>
+
+<xs:function>
+  <para>
+    The line number of a row in the table of the given model: the number of
+    preceding sibling rows in that model, plus two. For a row of the given
+    model in the genericode file the number is looked up; for any other row
+    the preceding rows of the model are counted.
+  </para>
+  <xs:param name="row">
+    <para>The row whose line number is needed.</para>
+  </xs:param>
+  <xs:param name="model">
+    <para>The model whose table is being numbered.</para>
+  </xs:param>
+</xs:function>
+<xsl:function name="gu:lineInModel" as="xsd:integer">
+  <xsl:param name="row" as="element(Row)"/>
+  <xsl:param name="model" as="item()*"/>
+  <xsl:variable name="gu:ownModel" select="string(gu:col($row,'ModelName'))"/>
+  <xsl:variable name="gu:line" as="element(line)?"
+                select="if( count($model)=1 and $gu:ownModel and
+                            $gu:ownModel=string($model) )
+                        then key('gu:line-by-row',generate-id($row),
+                                 $gu:linesInModel)
+                        else ()"/>
+  <xsl:sequence select="if( $gu:line ) then xsd:integer($gu:line/@n)
+                        else count(key('gu:rows-by-model',$model,root($row))
+                                   [. &lt;&lt; $row][.. is $row/..]) + 2"/>
+</xsl:function>
+
 <xs:template>
   <para>Intercept UDT for back links: add back links</para>
   <xs:param name="gu:thisSubsetBBIEs">
@@ -700,8 +757,7 @@ PURPOSE.</programlisting>
   <xsl:variable name="gu:denComp"
                 select="gu:colcomp(.,'DictionaryEntryName')"/>
     <!--determine the line number reference within the given table-->
-    <xsl:variable name="gu:line" select="
-      count(preceding-sibling::Row[gu:col(.,'ModelName')=$gu:thisModel]) + 2"/>
+    <xsl:variable name="gu:line" select="gu:lineInModel(.,$gu:thisModel)"/>
     <!--anchor the entry in the summary-->
     <a>
       <xsl:if test="$gu:anchor">
